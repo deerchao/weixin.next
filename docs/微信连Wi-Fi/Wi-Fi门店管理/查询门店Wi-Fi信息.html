@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
+</head>
+<body class="page_doc">
+    <div class="main_hd"><h2>查询门店Wi-Fi信息</h2></div>
+    <div class="main_bd"> 
+        <div class="article_box">
+            <div class="inner">
+                <div class="news_content">
+                    <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></p><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">通过此接口查询某一门店的详细Wi-Fi信息，包括门店内的设备类型、ssid、密码、设备数量、商家主页URL、顶部常驻入口文案。</p><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p><pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">协议：https
+http请求方式:&nbsp;POST
+请求URL：https://api.weixin.qq.com/bizwifi/shop/get?access_token=ACCESS_TOKEN
+POST数据格式：JSON</pre><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p><table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 160px;">参数</th><th class="table_cell" style="width: 80px;">是否必须</th><th class="table_cell">说明</th></tr><tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr><tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr></tbody></table><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">数据示例：</p><pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+&nbsp;&nbsp;&nbsp;&nbsp;"shop_id":&nbsp;429620
+}</pre><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p><p><br></p><table cellspacing="0" cellpadding="4" align="center"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 160px;" width="140">字段</th><th class="table_cell" style="width: 80px;" width="294">是否必填</th><th class="table_cell" width="99">说明</th></tr><tr><td class="table_cell" colspan="1" rowspan="1" width="140">pageindex</td><td class="table_cell" colspan="1" rowspan="1" width="294">分页下标，默认从1开始</td><td class="table_cell" colspan="1" rowspan="1" width="99">否</td></tr><tr><td class="table_cell" width="140">pagesize</td><td class="table_cell" width="214">每页的个数，默认10个，最大20个</td><td class="table_cell" width="99">否</td></tr></tbody></table><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;</p><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">正确返回JSON数据示例：</p><pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+&nbsp;&nbsp;"errcode":&nbsp;0,
+&nbsp;&nbsp;"data":&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;"shop_name":&nbsp;"南山店",
+&nbsp;&nbsp;&nbsp;&nbsp;"ssid":&nbsp;"&nbsp;WX123",
+&nbsp;&nbsp;&nbsp;&nbsp;"ssid_list":&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"WX123",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"WX456"
+&nbsp;&nbsp;&nbsp;&nbsp;],
+&nbsp;&nbsp;&nbsp;&nbsp;"ssid_password_list":&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ssid":&nbsp;"WX123",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password":&nbsp;"123456789"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"ssid":&nbsp;"WX456",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"password":&nbsp;"21332465dge"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;],
+&nbsp;&nbsp;&nbsp;&nbsp;"password":&nbsp;"123456789",
+&nbsp;&nbsp;&nbsp;&nbsp;"protocol_type":&nbsp;4,
+&nbsp;&nbsp;&nbsp;&nbsp;"ap_count":&nbsp;2,
+&nbsp;&nbsp;&nbsp;&nbsp;"template_id":&nbsp;1,
+&nbsp;&nbsp;&nbsp;&nbsp;"homepage_url":&nbsp;"http://www.weixin.qq.com/",
+&nbsp;&nbsp;&nbsp;&nbsp;"bar_type":&nbsp;1
+&nbsp;&nbsp;}
+}</pre><p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p><p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p><p><br></p><table cellspacing="0" cellpadding="4" align="center"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell" width="478">说明</th></tr><tr><td class="table_cell">shop_name</td><td class="table_cell" width="478">门店名称</td></tr><tr><td class="table_cell">ssid</td><td class="table_cell" width="478">无线网络设备的ssid，未添加设备为空，多个ssid时显示第一个</td></tr><tr><td class="table_cell" colspan="1" rowspan="1">ssid_list</td><td class="table_cell" colspan="1" rowspan="1" width="478">无线网络设备的ssid列表，返回数组格式</td></tr><tr><td class="table_cell" colspan="1" rowspan="1">ssid_password_list</td><td class="table_cell" colspan="1" rowspan="1" width="478">ssid和密码的列表，数组格式。当为密码型设备时，密码才有值</td></tr><tr><td class="table_cell">password</td><td class="table_cell" width="478">设备密码，当设备类型为密码型时返回</td></tr><tr><td class="table_cell">protocol_type</td><td class="table_cell" width="478"><p>门店内设备的设备类型，0-未添加设备，4-密码型设备，31-portal型设备</p></td></tr><tr><td class="table_cell">ap_count</td><td class="table_cell" width="478">门店内设备总数</td></tr><tr><td class="table_cell">template_id</td><td class="table_cell" width="478">商家主页模板类型</td></tr><tr><td class="table_cell">homepage_url</td><td class="table_cell" width="478">商家主页链接</td></tr><tr><td class="table_cell">bar_type</td><td class="table_cell" width="478">顶部常驻入口上显示的文本内容：0--欢迎光临+公众号名称；1--欢迎光临+门店名称；2--已连接+公众号名称+WiFi；3--已连接+门店名称+Wi-Fi</td></tr><tr><td class="table_cell">finishpage_url</td><td class="table_cell" width="478">连网完成页链接<br></td></tr></tbody></table><p><br></p><p><br></p><p><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

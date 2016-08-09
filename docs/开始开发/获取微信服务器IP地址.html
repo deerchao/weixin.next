@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
+</head>
+<body class="page_doc">
+    <div class="main_hd"><h2>获取微信服务器IP地址</h2></div>
+    <div class="main_bd"> 
+        <div class="article_box">
+            <div class="inner">
+                <div class="news_content">
+                    <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>如果公众号基于安全等考虑，需要获知微信服务器的IP地址列表，以便进行相关限制，可以通过该接口获得微信服务器IP地址列表或者IP网段信息。</p><p><strong>接口调用请求说明</strong></p><table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="651" valign="top" style="word-break: break-all;"><pre>http请求方式:&nbsp;GET
+https://api.weixin.qq.com/cgi-bin/getcallbackip?access_token=ACCESS_TOKEN</pre></td></tr></tbody></table><p><strong>参数说明</strong></p><table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr><tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的access_token</td></tr></tbody></table><p><strong>返回说明</strong></p><p>正常情况下，微信会返回下述JSON数据包给公众号：</p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;"><pre>{
+&nbsp;&nbsp;&nbsp;&nbsp;"ip_list":&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"127.0.0.1",&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"127.0.0.2",&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"101.226.103.0/25"
+&nbsp;&nbsp;&nbsp;&nbsp;]
+}</pre></td></tr></tbody></table><p><br></p><table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 240px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr><tr><td class="table_cell">ip_list</td><td class="table_cell">微信服务器IP地址列表</td></tr></tbody></table><p><br></p><p>错误时微信会返回错误码等信息，JSON数据包示例如下（该示例为AppID无效错误）:</p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;"><pre>{"errcode":40013,"errmsg":"invalid&nbsp;appid"}</pre></td></tr></tbody></table><p><br></p><p><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
+</head>
+<body class="page_doc">
+    <div class="main_hd"><h2>获取用户地理位置</h2></div>
+    <div class="main_bd"> 
+        <div class="article_box">
+            <div class="inner">
+                <div class="news_content">
+                    <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>开通了上报地理位置接口的公众号，用户在关注后进入公众号会话时，会弹框让用户确认是否允许公众号使用其地理位置。弹框只在关注后出现一次，用户以后可以在公众号详情页面进行操作。</p><p>第三方在收到地理位置上报信息之后，只需要回复success表明收到即可，是不允许回复消息给粉丝的。<br></p><p><strong>获取用户地理位置</strong></p><p>用户同意上报地理位置后，每次进入公众号会话时，都会在进入时上报地理位置，上报地理位置以推送XML数据包到开发者填写的URL来实现。</p><p>推送XML数据包示例：</p><div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">&lt;xml&gt;<br>&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[LOCATION]]&gt;&lt;/Event&gt;<br>&lt;Latitude&gt;23.137466&lt;/Latitude&gt;<br>&lt;Longitude&gt;113.352425&lt;/Longitude&gt;<br>&lt;Precision&gt;119.385040&lt;/Precision&gt;<br>&lt;/xml&gt;</div><p>参数说明：<br></p><table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="325" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="325" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" style="word-break: break-all;" width="325">ToUserName</td><td class="table_cell" width="325"><strong>开发者</strong>微信号</td></tr><tr><td class="table_cell" width="325">FromUserName</td><td class="table_cell" width="325">发送方帐号（一个OpenID）</td></tr><tr><td class="table_cell" width="325">CreateTime</td><td class="table_cell" width="325">消息创建时间 （整型）</td></tr><tr><td class="table_cell" width="325">MsgType</td><td class="table_cell" width="325">消息类型，event</td></tr><tr><td class="table_cell" width="325">Event</td><td class="table_cell" width="325">事件类型，LOCATION</td></tr><tr><td class="table_cell" width="325">Latitude</td><td class="table_cell" width="325">地理位置纬度</td></tr><tr><td class="table_cell" width="325">Longitude</td><td class="table_cell" width="325">地理位置经度</td></tr><tr><td class="table_cell" width="325">Precision</td><td class="table_cell" width="325">地理位置精度</td></tr></tbody></table><p><br></p><p><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

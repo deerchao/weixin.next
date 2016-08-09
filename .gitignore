@@ -1,0 +1,12 @@
+.vs/
+bin/
+obj/
+packages/
+app_data/
+
+*.suo
+*.user
+*.vsmdi
+*.testsettings
+
+output/
