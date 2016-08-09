@@ -5,12 +5,20 @@
     <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
 </head>
 <body class="page_doc">
-    <div class="main_hd"><h2>连网后下发消息</h2></div>
+    <div class="main_hd"><h2>连网后下发消息</h2>
+</div>
     <div class="main_bd"> 
         <div class="article_box">
             <div class="inner">
                 <div class="news_content">
-                    <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">顾客到店并连接Wi-Fi后，会触发连网成功事件推送。开发者接收到此事件后，可以调用“<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140547&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="客服接口">客服接口</a>”通过公众号向连网用户发送消息，包括文字、卡券等。</p><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br></p><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">该事件将发送至开发者填写的URL（登录公众平台进入开发者中心设置）。</p><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>微信服务器在五秒内收不到响应会断掉连接，并且重新发起请求，总共重试三次</strong></p><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">关于重试的消息排重，推荐使用FromUserName + CreateTime 排重。</p><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>假如服务器无法保证在五秒内处理并回复，可以直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试。</strong></p><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">推送XML数据包示例：</p><pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">&lt;xml&gt;&nbsp;
+                    <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">顾客到店并连接Wi-Fi后，会触发连网成功事件推送。开发者接收到此事件后，可以调用“<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140547&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="客服接口">客服接口</a>”通过公众号向连网用户发送消息，包括文字、卡券等。</p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">该事件将发送至开发者填写的URL（登录公众平台进入开发者中心设置）。</p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>微信服务器在五秒内收不到响应会断掉连接，并且重新发起请求，总共重试三次</strong></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">关于重试的消息排重，推荐使用FromUserName + CreateTime 排重。</p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>假如服务器无法保证在五秒内处理并回复，可以直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试。</strong></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">推送XML数据包示例：</p>
+<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">&lt;xml&gt;&nbsp;
 &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;&nbsp;
 &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;&nbsp;
 &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;&nbsp;
@@ -21,7 +29,21 @@
 &lt;VendorId&gt;![CDATA[3001224419]]&lt;/VendorId&gt;
 &lt;ShopId&gt;![CDATA[PlaceId]]&lt;/ShopId&gt;
 &lt;DeviceNo&gt;![CDATA[DeviceNo]]&lt;/DeviceNo&gt;
-&lt;/xml&gt;</pre><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br>参数说明：</p><table cellspacing="0" cellpadding="4" align="center"><tbody><tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr><tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr><tr><td class="table_cell">FromUserName</td><td class="table_cell">连网的用户帐号（一个OpenID）</td></tr><tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr><tr><td class="table_cell">MsgType</td><td class="table_cell">消息类型，event</td></tr><tr><td class="table_cell">Event</td><td class="table_cell">事件类型，WifiConnected (Wi-Fi连网成功)</td></tr><tr><td class="table_cell">ConnectTime</td><td class="table_cell">连网时间（整型）</td></tr><tr><td class="table_cell">ExpireTime</td><td class="table_cell">系统保留字段，固定值</td></tr><tr><td class="table_cell">VendorId</td><td class="table_cell">系统保留字段，固定值</td></tr><tr><td class="table_cell">ShopId</td><td class="table_cell">门店ID，即shop_id</td></tr><tr><td class="table_cell">DeviceNo</td><td class="table_cell">连网的设备无线mac地址，对应bssid</td></tr></tbody></table><p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></p>
+&lt;/xml&gt;</pre>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br>参数说明：</p>
+<table cellspacing="0" cellpadding="4" align="center"><tbody><tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
+<tr><td class="table_cell">FromUserName</td><td class="table_cell">连网的用户帐号（一个OpenID）</td></tr>
+<tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>
+<tr><td class="table_cell">MsgType</td><td class="table_cell">消息类型，event</td></tr>
+<tr><td class="table_cell">Event</td><td class="table_cell">事件类型，WifiConnected (Wi-Fi连网成功)</td></tr>
+<tr><td class="table_cell">ConnectTime</td><td class="table_cell">连网时间（整型）</td></tr>
+<tr><td class="table_cell">ExpireTime</td><td class="table_cell">系统保留字段，固定值</td></tr>
+<tr><td class="table_cell">VendorId</td><td class="table_cell">系统保留字段，固定值</td></tr>
+<tr><td class="table_cell">ShopId</td><td class="table_cell">门店ID，即shop_id</td></tr>
+<tr><td class="table_cell">DeviceNo</td><td class="table_cell">连网的设备无线mac地址，对应bssid</td></tr>
+</tbody></table>
+<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></p>
                 </div>
             </div>
         </div>

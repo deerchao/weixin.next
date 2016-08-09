@@ -5,12 +5,301 @@
     <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
 </head>
 <body class="page_doc">
-    <div class="main_hd"><h2>会话控制</h2></div>
+    <div class="main_hd"><h2>会话控制</h2>
+</div>
     <div class="main_bd"> 
         <div class="article_box">
             <div class="inner">
                 <div class="news_content">
-                    <p><span style="font-size: 18px;"><strong><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>创建会话<br></span></strong></span></p><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 16px;">此接口在客服和用户之间创建一个会话，如果该客服和用户会话已存在，则直接返回0。指定的客服帐号必须已经绑定微信号且在线。</span></p><p><span style="font-size: 16px;"><strong><span style="font-family: 微软雅黑, 'Microsoft YaHei';">调用说明</span></strong></span></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html spaces">&nbsp;</code><code class="html plain">http请求方式:&nbsp;POST</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;</code><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/create?access_token=ACCESS_TOKEN</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;</code><code class="html plain">POST数据示例如下：</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;</code><code class="html plain">{</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">"kf_account"&nbsp;:&nbsp;"test1@test",</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">"openid"&nbsp;:&nbsp;"OPENID"</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;</code><code class="html plain">}</code></div></td></tr></tbody></table><p><strong>参数说明<span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr></tbody></table><p><strong>返回说明<br></strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">{</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"errcode"</code>&nbsp;<code class="php plain">:&nbsp;0,</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"errmsg"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"ok"</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div></td></tr></tbody></table><p><br></p><p><span style="font-size: 18px;"><strong>关闭会话</strong></span></p><p><strong>调用说明</strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">http请求方式:&nbsp;POST</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">https:</code><code class="php comments">//api.weixin.qq.com/customservice/kfsession/close?access_token=ACCESS_TOKEN</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">POST数据示例如下：</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">{</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"kf_account"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"test1@test"</code><code class="php plain">,</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"OPENID"</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div></td></tr></tbody></table><p><strong>参数说明<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr></tbody></table><p><strong>返回说明<br></strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">{</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"errcode"</code>&nbsp;<code class="php plain">:&nbsp;0,</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"errmsg"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"ok"</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div></td></tr></tbody></table><p><strong>主要返回码<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效的客服帐号</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65402</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">帐号尚未绑定微信号，不能投入使用</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65413</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不存在对应用户的会话信息</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65414</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客户正在被其他客服接待</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的openid</td></tr></tbody></table><p><br></p><p><span style="font-size: 18px;"><strong>获取客户会话状态<br></strong></span></p><p>此接口获取一个客户的会话，如果不存在，则kf_account为空。</p><p><strong>调用说明</strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html spaces">&nbsp;</code><code class="html plain">http请求方式:&nbsp;GET</code></div><div class="line number2 index1 alt1"><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/getsession?access_token=ACCESS_TOKEN&amp;openid=OPENID</code></div></td></tr></tbody></table><p><strong>参数说明<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr></tbody></table><p><strong>返回说明<br></strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">{</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"createtime"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"kf_account"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"test1@test"</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div></td></tr></tbody></table><p><strong>参数说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">正在接待的客服，为空表示没有人在接待</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">createtime</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">会话接入的时间</td></tr></tbody></table><p><strong>主要返回码<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的openid</td></tr></tbody></table><p><br></p><p><span style="font-size: 18px;"><strong>获取客服会话列表</strong></span></p><p><strong>调用说明</strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html spaces">&nbsp;</code><code class="html plain">http请求方式:&nbsp;GET</code></div><div class="line number2 index1 alt1"><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/getsessionlist?access_token=ACCESS_TOKEN&amp;kf_account=KFACCOUNT</code></div></td></tr></tbody></table><p><strong>参数说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr></tbody></table><p><strong>返回说明<br></strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">{</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"sessionlist"</code>&nbsp;<code class="php plain">:&nbsp;[</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"createtime"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"OPENID"</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">},</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"createtime"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"OPENID"</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">]</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div></td></tr></tbody></table><p><br></p><p><span style="font-size: 18px;"><strong>获取未接入会话列表</strong></span></p><p><strong>调用说明</strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html plain">http请求方式:&nbsp;GET</code></div><div class="line number2 index1 alt1"><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/getwaitcase?access_token=ACCESS_TOKEN</code></div></td></tr></tbody></table><p><strong>返回说明<br></strong></p><table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code></div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">{</code></div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"count"</code>&nbsp;<code class="php plain">:&nbsp;150,</code></div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"waitcaselist"</code>&nbsp;<code class="php plain">:&nbsp;[</code></div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"latest_time"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code></div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"OPENID"</code></div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">},</code></div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">{</code></div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"latest_time"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code></div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code><code class="php string">"OPENID"</code></div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">}</code></div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="php plain">]</code></div><div class="line number14 index13 alt1"><code class="php spaces">&nbsp;</code><code class="php plain">}</code></div></td></tr></tbody></table><p><strong>参数说明<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">count</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">未接入会话数量</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">waitcaselist</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">未接入会话列表，最多返回100条数据，按照来访顺序</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">latest_time</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的最后一条消息的时间</td></tr></tbody></table><p><br></p><p><span style="font-size: 18px;"><strong>返回码说明</strong></span></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通或升级到新版客服功能</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65402</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服帐号尚未绑定微信号，不能投入使用</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65413</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不存在对应用户的会话信息</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65414</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝正在被其他客服接待</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65415</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">指定的客服不在线</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的openid</td></tr></tbody></table><p><br></p>
+                    <p><span style="font-size: 18px;"><strong><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>创建会话<br></span></strong></span></p>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 16px;">此接口在客服和用户之间创建一个会话，如果该客服和用户会话已存在，则直接返回0。指定的客服帐号必须已经绑定微信号且在线。</span></p>
+<p><span style="font-size: 16px;"><strong><span style="font-family: 微软雅黑, 'Microsoft YaHei';">调用说明</span></strong></span></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html spaces">&nbsp;</code>
+<code class="html plain">http请求方式:&nbsp;POST</code>
+</div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;</code>
+<code class="html plain">https://api.weixin.qq.com/customservice/kfsession/create?access_token=ACCESS_TOKEN</code>
+</div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;</code>
+<code class="html plain">POST数据示例如下：</code>
+</div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;</code>
+<code class="html plain">{</code>
+</div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="html plain">"kf_account"&nbsp;:&nbsp;"test1@test",</code>
+</div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="html plain">"openid"&nbsp;:&nbsp;"OPENID"</code>
+</div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;</code>
+<code class="html plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>参数说明<span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr>
+</tbody></table>
+<p><strong>返回说明<br></strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code>
+</div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"errcode"</code>&nbsp;<code class="php plain">:&nbsp;0,</code>
+</div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"errmsg"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"ok"</code>
+</div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><br></p>
+<p><span style="font-size: 18px;"><strong>关闭会话</strong></span></p>
+<p><strong>调用说明</strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">http请求方式:&nbsp;POST</code>
+</div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">https:</code>
+<code class="php comments">//api.weixin.qq.com/customservice/kfsession/close?access_token=ACCESS_TOKEN</code>
+</div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">POST数据示例如下：</code>
+</div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"kf_account"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"test1@test"</code>
+<code class="php plain">,</code>
+</div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"OPENID"</code>
+</div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>参数说明<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr>
+</tbody></table>
+<p><strong>返回说明<br></strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code>
+</div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"errcode"</code>&nbsp;<code class="php plain">:&nbsp;0,</code>
+</div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"errmsg"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"ok"</code>
+</div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>主要返回码<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效的客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65402</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">帐号尚未绑定微信号，不能投入使用</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65413</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不存在对应用户的会话信息</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65414</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客户正在被其他客服接待</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的openid</td></tr>
+</tbody></table>
+<p><br></p>
+<p><span style="font-size: 18px;"><strong>获取客户会话状态<br></strong></span></p>
+<p>此接口获取一个客户的会话，如果不存在，则kf_account为空。</p>
+<p><strong>调用说明</strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html spaces">&nbsp;</code>
+<code class="html plain">http请求方式:&nbsp;GET</code>
+</div><div class="line number2 index1 alt1"><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/getsession?access_token=ACCESS_TOKEN&amp;openid=OPENID</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>参数说明<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr>
+</tbody></table>
+<p><strong>返回说明<br></strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">返回数据示例（正确时的JSON返回结果）：</code>
+</div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"createtime"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code>
+</div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"kf_account"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"test1@test"</code>
+</div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>参数说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">正在接待的客服，为空表示没有人在接待</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">createtime</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">会话接入的时间</td></tr>
+</tbody></table>
+<p><strong>主要返回码<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的openid</td></tr>
+</tbody></table>
+<p><br></p>
+<p><span style="font-size: 18px;"><strong>获取客服会话列表</strong></span></p>
+<p><strong>调用说明</strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html spaces">&nbsp;</code>
+<code class="html plain">http请求方式:&nbsp;GET</code>
+</div><div class="line number2 index1 alt1"><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/getsessionlist?access_token=ACCESS_TOKEN&amp;kf_account=KFACCOUNT</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>参数说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+</tbody></table>
+<p><strong>返回说明<br></strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">返回数据示例（正确时的JSON返回结果）：</code>
+</div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"sessionlist"</code>&nbsp;<code class="php plain">:&nbsp;[</code>
+</div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"createtime"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code>
+</div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"OPENID"</code>
+</div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">},</code>
+</div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"createtime"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code>
+</div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"OPENID"</code>
+</div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">}</code>
+</div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">]</code>
+</div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;</code>
+<code class="php plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><br></p>
+<p><span style="font-size: 18px;"><strong>获取未接入会话列表</strong></span></p>
+<p><strong>调用说明</strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="html plain">http请求方式:&nbsp;GET</code>
+</div><div class="line number2 index1 alt1"><code class="html plain">https://api.weixin.qq.com/customservice/kfsession/getwaitcase?access_token=ACCESS_TOKEN</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>返回说明<br></strong></p>
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter php"><tbody><tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
+<div class="line number2 index1 alt1">2</div>
+<div class="line number3 index2 alt2">3</div>
+<div class="line number4 index3 alt1">4</div>
+<div class="line number5 index4 alt2">5</div>
+<div class="line number6 index5 alt1">6</div>
+<div class="line number7 index6 alt2">7</div>
+<div class="line number8 index7 alt1">8</div>
+<div class="line number9 index8 alt2">9</div>
+<div class="line number10 index9 alt1">10</div>
+<div class="line number11 index10 alt2">11</div>
+<div class="line number12 index11 alt1">12</div>
+<div class="line number13 index12 alt2">13</div>
+<div class="line number14 index13 alt1">14</div>
+</td><td class="code table_cell"><div class="line number1 index0 alt2"><code class="php plain">返回数据示例（正确时的JSON返回结果）：</code>
+</div><div class="line number2 index1 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number3 index2 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"count"</code>&nbsp;<code class="php plain">:&nbsp;150,</code>
+</div><div class="line number4 index3 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"waitcaselist"</code>&nbsp;<code class="php plain">:&nbsp;[</code>
+</div><div class="line number5 index4 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number6 index5 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"latest_time"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code>
+</div><div class="line number7 index6 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"OPENID"</code>
+</div><div class="line number8 index7 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">},</code>
+</div><div class="line number9 index8 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">{</code>
+</div><div class="line number10 index9 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"latest_time"</code>&nbsp;<code class="php plain">:&nbsp;123456789,</code>
+</div><div class="line number11 index10 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php string">"openid"</code>&nbsp;<code class="php plain">:&nbsp;</code>
+<code class="php string">"OPENID"</code>
+</div><div class="line number12 index11 alt1"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">}</code>
+</div><div class="line number13 index12 alt2"><code class="php spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code>
+<code class="php plain">]</code>
+</div><div class="line number14 index13 alt1"><code class="php spaces">&nbsp;</code>
+<code class="php plain">}</code>
+</div></td></tr>
+</tbody></table>
+<p><strong>参数说明<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">count</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">未接入会话数量</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">waitcaselist</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">未接入会话列表，最多返回100条数据，按照来访顺序</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">openid</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">latest_time</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝的最后一条消息的时间</td></tr>
+</tbody></table>
+<p><br></p>
+<p><span style="font-size: 18px;"><strong>返回码说明</strong></span></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通或升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65402</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服帐号尚未绑定微信号，不能投入使用</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65413</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不存在对应用户的会话信息</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65414</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">粉丝正在被其他客服接待</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65415</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">指定的客服不在线</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的openid</td></tr>
+</tbody></table>
+<p><br></p>
                 </div>
             </div>
         </div>

@@ -5,12 +5,253 @@
     <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
 </head>
 <body class="page_doc">
-    <div class="main_hd"><h2>用户标签管理</h2></div>
+    <div class="main_hd"><h2>用户标签管理</h2>
+</div>
     <div class="main_bd"> 
         <div class="article_box">
             <div class="inner">
                 <div class="news_content">
-                    <p><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span>开发者可以使用用户标签管理的相关接口，实现对公众号的标签进行创建、查询、修改、删除等操作，也可以对用户进行打标签、取消标签等操作。</p><p><span style="font-size: 18px;"><strong>标签管理</strong></span><strong><br></strong></p><p><strong>1. 创建标签</strong></p><p>一个公众号，最多可以创建100个标签。</p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/tags/create?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "tag" : {</p><p>&nbsp; &nbsp; "name" : "广东"//标签名</p><p>&nbsp; }</p><p>}</p></td></tr></tbody></table><p><strong>参数说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>参数</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">access_token</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">调用接口凭据</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">name</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名（30个字符以内）</td></tr></tbody></table><p><strong>返回说明（正常时返回的json数据包示例）<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;">{<p>&nbsp; "tag":{</p><p>"id":134,//标签id</p><p>"name":"广东"</p><p>&nbsp; }</p><p>}</p></td></tr></tbody></table><p><strong>返回参数说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>参数</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">id</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签id，由微信分配</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">name</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名，UTF8编码</td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45157<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名非法，请注意不能和其他标签重名</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45158</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名长度超过30个字节</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45056</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">创建的标签数过多，请注意不能超过100个</td></tr></tbody></table><p><strong>2. 获取公众号已创建的标签</strong></p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：GET（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/tags/get?access_token=ACCESS_TOKEN</p></td></tr></tbody></table><p style="white-space: normal;"><strong>返回说明<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p><p>&nbsp; "tags":[{</p><p>&nbsp; &nbsp; &nbsp; "id":1,</p><p>&nbsp; &nbsp; &nbsp; "name":"每天一罐可乐星人",</p><p>&nbsp; &nbsp; &nbsp; "count":0 //此标签下粉丝数</p><p>},{</p><p>&nbsp; "id":2,</p><p>&nbsp; "name":"星标组",</p><p>&nbsp; "count":0</p><p>},{</p><p>&nbsp; "id":127,</p><p>&nbsp; "name":"广东",</p><p>&nbsp; "count":5</p><p>}</p><p>&nbsp; ]</p><p>}</p></td></tr></tbody></table><p><strong>3. 编辑标签</strong></p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/tags/update?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "tag" : {</p><p>&nbsp; &nbsp; "id" : 134,</p><p>&nbsp; &nbsp; "name" : "广东人"</p><p>&nbsp; }</p><p>}</p></td></tr></tbody></table><p><strong>返回说明<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p><p>&nbsp; "errcode":0,</p><p>&nbsp; "errmsg":"ok"</p><p>}</p></td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45157</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名非法，请注意不能和其他标签重名</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45158</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名长度超过30个字节</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45058</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不能修改0/1/2这三个系统默认保留的标签</td></tr></tbody></table><p><strong>4. 删除标签</strong></p><p>请注意，当某个标签下的粉丝超过10w时，后台不可直接删除标签。此时，开发者可以对该标签下的openid列表，先进行取消标签的操作，直到粉丝数不超过10w后，才可直接删除该标签。<strong><br></strong></p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;">http请求方式：POST（请使用https协议）<p>https://api.weixin.qq.com/cgi-bin/tags/delete?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "tag":{</p><p>&nbsp; &nbsp; &nbsp; &nbsp;"id" : 134</p><p>&nbsp; }</p><p>}</p></td></tr></tbody></table><p><strong>返回说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p><p>&nbsp; "errcode":0,</p><p>&nbsp; "errmsg":"ok"</p><p>}</p></td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45058</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不能修改0/1/2这三个系统默认保留的标签</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45057<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">该标签下粉丝数超过10w，不允许直接删除</td></tr></tbody></table><p><strong>5. 获取标签下粉丝列表</strong></p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：GET（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "tagid" : 134,</p><p>&nbsp; "next_openid":""//第一个拉取的OPENID，不填默认从头开始拉取</p><p>}</p></td></tr></tbody></table><p><strong>返回说明（正常时返回的json包示例）<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p><p>&nbsp; "count":2,//这次获取的粉丝数量</p><p>&nbsp; "data":{//粉丝列表</p><p>"openid":[</p><p>&nbsp; &nbsp; "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</p><p>&nbsp; &nbsp; "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p><p>&nbsp; &nbsp; ]</p><p>&nbsp; },</p><p>&nbsp; "next_openid":"ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"//拉取列表最后一个用户的openid</p><p>}</p></td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45159</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的tag_id</td></tr></tbody></table><p><br></p><p><span style="font-size: 18px;"><strong>用户管理</strong></span></p><p>标签功能目前支持公众号为用户打上最多三个标签。</p><p><strong>1. 批量为用户打标签</strong></p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/tags/members/batchtagging?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "openid_list" : [//粉丝列表</p><p>&nbsp; &nbsp; "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</p><p>&nbsp; &nbsp; "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p><p>&nbsp; ],</p><p>&nbsp; "tagid" : 134</p><p>}</p></td></tr></tbody></table><p><strong>返回说明（正常时返回的json包示例）<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p><p>&nbsp; "errcode":0,</p><p>&nbsp; "errmsg":"ok"</p><p>}</p></td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40032</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">每次传入的openid列表个数不能超过50个</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45159</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的标签</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45059</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">有粉丝身上的标签数已经超过限制<br></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr></tbody></table><p><strong>2. 批量为用户取消标签</strong></p><p><strong>接口调用请求说明<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/tags/members/batchuntagging?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "openid_list" : [//粉丝列表</p><p>&nbsp; &nbsp; "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</p><p>&nbsp; &nbsp; "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p><p>&nbsp; ],</p><p>&nbsp; "tagid" : 134</p><p>}</p></td></tr></tbody></table><p><strong>返回说明（正常时返回的json包示例）<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p><p>&nbsp; "errcode":0,</p><p>&nbsp; "errmsg":"ok"</p><p>}</p></td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40032</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">每次传入的openid列表个数不能超过50个</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45159</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的标签</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr></tbody></table><p><strong>3.&nbsp;获取用户身上的标签列表<br></strong></p><p><strong>接口调用请求说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p><p>https://api.weixin.qq.com/cgi-bin/tags/getidlist?access_token=ACCESS_TOKEN</p><p>POST数据格式：JSON</p><p>POST数据例子：</p><p>{</p><p>&nbsp; "openid" : "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p><p>}</p></td></tr></tbody></table><p><strong>返回说明（正常情况下返回的json示例）<br></strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;">{<p>&nbsp; "tagid_list":[//被置上的标签列表</p><p>134,</p><p>2</p><p>&nbsp; ]</p><p>}</p></td></tr></tbody></table><p><strong>错误码说明</strong></p><table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr><tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr></tbody></table><p><br></p>
+                    <p><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span>开发者可以使用用户标签管理的相关接口，实现对公众号的标签进行创建、查询、修改、删除等操作，也可以对用户进行打标签、取消标签等操作。</p>
+<p><span style="font-size: 18px;"><strong>标签管理</strong></span><strong><br></strong></p>
+<p><strong>1. 创建标签</strong></p>
+<p>一个公众号，最多可以创建100个标签。</p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/tags/create?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "tag" : {</p>
+<p>&nbsp; &nbsp; "name" : "广东"//标签名</p>
+<p>&nbsp; }</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>参数说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>参数</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">access_token</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">调用接口凭据</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">name</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名（30个字符以内）</td></tr>
+</tbody></table>
+<p><strong>返回说明（正常时返回的json数据包示例）<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;">{<p>&nbsp; "tag":{</p>
+<p>"id":134,//标签id</p>
+<p>"name":"广东"</p>
+<p>&nbsp; }</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回参数说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>参数</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">id</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签id，由微信分配</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">name</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名，UTF8编码</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45157<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名非法，请注意不能和其他标签重名</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45158</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名长度超过30个字节</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45056</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">创建的标签数过多，请注意不能超过100个</td></tr>
+</tbody></table>
+<p><strong>2. 获取公众号已创建的标签</strong></p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：GET（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/tags/get?access_token=ACCESS_TOKEN</p>
+</td></tr>
+</tbody></table>
+<p style="white-space: normal;"><strong>返回说明<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p>
+<p>&nbsp; "tags":[{</p>
+<p>&nbsp; &nbsp; &nbsp; "id":1,</p>
+<p>&nbsp; &nbsp; &nbsp; "name":"每天一罐可乐星人",</p>
+<p>&nbsp; &nbsp; &nbsp; "count":0 //此标签下粉丝数</p>
+<p>},{</p>
+<p>&nbsp; "id":2,</p>
+<p>&nbsp; "name":"星标组",</p>
+<p>&nbsp; "count":0</p>
+<p>},{</p>
+<p>&nbsp; "id":127,</p>
+<p>&nbsp; "name":"广东",</p>
+<p>&nbsp; "count":5</p>
+<p>}</p>
+<p>&nbsp; ]</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>3. 编辑标签</strong></p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/tags/update?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "tag" : {</p>
+<p>&nbsp; &nbsp; "id" : 134,</p>
+<p>&nbsp; &nbsp; "name" : "广东人"</p>
+<p>&nbsp; }</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回说明<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p>
+<p>&nbsp; "errcode":0,</p>
+<p>&nbsp; "errmsg":"ok"</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45157</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名非法，请注意不能和其他标签重名</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45158</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">标签名长度超过30个字节</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45058</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不能修改0/1/2这三个系统默认保留的标签</td></tr>
+</tbody></table>
+<p><strong>4. 删除标签</strong></p>
+<p>请注意，当某个标签下的粉丝超过10w时，后台不可直接删除标签。此时，开发者可以对该标签下的openid列表，先进行取消标签的操作，直到粉丝数不超过10w后，才可直接删除该标签。<strong><br></strong></p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;">http请求方式：POST（请使用https协议）<p>https://api.weixin.qq.com/cgi-bin/tags/delete?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "tag":{</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp;"id" : 134</p>
+<p>&nbsp; }</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p>
+<p>&nbsp; "errcode":0,</p>
+<p>&nbsp; "errmsg":"ok"</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45058</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不能修改0/1/2这三个系统默认保留的标签</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45057<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">该标签下粉丝数超过10w，不允许直接删除</td></tr>
+</tbody></table>
+<p><strong>5. 获取标签下粉丝列表</strong></p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：GET（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/user/tag/get?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "tagid" : 134,</p>
+<p>&nbsp; "next_openid":""//第一个拉取的OPENID，不填默认从头开始拉取</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回说明（正常时返回的json包示例）<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p>
+<p>&nbsp; "count":2,//这次获取的粉丝数量</p>
+<p>&nbsp; "data":{//粉丝列表</p>
+<p>"openid":[</p>
+<p>&nbsp; &nbsp; "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</p>
+<p>&nbsp; &nbsp; "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p>
+<p>&nbsp; &nbsp; ]</p>
+<p>&nbsp; },</p>
+<p>&nbsp; "next_openid":"ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"//拉取列表最后一个用户的openid</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45159</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的tag_id</td></tr>
+</tbody></table>
+<p><br></p>
+<p><span style="font-size: 18px;"><strong>用户管理</strong></span></p>
+<p>标签功能目前支持公众号为用户打上最多三个标签。</p>
+<p><strong>1. 批量为用户打标签</strong></p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/tags/members/batchtagging?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "openid_list" : [//粉丝列表</p>
+<p>&nbsp; &nbsp; "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</p>
+<p>&nbsp; &nbsp; "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p>
+<p>&nbsp; ],</p>
+<p>&nbsp; "tagid" : 134</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回说明（正常时返回的json包示例）<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p>
+<p>&nbsp; "errcode":0,</p>
+<p>&nbsp; "errmsg":"ok"</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40032</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">每次传入的openid列表个数不能超过50个</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45159</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的标签</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45059</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">有粉丝身上的标签数已经超过限制<br></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr>
+</tbody></table>
+<p><strong>2. 批量为用户取消标签</strong></p>
+<p><strong>接口调用请求说明<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/tags/members/batchuntagging?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "openid_list" : [//粉丝列表</p>
+<p>&nbsp; &nbsp; "ocYxcuAEy30bX0NXmGn4ypqx3tI0",</p>
+<p>&nbsp; &nbsp; "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p>
+<p>&nbsp; ],</p>
+<p>&nbsp; "tagid" : 134</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回说明（正常时返回的json包示例）<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>{</p>
+<p>&nbsp; "errcode":0,</p>
+<p>&nbsp; "errmsg":"ok"</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40032</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">每次传入的openid列表个数不能超过50个</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">45159</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">非法的标签</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr>
+</tbody></table>
+<p><strong>3.&nbsp;获取用户身上的标签列表<br></strong></p>
+<p><strong>接口调用请求说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;"><p>http请求方式：POST（请使用https协议）</p>
+<p>https://api.weixin.qq.com/cgi-bin/tags/getidlist?access_token=ACCESS_TOKEN</p>
+<p>POST数据格式：JSON</p>
+<p>POST数据例子：</p>
+<p>{</p>
+<p>&nbsp; "openid" : "ocYxcuBt0mRugKZ7tGAHPnUaOW7Y"</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>返回说明（正常情况下返回的json示例）<br></strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="963" valign="top" style="word-break: break-all;">{<p>&nbsp; "tagid_list":[//被置上的标签列表</p>
+<p>134,</p>
+<p>2</p>
+<p>&nbsp; ]</p>
+<p>}</p>
+</td></tr>
+</tbody></table>
+<p><strong>错误码说明</strong></p>
+<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>错误码</strong></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><strong>说明</strong></td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr>
+</tbody></table>
+<p><br></p>
                 </div>
             </div>
         </div>
