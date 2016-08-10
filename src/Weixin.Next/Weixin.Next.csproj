@@ -51,13 +51,16 @@
     <Compile Include="Api\CustomService.cs" />
     <Compile Include="Api\Menu.cs" />
     <Compile Include="Api\Tag.cs" />
+    <Compile Include="Api\Template.cs" />
     <Compile Include="Api\Token.cs" />
     <Compile Include="Api\User.cs" />
     <Compile Include="IApiResult.cs" />
     <Compile Include="IJsonParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Messaging\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>mkdir $(SolutionDir)\..\output
