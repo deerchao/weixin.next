@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -14,6 +15,7 @@ namespace Weixin.Next.Api
             _defaultConfig = defaultConfig;
         }
 
+        #region Get
         /// <summary>
         /// 发送 Get 请求, 返回字符串
         /// </summary>
@@ -85,7 +87,9 @@ namespace Weixin.Next.Api
                 throw;
             }
         }
+        #endregion
 
+        #region Post
         /// <summary>
         /// 发送 Post 请求, 返回字符串
         /// </summary>
@@ -166,7 +170,114 @@ namespace Weixin.Next.Api
                 throw;
             }
         }
+        #endregion
 
+        #region Upload
+        /// <summary>
+        /// 上传文件, 返回字符串
+        /// </summary>
+        /// <param name="url">接口网址, 里边的 $acac$ 会被自动替换成 access_token=xxx </param>
+        /// <param name="fieldName">文件字段名称</param>
+        /// <param name="fileName">文件名</param>
+        /// <param name="fileStream">文件内容流</param>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        public static async Task<string> UploadString(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        {
+            var content = BuildUploadContent(fieldName, fileName, fileStream);
+
+            url = await FormatUrl(url, config).ConfigureAwait(false);
+            var http = config?.HttpClient ?? _defaultConfig.HttpClient;
+
+            var response = await http.PostAsync(url, content).ConfigureAwait(false);
+            return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// 上传文件, 并返回结果对象；如遇 access_token 超时错误, 会自动获取新的 access_token 并重试
+        /// </summary>
+        /// <typeparam name="T">结果对象类型</typeparam>
+        /// <param name="url">接口网址, 里边的 $acac$ 会被自动替换成 access_token=xxx </param>
+        /// <param name="fieldName">文件字段名称</param>
+        /// <param name="fileName">文件名</param>
+        /// <param name="fileStream">文件内容流</param>
+        /// <param name="config"></param>
+        /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
+        public static async Task<T> UploadResult<T>(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+            where T : IApiResult
+        {
+            try
+            {
+                var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                return BuildResult<T>(text, config);
+            }
+            catch (ApiException ex)
+            {
+                //access_token超时
+                if (ex.Code == 42001)
+                {
+                    var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
+                    await m.GetToken(true).ConfigureAwait(false);
+
+                    var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                    return BuildResult<T>(text, config);
+                }
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 上传文件, 并检查返回结果是否用错误；如遇 access_token 超时错误, 会自动获取新的 access_token 并重试
+        /// </summary>
+        /// <param name="url">接口网址, 里边的 $acac$ 会被自动替换成 access_token=xxx </param>
+        /// <param name="fieldName">文件字段名称</param>
+        /// <param name="fileName">文件名</param>
+        /// <param name="fileStream">文件内容流</param>
+        /// <param name="config"></param>
+        /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
+        public static async Task UploadVoid(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        {
+            try
+            {
+                var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                BuildVoid(text, config);
+            }
+            catch (ApiException ex)
+            {
+                //access_token超时
+                if (ex.Code == 42001)
+                {
+                    var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
+                    await m.GetToken(true).ConfigureAwait(false);
+
+                    var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                    BuildVoid(text, config);
+                }
+
+                throw;
+            }
+        }
+        #endregion
+
+        private static MultipartFormDataContent BuildUploadContent(string fieldName, string fileName, Stream fileStream)
+        {
+            var boundary = Guid.NewGuid().ToString("n");
+            var content = new MultipartFormDataContent(boundary);
+
+            if (fieldName != null)
+                fieldName = '"' + fieldName + '"';
+
+            if (fileName != null)
+                fileName = '"' + fileName + '"';
+
+            content.Add(new StreamContent(fileStream), fieldName, fileName);
+
+            //微信服务器不接受引号括起来的 boundary..
+            content.Headers.Remove("Content-Type");
+            content.Headers.TryAddWithoutValidation("Content-Type", "multipart/form-data; boundary=" + boundary);
+            return content;
+        }
 
         private static async Task<string> FormatUrl(string url, ApiConfig config)
         {
@@ -174,8 +285,7 @@ namespace Weixin.Next.Api
             var accessToken = await m.GetToken().ConfigureAwait(false);
             var escapedToken = Uri.EscapeDataString(accessToken);
 
-            return url
-                .Replace("$acac$", "access_token=" + escapedToken);
+            return url.Replace("$acac$", "access_token=" + escapedToken);
         }
 
         /// <summary>
