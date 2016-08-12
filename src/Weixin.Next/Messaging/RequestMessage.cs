@@ -65,10 +65,6 @@ namespace Weixin.Next.Messaging
         /// 消息类型
         /// </summary>
         public RequestMessageType MsgType { get; set; }
-        /// <summary>
-        /// 消息id，64位整型
-        /// </summary>
-        public long MsgId { get; set; }
 
         #region Parse
         // ReSharper disable PossibleNullReferenceException
@@ -83,8 +79,36 @@ namespace Weixin.Next.Messaging
 
             var msgType = (RequestMessageType)Enum.Parse(typeof(RequestMessageType), root.Element("MsgType").Value);
 
-            RequestMessage result = null;
-            switch (msgType)
+            var result = msgType == RequestMessageType.@event
+                ? (RequestMessage)EventMessage.Parse(root)
+                : NormalRequestMessage.Parse(root, msgType);
+
+            if (result != null)
+            {
+                result.ToUserName = root.Element("ToUserName").Value;
+                result.FromUserName = root.Element("FromUserName").Value;
+                result.CreateTime = long.Parse(root.Element("CreateTime").Value);
+                result.MsgType = msgType;
+            }
+            return result;
+        }
+        // ReSharper restore PossibleNullReferenceException
+        #endregion
+    }
+
+    public abstract class NormalRequestMessage : RequestMessage
+    {
+        /// <summary>
+        /// 消息id，64位整型
+        /// </summary>
+        public long MsgId { get; set; }
+
+        #region Parse
+        // ReSharper disable PossibleNullReferenceException
+        public static NormalRequestMessage Parse(XElement root, RequestMessageType type)
+        {
+            NormalRequestMessage result = null;
+            switch (type)
             {
                 case RequestMessageType.text:
                     result = Text(root);
@@ -107,23 +131,17 @@ namespace Weixin.Next.Messaging
                 case RequestMessageType.link:
                     result = Link(root);
                     break;
-                case RequestMessageType.@event:
-                    result = EventMessage.Parse(root);
-                    break;
             }
 
             if (result != null)
             {
-                result.ToUserName = root.Element("ToUserName").Value;
-                result.FromUserName = root.Element("FromUserName").Value;
-                result.CreateTime = long.Parse(root.Element("CreateTime").Value);
-                result.MsgType = msgType;
                 result.MsgId = long.Parse(root.Element("MsgId").Value);
             }
+
             return result;
         }
 
-        private static RequestMessage Text(XElement root)
+        private static NormalRequestMessage Text(XElement root)
         {
             return new TextRequestMessage
             {
@@ -131,7 +149,7 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        private static RequestMessage Image(XElement root)
+        private static NormalRequestMessage Image(XElement root)
         {
             return new ImageRequestMessage
             {
@@ -140,7 +158,7 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        private static RequestMessage Voice(XElement root)
+        private static NormalRequestMessage Voice(XElement root)
         {
             return new VoiceRequestMessage
             {
@@ -150,7 +168,7 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        private static RequestMessage Video(XElement root)
+        private static NormalRequestMessage Video(XElement root)
         {
             return new VideoRequestMessage
             {
@@ -159,7 +177,7 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        private static RequestMessage ShortVideo(XElement root)
+        private static NormalRequestMessage ShortVideo(XElement root)
         {
             return new ShortVideoRequestMessage
             {
@@ -168,7 +186,7 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        private static RequestMessage Location(XElement root)
+        private static NormalRequestMessage Location(XElement root)
         {
             return new LocationRequestMessage
             {
@@ -179,7 +197,7 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        private static RequestMessage Link(XElement root)
+        private static NormalRequestMessage Link(XElement root)
         {
             return new LinkRequestMessage
             {
@@ -190,10 +208,6 @@ namespace Weixin.Next.Messaging
         }
         // ReSharper restore PossibleNullReferenceException
         #endregion
-    }
-
-    public abstract class NormalRequestMessage : RequestMessage
-    {
     }
 
     /// <summary>
