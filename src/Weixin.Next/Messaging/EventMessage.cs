@@ -1,11 +1,138 @@
-﻿namespace Weixin.Next.Messaging
+﻿using System;
+using System.Xml.Linq;
+
+namespace Weixin.Next.Messaging
 {
+    // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信发送过来的事件消息的类别
+    /// </summary>
+    public enum EventMessageType
+    {
+        /// <summary>
+        /// 关注事件
+        /// </summary>
+        subscribe,
+        /// <summary>
+        /// 取消关注事件
+        /// </summary>
+        unsubscribe,
+        /// <summary>
+        /// 扫描带参数二维码事件
+        /// </summary>
+        scan,
+        /// <summary>
+        /// 上报地理位置事件
+        /// </summary>
+        location,
+        /// <summary>
+        /// 菜单点击事件
+        /// </summary>
+        click,
+        /// <summary>
+        /// 菜单浏览时间
+        /// </summary>
+        view,
+    }
+    // ReSharper restore InconsistentNaming
+
     public abstract class EventMessage : RequestMessage
     {
         /// <summary>
         /// 事件类型
         /// </summary>
-        public string Event { get; set; }
+        public EventMessageType Event { get; set; }
+
+        #region Parse
+        // ReSharper disable PossibleNullReferenceException
+        /// <summary>
+        /// 根据 XML 元素生成 EventMessage 对象
+        /// </summary>
+        /// <param name="root">代表微信消息中的 xml</param>
+        /// <returns></returns>
+        public static EventMessage Parse(XElement root)
+        {
+            var @event = (EventMessageType)Enum.Parse(typeof(EventMessageType), root.Element("Event").Value);
+            EventMessage result = null;
+
+            switch (@event)
+            {
+                case EventMessageType.subscribe:
+                    result = Subscribe(root);
+                    break;
+                case EventMessageType.unsubscribe:
+                    result = Unsubscribe(root);
+                    break;
+                case EventMessageType.scan:
+                    result = Scan(root);
+                    break;
+                case EventMessageType.location:
+                    result = Location(root);
+                    break;
+                case EventMessageType.click:
+                    result = Click(root);
+                    break;
+                case EventMessageType.view:
+                    result = View(root);
+                    break;
+            }
+
+            if (result != null)
+            {
+                result.Event = @event;
+
+                var keyed = result as KeyedEventMessage;
+                if (keyed != null)
+                {
+                    keyed.EventKey = root.Element("EventKey")?.Value;
+
+                    var ticked = result as TicketedEventMessage;
+                    if (ticked != null)
+                    {
+                        ticked.Ticket = root.Element("Ticket")?.Value;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        private static EventMessage Subscribe(XElement root)
+        {
+            return new SubscribeEventMessage();
+        }
+
+        private static EventMessage Unsubscribe(XElement root)
+        {
+            return new UnsubscribeEventMessage();
+        }
+
+        private static EventMessage Scan(XElement root)
+        {
+            return new ScanEventMessage();
+        }
+
+        private static EventMessage Location(XElement root)
+        {
+            return new LocationEventMessage
+            {
+                Latitude = double.Parse(root.Element("Latitude").Value),
+                Longitude = double.Parse(root.Element("Longitude").Value),
+                Precision = double.Parse(root.Element("Precision").Value),
+            };
+        }
+
+        private static EventMessage Click(XElement root)
+        {
+            return new ClickEventMessage();
+        }
+
+        private static EventMessage View(XElement root)
+        {
+            return new ViewEventMessage();
+        }
+        // ReSharper restore PossibleNullReferenceException
+        #endregion
     }
 
     public abstract class KeyedEventMessage : EventMessage
@@ -73,10 +200,12 @@
         /// 地理位置纬度
         /// </summary>
         public double Latitude { get; set; }
+
         /// <summary>
         /// 地理位置经度
         /// </summary>
         public double Longitude { get; set; }
+
         /// <summary>
         /// 地理位置精度
         /// </summary>

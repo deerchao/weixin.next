@@ -1,5 +1,52 @@
-﻿namespace Weixin.Next.Messaging
+﻿using System;
+using System.Xml.Linq;
+
+namespace Weixin.Next.Messaging
 {
+    // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信发送过来的消息的类别
+    /// </summary>
+    public enum RequestMessageType
+    {
+        /// <summary>
+        /// 文本消息
+        /// </summary>
+        text,
+        /// <summary>
+        /// 图片消息
+        /// </summary>
+        image,
+        /// <summary>
+        /// 语音消息
+        /// </summary>
+        voice,
+        /// <summary>
+        /// 视频消息
+        /// </summary>
+        video,
+        /// <summary>
+        /// 小视频消息
+        /// </summary>
+        shortvideo,
+        /// <summary>
+        /// 地理位置消息
+        /// </summary>
+        location,
+        /// <summary>
+        /// 链接消息
+        /// </summary>
+        link,
+        /// <summary>
+        /// 事件消息
+        /// </summary>
+        @event,
+    }
+    // ReSharper restore InconsistentNaming
+
+    /// <summary>
+    /// 微信发送过来的消息
+    /// </summary>
     public abstract class RequestMessage
     {
         /// <summary>
@@ -17,18 +64,142 @@
         /// <summary>
         /// 消息类型
         /// </summary>
-        public string MsgType { get; set; }
+        public RequestMessageType MsgType { get; set; }
         /// <summary>
         /// 消息id，64位整型
         /// </summary>
         public long MsgId { get; set; }
+
+        #region Parse
+        // ReSharper disable PossibleNullReferenceException
+        /// <summary>
+        /// 根据 XML 字符串生成 RequestMessage 对象
+        /// </summary>
+        /// <param name="xml">解密后的 xml 字符串</param>
+        /// <returns></returns>
+        public static RequestMessage Parse(string xml)
+        {
+            var root = XDocument.Parse(xml).Root;
+
+            var msgType = (RequestMessageType)Enum.Parse(typeof(RequestMessageType), root.Element("MsgType").Value);
+
+            RequestMessage result = null;
+            switch (msgType)
+            {
+                case RequestMessageType.text:
+                    result = Text(root);
+                    break;
+                case RequestMessageType.image:
+                    result = Image(root);
+                    break;
+                case RequestMessageType.voice:
+                    result = Voice(root);
+                    break;
+                case RequestMessageType.video:
+                    result = Video(root);
+                    break;
+                case RequestMessageType.shortvideo:
+                    result = ShortVideo(root);
+                    break;
+                case RequestMessageType.location:
+                    result = Location(root);
+                    break;
+                case RequestMessageType.link:
+                    result = Link(root);
+                    break;
+                case RequestMessageType.@event:
+                    result = EventMessage.Parse(root);
+                    break;
+            }
+
+            if (result != null)
+            {
+                result.ToUserName = root.Element("ToUserName").Value;
+                result.FromUserName = root.Element("FromUserName").Value;
+                result.CreateTime = long.Parse(root.Element("CreateTime").Value);
+                result.MsgType = msgType;
+                result.MsgId = long.Parse(root.Element("MsgId").Value);
+            }
+            return result;
+        }
+
+        private static RequestMessage Text(XElement root)
+        {
+            return new TextRequestMessage
+            {
+                Content = root.Element("Content").Value,
+            };
+        }
+
+        private static RequestMessage Image(XElement root)
+        {
+            return new ImageRequestMessage
+            {
+                PicUrl = root.Element("PicUrl").Value,
+                MediaId = root.Element("MediaId").Value,
+            };
+        }
+
+        private static RequestMessage Voice(XElement root)
+        {
+            return new VoiceRequestMessage
+            {
+                MediaId = root.Element("MediaId").Value,
+                Format = root.Element("Format").Value,
+                Recognition = root.Element("Recognition")?.Value,
+            };
+        }
+
+        private static RequestMessage Video(XElement root)
+        {
+            return new VideoRequestMessage
+            {
+                MediaId = root.Element("MediaId").Value,
+                ThumbMediaId = root.Element("ThumbMediaId").Value,
+            };
+        }
+
+        private static RequestMessage ShortVideo(XElement root)
+        {
+            return new ShortVideoRequestMessage
+            {
+                MediaId = root.Element("MediaId").Value,
+                ThumbMediaId = root.Element("ThumbMediaId").Value,
+            };
+        }
+
+        private static RequestMessage Location(XElement root)
+        {
+            return new LocationRequestMessage
+            {
+                Location_X = double.Parse(root.Element("Location_X").Value),
+                Location_Y = double.Parse(root.Element("Location_Y").Value),
+                Scale = int.Parse(root.Element("Scale").Value),
+                Label = root.Element("Label").Value,
+            };
+        }
+
+        private static RequestMessage Link(XElement root)
+        {
+            return new LinkRequestMessage
+            {
+                Title = root.Element("Title").Value,
+                Description = root.Element("Description").Value,
+                Url = root.Element("Url").Value,
+            };
+        }
+        // ReSharper restore PossibleNullReferenceException
+        #endregion
     }
 
+    public abstract class NormalRequestMessage : RequestMessage
+    {
+    }
 
     /// <summary>
     /// text 文本消息
     /// </summary>
-    public class TextRequestMessage : RequestMessage
+    public class TextRequestMessage : NormalRequestMessage
     {
         /// <summary>
         /// 消息内容
@@ -39,7 +210,7 @@
     /// <summary>
     /// image 图片消息
     /// </summary>
-    public class ImageRequestMessage : RequestMessage
+    public class ImageRequestMessage : NormalRequestMessage
     {
         /// <summary>
         /// 图片链接（由系统生成）
@@ -55,7 +226,7 @@
     /// <summary>
     /// voice 语音消息
     /// </summary>
-    public class VoiceRequestMessage : RequestMessage
+    public class VoiceRequestMessage : NormalRequestMessage
     {
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
@@ -74,7 +245,7 @@
     /// <summary>
     /// video 视频消息
     /// </summary>
-    public class VideoRequestMessage : RequestMessage
+    public class VideoRequestMessage : NormalRequestMessage
     {
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
@@ -89,7 +260,7 @@
     /// <summary>
     /// shortvideo 小视频消息
     /// </summary>
-    public class ShortVideoRequestMessage : RequestMessage
+    public class ShortVideoRequestMessage : NormalRequestMessage
     {
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
@@ -104,7 +275,7 @@
     /// <summary>
     /// location 地理位置消息
     /// </summary>
-    public class LocationRequstMessage : RequestMessage
+    public class LocationRequestMessage : NormalRequestMessage
     {
         /// <summary>
         /// 地理位置纬度
@@ -127,7 +298,7 @@
     /// <summary>
     /// link 链接消息
     /// </summary>
-    public class LinkRequestMessage : RequestMessage
+    public class LinkRequestMessage : NormalRequestMessage
     {
 
         /// <summary>
