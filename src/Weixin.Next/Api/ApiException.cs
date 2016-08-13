@@ -1,6 +1,6 @@
 using System;
 
-namespace Weixin.Next
+namespace Weixin.Next.Api
 {
     public class ApiException : Exception
     {

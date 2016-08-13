@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 
-namespace Weixin.Next
+namespace Weixin.Next.Api
 {
     public class ApiConfig
     {

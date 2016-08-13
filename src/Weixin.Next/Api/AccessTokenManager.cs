@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Weixin.Next.Api;
 
-namespace Weixin.Next
+namespace Weixin.Next.Api
 {
     public class AccessTokenManager
     {

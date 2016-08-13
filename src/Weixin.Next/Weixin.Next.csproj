@@ -44,18 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccessTokenManager.cs" />
-    <Compile Include="ApiConfig.cs" />
-    <Compile Include="ApiException.cs" />
+    <Compile Include="Api\AccessTokenManager.cs" />
+    <Compile Include="Api\ApiConfig.cs" />
+    <Compile Include="Api\ApiException.cs" />
     <Compile Include="Api\ApiHelper.cs" />
     <Compile Include="Api\CustomService.cs" />
+    <Compile Include="Api\IApiResult.cs" />
+    <Compile Include="Api\IJsonParser.cs" />
     <Compile Include="Api\Menu.cs" />
     <Compile Include="Api\Tag.cs" />
     <Compile Include="Api\Template.cs" />
     <Compile Include="Api\Token.cs" />
     <Compile Include="Api\User.cs" />
-    <Compile Include="IApiResult.cs" />
-    <Compile Include="IJsonParser.cs" />
     <Compile Include="Messaging\Crypt\Cryptography.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
     <Compile Include="Messaging\MessageHandler.cs" />
