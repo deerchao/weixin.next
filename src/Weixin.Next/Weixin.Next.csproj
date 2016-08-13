@@ -56,14 +56,17 @@
     <Compile Include="Api\User.cs" />
     <Compile Include="IApiResult.cs" />
     <Compile Include="IJsonParser.cs" />
-    <Compile Include="Messaging\EventMessage.cs" />
-    <Compile Include="Messaging\Cryptography.cs" />
+    <Compile Include="Messaging\Crypt\Cryptography.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
     <Compile Include="Messaging\MessageHandler.cs" />
-    <Compile Include="Messaging\PostUrlParameters.cs" />
-    <Compile Include="Messaging\RequestMessage.cs" />
-    <Compile Include="Messaging\ResponseMessage.cs" />
-    <Compile Include="Messaging\WXBizMsgCrypt.cs" />
+    <Compile Include="Messaging\Crypt\PostUrlParameters.cs" />
+    <Compile Include="Messaging\Requests\EventMessage.cs" />
+    <Compile Include="Messaging\Requests\MenuMessage.cs" />
+    <Compile Include="Messaging\Requests\RequestMessage.cs" />
+    <Compile Include="Messaging\Requests\UnknownEventMessage.cs" />
+    <Compile Include="Messaging\Requests\UnknownRequestMessage.cs" />
+    <Compile Include="Messaging\Responses\ResponseMessage.cs" />
+    <Compile Include="Messaging\Crypt\WXBizMsgCrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -1,4 +1,4 @@
-﻿namespace Weixin.Next.Messaging
+﻿namespace Weixin.Next.Messaging.Crypt
 {
     // ReSharper disable InconsistentNaming
     /// <summary>

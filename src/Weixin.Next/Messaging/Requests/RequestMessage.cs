@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Linq;
 
-namespace Weixin.Next.Messaging
+namespace Weixin.Next.Messaging.Requests
 {
     // ReSharper disable InconsistentNaming
     /// <summary>
@@ -9,6 +9,10 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public enum RequestMessageType
     {
+        /// <summary>
+        /// 未知类型的消息
+        /// </summary>
+        unknown,
         /// <summary>
         /// 文本消息
         /// </summary>
@@ -49,47 +53,53 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public abstract class RequestMessage
     {
+        protected readonly XElement _xml;
+
+        protected RequestMessage(XElement xml)
+        {
+            _xml = xml;
+        }
+
         /// <summary>
         /// 开发者微信号
         /// </summary>
-        public string ToUserName { get; set; }
+        public string ToUserName { get { return _xml.Element("ToUserName").Value; } }
         /// <summary>
         /// 发送方帐号（一个OpenID）
         /// </summary>
-        public string FromUserName { get; set; }
+        public string FromUserName { get { return _xml.Element("FromUserName").Value; } }
         /// <summary>
         /// 消息创建时间 （时间戳）
         /// </summary>
-        public long CreateTime { get; set; }
+        public long CreateTime { get { return long.Parse(_xml.Element("CreateTime").Value); } }
         /// <summary>
         /// 消息类型
         /// </summary>
-        public RequestMessageType MsgType { get; set; }
+        public RequestMessageType MsgType { get; private set; }
 
         #region Parse
         // ReSharper disable PossibleNullReferenceException
         /// <summary>
         /// 根据 XML 字符串生成 RequestMessage 对象
         /// </summary>
-        /// <param name="xml">解密后的 xml 字符串</param>
+        /// <param name="xmlString">解密后的 xml 字符串</param>
         /// <returns></returns>
-        public static RequestMessage Parse(string xml)
+        public static RequestMessage Parse(string xmlString)
         {
-            var root = XDocument.Parse(xml).Root;
+            var xml = XDocument.Parse(xmlString).Root;
 
-            var msgType = (RequestMessageType)Enum.Parse(typeof(RequestMessageType), root.Element("MsgType").Value);
+            RequestMessageType msgType;
+            if (!Enum.TryParse(xml.Element("MsgType").Value, out msgType))
+                msgType = RequestMessageType.unknown;
 
-            var result = msgType == RequestMessageType.@event
-                ? (RequestMessage)EventMessage.Parse(root)
-                : NormalRequestMessage.Parse(root, msgType);
+            var result = msgType == RequestMessageType.unknown
+                ? new UnknownRequestMessage(xml)
+                : msgType == RequestMessageType.@event
+                ? (RequestMessage)EventMessage.Parse(xml)
+                : NormalRequestMessage.Parse(xml, msgType);
 
-            if (result != null)
-            {
-                result.ToUserName = root.Element("ToUserName").Value;
-                result.FromUserName = root.Element("FromUserName").Value;
-                result.CreateTime = long.Parse(root.Element("CreateTime").Value);
-                result.MsgType = msgType;
-            }
+            result.MsgType = msgType;
+
             return result;
         }
         // ReSharper restore PossibleNullReferenceException
@@ -98,113 +108,48 @@ namespace Weixin.Next.Messaging
 
     public abstract class NormalRequestMessage : RequestMessage
     {
+        protected NormalRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 消息id，64位整型
         /// </summary>
-        public long MsgId { get; set; }
+        public long MsgId { get { return long.Parse(_xml.Element("MsgId").Value); } }
 
         #region Parse
         // ReSharper disable PossibleNullReferenceException
-        public static NormalRequestMessage Parse(XElement root, RequestMessageType type)
+        public static NormalRequestMessage Parse(XElement xml, RequestMessageType type)
         {
             NormalRequestMessage result = null;
             switch (type)
             {
                 case RequestMessageType.text:
-                    result = Text(root);
+                    result = new TextRequestMessage(xml);
                     break;
                 case RequestMessageType.image:
-                    result = Image(root);
+                    result = new ImageRequestMessage(xml);
                     break;
                 case RequestMessageType.voice:
-                    result = Voice(root);
+                    result = new VoiceRequestMessage(xml);
                     break;
                 case RequestMessageType.video:
-                    result = Video(root);
+                    result = new VideoRequestMessage(xml);
                     break;
                 case RequestMessageType.shortvideo:
-                    result = ShortVideo(root);
+                    result = new ShortVideoRequestMessage(xml);
                     break;
                 case RequestMessageType.location:
-                    result = Location(root);
+                    result = new LocationRequestMessage(xml);
                     break;
                 case RequestMessageType.link:
-                    result = Link(root);
+                    result = new LinkRequestMessage(xml);
                     break;
-            }
-
-            if (result != null)
-            {
-                result.MsgId = long.Parse(root.Element("MsgId").Value);
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
 
             return result;
-        }
-
-        private static NormalRequestMessage Text(XElement root)
-        {
-            return new TextRequestMessage
-            {
-                Content = root.Element("Content").Value,
-            };
-        }
-
-        private static NormalRequestMessage Image(XElement root)
-        {
-            return new ImageRequestMessage
-            {
-                PicUrl = root.Element("PicUrl").Value,
-                MediaId = root.Element("MediaId").Value,
-            };
-        }
-
-        private static NormalRequestMessage Voice(XElement root)
-        {
-            return new VoiceRequestMessage
-            {
-                MediaId = root.Element("MediaId").Value,
-                Format = root.Element("Format").Value,
-                Recognition = root.Element("Recognition")?.Value,
-            };
-        }
-
-        private static NormalRequestMessage Video(XElement root)
-        {
-            return new VideoRequestMessage
-            {
-                MediaId = root.Element("MediaId").Value,
-                ThumbMediaId = root.Element("ThumbMediaId").Value,
-            };
-        }
-
-        private static NormalRequestMessage ShortVideo(XElement root)
-        {
-            return new ShortVideoRequestMessage
-            {
-                MediaId = root.Element("MediaId").Value,
-                ThumbMediaId = root.Element("ThumbMediaId").Value,
-            };
-        }
-
-        private static NormalRequestMessage Location(XElement root)
-        {
-            return new LocationRequestMessage
-            {
-                Location_X = double.Parse(root.Element("Location_X").Value),
-                Location_Y = double.Parse(root.Element("Location_Y").Value),
-                Scale = int.Parse(root.Element("Scale").Value),
-                Label = root.Element("Label").Value,
-            };
-        }
-
-        private static NormalRequestMessage Link(XElement root)
-        {
-            return new LinkRequestMessage
-            {
-                Title = root.Element("Title").Value,
-                Description = root.Element("Description").Value,
-                Url = root.Element("Url").Value,
-            };
         }
         // ReSharper restore PossibleNullReferenceException
         #endregion
@@ -215,10 +160,14 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class TextRequestMessage : NormalRequestMessage
     {
+        public TextRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 消息内容
         /// </summary>
-        public string Content { get; set; }
+        public string Content { get { return _xml.Element("Content").Value; } }
     }
 
     /// <summary>
@@ -226,15 +175,19 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class ImageRequestMessage : NormalRequestMessage
     {
+        public ImageRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 图片链接（由系统生成）
         /// </summary>
-        public string PicUrl { get; set; }
+        public string PicUrl { get { return _xml.Element("PicUrl").Value; } }
 
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
         /// </summary>
-        public string MediaId { get; set; }
+        public string MediaId { get { return _xml.Element("MediaId").Value; } }
     }
 
     /// <summary>
@@ -242,18 +195,22 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class VoiceRequestMessage : NormalRequestMessage
     {
+        public VoiceRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
         /// </summary>
-        public string MediaId { get; set; }
+        public string MediaId { get { return _xml.Element("MediaId").Value; } }
         /// <summary>
         /// 语音格式，如amr，speex等
         /// </summary>
-        public string Format { get; set; }
+        public string Format { get { return _xml.Element("Format").Value; } }
         /// <summary>
         /// 开通语音识别后才有, 语音识别结果
         /// </summary>
-        public string Recognition { get; set; }
+        public string Recognition { get { return _xml.Element("Recognition")?.Value; } }
     }
 
     /// <summary>
@@ -261,14 +218,18 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class VideoRequestMessage : NormalRequestMessage
     {
+        public VideoRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
         /// </summary>
-        public string MediaId { get; set; }
+        public string MediaId { get { return _xml.Element("MediaId").Value; } }
         /// <summary>
         /// 视频消息缩略图的媒体id，可以调用多媒体文件下载接口拉取数
         /// </summary>
-        public string ThumbMediaId { get; set; }
+        public string ThumbMediaId { get { return _xml.Element("ThumbMediaId").Value; } }
     }
 
     /// <summary>
@@ -276,14 +237,18 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class ShortVideoRequestMessage : NormalRequestMessage
     {
+        public ShortVideoRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 媒体id，可以调用多媒体文件下载接口拉取数据。
         /// </summary>
-        public string MediaId { get; set; }
+        public string MediaId { get { return _xml.Element("MediaId").Value; } }
         /// <summary>
         /// 视频消息缩略图的媒体id，可以调用多媒体文件下载接口拉取数
         /// </summary>
-        public string ThumbMediaId { get; set; }
+        public string ThumbMediaId { get { return _xml.Element("ThumbMediaId").Value; } }
     }
 
     /// <summary>
@@ -291,22 +256,26 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class LocationRequestMessage : NormalRequestMessage
     {
+        public LocationRequestMessage(XElement xml) : base(xml)
+        {
+        }
+
         /// <summary>
         /// 地理位置纬度
         /// </summary>
-        public double Location_X { get; set; }
+        public double Location_X { get { return double.Parse(_xml.Element("Location_X").Value); } }
         /// <summary>
         /// 地理位置经度
         /// </summary>
-        public double Location_Y { get; set; }
+        public double Location_Y { get { return double.Parse(_xml.Element("Location_Y").Value); } }
         /// <summary>
         /// 地图缩放大小
         /// </summary>
-        public int Scale { get; set; }
+        public int Scale { get { return int.Parse(_xml.Element("Scale").Value); } }
         /// <summary>
         /// 地理位置信息
         /// </summary>
-        public string Label { get; set; }
+        public string Label { get { return _xml.Element("Label").Value; } }
     }
 
     /// <summary>
@@ -314,19 +283,21 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public class LinkRequestMessage : NormalRequestMessage
     {
+        public LinkRequestMessage(XElement xml) : base(xml)
+        {
+        }
 
         /// <summary>
         /// 消息标题
         /// </summary>
-        public string Title { get; set; }
+        public string Title { get { return _xml.Element("Title").Value; } }
         /// <summary>
         /// 消息描述
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get { return _xml.Element("Description").Value; } }
         /// <summary>
         /// 消息链接
         /// </summary>
-        public string Url { get; set; }
+        public string Url { get { return _xml.Element("Url").Value; } }
     }
-
 }

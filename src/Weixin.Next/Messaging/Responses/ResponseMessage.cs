@@ -1,4 +1,6 @@
-﻿namespace Weixin.Next.Messaging
+﻿using Weixin.Next.Messaging.Requests;
+
+namespace Weixin.Next.Messaging.Responses
 {
     // ReSharper disable InconsistentNaming
     public enum ResponseMessageType
