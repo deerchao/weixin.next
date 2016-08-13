@@ -32,27 +32,6 @@ namespace Weixin.Next.Messaging
         }
 
 
-        /// <summary>
-        ///  <para>特殊的返回消息: 空字符串</para>
-        /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
-        /// </summary>
-        /// <returns></returns>
-        protected Task<IResponseMessage> Empty()
-        {
-            return _empty;
-        }
-
-        /// <summary>
-        ///  <para>特殊的返回消息: 字符串"success"</para>
-        /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
-        /// </summary>
-        /// <returns></returns>
-        protected Task<IResponseMessage> Success()
-        {
-            return _success;
-        }
-
-
         protected virtual Task<IResponseMessage> HandleNormalRequest(NormalRequestMessage message)
         {
             switch (message.MsgType)
@@ -78,42 +57,42 @@ namespace Weixin.Next.Messaging
 
         protected virtual Task<IResponseMessage> HandleTextRequest(TextRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleImageRequest(ImageRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleVoiceRequest(VoiceRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleVideoRequest(VideoRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleShortVideoRequest(ShortVideoRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleLocationRequest(LocationRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleLinkRequest(LinkRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleUnknownRequest(UnknownRequestMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
 
@@ -156,75 +135,96 @@ namespace Weixin.Next.Messaging
 
         protected virtual Task<IResponseMessage> HandleSubscribeEvent(SubscribeEventMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleUnsubscribeEvent(UnsubscribeEventMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleScanEvent(ScanEventMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleLocationEvent(LocationEventMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
 
         protected virtual Task<IResponseMessage> HandleClickMenu(ClickMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleViewMenu(ViewMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleScanCodePushMenu(ScanCodePushMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleScanCodeWaitMsgMenu(ScanCodeWaitMsgMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandlePicSysPhotoMenu(PicSysPhotoMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandlePicPhotoOrAlbumMenu(PicPhotoOrAlbumMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandlePicWeixinMenu(PicWeixinMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
         protected virtual Task<IResponseMessage> HandleLocationSelectMenu(LocationSelectMenuMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
 
         protected virtual Task<IResponseMessage> HandleUnknownEvent(UnknownEventMessage message)
         {
-            return DefaultResponse();
+            return DefaultResponse(message);
         }
 
 
-        protected virtual Task<IResponseMessage> DefaultResponse()
+        protected virtual Task<IResponseMessage> DefaultResponse(RequestMessage message)
         {
             return Empty();
+        }
+
+
+        /// <summary>
+        ///  <para>特殊的返回消息: 空字符串</para>
+        /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
+        /// </summary>
+        /// <returns></returns>
+        protected Task<IResponseMessage> Empty()
+        {
+            return _empty;
+        }
+
+        /// <summary>
+        ///  <para>特殊的返回消息: 字符串"success"</para>
+        /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
+        /// </summary>
+        /// <returns></returns>
+        protected Task<IResponseMessage> Success()
+        {
+            return _success;
         }
     }
 }

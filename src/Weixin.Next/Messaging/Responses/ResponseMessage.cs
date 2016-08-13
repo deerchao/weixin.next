@@ -63,6 +63,11 @@ namespace Weixin.Next.Messaging.Responses
         /// </summary>
         public abstract ResponseMessageType MsgType { get; }
 
+        public bool EncryptionRequired
+        {
+            get { return true; }
+        }
+
         public string Serialize()
         {
             var xml = new XElement("xml",

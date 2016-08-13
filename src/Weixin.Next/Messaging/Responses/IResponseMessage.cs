@@ -3,6 +3,10 @@ namespace Weixin.Next.Messaging.Responses
     public interface IResponseMessage
     {
         /// <summary>
+        /// 返回给微信时是否需要先加密
+        /// </summary>
+        bool EncryptionRequired { get; }
+        /// <summary>
         /// 转化为返回微信服务器的消息文本
         /// </summary>
         /// <returns></returns>
@@ -27,6 +31,11 @@ namespace Weixin.Next.Messaging.Responses
         public string Message
         {
             get { return _message; }
+        }
+
+        public bool EncryptionRequired
+        {
+            get { return false; }
         }
 
         public string Serialize()

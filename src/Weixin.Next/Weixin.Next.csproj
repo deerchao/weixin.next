@@ -58,8 +58,9 @@
     <Compile Include="Api\User.cs" />
     <Compile Include="Messaging\Crypt\Cryptography.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
+    <Compile Include="Messaging\MessageCenter.cs" />
     <Compile Include="Messaging\MessageHandler.cs" />
-    <Compile Include="Messaging\Crypt\PostUrlParameters.cs" />
+    <Compile Include="Messaging\PostUrlParameters.cs" />
     <Compile Include="Messaging\Requests\EventMessage.cs" />
     <Compile Include="Messaging\Requests\MenuMessage.cs" />
     <Compile Include="Messaging\Requests\RequestMessage.cs" />

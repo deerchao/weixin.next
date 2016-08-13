@@ -23,7 +23,7 @@ namespace Tencent
         string m_sToken;
         string m_sEncodingAESKey;
         string m_sAppID;
-        enum WXBizMsgCryptErrorCode
+        public enum WXBizMsgCryptErrorCode
         {
             WXBizMsgCrypt_OK = 0,
             WXBizMsgCrypt_ValidateSignature_Error = -40001,
@@ -57,11 +57,11 @@ namespace Tencent
         // @param sPostData: 密文，对应POST请求的数据
         // @param sMsg: 解密后的原文，当return返回0时有效
         // @return: 成功0，失败返回对应的错误码
-        public int DecryptMsg(string sMsgSignature, string sTimeStamp, string sNonce, string sPostData, ref string sMsg)
+        public WXBizMsgCryptErrorCode DecryptMsg(string sMsgSignature, string sTimeStamp, string sNonce, string sPostData, ref string sMsg)
         {
             if (m_sEncodingAESKey.Length != 43)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_IllegalAesKey;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_IllegalAesKey;
             }
             XmlDocument doc = new XmlDocument();
             XmlNode root;
@@ -74,10 +74,10 @@ namespace Tencent
             }
             catch (Exception)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_ParseXml_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_ParseXml_Error;
             }
             //verify signature
-            int ret = 0;
+            var ret = WXBizMsgCryptErrorCode.WXBizMsgCrypt_OK;
             ret = VerifySignature(m_sToken, sTimeStamp, sNonce, sEncryptMsg, sMsgSignature);
             if (ret != 0)
                 return ret;
@@ -89,14 +89,14 @@ namespace Tencent
             }
             catch (FormatException)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_DecodeBase64_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_DecodeBase64_Error;
             }
             catch (Exception)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_DecryptAES_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_DecryptAES_Error;
             }
             if (cpid != m_sAppID)
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_ValidateAppid_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_ValidateAppid_Error;
             return 0;
         }
 
@@ -107,11 +107,11 @@ namespace Tencent
         // @param sEncryptMsg: 加密后的可以直接回复用户的密文，包括msg_signature, timestamp, nonce, encrypt的xml格式的字符串,
         //						当return返回0时有效
         // return：成功0，失败返回对应的错误码
-        public int EncryptMsg(string sReplyMsg, string sTimeStamp, string sNonce, ref string sEncryptMsg)
+        public WXBizMsgCryptErrorCode EncryptMsg(string sReplyMsg, string sTimeStamp, string sNonce, ref string sEncryptMsg)
         {
             if (m_sEncodingAESKey.Length != 43)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_IllegalAesKey;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_IllegalAesKey;
             }
             string raw = "";
             try
@@ -120,10 +120,10 @@ namespace Tencent
             }
             catch (Exception)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_EncryptAES_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_EncryptAES_Error;
             }
             string MsgSigature = "";
-            int ret = 0;
+            WXBizMsgCryptErrorCode ret = 0;
             ret = GenarateSinature(m_sToken, sTimeStamp, sNonce, raw, ref MsgSigature);
             if (0 != ret)
                 return ret;
@@ -168,10 +168,10 @@ namespace Tencent
             }
         }
         //Verify Signature
-        private static int VerifySignature(string sToken, string sTimeStamp, string sNonce, string sMsgEncrypt, string sSigture)
+        private static WXBizMsgCryptErrorCode VerifySignature(string sToken, string sTimeStamp, string sNonce, string sMsgEncrypt, string sSigture)
         {
             string hash = "";
-            int ret = 0;
+            WXBizMsgCryptErrorCode ret = 0;
             ret = GenarateSinature(sToken, sTimeStamp, sNonce, sMsgEncrypt, ref hash);
             if (ret != 0)
                 return ret;
@@ -180,11 +180,11 @@ namespace Tencent
                 return 0;
             else
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_ValidateSignature_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_ValidateSignature_Error;
             }
         }
 
-        public static int GenarateSinature(string sToken, string sTimeStamp, string sNonce, string sMsgEncrypt, ref string sMsgSignature)
+        public static WXBizMsgCryptErrorCode GenarateSinature(string sToken, string sTimeStamp, string sNonce, string sMsgEncrypt, ref string sMsgSignature)
         {
             ArrayList AL = new ArrayList();
             AL.Add(sToken);
@@ -212,7 +212,7 @@ namespace Tencent
             }
             catch (Exception)
             {
-                return (int)WXBizMsgCryptErrorCode.WXBizMsgCrypt_ComputeSignature_Error;
+                return WXBizMsgCryptErrorCode.WXBizMsgCrypt_ComputeSignature_Error;
             }
             sMsgSignature = hash;
             return 0;
