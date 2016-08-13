@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Xml.Linq;
 
 namespace Weixin.Next.Messaging
@@ -33,6 +34,30 @@ namespace Weixin.Next.Messaging
         /// 菜单浏览时间
         /// </summary>
         view,
+        /// <summary>
+        /// 扫码推事件的事件推送
+        /// </summary>
+        scancode_push,
+        /// <summary>
+        /// 扫码推事件且弹出“消息接收中”提示框的事件推送
+        /// </summary>
+        scancode_waitmsg,
+        /// <summary>
+        /// 弹出系统拍照发图的事件推送
+        /// </summary>
+        pic_sysphoto,
+        /// <summary>
+        /// 弹出拍照或者相册发图的事件推送
+        /// </summary>
+        pic_photo_or_album,
+        /// <summary>
+        /// 弹出微信相册发图器的事件推送
+        /// </summary>
+        pic_weixin,
+        /// <summary>
+        /// 弹出地理位置选择器的事件推送
+        /// </summary>
+        location_select,
     }
     // ReSharper restore InconsistentNaming
 
@@ -69,11 +94,8 @@ namespace Weixin.Next.Messaging
                 case EventMessageType.location:
                     result = Location(root);
                     break;
-                case EventMessageType.click:
-                    result = Click(root);
-                    break;
-                case EventMessageType.view:
-                    result = View(root);
+                default:
+                    result = MenuMessage.Parse(root, @event);
                     break;
             }
 
@@ -121,16 +143,6 @@ namespace Weixin.Next.Messaging
                 Precision = double.Parse(root.Element("Precision").Value),
             };
         }
-
-        private static EventMessage Click(XElement root)
-        {
-            return new ClickEventMessage();
-        }
-
-        private static EventMessage View(XElement root)
-        {
-            return new ViewEventMessage();
-        }
         // ReSharper restore PossibleNullReferenceException
         #endregion
     }
@@ -151,7 +163,7 @@ namespace Weixin.Next.Messaging
         public string Ticket { get; set; }
     }
 
-
+    #region Concrete
     /// <summary>
     /// subscribe 订阅
     /// <para>
@@ -211,6 +223,140 @@ namespace Weixin.Next.Messaging
         /// </summary>
         public double Precision { get; set; }
     }
+    #endregion
+
+    #region Menu
+
+    public abstract class MenuMessage : KeyedEventMessage
+    {
+        public static MenuMessage Parse(XElement root, EventMessageType @event)
+        {
+            MenuMessage result = null;
+            switch (@event)
+            {
+
+                case EventMessageType.click:
+                    return Click(root);
+                case EventMessageType.view:
+                    return View(root);
+                case EventMessageType.scancode_push:
+                    return ScanCodePush(root);
+                case EventMessageType.scancode_waitmsg:
+                    return ScanCodeWaitMsg(root);
+                case EventMessageType.pic_sysphoto:
+                    return PicSysPhoto(root);
+                case EventMessageType.pic_photo_or_album:
+                    return PicPhotoOrAlbum(root);
+                case EventMessageType.pic_weixin:
+                    return PicWeixin(root);
+                case EventMessageType.location_select:
+                    return LocationSelect(root);
+            }
+
+            return result;
+        }
+
+        private static MenuMessage Click(XElement root)
+        {
+            return new ClickMenuMessage();
+        }
+
+        private static MenuMessage View(XElement root)
+        {
+            return new ViewMenuMessage();
+        }
+
+        private static MenuMessage ScanCodePush(XElement root)
+        {
+            var sci = root.Element("ScanCodeInfo");
+            return new ScanCodePushMenuMessage
+            {
+                ScanCodeInfo = new ScanCodeInfo
+                {
+                    ScanType = sci.Element("ScanType").Value,
+                    ScanResult = sci.Element("ScanResult").Value,
+                }
+            };
+        }
+
+        private static MenuMessage ScanCodeWaitMsg(XElement root)
+        {
+            var sci = root.Element("ScanCodeInfo");
+            return new ScanCodeWaitMsgMenuMessage
+            {
+                ScanCodeInfo = new ScanCodeInfo
+                {
+                    ScanType = sci.Element("ScanType").Value,
+                    ScanResult = sci.Element("ScanResult").Value,
+                }
+            };
+
+        }
+
+        private static MenuMessage PicSysPhoto(XElement root)
+        {
+            var spi = root.Element("SendPicsInfo");
+            return new PicSysPhotoMenuMessage
+            {
+                SendPicsInfo = new SendPicsInfo
+                {
+                    Count = int.Parse(spi.Element("Count").Value),
+                    PicList = spi.Elements("item").Select(x => new PicItem
+                    {
+                        PicMd5Sum = x.Value,
+                    }).ToArray(),
+                }
+            };
+        }
+
+        private static MenuMessage PicPhotoOrAlbum(XElement root)
+        {
+            var spi = root.Element("SendPicsInfo");
+            return new PicPhotoOrAlbumMenuMessage
+            {
+                SendPicsInfo = new SendPicsInfo
+                {
+                    Count = int.Parse(spi.Element("Count").Value),
+                    PicList = spi.Elements("item").Select(x => new PicItem
+                    {
+                        PicMd5Sum = x.Value,
+                    }).ToArray(),
+                }
+            };
+        }
+
+        private static MenuMessage PicWeixin(XElement root)
+        {
+            var spi = root.Element("SendPicsInfo");
+            return new PicWeixinMenuMessage
+            {
+                SendPicsInfo = new SendPicsInfo
+                {
+                    Count = int.Parse(spi.Element("Count").Value),
+                    PicList = spi.Elements("item").Select(x => new PicItem
+                    {
+                        PicMd5Sum = x.Value,
+                    }).ToArray(),
+                }
+            };
+        }
+
+        private static MenuMessage LocationSelect(XElement root)
+        {
+            var sli = root.Element("SendLocationInfo");
+            return new LocationSelectMenuMessage
+            {
+                SendLocationInfo = new SendLocationInfo
+                {
+                    Location_X = double.Parse(sli.Element("Location_X").Value),
+                    Location_Y = double.Parse(sli.Element("Location_Y").Value),
+                    Scale = int.Parse(sli.Element("Scale").Value),
+                    Label = sli.Element("Label").Value,
+                    Poiname = sli.Element("Poiname").Value,
+                }
+            };
+        }
+    }
 
     /// <summary>
     /// click 点击菜单拉取消息
@@ -218,7 +364,7 @@ namespace Weixin.Next.Messaging
     /// EventKey: 与自定义菜单接口中KEY值对应
     /// </para>
     /// </summary>
-    public class ClickEventMessage : KeyedEventMessage
+    public class ClickMenuMessage : MenuMessage
     {
     }
 
@@ -228,7 +374,158 @@ namespace Weixin.Next.Messaging
     /// EventKey: 设置的跳转URL
     /// </para>
     /// </summary>
-    public class ViewEventMessage : KeyedEventMessage
+    public class ViewMenuMessage : MenuMessage
     {
     }
+
+    #region scan
+
+    public class ScanCodeInfo
+    {
+        /// <summary>
+        /// 扫描类型，一般是qrcode
+        /// </summary>
+        public string ScanType { get; set; }
+
+        /// <summary>
+        /// 扫描结果，即二维码对应的字符串信息
+        /// </summary>
+        public string ScanResult { get; set; }
+    }
+
+    public abstract class ScanCodeMenuMessage : MenuMessage
+    {
+        /// <summary>
+        /// 扫描信息
+        /// </summary>
+        public ScanCodeInfo ScanCodeInfo { get; set; }
+    }
+
+    /// <summary>
+    /// scancode_push 扫码推事件的事件推送
+    /// <para>
+    /// EventKey: 事件KEY值，由开发者在创建菜单时设定
+    /// </para>
+    /// </summary>
+    public class ScanCodePushMenuMessage : ScanCodeMenuMessage
+    {
+    }
+
+    /// <summary>
+    /// scancode_waitmsg 扫码推事件且弹出“消息接收中”提示框的事件推送
+    /// <para>
+    /// EventKey: 事件KEY值，由开发者在创建菜单时设定
+    /// </para>
+    /// </summary>
+    public class ScanCodeWaitMsgMenuMessage : ScanCodeMenuMessage
+    {
+    }
+
+    #endregion
+
+    #region pic
+
+    public class PicItem
+    {
+        /// <summary>
+        /// 图片的MD5值，开发者若需要，可用于验证接收到图片
+        /// </summary>
+        public string PicMd5Sum { get; set; }
+    }
+
+    public class SendPicsInfo
+    {
+        /// <summary>
+        /// 发送的图片数量
+        /// </summary>
+        public int Count { get; set; }
+
+        /// <summary>
+        /// 图片列表
+        /// </summary>
+        public PicItem[] PicList { get; set; }
+    }
+
+    public abstract class PicMenuMessage : MenuMessage
+    {
+        /// <summary>
+        /// 发送的图片信息
+        /// </summary>
+        public SendPicsInfo SendPicsInfo { get; set; }
+    }
+
+    /// <summary>
+    /// pic_sysphoto 弹出系统拍照发图的事件推送
+    /// <para>
+    /// EventKey: 事件KEY值，由开发者在创建菜单时设定
+    /// </para>
+    /// </summary>
+    public class PicSysPhotoMenuMessage : PicMenuMessage
+    {
+    }
+
+    /// <summary>
+    /// pic_photo_or_album 弹出拍照或者相册发图的事件推送
+    /// <para>
+    /// EventKey: 事件KEY值，由开发者在创建菜单时设定
+    /// </para>
+    /// </summary>
+    public class PicPhotoOrAlbumMenuMessage : PicMenuMessage
+    {
+    }
+
+    /// <summary>
+    /// pic_weixin 弹出微信相册发图器的事件推送
+    /// <para>
+    /// EventKey: 事件KEY值，由开发者在创建菜单时设定
+    /// </para>
+    /// </summary>
+    public class PicWeixinMenuMessage : PicMenuMessage
+    {
+    }
+
+    #endregion
+
+    public class SendLocationInfo
+    {
+        /// <summary>
+        /// X坐标信息
+        /// </summary>
+        public double Location_X { get; set; }
+
+        /// <summary>
+        /// Y坐标信息
+        /// </summary>
+        public double Location_Y { get; set; }
+
+        /// <summary>
+        /// 精度，可理解为精度或者比例尺、越精细的话 scale越高
+        /// </summary>
+        public int Scale { get; set; }
+
+        /// <summary>
+        /// 地理位置的字符串信息
+        /// </summary>
+        public string Label { get; set; }
+
+        /// <summary>
+        /// 朋友圈POI的名字，可能为空
+        /// </summary>
+        public string Poiname { get; set; }
+    }
+
+    /// <summary>
+    /// location_select 弹出地理位置选择器的事件推送
+    /// <para>
+    /// EventKey: 事件KEY值，由开发者在创建菜单时设定
+    /// </para>
+    /// </summary>
+    public class LocationSelectMenuMessage : MenuMessage
+    {
+        /// <summary>
+        /// 发送的位置信息
+        /// </summary>
+        public SendLocationInfo SendLocationInfo { get; set; }
+    }
+    #endregion
 }

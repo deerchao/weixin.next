@@ -6,6 +6,7 @@ namespace Weixin.Next.Messaging
     public abstract class MessageHandler : IMessageHandler
     {
         private static readonly Task<ResponseMessage> _empty = Task.FromResult(ResponseMessage.Empty);
+        private static readonly Task<ResponseMessage> _success = Task.FromResult(ResponseMessage.Success);
 
         public Task<ResponseMessage> Handle(RequestMessage message)
         {
@@ -37,6 +38,16 @@ namespace Weixin.Next.Messaging
             return _empty;
         }
 
+        /// <summary>
+        ///  <para>特殊的返回消息: 字符串"success"</para>
+        /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
+        /// </summary>
+        /// <returns></returns>
+        protected Task<ResponseMessage> Success()
+        {
+            return _success;
+        }
+
 
         protected virtual Task<ResponseMessage> HandleNormalMessage(NormalRequestMessage message)
         {
@@ -63,37 +74,37 @@ namespace Weixin.Next.Messaging
 
         protected virtual Task<ResponseMessage> HandleTextMessage(TextRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleImageMessage(ImageRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleVoiceMessage(VoiceRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleVideoMessage(VideoRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleShortVideoMessage(ShortVideoRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleLocationMessage(LocationRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleLinkMessage(LinkRequestMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
 
@@ -110,9 +121,9 @@ namespace Weixin.Next.Messaging
                 case EventMessageType.location:
                     return HandleLocationEvent((LocationEventMessage)message);
                 case EventMessageType.click:
-                    return HandleClickEvent((ClickEventMessage)message);
+                    return HandleClickEvent((ClickMenuMessage)message);
                 case EventMessageType.view:
-                    return HandleViewEvent((ViewEventMessage)message);
+                    return HandleViewEvent((ViewMenuMessage)message);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -120,30 +131,36 @@ namespace Weixin.Next.Messaging
 
         protected virtual Task<ResponseMessage> HandleSubscribeEvent(SubscribeEventMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleUnsubscribeEvent(UnsubscribeEventMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleScanEvent(ScanEventMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
         protected virtual Task<ResponseMessage> HandleLocationEvent(LocationEventMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleClickEvent(ClickEventMessage message)
+        protected virtual Task<ResponseMessage> HandleClickEvent(ClickMenuMessage message)
         {
-            return Empty();
+            return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleViewEvent(ViewEventMessage message)
+        protected virtual Task<ResponseMessage> HandleViewEvent(ViewMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+
+        protected virtual Task<ResponseMessage> DefaultResponse()
         {
             return Empty();
         }
