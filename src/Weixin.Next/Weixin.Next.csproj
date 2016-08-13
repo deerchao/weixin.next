@@ -65,9 +65,11 @@
     <Compile Include="Messaging\Requests\RequestMessage.cs" />
     <Compile Include="Messaging\Requests\UnknownEventMessage.cs" />
     <Compile Include="Messaging\Requests\UnknownRequestMessage.cs" />
+    <Compile Include="Messaging\Responses\IResponseMessage.cs" />
     <Compile Include="Messaging\Responses\ResponseMessage.cs" />
     <Compile Include="Messaging\Crypt\WXBizMsgCrypt.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeHelper.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

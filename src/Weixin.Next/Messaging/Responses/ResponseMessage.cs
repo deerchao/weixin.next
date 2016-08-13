@@ -1,4 +1,7 @@
-﻿using Weixin.Next.Messaging.Requests;
+﻿using System;
+using System.Linq;
+using System.Xml.Linq;
+using Weixin.Next.Messaging.Requests;
 
 namespace Weixin.Next.Messaging.Responses
 {
@@ -36,8 +39,13 @@ namespace Weixin.Next.Messaging.Responses
     }
     // ReSharper restore InconsistentNaming
 
-    public abstract class ResponseMessage
+    public abstract class ResponseMessage : IResponseMessage
     {
+        protected ResponseMessage()
+        {
+            CreateTime = DateTime.UtcNow.ToUnixTimestamp();
+        }
+
         /// <summary>
         /// 接收方帐号（收到的OpenID）
         /// </summary>
@@ -53,21 +61,44 @@ namespace Weixin.Next.Messaging.Responses
         /// <summary>
         /// 消息类别
         /// </summary>
-        public RequestMessageType MsgType { get; set; }
+        public abstract ResponseMessageType MsgType { get; }
 
+        public string Serialize()
+        {
+            var xml = new XElement("xml",
+                new XElement("ToUserName", ToUserName),
+                new XElement("FromUserName", FromUserName),
+                new XElement("CreateTime", CreateTime),
+                new XElement("MsgType", MsgType.ToString("G"))
+                );
 
-        /// <summary>
-        /// <para>特殊的返回消息, 代表空字符串</para>
-        /// <para>直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试</para>
-        /// </summary>
-        public static readonly ResponseMessage Empty = new TextResponseMessage();
+            var children = SerializeElements();
+            if (children != null)
+            {
+                foreach (var child in children)
+                {
+                    // 清除没有值的 XElement
+                    child.Descendants()
+                        .Reverse()
+                        .Where(x => !x.HasElements && string.IsNullOrEmpty(x.Value))
+                        .Remove();
 
-        /// <summary>
-        /// <para>特殊的返回消息, 代表字符串"success"</para>
-        /// <para>直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试</para>
-        /// </summary>
-        public static readonly ResponseMessage Success = new TextResponseMessage();
+                    if (!child.HasElements && string.IsNullOrEmpty(child.Value))
+                        continue;
+
+                    xml.Add(child);
+                }
+            }
+
+            return xml.ToString(SaveOptions.DisableFormatting);
+        }
+
+        protected virtual XElement[] SerializeElements()
+        {
+            return null;
+        }
     }
+
 
     /// <summary>
     /// text 文本消息
@@ -78,6 +109,19 @@ namespace Weixin.Next.Messaging.Responses
         /// 回复的消息内容（换行：在content中能够换行，微信客户端就支持换行显示）
         /// </summary>
         public string Content { get; set; }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.text; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("Content", Content),
+            };
+        }
     }
 
     /// <summary>
@@ -89,6 +133,19 @@ namespace Weixin.Next.Messaging.Responses
         /// 通过素材管理中的接口上传多媒体文件，得到的id
         /// </summary>
         public string MediaId { get; set; }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.image; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("MediaId", MediaId),
+            };
+        }
     }
 
     /// <summary>
@@ -100,6 +157,19 @@ namespace Weixin.Next.Messaging.Responses
         /// 通过素材管理中的接口上传多媒体文件，得到的id
         /// </summary>
         public string MediaId { get; set; }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.voice; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("MediaId", MediaId),
+            };
+        }
     }
 
     /// <summary>
@@ -119,6 +189,21 @@ namespace Weixin.Next.Messaging.Responses
         /// 可选, 视频消息的描述
         /// </summary>
         public string Description { get; set; }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.video; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("MediaId", MediaId),
+                new XElement("Title", Title),
+                new XElement("Description", Description),
+            };
+        }
     }
 
     /// <summary>
@@ -150,6 +235,24 @@ namespace Weixin.Next.Messaging.Responses
             /// 缩略图的媒体id，通过素材管理中的接口上传多媒体文件，得到的id
             /// </summary>
             public string ThumbMediaId { get; set; }
+        }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.music; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("Music",
+                    new XElement("Title", Music.Title),
+                    new XElement("Description", Music.Description),
+                    new XElement("MusicURL", Music.MusicURL),
+                    new XElement("HQMusicUrl", Music.HQMusicUrl),
+                    new XElement("ThumbMediaId", Music.ThumbMediaId)),
+            };
         }
     }
 
@@ -186,6 +289,24 @@ namespace Weixin.Next.Messaging.Responses
             /// </summary>
             public string Url { get; set; }
         }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.news; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("ArticleCount", ArticleCount),
+                new XElement("Articles", Articles.Select(x => new XElement("item",
+                    new XElement("Title", x.Title),
+                    new XElement("Description", x.Description),
+                    new XElement("PicUrl", x.PicUrl),
+                    new XElement("Url", x.Url)))),
+            };
+        }
     }
 
     /// <summary>
@@ -204,6 +325,20 @@ namespace Weixin.Next.Messaging.Responses
             /// 指定会话接入的客服账号
             /// </summary>
             public string KfAccount { get; set; }
+        }
+
+        public override ResponseMessageType MsgType
+        {
+            get { return ResponseMessageType.transfer_customer_service; }
+        }
+
+        protected override XElement[] SerializeElements()
+        {
+            return new[]
+            {
+                new XElement("TransInfo",
+                    new XElement("KfAccount", TransInfo?.KfAccount)),
+            };
         }
     }
 }

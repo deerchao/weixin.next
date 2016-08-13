@@ -7,13 +7,17 @@ namespace Weixin.Next.Messaging
 {
     public abstract class MessageHandler : IMessageHandler
     {
-        private static readonly Task<ResponseMessage> _empty = Task.FromResult(ResponseMessage.Empty);
-        private static readonly Task<ResponseMessage> _success = Task.FromResult(ResponseMessage.Success);
+        private static readonly Task<IResponseMessage> _empty = Task.FromResult((IResponseMessage)new RawResponseMessage(""));
+        private static readonly Task<IResponseMessage> _success = Task.FromResult((IResponseMessage)new RawResponseMessage(""));
 
-        public Task<ResponseMessage> Handle(RequestMessage message)
+        public Task<IResponseMessage> Handle(RequestMessage message)
         {
             switch (message.MsgType)
             {
+                case RequestMessageType.@event:
+                    return HandleEventMessage((EventMessage)message);
+                case RequestMessageType.unknown:
+                    return HandleUnknownRequest((UnknownRequestMessage)message);
                 case RequestMessageType.text:
                 case RequestMessageType.image:
                 case RequestMessageType.voice:
@@ -21,9 +25,7 @@ namespace Weixin.Next.Messaging
                 case RequestMessageType.shortvideo:
                 case RequestMessageType.location:
                 case RequestMessageType.link:
-                    return HandleNormalMessage((NormalRequestMessage)message);
-                case RequestMessageType.@event:
-                    return HandleEventMessage((EventMessage)message);
+                    return HandleNormalRequest((NormalRequestMessage)message);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -35,7 +37,7 @@ namespace Weixin.Next.Messaging
         /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
         /// </summary>
         /// <returns></returns>
-        protected Task<ResponseMessage> Empty()
+        protected Task<IResponseMessage> Empty()
         {
             return _empty;
         }
@@ -45,72 +47,77 @@ namespace Weixin.Next.Messaging
         /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
         /// </summary>
         /// <returns></returns>
-        protected Task<ResponseMessage> Success()
+        protected Task<IResponseMessage> Success()
         {
             return _success;
         }
 
 
-        protected virtual Task<ResponseMessage> HandleNormalMessage(NormalRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleNormalRequest(NormalRequestMessage message)
         {
             switch (message.MsgType)
             {
                 case RequestMessageType.text:
-                    return HandleTextMessage((TextRequestMessage)message);
+                    return HandleTextRequest((TextRequestMessage)message);
                 case RequestMessageType.image:
-                    return HandleImageMessage((ImageRequestMessage)message);
+                    return HandleImageRequest((ImageRequestMessage)message);
                 case RequestMessageType.voice:
-                    return HandleVoiceMessage((VoiceRequestMessage)message);
+                    return HandleVoiceRequest((VoiceRequestMessage)message);
                 case RequestMessageType.video:
-                    return HandleVideoMessage((VideoRequestMessage)message);
+                    return HandleVideoRequest((VideoRequestMessage)message);
                 case RequestMessageType.shortvideo:
-                    return HandleShortVideoMessage((ShortVideoRequestMessage)message);
+                    return HandleShortVideoRequest((ShortVideoRequestMessage)message);
                 case RequestMessageType.location:
-                    return HandleLocationMessage((LocationRequestMessage)message);
+                    return HandleLocationRequest((LocationRequestMessage)message);
                 case RequestMessageType.link:
-                    return HandleLinkMessage((LinkRequestMessage)message);
+                    return HandleLinkRequest((LinkRequestMessage)message);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        protected virtual Task<ResponseMessage> HandleTextMessage(TextRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleTextRequest(TextRequestMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleImageMessage(ImageRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleImageRequest(ImageRequestMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleVoiceMessage(VoiceRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleVoiceRequest(VoiceRequestMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleVideoMessage(VideoRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleVideoRequest(VideoRequestMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleShortVideoMessage(ShortVideoRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleShortVideoRequest(ShortVideoRequestMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleLocationMessage(LocationRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleLocationRequest(LocationRequestMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleLinkMessage(LinkRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleLinkRequest(LinkRequestMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandleUnknownRequest(UnknownRequestMessage message)
         {
             return DefaultResponse();
         }
 
 
-        protected virtual Task<ResponseMessage> HandleEventMessage(EventMessage message)
+        protected virtual Task<IResponseMessage> HandleEventMessage(EventMessage message)
         {
             switch (message.Event)
             {
@@ -122,47 +129,100 @@ namespace Weixin.Next.Messaging
                     return HandleScanEvent((ScanEventMessage)message);
                 case EventMessageType.location:
                     return HandleLocationEvent((LocationEventMessage)message);
+
                 case EventMessageType.click:
-                    return HandleClickEvent((ClickMenuMessage)message);
+                    return HandleClickMenu((ClickMenuMessage)message);
                 case EventMessageType.view:
-                    return HandleViewEvent((ViewMenuMessage)message);
+                    return HandleViewMenu((ViewMenuMessage)message);
+                case EventMessageType.scancode_push:
+                    return HandleScanCodePushMenu((ScanCodePushMenuMessage)message);
+                case EventMessageType.scancode_waitmsg:
+                    return HandleScanCodeWaitMsgMenu((ScanCodeWaitMsgMenuMessage)message);
+                case EventMessageType.pic_sysphoto:
+                    return HandlePicSysPhotoMenu((PicSysPhotoMenuMessage)message);
+                case EventMessageType.pic_photo_or_album:
+                    return HandlePicPhotoOrAlbumMenu((PicPhotoOrAlbumMenuMessage)message);
+                case EventMessageType.pic_weixin:
+                    return HandlePicWeixinMenu((PicWeixinMenuMessage)message);
+                case EventMessageType.location_select:
+                    return HandleLocationSelectMenu((LocationSelectMenuMessage)message);
+
+                case EventMessageType.unknown:
+                    return HandleUnknownEvent((UnknownEventMessage)message);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        protected virtual Task<ResponseMessage> HandleSubscribeEvent(SubscribeEventMessage message)
+        protected virtual Task<IResponseMessage> HandleSubscribeEvent(SubscribeEventMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleUnsubscribeEvent(UnsubscribeEventMessage message)
+        protected virtual Task<IResponseMessage> HandleUnsubscribeEvent(UnsubscribeEventMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleScanEvent(ScanEventMessage message)
+        protected virtual Task<IResponseMessage> HandleScanEvent(ScanEventMessage message)
         {
             return DefaultResponse();
         }
 
-        protected virtual Task<ResponseMessage> HandleLocationEvent(LocationEventMessage message)
-        {
-            return DefaultResponse();
-        }
-
-        protected virtual Task<ResponseMessage> HandleClickEvent(ClickMenuMessage message)
-        {
-            return DefaultResponse();
-        }
-
-        protected virtual Task<ResponseMessage> HandleViewEvent(ViewMenuMessage message)
+        protected virtual Task<IResponseMessage> HandleLocationEvent(LocationEventMessage message)
         {
             return DefaultResponse();
         }
 
 
-        protected virtual Task<ResponseMessage> DefaultResponse()
+        protected virtual Task<IResponseMessage> HandleClickMenu(ClickMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandleViewMenu(ViewMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandleScanCodePushMenu(ScanCodePushMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandleScanCodeWaitMsgMenu(ScanCodeWaitMsgMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandlePicSysPhotoMenu(PicSysPhotoMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandlePicPhotoOrAlbumMenu(PicPhotoOrAlbumMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandlePicWeixinMenu(PicWeixinMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandleLocationSelectMenu(LocationSelectMenuMessage message)
+        {
+            return DefaultResponse();
+        }
+
+
+        protected virtual Task<IResponseMessage> HandleUnknownEvent(UnknownEventMessage message)
+        {
+            return DefaultResponse();
+        }
+
+
+        protected virtual Task<IResponseMessage> DefaultResponse()
         {
             return Empty();
         }
