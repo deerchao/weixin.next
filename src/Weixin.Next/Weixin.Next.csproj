@@ -57,8 +57,11 @@
     <Compile Include="Api\Token.cs" />
     <Compile Include="Api\User.cs" />
     <Compile Include="Messaging\Crypt\Cryptography.cs" />
+    <Compile Include="Messaging\Caches\IExecutionDictionary.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
+    <Compile Include="Messaging\Caches\IResponseCache.cs" />
     <Compile Include="Messaging\MessageCenter.cs" />
+    <Compile Include="Messaging\MessageException.cs" />
     <Compile Include="Messaging\MessageHandler.cs" />
     <Compile Include="Messaging\PostUrlParameters.cs" />
     <Compile Include="Messaging\Requests\EventMessage.cs" />

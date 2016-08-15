@@ -20,5 +20,11 @@ namespace Weixin.Next.Messaging.Requests
         /// 消息中的 MsgType 值
         /// </summary>
         public string RawMsgType { get { return _xml.Element("MsgType").Value; } }
+
+
+        public override string GetDuplicationKey()
+        {
+            return _xml.Element("MsgId")?.Value ?? base.GetDuplicationKey();
+        }
     }
 }

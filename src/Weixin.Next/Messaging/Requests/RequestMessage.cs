@@ -77,6 +77,16 @@ namespace Weixin.Next.Messaging.Requests
         /// </summary>
         public RequestMessageType MsgType { get; private set; }
 
+        /// <summary>
+        /// 去除重复消息的依据
+        /// </summary>
+        /// <returns></returns>
+        public virtual string GetDuplicationKey()
+        {
+            return _xml.Element("FromUserName").Value +
+                   _xml.Element("CreateTime").Value;
+        }
+
         #region Parse
         // ReSharper disable PossibleNullReferenceException
         /// <summary>
@@ -116,6 +126,11 @@ namespace Weixin.Next.Messaging.Requests
         /// 消息id，64位整型
         /// </summary>
         public long MsgId { get { return long.Parse(_xml.Element("MsgId").Value); } }
+
+        public override string GetDuplicationKey()
+        {
+            return _xml.Element("MsgId").Value;
+        }
 
         #region Parse
         // ReSharper disable PossibleNullReferenceException
