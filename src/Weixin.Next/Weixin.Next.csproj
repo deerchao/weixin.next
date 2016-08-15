@@ -52,6 +52,7 @@
     <Compile Include="Api\IApiResult.cs" />
     <Compile Include="Api\IJsonParser.cs" />
     <Compile Include="Api\Menu.cs" />
+    <Compile Include="Api\OAuth2.cs" />
     <Compile Include="Api\Qrcode.cs" />
     <Compile Include="Api\ShortUrl.cs" />
     <Compile Include="Api\Tag.cs" />

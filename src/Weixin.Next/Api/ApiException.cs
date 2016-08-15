@@ -1,7 +1,10 @@
-using System;
+﻿using System;
 
 namespace Weixin.Next.Api
 {
+    /// <summary>
+    /// 代表微信服务返回的错误信息
+    /// </summary>
     public class ApiException : Exception
     {
         private readonly int _code;
