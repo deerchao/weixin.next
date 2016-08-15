@@ -45,7 +45,7 @@ namespace Weixin.Next.Messaging
             }
 
             // 如果是已处理的重复消息, 则直接返回待处理结果
-            responseText = await _responseCache.Get(key, false);
+            responseText = await _responseCache.Get(key, false).ConfigureAwait(false);
             if (responseText != null)
                 return responseText;
 

@@ -10,9 +10,6 @@ Completeness is not a priority, features needed by myself will be implement firs
 
 ## next steps
 
-1. menu api
-2. user api
-3. messagging api
-4. account api
-5. weixin js api
-6. other stuff
+1. account api
+2. weixin js api
+3. other stuff

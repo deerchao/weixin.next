@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Xml.Linq;
-using Weixin.Next.Messaging.Requests;
 
 namespace Weixin.Next.Messaging.Responses
 {

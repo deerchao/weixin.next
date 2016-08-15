@@ -8,7 +8,7 @@ namespace Weixin.Next.Messaging
     public abstract class MessageHandler : IMessageHandler
     {
         private static readonly Task<IResponseMessage> _empty = Task.FromResult((IResponseMessage)new RawResponseMessage(""));
-        private static readonly Task<IResponseMessage> _success = Task.FromResult((IResponseMessage)new RawResponseMessage(""));
+        private static readonly Task<IResponseMessage> _success = Task.FromResult((IResponseMessage)new RawResponseMessage("success"));
 
         public Task<IResponseMessage> Handle(RequestMessage message)
         {
@@ -31,7 +31,7 @@ namespace Weixin.Next.Messaging
             }
         }
 
-
+        #region Normal Requests
         protected virtual Task<IResponseMessage> HandleNormalRequest(NormalRequestMessage message)
         {
             switch (message.MsgType)
@@ -54,6 +54,7 @@ namespace Weixin.Next.Messaging
                     throw new ArgumentOutOfRangeException();
             }
         }
+
 
         protected virtual Task<IResponseMessage> HandleTextRequest(TextRequestMessage message)
         {
@@ -90,12 +91,14 @@ namespace Weixin.Next.Messaging
             return DefaultResponse(message);
         }
 
+
         protected virtual Task<IResponseMessage> HandleUnknownRequest(UnknownRequestMessage message)
         {
             return DefaultResponse(message);
         }
+        #endregion
 
-
+        #region Events
         protected virtual Task<IResponseMessage> HandleEventMessage(EventMessage message)
         {
             switch (message.Event)
@@ -154,6 +157,7 @@ namespace Weixin.Next.Messaging
         }
 
 
+        #region Menu Events
         protected virtual Task<IResponseMessage> HandleClickMenu(ClickMenuMessage message)
         {
             return DefaultResponse(message);
@@ -193,20 +197,20 @@ namespace Weixin.Next.Messaging
         {
             return DefaultResponse(message);
         }
-
+        #endregion
 
         protected virtual Task<IResponseMessage> HandleUnknownEvent(UnknownEventMessage message)
         {
             return DefaultResponse(message);
         }
-
+        #endregion
 
         protected virtual Task<IResponseMessage> DefaultResponse(RequestMessage message)
         {
             return Empty();
         }
 
-
+        #region Helper methods to create responses
         /// <summary>
         ///  <para>特殊的返回消息: 空字符串</para>
         /// <para>微信服务器不会对此作任何处理，并且不会发起重试</para>
@@ -226,5 +230,90 @@ namespace Weixin.Next.Messaging
         {
             return _success;
         }
+
+
+        protected TextResponseMessage Text(string content, RequestMessage request)
+        {
+            return new TextResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                Content = content,
+            };
+        }
+
+        protected ImageResponseMessage Image(string mediaId, RequestMessage request)
+        {
+            return new ImageResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                MediaId = mediaId,
+            };
+        }
+
+        protected VoiceResponseMessage Voice(string mediaId, RequestMessage request)
+        {
+            return new VoiceResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                MediaId = mediaId,
+            };
+        }
+
+        protected VideoResponseMessage Video(string mediaId, string title, string description, RequestMessage request)
+        {
+            return new VideoResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                MediaId = mediaId,
+                Title = title,
+                Description = description,
+            };
+        }
+
+        protected MusicResponseMessage Music(string title, string description, string musicUrl, string highQualityUrl, string thumbMediaId, RequestMessage request)
+        {
+            return new MusicResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                Music = new MusicResponseMessage.MusicInfo
+                {
+                    Title = title,
+                    Description = description,
+                    MusicURL = musicUrl,
+                    HQMusicUrl = highQualityUrl,
+                    ThumbMediaId = thumbMediaId,
+                },
+            };
+        }
+
+        protected NewsResponseMessage News(NewsResponseMessage.NewsArticle[] articles, RequestMessage request)
+        {
+            return new NewsResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                ArticleCount = articles.Length,
+                Articles = articles,
+            };
+        }
+
+        protected TransferCustomerServiceResponseMessage TransferCustomerService(string kfAccount, RequestMessage request)
+        {
+            return new TransferCustomerServiceResponseMessage
+            {
+                FromUserName = request.ToUserName,
+                ToUserName = request.FromUserName,
+                TransInfo = new TransferCustomerServiceResponseMessage.TransKfInfo
+                {
+                    KfAccount = kfAccount,
+                }
+            };
+        }
+        #endregion
     }
 }
