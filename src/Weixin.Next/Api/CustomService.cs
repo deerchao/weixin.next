@@ -348,5 +348,8 @@ namespace Weixin.Next.Api
         }
 
         #endregion
+
+        //todo: 客服接口-发消息
+        //todo: 群发消息
     }
 }
