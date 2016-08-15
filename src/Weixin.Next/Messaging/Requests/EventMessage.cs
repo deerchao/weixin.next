@@ -63,6 +63,32 @@ namespace Weixin.Next.Messaging.Requests
         /// 弹出地理位置选择器的事件推送
         /// </summary>
         location_select,
+
+        /// <summary>
+        /// 资质认证成功
+        /// </summary>
+        qualification_verify_success,
+        /// <summary>
+        /// 资质认证失败
+        /// </summary>
+        qualification_verify_fail,
+        /// <summary>
+        /// 名称认证成功
+        /// </summary>
+        naming_verify_success,
+        /// <summary>
+        /// 名称认证失败
+        /// </summary>
+        naming_verify_fail,
+        /// <summary>
+        /// 年审通知
+        /// </summary>
+        annual_renew,
+        /// <summary>
+        /// 认证过期失效通知
+        /// </summary>
+        verify_expired,
+
     }
     // ReSharper restore InconsistentNaming
 
@@ -107,6 +133,24 @@ namespace Weixin.Next.Messaging.Requests
                     break;
                 case EventMessageType.location:
                     result = new LocationEventMessage(xml);
+                    break;
+                case EventMessageType.qualification_verify_success:
+                    result = new QualificationVerifySuccessEvent(xml);
+                    break;
+                case EventMessageType.qualification_verify_fail:
+                    result = new QualificationVerifyFailEvent(xml);
+                    break;
+                case EventMessageType.naming_verify_success:
+                    result = new NamingVerifySuccessEvent(xml);
+                    break;
+                case EventMessageType.naming_verify_fail:
+                    result = new NamingVerifyFailEvent(xml);
+                    break;
+                case EventMessageType.annual_renew:
+                    result = new AnnualRenewEvent(xml);
+                    break;
+                case EventMessageType.verify_expired:
+                    result = new VerifyExpiredEvent(xml);
                     break;
                 default:
                     result = MenuMessage.Parse(xml, @event);

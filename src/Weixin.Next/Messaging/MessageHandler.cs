@@ -129,6 +129,19 @@ namespace Weixin.Next.Messaging
                 case EventMessageType.location_select:
                     return HandleLocationSelectMenu((LocationSelectMenuMessage)message);
 
+                case EventMessageType.qualification_verify_success:
+                    return HandleQualificationVerifySuccessEvent((QualificationVerifySuccessEvent)message);
+                case EventMessageType.qualification_verify_fail:
+                    return HandleQualificationVerifyFailEvent((QualificationVerifyFailEvent)message);
+                case EventMessageType.naming_verify_success:
+                    return HandleNamingVerifySuccessEvent((NamingVerifySuccessEvent)message);
+                case EventMessageType.naming_verify_fail:
+                    return HandleNamingVerifyFailEvent((NamingVerifyFailEvent)message);
+                case EventMessageType.annual_renew:
+                    return HandleAnnualRenewEvent((AnnualRenewEvent)message);
+                case EventMessageType.verify_expired:
+                    return HandleVerifyExpiredEvent((VerifyExpiredEvent)message);
+
                 case EventMessageType.unknown:
                     return HandleUnknownEvent((UnknownEventMessage)message);
                 default:
@@ -196,6 +209,42 @@ namespace Weixin.Next.Messaging
         protected virtual Task<IResponseMessage> HandleLocationSelectMenu(LocationSelectMenuMessage message)
         {
             return DefaultResponse(message);
+        }
+        #endregion
+
+        #region Verify Events
+        private Task<IResponseMessage> HandleQualificationVerifySuccessEvent(QualificationVerifySuccessEvent message)
+        {
+            return DefaultResponse(message);
+        }
+
+        private Task<IResponseMessage> HandleQualificationVerifyFailEvent(QualificationVerifyFailEvent message)
+        {
+            return DefaultResponse(message);
+        }
+
+        private Task<IResponseMessage> HandleNamingVerifySuccessEvent(NamingVerifySuccessEvent message)
+        {
+            return DefaultResponse(message);
+
+        }
+
+        private Task<IResponseMessage> HandleNamingVerifyFailEvent(NamingVerifyFailEvent message)
+        {
+            return DefaultResponse(message);
+
+        }
+
+        private Task<IResponseMessage> HandleAnnualRenewEvent(AnnualRenewEvent message)
+        {
+            return DefaultResponse(message);
+
+        }
+
+        private Task<IResponseMessage> HandleVerifyExpiredEvent(VerifyExpiredEvent message)
+        {
+            return DefaultResponse(message);
+
         }
         #endregion
 

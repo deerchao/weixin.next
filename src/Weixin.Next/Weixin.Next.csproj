@@ -71,6 +71,7 @@
     <Compile Include="Messaging\Requests\RequestMessage.cs" />
     <Compile Include="Messaging\Requests\UnknownEventMessage.cs" />
     <Compile Include="Messaging\Requests\UnknownRequestMessage.cs" />
+    <Compile Include="Messaging\Requests\VerifyEvent.cs" />
     <Compile Include="Messaging\Responses\IResponseMessage.cs" />
     <Compile Include="Messaging\Responses\ResponseMessage.cs" />
     <Compile Include="Messaging\Crypt\WXBizMsgCrypt.cs" />
