@@ -14,6 +14,7 @@ namespace Weixin.Next.Sample
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            WeixinConfig.Setup();
         }
     }
 }

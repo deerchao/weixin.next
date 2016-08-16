@@ -9,6 +9,7 @@ namespace Weixin.Next.Api
     {
         private static ApiConfig _defaultConfig;
 
+        public static ApiConfig DefaultConfig { get { return _defaultConfig; } }
 
         public static void SetDefaultConfig(ApiConfig defaultConfig)
         {

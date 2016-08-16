@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "微信服务器入口";
+}
+
+
+<p>请在 web.config 中设置好以下项:</p>
+<ul>
+    <li>weixin.appId</li>
+    <li>weixin.appSecret</li>
+    <li>weixin.token</li>
+    <li>weixin.encodingAESKey</li>
+</ul>
+
+<p>请在微信公众号管理界面中开发-基本设置页面将服务器 URL 设置为: </p>
+
+<p><code>@Request.Url</code></p>
+
+<p>并将消息加密方式设置为安全模式.</p>

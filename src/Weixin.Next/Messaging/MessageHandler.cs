@@ -280,6 +280,10 @@ namespace Weixin.Next.Messaging
             return _success;
         }
 
+        protected Task<IResponseMessage> Result(IResponseMessage message)
+        {
+            return Task.FromResult(message);
+        }
 
         protected TextResponseMessage Text(string content, RequestMessage request)
         {

@@ -107,10 +107,15 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WeixinConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WeixinController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoggingHandler.cs" />
+    <Compile Include="Models\SampleMessageHandler.cs" />
+    <Compile Include="Models\SampleMessageCenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -135,10 +140,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Weixin.Next.Json.Net\Weixin.Next.Json.Net.csproj">
+      <Project>{869a179d-7f3c-4249-9ada-197290e963e9}</Project>
+      <Name>Weixin.Next.Json.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Weixin.Next\Weixin.Next.csproj">
+      <Project>{69d1cdae-e738-46ad-8c50-112360dd79f6}</Project>
+      <Name>Weixin.Next</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Weixin\Get.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
