@@ -51,12 +51,14 @@
     <Compile Include="Api\CustomService.cs" />
     <Compile Include="Api\IApiResult.cs" />
     <Compile Include="Api\IJsonParser.cs" />
+    <Compile Include="Api\JsapiTicketManager.cs" />
     <Compile Include="Api\Menu.cs" />
     <Compile Include="Api\OAuth2.cs" />
     <Compile Include="Api\Qrcode.cs" />
     <Compile Include="Api\ShortUrl.cs" />
     <Compile Include="Api\Tag.cs" />
     <Compile Include="Api\Template.cs" />
+    <Compile Include="Api\Ticket.cs" />
     <Compile Include="Api\Token.cs" />
     <Compile Include="Api\User.cs" />
     <Compile Include="Messaging\Crypt\Cryptography.cs" />

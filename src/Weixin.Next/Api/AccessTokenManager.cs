@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace Weixin.Next.Api
 {
+    /// <summary>
+    /// 用于缓存并过期时刷新 access_token
+    /// </summary>
     public class AccessTokenManager
     {
         private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1);
@@ -18,6 +21,8 @@ namespace Weixin.Next.Api
             _appId = appId;
             _appSecret = appSecret;
         }
+
+        public ApiConfig Config { get; set; }
 
         /// <summary>
         /// 获取 access_token
@@ -38,7 +43,7 @@ namespace Weixin.Next.Api
                     now = DateTime.UtcNow.Ticks;
                     if (forceRefresh || expireTime <= now)
                     {
-                        var result = await Token.Retrieve(_appId, _appSecret).ConfigureAwait(false);
+                        var result = await Token.Get(_appId, _appSecret, Config).ConfigureAwait(false);
                         _token = result.access_token;
                         //提前 10 秒到期
                         expireTime = now + TimeSpan.FromSeconds(result.expires_in - 10).Ticks;
