@@ -1,5 +1,5 @@
 # weixin.next
-Weixin(wechat) libraries for .net
+Weixin(wechat) MP libraries for .net
 
 ## target
 Simple, easy to use, evolves with weixin itself. Official docs included in repository, easier to track the diffs.
@@ -10,6 +10,6 @@ Completeness is not a priority, features needed by myself will be implement firs
 
 ## next steps
 
-1. account api
-2. weixin js api
+1. web auth sample
+2. api sample
 3. other stuff
