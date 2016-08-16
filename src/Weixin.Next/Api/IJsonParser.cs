@@ -5,14 +5,12 @@
         IJsonValue Parse(string text);
         T Build<T>(IJsonValue value);
 
-        IJsonValue Generate(object target);
-        string ToString(IJsonValue value);
+        string ToString(object target);
     }
 
     public interface IJsonValue
     {
         bool HasField(string name);
-        IJsonValue Field(string name);
-        T As<T>();
+        T FieldValue<T>(string name);
     }
 }

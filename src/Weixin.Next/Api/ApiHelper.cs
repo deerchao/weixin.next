@@ -102,7 +102,7 @@ namespace Weixin.Next.Api
             url = await FormatUrl(url, config).ConfigureAwait(false);
 
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
-            var body = parser.ToString(parser.Generate(data));
+            var body = parser.ToString(data);
 
             var http = config?.HttpClient ?? _defaultConfig.HttpClient;
             var response = await http.PostAsync(url, new StringContent(body)).ConfigureAwait(false);
@@ -300,12 +300,12 @@ namespace Weixin.Next.Api
         {
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
             var v = parser.Parse(json);
-            if (!v.HasField("errcode") || v.Field("errcode").As<int>() == 0)
+            if (!v.HasField("errcode") || v.FieldValue<int>("errcode") == 0)
             {
                 return parser.Build<T>(v);
             }
 
-            throw new ApiException(v.Field("errcode").As<int>(), v.Field("errmsg").As<string>());
+            throw new ApiException(v.FieldValue<int>("errcode"), v.FieldValue<string>("errmsg"));
         }
 
         /// <summary>
@@ -318,10 +318,10 @@ namespace Weixin.Next.Api
         {
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
             var v = parser.Parse(json);
-            if (!v.HasField("errcode") || v.Field("errcode").As<int>() == 0)
+            if (!v.HasField("errcode") || v.FieldValue<int>("errcode") == 0)
                 return;
 
-            throw new ApiException(v.Field("errcode").As<int>(), v.Field("errmsg").As<string>());
+            throw new ApiException(v.FieldValue<int>("errcode"), v.FieldValue<string>("errmsg"));
         }
     }
 }
