@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin.Next", "Weixin.Next\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin.Next.Json.Net", "Weixin.Next.Json.Net\Weixin.Next.Json.Net.csproj", "{869A179D-7F3C-4249-9ADA-197290E963E9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin.Next.Sample", "Weixin.Next.Sample\Weixin.Next.Sample.csproj", "{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{869A179D-7F3C-4249-9ADA-197290E963E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{869A179D-7F3C-4249-9ADA-197290E963E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{869A179D-7F3C-4249-9ADA-197290E963E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
