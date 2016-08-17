@@ -55,8 +55,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir $(SolutionDir)\..\output
-copy $(TargetDir)* $(SolutionDir)\..\output /y</PostBuildEvent>
+    <PostBuildEvent>mkdir $(SolutionDir)\..\output\$(ConfigurationName)
+copy $(TargetDir)*.dll $(SolutionDir)\..\output\$(ConfigurationName) /y
+copy $(TargetDir)*.pdb $(SolutionDir)\..\output\$(ConfigurationName) /y
+copy $(TargetDir)*.xml $(SolutionDir)\..\output\$(ConfigurationName) /y
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -14,7 +14,7 @@ namespace Weixin.Next.Api
         /// <summary>
         /// 用于管理 access_token
         /// </summary>
-        public AccessTokenManager AccessTokenManager { get; set; }
+        public IAccessTokenManager AccessTokenManager { get; set; }
         /// <summary>
         /// 用于发送网络请求, 日志代码可以通过对 HttpClient 的自定义来记录日志
         /// </summary>

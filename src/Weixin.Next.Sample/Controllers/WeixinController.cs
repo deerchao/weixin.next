@@ -125,7 +125,8 @@ namespace Weixin.Next.Sample.Controllers
         {
             //请先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”
 
-            var config = await WeixinConfig.JsapiTicketManager.GenerateJsConfig(Request.Url.ToString(),
+            var appId = ConfigurationManager.AppSettings["weixin.appId"];
+            var config = await JsConfig.Generate(WeixinConfig.JsapiTicketManager, appId, Request.Url.ToString(),
                 new[]
                 {
                     JsApi.scanQRCode

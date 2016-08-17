@@ -42,13 +42,14 @@ namespace Weixin.Next.Sample
 
         private static void SetDefaultApiConfig()
         {
+            var manager = CreateAccessTokenManager();
             var config = new ApiConfig
             {
                 JsonParser = new JsonParser(),
-                AccessTokenManager = CreateAccessTokenManager(),
+                AccessTokenManager = manager,
                 HttpClient = CreateHttpClient(),
             };
-            config.AccessTokenManager.Config = config;
+            manager.Config = config;
 
             ApiHelper.SetDefaultConfig(config);
         }
@@ -83,9 +84,7 @@ namespace Weixin.Next.Sample
 
         private static void CreateJsapiTicketManager()
         {
-            var appId = ConfigurationManager.AppSettings["weixin.appId"];
-
-            JsapiTicketManager = new JsapiTicketManager(appId, ApiHelper.DefaultConfig);
+            JsapiTicketManager = new JsapiTicketManager(ApiHelper.DefaultConfig);
         }
     }
 }

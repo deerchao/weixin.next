@@ -46,6 +46,7 @@
     <Compile Include="Api\Common\ApiConfig.cs" />
     <Compile Include="Api\Common\ApiException.cs" />
     <Compile Include="Api\Common\ApiHelper.cs" />
+    <Compile Include="Api\Common\JsConfig.cs" />
     <Compile Include="Api\CustomService.cs" />
     <Compile Include="Api\Common\IApiResult.cs" />
     <Compile Include="Api\Common\IJsonParser.cs" />
@@ -85,8 +86,11 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir $(SolutionDir)\..\output
-copy $(TargetDir)* $(SolutionDir)\..\output /y</PostBuildEvent>
+    <PostBuildEvent>mkdir $(SolutionDir)\..\output\$(ConfigurationName)
+copy $(TargetDir)*.dll $(SolutionDir)\..\output\$(ConfigurationName) /y
+copy $(TargetDir)*.pdb $(SolutionDir)\..\output\$(ConfigurationName) /y
+copy $(TargetDir)*.xml $(SolutionDir)\..\output\$(ConfigurationName) /y
+</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
