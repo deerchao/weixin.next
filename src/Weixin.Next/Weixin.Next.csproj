@@ -52,6 +52,7 @@
     <Compile Include="Api\JsApi.cs" />
     <Compile Include="Api\JsapiTicketManager.cs" />
     <Compile Include="Api\Menu.cs" />
+    <Compile Include="Api\Misc.cs" />
     <Compile Include="Api\OAuth2.cs" />
     <Compile Include="Api\Qrcode.cs" />
     <Compile Include="Api\ShortUrl.cs" />
