@@ -49,6 +49,7 @@
     <Compile Include="Api\CustomService.cs" />
     <Compile Include="Api\IApiResult.cs" />
     <Compile Include="Api\IJsonParser.cs" />
+    <Compile Include="Api\JsApi.cs" />
     <Compile Include="Api\JsapiTicketManager.cs" />
     <Compile Include="Api\Menu.cs" />
     <Compile Include="Api\OAuth2.cs" />

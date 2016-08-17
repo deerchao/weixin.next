@@ -116,5 +116,24 @@ namespace Weixin.Next.Sample.Controllers
                 return Content($"使用 access_token({tokenResult.access_token}) 换取用户({tokenResult.openid})信息失败: {ex.Code} {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// 展示调用微信 JS-SDK
+        /// </summary>
+        /// <returns></returns>
+        public async Task<ActionResult> JsScan()
+        {
+            //请先登录微信公众平台进入“公众号设置”的“功能设置”里填写“JS接口安全域名”
+
+            var config = await WeixinConfig.JsapiTicketManager.GenerateJsConfig(Request.Url.ToString(),
+                new[]
+                {
+                    JsApi.scanQRCode
+                },
+                true).ConfigureAwait(false);
+            ViewBag.wxconfig = JsonConvert.ToString(config);
+
+            return View();
+        }
     }
 }

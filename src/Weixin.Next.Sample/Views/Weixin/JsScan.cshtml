@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "扫一扫 - 微信 JS-SDK 示例";
+}
+
+@* 使用 html 元素作为中介向 js 传递字符串, 以最简单的方式解决 html/js 编码问题 *@
+@* 也可以使用 html5 的 data-* 属性 *@
+<input type="hidden" id="configContainer" value="@ViewBag.wxconfig"/>
+
+<input type="checkbox" value="1" name="needResult" id="needResult" checked="checked" />
+
+<button id="button" onclick="return scan();">扫一扫</button>
+
+@* 需要先引入微信 JS 文件 *@
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+
+<script>
+
+    var config = JSON.parse(document.getElementById("configContainer").value);
+    var wx = window["jWeixin"];
+    wx.config(config);
+
+    wx.ready(function() {
+        document.getElementById('button').addEventListener('click', function() {
+            wx.scanQRCode({
+                needResult: document.getElementById("needResult").checked ? 1 : 0,
+                scanType: ["qrCode", "barCode"],
+                success: function (res) {
+                    alert('扫码成功: ' + res.resultStr);
+                },
+                fail:function(res) {
+                    alert('扫码失败: ' + res);
+                },
+                complete: function() {
+                    console.log('扫码完成');
+                },
+                cancel: function() {
+                    console.log('扫码取消');
+                }
+            });
+        });
+    });
+
+    wx.error(function(res) {
+        console.log('config 失败', res);
+    });
+    
+</script>

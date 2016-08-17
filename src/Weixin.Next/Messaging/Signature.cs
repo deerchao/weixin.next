@@ -16,6 +16,12 @@ namespace Weixin.Next.Messaging
         /// <returns></returns>
         public static bool Check(string token, string timestamp, string nonce, string signature)
         {
+            if (string.IsNullOrEmpty(signature) || 
+                string.IsNullOrEmpty(nonce) ||
+                string.IsNullOrEmpty(timestamp) ||
+                string.IsNullOrEmpty(token))
+                return false;
+
             var items = new[] { token, timestamp, nonce }.OrderBy(x => x);
             var text = string.Concat(items);
 
