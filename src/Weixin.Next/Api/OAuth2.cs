@@ -7,6 +7,15 @@ namespace Weixin.Next.Api
     public static class OAuth2
     {
         /// <summary>
+        /// 授权作用域之一, 只能获取用户 openid
+        /// </summary>
+        public const string ScopeBase = "snsapi_base";
+        /// <summary>
+        /// 授权作用域之一, 能获取用户 openid, 昵称, 性别, 所在地等
+        /// </summary>
+        public const string ScopeUserInfo = "snsapi_userinfo";
+
+        /// <summary>
         /// 获取网页授权网址. 将用户导入此网址后, 如果用户同意授权，页面将跳转至 redirect_uri/?code=&lt;code&gt;&amp;state=<paramref name="state"/>
         /// </summary>
         /// <param name="appId">微信应用id, 公众号的唯一标识</param>
