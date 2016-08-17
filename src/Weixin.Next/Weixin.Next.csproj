@@ -42,15 +42,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Api\AccessTokenManager.cs" />
-    <Compile Include="Api\ApiConfig.cs" />
-    <Compile Include="Api\ApiException.cs" />
-    <Compile Include="Api\ApiHelper.cs" />
+    <Compile Include="Api\Common\AccessTokenManager.cs" />
+    <Compile Include="Api\Common\ApiConfig.cs" />
+    <Compile Include="Api\Common\ApiException.cs" />
+    <Compile Include="Api\Common\ApiHelper.cs" />
     <Compile Include="Api\CustomService.cs" />
-    <Compile Include="Api\IApiResult.cs" />
-    <Compile Include="Api\IJsonParser.cs" />
-    <Compile Include="Api\JsApi.cs" />
-    <Compile Include="Api\JsapiTicketManager.cs" />
+    <Compile Include="Api\Common\IApiResult.cs" />
+    <Compile Include="Api\Common\IJsonParser.cs" />
+    <Compile Include="Api\Common\JsApi.cs" />
+    <Compile Include="Api\Common\JsapiTicketManager.cs" />
     <Compile Include="Api\Menu.cs" />
     <Compile Include="Api\Misc.cs" />
     <Compile Include="Api\OAuth2.cs" />
@@ -60,7 +60,7 @@
     <Compile Include="Api\Template.cs" />
     <Compile Include="Api\Ticket.cs" />
     <Compile Include="Api\Token.cs" />
-    <Compile Include="Api\User.cs" />
+    <Compile Include="Api\Common\User.cs" />
     <Compile Include="Messaging\Crypt\Cryptography.cs" />
     <Compile Include="Messaging\Caches\IExecutionDictionary.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
