@@ -99,7 +99,7 @@ namespace Weixin.Next.Messaging.Requests
             var xml = XDocument.Parse(xmlString).Root;
 
             RequestMessageType msgType;
-            if (!Enum.TryParse(xml.Element("MsgType").Value, out msgType))
+            if (!Enum.TryParse(xml.Element("MsgType").Value.ToLowerInvariant(), out msgType))
                 msgType = RequestMessageType.unknown;
 
             var result = msgType == RequestMessageType.unknown

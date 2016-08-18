@@ -17,11 +17,23 @@ namespace Weixin.Next.Messaging
         private IExecutionDictionary _executionDictionary;
         private IResponseCache _responseCache;
 
+        /// <summary>
+        /// 创建需要加密/解密的 MessageCenter
+        /// </summary>
+        /// <param name="appId"></param>
+        /// <param name="token"></param>
+        /// <param name="encodingAesKey"></param>
         public MessageCenter(string appId, string token, string encodingAesKey)
         {
             _cryptor = new WXBizMsgCrypt(token, encodingAesKey, appId);
         }
 
+        /// <summary>
+        /// 创建无需加密/解密的 MessageCenter
+        /// </summary>
+        public MessageCenter()
+        {
+        }
 
         public void Initialize()
         {
@@ -33,20 +45,18 @@ namespace Weixin.Next.Messaging
         {
             var requestMessage = BuildRequest(urlParameters, requestStream);
 
-            string responseText;
             var key = requestMessage.GetDuplicationKey();
 
             // 如果是正在处理中的重复消息, 则返回等待处理完成返回处理结果
-            var responseMessage = await _executionDictionary.Get(key, false).ConfigureAwait(false);
-            if (responseMessage != null)
+            var responseText = await GetResponseFromExecution(urlParameters, key).ConfigureAwait(false);
+            if (responseText != null)
             {
-                responseText = SerializeResponse(urlParameters, responseMessage);
                 OnResponseGenerated(responseText, ResponseSource.Executing);
                 return responseText;
             }
 
             // 如果是已处理的重复消息, 则直接返回待处理结果
-            responseText = await _responseCache.Get(key, false).ConfigureAwait(false);
+            responseText = await GetResponseFromCache(key);
             if (responseText != null)
             {
                 OnResponseGenerated(responseText, ResponseSource.Cache);
@@ -63,7 +73,7 @@ namespace Weixin.Next.Messaging
                 _executionDictionary.Add(key, task);
             }
 
-            responseMessage = await task.ConfigureAwait(false);
+            var responseMessage = await task.ConfigureAwait(false);
             responseText = SerializeResponse(urlParameters, responseMessage);
 
             // 处理完成后, 从正在处理转移到处理完成
@@ -77,15 +87,41 @@ namespace Weixin.Next.Messaging
             return responseText;
         }
 
+        private async Task<string> GetResponseFromExecution(PostUrlParameters urlParameters, string key)
+        {
+            var executionTask = _executionDictionary.Get(key, false);
+            if (executionTask != null)
+            {
+                var responseMessage = await executionTask.ConfigureAwait(false);
+                return SerializeResponse(urlParameters, responseMessage);
+            }
+
+            return null;
+        }
+
+        private async Task<string> GetResponseFromCache(string key)
+        {
+            var cacheTask = _responseCache.Get(key, false);
+            if (cacheTask != null)
+            {
+                var responseText = await cacheTask.ConfigureAwait(false);
+                return responseText;
+            }
+            return null;
+        }
+
 
         private RequestMessage BuildRequest(PostUrlParameters urlParameters, Stream requestStream)
         {
             var inputData = new StreamReader(requestStream, Encoding.UTF8).ReadToEnd();
-            var request = "";
+            var request = inputData;
 
-            var decryptResult = _cryptor.DecryptMsg(urlParameters.msg_signature, urlParameters.timestamp, urlParameters.nonce, inputData, ref request);
-            if (decryptResult != WXBizMsgCrypt.WXBizMsgCryptErrorCode.WXBizMsgCrypt_OK)
-                throw new MessageException($"解密失败: {decryptResult}");
+            if (_cryptor != null)
+            {
+                var decryptResult = _cryptor.DecryptMsg(urlParameters.msg_signature, urlParameters.timestamp, urlParameters.nonce, inputData, ref request);
+                if (decryptResult != WXBizMsgCrypt.WXBizMsgCryptErrorCode.WXBizMsgCrypt_OK)
+                    throw new MessageException($"解密失败: {decryptResult}");
+            }
 
             OnRequestRead(request);
 
@@ -98,10 +134,14 @@ namespace Weixin.Next.Messaging
             if (!responseMessage.EncryptionRequired)
                 return response;
 
-            var outputData = "";
-            var encryptResult = _cryptor.EncryptMsg(response, urlParameters.timestamp, urlParameters.nonce, ref outputData);
-            if (encryptResult != WXBizMsgCrypt.WXBizMsgCryptErrorCode.WXBizMsgCrypt_OK)
-                throw new MessageException($"加密失败: {encryptResult}");
+            var outputData = response;
+
+            if (_cryptor != null)
+            {
+                var encryptResult = _cryptor.EncryptMsg(response, urlParameters.timestamp, urlParameters.nonce, ref outputData);
+                if (encryptResult != WXBizMsgCrypt.WXBizMsgCryptErrorCode.WXBizMsgCrypt_OK)
+                    throw new MessageException($"加密失败: {encryptResult}");
+            }
 
             return outputData;
         }

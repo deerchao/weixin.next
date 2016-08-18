@@ -137,7 +137,7 @@ namespace Weixin.Next.Messaging
                     return HandleScanEvent((ScanEventMessage)request);
                 case EventMessageType.location:
                     return HandleLocationEvent((LocationEventMessage)request);
-                case EventMessageType.TEMPLATESENDJOBFINISH:
+                case EventMessageType.templatesendjobfinish:
                     return HandleTemplateSendJobFinishEvent((TemplateSendJobFinishEventMessage)request);
 
                 case EventMessageType.click:

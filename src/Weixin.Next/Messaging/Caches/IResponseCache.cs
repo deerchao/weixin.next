@@ -57,12 +57,12 @@ namespace Weixin.Next.Messaging.Caches
 
         public Task Add(string key, string response)
         {
-            _lock.ExitWriteLock();
+            _lock.EnterWriteLock();
 
             try
             {
                 _backupDict.Remove(key);
-                _workingDict.Add(key, response);
+                _workingDict[key] = response;
             }
             finally
             {

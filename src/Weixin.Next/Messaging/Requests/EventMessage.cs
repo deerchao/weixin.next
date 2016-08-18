@@ -92,7 +92,7 @@ namespace Weixin.Next.Messaging.Requests
         /// <summary>
         /// 模板消息发送完成
         /// </summary>
-        TEMPLATESENDJOBFINISH,
+        templatesendjobfinish,
     }
     // ReSharper restore InconsistentNaming
 
@@ -117,7 +117,7 @@ namespace Weixin.Next.Messaging.Requests
         public static EventMessage Parse(XElement xml)
         {
             EventMessageType @event;
-            if (!Enum.TryParse(xml.Element("Event").Value, out @event))
+            if (!Enum.TryParse(xml.Element("Event").Value.ToLowerInvariant(), out @event))
                 @event = EventMessageType.unknown;
 
             EventMessage result;
@@ -156,7 +156,7 @@ namespace Weixin.Next.Messaging.Requests
                 case EventMessageType.verify_expired:
                     result = new VerifyExpiredEvent(xml);
                     break;
-                case EventMessageType.TEMPLATESENDJOBFINISH:
+                case EventMessageType.templatesendjobfinish:
                     result = new TemplateSendJobFinishEventMessage(xml);
                     break;
                 default:

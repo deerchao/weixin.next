@@ -302,6 +302,9 @@ namespace Weixin.Next.Api
 
         private static async Task<string> FormatUrl(string url, ApiConfig config, AsyncOutParameter<string> token)
         {
+            if (url.IndexOf("$acac$", StringComparison.InvariantCulture) < 0)
+                return url;
+
             var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
             var accessToken = await m.GetToken().ConfigureAwait(false);
             var escapedToken = Uri.EscapeDataString(accessToken);

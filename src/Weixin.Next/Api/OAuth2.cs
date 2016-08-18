@@ -30,7 +30,7 @@ namespace Weixin.Next.Api
                    $"redirect_uri={Uri.EscapeDataString(redirect_uri)}&" +
                    "response_type=code&" +
                    $"scope={Uri.EscapeDataString(scope)}&" +
-                   $"state={Uri.EscapeDataString(state)}#" +
+                   $"state={Uri.EscapeDataString(state ?? "")}#" +
                    "wechat_redirect";
         }
 
