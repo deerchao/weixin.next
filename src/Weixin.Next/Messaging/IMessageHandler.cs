@@ -9,6 +9,6 @@ namespace Weixin.Next.Messaging
     /// </summary>
     public interface IMessageHandler
     {
-        Task<IResponseMessage> Handle(RequestMessage message);
+        Task<IResponseMessage> Handle(RequestMessage request);
     }
 }

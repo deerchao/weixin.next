@@ -9,9 +9,15 @@ namespace Weixin.Next.Api
         /// <summary>
         /// 获取 access_token 及过期时间
         /// </summary>
-        /// <param name="forceRefresh">是否在未到过期时间时强制刷新</param>
         /// <returns></returns>
-        Task<AccessTokenInfo> GetTokenInfo(bool forceRefresh = false);
+        Task<AccessTokenInfo> GetTokenInfo();
+
+        /// <summary>
+        /// 刷新 access_token 及过期时间
+        /// </summary>
+        /// <param name="oldToken">已过期的旧 access_token</param>
+        /// <returns></returns>
+        Task<AccessTokenInfo> RefreshTokenInfo(string oldToken = null);
     }
 
     public class AccessTokenInfo
@@ -21,7 +27,7 @@ namespace Weixin.Next.Api
         /// </summary>
         public string Token { get; set; }
         /// <summary>
-        /// 过期时间, unix 时间戳
+        /// 过期时间, unix 时间戳. 注意: 是绝对时间, 不是微信返回的 expires_in
         /// </summary>
         public long ExpireTime { get; set; }
     }
@@ -32,11 +38,22 @@ namespace Weixin.Next.Api
         /// 获取 access_token
         /// </summary>
         /// <param name="manager"></param>
-        /// <param name="forceRefresh">是否在未到过期时间时强制刷新</param>
         /// <returns></returns>
-        public static async Task<string> GetToken(this IAccessTokenManager manager, bool forceRefresh = false)
+        public static async Task<string> GetToken(this IAccessTokenManager manager)
         {
-            var info = await manager.GetTokenInfo(forceRefresh).ConfigureAwait(false);
+            var info = await manager.GetTokenInfo().ConfigureAwait(false);
+            return info.Token;
+        }
+
+        /// <summary>
+        /// 刷新 access_token
+        /// </summary>
+        /// <param name="manager"></param>
+        /// <param name="oldToken">已过期的旧 access_token</param>
+        /// <returns></returns>
+        public static async Task<string> RefreshToken(this IAccessTokenManager manager, string oldToken = null)
+        {
+            var info = await manager.RefreshTokenInfo(oldToken).ConfigureAwait(false);
             return info.Token;
         }
     }
@@ -48,24 +65,75 @@ namespace Weixin.Next.Api
         private string _token;
         private long _expireTime;
 
-        public async Task<AccessTokenInfo> GetTokenInfo(bool forceRefresh = false)
+        public async Task<AccessTokenInfo> GetTokenInfo()
         {
-            var expireTime = Interlocked.Read(ref _expireTime);
-            var now = DateTime.UtcNow.Ticks;
-            if (forceRefresh || expireTime <= now)
+            var expireTime = Volatile.Read(ref _expireTime);
+            if (expireTime == 0)
             {
                 await _semaphore.WaitAsync().ConfigureAwait(false);
 
                 try
                 {
                     expireTime = Volatile.Read(ref _expireTime);
-                    now = DateTime.UtcNow.Ticks;
-                    if (forceRefresh || expireTime <= now)
+                    if (expireTime == 0)
                     {
-                        var result = await Refresh().ConfigureAwait(false);
+                        var result = await Get().ConfigureAwait(false);
                         _token = result.Token;
-                        expireTime = result.ExpireTime;
-                        Interlocked.Exchange(ref _expireTime, expireTime);
+                        Volatile.Write(ref _expireTime, result.ExpireTime);
+                    }
+                }
+                finally
+                {
+                    _semaphore.Release();
+                }
+            }
+            else
+            {
+                var now = DateTime.UtcNow.Ticks;
+                if (expireTime <= now)
+                {
+                    await _semaphore.WaitAsync().ConfigureAwait(false);
+
+                    try
+                    {
+                        expireTime = Volatile.Read(ref _expireTime);
+                        now = DateTime.UtcNow.Ticks;
+                        if (expireTime <= now)
+                        {
+                            var result = await Refresh(_token).ConfigureAwait(false);
+                            _token = result.Token;
+                            Volatile.Write(ref _expireTime, result.ExpireTime);
+
+                            return result;
+                        }
+                    }
+                    finally
+                    {
+                        _semaphore.Release();
+                    }
+                }
+            }
+
+            return new AccessTokenInfo
+            {
+                Token = _token,
+                ExpireTime = _expireTime,
+            };
+        }
+
+        public async Task<AccessTokenInfo> RefreshTokenInfo(string oldToken = null)
+        {
+            if (oldToken == null || oldToken == Volatile.Read(ref _token))
+            {
+                await _semaphore.WaitAsync().ConfigureAwait(false);
+
+                try
+                {
+                    if (oldToken == null || oldToken == Volatile.Read(ref _token))
+                    {
+                        var result = await Refresh(oldToken).ConfigureAwait(false);
+                        _token = result.Token;
+                        Volatile.Write(ref _expireTime, result.ExpireTime);
 
                         return result;
                     }
@@ -83,7 +151,16 @@ namespace Weixin.Next.Api
             };
         }
 
-        protected abstract Task<AccessTokenInfo> Refresh();
+        /// <summary>
+        /// 获取 access_token 及过期时间, 不强制刷新
+        /// </summary>
+        /// <returns></returns>
+        protected abstract Task<AccessTokenInfo> Get();
+        /// <summary>
+        /// 获取 access_token 及过期时间, 强制刷新
+        /// </summary>
+        /// <returns></returns>
+        protected abstract Task<AccessTokenInfo> Refresh(string oldToken);
     }
 
     /// <summary>
@@ -103,8 +180,9 @@ namespace Weixin.Next.Api
 
         public ApiConfig Config { get; set; }
 
-        protected override async Task<AccessTokenInfo> Refresh()
+        protected override async Task<AccessTokenInfo> Get()
         {
+            //由于不是与自己的全局缓存服务器通信, 我们只能直接从微信服务器刷新
             var result = await Token.Get(_appId, _appSecret, Config);
             return new AccessTokenInfo
             {
@@ -112,6 +190,11 @@ namespace Weixin.Next.Api
                 //提前 10 秒到期
                 ExpireTime = DateTime.UtcNow.AddSeconds(result.expires_in - 10).Ticks,
             };
+        }
+
+        protected override Task<AccessTokenInfo> Refresh(string oldToken)
+        {
+            return Get();
         }
     }
 }

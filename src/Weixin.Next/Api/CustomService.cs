@@ -8,6 +8,20 @@ namespace Weixin.Next.Api
     public static class CustomService
     {
         #region 获取客服基本信息
+
+        /// <summary>
+        /// 邀请状态: 等待确认
+        /// </summary>
+        public const string InviteStatusWaiting = "waiting";
+        /// <summary>
+        /// 邀请状态: 被拒绝
+        /// </summary>
+        public const string InviteStatusRejected = "rejected";
+        /// <summary>
+        /// 邀请状态: 过期
+        /// </summary>
+        public const string InviteStatusExpired = "expired";
+
         /// <summary>
         /// 获取客服基本信息
         /// </summary>

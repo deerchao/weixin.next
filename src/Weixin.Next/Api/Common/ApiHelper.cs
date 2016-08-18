@@ -8,6 +8,7 @@ namespace Weixin.Next.Api
     public static class ApiHelper
     {
         private static ApiConfig _defaultConfig;
+        private const int ErrorAccessTokenExpired = 42001;
 
         public static ApiConfig DefaultConfig { get { return _defaultConfig; } }
 
@@ -22,12 +23,18 @@ namespace Weixin.Next.Api
         /// </summary>
         /// <param name="url">接口网址, 里边的 $acac$ 会被自动替换成 access_token=xxx </param>
         /// <param name="config"></param>
-        public static async Task<string> GetString(string url, ApiConfig config = null)
+        public static Task<string> GetString(string url, ApiConfig config = null)
         {
-            url = await FormatUrl(url, config).ConfigureAwait(false);
+            return GetStringWithToken(url, config, null);
+        }
+
+        private static async Task<string> GetStringWithToken(string url, ApiConfig config, AsyncOutParameter<string> token)
+        {
+            url = await FormatUrl(url, config, token).ConfigureAwait(false);
             var http = config?.HttpClient ?? _defaultConfig.HttpClient;
             return await http.GetStringAsync(url).ConfigureAwait(false);
         }
+
 
         /// <summary>
         /// 发送 Get 请求, 返回结果对象；如遇 access_token 超时错误, 会自动获取新的 access_token 并重试
@@ -39,18 +46,18 @@ namespace Weixin.Next.Api
         public static async Task<T> GetResult<T>(string url, ApiConfig config = null)
             where T : IApiResult
         {
+            var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await GetString(url, config).ConfigureAwait(false);
+                var text = await GetStringWithToken(url, config, token).ConfigureAwait(false);
                 return BuildResult<T>(text, config);
             }
             catch (ApiException ex)
             {
-                //access_token超时
-                if (ex.Code == 42001)
+                if (ex.Code == ErrorAccessTokenExpired)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
-                    await m.GetToken(true).ConfigureAwait(false);
+                    await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
                     var text = await GetString(url, config).ConfigureAwait(false);
                     return BuildResult<T>(text, config);
@@ -68,21 +75,22 @@ namespace Weixin.Next.Api
         /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
         public static async Task GetVoid(string url, ApiConfig config = null)
         {
+            var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await GetString(url, config).ConfigureAwait(false);
+                var text = await GetStringWithToken(url, config, token).ConfigureAwait(false);
                 BuildVoid(text, config);
             }
             catch (ApiException ex)
             {
-                //access_token超时
-                if (ex.Code == 42001)
+                if (ex.Code == ErrorAccessTokenExpired)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
-                    await m.GetToken(true).ConfigureAwait(false);
+                    await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
                     var text = await GetString(url, config).ConfigureAwait(false);
                     BuildVoid(text, config);
+                    return;
                 }
 
                 throw;
@@ -98,9 +106,14 @@ namespace Weixin.Next.Api
         /// <param name="data">将会转换为 JSON 格式作为 Post 请求的正文内容</param>
         /// <param name="config"></param>
         /// <returns></returns>
-        public static async Task<string> PostString(string url, object data, ApiConfig config = null)
+        public static Task<string> PostString(string url, object data, ApiConfig config = null)
         {
-            url = await FormatUrl(url, config).ConfigureAwait(false);
+            return PostStringWithToken(url, data, config, null);
+        }
+
+        private static async Task<string> PostStringWithToken(string url, object data, ApiConfig config, AsyncOutParameter<string> token)
+        {
+            url = await FormatUrl(url, config, token).ConfigureAwait(false);
 
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
             var body = parser.ToString(data);
@@ -121,6 +134,7 @@ namespace Weixin.Next.Api
         public static async Task<T> PostResult<T>(string url, object data, ApiConfig config = null)
             where T : IApiResult
         {
+            var token = new AsyncOutParameter<string>();
             try
             {
                 var text = await PostString(url, data, config).ConfigureAwait(false);
@@ -128,11 +142,10 @@ namespace Weixin.Next.Api
             }
             catch (ApiException ex)
             {
-                //access_token超时
-                if (ex.Code == 42001)
+                if (ex.Code == ErrorAccessTokenExpired)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
-                    await m.GetToken(true).ConfigureAwait(false);
+                    await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
                     var text = await PostString(url, data, config).ConfigureAwait(false);
                     return BuildResult<T>(text, config);
@@ -151,21 +164,22 @@ namespace Weixin.Next.Api
         /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
         public static async Task PostVoid(string url, object data, ApiConfig config = null)
         {
+            var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await PostString(url, data, config).ConfigureAwait(false);
+                var text = await PostStringWithToken(url, data, config, token).ConfigureAwait(false);
                 BuildVoid(text, config);
             }
             catch (ApiException ex)
             {
-                //access_token超时
-                if (ex.Code == 42001)
+                if (ex.Code == ErrorAccessTokenExpired)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
-                    await m.GetToken(true).ConfigureAwait(false);
+                    await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
                     var text = await PostString(url, data, config).ConfigureAwait(false);
                     BuildVoid(text, config);
+                    return;
                 }
 
                 throw;
@@ -183,11 +197,16 @@ namespace Weixin.Next.Api
         /// <param name="fileStream">文件内容流</param>
         /// <param name="config"></param>
         /// <returns></returns>
-        public static async Task<string> UploadString(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        public static Task<string> UploadString(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        {
+            return UploadStringWithToken(url, fieldName, fileName, fileStream, config, null);
+        }
+
+        private static async Task<string> UploadStringWithToken(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config, AsyncOutParameter<string> token)
         {
             var content = BuildUploadContent(fieldName, fileName, fileStream);
 
-            url = await FormatUrl(url, config).ConfigureAwait(false);
+            url = await FormatUrl(url, config, token).ConfigureAwait(false);
             var http = config?.HttpClient ?? _defaultConfig.HttpClient;
 
             var response = await http.PostAsync(url, content).ConfigureAwait(false);
@@ -207,18 +226,18 @@ namespace Weixin.Next.Api
         public static async Task<T> UploadResult<T>(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
             where T : IApiResult
         {
+            var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                var text = await UploadStringWithToken(url, fieldName, fileName, fileStream, config, token).ConfigureAwait(false);
                 return BuildResult<T>(text, config);
             }
             catch (ApiException ex)
             {
-                //access_token超时
-                if (ex.Code == 42001)
+                if (ex.Code == ErrorAccessTokenExpired)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
-                    await m.GetToken(true).ConfigureAwait(false);
+                    await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
                     var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
                     return BuildResult<T>(text, config);
@@ -239,21 +258,22 @@ namespace Weixin.Next.Api
         /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
         public static async Task UploadVoid(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
         {
+            var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                var text = await UploadStringWithToken(url, fieldName, fileName, fileStream, config, token).ConfigureAwait(false);
                 BuildVoid(text, config);
             }
             catch (ApiException ex)
             {
-                //access_token超时
-                if (ex.Code == 42001)
+                if (ex.Code == ErrorAccessTokenExpired)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
-                    await m.GetToken(true).ConfigureAwait(false);
+                    await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
                     var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
                     BuildVoid(text, config);
+                    return;
                 }
 
                 throw;
@@ -280,11 +300,14 @@ namespace Weixin.Next.Api
             return content;
         }
 
-        private static async Task<string> FormatUrl(string url, ApiConfig config)
+        private static async Task<string> FormatUrl(string url, ApiConfig config, AsyncOutParameter<string> token)
         {
             var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
             var accessToken = await m.GetToken().ConfigureAwait(false);
             var escapedToken = Uri.EscapeDataString(accessToken);
+
+            if (token != null)
+                token.Value = accessToken;
 
             return url.Replace("$acac$", "access_token=" + escapedToken);
         }
@@ -323,6 +346,15 @@ namespace Weixin.Next.Api
                 return;
 
             throw new ApiException(v.FieldValue<int>("errcode"), v.FieldValue<string>("errmsg"));
+        }
+
+        /// <summary>
+        /// async 方法不能用 out 参数, 所以用这个代替
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        class AsyncOutParameter<T>
+        {
+            public T Value;
         }
     }
 }

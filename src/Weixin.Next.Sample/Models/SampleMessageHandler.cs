@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+ï»¿using System.Threading.Tasks;
 using Weixin.Next.Messaging;
 using Weixin.Next.Messaging.Requests;
 using Weixin.Next.Messaging.Responses;
@@ -7,24 +7,24 @@ namespace Weixin.Next.Sample.Models
 {
     public class SampleMessageHandler : MessageHandler
     {
-        // override ²»Í¬µÄ·½·¨À´´¦Àí²»Í¬µÄÏûÏ¢
+        // override ä¸åŒçš„æ–¹æ³•æ¥å¤„ç†ä¸åŒçš„æ¶ˆæ¯
 
-        protected override Task<IResponseMessage> HandleSubscribeEvent(SubscribeEventMessage message)
+        protected override Task<IResponseMessage> HandleSubscribeEvent(SubscribeEventMessage request)
         {
-            var scene = message.GetQrSceneValue();
+            var scene = request.GetQrSceneValue();
             if (scene == null)
                 return Empty();
 
-            return Result(Text("»¶Ó­É¨Âë¹Ø×¢, ¶şÎ¬Âë³¡¾°ÖµÎª: " + scene, message));
+            return Result(Text("æ¬¢è¿æ‰«ç å…³æ³¨, äºŒç»´ç åœºæ™¯å€¼ä¸º: " + scene));
         }
 
-        protected override Task<IResponseMessage> HandleTextRequest(TextRequestMessage message)
+        protected override Task<IResponseMessage> HandleTextRequest(TextRequestMessage request)
         {
-            var content = message.Content;
+            var content = request.Content;
 
             return content.Length > 2
-                ? Result(Text($"ÍøÂçÌ«ÀÃ, ÏûÏ¢Ã»ÊÕÈ«, ÔÙ·¢Ò»´Î°É! Ö»ÊÕµ½ÁË \"{content.Substring(content.Length / 2)}\"..", message))
-                : Result(Text(content, message));
+                ? Result(Text($"ç½‘ç»œå¤ªçƒ‚, æ¶ˆæ¯æ²¡æ”¶å…¨, å†å‘ä¸€æ¬¡å§! åªæ”¶åˆ°äº† \"{content.Substring(content.Length / 2)}\".."))
+                : Result(Text(content));
         }
     }
 }

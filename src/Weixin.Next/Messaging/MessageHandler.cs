@@ -7,17 +7,27 @@ namespace Weixin.Next.Messaging
 {
     public abstract class MessageHandler : IMessageHandler
     {
+        private static readonly Task<bool> _done = Task.FromResult(true);
         private static readonly Task<IResponseMessage> _empty = Task.FromResult((IResponseMessage)new RawResponseMessage(""));
         private static readonly Task<IResponseMessage> _success = Task.FromResult((IResponseMessage)new RawResponseMessage("success"));
 
-        public Task<IResponseMessage> Handle(RequestMessage message)
+        protected RequestMessage Request { get; private set; }
+
+        public async Task<IResponseMessage> Handle(RequestMessage request)
         {
-            switch (message.MsgType)
+            Request = request;
+
+            await OnHandling().ConfigureAwait(false);
+
+            Task<IResponseMessage> responseTask;
+            switch (request.MsgType)
             {
                 case RequestMessageType.@event:
-                    return HandleEventMessage((EventMessage)message);
+                    responseTask = HandleEventMessage((EventMessage)request);
+                    break;
                 case RequestMessageType.unknown:
-                    return HandleUnknownRequest((UnknownRequestMessage)message);
+                    responseTask = HandleUnknownRequest((UnknownRequestMessage)request);
+                    break;
                 case RequestMessageType.text:
                 case RequestMessageType.image:
                 case RequestMessageType.voice:
@@ -25,236 +35,258 @@ namespace Weixin.Next.Messaging
                 case RequestMessageType.shortvideo:
                 case RequestMessageType.location:
                 case RequestMessageType.link:
-                    return HandleNormalRequest((NormalRequestMessage)message);
+                    responseTask = HandleNormalRequest((NormalRequestMessage)request);
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+
+            var response = await responseTask.ConfigureAwait(false);
+            await OnHandled(response).ConfigureAwait(false);
+
+            return response;
+        }
+
+        protected virtual Task OnHandling()
+        {
+            return _done;
+        }
+
+        protected virtual Task OnHandled(IResponseMessage response)
+        {
+            return _done;
         }
 
         #region Normal Requests
-        protected virtual Task<IResponseMessage> HandleNormalRequest(NormalRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleNormalRequest(NormalRequestMessage request)
         {
-            switch (message.MsgType)
+            switch (request.MsgType)
             {
                 case RequestMessageType.text:
-                    return HandleTextRequest((TextRequestMessage)message);
+                    return HandleTextRequest((TextRequestMessage)request);
                 case RequestMessageType.image:
-                    return HandleImageRequest((ImageRequestMessage)message);
+                    return HandleImageRequest((ImageRequestMessage)request);
                 case RequestMessageType.voice:
-                    return HandleVoiceRequest((VoiceRequestMessage)message);
+                    return HandleVoiceRequest((VoiceRequestMessage)request);
                 case RequestMessageType.video:
-                    return HandleVideoRequest((VideoRequestMessage)message);
+                    return HandleVideoRequest((VideoRequestMessage)request);
                 case RequestMessageType.shortvideo:
-                    return HandleShortVideoRequest((ShortVideoRequestMessage)message);
+                    return HandleShortVideoRequest((ShortVideoRequestMessage)request);
                 case RequestMessageType.location:
-                    return HandleLocationRequest((LocationRequestMessage)message);
+                    return HandleLocationRequest((LocationRequestMessage)request);
                 case RequestMessageType.link:
-                    return HandleLinkRequest((LinkRequestMessage)message);
+                    return HandleLinkRequest((LinkRequestMessage)request);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
 
-        protected virtual Task<IResponseMessage> HandleTextRequest(TextRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleTextRequest(TextRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleImageRequest(ImageRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleImageRequest(ImageRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleVoiceRequest(VoiceRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleVoiceRequest(VoiceRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleVideoRequest(VideoRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleVideoRequest(VideoRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleShortVideoRequest(ShortVideoRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleShortVideoRequest(ShortVideoRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleLocationRequest(LocationRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleLocationRequest(LocationRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleLinkRequest(LinkRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleLinkRequest(LinkRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
 
-        protected virtual Task<IResponseMessage> HandleUnknownRequest(UnknownRequestMessage message)
+        protected virtual Task<IResponseMessage> HandleUnknownRequest(UnknownRequestMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
         #endregion
 
         #region Events
-        protected virtual Task<IResponseMessage> HandleEventMessage(EventMessage message)
+        protected virtual Task<IResponseMessage> HandleEventMessage(EventMessage request)
         {
-            switch (message.Event)
+            switch (request.Event)
             {
                 case EventMessageType.subscribe:
-                    return HandleSubscribeEvent((SubscribeEventMessage)message);
+                    return HandleSubscribeEvent((SubscribeEventMessage)request);
                 case EventMessageType.unsubscribe:
-                    return HandleUnsubscribeEvent((UnsubscribeEventMessage)message);
+                    return HandleUnsubscribeEvent((UnsubscribeEventMessage)request);
                 case EventMessageType.scan:
-                    return HandleScanEvent((ScanEventMessage)message);
+                    return HandleScanEvent((ScanEventMessage)request);
                 case EventMessageType.location:
-                    return HandleLocationEvent((LocationEventMessage)message);
+                    return HandleLocationEvent((LocationEventMessage)request);
+                case EventMessageType.TEMPLATESENDJOBFINISH:
+                    return HandleTemplateSendJobFinishEvent((TemplateSendJobFinishEventMessage)request);
 
                 case EventMessageType.click:
-                    return HandleClickMenu((ClickMenuMessage)message);
+                    return HandleClickMenu((ClickMenuMessage)request);
                 case EventMessageType.view:
-                    return HandleViewMenu((ViewMenuMessage)message);
+                    return HandleViewMenu((ViewMenuMessage)request);
                 case EventMessageType.scancode_push:
-                    return HandleScanCodePushMenu((ScanCodePushMenuMessage)message);
+                    return HandleScanCodePushMenu((ScanCodePushMenuMessage)request);
                 case EventMessageType.scancode_waitmsg:
-                    return HandleScanCodeWaitMsgMenu((ScanCodeWaitMsgMenuMessage)message);
+                    return HandleScanCodeWaitMsgMenu((ScanCodeWaitMsgMenuMessage)request);
                 case EventMessageType.pic_sysphoto:
-                    return HandlePicSysPhotoMenu((PicSysPhotoMenuMessage)message);
+                    return HandlePicSysPhotoMenu((PicSysPhotoMenuMessage)request);
                 case EventMessageType.pic_photo_or_album:
-                    return HandlePicPhotoOrAlbumMenu((PicPhotoOrAlbumMenuMessage)message);
+                    return HandlePicPhotoOrAlbumMenu((PicPhotoOrAlbumMenuMessage)request);
                 case EventMessageType.pic_weixin:
-                    return HandlePicWeixinMenu((PicWeixinMenuMessage)message);
+                    return HandlePicWeixinMenu((PicWeixinMenuMessage)request);
                 case EventMessageType.location_select:
-                    return HandleLocationSelectMenu((LocationSelectMenuMessage)message);
+                    return HandleLocationSelectMenu((LocationSelectMenuMessage)request);
 
                 case EventMessageType.qualification_verify_success:
-                    return HandleQualificationVerifySuccessEvent((QualificationVerifySuccessEvent)message);
+                    return HandleQualificationVerifySuccessEvent((QualificationVerifySuccessEvent)request);
                 case EventMessageType.qualification_verify_fail:
-                    return HandleQualificationVerifyFailEvent((QualificationVerifyFailEvent)message);
+                    return HandleQualificationVerifyFailEvent((QualificationVerifyFailEvent)request);
                 case EventMessageType.naming_verify_success:
-                    return HandleNamingVerifySuccessEvent((NamingVerifySuccessEvent)message);
+                    return HandleNamingVerifySuccessEvent((NamingVerifySuccessEvent)request);
                 case EventMessageType.naming_verify_fail:
-                    return HandleNamingVerifyFailEvent((NamingVerifyFailEvent)message);
+                    return HandleNamingVerifyFailEvent((NamingVerifyFailEvent)request);
                 case EventMessageType.annual_renew:
-                    return HandleAnnualRenewEvent((AnnualRenewEvent)message);
+                    return HandleAnnualRenewEvent((AnnualRenewEvent)request);
                 case EventMessageType.verify_expired:
-                    return HandleVerifyExpiredEvent((VerifyExpiredEvent)message);
+                    return HandleVerifyExpiredEvent((VerifyExpiredEvent)request);
 
                 case EventMessageType.unknown:
-                    return HandleUnknownEvent((UnknownEventMessage)message);
+                    return HandleUnknownEvent((UnknownEventMessage)request);
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
 
-        protected virtual Task<IResponseMessage> HandleSubscribeEvent(SubscribeEventMessage message)
+        protected virtual Task<IResponseMessage> HandleSubscribeEvent(SubscribeEventMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleUnsubscribeEvent(UnsubscribeEventMessage message)
+        protected virtual Task<IResponseMessage> HandleUnsubscribeEvent(UnsubscribeEventMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleScanEvent(ScanEventMessage message)
+        protected virtual Task<IResponseMessage> HandleScanEvent(ScanEventMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleLocationEvent(LocationEventMessage message)
+        protected virtual Task<IResponseMessage> HandleLocationEvent(LocationEventMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
+        protected virtual Task<IResponseMessage> HandleTemplateSendJobFinishEvent(TemplateSendJobFinishEventMessage request)
+        {
+            return DefaultResponse();
+        }
 
         #region Menu Events
-        protected virtual Task<IResponseMessage> HandleClickMenu(ClickMenuMessage message)
+        protected virtual Task<IResponseMessage> HandleClickMenu(ClickMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleViewMenu(ViewMenuMessage message)
+        protected virtual Task<IResponseMessage> HandleViewMenu(ViewMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleScanCodePushMenu(ScanCodePushMenuMessage message)
+        protected virtual Task<IResponseMessage> HandleScanCodePushMenu(ScanCodePushMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleScanCodeWaitMsgMenu(ScanCodeWaitMsgMenuMessage message)
+        protected virtual Task<IResponseMessage> HandleScanCodeWaitMsgMenu(ScanCodeWaitMsgMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandlePicSysPhotoMenu(PicSysPhotoMenuMessage message)
+        protected virtual Task<IResponseMessage> HandlePicSysPhotoMenu(PicSysPhotoMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandlePicPhotoOrAlbumMenu(PicPhotoOrAlbumMenuMessage message)
+        protected virtual Task<IResponseMessage> HandlePicPhotoOrAlbumMenu(PicPhotoOrAlbumMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandlePicWeixinMenu(PicWeixinMenuMessage message)
+        protected virtual Task<IResponseMessage> HandlePicWeixinMenu(PicWeixinMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        protected virtual Task<IResponseMessage> HandleLocationSelectMenu(LocationSelectMenuMessage message)
+        protected virtual Task<IResponseMessage> HandleLocationSelectMenu(LocationSelectMenuMessage request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
         #endregion
 
         #region Verify Events
-        private Task<IResponseMessage> HandleQualificationVerifySuccessEvent(QualificationVerifySuccessEvent message)
+        private Task<IResponseMessage> HandleQualificationVerifySuccessEvent(QualificationVerifySuccessEvent request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        private Task<IResponseMessage> HandleQualificationVerifyFailEvent(QualificationVerifyFailEvent message)
+        private Task<IResponseMessage> HandleQualificationVerifyFailEvent(QualificationVerifyFailEvent request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
         }
 
-        private Task<IResponseMessage> HandleNamingVerifySuccessEvent(NamingVerifySuccessEvent message)
+        private Task<IResponseMessage> HandleNamingVerifySuccessEvent(NamingVerifySuccessEvent request)
         {
-            return DefaultResponse(message);
-
-        }
-
-        private Task<IResponseMessage> HandleNamingVerifyFailEvent(NamingVerifyFailEvent message)
-        {
-            return DefaultResponse(message);
+            return DefaultResponse();
 
         }
 
-        private Task<IResponseMessage> HandleAnnualRenewEvent(AnnualRenewEvent message)
+        private Task<IResponseMessage> HandleNamingVerifyFailEvent(NamingVerifyFailEvent request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
 
         }
 
-        private Task<IResponseMessage> HandleVerifyExpiredEvent(VerifyExpiredEvent message)
+        private Task<IResponseMessage> HandleAnnualRenewEvent(AnnualRenewEvent request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
 
         }
-        #endregion
 
-        protected virtual Task<IResponseMessage> HandleUnknownEvent(UnknownEventMessage message)
+        private Task<IResponseMessage> HandleVerifyExpiredEvent(VerifyExpiredEvent request)
         {
-            return DefaultResponse(message);
+            return DefaultResponse();
+
         }
         #endregion
 
-        protected virtual Task<IResponseMessage> DefaultResponse(RequestMessage message)
+        protected virtual Task<IResponseMessage> HandleUnknownEvent(UnknownEventMessage request)
+        {
+            return DefaultResponse();
+        }
+        #endregion
+
+        protected virtual Task<IResponseMessage> DefaultResponse()
         {
             return Empty();
         }
@@ -280,59 +312,59 @@ namespace Weixin.Next.Messaging
             return _success;
         }
 
-        protected Task<IResponseMessage> Result(IResponseMessage message)
+        protected Task<IResponseMessage> Result(IResponseMessage request)
         {
-            return Task.FromResult(message);
+            return Task.FromResult(request);
         }
 
-        protected TextResponseMessage Text(string content, RequestMessage request)
+        protected TextResponseMessage Text(string content)
         {
             return new TextResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 Content = content,
             };
         }
 
-        protected ImageResponseMessage Image(string mediaId, RequestMessage request)
+        protected ImageResponseMessage Image(string mediaId)
         {
             return new ImageResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 MediaId = mediaId,
             };
         }
 
-        protected VoiceResponseMessage Voice(string mediaId, RequestMessage request)
+        protected VoiceResponseMessage Voice(string mediaId)
         {
             return new VoiceResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 MediaId = mediaId,
             };
         }
 
-        protected VideoResponseMessage Video(string mediaId, string title, string description, RequestMessage request)
+        protected VideoResponseMessage Video(string mediaId, string title, string description)
         {
             return new VideoResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 MediaId = mediaId,
                 Title = title,
                 Description = description,
             };
         }
 
-        protected MusicResponseMessage Music(string title, string description, string musicUrl, string highQualityUrl, string thumbMediaId, RequestMessage request)
+        protected MusicResponseMessage Music(string title, string description, string musicUrl, string highQualityUrl, string thumbMediaId)
         {
             return new MusicResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 Music = new MusicResponseMessage.MusicInfo
                 {
                     Title = title,
@@ -344,23 +376,23 @@ namespace Weixin.Next.Messaging
             };
         }
 
-        protected NewsResponseMessage News(NewsResponseMessage.NewsArticle[] articles, RequestMessage request)
+        protected NewsResponseMessage News(NewsResponseMessage.NewsArticle[] articles)
         {
             return new NewsResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 ArticleCount = articles.Length,
                 Articles = articles,
             };
         }
 
-        protected TransferCustomerServiceResponseMessage TransferCustomerService(string kfAccount, RequestMessage request)
+        protected TransferCustomerServiceResponseMessage TransferCustomerService(string kfAccount)
         {
             return new TransferCustomerServiceResponseMessage
             {
-                FromUserName = request.ToUserName,
-                ToUserName = request.FromUserName,
+                FromUserName = Request.ToUserName,
+                ToUserName = Request.FromUserName,
                 TransInfo = new TransferCustomerServiceResponseMessage.TransKfInfo
                 {
                     KfAccount = kfAccount,

@@ -89,6 +89,10 @@ namespace Weixin.Next.Messaging.Requests
         /// </summary>
         verify_expired,
 
+        /// <summary>
+        /// 模板消息发送完成
+        /// </summary>
+        TEMPLATESENDJOBFINISH,
     }
     // ReSharper restore InconsistentNaming
 
@@ -151,6 +155,9 @@ namespace Weixin.Next.Messaging.Requests
                     break;
                 case EventMessageType.verify_expired:
                     result = new VerifyExpiredEvent(xml);
+                    break;
+                case EventMessageType.TEMPLATESENDJOBFINISH:
+                    result = new TemplateSendJobFinishEventMessage(xml);
                     break;
                 default:
                     result = MenuMessage.Parse(xml, @event);
@@ -262,6 +269,22 @@ namespace Weixin.Next.Messaging.Requests
         /// 地理位置精度
         /// </summary>
         public double Precision { get { return double.Parse(_xml.Element("Precision").Value); } }
+    }
+
+    public class TemplateSendJobFinishEventMessage : EventMessage
+    {
+        public TemplateSendJobFinishEventMessage(XElement xml) : base(xml)
+        {
+        }
+
+        public long MsgID { get { return long.Parse(_xml.Element("MsgID").Value); } }
+
+        public string Status { get { return _xml.Element("Status").Value; } }
+
+        public bool IsSuccess()
+        {
+            return Status == "success";
+        }
     }
     #endregion
 }

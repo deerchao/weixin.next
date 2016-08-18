@@ -11,7 +11,10 @@ namespace Weixin.Next.Sample
     public static class WeixinConfig
     {
         public static SampleMessageCenter MessageCenter { get; private set; }
-        public static JsapiTicketManager JsapiTicketManager { get; private set; }
+        public static IJsapiTicketManager JsapiTicketManager { get; private set; }
+        public static IAccessTokenManager AccessTokenManager { get; private set; }
+        public static ApiConfig ApiConfig { get; private set; }
+
         /// <summary>
         /// 是否启用 API 日志
         /// </summary>
@@ -21,7 +24,7 @@ namespace Weixin.Next.Sample
         public static void Setup()
         {
             CreateMessageCenter();
-            SetDefaultApiConfig();
+            CreateApiConfig();
             CreateJsapiTicketManager();
         }
 
@@ -40,7 +43,7 @@ namespace Weixin.Next.Sample
         }
 
 
-        private static void SetDefaultApiConfig()
+        private static void CreateApiConfig()
         {
             var manager = CreateAccessTokenManager();
             var config = new ApiConfig
@@ -51,6 +54,8 @@ namespace Weixin.Next.Sample
             };
             manager.Config = config;
 
+            AccessTokenManager = manager;
+            ApiConfig = config;
             ApiHelper.SetDefaultConfig(config);
         }
 
@@ -84,7 +89,7 @@ namespace Weixin.Next.Sample
 
         private static void CreateJsapiTicketManager()
         {
-            JsapiTicketManager = new JsapiTicketManager(ApiHelper.DefaultConfig);
+            JsapiTicketManager = new JsapiTicketManager(ApiConfig);
         }
     }
 }

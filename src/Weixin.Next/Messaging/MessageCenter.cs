@@ -41,13 +41,17 @@ namespace Weixin.Next.Messaging
             if (responseMessage != null)
             {
                 responseText = SerializeResponse(urlParameters, responseMessage);
+                OnResponseGenerated(responseText, ResponseSource.Executing);
                 return responseText;
             }
 
             // 如果是已处理的重复消息, 则直接返回待处理结果
             responseText = await _responseCache.Get(key, false).ConfigureAwait(false);
             if (responseText != null)
+            {
+                OnResponseGenerated(responseText, ResponseSource.Cache);
                 return responseText;
+            }
 
             var handler = CreateHandler();
             var task = handler.Handle(requestMessage);
@@ -69,6 +73,7 @@ namespace Weixin.Next.Messaging
                 _executionDictionary.Remove(key);
             }
 
+            OnResponseGenerated(responseText, ResponseSource.New);
             return responseText;
         }
 
@@ -81,6 +86,8 @@ namespace Weixin.Next.Messaging
             var decryptResult = _cryptor.DecryptMsg(urlParameters.msg_signature, urlParameters.timestamp, urlParameters.nonce, inputData, ref request);
             if (decryptResult != WXBizMsgCrypt.WXBizMsgCryptErrorCode.WXBizMsgCrypt_OK)
                 throw new MessageException($"解密失败: {decryptResult}");
+
+            OnRequestRead(request);
 
             return RequestMessage.Parse(request);
         }
@@ -99,6 +106,22 @@ namespace Weixin.Next.Messaging
             return outputData;
         }
 
+        /// <summary>
+        /// 读取并解密完请求消息时执行, 设计用途: 写入日志
+        /// </summary>
+        /// <param name="requestText">请求体文本</param>
+        protected virtual void OnRequestRead(string requestText)
+        {
+        }
+
+        /// <summary>
+        /// 处理完请求后执行, 设计用途: 写入日志
+        /// </summary>
+        /// <param name="responseText">响应文本</param>
+        /// <param name="source">响应文本来源</param>
+        protected virtual void OnResponseGenerated(string responseText, ResponseSource source)
+        {
+        }
 
         protected abstract IMessageHandler CreateHandler();
 
@@ -117,5 +140,24 @@ namespace Weixin.Next.Messaging
         {
             return new ResponseCache();
         }
+    }
+
+    /// <summary>
+    /// 响应来源
+    /// </summary>
+    public enum ResponseSource
+    {
+        /// <summary>
+        /// 响应来自于对新请求的新处理过程
+        /// </summary>
+        New,
+        /// <summary>
+        /// 响应来自尚未执行完毕的重复消息处理过程
+        /// </summary>
+        Executing,
+        /// <summary>
+        /// 响应来自已处理完成的重复消息缓存
+        /// </summary>
+        Cache,
     }
 }
