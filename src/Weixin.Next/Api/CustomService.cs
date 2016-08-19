@@ -160,6 +160,7 @@ namespace Weixin.Next.Api
                 "media",
                 filename,
                 fileStream,
+                null,
                 config);
         }
 

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Api\Common\AccessTokenManager.cs" />
     <Compile Include="Api\Common\ApiConfig.cs" />
+    <Compile Include="Api\Common\ApiErrorCode.cs" />
     <Compile Include="Api\Common\ApiException.cs" />
     <Compile Include="Api\Common\ApiHelper.cs" />
     <Compile Include="Api\Common\JsConfig.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="Api\Common\IJsonParser.cs" />
     <Compile Include="Api\Common\JsApi.cs" />
     <Compile Include="Api\Common\JsapiTicketManager.cs" />
+    <Compile Include="Api\Material.cs" />
+    <Compile Include="Api\Media.cs" />
     <Compile Include="Api\Menu.cs" />
     <Compile Include="Api\Misc.cs" />
     <Compile Include="Api\OAuth2.cs" />

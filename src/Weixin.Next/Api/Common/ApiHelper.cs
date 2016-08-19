@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -8,7 +9,8 @@ namespace Weixin.Next.Api
     public static class ApiHelper
     {
         private static ApiConfig _defaultConfig;
-        private const int ErrorAccessTokenExpired = 42001;
+        private const int ErrorAccessTokenExpired = ApiErrorCode.E42001;
+        private const int ErrorSuccess = ApiErrorCode.E0;
 
         public static ApiConfig DefaultConfig { get { return _defaultConfig; } }
 
@@ -188,6 +190,7 @@ namespace Weixin.Next.Api
         #endregion
 
         #region Upload
+
         /// <summary>
         /// 上传文件, 返回字符串
         /// </summary>
@@ -195,16 +198,17 @@ namespace Weixin.Next.Api
         /// <param name="fieldName">文件字段名称</param>
         /// <param name="fileName">文件名</param>
         /// <param name="fileStream">文件内容流</param>
+        /// <param name="additionalFields">要在 POST 内容中发送的其它字段</param>
         /// <param name="config"></param>
         /// <returns></returns>
-        public static Task<string> UploadString(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        public static Task<string> UploadString(string url, string fieldName, string fileName, Stream fileStream, KeyValuePair<string, string>[] additionalFields = null, ApiConfig config = null)
         {
-            return UploadStringWithToken(url, fieldName, fileName, fileStream, config, null);
+            return UploadStringWithToken(url, fieldName, fileName, fileStream, additionalFields, config, null);
         }
 
-        private static async Task<string> UploadStringWithToken(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config, AsyncOutParameter<string> token)
+        private static async Task<string> UploadStringWithToken(string url, string fieldName, string fileName, Stream fileStream, KeyValuePair<string, string>[] additionalFields, ApiConfig config, AsyncOutParameter<string> token)
         {
-            var content = BuildUploadContent(fieldName, fileName, fileStream);
+            var content = BuildUploadContent(fieldName, fileName, fileStream, additionalFields);
 
             url = await FormatUrl(url, config, token).ConfigureAwait(false);
             var http = config?.HttpClient ?? _defaultConfig.HttpClient;
@@ -221,15 +225,16 @@ namespace Weixin.Next.Api
         /// <param name="fieldName">文件字段名称</param>
         /// <param name="fileName">文件名</param>
         /// <param name="fileStream">文件内容流</param>
+        /// <param name="additionalFields">要在 POST 内容中发送的其它字段</param>
         /// <param name="config"></param>
         /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
-        public static async Task<T> UploadResult<T>(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        public static async Task<T> UploadResult<T>(string url, string fieldName, string fileName, Stream fileStream, KeyValuePair<string, string>[] additionalFields = null, ApiConfig config = null)
             where T : IApiResult
         {
             var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await UploadStringWithToken(url, fieldName, fileName, fileStream, config, token).ConfigureAwait(false);
+                var text = await UploadStringWithToken(url, fieldName, fileName, fileStream, additionalFields, config, token).ConfigureAwait(false);
                 return BuildResult<T>(text, config);
             }
             catch (ApiException ex)
@@ -239,7 +244,7 @@ namespace Weixin.Next.Api
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
-                    var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                    var text = await UploadString(url, fieldName, fileName, fileStream, additionalFields, config).ConfigureAwait(false);
                     return BuildResult<T>(text, config);
                 }
 
@@ -254,14 +259,15 @@ namespace Weixin.Next.Api
         /// <param name="fieldName">文件字段名称</param>
         /// <param name="fileName">文件名</param>
         /// <param name="fileStream">文件内容流</param>
+        /// <param name="additionalFields">要在 POST 内容中发送的其它字段</param>
         /// <param name="config"></param>
         /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
-        public static async Task UploadVoid(string url, string fieldName, string fileName, Stream fileStream, ApiConfig config = null)
+        public static async Task UploadVoid(string url, string fieldName, string fileName , Stream fileStream, KeyValuePair<string,string>[] additionalFields = null, ApiConfig config = null)
         {
             var token = new AsyncOutParameter<string>();
             try
             {
-                var text = await UploadStringWithToken(url, fieldName, fileName, fileStream, config, token).ConfigureAwait(false);
+                var text = await UploadStringWithToken(url, fieldName, fileName, fileStream, additionalFields, config, token).ConfigureAwait(false);
                 BuildVoid(text, config);
             }
             catch (ApiException ex)
@@ -271,7 +277,7 @@ namespace Weixin.Next.Api
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
 
-                    var text = await UploadString(url, fieldName, fileName, fileStream, config).ConfigureAwait(false);
+                    var text = await UploadString(url, fieldName, fileName, fileStream, additionalFields, config).ConfigureAwait(false);
                     BuildVoid(text, config);
                     return;
                 }
@@ -281,7 +287,7 @@ namespace Weixin.Next.Api
         }
         #endregion
 
-        private static MultipartFormDataContent BuildUploadContent(string fieldName, string fileName, Stream fileStream)
+        private static MultipartFormDataContent BuildUploadContent(string fieldName, string fileName, Stream fileStream, KeyValuePair<string, string>[] additionalFields)
         {
             var boundary = Guid.NewGuid().ToString("n");
             var content = new MultipartFormDataContent(boundary);
@@ -293,6 +299,21 @@ namespace Weixin.Next.Api
                 fileName = '"' + fileName + '"';
 
             content.Add(new StreamContent(fileStream), fieldName, fileName);
+
+            if (additionalFields != null)
+            {
+                foreach (var field in additionalFields)
+                {
+                    if (field.Value != null)
+                    {
+                        var name = field.Key;
+                        if (name != null)
+                            name = '"' + name + '"';
+
+                        content.Add(new StringContent(field.Value), name);
+                    }
+                }
+            }
 
             //微信服务器不接受引号括起来的 boundary..
             content.Headers.Remove("Content-Type");
@@ -327,7 +348,7 @@ namespace Weixin.Next.Api
         {
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
             var v = parser.Parse(json);
-            if (!v.HasField("errcode") || v.FieldValue<int>("errcode") == 0)
+            if (!v.HasField("errcode") || v.FieldValue<int>("errcode") == ErrorSuccess)
             {
                 return parser.Build<T>(v);
             }
@@ -345,10 +366,22 @@ namespace Weixin.Next.Api
         {
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
             var v = parser.Parse(json);
-            if (!v.HasField("errcode") || v.FieldValue<int>("errcode") == 0)
+            if (!v.HasField("errcode") || v.FieldValue<int>("errcode") == ErrorSuccess)
                 return;
 
             throw new ApiException(v.FieldValue<int>("errcode"), v.FieldValue<string>("errmsg"));
+        }
+
+        /// <summary>
+        /// 将对象转化为 JSON 字符串
+        /// </summary>
+        /// <param name="o">对象</param>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        public static string ToJsonString(object o, ApiConfig config = null)
+        {
+            var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
+            return parser.ToString(o);
         }
 
         /// <summary>
