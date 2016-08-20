@@ -1,9 +1,11 @@
 ﻿using System;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Weixin.Next.Api
 {
+    // ReSharper disable InconsistentNaming
     public static class Media
     {
         /// <summary>
@@ -55,6 +57,32 @@ namespace Weixin.Next.Api
             public long created_at { get; set; }
         }
 
-        //todo 获取临时素材
+        /// <summary>
+        /// 下载临时素材
+        /// </summary>
+        /// <param name="media_id">媒体文件ID</param>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        public static async Task<Stream> Get(string media_id, ApiConfig config = null)
+        {
+            using (var s = await ApiHelper.GetStream($"https://api.weixin.qq.com/cgi-bin/media/get?$acac$&media_id={Uri.EscapeDataString(media_id)}", config).ConfigureAwait(false))
+            {
+                var ms = new MemoryStream();
+                await s.CopyToAsync(ms).ConfigureAwait(false);
+
+                //估计错误消息应该不会大于400字节
+                if (ms.Length < 400)
+                {
+                    var buffer = ms.ToArray();
+                    var text = Encoding.UTF8.GetString(buffer);
+
+                    //如果是失败消息, 这里会抛出异常
+                    ApiHelper.BuildVoid(text, config);
+                }
+
+                ms.Position = 0;
+                return ms;
+            }
+        }
     }
 }

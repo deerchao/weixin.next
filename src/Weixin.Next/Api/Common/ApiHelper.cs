@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Weixin.Next.Api
@@ -32,11 +33,30 @@ namespace Weixin.Next.Api
 
         private static async Task<string> GetStringWithToken(string url, ApiConfig config, AsyncOutParameter<string> token)
         {
-            url = await FormatUrl(url, config, token).ConfigureAwait(false);
-            var http = config?.HttpClient ?? _defaultConfig.HttpClient;
-            return await http.GetStringAsync(url).ConfigureAwait(false);
+            var stream = await GetStreamWithToken(url, config, token).ConfigureAwait(false);
+            using (var reader = new StreamReader(stream, Encoding.UTF8))
+            {
+                return await reader.ReadToEndAsync().ConfigureAwait(false);
+            }
         }
 
+        /// <summary>
+        /// 发送 Get 请求, 返回流
+        /// </summary>
+        /// <param name="url">网址</param>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        public static Task<Stream> GetStream(string url, ApiConfig config = null)
+        {
+            return GetStreamWithToken(url, config, null);
+        }
+
+        private static async Task<Stream> GetStreamWithToken(string url, ApiConfig config, AsyncOutParameter<string> token)
+        {
+            url = await FormatUrl(url, config, token).ConfigureAwait(false);
+            var http = config?.HttpClient ?? _defaultConfig.HttpClient;
+            return await http.GetStreamAsync(url).ConfigureAwait(false);
+        }
 
         /// <summary>
         /// 发送 Get 请求, 返回结果对象；如遇 access_token 超时错误, 会自动获取新的 access_token 并重试
@@ -115,6 +135,27 @@ namespace Weixin.Next.Api
 
         private static async Task<string> PostStringWithToken(string url, object data, ApiConfig config, AsyncOutParameter<string> token)
         {
+            var stream = await PostStreamWithToken(url, data, config, token).ConfigureAwait(false);
+            using (var reader = new StreamReader(stream, Encoding.UTF8))
+            {
+                return await reader.ReadToEndAsync().ConfigureAwait(false);
+            }
+        }
+
+        /// <summary>
+        /// 发送 Post 请求, 返回流
+        /// </summary>
+        /// <param name="url">接口网址, 里边的 $acac$ 会被自动替换成 access_token=xxx </param>
+        /// <param name="data">将会转换为 JSON 格式作为 Post 请求的正文内容</param>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        public static Task<Stream> PostStream(string url, object data, ApiConfig config = null)
+        {
+            return PostStreamWithToken(url, data, config, null);
+        }
+
+        private static async Task<Stream> PostStreamWithToken(string url, object data, ApiConfig config, AsyncOutParameter<string> token)
+        {
             url = await FormatUrl(url, config, token).ConfigureAwait(false);
 
             var parser = config?.JsonParser ?? _defaultConfig.JsonParser;
@@ -122,7 +163,7 @@ namespace Weixin.Next.Api
 
             var http = config?.HttpClient ?? _defaultConfig.HttpClient;
             var response = await http.PostAsync(url, new StringContent(body)).ConfigureAwait(false);
-            return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            return await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
         }
 
         /// <summary>
@@ -262,7 +303,7 @@ namespace Weixin.Next.Api
         /// <param name="additionalFields">要在 POST 内容中发送的其它字段</param>
         /// <param name="config"></param>
         /// <exception cref="ApiException">返回的 JSON 字符串中包含了错误信息</exception>
-        public static async Task UploadVoid(string url, string fieldName, string fileName , Stream fileStream, KeyValuePair<string,string>[] additionalFields = null, ApiConfig config = null)
+        public static async Task UploadVoid(string url, string fieldName, string fileName, Stream fileStream, KeyValuePair<string, string>[] additionalFields = null, ApiConfig config = null)
         {
             var token = new AsyncOutParameter<string>();
             try
