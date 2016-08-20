@@ -331,7 +331,6 @@ namespace Weixin.Next.Api
         /// <summary>
         /// 获取客服会话列表
         /// </summary>
-        /// <param name="kf_account">完整客服帐号，格式为：帐号前缀@公众号微信号</param>
         /// <param name="config"></param>
         public static Task<GetWaitCaseResult> GetWaitCase(ApiConfig config = null)
         {
@@ -363,8 +362,5 @@ namespace Weixin.Next.Api
         }
 
         #endregion
-
-        //todo: 客服接口-发消息
-        //todo: 群发消息
     }
 }

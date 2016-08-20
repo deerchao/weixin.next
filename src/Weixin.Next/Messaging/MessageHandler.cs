@@ -139,6 +139,8 @@ namespace Weixin.Next.Messaging
                     return HandleLocationEvent((LocationEventMessage)request);
                 case EventMessageType.templatesendjobfinish:
                     return HandleTemplateSendJobFinishEvent((TemplateSendJobFinishEventMessage)request);
+                case EventMessageType.masssendjobfinish:
+                    return HandleMassSendJobFinishEvent((MassSendJobFinishEventMessage)request);
 
                 case EventMessageType.click:
                     return HandleClickMenu((ClickMenuMessage)request);
@@ -198,6 +200,11 @@ namespace Weixin.Next.Messaging
         }
 
         protected virtual Task<IResponseMessage> HandleTemplateSendJobFinishEvent(TemplateSendJobFinishEventMessage request)
+        {
+            return DefaultResponse();
+        }
+
+        protected virtual Task<IResponseMessage> HandleMassSendJobFinishEvent(MassSendJobFinishEventMessage request)
         {
             return DefaultResponse();
         }

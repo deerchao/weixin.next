@@ -93,6 +93,10 @@ namespace Weixin.Next.Messaging.Requests
         /// 模板消息发送完成
         /// </summary>
         templatesendjobfinish,
+        /// <summary>
+        /// 群发任务完成
+        /// </summary>
+        masssendjobfinish
     }
     // ReSharper restore InconsistentNaming
 
@@ -158,6 +162,9 @@ namespace Weixin.Next.Messaging.Requests
                     break;
                 case EventMessageType.templatesendjobfinish:
                     result = new TemplateSendJobFinishEventMessage(xml);
+                    break;
+                case EventMessageType.masssendjobfinish:
+                    result = new MassSendJobFinishEventMessage(xml);
                     break;
                 default:
                     result = MenuMessage.Parse(xml, @event);
@@ -284,6 +291,27 @@ namespace Weixin.Next.Messaging.Requests
         public bool IsSuccess()
         {
             return Status == "success";
+        }
+    }
+
+    public class MassSendJobFinishEventMessage : EventMessage
+    {
+        public MassSendJobFinishEventMessage(XElement xml) : base(xml)
+        {
+        }
+
+        public long MsgID { get { return long.Parse(_xml.Element("MsgID").Value); } }
+
+        public string Status { get { return _xml.Element("Status").Value; } }
+
+        public int TotalCount { get { return int.Parse(_xml.Element("TotalCount").Value); } }
+        public int FilterCount { get { return int.Parse(_xml.Element("FilterCount").Value); } }
+        public int SentCount { get { return int.Parse(_xml.Element("SentCount").Value); } }
+        public int ErrorCount { get { return int.Parse(_xml.Element("ErrorCount").Value); } }
+
+        public bool IsSuccess()
+        {
+            return Status == "send success";
         }
     }
     #endregion
