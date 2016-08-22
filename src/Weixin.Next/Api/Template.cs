@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 模板消息
+    /// </summary>
     public static class Template
     {
         #region 发送模板消息

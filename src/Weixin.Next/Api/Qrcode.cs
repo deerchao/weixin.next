@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信带参数二维码
+    /// </summary>
     public static class Qrcode
     {
         /// <summary>

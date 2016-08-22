@@ -2,6 +2,10 @@
 
 namespace Weixin.Next.Api
 {
+    // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信短网址
+    /// </summary>
     public static class ShortUrl
     {
         /// <summary>

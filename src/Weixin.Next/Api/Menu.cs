@@ -3,6 +3,9 @@
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信自定义菜单
+    /// </summary>
     public static class Menu
     {
         #region 自定义菜单创建接口

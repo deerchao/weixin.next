@@ -2,6 +2,10 @@
 
 namespace Weixin.Next.Api
 {
+    // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信 jsapi_ticket
+    /// </summary>
     public static class Ticket
     {
         /// <summary>

@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信网页授权
+    /// </summary>
     public static class OAuth2
     {
         /// <summary>

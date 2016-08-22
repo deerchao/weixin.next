@@ -3,6 +3,9 @@
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信其它接口
+    /// </summary>
     public static class Misc
     {
         /// <summary>

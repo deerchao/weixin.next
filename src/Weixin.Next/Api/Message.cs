@@ -3,6 +3,9 @@
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信消息发送
+    /// </summary>
     public static class Message
     {
         #region 发送客服消息

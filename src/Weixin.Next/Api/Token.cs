@@ -3,6 +3,10 @@ using System.Threading.Tasks;
 
 namespace Weixin.Next.Api
 {
+    // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信接口 access_token
+    /// </summary>
     public class Token
     {
         /// <summary>

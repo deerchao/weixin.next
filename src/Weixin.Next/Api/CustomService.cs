@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信客服
+    /// </summary>
     public static class CustomService
     {
         #region 获取客服基本信息

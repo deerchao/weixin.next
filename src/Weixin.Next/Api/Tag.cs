@@ -3,6 +3,9 @@
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信用户标签
+    /// </summary>
     public static class Tag
     {
         #region 创建标签

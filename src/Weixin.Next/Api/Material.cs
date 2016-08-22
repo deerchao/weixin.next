@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信素材接口
+    /// </summary>
     public static class Material
     {
         #region 添加永久素材

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信多媒体接口
+    /// </summary>
     public static class Media
     {
         /// <summary>
