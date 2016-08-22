@@ -5,6 +5,9 @@ using System.Threading.Tasks;
 namespace Weixin.Next.Api
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 微信用户信息
+    /// </summary>
     public static class User
     {
         #region 获取用户基本信息(UnionID机制)
@@ -86,37 +89,12 @@ namespace Weixin.Next.Api
         /// <param name="next_openid"></param>
         /// <param name="config"></param>
         /// <returns></returns>
-        public static Task<GetListResult> GetList(string next_openid = null, ApiConfig config = null)
+        public static Task<GetOpenListResult> GetList(string next_openid = null, ApiConfig config = null)
         {
-            return ApiHelper.GetResult<GetListResult>($"https://api.weixin.qq.com/cgi-bin/user/get?$acac$&next_openid={next_openid}", config);
-        }
-
-        public class GetListResult : IApiResult
-        {
-            /// <summary>
-            /// 关注该公众账号的总用户数
-            /// </summary>
-            public int total { get; set; }
-            /// <summary>
-            /// 拉取的OPENID个数，最大值为10000
-            /// </summary>
-            public int count { get; set; }
-            /// <summary>
-            /// 列表数据，OPENID的列表
-            /// </summary>
-            public OpenIdList data { get; set; }
-            /// <summary>
-            /// 拉取列表的最后一个用户的OPENID
-            /// </summary>
-            public string next_openid { get; set; }
+            return ApiHelper.GetResult<GetOpenListResult>($"https://api.weixin.qq.com/cgi-bin/user/get?$acac$&next_openid={next_openid}", config);
         }
 
         #endregion
-
-        public class OpenIdList
-        {
-            public string[] openid { get; set; }
-        }
 
         #region 设置用户备注名
         /// <summary>
@@ -212,4 +190,31 @@ namespace Weixin.Next.Api
         }
         #endregion
     }
+
+
+    public class GetOpenListResult : IApiResult
+    {
+        /// <summary>
+        /// 关注该公众账号的总用户数
+        /// </summary>
+        public int total { get; set; }
+        /// <summary>
+        /// 拉取的OPENID个数，最大值为10000
+        /// </summary>
+        public int count { get; set; }
+        /// <summary>
+        /// 列表数据，OPENID的列表
+        /// </summary>
+        public OpenIdList data { get; set; }
+        /// <summary>
+        /// 拉取列表的最后一个用户的OPENID
+        /// </summary>
+        public string next_openid { get; set; }
+    }
+
+    public class OpenIdList
+    {
+        public string[] openid { get; set; }
+    }
+
 }

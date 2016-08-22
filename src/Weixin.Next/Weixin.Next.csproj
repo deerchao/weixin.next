@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\Blacklist.cs" />
     <Compile Include="Api\Common\AccessTokenManager.cs" />
     <Compile Include="Api\Common\ApiConfig.cs" />
     <Compile Include="Api\Common\ApiErrorCode.cs" />
@@ -65,7 +66,7 @@
     <Compile Include="Api\Template.cs" />
     <Compile Include="Api\Ticket.cs" />
     <Compile Include="Api\Token.cs" />
-    <Compile Include="Api\Common\User.cs" />
+    <Compile Include="Api\User.cs" />
     <Compile Include="Messaging\Crypt\Cryptography.cs" />
     <Compile Include="Messaging\Caches\IExecutionDictionary.cs" />
     <Compile Include="Messaging\IMessageHandler.cs" />
