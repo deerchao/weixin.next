@@ -202,6 +202,117 @@ namespace Weixin.Next.Api
             public string language { get; set; }
         }
 
-        //todo: 获取自定义菜单配置接口
+        #region 获取自定义菜单配置接口
+        /// <summary>
+        /// 获取自定义菜单配置接口
+        /// </summary>
+        /// <param name="config"></param>
+        /// <returns></returns>
+        public static Task<GetCurrentSelfmenuInfoResult> GetCurrentSelfmenuInfo(ApiConfig config = null)
+        {
+            return ApiHelper.GetResult<GetCurrentSelfmenuInfoResult>("https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?$acac$", config);
+        }
+
+        public class GetCurrentSelfmenuInfoResult : IApiResult
+        {
+            /// <summary>
+            /// 菜单是否开启，0代表未开启，1代表开启
+            /// </summary>
+            public int is_menu_open { get; set; }
+            /// <summary>
+            /// 菜单信息
+            /// </summary>
+            public Selfmenu_Info selfmenu_info { get; set; }
+        }
+
+        public class Selfmenu_Info
+        {
+            /// <summary>
+            /// 菜单按钮
+            /// </summary>
+            public Selfmenu_Button[] button { get; set; }
+        }
+
+        public class Selfmenu_Button : Selfmenu_BasicButtion
+        {
+            public Sub_Button sub_button { get; set; }
+        }
+
+        public class Sub_Button
+        {
+            public Selfmenu_BasicButtion[] list { get; set; }
+        }
+
+        public class Selfmenu_BasicButtion
+        {
+            /// <summary>
+            /// 菜单的类型，公众平台官网上能够设置的菜单类型有view（跳转网页）、text（返回文本，下同）、img、photo、video、voice。使用API设置的则有8种，详见《自定义菜单创建接口》
+            /// </summary>
+            public string type { get; set; }
+            /// <summary>
+            /// 菜单名称
+            /// </summary>
+            public string name { get; set; }
+            /// <summary>
+            /// 对于不同的菜单类型，value的值意义不同。官网上设置的自定义菜单：
+            /// Text:保存文字到value； Img、voice：保存mediaID到value； Video：保存视频下载链接到value； News：保存图文消息到news_info，同时保存mediaID到value； View：保存链接到url。
+            /// 使用API设置的自定义菜单： click、scancode_push、scancode_waitmsg、pic_sysphoto、pic_photo_or_album、 pic_weixin、location_select：保存值到key；view：保存链接到url
+            /// </summary>
+            public string key { get; set; }
+            /// <summary>
+            /// 对于不同的菜单类型，value的值意义不同。官网上设置的自定义菜单：
+            /// Text:保存文字到value； Img、voice：保存mediaID到value； Video：保存视频下载链接到value； News：保存图文消息到news_info，同时保存mediaID到value； View：保存链接到url。
+            /// 使用API设置的自定义菜单： click、scancode_push、scancode_waitmsg、pic_sysphoto、pic_photo_or_album、 pic_weixin、location_select：保存值到key；view：保存链接到url
+            /// </summary>
+            public string url { get; set; }
+            /// <summary>
+            /// 对于不同的菜单类型，value的值意义不同。官网上设置的自定义菜单：
+            /// Text:保存文字到value； Img、voice：保存mediaID到value； Video：保存视频下载链接到value； News：保存图文消息到news_info，同时保存mediaID到value； View：保存链接到url。
+            /// 使用API设置的自定义菜单： click、scancode_push、scancode_waitmsg、pic_sysphoto、pic_photo_or_album、 pic_weixin、location_select：保存值到key；view：保存链接到url
+            /// </summary>
+            public string value { get; set; }
+            /// <summary>
+            /// 图文消息的信息, 只有 type 为 news 时才有
+            /// </summary>
+            public News_Info news_info { get; set; }
+        }
+
+        public class News_Info
+        {
+            public News_Info_Item[] list { get; set; }
+        }
+
+        public class News_Info_Item
+        {
+            /// <summary>
+            /// 图文消息的标题
+            /// </summary>
+            public string title { get; set; }
+            /// <summary>
+            /// 作者
+            /// </summary>
+            public string author { get; set; }
+            /// <summary>
+            /// 摘要
+            /// </summary>
+            public string digest { get; set; }
+            /// <summary>
+            /// 是否显示封面，0为不显示，1为显示
+            /// </summary>
+            public int show_cover { get; set; }
+            /// <summary>
+            /// 封面图片的URL
+            /// </summary>
+            public string cover_url { get; set; }
+            /// <summary>
+            /// 正文的URL
+            /// </summary>
+            public string content_url { get; set; }
+            /// <summary>
+            /// 原文的URL，若置空则无查看原文入口
+            /// </summary>
+            public string source_url { get; set; }
+        }
+        #endregion
     }
 }

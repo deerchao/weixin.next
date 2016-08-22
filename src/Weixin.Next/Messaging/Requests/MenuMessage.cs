@@ -10,6 +10,8 @@ namespace Weixin.Next.Messaging.Requests
         {
         }
 
+        public long MenuId { get { return long.Parse(_xml.Element("MenuId").Value); } }
+
         public static MenuMessage Parse(XElement xml, EventMessageType @event)
         {
             switch (@event)
