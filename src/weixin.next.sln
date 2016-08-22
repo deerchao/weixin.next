@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin.Next.Json.Net", "Wei
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weixin.Next.Sample", "Weixin.Next.Sample\Weixin.Next.Sample.csproj", "{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadDoc", "DownloadDoc\DownloadDoc.csproj", "{9E92EB85-6836-4D61-A8EE-8B6B0F78D5F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{721BE0E3-8FB2-4317-82DF-7B8D5A26197C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E92EB85-6836-4D61-A8EE-8B6B0F78D5F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E92EB85-6836-4D61-A8EE-8B6B0F78D5F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E92EB85-6836-4D61-A8EE-8B6B0F78D5F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E92EB85-6836-4D61-A8EE-8B6B0F78D5F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

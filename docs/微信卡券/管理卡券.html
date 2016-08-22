@@ -11,7 +11,7 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p style="text-align: left;">
+<p style="text-align: left;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span>
 <br></p>
 <h3 style="white-space: normal; margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><a name="1"></a>更新日志</span>
 <br></h3>
@@ -538,7 +538,7 @@
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_NOT_VERIFY”,待审核</span><span style="font-family: 微软雅黑, 'Microsoft YaHei';">；</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_VERIFY_FAIL”,审核失败；</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_VERIFY_OK”，通过审核；</span></p>
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_USER_DELETE”，卡券被商户删除；</span></p>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_DELETE”，卡券被商户删除；</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_DISPATCH”，在公众平台投放过的卡券<span style="font-family: 微软雅黑, 'Microsoft YaHei';">；</span></span></p>
 </td></tr>
 </tbody>
@@ -701,7 +701,8 @@
 <tr class="firstRow thead"><th style="width: 100px;" class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">参数名</span></th><th class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">必填</span></th><th class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">类型</span></th><th class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">示例值</span></th><th class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">描述</span></th></tr>
 <tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">offset</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">是</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">int</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">0</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">查询卡列表的起始偏移量，从0开始，即offset: 5是指从从列表里的第六个开始读取。</span></td></tr>
 <tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">count</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">是</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">int</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">10</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">需要查询的卡片的数量（数量最大50）。</span></td></tr>
-<tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">status_list</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">否</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">int</span></td><td class="table_cell">
+<tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">status_list</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">否</span></td><td class="table_cell"><font face="微软雅黑, Microsoft YaHei">string(32)</font>
+</td><td class="table_cell">
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">CARD_STATU</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">S_VERIFY_OK</span></p>
 </td><td class="table_cell">
@@ -713,7 +714,7 @@
 <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">审核失败；</span></p>
 <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_VERIFY_OK”，</span></p>
 <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">通过审核；</span></p>
-<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_USER_DELETE”，</span></p>
+<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_DELETE”，</span></p>
 <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">卡券被商户删除；</span></p>
 <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">“CARD_STATUS_DISPATCH”，</span></p>
 <p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">在公众平台投放过的卡券；</span></p>

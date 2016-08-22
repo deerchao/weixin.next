@@ -1,0 +1,160 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
+<body class="page_doc">
+<div class="main_hd"><h2>黑名单管理</h2>
+</div>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span>公众号可登录微信公众平台，对粉丝进行拉黑的操作。同时，我们也提供了一套黑名单管理API，以便开发者直接利用接口进行操作。</span></p>
+<p><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">1. 获取公众号的黑名单列表</span>
+<br></strong></p>
+<p><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">公众号可通过该接口来获取帐号的黑名单列表，黑名单列表由一串 OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。</span></p>
+<p><span style="font-family:微软雅黑, Microsoft YaHei"><span style="font-size: 14px;">该接口每次调用最多可拉取 10000 个OpenID，当列表数较多时，可以通过多次拉取的方式来满足需求。</span></span></p>
+<p><strong><span style="font-family:微软雅黑, Microsoft YaHei"><span style="font-size: 14px;">接口调用请求说明</span></span></strong></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">http请求方式：POST（请使用https协议）
+https://api.weixin.qq.com/cgi-bin/tags/members/getblacklist?access_token=ACCESS_TOKEN</pre>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">JSON 数据说明
+<br></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+	"begin_openid":"OPENID1"
+}</pre>
+<p style="white-space: normal;"><span style="font-family:微软雅黑, Microsoft YaHei"><span style="font-size: 14px;">当 begin_openid 为空时，默认从开头拉取。</span></span></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">返回说明</span></span></strong></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">正确时返回 JSON数据包</span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+&nbsp;"total":23000,
+&nbsp;"count":10000,
+&nbsp;"data":{"
+&nbsp;&nbsp;&nbsp;&nbsp;openid":[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OPENID1",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OPENID2",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"OPENID10000"
+&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;},
+&nbsp;&nbsp;"next_openid":"OPENID10000"
+}</pre>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">错误时返回 JSON数据包（示例为无效AppID错误）</span></span></p>
+<p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{"errcode":40013,"errmsg":"invalid&nbsp;appid"}</pre>
+<p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">返回码说明</span></span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></strong></p>
+<table class="table">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr>
+</tbody>
+</table>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;">同时，请注意：</span>
+<br></p>
+<p style="white-space: normal;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">当公众号黑名单列表数量超过 10000 时，可通过填写 next_openid 的值，从而多次拉取列表的方式来满足需求。</span></p>
+<p style="white-space: normal;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">具体而言，就是在调用接口时，将上一次调用得到的返回中的 next_openid 的值，作为下一次调用中的 next_openid 值。</span></p>
+<p style="white-space: normal;">
+<br></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">2. 拉黑用户</span></strong></p>
+<p style="white-space: normal;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">公众号可通过该接口来拉黑一批用户，黑名单列表由一串 OpenID （加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。</span></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">接口调用请求说明</span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></strong></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">http请求方式：POST（请使用https协议）
+https://api.weixin.qq.com/cgi-bin/tags/members/batchblacklist?access_token=ACCESS_TOKEN</pre>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">参数说明</span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></strong></p>
+<table class="table">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="307" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是否必须</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="307" valign="top" style="word-break: break-all;">access_token</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">调用接口凭证</td></tr>
+<tr><td class="table_cell" width="307" valign="top" style="word-break: break-all;">openid_list</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">需要拉入黑名单的用户的openid，一次拉黑最多允许20个</td></tr>
+</tbody>
+</table>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">JSON 数据说明
+<br></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+&nbsp;"opened_list":["OPENID1”,”&nbsp;OPENID2”]
+}</pre>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">返回说明</span></span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></strong></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">正确时返回 JSON数据包</span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+"errcode":&nbsp;0,
+"errmsg":&nbsp;"ok"
+}</pre>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">错误时返回 JSON数据包（示例为无效AppID错误）</span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{"errcode":40013,"errmsg":"invalid&nbsp;appid"}</pre>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">返回码说明</span></span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></strong></p>
+<table class="table">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40032</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">一次只能拉黑20个用户</td></tr>
+</tbody>
+</table>
+<p style="white-space: normal;">
+<br></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;">3. 取消拉黑用户</span></strong></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;">公众号可通过该接口来取消拉黑一批用户，黑名单列表由一串OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。</span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;"></span></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">接口调用请求说明</span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></strong></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">http请求方式：POST（请使用https协议）
+https://api.weixin.qq.com/cgi-bin/tags/members/batchunblacklist?access_token=ACCESS_TOKEN</pre>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">参数说明</span></strong></p>
+<p style="white-space: normal;"><strong><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></strong></p>
+<table class="table">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="307" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是否必须</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="307" valign="top" style="word-break: break-all;">access_token</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">调用接口凭证</td></tr>
+<tr><td class="table_cell" width="307" valign="top" style="word-break: break-all;">openid_list</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">需要拉入黑名单的用户的openid，一次拉黑最多允许20个</td></tr>
+</tbody>
+</table>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">JSON 数据说明
+<br></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+&nbsp;"opened_list":["OPENID1”,”&nbsp;OPENID2”]
+}</pre>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">返回说明</span></span></strong></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">正确时返回 JSON数据包</span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+"errcode":&nbsp;0,
+"errmsg":&nbsp;"ok"
+}</pre>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">错误时返回 JSON数据包（示例为无效AppID错误）</span></span></p>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;"></span></span></p>
+<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 12px; font-family: &quot;MicroSoft YaHei&quot;, &quot;Courier New&quot;, &quot;Andale Mono&quot;, monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{"errcode":40013,"errmsg":"invalid&nbsp;appid"}</pre>
+<p style="white-space: normal;"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; font-size: 14px;"></span></p>
+<p style="white-space: normal;"><strong><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"><span style="font-size: 14px;">返回码说明</span></span></strong></p>
+<table class="table">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">-1</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">系统繁忙</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入非法的openid</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">49003</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">传入的openid不属于此AppID</td></tr>
+<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40032</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">一次只能拉黑20个用户</td></tr>
+</tbody>
+</table>
+<p style="white-space: normal;"><span style="font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;"></span></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

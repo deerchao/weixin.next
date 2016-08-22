@@ -1093,7 +1093,7 @@
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">，填入后将在券面拼写适用于xxx</span></p>
 </td></tr>
 <tr><td class="table_cell" style="border-color: rgb(221, 221, 221);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">reject_category</span></td><td class="table_cell" colspan="1" rowspan="1" valign="null" style="border-color: rgb(221, 221, 221);"><span style="font-family:微软雅黑, Microsoft YaHei">否</span></td><td class="table_cell" style="border-color: rgb(221, 221, 221);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">string（<span style="font-family: 微软雅黑, 'Microsoft YaHei';">512</span>）</span></td><td class="table_cell" style="border-color: rgb(221, 221, 221); word-break: break-all;">
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">指定可用的商品类目，仅用于代金券类型</span></p>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">指定不可用的商品类目，仅用于代金券类型</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';">，填入后将在券面拼写不适用于xxxx</span></p>
 </td></tr>
 <tr><td class="table_cell" style="border-color: rgb(221, 221, 221);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">least_cost</span></td><td class="table_cell" colspan="1" rowspan="1" valign="null" style="border-color: rgb(221, 221, 221);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">否</span></span></td><td class="table_cell" style="border-color: rgb(221, 221, 221);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">int</span></td><td class="table_cell" style="border-color: rgb(221, 221, 221);">
@@ -1557,9 +1557,25 @@
 <tbody>
 <tr class="firstRow thead"><th style="width: 350px;" class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">字段名</span></th><th class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">说明</span></th></tr>
 <tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">card_id</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">卡券ID。</span></td></tr>
-<tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">is_open</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">是否开启自助核销功能，填true/false</span></td></tr>
+<tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">is_open</span></td><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">是否开启自助核销功能，填true/false，默认为false</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">
+<p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">need_verify_cod</span></p>
+</td><td class="table_cell" colspan="1" rowspan="1"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">用户核销时是否需要输入验证码，<span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">填true/false，</span>默认为false</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">
+<p><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">need_remark_amount</span></p>
+</td><td class="table_cell" colspan="1" rowspan="1"><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">用户核销时是否需要备注核销金额，<span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">填true/false，</span><span style="font-family: 微软雅黑, &quot;Microsoft YaHei&quot;;">默认为false</span></span></td></tr>
 </tbody>
 </table>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
+<br></strong></span></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
+<br></strong></span></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
+<br></strong></span></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
+<br></strong></span></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
+<br></strong></span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
 <br></strong></span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong>
