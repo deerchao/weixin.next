@@ -1,39 +1,49 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>获取素材总数</h2>
+<div class="main_hd"><h2>获取素材总数</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>开发者可以根据本接口来获取永久素材的列表，需要时也可保存到本地。</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>开发者可以根据本接口来获取永久素材的列表，需要时也可保存到本地。</p>
 <p>请注意：</p>
-<p>1.永久素材的总数，也会计算公众平台官网素材管理中的素材<br>2.图片和图文消息素材（包括单图文和多图文）的总数上限为5000，其他素材的总数上限为1000<br>3.调用该接口需https协议<br></p>
+<p>1.永久素材的总数，也会计算公众平台官网素材管理中的素材<br>2.图片和图文消息素材（包括单图文和多图文）的总数上限为5000，其他素材的总数上限为1000<br>3.调用该接口需https协议
+<br></p>
 <p>接口调用请求说明</p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>http请求方式: GET</p>
-<p>https://api.weixin.qq.com/cgi-bin/material/get_materialcount?access_token=ACCESS_TOKEN<br></p>
-</div><p>返回说明</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>{<br> &nbsp;"voice_count":COUNT,<br> &nbsp;"video_count":COUNT,<br> &nbsp;"image_count":COUNT,<br> &nbsp;"news_count":COUNT<br>}<br></p>
-</div><p>返回参数说明</p>
+<p>https://api.weixin.qq.com/cgi-bin/material/get_materialcount?access_token=ACCESS_TOKEN
+<br></p>
+</div>
+<p>返回说明</p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>{<br> &nbsp;"voice_count":COUNT,<br> &nbsp;"video_count":COUNT,<br> &nbsp;"image_count":COUNT,<br> &nbsp;"news_count":COUNT<br>}
+<br></p>
+</div>
+<p>返回参数说明</p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
-<table class="table"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="462" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="462" valign="top" style="word-break: break-all;">描述</td></tr>
+<table class="table">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="462" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="462" valign="top" style="word-break: break-all;">描述</td></tr>
 <tr><td class="table_cell" width="462" valign="top" style="word-break: break-all;">voice_count</td><td class="table_cell" width="462" valign="top" style="word-break: break-all;">语音总数量</td></tr>
 <tr><td class="table_cell" width="462" valign="top" style="word-break: break-all;">video_count</td><td class="table_cell" width="462" valign="top" style="word-break: break-all;">视频总数量</td></tr>
 <tr><td class="table_cell" width="462" valign="top" style="word-break: break-all;">image_count</td><td class="table_cell" width="462" valign="top" style="word-break: break-all;">图片总数量</td></tr>
 <tr><td class="table_cell" width="462" valign="top" style="word-break: break-all;">news_count</td><td class="table_cell" width="462" valign="top" style="word-break: break-all;">图文总数量</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>错误情况下的返回JSON数据包示例如下（示例为无效媒体类型错误）：</p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">{"errcode":-1,"errmsg":"system error"}</div>
-<p><br></p>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p>
+<br></p>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

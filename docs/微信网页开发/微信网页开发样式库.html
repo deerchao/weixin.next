@@ -1,17 +1,16 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>微信网页开发样式库</h2>
+<div class="main_hd"><h2>微信网页开发样式库</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p>目录</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content"><p>目录</p>
 <p><a href="#1" target="_self">1&nbsp;概述</a></p>
 <p><a href="#2" target="_self">2&nbsp;使用方法</a></p>
 <p><a href="#2.1" target="_self">2.1&nbsp;安装</a></p>
@@ -27,7 +26,8 @@
 <p><a href="#3.8" target="_self">3.8&nbsp;ActionSheet</a></p>
 <p><a href="#3.9" target="_self">3.9&nbsp;Icon</a></p>
 <p><a href="#4" target="_self">4&nbsp;技术支持与反馈</a> &nbsp;&nbsp;</p>
-<p><br></p>
+<p>
+<br></p>
 <p><strong><a name="1"></a>概述</strong></p>
 <p>WeUI 是一套同微信原生视觉体验一致的基础样式库，由微信官方设计团队为微信内网页开发量身设计，可以令用户的使用感知更加统一。在微信网页开发中使用 WeUI，有如下优势：</p>
 <p>1.同微信客户端一致的视觉效果，令所有微信用户都能更容易地使用你的网站</p>
@@ -35,14 +35,19 @@
 <p>3.微信设计团队精心打造，清晰明确，简洁大方</p>
 <p>该样式库目前包含 button、cell、dialog、progress、toast、article、icon 等各式元素，已经在<a href="#https://github.com/weui/weui" target="_blank">GitHub</a>上开源。访问&nbsp;<a href="#http://weui.github.io/weui/" target="_blank">http://weui.github.io/weui/</a>&nbsp;或微信扫码即可预览。</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK39dMUJfWKTTfcyda2KvSX4icNgoUK1BhneWm3W5icokS2GSL5QQcwHvswBcE1q5WCyA/0?wx_fmt=png" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p><strong><a name="2"></a>使用方法</strong></p>
 <p><strong><a name="2.1"></a>安装</strong></p>
 <p>方法一：使用bower进行安装</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>bower install --save weui <br></p>
-</div><p>方法二：使用npm进行安装</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>npm install --save weui <br></p>
-</div><p>任选一种方法安装后，只需要在页面中引入 dist/style/weui.css 或者 dist/style/weui.min.css 其中之一即可。例如:</p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>bower install --save weui 
+<br></p>
+</div>
+<p>方法二：使用npm进行安装</p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>npm install --save weui 
+<br></p>
+</div>
+<p>任选一种方法安装后，只需要在页面中引入 dist/style/weui.css 或者 dist/style/weui.min.css 其中之一即可。例如:</p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>&lt;!DOCTYPE html&gt; &lt;html&gt; &nbsp; &nbsp;&nbsp;</p>
 <p>&lt;head&gt; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 <p>&nbsp;&lt;meta charset="UTF-8"&gt; &nbsp; &nbsp; &nbsp; &nbsp;</p>
@@ -52,14 +57,17 @@
 <p>&lt;/head&gt; &nbsp; &nbsp;</p>
 <p>&lt;body&gt; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 <p>&lt;/body&gt;&nbsp;</p>
-<p>&lt;/html&gt; <br></p>
-</div><p><strong><a name="2.2"></a>开发</strong></p>
+<p>&lt;/html&gt; 
+<br></p>
+</div>
+<p><strong><a name="2.2"></a>开发</strong></p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>git clone https://github.com/weui/weui.git&nbsp;</p>
 <p>cd weui&nbsp;</p>
 <p>npm install -g gulp&nbsp;</p>
 <p>npm install&nbsp;</p>
 <p>gulp -ws&nbsp;</p>
-</div><p>运行&nbsp;gulp -ws&nbsp;命令，会监听 src 目录下所有文件的变更，并且默认会在8080端口启动服务器，然后在浏览器打开&nbsp;http://localhost:8080/example。</p>
+</div>
+<p>运行&nbsp;gulp -ws&nbsp;命令，会监听 src 目录下所有文件的变更，并且默认会在8080端口启动服务器，然后在浏览器打开&nbsp;http://localhost:8080/example。</p>
 <p><strong><a name="3"></a>元素类型</strong></p>
 <p><strong><a name="3.1"></a>Button</strong></p>
 <p>按钮可以使用&nbsp;a&nbsp;或者&nbsp;button&nbsp;标签。wap 上要触发按钮的 active 态，必须触发 ontouchstart 事件，可以在&nbsp;body&nbsp;上加上&nbsp;ontouchstart=""&nbsp;全局触发。</p>
@@ -70,18 +78,23 @@
 <p>&lt;a href="#" class="weui_btn weui_btn_warn"&gt;确认&lt;/a&gt;&nbsp;</p>
 <p>&lt;a href="#" class="weui_btn weui_btn_disabled weui_btn_warn"&gt;确认&lt;/a&gt;</p>
 <p>&lt;a href="#" class="weui_btn weui_btn_default"&gt;按钮&lt;/a&gt;</p>
-<p>&lt;a href="#" class="weui_btn weui_btn_disabled weui_btn_default"&gt;按钮&lt;/a&gt;&nbsp;</p>&lt;div class="button_sp_area"&gt;<br><p>&lt;a href="#" class="weui_btn weui_btn_plain_default"&gt;按钮&lt;/a&gt; &nbsp; &nbsp;&nbsp;<br></p>
+<p>&lt;a href="#" class="weui_btn weui_btn_disabled weui_btn_default"&gt;按钮&lt;/a&gt;&nbsp;</p>&lt;div class="button_sp_area"&gt;
+<br><p>&lt;a href="#" class="weui_btn weui_btn_plain_default"&gt;按钮&lt;/a&gt; &nbsp; &nbsp;&nbsp;
+<br></p>
 <p>&lt;a href="#" class="weui_btn weui_btn_plain_primary"&gt;按钮&lt;/a&gt; &nbsp; &nbsp;&nbsp;</p>
 <p>&lt;a href="#" class="weui_btn weui_btn_mini weui_btn_primary"&gt;按钮&lt;/a&gt; &nbsp; &nbsp;&nbsp;</p>
-<p>&lt;a href="#" class="weui_btn weui_btn_mini weui_btn_default"&gt;按钮&lt;/a&gt; &lt;/div&gt; <br></p>
-</div><p><strong><a name="3.2"></a>Cell</strong></p>
+<p>&lt;a href="#" class="weui_btn weui_btn_mini weui_btn_default"&gt;按钮&lt;/a&gt; &lt;/div&gt; 
+<br></p>
+</div>
+<p><strong><a name="3.2"></a>Cell</strong></p>
 <p>Cell，列表视图，用于将信息以列表的结构显示在页面上，是 wap 上最常用的内容结构。Cell&nbsp;由多个 section 组成，每个 section 包括 section header&nbsp;weui_cells_title以及 cells&nbsp;weui_cells。</p>
 <p>Cell&nbsp;由 thumbnail&nbsp;weui_cell_hd、body&nbsp;weui_cell_bd、accessory&nbsp;weui_cell_ft&nbsp;三部分组成，cell&nbsp;采用自适应布局，在需要自适应的部分加上 class&nbsp;weui_cell_primary即可：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK39dMUJfWKTTbMksoz1am1EQLB0VsBOMictDxEicnarx0hSjMSK4Xe8p97eI1Took5Rg/0?wx_fmt=png" title="" alt=""></p>
 <p>带说明的列表项</p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">&lt;div class="weui_cells_title"&gt;带说明的列表项&lt;/div&gt;<br>&lt;div class="weui_cells"&gt;<br> &nbsp; &nbsp;&lt;div class="weui_cell"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_bd weui_cell_primary"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;标题文字&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_ft"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;说明文字<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/div&gt;<br>&lt;/div&gt;</div>
 <p>Cell&nbsp;可根据需要进行各种自定义扩展，包括辅助说明、跳转、单选、复选等。下面以带图标、说明、跳转的列表项，其他情况可以直接参考&nbsp;example&nbsp;下的代码：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">&lt;div class="weui_cells_title"&gt;带图标、说明、跳转的列表项&lt;/div&gt;<br>&lt;div class="weui_cells weui_cells_access"&gt;<br><br> &nbsp; &nbsp;&lt;a class="weui_cell" href="#"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_hd"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;img src="" alt="icon" style="width:20px;margin-right:5px;display:block"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_bd weui_cell_primary"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;cell standard&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_ft"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;说明文字<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/a&gt;<br> &nbsp; &nbsp;&lt;a class="weui_cell" href="#"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_hd"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;img src="" alt="icon" style="width:20px;margin-right:5px;display:block"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_bd weui_cell_primary"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;cell standard&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_ft"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;说明文字<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/a&gt;<br>&lt;/div&gt;</div>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">&lt;div class="weui_cells_title"&gt;带图标、说明、跳转的列表项&lt;/div&gt;<br>&lt;div class="weui_cells weui_cells_access"&gt;
+<br><br> &nbsp; &nbsp;&lt;a class="weui_cell" href="#"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_hd"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;img src="" alt="icon" style="width:20px;margin-right:5px;display:block"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_bd weui_cell_primary"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;cell standard&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_ft"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;说明文字<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/a&gt;<br> &nbsp; &nbsp;&lt;a class="weui_cell" href="#"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_hd"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;img src="" alt="icon" style="width:20px;margin-right:5px;display:block"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_bd weui_cell_primary"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;p&gt;cell standard&lt;/p&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class="weui_cell_ft"&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;说明文字<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br> &nbsp; &nbsp;&lt;/a&gt;<br>&lt;/div&gt;</div>
 <p><strong><a name="3.3"></a>Dialog</strong></p>
 <p>若系统的 alert 窗体无法满足网页的临时视图内容需求，则可以自定义实现与 alert 形式相似的&nbsp;dialog，并且在&nbsp;dialog&nbsp;中可以自定义地使用各种控件，来满足需求。</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK39dMUJfWKTTL7cWxhpeNXiaBPAzQfooZ3gXf3thtfPkBhWjhUxUy6xrgLDaHDtJOqw/0?wx_fmt=png" title="" alt=""></p>
@@ -116,10 +129,11 @@
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">&lt;i class="weui_icon_msg weui_icon_success"&gt;&lt;/i&gt;<br>&lt;i class="weui_icon_msg weui_icon_info"&gt;&lt;/i&gt;<br>&lt;i class="weui_icon_msg weui_icon_warn"&gt;&lt;/i&gt;<br>&lt;i class="weui_icon_msg weui_icon_waiting"&gt;&lt;/i&gt;<br>&lt;i class="weui_icon_safe weui_icon_safe_success"&gt;&lt;/i&gt;<br>&lt;i class="weui_icon_safe weui_icon_safe_warn"&gt;&lt;/i&gt;<br>&lt;div class="icon_sp_area"&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_success"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_success_circle"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_success_no_circle"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_info"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_waiting"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_waiting_circle"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_circle"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_warn"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_download"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_info_circle"&gt;&lt;/i&gt;<br> &nbsp; &nbsp;&lt;i class="weui_icon_cancel"&gt;&lt;/i&gt;<br>&lt;/div&gt;</div>
 <p><strong><a name="4"></a>技术支持与反馈</strong></p>
 <p>欢迎前往&nbsp;<a href="#https://github.com/weui/weui" target="_blank">GitHub</a>&nbsp;留言或反馈。</p>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

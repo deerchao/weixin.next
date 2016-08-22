@@ -1,17 +1,17 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>朋友的券专区</h2>
+<div class="main_hd"><h2>朋友的券专区</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p>目录<br></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content"><p>目录
+<br></p>
 <p style="text-align: left;"><a href="#1" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">1 更新日志</a></p>
 <p style="text-align: left;"><a href="#2" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">2 朋友的券简介</a></p>
 <p style="text-align: left;"><a href="#3" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">3 开发者注意事项</a></p>
@@ -100,18 +100,24 @@
 <p style="text-align: left;"><a href="#9" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">9 我是第三方开发者/服务商</a></p>
 <p style="text-align: left;"><a href="#10" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">10 交流反馈</a></p>
 <p style="text-align:center"><a name="1"></a></p>
-<h1 style="font-size: 16px;">更新日志<br></h1>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">版本号</th><th class="table_cell">更新内容</th><th class="table_cell">更新时间</th></tr>
+<h1 style="font-size: 16px;">更新日志
+<br></h1>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">版本号</th><th class="table_cell">更新内容</th><th class="table_cell">更新时间</th></tr>
 <tr><td class="table_cell">V1.1</td><td class="table_cell">1.限制共享券代金券类型标题传入，统一命名为xxx元代金券，xxx为减免金额字段；<br style="text-align: left;">2.礼品券更名为兑换券，限制标题传入，统一命名为：洗手液(商品名)+1(数量)+瓶（数量单位），对应gift_name,gift_num,和gift_unit字段。</td><td class="table_cell">2015-12-2</td></tr>
 <tr><td class="table_cell">V1.2</td><td class="table_cell">1.新增朋友的券白名单接口，支持领取共享未通过审核的共享券，仅限白名单list内用户可见。<br style="text-align: left;">2.新增朋友的券测试沙箱机制，未在开放类目内的开发者可以通过沙箱测试号测试创建、领取共享券<br style="text-align: left;">3.新增接口充值库存、券点系列接口，开发者可以通过接口完成库存、券点的充值和管理。<br style="text-align: left;">4.支持接口创建有门槛朋友的券，目前支持“满减券”、“指定品类券”和“不与其他优惠共享”类型门槛。</td><td class="table_cell">2015-12-27</td></tr>
 <tr><td class="table_cell">V1.3</td><td class="table_cell">1.根据开发者填入的不同门槛，卡券标题拼接方案变更；<br style="text-align: left;">2.支持开发者填入使用时段限制，比如：周一 10：00-20:59可用；周一至周五 10：00-20:59可用</td><td class="table_cell">2016-2-16</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">V1.4</td><td class="table_cell" colspan="1" rowspan="1">新创建的朋友的券只能在生效前提前5天投放，否则不可领取</td><td class="table_cell" colspan="1" rowspan="1">2016-4-12</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="2"></a></p>
-<h1 style="font-size: 16px;">朋友的券简介<br></h1>
+<h1 style="font-size: 16px;">朋友的券简介
+<br></h1>
 <p>“朋友共享的优惠券”（以下简称“朋友的券”），是基于微信优惠券推出的新功能，实现“一人领取多人共享”的快速社交传播和转化的效果。</p>
 <p>领取并与朋友共享此券，券会自动展示在领取人及其朋友的优惠券列表中，领取人及其朋友均可使用此券。商户可选择赠送配置：当朋友的券被使用后,根据商户配置的赠送量,使用者将立即获赠一张朋友的券,继续与朋友共享此券。</p>
-<p><br style="text-align: left;"></p>
+<p>
+<br style="text-align: left;"></p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcMgZ65k8icFzRQfFJgeDW2r6d2Nt7d4g7WwnH4O00sM3fCL4HDdLG5aw/0?wx_fmt=png" title="" alt=""></a></p>
 <p><strong>朋友的券的优势</strong></p>
 <p>1、高曝光量：朋友的券被领取后，将自动展示在领取者及其朋友的微信优惠券里，曝光量得到大幅提升。</p>
@@ -120,7 +126,9 @@
 <p>4、裂变：朋友的券被用户或其朋友核销后，商家可以立即再次赠送优惠券供使用者领取共享，且赠券仍为朋友的券。这让商家的优惠在用户中得到持续的曝光。</p>
 <p><strong>开放对象</strong></p>
 <p>朋友的券将按照卡券商户的类目逐步开放，首批开放朋友的券功能的商户类目如下。后续将向更多类目商户逐步开放，请关注微信公众平台公告。</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 200px" class="table_cell">一级类目</th><th class="table_cell">二级内容</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 200px" class="table_cell">一级类目</th><th class="table_cell">二级内容</th></tr>
 <tr><td class="table_cell">美食</td><td class="table_cell">粤菜、茶餐厅、川菜、湘菜、东北菜、西北菜、火锅、自助餐、小吃、快餐、日本料理、韩国料理、东南亚菜、西餐、面包甜点、咖<span style="font-family: 微软雅黑, 'Microsoft YaHei'; line-height: 1.5;">啡厅、江浙菜、其它美食、外卖</span>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></tr>
 <tr><td class="table_cell">休闲娱乐</td><td class="table_cell">展览展出、温泉洗浴、足疗按摩、运动健身、棋牌室、KTV、酒吧/俱乐部、艺术写真、宠物美容、美容美发、美甲</td></tr>
@@ -132,7 +140,8 @@
 <tr><td class="table_cell">旅游</td><td class="table_cell">景点门票</td></tr>
 <tr><td class="table_cell">购物</td><td class="table_cell">便利店、珠宝配饰、家居、建材五金/机械仪表、乐器、酒类、药房/药店、图书报刊杂志、数码家电</td></tr>
 <tr><td class="table_cell">运输票务</td><td class="table_cell">机票、船票、车票</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>若开发者的公众号未在开放类目内，开发者可以<a href="http://mp.weixin.qq.com/wiki/10/597cb57750f375a4b37e2536fd3331ea.html#.E5.8D.A1.E5.88.B8.E6.B5.8B.E8.AF.95.E6.B2.99.E7.AE.B1.E6.9C.BA.E5.88.B6" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">申请沙箱测试号</a>进行创建、领取、投放、核销等流程，沙箱测试号具有朋友的券创建权限，创建的卡券不会被审核通过，开发者可以通过<a href="http://mp.weixin.qq.com/wiki/5/f942979ef2f0d313d4d36e3a26766a3d.html#.E8.AE.BE.E7.BD.AE.E6.B5.8B.E8.AF.95.E7.99.BD.E5.90.8D.E5.8D.95" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">设置接口白名单</a>领取未审核通过的券，共享后仅白名单list内的好友可见。</p>
 <p><strong>特别说明</strong></p>
 <p>优惠券共享的玩法，将极大地提升优惠券的曝光量和使用率。优惠券使用后，会引入好友互动，增加社交趣味性。特别地，朋友共享的优惠券，需要满足以下要求</p>
@@ -141,7 +150,8 @@
 <p>3、可选择每核销使用1张优惠券，再送用户1张；</p>
 <p>4、暂不支持商家自定义Code码（<a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E6.98.AF.E5.90.A6.E8.87.AA.E5.AE.9A.E4.B9.89Code.E7.A0.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">什么是Code码？</a>）；</p>
 <p style="text-align:center"><a name="3"></a></p>
-<h1 style="font-size: 16px;">开发者注意事项<br></h1>
+<h1 style="font-size: 16px;">开发者注意事项
+<br></h1>
 <p>要开发朋友的券，开发者需要完成以下开发步骤：</p>
 <p>1、登录【微信公众平台后台】，点击【卡券功能】或者调用<a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.BC.80.E9.80.9A.E5.88.B8.E7.82.B9.E8.B4.A6.E6.88.B7.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">开通券点账户接口</a>开通朋友的券券点账户，目前商户后台该开通入口仅针对指定类目商户开放，如还没发现入口开发者可以先耐心等待，后续会逐步放开；</p>
 <p>2、创建优惠券：其中先准备好LOGO、门店、色值等内容，然后使用创建接口，创建起用金额为0元的代金券，并填入图文介绍，设置每核销1张，再赠送用户1张，得到card_id，此部分参考<a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.88.9B.E5.BB.BA.E6.9C.8B.E5.8F.8B.E7.9A.84.E5.88.B8" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">创建朋友的券</a>；</p>
@@ -151,66 +161,86 @@
 <p>5、核销朋友的券：共享的用户及其好友，可以看到此券，到店出示享受优惠，使用后再获得赠送的卡券继续和好友共享，此部分开发者须使用核销助手或开发核销工具帮助商户核销，可参考<a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.9C.8B.E5.8F.8B.E7.9A.84.E5.88.B8.E6.A0.B8.E9.94.80" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">核销朋友的券</a>。</p>
 <p>6、管理朋友的券：开发者在卡券投放发布后可对卡券信息进行修改或统计卡券数据，可参考<a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.9C.8B.E5.8F.8B.E7.9A.84.E5.88.B8.E7.AE.A1.E7.90.86.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">管理朋友的券</a></p>
 <p style="text-align:center"><a name="4"></a></p>
-<h1 style="font-size: 16px;">创建朋友的券<br></h1>
+<h1 style="font-size: 16px;">创建朋友的券
+<br></h1>
 <p style="text-align:center"><a name="4.1"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>朋友的券样式</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>朋友的券样式</strong>
+<br></h2>
 <p>朋友的券较之前的样式有较大改变，卡券背景色更加突出，强调券的整洁和美观的同时将商户元素更加有强调性地展示，同时支持图文介绍传入，给了商户更大的曝光空间。</p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcQvWlPkichDia9qFLTF9RoZByF1um3mRkO0bsibOuW6AIb5HjPP3LcmPnQ/0?wx_fmt=png" title="" alt=""></a></p>
 <p style="text-align:center"><a name="4.2"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口调用说明</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口调用说明</strong>
+<br></h2>
 <p>创建卡券是卡券开发的第一步，开发者需要传入优惠内容生成一个card_id，并在通过审核后进行投放、核销等动作。在进行卡券创建前，请开发者根据自身业务场景确定以下几点</p>
 <p style="text-align:center"><a name="4.2.1"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>选择合适的门槛类型</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>选择合适的门槛类型</strong>
+<br></h3>
 <p>目前朋友的券支持无门槛类型以及指定门槛类型的代金券、兑换券，微信后台会根据商户填写的门槛类型自动拼接卡券的<a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.88.9B.E5.BB.BA.E6.9C.8B.E5.8F.8B.E7.9A.84.E5.88.B8.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">详情摘要字段</a>和<a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.88.9B.E5.BB.BA.E6.9C.8B.E5.8F.8B.E7.9A.84.E5.88.B8.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券标题</a>字段，开发者可以根据需求选择合适的门槛类型组合，获得最佳的发券效果。</p>
 <p>商户按照指定字段填写门槛有利于优惠券审核快速通过，若商户填写了非以下类型的门槛，优惠券将不会被审核通过。</p>
 <p>同时，微信后台会根据卡券选择的门槛不同而设置不同的库存价格，目前定价标准为：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">&nbsp;&nbsp;&nbsp;1）无门槛类型，保持0.2券点/张；&nbsp;2）指定品类可用/不可用门槛，0.4券点/张；&nbsp;3）满减/买xx可用门槛，0.6券点/张；</pre>
 <p><strong>不同门槛类型的字段以及展现</strong></p>
 <p>微信后台会根据开发者填入不同的门槛字段决定券的样式和展现，下面以一张50元代金券和兑换蛋挞一个的兑换券说明不同门槛带来的 展现逻辑变化。</p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">门槛类型</th><th class="table_cell">适用券种</th><th class="table_cell">设置条件</th><th class="table_cell">详情摘要</th><th class="table_cell">标题</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">门槛类型</th><th class="table_cell">适用券种</th><th class="table_cell">设置条件</th><th class="table_cell">详情摘要</th><th class="table_cell">标题</th></tr>
 <tr><td class="table_cell">无门槛</td><td class="table_cell">代金券/兑换券</td><td class="table_cell">不填入任何门槛字段</td><td class="table_cell">无起用金额限制，全场通用，不限品类</td><td class="table_cell">50元代金券/苹果一个</td></tr>
 <tr><td class="table_cell">指定品类可用/不可用门槛</td><td class="table_cell">代金券</td><td class="table_cell">填入accept_category（蛋挞）和reject_category（蛋糕）字段</td><td class="table_cell">适用于蛋挞，不适用于蛋糕</td><td class="table_cell">蛋挞减50元（填入的accept_catagory小于等于5个汉字）；50元代金券（填入的accept_catagory大于5个汉字）</td></tr>
 <tr><td class="table_cell">满减门槛</td><td class="table_cell">代金券/兑换券</td><td class="table_cell">填入least_cost（500）字段</td><td class="table_cell">消费满500元可用</td><td class="table_cell">全场满500减50</td></tr>
 <tr><td class="table_cell">买送门槛（限兑换券）</td><td class="table_cell">兑换券</td><td class="table_cell">填入object_use_for字段</td><td class="table_cell">购买蛋糕可用</td><td class="table_cell">买蛋糕送蛋挞</td></tr>
 <tr><td class="table_cell">不与其他优惠共享门槛</td><td class="table_cell">代金券/兑换券</td><td class="table_cell">填入can_use_with_other_discount<br style="text-align: left;">（false）字段</td><td class="table_cell">不与其他优惠共享</td><td class="table_cell">50元代金券</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：</p>
 <p>1.门槛字段用于拼接标题以及优惠说明，会影响商户卡券库存定价，请开发者务必按照要求填写，并提前预览生成的卡券；<br style="text-align: left;">2.门槛字段一旦设定即不可更改，请开发者慎重填写，及时预览。<br style="text-align: left;">3.当开发者同时填入满减字段和指定品类可用字段，则会拼接为"羽绒服（accept_catagory字段小于等于5个字）满500减50"，"满500减50"（accept_catagory字段大于5个字）</p>
 <p style="text-align:center"><a name="4.2.2"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>选择合适的code显示类型</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>选择合适的code显示类型</strong>
+<br></h3>
 <p>目前卡券支持五种code显示类型：即二维码显示code、二维码不显示code、一维码显示code、仅code类型和无code类型（仅限支持券）。</p>
 <p>对于不同的code类型，需要的核销方式也不同，对于显示二维码和一维码的卡券可以采用扫码核销的方式，对于只显示code类型的卡券适合用输码核销的方式，而无code类型的优惠券，则仅适合用于线上券使用，并且商户需开发自定义页面供用户核销卡券。</p>
 <p>不同的code类型，开发者在创建券时须传入不同的code_type参数。</p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">类别</th><th class="table_cell">字段名</th><th class="table_cell">适用核销方式</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">类别</th><th class="table_cell">字段名</th><th class="table_cell">适用核销方式</th></tr>
 <tr><td class="table_cell">二维码/一维码显示code</td><td class="table_cell">CODE_TYPE_QRCODE/CODE_TYPE_BARCODE</td><td class="table_cell">适用于扫码/输码核销</td></tr>
 <tr><td class="table_cell">二维码不显示code</td><td class="table_cell">CODE_TYPE_ONLY_QRCODE</td><td class="table_cell">仅适用于扫码核销</td></tr>
 <tr><td class="table_cell">仅code类型</td><td class="table_cell">CODE_TYPE_TEXT</td><td class="table_cell">仅适用于输码核销</td></tr>
 <tr><td class="table_cell">无code类型</td><td class="table_cell">CODE_TYPE_NONE</td><td class="table_cell">仅适用于线上核销，在券面不出现二维码展开入口</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="4.2.3"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>记录用户领券行为</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>记录用户领券行为</strong>
+<br></h3>
 <p>记录用户领券行为有多种方式：</p>
 <p>1. 用户领取卡券后会推送事件通知开发者，领取卡券事件中包含卡券ID、Code码、领取人OpenID。卡券被核销时同样会推送事件，详情见<a href="http://mp.weixin.qq.com/wiki/16/28b34ee91675a04cb24853768debded4.html#.E5.8D.A1.E5.88.B8.E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券事件推送</a>。</p>
 <p>2. 调用<a href="http://mp.weixin.qq.com/wiki/14/8dd77aeaee85f922db5f8aa6386d385e.html#.E6.9F.A5.E8.AF.A2Code.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">查询Code接口</a>获取该Code码的状态（是否被领取、核销、删除），若Code码被用户领取且处于有效状态，可获取领券人OpenID。</p>
 <p>3. 从卡券详情页跳转外部链接时，微信后台会自动带上卡券ID、Code码等信息，详情见<a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E8.B7.B3.E8.BD.AC.E5.A4.96.E9.93.BE.E5.B8.A6.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">跳转外链带参数说明</a>。</p>
 <p style="text-align:center"><a name="4.2.4"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>活用自定义入口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>活用自定义入口</strong>
+<br></h3>
 <p>为满足商户功能扩展的需求，新增可自定义三个卡券内的入口，支持跳转到商户自定义url链接。</p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcRHDsNy8HcyMRFibUWmic28FgBzCW2KEZnm4Br8ALUX9UG7cjawCE9JhA/0?wx_fmt=png" title="" alt=""></a></p>
 <p>两个自定义入口基于不同的场景定位设置，区别如下：</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">类别</th><th class="table_cell">示例</th><th class="table_cell">字段</th><th class="table_cell">显示逻辑</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">类别</th><th class="table_cell">示例</th><th class="table_cell">字段</th><th class="table_cell">显示逻辑</th></tr>
 <tr><td class="table_cell">使用场景入口</td><td class="table_cell">立即使用</td><td class="table_cell">center_title、center_sub_title、center_url</td><td class="table_cell">传入后将覆盖二维码展开按钮，未到有效期时按钮置灰</td></tr>
 <tr><td class="table_cell">服务场景入口</td><td class="table_cell">在线商城</td><td class="table_cell">custom_url_name、custom_url_sub_title、custom_url</td><td class="table_cell">仅卡券被用户领取且处于有效状态时显示（转赠中、核销后不显示）。</td></tr>
 <tr><td class="table_cell">营销场景入口</td><td class="table_cell">再次购买</td><td class="table_cell">promotion_url_name、promotion_url_sub_title、promotion_url</td><td class="table_cell">卡券处于正常状态、转赠中、核销后等异常状态均显示该入口。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="4.3"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口调用流程</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口调用流程</strong>
+<br></h2>
 <p>创建朋友的券请严格按照以下接口调用流程调用接口。</p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60Wc6hKEgYkaPOvCTJ1hUkbnuo4hQM680lIe7M4qA8VNr8z8kIEmgeFJPA/0?wx_fmt=png" title="" alt=""></a></p>
 <p>开发者须按照以上流程调用接口，接口列表如下表。</p>
 <p style="text-align:center"><a name="4.4"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API列表</strong><br></h2>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API列表</strong>
+<br></h2>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E4.B8.8A.E4.BC.A0.E5.9B.BE.E7.89.87.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">上传图片接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">上传卡券logo和卡券图片，获得url</td><td class="table_cell">基础接口</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E9.80.89.E5.8F.96.E5.8D.A1.E5.88.B8.E8.83.8C.E6.99.AF.E9.A2.9C.E8.89.B2" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">选取卡券背景色</a>
@@ -221,24 +251,30 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">创建卡券获得card_id用于增加库存、投放等动作</td><td class="table_cell">创建卡券</td></tr>
 <tr><td class="table_cell">5</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/16/28b34ee91675a04cb24853768debded4.html#.E5.AE.A1.E6.A0.B8.E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">审核事件推送</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">获得审核结果</td><td class="table_cell">卡券事件推送</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="4.5"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API详情</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API详情</strong>
+<br></h2>
 <p style="text-align:center"><a name="4.5.1"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>上传图片接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>上传图片接口</strong>
+<br></h3>
 <p>请点击查看<a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E4.B8.8A.E4.BC.A0.E5.9B.BE.E7.89.87.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">上传图片接口</a>，开发者需调用接口上传商家图标LOGO至微信服务器，获取相应logo_url，用于卡券创建。</p>
 <p>注意事项：</p>
 <p>1.上传的图片限制文件大小限制1MB，支持JPG 格式。</p>
 <p>2.调用接口获取的url 仅支持在微信相关业务下使用，否则会做相应处理。</p>
 <p>3.此处必须上传微信服务器返回的图片链接，否则报错；</p>
 <p style="text-align:center"><a name="4.5.2"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>微信门店接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>微信门店接口</strong>
+<br></h3>
 <p>请点击查看微信<a href="http://mp.weixin.qq.com/wiki/11/081986f089826bf94393bef9bf287b8b.html#.E5.BE.AE.E4.BF.A1.E9.97.A8.E5.BA.97.E6.8E.A5.E5.8F.A3.E6.96.87.E6.A1.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">门店接口文档</a>，获取门店 ID 后填入创建卡券接口中的相应字段 location_id_list，即可设置该卡券的适用门店。</p>
 <p style="text-align:center"><a name="4.5.3"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>选取卡券背景色</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>选取卡券背景色</strong>
+<br></h3>
 <p>请点击查看&nbsp;<a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E9.80.89.E5.8F.96.E5.8D.A1.E5.88.B8.E8.83.8C.E6.99.AF.E9.A2.9C.E8.89.B2" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">选取卡券背景颜色接口文档</a>，选择适用色值，让优惠券变得更加个性，在步骤四创建卡券中将颜色名（如Color010）填入color字段。</p>
 <p style="text-align:center"><a name="4.5.4"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>创建朋友的券接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>创建朋友的券接口</strong>
+<br></h3>
 <p><strong>创建朋友的券接口是创建系列接口最重要的一环</strong>。</p>
 <p><strong>朋友的券是在原有卡券的基础上衍生出的一种高级券的类型，比起普通卡券，朋友的券可以展示有图文介绍的优惠详情（通过advanced_info字段定义），突出服务和商品摘要信息。</strong></p>
 <p><strong>接口说明</strong></p>
@@ -246,10 +282,13 @@
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/create?access_token=ACCESS_TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>代金券POST示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"card":&nbsp;{
@@ -352,7 +391,9 @@
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WckzhazXYDQdian4HxELuCx1Aibz72o8e110pBf6YkHic5o3aAOf9J8T3HQ/0?wx_fmt=png" title="" alt=""></a></p>
 <p>在以上字段中除卡券基本信息之外，代金券与兑换券均相同，故兑换券JSON不作展示。</p>
 <p><strong>卡券信息字段</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 150px" class="table_cell">字段</th><th style="width: 500px" class="table_cell">说明</th><th class="table_cell">是否必填</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 150px" class="table_cell">字段</th><th style="width: 500px" class="table_cell">说明</th><th class="table_cell">是否必填</th></tr>
 <tr><td class="table_cell">card_type</td><td class="table_cell">卡券类型，现仅支持代金券类型和兑换券类型，填写CASH或者GIFT</td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">cash</td><td class="table_cell">代金券类型json结构函数名</td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">reduce_cost</td><td class="table_cell">代金券专用，表示减免金额（单位为分），不可填0。</td><td class="table_cell">是</td></tr>
@@ -361,15 +402,19 @@
 <tr><td class="table_cell">gift_num</td><td class="table_cell">兑换券兑换商品数目，限三位数字</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">gift_unit</td><td class="table_cell">兑换券兑换商品的数量单位，限两个汉字</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">gift</td><td class="table_cell">兑换券类型时显示的礼品详情</td><td class="table_cell">是</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>Base_info（卡券基础信息）字段</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 150px" class="table_cell">字段</th><th style="width: 5000px" class="table_cell">说明</th><th class="table_cell">是否必填</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 150px" class="table_cell">字段</th><th style="width: 5000px" class="table_cell">说明</th><th class="table_cell">是否必填</th></tr>
 <tr><td class="table_cell">base_info</td><td class="table_cell">基本卡券数据，对于任何卡券类型base_info字段相同</td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">logo_url</td><td class="table_cell">卡券商家LOGO，请使用调用<a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E4.B8.8A.E4.BC.A0.E5.9B.BE.E7.89.87.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">上传图片接口</a>获得的url</td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">code_type</td><td class="table_cell">卡券的code类型<br style="text-align: left;">"CODE_TYPE_TEXT"，文本；<br style="text-align: left;">"CODE_TYPE_BARCODE"，一维码；<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; text-align: left;">"CODE_TYPE_QRCODE"，二维码；<br style="text-align: left;">"CODE_TYPE_ONLY_QRCODE",二维码无code显示；&nbsp;<br style="text-align: left;">"CODE_TYPE_ONLY_BARCODE",一维码无code显示；<br style="text-align: left;">"CODE_TYPE_NONE"无code类型</p>
 </td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">brand_name</td><td class="table_cell">商家名字,上限为12个汉字</td><td class="table_cell">是</td></tr>
-<tr><td class="table_cell">color</td><td class="table_cell">券颜色，请参考<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; text-align: left;"><a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E9.80.89.E5.8F.96.E5.8D.A1.E5.88.B8.E8.83.8C.E6.99.AF.E9.A2.9C.E8.89.B2" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">选取卡券背景颜色接口文档</a>
+<tr><td class="table_cell">color</td><td class="table_cell">券颜色，请参考
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; text-align: left;"><a href="http://mp.weixin.qq.com/wiki/15/e33671f4ef511b77755142b37502928f.html#.E6.AD.A5.E9.AA.A4.E4.B8.89.EF.BC.9A.E9.80.89.E5.8F.96.E5.8D.A1.E5.88.B8.E8.83.8C.E6.99.AF.E9.A2.9C.E8.89.B2" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">选取卡券背景颜色接口文档</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 </td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">notice</td><td class="table_cell">使用提醒，上限为12个汉字（一句话描述，展示在首页，示例：请出示二维码核销卡券）</td><td class="table_cell">是</td></tr>
@@ -391,12 +436,16 @@
 <tr><td class="table_cell">promotion_url_name</td><td class="table_cell">营销场景的自定义入口</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">promotion_url</td><td class="table_cell">入口跳转外链的地址链接。</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">promotion_url_sub_title</td><td class="table_cell">显示在入口右侧的tips，长度限制在6个汉字内</td><td class="table_cell">否</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>Advanced_info（卡券高级信息）字段</strong></p>
 <p><br style="text-align: left;">新增门槛字段，代金券类型（CASH）的卡券可以与满减门槛（least_cost字段）、指定品类可用/不可用门槛（accept_category/reject_category）不与其他优惠共享门槛组合使用。</p>
 <p>兑换券类型（GIFT）的卡券可以与满减门槛（least_cost字段）、买送门槛（object_use_for字段）和不与其他优惠共享门槛组合使用。</p>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 150px" class="table_cell">字段</th><th style="width: 500px" class="table_cell">说明</th><th class="table_cell">是否必填</th></tr>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 150px" class="table_cell">字段</th><th style="width: 500px" class="table_cell">说明</th><th class="table_cell">是否必填</th></tr>
 <tr><td class="table_cell">advanced_info</td><td class="table_cell">创建优惠券特有的高级字段</td><td class="table_cell">是</td></tr>
 <tr><td class="table_cell">use_condition</td><td class="table_cell">使用门槛（条件）字段</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">accept_category</td><td class="table_cell">指定可用的商品类目，仅用于代金券类型，填入后将在券面拼写适用于xxx，标题自动拼为xxx减50元（若仅填入5个字），50元代金券（填入5个字以上）。</td><td class="table_cell">否</td></tr>
@@ -424,38 +473,51 @@
 <tr><td class="table_cell">card_id</td><td class="table_cell">核销后赠送的其他卡券card_id，目前仅支持填入一个共享券card_id，此处必须填入共享券</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">num</td><td class="table_cell">核销后赠送的该card_id数目，目前仅支持填1</td><td class="table_cell">否</td></tr>
 <tr><td class="table_cell">share_friends</td><td class="table_cell">是否支持分享给朋友使用，填写true优惠券才可被共享</td><td class="table_cell">是</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><span label="明显强调" style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 16px; font-style: italic; font-weight: bold; color: rgb(51, 153, 204); line-height: 18px;">注意事项：</span></p>
 <p><span label="明显强调" style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 16px; font-style: italic; font-weight: bold; color: rgb(51, 153, 204); line-height: 18px;">1.<strong>门槛字段用于拼接标题以及券面的优惠说明，请开发者务必按照要求选择填写</strong>，以免造成不必要的麻烦。&nbsp;</span></p>
 <p><span label="明显强调" style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 16px; font-style: italic; font-weight: bold; color: rgb(51, 153, 204); line-height: 18px;">2.填入时间限制字段（time_limit）,只控制显示，不控制实际使用逻辑，不填默认不显示。</span></p>
-<p><br style="text-align: left;"><strong>返回数据</strong></p>
+<p>
+<br style="text-align: left;"><strong>返回数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{&nbsp;&nbsp;"errcode":&nbsp;0,&nbsp;&nbsp;"errmsg":&nbsp;"ok",&nbsp;&nbsp;"card_id":&nbsp;"pbLatjtQrAGz1Iaz08qB_H3NSBrc"&nbsp;}</pre>
 <p><strong>字段说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">字段名</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">字段名</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">错误码</td><td class="table_cell">错误码，0为正常，40071为格式错误，请对比JSON示例排查错误</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">卡券id</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="4.5.5"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>审核事件推送</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>审核事件推送</strong>
+<br></h3>
 <p>生成的卡券通过审核时，微信会把这个事件推送到开发者填写的URL。 点击查看<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025274&amp;token=&amp;lang=zh_CN" target="_parent" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';"><span style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券事件推送机制</span></a></p>
 <p style="text-align:center"><a name="4.5.6"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>朋友的券支持买单</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>朋友的券支持买单</strong>
+<br></h3>
 <p>同普通卡券一样，朋友的券一样支持微信快速买单，开通了微信支付的商户可以点<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025056&amp;token=&amp;lang=zh_CN" target="_parent" style="font-family: 微软雅黑, 'Microsoft YaHei'; text-decoration: underline;">击设置买单接口</a>为朋友的券开通买单，便捷收银。</p>
 <p style="text-align:center"><a name="4.6"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>帮助</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>帮助</strong>
+<br></h2>
 <p style="text-align:center"><a name="4.6.1"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>错误码</strong><br></h3>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">错误码</th><th style="width: 300px" class="table_cell">说明</th><th style="width: 300px" class="table_cell">排错指引</th></tr>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>错误码</strong>
+<br></h3>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">错误码</th><th style="width: 300px" class="table_cell">说明</th><th style="width: 300px" class="table_cell">排错指引</th></tr>
 <tr><td class="table_cell">40079</td><td class="table_cell">有效期错误</td><td class="table_cell">须将有效期设置为90天以内</td></tr>
 <tr><td class="table_cell">40141</td><td class="table_cell">图片url错误</td><td class="table_cell">须使用将图片上传至CDN后获得的url</td></tr>
 <tr><td class="table_cell">41025</td><td class="table_cell">缺少location_list</td><td class="table_cell">创建的JSON中须填入location_list(即poi_id，门店id)</td></tr>
 <tr><td class="table_cell">42001</td><td class="table_cell">token过期</td><td class="table_cell">重新获取最新的token调用接口，若有多个调用源，需要统一管理token</td></tr>
 <tr><td class="table_cell">47001</td><td class="table_cell">创建JSON结构错误</td><td class="table_cell">针对报错信息提示的位置对比示例排查</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>更多错误码，请见<a href="http://mp.weixin.qq.com/wiki/7/981e7a73e2bca37a3d1c83f071be6947.html" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券全局错误码</a></p>
 <p style="text-align:center"><a name="4.6.2"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>常见问题</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>常见问题</strong>
+<br></h3>
 <p><strong>1.为什么朋友的券不能在创建的时候填入库存？</strong></p>
 <p>朋友的券库存机制与普通券不同，开发者须先创建卡券后，到MP（商户后台）用券点充值库存，不支持在创建的时候填入库存。</p>
 <p><strong>2.为什么朋友的券只能创建三个月时长的卡券？</strong></p>
@@ -463,17 +525,23 @@
 <p><strong>3.卡券过期了券点会退吗？</strong></p>
 <p>若卡券过期时，card_id内尚有库存，我们会将库存折合券点退回商户的账户，周期为T+1（隔日退回）。</p>
 <p style="text-align:center"><a name="5"></a></p>
-<h1 style="font-size: 16px;">配置库存、充值券点<br></h1>
+<h1 style="font-size: 16px;">配置库存、充值券点
+<br></h1>
 <p>该部分介绍开发者怎样为card_id配置库存以及充值、管理账号的券点。</p>
 <p style="text-align:center"><a name="5.1"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口说明</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口说明</strong>
+<br></h2>
 <p>创建朋友的券成功后，开发者可以通过接口为card_id配置库存，不同于普通券的是，朋友的券库存须使用券点（<a href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=cardticket/faq_tmpl&amp;type=info&amp;token=1707566880&amp;lang=zh_CN" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">什么是券点？</a>）兑换，券点分为免费券点和付费券点，免费券点由微信平台赠送产生，而付费券点由开发者充值产生。</p>
 <p style="text-align:center"><a name="5.2"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口调用流程</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>接口调用流程</strong>
+<br></h2>
 <p style="text-align:center"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcTs0wlw9BFqboAL1MsznKzbG2o8aWy0nfFLibSIdyV7TicRNpcyogyV9A/0?wx_fmt=png" title="" alt=""></p>
 <p style="text-align:center"><a name="5.3"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API列表</strong><br></h2>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API列表</strong>
+<br></h2>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.BC.80.E9.80.9A.E5.88.B8.E7.82.B9.E8.B4.A6.E6.88.B7.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">开通券点账户接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">开通券点账户</td><td class="table_cell">库存接口</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.AF.B9.E4.BC.98.E6.83.A0.E5.88.B8.E6.89.B9.E4.BB.B7" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">对优惠券批价接口</a>
@@ -488,42 +556,58 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">查询某次充值订单的状态</td><td class="table_cell">充值接口</td></tr>
 <tr><td class="table_cell">6</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.9F.A5.E8.AF.A2.E6.B5.81.E6.B0.B4.E8.AF.A6.E6.83.85.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">查询流水详情接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">查询库存、券点订单的状态</td><td class="table_cell">管理接口</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="5.4"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API详情</strong><br></h2>
+<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>API详情</strong>
+<br></h2>
 <p>该部分主要介绍库存、券点接口的调用方法和传递参数。</p>
 <p style="text-align:center"><a name="5.4.1"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>开通券点账户接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>开通券点账户接口</strong>
+<br></h3>
 <p>本接口用于开发者为当前appid开通券点账户并获得免费券点奖励</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">HTTP请求方式:&nbsp;GET&nbsp;https://api.weixin.qq.com/card/pay/activate?access_token=ACCESS_TOKEN</pre>
-<p><br style="text-align: left;"><strong>返回数据示例</strong></p>
+<p>
+<br style="text-align: left;"><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"errcode":&nbsp;0,&nbsp;"errmsg":&nbsp;"ok",&nbsp;"reward":&nbsp;200}</pre>
 <p><strong>返回数据示例</strong></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">reward</td><td class="table_cell">奖励券点数量，以元为单位，微信卡券对每一个新开通券点账户的商户奖励200个券点，点击查看券点规则<a href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=cardticket/faq_tmpl&amp;type=info&amp;token=136421560&amp;lang=zh_CN#2dot6" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">什么是券点？</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><a name="5.4.2"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>对优惠券批价</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>对优惠券批价</strong>
+<br></h3>
 <p>本接口用于提前查询本次新增库存需要多少券点</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">HTTP请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/pay/getpayprice?access_token=ACCESS_TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"card_id":&nbsp;"pbLatjpQxxxxxxxxCEV_cLTwoB7yU",&nbsp;"quantity":&nbsp;"1"}</pre>
-<p><br style="text-align: left;"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<p>
+<br style="text-align: left;"><strong>请求参数说明</strong></p>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">是</td><td class="table_cell">string(32)</td><td class="table_cell">pFS7Fjg8kV1IdDz01r4SQwMkuCKc</td><td class="table_cell">需要来配置库存的card_id</td></tr>
 <tr><td class="table_cell">quantity</td><td class="table_cell">是</td><td class="table_cell">int</td><td class="table_cell">100</td><td class="table_cell">本次需要兑换的库存数目</td></tr>
-</tbody></table>
-<p><br style="text-align: left;"><strong>返回数据示例</strong></p>
+</tbody>
+</table>
+<p>
+<br style="text-align: left;"><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",
@@ -532,42 +616,56 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"free_coin":&nbsp;"0.2",
 &nbsp;&nbsp;&nbsp;&nbsp;"pay_coin":&nbsp;"0"
 }</pre>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">order_id</td><td class="table_cell">本次批价的订单号，用于下面的确认充值库存接口，仅对当前订单有效且仅可以使用一次，60s内可用于兑换库存。</td></tr>
 <tr><td class="table_cell">price</td><td class="table_cell">本次需要支付的券点总额度</td></tr>
 <tr><td class="table_cell">free_coin</td><td class="table_cell">本次需要支付的免费券点额度</td></tr>
 <tr><td class="table_cell">pay_coin</td><td class="table_cell">本次需要支付的付费券点额度</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：关于券点机制详情请见 [<a href="https://mp.weixin.qq.com/cgi-bin/readtemplate" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">https://mp.weixin.qq.com/cgi-bin/readtemplate</a>? t=cardticket/faq_tmpl&amp;type=info&amp;token=136421560&amp;lang=zh_CN#2dot6 什么是券点？]</p>
 <p style="text-align:center"><a name="5.4.3"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>查询券点余额接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>查询券点余额接口</strong>
+<br></h3>
 <p>本接口用于开发者查询当前券点账户中的免费券点/付费券点数目以及总额。</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">HTTP请求方式:&nbsp;GET&nbsp;https://api.weixin.qq.com/card/pay/getcoinsinfo?access_token=ACCESS_TOKEN</pre>
-<p><br style="text-align: left;"><strong>返回数据示例</strong></p>
+<p>
+<br style="text-align: left;"><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"errcode":&nbsp;0,&nbsp;"errmsg":&nbsp;"ok",&nbsp;"free_coin":&nbsp;200&nbsp;"pay_coin":&nbsp;1&nbsp;&nbsp;"total_coin":&nbsp;201}</pre>
 <p><strong>返回参数说明</strong></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">free_coin</td><td class="table_cell">免费券点数目</td></tr>
 <tr><td class="table_cell">pay_coin</td><td class="table_cell">免费券点数目</td></tr>
 <tr><td class="table_cell">total_coin</td><td class="table_cell">全部券点数目</td></tr>
-</tbody></table>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
+</tbody>
+</table>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
 <p style="text-align:center"><a name="5.4.4"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>确认兑换库存接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>确认兑换库存接口</strong>
+<br></h3>
 <p>本接口用于确认兑换库存，确认后券点兑换为库存，过程不可逆。</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">HTTP请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/pay/confirm?access_token=ACCESS_TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"pbLatjpxxxxlCEV_cLTwoB7yU",
@@ -575,37 +673,52 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"quantity":&nbsp;"1"
 }</pre>
 <p><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">是</td><td class="table_cell">string(32)</td><td class="table_cell">pFS7Fjg8kV1IdDz01r4SQwMkuCKc</td><td class="table_cell">需要来兑换库存的card_id</td></tr>
 <tr><td class="table_cell">quantity</td><td class="table_cell">是</td><td class="table_cell">int</td><td class="table_cell">100</td><td class="table_cell">本次需要兑换的库存数目</td></tr>
 <tr><td class="table_cell">order_id</td><td class="table_cell">是</td><td class="table_cell">string</td><td class="table_cell">P9zzllX2VJ5NgiF9kFVarX7bc8r</td><td class="table_cell">仅可以使用上面得到的订单号，保证批价有效性</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"errcode":0,&nbsp;"errmsg":"ok"}</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>特别注意</strong>：</p>
 <p>上一步获得的order_id须在60s内使用，否则确认兑换库存接口将会失效</p>
 <p style="text-align:center"><a name="5.4.5"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>充值券点接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>充值券点接口</strong>
+<br></h3>
 <p>开发者可以通过此接口为券点账户充值券点，1元等于1点。开发者调用接口后可以获得一个微信支付的支付二维码链接， 开发者可以将链接转化为二维码扫码支付。</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">HTTP请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/pay/recharge?access_token=ACCESS_TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"coin_count":&nbsp;100}</pre>
-<p><br style="text-align: left;"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<p>
+<br style="text-align: left;"><strong>请求参数说明</strong></p>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">coin_count</td><td class="table_cell">是</td><td class="table_cell">int</td><td class="table_cell">10000</td><td class="table_cell">需要充值的券点数目，1点=1元</td></tr>
-</tbody></table>
-<p><br style="text-align: left;"><strong>返回数据示例</strong></p>
+</tbody>
+</table>
+<p>
+<br style="text-align: left;"><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",
@@ -613,35 +726,48 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"qrcode_url":&nbsp;"weixin://wxpay/bizpayurl?pr=xxxxxxxxx",
 &nbsp;&nbsp;&nbsp;&nbsp;"qrcode_buffer":&nbsp;"pwxs*************xxxxxxxxxx"
 }</pre>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">order_id</td><td class="table_cell">本次支付的订单号，用于查询订单状态</td></tr>
 <tr><td class="table_cell">qrcode_url</td><td class="table_cell">支付二维码的的链接，开发者可以调用二维码生成的公开库转化为二维码显示在网页上，微信扫码支付</td></tr>
 <tr><td class="table_cell">qrcode_buffer</td><td class="table_cell">二维码的数据流，开发者可以使用写入一个文件的方法显示该二维码</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：</p>
 <p>开发者可以参考以下方法将buffer显示二维码</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">&lt;?php&nbsp;$file&nbsp;=&nbsp;fopen("test.jpg","w");&nbsp;echo&nbsp;fwrite($file,&nbsp;$qrcode_buffer);&nbsp;fclose($file);&nbsp;?&gt;</pre>
 <p style="text-align:center"><a name="5.4.6"></a></p>
-<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>查询订单详情接口</strong><br></h3>
+<h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong>查询订单详情接口</strong>
+<br></h3>
 <p>本接口用于查询充值订单的状态</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">HTTP请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/pay/getorder?access_token=ACCESS_TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"order_id":&nbsp;"100005790********401000171"}</pre>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
 <p><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">order_id</td><td class="table_cell">是</td><td class="table_cell">int</td><td class="table_cell">10000</td><td class="table_cell">上一步中获得的订单号，作为一次交易的唯一凭证</td></tr>
-</tbody></table>
-<p><br style="text-align: left;"><strong>返回数据示例</strong></p>
+</tbody>
+</table>
+<p>
+<br style="text-align: left;"><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",
@@ -660,8 +786,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }</pre>
 <p><strong>返回数据说明</strong></p>
-<p style="text-align: left;"><br></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<p style="text-align: left;">
+<br></p>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">order_info</td><td class="table_cell">订单信息结构体</td></tr>
@@ -677,17 +806,22 @@
 <tr><td class="table_cell">refund_pay_coin_count</td><td class="table_cell">回退的付费券点</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">支付人的openid</td></tr>
 <tr><td class="table_cell">order_tpye</td><td class="table_cell">订单类型，ORDER_TYPE_WXPAY为充值</td></tr>
-</tbody></table>
-<p><br></p>
+</tbody>
+</table>
+<p>
+<br></p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; widows: auto; text-align: left;"><strong><a name="5.4.7"></a>查询券点流水详情接口</strong></h3>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;">本接口用于查询券点的流水详情。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;"><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">HTTP请求方式:&nbsp;POSThttps://api.weixin.qq.com/card/pay/getorderlist?access_token=ACCESS_TOKEN</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;"><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" align="center" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" align="center" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;"><strong>POST数据</strong></p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{
 &nbsp;&nbsp;&nbsp;&nbsp;"offset":&nbsp;0,
@@ -703,8 +837,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"begin_time":&nbsp;"1440420538",
 &nbsp;&nbsp;&nbsp;&nbsp;"end_time":&nbsp;"1450713203"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;"><br style="text-align: left;"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px;" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;">
+<br style="text-align: left;"><strong>请求参数说明</strong></p>
+<table cellspacing="0" cellpadding="4" align="center" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px;" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">offset</td><td class="table_cell">否</td><td class="table_cell">int</td><td class="table_cell">0</td><td class="table_cell">分批查询的起点，默认为0</td></tr>
 <tr><td class="table_cell">count</td><td class="table_cell">否</td><td class="table_cell">int</td><td class="table_cell">50</td><td class="table_cell">分批查询的数量</td></tr>
 <tr><td class="table_cell">begin_time</td><td class="table_cell">否</td><td class="table_cell">int</td><td class="table_cell">14552146398</td><td class="table_cell">批量查询订单的起始事件，为时间戳，默认1周前</td></tr>
@@ -714,12 +851,15 @@
 <tr><td class="table_cell">nor_filter</td><td class="table_cell">否</td><td class="table_cell">JSON结构</td><td class="table_cell">ORDER_STATUS_QUANTITY_SUCC</td><td class="table_cell">反选，不要拉取的订单</td></tr>
 <tr><td class="table_cell">status</td><td class="table_cell">否</td><td class="table_cell">string</td><td class="table_cell">ORDER_STATUS_REFUND_WAITING</td><td class="table_cell">不要拉取的订单状态<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; text-align: left;">订单状态包括： ORDER_STATUS_WAITING 等待支付 ORDER_STATUS_SUCC 支付成功 ORDER_STATUS_FINANCE_SUCC 加代币成功 ORDER_STATUS_QUANTITY_SUCC 加库存成功 ORDER_STATUS_HAS_REFUND 已退币 ORDER_STATUS_REFUND_WAITING 等待退币确认 ORDER_STATUS_ROLLBACK 已回退,系统失败 ORDER_STATUS_HAS_RECEIPT 已开发票</p>
 </td></tr>
-<tr><td class="table_cell">sort_info</td><td class="table_cell">否</td><td class="table_cell">JSON结构</td><td class="table_cell"><br></td><td class="table_cell">对结果排序</td></tr>
+<tr><td class="table_cell">sort_info</td><td class="table_cell">否</td><td class="table_cell">JSON结构</td><td class="table_cell">
+<br></td><td class="table_cell">对结果排序</td></tr>
 <tr><td class="table_cell">sort_key</td><td class="table_cell">否</td><td class="table_cell">string</td><td class="table_cell">SORT_BY_TIME</td><td class="table_cell">排序依据，SORT_BY_TIME 以订单时间排序</td></tr>
 <tr><td class="table_cell">sort_type</td><td class="table_cell">否</td><td class="table_cell">string</td><td class="table_cell">SORT_DESC</td><td class="table_cell">排序规则，SORT_ASC 升序<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; text-align: left;">SORT_DESC 降序</p>
 </td></tr>
-</tbody></table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;"><br style="text-align: left;"><strong>返回数据示例</strong></p>
+</tbody>
+</table>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;">
+<br style="text-align: left;"><strong>返回数据示例</strong></p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{
 &nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",
@@ -740,8 +880,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;]
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;"><br style="text-align: left;"><strong>返回数据说明</strong></p>
-<table cellspacing="0" cellpadding="7" align="center" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px;" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;">
+<br style="text-align: left;"><strong>返回数据说明</strong></p>
+<table cellspacing="0" cellpadding="7" align="center" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px;" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">total_num</td><td class="table_cell">符合条件的订单总数量</td></tr>
@@ -758,7 +901,8 @@
 <tr><td class="table_cell">refund_pay_coin_count</td><td class="table_cell">回退的付费券点</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">支付人的openid</td></tr>
 <tr><td class="table_cell">order_tpye</td><td class="table_cell">订单类型，ORDER_TYPE_WXPAY为充值</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; widows: auto; text-align: left;"><strong><a name="5.4.8"></a>券点流水详情事件推送</strong></h3>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;">当券点发生变动时，微信服务器会将本次变动的类型、券点数额以及时间等信息推送给开发者服务器。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-size: 14px; white-space: normal; widows: auto; text-align: left;">详情请见：<a href="http://mp.weixin.qq.com/wiki/16/28b34ee91675a04cb24853768debded4.html#.E5.88.B8.E7.82.B9.E6.B5.81.E6.B0.B4.E8.AF.A6.E6.83.85.E4.BA.8B.E4.BB.B6" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">券点流水详情事件推送</a></p>
@@ -778,12 +922,15 @@
 <p>2.调用创建二维码接口生成领券二维码；</p>
 <p>3.监听领取时间推送，记录卡券发放量并做数据统计；</p>
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.3.1.3"></a>API列表</strong></h4>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E7.94.9F.E6.88.90.E4.BA.8C.E7.BB.B4.E7.A0.81.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">生成二维码接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">创建二维码得到二维码的展示url</td><td class="table_cell">投放接口</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/16/28b34ee91675a04cb24853768debded4.html#.E9.A2.86.E5.8F.96.E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券领取事件推送</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">用户领取卡券后，获得用户的openid、code和card_id等信息</td><td class="table_cell">事件推送</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.3.2"></a>H5网页投放</strong></h3>
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.3.2.1"></a>场景介绍</strong></h4>
 <p>开发者可以开发领券H5网页，并将url转化成二维码或者配置在微信摇一摇或者微信Wi-Fi投放。 该渠道适用于对领取页面有要求的商户，可以自定义页面样式体现品牌价值或者自定义领取流程（如加入游戏环节）等。</p>
@@ -793,7 +940,9 @@
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.3.2.2"></a>接口调用流程</strong></h4>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcPYq02RsFae4eR5EPe7wArd8dYBLSguEMLzey1SvSmhAgibuA3QM1mew/0?wx_fmt=png" title="" alt=""></a></p>
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.3.2.3"></a>API列表</strong></h4>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E8.8E.B7.E5.8F.96JSAPI_TICKET.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">获取JSAPI_TICKET接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">获取到JSAPI_TICKET用于参与JS SDK config</td><td class="table_cell">基础接口</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E8.8E.B7.E5.8F.96.E5.8D.A1.E5.88.B8API_TICKET.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">获取卡券API_TICKET接口</a>
@@ -802,7 +951,8 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">将共享券添加到用户的券列表</td><td class="table_cell">投放接口</td></tr>
 <tr><td class="table_cell">4</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E5.8D.A1.E5.88.B8.E9.A2.86.E5.8F.96.E4.BA.8B.E4.BB.B6" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券领取事件推送</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">用户领取卡券后，获得用户的openid、code和card_id等信息</td><td class="table_cell">事件推送</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.4"></a>API详情</strong></h2>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.4.1"></a>设置测试白名单接口</strong></h3>
 <p>当朋友的券审核未通过时，开发者可以通过设置白名单的方式领取朋友的券并共享。 共享的未审核状态的券仅白名单列表内可见，详情请见：<a href="http://mp.weixin.qq.com/wiki/5/f942979ef2f0d313d4d36e3a26766a3d.html#.E8.AE.BE.E7.BD.AE.E6.B5.8B.E8.AF.95.E7.99.BD.E5.90.8D.E5.8D.95" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">设置测试白名单接口</a></p>
@@ -810,10 +960,13 @@
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/qrcode/create?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <p>开发者可以设置扫描二维码领取单张卡券，此时POST数据为：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
@@ -829,14 +982,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }</pre>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">code</td><td class="table_cell">是</td><td class="table_cell">string(20)</td><td class="table_cell">110201201245</td><td class="table_cell">卡券Code码,use_custom_code字段为true的卡券必须填写，非自定义code不必填写。。</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">否</td><td class="table_cell">string(32)</td><td class="table_cell">pFS7Fjg8kV1IdDz01r4SQwMkuCKc</td><td class="table_cell">卡券ID。</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">否</td><td class="table_cell">string(32)</td><td class="table_cell">oXch-jkrxp42VQu8ldweCwDt97qo</td><td class="table_cell">指定领取者的openid，只有该用户能领取。bind_openid字段为true的卡券必须填写，非指定openid不必填写。</td></tr>
 <tr><td class="table_cell">expire_seconds</td><td class="table_cell">否</td><td class="table_cell">unsigned int</td><td class="table_cell">60</td><td class="table_cell">指定二维码的有效时间，范围是60 ~ 1800秒。不填默认为永久有效。</td></tr>
 <tr><td class="table_cell">is_unique_code</td><td class="table_cell">否</td><td class="table_cell">bool</td><td class="table_cell">false</td><td class="table_cell">指定下发二维码，生成的二维码随机分配一个code，领取后不可再次扫描。填写true或false。默认false。</td></tr>
 <tr><td class="table_cell">outer_id</td><td class="table_cell">否</td><td class="table_cell">int</td><td class="table_cell">12</td><td class="table_cell">领取场景值，用于领取渠道的数据统计，默认值为0，字段类型为整型，长度限制为60位数字。用户领取卡券后触发的<a href="http://mp.weixin.qq.com/wiki/16/28b34ee91675a04cb24853768debded4.html#.E9.A2.86.E5.8F.96.E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">事件推送</a>中会带上此自定义场景值。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意事项：</p>
 <p>1.若开发者填写了is_unique_code为true，需要保证卡券已审核通过并有库存，否则会报错。</p>
 <p><strong>返回数据</strong></p>
@@ -849,13 +1005,16 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"url":&nbsp;"http://weixin.qq.com/q/BHWya_zlfioH6fXeL16o",
 &nbsp;&nbsp;&nbsp;&nbsp;"show_qrcode_url":&nbsp;"&nbsp;https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQH98DoAAAAAAAAAASxodHRwOi8vd2VpeGluLnFxLmNvbS9xL0czVzRlSWpsamlyM2plWTNKVktvAAIE6SfgVQMEgDPhAQ%3D%3D"
 }</pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">ticket</td><td class="table_cell">获取的二维码ticket，凭借此ticket调用<a href="http://mp.weixin.qq.com/wiki/18/167e7d94df85d8389df6c94a7a8f78ba.html" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">通过ticket换取二维码接口</a>可以在有效时间内换取二维码。</td></tr>
 <tr><td class="table_cell">url</td><td class="table_cell">二维码图片解析后的地址，开发者可根据该地址自行生成需要的二维码图片</td></tr>
 <tr><td class="table_cell">show_qrcode_url</td><td class="table_cell">二维码显示地址，点击后跳转二维码页面</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.4.3"></a>获取JSAPI_TICKET接口</strong></h3>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;GET&nbsp;https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=jsapi</pre>
@@ -866,12 +1025,15 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"ticket":&nbsp;"bxLdikRXVbTPdHSM05e5u5sUoXNKd8-41ZO3MhKoyN5OfkWITDGgnr2fwJ0m9E8NYzWKVZvdVtaUgWvsdshFKA",
 &nbsp;&nbsp;&nbsp;&nbsp;"expires_in":&nbsp;7200
 }</pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">ticket</td><td class="table_cell">获取的JSAPI_TICKET</td></tr>
 <tr><td class="table_cell">expires_in</td><td class="table_cell">有效时间，ticket有效时间为2小时，2小时内不变</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.4.4"></a>获取卡券API_TICKET接口</strong></h3>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;GET&nbsp;https://api.weixin.qq.com/cgi-bin/ticket/getticket?access_token=ACCESS_TOKEN&amp;type=wx_card</pre>
@@ -882,27 +1044,35 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"ticket":&nbsp;"bxLdikRXVbTPdHSM05e5u5sUoXNKdvsdshFKA",
 &nbsp;&nbsp;&nbsp;&nbsp;"expires_in":&nbsp;7200
 }</pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">ticket</td><td class="table_cell">获取的卡券API_TICKET</td></tr>
 <tr><td class="table_cell">expires_in</td><td class="table_cell">有效时间，ticket有效时间为2小时，2小时内不变</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.4.5"></a>批量添加卡券（addcard）接口</strong></h3>
 <p>朋友的券领取须指引用户升级到最新的微信客户端版本，最低版本要求为：iOS微信版本为6.3.6及以上，Android微信版本为6.3.7及以上。 开发者可以判断用户版本后调用addcard接口，请点击查看<a href="http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html#.E5.88.A4.E6.96.AD.E5.BD.93.E5.89.8D.E5.AE.A2.E6.88.B7.E7.AB.AF.E7.89.88.E6.9C.AC.E6.98.AF.E5.90.A6.E6.94.AF.E6.8C.81.E6.8C.87.E5.AE.9AJS.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">判断用户客户端版本</a>、<a href="http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html#.E6.89.B9.E9.87.8F.E6.B7.BB.E5.8A.A0.E5.8D.A1.E5.88.B8.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">批量添加卡券接口</a>。</p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.4.6"></a>卡券领取事件</strong></h3>
 <p>用户领取朋友的券后，会有事件推送到开发者服务器。 点击查看<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025274&amp;token=&amp;lang=zh_CN" target="_parent" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';"><span style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券事件推送机制</span></a></p>
-<p><br></p>
-<p><strong><br></strong></p>
+<p>
+<br></p>
+<p><strong>
+<br></strong></p>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.5"></a>帮助</strong></h2>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.5.1"></a>错误码</strong></h3>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">错误码</th><th style="width: 300px" class="table_cell">说明</th><th style="width: 300px" class="table_cell">排错指引</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">错误码</th><th style="width: 300px" class="table_cell">说明</th><th style="width: 300px" class="table_cell">排错指引</th></tr>
 <tr><td class="table_cell">40053</td><td class="table_cell">JSON结构错误</td><td class="table_cell">card_id或者参数名有误，请对比示例排查</td></tr>
 <tr><td class="table_cell">43008</td><td class="table_cell">当前账号未开通支付权限或未开通支付后送券接口权限，无法设置支付后送朋友的券功能</td><td class="table_cell">前往开通<a href="http://kf.qq.com/faq/120911VrYVrA150906iQjQjI.html" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">微信支付</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></tr>
 <tr><td class="table_cell">45021</td><td class="table_cell">赠券规则列表长度高于10个</td><td class="table_cell">减少赠券规则列表的个数</td></tr>
 <tr><td class="table_cell">47001</td><td class="table_cell">创建JSON结构错误</td><td class="table_cell">针对报错信息提示的位置对比示例排查</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>更多错误码，请见<a href="http://mp.weixin.qq.com/wiki/7/981e7a73e2bca37a3d1c83f071be6947.html" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券全局错误码</a></p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="6.5.2"></a>常见问题</strong></h3>
 <p><strong>1.如何区分领取渠道？</strong></p>
@@ -917,33 +1087,43 @@
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.2.1.1"></a>机具扫码核销</strong></h4>
 <p><strong>场景介绍</strong></p>
 <p>具有机具和开发能力的商户可以通过机具扫码进行卡券核销，开发者可以通过机具扫码获得卡券code之后，调用核销code接口将卡券进行核销，方便快捷。</p>
-<p style="text-align:center"><br></p>
+<p style="text-align:center">
+<br></p>
 <p><strong>接口调用流程</strong></p>
 <p style="text-align:center"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcibBvcSLtsPp0PTcNRxyMbfsviahaVs26OJeTXjv9blzq5JYzyQFABIWA/0?wx_fmt=png" title="" alt=""></p>
-<p><br style="text-align: left;"><strong>API列表</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<p>
+<br style="text-align: left;"><strong>API列表</strong></p>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.9F.A5.E8.AF.A2Code.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">查询code接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">查询code状态，获知当前卡券是否可以核销</td><td class="table_cell">管理卡券</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E7.BA.BF.E4.B8.8B.E6.A0.B8.E9.94.80Code.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">线下核销code接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">设置卡券门店并通过审核获得poiid，用于创建时填入location_list字段</td><td class="table_cell">核销卡券</td></tr>
 <tr><td class="table_cell">3</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.A0.B8.E9.94.80.E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券核销事件</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">获得当前卡券的使用人、code和card_id等信息</td><td class="table_cell">事件推送</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.2.1.2"></a>网页工具核销</strong></h4>
 <p><strong>场景介绍</strong></p>
 <p>若开发者没有能力进行机具开发，可以开发一个核销员端使用的网页进行朋友的券的核销，当用户出示二维码时。</p>
-<p style="text-align:center"><br></p>
+<p style="text-align:center">
+<br></p>
 <p><strong>接口调用流程</strong></p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcibBvcSLtsPp0PTcNRxyMbfsviahaVs26OJeTXjv9blzq5JYzyQFABIWA/0?wx_fmt=png" title="" alt=""></a></p>
-<p><br style="text-align: left;"><strong>API列表</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<p>
+<br style="text-align: left;"><strong>API列表</strong></p>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.9F.A5.E8.AF.A2Code.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">查询code接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">查询code状态，获知当前卡券是否可以核销</td><td class="table_cell">管理卡券</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E7.BA.BF.E4.B8.8B.E6.A0.B8.E9.94.80Code.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">线下核销code接口</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">设置卡券门店并通过审核获得poiid，用于创建时填入location_list字段</td><td class="table_cell">核销卡券</td></tr>
 <tr><td class="table_cell">3</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E6.A0.B8.E9.94.80.E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券核销事件</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">获得当前卡券的使用人、code和card_id等信息</td><td class="table_cell">事件推送</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h4 style="margin-top: 0px; padding: 5px 10px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.2.1.3"></a>卡券商户助手核销</strong></h4>
 <p><strong>场景介绍</strong></p>
 <p>手机核销助手是基于“卡券商户助手“公众号的官方卡券核销工具，同样支持朋友的券的核销。</p>
@@ -964,8 +1144,11 @@
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcxTS0NkTmN6OYuTZtug8t14VChicEJwVqz92jA3GHxb9tPLSgAibaicD5Q/0?wx_fmt=png" title="" alt=""></a></p>
 <p><strong>接口调用流程</strong></p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#" style="color: rgb(54, 103, 153)"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcLZNFpvbpicIIRtZpDGxO1iaic5fGG9h22mia4Voh4ibpzl1eDT3nqC4x2nw/0?wx_fmt=png" title="" alt=""></a></p>
-<p><br style="text-align: left;"><strong>API列表</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
+<p>
+<br style="text-align: left;"><strong>API列表</strong></p>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 50px" class="table_cell">步骤</th><th class="table_cell">API名称</th><th class="table_cell">用途</th><th class="table_cell">API属性</th></tr>
 <tr><td class="table_cell">1</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#.E8.8E.B7.E5.8F.96.E8.87.AA.E5.AE.9A.E4.B9.89.E5.A4.96.E9.93.BE.E5.8F.82.E6.95.B0" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">获取自定义跳转链接参数</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">获取加密code（encrypt_code）、card_id和openid</td><td class="table_cell">创建卡券</td></tr>
 <tr><td class="table_cell">2</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/10/333958907c5aae0581e93a24f2df8562.html#Code.E8.A7.A3.E7.A0.81.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">code解码接口</a>
@@ -980,26 +1163,35 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">获得当前卡券的使用人、code和card_id等信息</td><td class="table_cell">事件推送</td></tr>
 <tr><td class="table_cell">7</td><td class="table_cell"><a href="http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html#.E6.A0.B8.E9.94.80.E5.90.8E.E5.86.8D.E6.AC.A1.E8.B5.A0.E9.80.81.E5.8D.A1.E5.88.B8.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">核销裂赠券接口（JSSDK）</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">拉起裂变领取页供用户领取</td><td class="table_cell">核销接口</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.3"></a>API详情</strong></h2>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.3.1"></a>查询Code接口</strong></h3>
 <p>我们强烈建议开发者在调用核销code接口之前调用查询code接口，并在核销之前对非法状态的code(如转赠中、已删除、已核销等)做出处理。</p>
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/code/get?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{&nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"pbLatjorLTVl-tdvZ6zQRIc-Fn6Y",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"code":&nbsp;"245645675434",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"check_consume":&nbsp;true}</pre>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">code</td><td class="table_cell">是</td><td class="table_cell">string(20)</td><td class="table_cell">110201201245</td><td class="table_cell">单张卡券的唯一标准。</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">否</td><td class="table_cell">string(32)</td><td class="table_cell">pFS7Fjg8kV1IdDz01r4SQwMkuCKc</td><td class="table_cell">卡券ID代表一类卡券。</td></tr>
 <tr><td class="table_cell">check_consume</td><td class="table_cell">否</td><td class="table_cell">bool</td><td class="table_cell">true</td><td class="table_cell">是否校验code核销状态，填入true和false时的code异常状态返回数据不同。</td></tr>
-</tbody></table>
-<p><br style="text-align: left;"><strong>当check_consume为true时返回数据</strong></p>
+</tbody>
+</table>
+<p>
+<br style="text-align: left;"><strong>当check_consume为true时返回数据</strong></p>
 <p>卡券状态正常：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
@@ -1051,8 +1243,11 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"mark_openid":&nbsp;"obLatjjwDolFjRRd3doGIdwNqRXw",
 &nbsp;&nbsp;&nbsp;&nbsp;"use_count":&nbsp;1
 }</pre>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">领取该卡券用户的openid</td></tr>
@@ -1064,7 +1259,8 @@
 <tr><td class="table_cell">can_consume</td><td class="table_cell">是否可以核销，true为可以核销，false为不可核销</td></tr>
 <tr><td class="table_cell">mark_openid</td><td class="table_cell">当前占用此卡券的顾客的openid，核销时仅限该openid的用户可以核销该卡券</td></tr>
 <tr><td class="table_cell">use_count</td><td class="table_cell">当前占用这个卡券的人已经使用该card_id的次数</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注：</p>
 <p>1.固定时长有效期会根据用户实际领取时间转换，如用户2013年10月1日领取，固定时长有效期为90天，即有效时间为2013年10月1日-12月29日有效。</p>
 <p>2.无论check_consume填写的是true还是false,当code未被添加或者code被转赠领取是统一报错：invalid serial code</p>
@@ -1083,23 +1279,32 @@
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/code/decrypt?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"encrypt_code":&nbsp;"XXIzTtMqCxwOaawoE91+VJdsFmv7b8g0VZIZkqf4GWA60Fzpc8ksZ/5ZZ0DVkXdE"}</pre>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">encrypt_code</td><td class="table_cell">是</td><td class="table_cell">string(128)</td><td class="table_cell">XXIzTtMqCxwOaawoE91+VJdsFmv7b8g0VZIZkqf4GWA60Fzpc8ksZ/5ZZ0DVkXdE</td><td class="table_cell">经过加密的Code码。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据</strong></p>
 <p>数据示例：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">&nbsp;{"errcode":0,&nbsp;"errmsg":"ok",&nbsp;"code":"751234212312"}</pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
 <tr><td class="table_cell">code</td><td class="table_cell">解密后获取的真实Code码</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.3.5"></a>Mark(占用)Code接口</strong></h3>
 <p>朋友的券由于共享的特性，会出现多个消费者同时进入某一个卡券的自定义H5网页的情况，若该网页涉及线上下单、核销、支付等行为，会造成两个消费者同时使用同一张券，会有一个消费者使用失败的情况，为此我们设计了mark（占用）code接口。</p>
 <p>对于出示核销（消费者点击“出示使用”按钮）的场景，开发者直接调用核销接口，无需考虑mark逻辑，此时由客户端代为完成。</p>
@@ -1107,10 +1312,13 @@
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/code/mark?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"code":&nbsp;"114567897765",
@@ -1118,19 +1326,25 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"openid":&nbsp;"obcdkalgsdklkdooooooo",
 &nbsp;&nbsp;&nbsp;&nbsp;"is_mark":&nbsp;true
 }</pre>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">code</td><td class="table_cell">是</td><td class="table_cell">卡券的code码。</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">是</td><td class="table_cell">卡券的ID。</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">是</td><td class="table_cell">用券用户的openid。</td></tr>
 <tr><td class="table_cell">is_mark</td><td class="table_cell">是</td><td class="table_cell">是否要mark（占用）这个code，填写true或者false，表示占用或解除占用。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据</strong></p>
 <p>数据示例：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">&nbsp;{"errcode":0,&nbsp;"errmsg":"ok"}</pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：</p>
 <p>1. 接口只支持未使用、正常状态的朋友的券，开发者调用前须查询code。</p>
 <p>2. is_mark不填默认为true。</p>
@@ -1143,15 +1357,21 @@
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/code/consume?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">非自定义Code卡券的请求&nbsp;{"code":&nbsp;"12312313"}</pre>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">code</td><td class="table_cell">是</td><td class="table_cell">string(20)</td><td class="table_cell">1231231</td><td class="table_cell">需核销的Code码。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据</strong></p>
 <p>数据示例：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
@@ -1162,36 +1382,50 @@
 &nbsp;&nbsp;&nbsp;&nbsp;},
 &nbsp;&nbsp;&nbsp;&nbsp;"openid":&nbsp;"oFS7Fjl0WsZ9AMZqrI80nbIq8xrA"
 }</pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息。</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">用户在该公众号内的唯一身份标识。</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">卡券ID。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.3.7"></a>线上核销Code接口</strong></h3>
 <p>线上核销code接口与普通的核销code接口不同，开发者须传入当前使用该卡券顾客的openid才可以核销。</p>
-<p><br style="text-align: left;"><strong>接口调用请求说明</strong></p>
+<p>
+<br style="text-align: left;"><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/code/consume?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"code":&nbsp;"12312313",&nbsp;"openid":"oFS7Fjl0WsZ9AMZqrI80nbIq8xrA"&nbsp;}</pre>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">code</td><td class="table_cell">是</td><td class="table_cell">string(20)</td><td class="table_cell">1231231</td><td class="table_cell">需核销的Code码。</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">是</td><td class="table_cell">string(20)</td><td class="table_cell">oFS7Fjl0WsZ9AMZqrI80nbIq8xrA</td><td class="table_cell">当前卡券使用者的openid，通常通过网页授权登录或自定义url跳转参数获得。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据</strong></p>
 <p>数据示例：</p>
-<pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px"><br></pre>
-<table cellspacing="0" cellpadding="7" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">
+<br></pre>
+<table cellspacing="0" cellpadding="7" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息。</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">用户在该公众号内的唯一身份标识。</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">卡券ID。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：</p>
 <p>1.只有在线上核销的场景时，调用核销接口才需要传openid参数； 2.线下核销的场景下，核销接口传递的参数仅为code，无需openid；</p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.3.8"></a>核销事件推送</strong></h3>
@@ -1202,7 +1436,9 @@
 <p>详情请见<a href="http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html#.E6.A0.B8.E9.94.80.E5.90.8E.E5.86.8D.E6.AC.A1.E8.B5.A0.E9.80.81.E5.8D.A1.E5.88.B8.E6.8E.A5.E5.8F.A3" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">核销后再次赠送卡券接口</a></p>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.4"></a>帮助</strong></h2>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.4.1"></a>错误码</strong></h3>
-<table cellspacing="0" cellpadding="4" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">错误码</th><th style="width: 300px" class="table_cell">说明</th><th style="width: 300px" class="table_cell">排错指引</th></tr>
+<table cellspacing="0" cellpadding="4" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">错误码</th><th style="width: 300px" class="table_cell">说明</th><th style="width: 300px" class="table_cell">排错指引</th></tr>
 <tr><td class="table_cell">40003</td><td class="table_cell">Invalid opened，缺少openid</td><td class="table_cell">核销时用户的卡券未处于展示（mark）状态，朋友的券规定，券必须处于展示（mark）状态时，才允许被核销</td></tr>
 <tr><td class="table_cell">40056</td><td class="table_cell">无效code</td><td class="table_cell">Code尚未被领取</td></tr>
 <tr><td class="table_cell">40075</td><td class="table_cell">错误的encrypt码</td><td class="table_cell">请检查加密码是否拼写正确，请检查在url中取出encrypt_code（加密code）在post之前是否做过urlencode</td></tr>
@@ -1210,29 +1446,36 @@
 <tr><td class="table_cell">40079</td><td class="table_cell">卡券过期</td><td class="table_cell">建议开发者在调用核销接口之前先调用【查询code接口】确认code有效后再发起核销</td></tr>
 <tr><td class="table_cell">40099</td><td class="table_cell">Code已经被核销</td><td class="table_cell">建议开发者在调用核销接口之前先调用【查询code接口】确认code有效后再发起核销</td></tr>
 <tr><td class="table_cell">40127</td><td class="table_cell">该Code已经被删除、置为失效或者转赠成功</td><td class="table_cell">建议开发者在调用核销接口之前先调用【查询code接口】确认code有效后再发起核销</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>更多错误码，请见<a href="http://mp.weixin.qq.com/wiki/7/981e7a73e2bca37a3d1c83f071be6947.html" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">卡券全局错误码</a></p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="7.4.2"></a>常见问题</strong></h3>
 <p><strong>1、为什么JSSDK拉起卡券列表中没有卡券？</strong></p>
 <p>A:JSSDK拉不起卡券一般为签名错误和筛选条件错误，两种情况。 签名错误是指卡券签名错误，建议用<a href="http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=cardsign%E8%B0%83%E8%AF%95" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">http://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=cardsign调试</a>&nbsp;筛选条件错误是指shopid/cardid/和cardtype传参有误，比如传入了cash类型的cardtype,但是实际上用户卡包中无此类型卡券。</p>
 <p><strong>2、为什么要调用mark住接口？</strong></p>
 <p>A：由于朋友的券会出现在不同的用户列表中，所以在同一时刻可能有多个用户同时进入开发者开发的核销页面或者下单、支付页面，会出现用户付款但是没有成功核销卡券的情况，所以我们约定必须在卡券核销之前调用mark住接口将code与当前的openid锁定。 其本质是将code与当前使用者锁定的一个锁、 比如快速买单和商城下单的场景可以在支付前调用mark接口，如果mark失败则停止支付，而开发了自主核销页面的开发者可以选择在核销之前mark住code，从而避免冲突的发生。</p>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
 <h1 style="font-size: 16px;"><a name="8"></a>朋友的券管理接口</h1>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="8.1"></a>更新朋友的券信息接口</strong></h2>
 <p><strong>接口说明</strong></p>
 <p>创建朋友的券成功之后开发者可调用该接口更改卡券信息，某些需要修改后送审的字段开发者需慎重处理</p>
-<p><br style="text-align: left;"><strong>开发者注意事项</strong></p>
+<p>
+<br style="text-align: left;"><strong>开发者注意事项</strong></p>
 <p>1. 更改卡券的部分字段后会重新提交审核，详情见字段说明，更新成功后可通过调用查看卡券详情接口核查更新结果；</p>
 <p>2. 仅填入需要更新的字段，许多开发者在调用该接口时会填入brandname（品牌名称）等不支持修改的字段，导致更新不成功。</p>
 <p>3. 调用该接口后更改卡券信息后，请务必调用<a href="http://mp.weixin.qq.com/wiki/14/8dd77aeaee85f922db5f8aa6386d385e.html#.E6.9F.A5.E7.9C.8B.E5.8D.A1.E5.88.B8.E8.AF.A6.E6.83.85" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">查看卡券详情接口</a>验证是否已成功更改。</p>
-<p><br style="text-align: left;"><strong>接口调用请求说明</strong></p>
+<p>
+<br style="text-align: left;"><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/card/update?access_token=TOKEN</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST示例</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"pbLatjgOY1_Cxi3mnWBThtG90HGg",
@@ -1295,10 +1538,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;}
 }</pre>
-<p><br style="text-align: left;"><strong>字段说明</strong></p>
+<p>
+<br style="text-align: left;"><strong>字段说明</strong></p>
 <p>Base_info（卡券基础信息）字段修改：</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 50px" class="table_cell">参数名</th><th class="table_cell">是否提审</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
-<tr><td class="table_cell">base_info</td><td class="table_cell">-</td><td class="table_cell">JSON结构</td><td class="table_cell"><br></td><td class="table_cell">卡券基础信息字段。</td></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 50px" class="table_cell">参数名</th><th class="table_cell">是否提审</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<tr><td class="table_cell">base_info</td><td class="table_cell">-</td><td class="table_cell">JSON结构</td><td class="table_cell">
+<br></td><td class="table_cell">卡券基础信息字段。</td></tr>
 <tr><td class="table_cell">logo_url</td><td class="table_cell">是</td><td class="table_cell">string(128)</td><td class="table_cell"><a href="http://mmbiz.qpic.cn/" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">http://mmbiz.qpic.cn/</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td><td class="table_cell">卡券的商户logo，建议像素为300*300。</td></tr>
 <tr><td class="table_cell">notice</td><td class="table_cell">是</td><td class="table_cell">string（48）</td><td class="table_cell">请出示二维码核销卡券。</td><td class="table_cell">使用提醒，字数上限为16个汉字。</td></tr>
@@ -1324,36 +1571,49 @@
 <tr><td class="table_cell">type</td><td class="table_cell">否</td><td class="table_cell">string</td><td class="table_cell">DATE_TYPE_FIX_TIME_RANGE</td><td class="table_cell">有效期类型，仅支持更改type为DATE_TYPE_FIX_TIME_RANGE 的时间戳。</td></tr>
 <tr><td class="table_cell">begin_timestamp</td><td class="table_cell">否</td><td class="table_cell">unsigned int</td><td class="table_cell">14300000</td><td class="table_cell">固定日期区间专用，表示起用时间。（单位为秒）</td></tr>
 <tr><td class="table_cell">end_timestamp</td><td class="table_cell">否</td><td class="table_cell">unsigned int</td><td class="table_cell">15300000</td><td class="table_cell">固定日期区间专用，表示结束时间。最长可将卡券有效期延长至三个月。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>Advanced_info（卡券高级信息）字段修改：</p>
 <p>特别注意，以下支持更新的字段不在基本信息base_info的结构中。</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">是否提审</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
-<tr><td class="table_cell">advanced_info</td><td class="table_cell">是</td><td class="table_cell">JSON结构</td><td class="table_cell"><br></td><td class="table_cell"><br></td></tr>
-<tr><td class="table_cell">abstract</td><td class="table_cell">否</td><td class="table_cell">JSON结构</td><td class="table_cell">优惠详情摘要字段。</td><td class="table_cell"><br></td></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">参数名</th><th class="table_cell">是否提审</th><th class="table_cell">类型</th><th class="table_cell">示例值</th><th class="table_cell">描述</th></tr>
+<tr><td class="table_cell">advanced_info</td><td class="table_cell">是</td><td class="table_cell">JSON结构</td><td class="table_cell">
+<br></td><td class="table_cell">
+<br></td></tr>
+<tr><td class="table_cell">abstract</td><td class="table_cell">否</td><td class="table_cell">JSON结构</td><td class="table_cell">优惠详情摘要字段。</td><td class="table_cell">
+<br></td></tr>
 <tr><td class="table_cell">abstract</td><td class="table_cell">否</td><td class="table_cell">string(60)</td><td class="table_cell">简介。</td><td class="table_cell">本券限领一张，不能与其他优惠共同使用。</td></tr>
 <tr><td class="table_cell">icon_url_list</td><td class="table_cell">否</td><td class="table_cell">string(3072)</td><td class="table_cell">图片列表，仅支持填入一个封面图片链接，上传图片接口上传获取图片获得链接，填写非CDN链接会报错，并在此填入。建议图片尺寸像素900*375</td><td class="table_cell"><a href="http://mmbiz.qpic.cn/mmbiz/xxxxx" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">http://mmbiz.qpic.cn/mmbiz/xxxxx</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></tr>
-<tr><td class="table_cell">text_image_list</td><td class="table_cell">否</td><td class="table_cell">string(3072)</td><td class="table_cell">图文列表，显示在详情内页，优惠券券开发者须至少传入一组图文列表</td><td class="table_cell"><br></td></tr>
+<tr><td class="table_cell">text_image_list</td><td class="table_cell">否</td><td class="table_cell">string(3072)</td><td class="table_cell">图文列表，显示在详情内页，优惠券券开发者须至少传入一组图文列表</td><td class="table_cell">
+<br></td></tr>
 <tr><td class="table_cell">image_url</td><td class="table_cell">否</td><td class="table_cell">string(3072)</td><td class="table_cell">图片链接，必须调用上传图片接口上传图片获得链接，并在此填入，否则报错</td><td class="table_cell"><a href="http://mmbiz.qpic.cn/mmbiz/xxxxx%E3%80%82" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei';">http://mmbiz.qpic.cn/mmbiz/xxxxx。</a>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</td></tr>
 <tr><td class="table_cell">text</td><td class="table_cell">否</td><td class="table_cell">string(3072)</td><td class="table_cell">图文描述，5000字以内</td><td class="table_cell">一般为商品详情介绍</td></tr>
 <tr><td class="table_cell">business_service</td><td class="table_cell">否</td><td class="table_cell">string(24)</td><td class="table_cell">商家服务类型 可多选,此处仅控制展示，不填则不显示</td><td class="table_cell">BIZ_SERVICE_DELIVER 外卖服务；BIZ_SERVICE_FREE_PARK 停车位；BIZ_SERVICE_WITH_PET 可带宠物；BIZ_SERVICE_FREE_WIFI 免费Wi-Fi</td></tr>
-<tr><td class="table_cell">time_limit</td><td class="table_cell">是</td><td class="table_cell">string(24)</td><td class="table_cell">使用时段限制</td><td class="table_cell"><br></td></tr>
+<tr><td class="table_cell">time_limit</td><td class="table_cell">是</td><td class="table_cell">string(24)</td><td class="table_cell">使用时段限制</td><td class="table_cell">
+<br></td></tr>
 <tr><td class="table_cell">type</td><td class="table_cell">是</td><td class="table_cell">string（24）</td><td class="table_cell">MONDAY 周一<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; text-align: left;">TUESDAY 周二 WEDNESDAY 周三 THURSDAY 周四 FRIDAY 周五 SATURDAY 周六 SUNDAY 周日 HOLIDAY 假期通用</p>
 </td><td class="table_cell">限制类型，可多选,此处仅控制展示，不填则不显示</td></tr>
 <tr><td class="table_cell">consume_share_self_num</td><td class="table_cell">是</td><td class="table_cell">int</td><td class="table_cell">核销后送券的数量，可设置核销后送本券的数量，限制传入1张，与consume_share_card_list互斥</td><td class="table_cell">1</td></tr>
-<tr><td class="table_cell">consume_share_card_list</td><td class="table_cell">是</td><td class="table_cell">JSON</td><td class="table_cell">核销后赠送其他卡券的列表</td><td class="table_cell"><br></td></tr>
+<tr><td class="table_cell">consume_share_card_list</td><td class="table_cell">是</td><td class="table_cell">JSON</td><td class="table_cell">核销后赠送其他卡券的列表</td><td class="table_cell">
+<br></td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">是</td><td class="table_cell">string（24）</td><td class="table_cell">pbLatjhvf1xBtaOIhYOCnp7Wv4DA</td><td class="table_cell">核销后赠送的其他卡券card_id，目前仅支持填入一个共享券card_id，注意此处必须填入共享券</td></tr>
 <tr><td class="table_cell">num</td><td class="table_cell">是</td><td class="table_cell">unsigned int</td><td class="table_cell">1</td><td class="table_cell">核销后赠送的该card_id数目，目前仅支持填1</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据说明</strong></p>
 <p>数据示例：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{"errcode":0,&nbsp;"errmsg":"ok",&nbsp;"send_check":false}</pre>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">参数名</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码，0为正常。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息。</td></tr>
 <tr><td class="table_cell">send_check</td><td class="table_cell">是否提交审核，false为修改后不会重新提审，true为修改字段后重新提审，该卡券的状态变为审核中。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="8.2"></a>拉取朋友的券数据接口</strong></h2>
 <p><strong>接口简介及开发注意事项</strong></p>
 <p>为支持开发者调用API查看卡券相关数据，微信卡券团队封装数据接口并面向具备卡券功能权限的开发者开放使用。开发者调用该接口可获取本商户下的所有卡券相关的总数据以及指定卡券的相关数据。</p>
@@ -1363,10 +1623,13 @@
 <p><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/datacube/getcardbizuininfo?access_token=ACCESS_TOKEN</pre>
 <p><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"begin_date":&nbsp;"2015-06-15",
@@ -1374,11 +1637,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"cond_source":&nbsp;0
 }</pre>
 <p><br style="text-align: left;">参数说明：</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">字段</th><th class="table_cell">说明</th><th class="table_cell">是否必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">字段</th><th class="table_cell">说明</th><th class="table_cell">是否必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th></tr>
 <tr><td class="table_cell">begin_date</td><td class="table_cell">查询数据的起始时间。</td><td class="table_cell">是</td><td class="table_cell">string(16)</td><td class="table_cell">2015-06-15</td></tr>
 <tr><td class="table_cell">end_date</td><td class="table_cell">查询数据的截至时间。</td><td class="table_cell">是</td><td class="table_cell">string(16)</td><td class="table_cell">2015-06-30</td></tr>
 <tr><td class="table_cell">cond_source</td><td class="table_cell">卡券来源，0为公众平台创建的卡券数据、1是API创建的卡券数据</td><td class="table_cell">是</td><td class="table_cell">unsigned int</td><td class="table_cell">0</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>返回数据说明</strong>&nbsp;数据示例：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"list":&nbsp;[
@@ -1398,7 +1664,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;]
 }</pre>
 <p><br style="text-align: left;">字段说明：</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ref_date</td><td class="table_cell">日期信息</td></tr>
 <tr><td class="table_cell">view_cnt</td><td class="table_cell">浏览次数</td></tr>
 <tr><td class="table_cell">view_user</td><td class="table_cell">浏览人数</td></tr>
@@ -1410,20 +1678,25 @@
 <tr><td class="table_cell">given_user</td><td class="table_cell">转赠人数</td></tr>
 <tr><td class="table_cell">expire_cnt</td><td class="table_cell">过期次数</td></tr>
 <tr><td class="table_cell">expire_user</td><td class="table_cell">过期人数</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：</p>
 <p>1. 查询时间区间需&lt;=62天，否则报错{errcode: 61501，errmsg: "date range error"}；</p>
 <p>2. 传入时间格式需严格参照示例填写”2015-06-15”，否则报错{errcode":61500,"errmsg":"date format error"}</p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); white-space: normal; text-align: left;"><strong><a name="8.2.2"></a>获取朋友的券数据接口</strong></h3>
 <p><strong>接口说明</strong></p>
 <p>支持开发者调用该接口拉取朋友的券在固定时间区间内的相关数据。</p>
-<p><br style="text-align: left;"><strong>接口调用请求说明</strong></p>
+<p>
+<br style="text-align: left;"><strong>接口调用请求说明</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">http请求方式:&nbsp;POST&nbsp;https://api.weixin.qq.com/datacube/getcardcardinfo?access_token=ACCESS_TOKEN</pre>
 <p><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px" class="table_cell">参数</th><th style="width: 120px" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">Json数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>POST数据</strong></p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"begin_date":&nbsp;"2015-06-15",
@@ -1431,15 +1704,20 @@
 &nbsp;&nbsp;&nbsp;&nbsp;"cond_source":&nbsp;0,
 &nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"po8pktyDLmakNY2fn2VyhkiEPqGE"
 }</pre>
-<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)"><br style="text-align: left;"></p>
+<p style="line-height: 1.5;word-wrap: break-word;margin-left: 10px;margin-right: 10px;color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;white-space: normal;background-color: rgb(255, 255, 255)">
+<br style="text-align: left;"></p>
 <p>参数说明：</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 100px" class="table_cell">字段</th><th class="table_cell">说明</th><th class="table_cell">是否必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 100px" class="table_cell">字段</th><th class="table_cell">说明</th><th class="table_cell">是否必填</th><th class="table_cell">类型</th><th class="table_cell">示例值</th></tr>
 <tr><td class="table_cell">begin_date</td><td class="table_cell">查询数据的起始时间。</td><td class="table_cell">是</td><td class="table_cell">string(16)</td><td class="table_cell">2015-06-15</td></tr>
 <tr><td class="table_cell">end_date</td><td class="table_cell">查询数据的截至时间。</td><td class="table_cell">是</td><td class="table_cell">string(16)</td><td class="table_cell">2015-06-30</td></tr>
 <tr><td class="table_cell">cond_source</td><td class="table_cell">卡券来源，0为公众平台创建的卡券数据、1是API创建的卡券数据</td><td class="table_cell">是</td><td class="table_cell">unsigned int</td><td class="table_cell">0</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">卡券ID。填写后，指定拉出该卡券的相关数据。</td><td class="table_cell">否</td><td class="table_cell">string(32)</td><td class="table_cell">po8pktyDLmakNY2fn2VyhkiEPqGE</td></tr>
-</tbody></table>
-<p><br style="text-align: left;"><strong>返回数据说明</strong>&nbsp;数据示例：</p>
+</tbody>
+</table>
+<p>
+<br style="text-align: left;"><strong>返回数据说明</strong>&nbsp;数据示例：</p>
 <pre style="font-stretch: normal;font-size: 14px;font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace;padding: 5px 10px;border: 1px solid rgb(204, 204, 204);color: rgb(51, 51, 51);line-height: 20px;white-space: pre-wrap;word-wrap: break-word;border-radius: 3px;margin-left: 10px">{
 &nbsp;&nbsp;&nbsp;&nbsp;"list":&nbsp;[
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
@@ -1460,7 +1738,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;]
 }</pre>
 <p><br style="text-align: left;">字段说明：</p>
-<table cellspacing="0" cellpadding="2" width="700px"><tbody><tr class="firstRow thead"><th style="width: 350px" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="2" width="700px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 350px" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ref_date</td><td class="table_cell">日期信息</td></tr>
 <tr><td class="table_cell">card_id</td><td class="table_cell">卡券ID</td></tr>
 <tr><td class="table_cell">card_type</td><td class="table_cell">cardtype:0：折扣券，1：代金券，2：礼品券，3：优惠券，4：团购券（暂不支持拉取特殊票券类型数据，电影票、飞机票、会议门票、景区门票）</td></tr>
@@ -1474,7 +1754,8 @@
 <tr><td class="table_cell">given_user</td><td class="table_cell">转赠人数</td></tr>
 <tr><td class="table_cell">expire_cnt</td><td class="table_cell">过期次数</td></tr>
 <tr><td class="table_cell">expire_user</td><td class="table_cell">过期人数</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p>注意：</p>
 <p>1. 查询时间区间需&lt;=62天，否则报错{"errcode:" 61501，errmsg: "date range error"}；</p>
 <p>2. 传入时间格式需严格参照示例填写如”2015-06-15”，否则报错｛"errcode":"date format error"｝</p>
@@ -1488,9 +1769,9 @@
 <h1 style="font-size: 16px;"><a name="10"></a>交流反馈</h1>
 <p>朋友的券开发者可以加入开发者交流五群、六群（QQ群）：512568283、205482166，若开发过程中遇到问题，也可以发送邮件到weixin_card@foxmail.com 反馈。</p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

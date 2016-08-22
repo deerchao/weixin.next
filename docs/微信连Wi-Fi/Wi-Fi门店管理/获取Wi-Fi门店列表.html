@@ -1,17 +1,17 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>获取Wi-Fi门店列表</h2>
+<div class="main_hd"><h2>获取Wi-Fi门店列表</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <h3></h3>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<h3></h3>
 <p><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 1.5; background-color: rgb(255, 255, 255);"> &nbsp;通过此接口获取WiFi的门店列表，该列表包括公众平台的门店信息、以及添加设备后的WiFi相关信息。创建门店方法请参考</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444378120&amp;token=&amp;lang=zh_CN" target="_blank"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: rgb(51, 51, 51); line-height: 1.5; background-color: rgb(255, 255, 255);">“</span>微信门店接口<span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: rgb(51, 51, 51); line-height: 1.5; background-color: rgb(255, 255, 255);">”</span></span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: rgb(51, 51, 51); line-height: 1.5; background-color: rgb(255, 255, 255);">。</span></span></a></p>
 <p><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 1.5; background-color: rgb(255, 255, 255);">&nbsp; 注：微信连Wi-Fi下的所有接口中的shop_id，必需先通过此接口获取。</span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
@@ -20,10 +20,13 @@ http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/shop/list?access_token=ACCESS_TOKENPOST
 数据格式：JSON</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
@@ -31,10 +34,13 @@ http请求方式:&nbsp;POST
 &nbsp;&nbsp;"pagesize":2
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">pageindex</td><td class="table_cell">否</td><td class="table_cell">分页下标，默认从1开始</td></tr>
 <tr><td class="table_cell">pagesize</td><td class="table_cell">否</td><td class="table_cell">每页的个数，默认10个，最大20个</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确返回JSON数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
@@ -67,7 +73,9 @@ http请求方式:&nbsp;POST
 &nbsp;&nbsp;}
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">totalcount</td><td class="table_cell">总数</td></tr>
 <tr><td class="table_cell">pageindex</td><td class="table_cell">分页下标</td></tr>
 <tr><td class="table_cell">pagecount</td><td class="table_cell">分页页数</td></tr>
@@ -78,11 +86,13 @@ http请求方式:&nbsp;POST
 <tr><td class="table_cell" colspan="1" rowspan="1">ssid_list</td><td class="table_cell" colspan="1" rowspan="1">无线网络设备的ssid列表，返回数组格式</td></tr>
 <tr><td class="table_cell">protocol_type</td><td class="table_cell">门店内设备的设备类型，0-未添加设备，1-专业型设备，4-密码型设备，5-portal自助型设备，31-portal改造型设备</td></tr>
 <tr><td class="table_cell">sid</td><td class="table_cell">商户自己的id，与门店poi_id对应关系，建议在添加门店时候建立关联关系，具体请参考“<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444378120&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="微信门店接口">微信门店接口</a>”</td></tr>
-</tbody></table>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+</tbody>
+</table>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

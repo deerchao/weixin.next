@@ -1,35 +1,37 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>消息加解密说明</h2>
+<div class="main_hd"><h2>消息加解密说明</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p>公众号消息加解密是公众平台为了进一步加强公众号安全保障，提供的新机制。<span style="color: rgb(255, 0, 0);">开发者需注意，公众账号主动调用API的情况将不受影响。只有被动回复用户的消息时，才需要进行消息加解密。</span>消息加解密的具体修改包括：</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content"><p>公众号消息加解密是公众平台为了进一步加强公众号安全保障，提供的新机制。<span style="color: rgb(255, 0, 0);">开发者需注意，公众账号主动调用API的情况将不受影响。只有被动回复用户的消息时，才需要进行消息加解密。</span>消息加解密的具体修改包括：</p>
 <pre>1.新增消息体签名验证，用于公众平台和公众账号验证消息体的正确性
 2.针对推送给微信公众账号的普通消息和事件消息，以及推送给设备公众账号的设备消息进行加密
 3.公众账号对密文消息的回复也要求加密</pre>
 <p>请开发者查看接入指引和开发者FAQ来接入消息体签名及加解密功能：接入指引，开发者FAQ，若关注技术实现，可查看技术方案：技术方案</p>
-<p><br></p>
+<p>
+<br></p>
 <p>启用加解密功能（即选择兼容模式或安全模式）后，公众平台服务器在向公众账号服务器配置地址（可在“开发者中心”修改）推送消息时，URL将新增加两个参数（加密类型和消息体签名），并以此来体现新功能。加密算法采用AES，具体的加解密流程和方案请看接入指引、技术方案和示例代码。</p>
-<p><br></p>
+<p>
+<br></p>
 <p>为了配合消息加密功能的上线，并帮助开发者适配新特性，公众平台提供了3种加解密的模式供开发者选择，即明文模式、兼容模式、安全模式(可在“开发者中心”选择相应模式),选择兼容模式和安全模式前，需在开发者中心填写消息加解密密钥EncodingAESKey。</p>
 <pre>明文模式：维持现有模式，没有适配加解密新特性，消息体明文收发，默认设置为明文模式
 兼容模式：公众平台发送消息内容将同时包括明文和密文，消息包长度增加到原来的3倍左右；公众号回复明文或密文均可，不影响现有消息收发；开发者可在此模式下进行调试
 安全模式（推荐）：公众平台发送消息体的内容只含有密文，公众账号回复的消息体也为密文，建议开发者在调试成功后使用此模式收发消息</pre>
-<p><br></p>
+<p>
+<br></p>
 <p>什么是EncodingAESKey？</p>
 <p>微信公众平台采用AES对称加密算法对推送给公众帐号的消息体对行加密，EncodingAESKey则是加密所用的秘钥。公众帐号用此秘钥对收到的密文消息体进行解密，回复消息体也用此秘钥加密。</p>
 <p>此外，微信公众平台为开发者提供了5种语言的示例代码（包括C++、php、Java、Python和C#版本，<a href="http://mp.weixin.qq.com/wiki/static/assets/a5a22f38cb60228cb32ab61d9e4c414b.zip" target="_parent">点击下载</a>）。</p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

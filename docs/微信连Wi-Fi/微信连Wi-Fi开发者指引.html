@@ -1,40 +1,47 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>微信连Wi-Fi开发者指引</h2>
+<div class="main_hd"><h2>微信连Wi-Fi开发者指引</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);">微信连Wi-Fi业务介绍<br></h1>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content"><h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);">微信连Wi-Fi业务介绍
+<br></h1>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">微信连Wi-Fi是为商家的线下场所提供一套完整和便捷的微信连Wi-Fi的方案。商家接入微信连Wi-Fi后，顾客无需输入繁琐的Wi-Fi密码，通过微信扫二维码等方式即可快速上网。微信连Wi-Fi还帮助商家打造个性化服务，如提供微信顶部常驻入口、商家主页展示、连网后公众号下发消息等。因此，微信连Wi-Fi既可以极大的提升用户体验，又可以帮助商家提供精准的近场服务。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+<br></p>
 <h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E5.BE.AE.E4.BF.A1.E8.BF.9EWi-Fi.E7.89.B9.E6.80.A7">微信连Wi-Fi特性</span></h1>
 <p style="text-align:center"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKwa97Sd5dg0KX2n5MouyzKicH2OxBXAwh3xJYqXshWhB9kYMBMrGuS01eXDkpIRRwtA/0?wx_fmt=jpeg" title="" alt="" width="893" height="525" style="width: 893px; height: 525px;"></p>
-<p><span class="mw-headline"><br></span></p>
+<p><span class="mw-headline">
+<br></span></p>
 <h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E5.BC.80.E5.8F.91.E8.80.85.E8.A7.92.E8.89.B2.E5.88.86.E7.B1.BB.E8.AF.B4.E6.98.8E">开发者角色分类说明</span></h1>
 <p><span style="font-weight: normal; font-size: 14px; line-height: 1.5;"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">&nbsp; &nbsp;</strong></span></p>
 <p><span style="font-weight: normal; font-size: 14px; line-height: 1.5;"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">1. Wi-Fi 商户</strong></span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">具有开发能力的商家，可通过</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894090&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="软件服务管理接口"><span style="line-height: 1.5; color: rgb(51, 51, 51);">软件服务管理接口</span></a><span style="line-height: 1.5; color: rgb(51, 51, 51);">添加已有Wi-Fi设备，配置商家主页及连网方式，获得Wi-Fi相关的统计数据</span>。<br></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">具有开发能力的商家，可通过</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894090&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="软件服务管理接口"><span style="line-height: 1.5; color: rgb(51, 51, 51);">软件服务管理接口</span></a><span style="line-height: 1.5; color: rgb(51, 51, 51);">添加已有Wi-Fi设备，配置商家主页及连网方式，获得Wi-Fi相关的统计数据</span>。
+<br></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; background-color: rgb(255, 255, 255);">注：公众号需先在<a href="https://mp.weixin.qq.com" target="_blank" textvalue="公众平台">公众平台</a>开通微信连Wi-Fi功能插件，才能正常调用接口。</span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="line-height: 1.5;"><br></strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 0px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><strong>2.&nbsp;</strong><strong style="line-height: 1.5;">Wi-Fi 硬件厂商</strong><br></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="line-height: 1.5;">
+<br></strong></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 0px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; text-align: left; background-color: rgb(255, 255, 255);"><strong>2.&nbsp;</strong><strong style="line-height: 1.5;">Wi-Fi 硬件厂商</strong>
+<br></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">硬件厂商可提供Wi-Fi硬件设备，或通过升级Wi-Fi鉴权以支持微信认证方式。</span></p>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">硬件厂商可查阅<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894086&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="微信连Wi-Fi鉴权协议接口">微信连Wi-Fi鉴权协议接口</a>，改造设备的portal页及鉴权逻辑，使连网过程支持微信鉴权。并通过引导商户在公众平台申请微信连Wi-Fi服务或通过第三方授权方式获得商户的门店开发信息，协助商户对现有设备进行升级。</p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong><br></strong></p>
+<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>
+<br></strong></p>
 <p style="margin-right: 10px; margin-left: 0px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>3. Wi-Fi 服务商</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">Wi-Fi可通过提供线下服务解决方案和Wi-Fi综合解决方案，提升线下商户经营效率，拓展新客源。</span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">Wi-Fi服务商首先要注册<a href="https://open.weixin.qq.com" target="_blank" textvalue="微信开放平台">微信开放平台</a>账号，并通过开发者资质认证审核。在管理中心创建公众号第三方平台，务必选择“微信连Wi-Fi”权限集。</span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">在获得公众号授权登录后，<span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 1.5;">可通过</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894090&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="软件服务管理接口"><span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 1.5;">软件服务管理接口</span></a><span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 1.5;">实现基于Wi-Fi的服务流程</span></span><span style="line-height: 1.5;">。</span></p>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -1,17 +1,17 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>微信web开发者工具</h2>
+<div class="main_hd"><h2>微信web开发者工具</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><strong><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>目录</strong></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><strong><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>目录</strong></p>
 <p><a href="#1" target="_self">1&nbsp;概述</a></p>
 <p><a href="#2" target="_self">2&nbsp;调试微信网页授权</a></p>
 <p><a href="#3" target="_self">3&nbsp;模拟JSSDK权限校验</a></p>
@@ -19,7 +19,8 @@
 <p><a href="#5" target="_self">5&nbsp;Chrome DevTools</a></p>
 <p><a href="#6" target="_self">6&nbsp;下载地址</a></p>
 <p><a href="#7" target="_self">7&nbsp;技术支持与反馈</a></p>
-<p><br></p>
+<p>
+<br></p>
 <p><strong><a name="1"></a>概述</strong></p>
 <p>为帮助开发者更方便、更安全地开发和调试基于微信的网页，我们推出了 web 开发者工具。它是一个桌面应用，通过模拟微信客户端的表现，使得开发者可以使用这个工具方便地在 PC 或者 Mac 上进行开发和调试工作。<a href="#6" target="_self">立即下载体验</a></p>
 <p>你可以：</p>
@@ -29,25 +30,30 @@
 <p>4.利用集成的 Chrome DevTools 协助开发</p>
 <p>该工具界面主要由几大部分组成，如下图所示：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcZqcAd9Pjl70kibOvcpnrIAgCNkwdichRC63qFQjn7apTcYbO8ibMUOe8Q/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>顶部菜单栏是刷新、后退、选中地址栏等动作的统一入口，以及微信客户端版本的模拟设置页。左侧是微信的 webview 模拟器，可以直接操作网页，模拟用户真实行为。右侧上方是地址栏，用于输入待调试的页面链接，以及清除缓存按钮。右侧下方是相关的请求和返回结果，以及调试界面和登录按钮。</p>
 <p><strong><a name="2"></a>调试微信网页授权</strong></p>
 <p>之前在开发基于微信的网页授权的功能时，开发者通常需要手机上输入 URL 进而获取用户信息，从而进行开发和调试工作，可是因为手机的诸多限制，这个过程很不方便。 通过使用微信 web 开发者工具，从此开发者可以直接在 PC 或者 Mac 上进行这种调试了。具体操作步骤为：</p>
 <p>1.开发者可以在调试器中点击“登录”，使用手机微信扫码登录，从而使用真实的用户身份（支持测试号）来开发和调试微信网页授权。请确认手机登录页，绑定的公众号为“微信 web 开发者工具”，如下图所示：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcUkeZVnEpHN6F5xAaW7aiceaMYBSiayM4f0zNic8V2YMA2WwQtdTe6a87Q/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>2.为了保证开发者身份信息的安全，对于希望调试的公众号，我们要求开发者微信号与之建立绑定关系。具体操作为：公众号登录管理后台，启用开发者中心，在开发者工具——web 开发者工具页面，向开发者微信号发送绑定邀请。绑定页面如下图所示：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60Wc9UmJqGm3kPcOYkiccDqX1x6gPcndI3iaGia5fiaxDQtTtKXLcJKr6iaTTEA/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>3.开发者在手机微信上接受邀请，即可完成绑定。每个公众号最多可同时绑定10个开发者微信号。邀请确认页面如下图所示：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60Wc2EAWBsmRUfL2zVibKkOWfOLIMYL7GD5aYR7WgbgpEcWMjJ6bgLDqeAw/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>4.完成登录和绑定后，开发者就可以开始调试微信网页授权了，<span style="color: rgb(255, 0, 0);">注意只能调试自己绑定过的公众号</span>：</p>
 <p><strong>非静默授权的 URL 样例</strong>：&nbsp;https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx841a97238d9e17b2&amp;redirect_uri=http://cps.dianping.com/weiXinRedirect&amp;response_type=code&amp;scope=snsapi_userinfo</p>
 <p>&amp;state=type%3Dquan%2Curl%3Dhttp%3A%2F%2Fmm.dianping.com%2Fweixin%2Faccount%2Fhome</p>
 <p>在微信 web 开发者工具中打开类似的授权页 URL（样例不可直接使用，请更换为绑定完成的公众号授权页URL），webview 模拟器显示效果如图：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcklRQdThibhvN5wBziaiauLOFZogzIqfArpHCarlQCumYNWHI0ZwiacOmow/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>点击“确认登录”即可带着用户信息跳转到第三方页面，很方便的进行后续的开发和调试。</p>
 <p><strong>静默授权的 URL 样例</strong>：&nbsp;https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx841a97238d9e17b2&amp;redirect_uri=http://cps.dianping.com/weiXinRedirect&amp;response_type=code&amp;scope=snsapi_base</p>
 <p>&amp;state=type%3Dquan%2Curl%3Dhttp%3A%2F%2Fmm.dianping.com%2Fweixin%2Faccount%2Fhome</p>
@@ -58,33 +64,42 @@
 <p><a href="#http://203.195.235.76/jssdk/" target="_blank">http://demo.open.weixin.qq.com/jssdk</a></p>
 <p>在调试器中打开该 URL，可以方便地在右侧的 JS-SDK Tab 中看到当前页面 wx.config 的校验情况和 JSSDK 的调用 log。 如下是校验通过的页面：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60Wcib1Xhia6OIu476S80z33LhQjabonem7DRz39fALsgWB3wx0h99tDx8OA/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>如下是校验未通过的页面：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcRbjeXZ83MZfWSGZyeCgP3kn1o7iaKicjh1icl25oxibhr3hhT50PEibfgVw/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>在“权限列表” Tab 中，可以查询到当前页面拥有权限的 JS-SDK 列表：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcicA4lLDTRS20BGVPwS5NlOuacbxroVqmcZCJMNriaF0nkvtpKyRu33Gg/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>结合左侧的微信 Webview 模拟器，可以直观地调试 JSSDK 的效果，如使用微信 web 开发者工具调试卡券 JSSDK Demo：</p>
 <p><a href="http://203.195.235.76:8080/jssdk/wxcardDemo.php" _src="http://203.195.235.76:8080/jssdk/wxcardDemo.php">http://203.195.235.76:8080/jssdk/wxcardDemo.php</a></p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKwcUR9E3dzqicRXoeKmCwQMx8NicCriaIJfYJyOS3v94JekYKXV4JoktETWmHOGtU6wxw/0?wx_fmt=jpeg" title="" alt=""></p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKwcUR9E3dzqicE3MdpxAUl7f2CQlYJu7Dfl1WWMZeXeH9jpRKUBDFUkoce0GvMLXdgQ/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>注意：0.7.0 及以后版本的微信 web 开发者工具支持卡券 JSSDK 的调试，但对于希望调试的卡券公众号，我们要求开发者微信号与之建立绑定关系，绑定流程同授权登录一致。</p>
-<p><br></p>
+<p>
+<br></p>
 <p><strong><a name="4"></a>移动调试</strong></p>
 <p>移动端网页的表现，通常和桌面浏览器上有所区别，包括样式的呈现、脚本的逻辑等等，这会给开发者带来一定的困扰。现在，微信安卓客户端 webview 已经开始全面升级至 X5 Blink 内核，新的内核无论在渲染能力、API 支持还是在开发辅助上都有很大进步。通过微信 web 开发者工具中的远程调试功能，实时映射手机屏幕到微信 web 开发者工具上，将帮助开发者更高效地调试 X5 Blink 内核的网页，具体步骤如下：</p>
-<p><strong>（1）准备工作</strong><br></p>
+<p><strong>（1）准备工作</strong>
+<br></p>
 <p>1. 安装0.5.0或以上版本的微信 web 开发者工具</p>
 <p>2. 确认移动设备是否支持远程调试功能</p>
 <p>&nbsp; 打开微信 web 开发者工具，选择“移动调试”tab，点击验证移动设备是否支持。随后使用移动设备扫描弹出的二维码，在设备上即可获得支持信息。</p>
 <p>3. 打开移动设备中的 USB 调试功能</p>
-<p>&nbsp; 1.打开移动设备，进入“设置”-&gt;“开发人员选项”<br></p>
+<p>&nbsp; 1.打开移动设备，进入“设置”-&gt;“开发人员选项”
+<br></p>
 <p>&nbsp; 2.勾选“USB 调试功能”</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8ibl6QNerU4ia39RvTaqRBxuI3A756YjtCoByQQKyHtib7DDPl4UsCTIVeo3iarTcOs6A/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>&nbsp; 需要注意的是，Android 4.2 之后的设备，开发人员选项默认是隐藏的，通过以下步骤可以打开：</p>
-<p>&nbsp; 1.打开移动设备，进入“设置”-&gt;“关于手机”<br></p>
+<p>&nbsp; 1.打开移动设备，进入“设置”-&gt;“关于手机”
+<br></p>
 <p>&nbsp; 2.找到并单击“内部版本号”7次</p>
 <p>4. 安装移动设备 USB 驱动</p>
 <p>&nbsp; 通常开发者可以在移动设备厂商的官网中下载到相关驱动，或者使用<a href="http://m.qq.com/" target="_blank" title="腾讯手机管家">腾讯手机管家</a>来安装设备驱动。</p>
@@ -105,20 +120,24 @@
 <p>2.可以在 weinre 的网络请求页卡中，看到完整的 http 请求 log，非局限于 ajax 请求</p>
 <p>如下图所示：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60Wcf8BNqKad8asb75bqiaZYCBkw0kE5iaSg4ntEMAb0tPtY8rxZbL7ALyIQ/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
+<p>
+<br></p>
 <p>注意，移动调试功能暂不支持 https。</p>
 <p><strong><a name="5"></a>Chrome DevTools</strong></p>
 <p>微信 web 开发者工具集成了 Chrome DevTools。同之前在 PC 上的调试体验一致，可以快速上手。</p>
 <p>如下图所示：</p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcfOX33TZvbkAWicYGGlWGlp8nov2jOIykS7jgTmcmr9sNKibavvsVRMzw/0?wx_fmt=jpeg" title="" alt=""></p>
-<p><br></p>
-<p><strong><a name="6"></a>下载地址</strong><br></p>
+<p>
+<br></p>
+<p><strong><a name="6"></a>下载地址</strong>
+<br></p>
 <p>最新版本： (2016.05.19) 0.7.0</p>
 <p style="margin-bottom: 5px;">更新内容：</p>
 <p style="margin-bottom: 5px;">1.新增对卡券 JSSDK 的调试支持</p>
 <p style="margin-bottom: 5px;">2.修复个别情况下网络出错的问题</p>
 <p style="margin-bottom: 5px;">3.修复个别情况下 JSSDK 鉴权失败的问题</p>
-<p style="margin-bottom: 5px;">4.其他体验优化以及 bug 修复<br></p>
+<p style="margin-bottom: 5px;">4.其他体验优化以及 bug 修复
+<br></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; background-color: rgb(255, 255, 255);">Windows 64位版本：<a href="https://mp.weixin.qq.com/debug/cgi-bin/webdebugger/download?from=mpwiki&amp;os=x64" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">下载地址</a></p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;MD5:&nbsp;2e054987a0dabc967a39f2f0a4949e2b</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; background-color: rgb(255, 255, 255);">Windows 32位版本：<a href="https://mp.weixin.qq.com/debug/cgi-bin/webdebugger/download?from=mpwiki&amp;os=x86" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">下载地址</a></p>
@@ -136,9 +155,9 @@
 <p>&nbsp; &nbsp; C:\Users\&lt;用户名&gt;\AppData\Local\微信web开发者工具\User Data\微信web开发者工具.log</p>
 <p>&nbsp; mac系统下在</p>
 <p>&nbsp; &nbsp; /Users/&lt;用户名&gt;/Library/Application Support/微信web开发者工具/微信web开发者工具.log</p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

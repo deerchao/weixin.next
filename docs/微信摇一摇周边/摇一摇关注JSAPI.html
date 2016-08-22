@@ -1,32 +1,38 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>摇一摇关注JSAPI</h2>
+<div class="main_hd"><h2>摇一摇关注JSAPI</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">摇一摇关注JS API目的是为已开通微信摇一摇周边，且有一定开发能力的商户提供摇一摇关注能力。商户可以在摇出来的页面直接调用摇一摇关注接口，实现关注公众账号的功能。</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px; text-indent: 28px; background-color: rgb(255, 255, 255);">注意事项：</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">1)</span><span style="font-stretch: normal; font-size: 9px; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">使用摇一摇关注时，不可诱导用户关注，一经查实，封号处罚；</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">2)</span><span style="font-stretch: normal; font-size: 9px; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">摇一摇关注仅在摇一摇·周边出来的H5页面才能正常运行。直接在微信浏览器中打开网页，此接口无法运行。开发人员调试的时候注意，必须走完整的摇周边流程，通过摇一摇进入页面测试。</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">3)</span><span style="font-stretch: normal; font-size: 9px; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">关注门店归属的公众账号，只支持在门店1公里范围内生效。</span></p>
-<p><strong style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">数据示例</strong><br></p>
+<p><strong style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">数据示例</strong>
+<br></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">关注JS API调用与微信的JS API调用格式一致，如下：</span></p>
-<table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="325" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">公用函数</span></td><td class="table_cell" width="325" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">invoke</span></td></tr>
+<table class="table" width="951">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="325" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">公用函数</span></td><td class="table_cell" width="325" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">invoke</span></td></tr>
 <tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="325"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">用途</span></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="325"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">主动调用指定API</span></td></tr>
 <tr><td class="table_cell" width="325" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">通用形式</span></td><td class="table_cell" width="325" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">BeaconAddContactJsBridge.invoke("API名称", {调用参数}, &lt;回调函数&gt;); &nbsp; &nbsp;</span></td></tr>
-</tbody></table>
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">注意：文档中所有代码只能在微信摇周边的场景下才能正确运行。直接在微信浏览器中打开网页，BeaconAddContactJsBridge不会正确运行。开发人员调试的时候注意，必须走完整的摇周边流程，通过摇一摇进入页面测试。 <br></span></p>
+</tbody>
+</table>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">注意：文档中所有代码只能在微信摇周边的场景下才能正确运行。直接在微信浏览器中打开网页，BeaconAddContactJsBridge不会正确运行。开发人员调试的时候注意，必须走完整的摇周边流程，通过摇一摇进入页面测试。 
+<br></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>例子：</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: teal;">&lt;!</span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: rgb(63, 127, 127);">DOCTYPE</span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; color: teal;">html&gt;</span></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&lt;</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127);">html</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(127, 0, 127);">lang</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">=</span><em><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(42, 0, 255);">"en"</span></em><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&lt;</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127);">head</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
@@ -59,12 +65,16 @@
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&lt;/</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127);">script</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&lt;/</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127);">body</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&lt;/</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127);">html</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
-</div><p><br><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>引入BeaconAddContactJsBridge</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
+</div>
+<p>
+<br><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>引入BeaconAddContactJsBridge</strong></span></p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
 <p><span style="font-size: 14px;"><span style="font-family: 微软雅黑, sans-serif; color: teal;">&lt;</span><span style="font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127); background: silver;">script</span><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 0, 127);">type</span><span style="font-family: 微软雅黑, sans-serif;">=</span><em><span style="font-family: 微软雅黑, sans-serif; color: rgb(42, 0, 255);">"text/javascript"</span></em><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 0, 127);">src</span><span style="font-family: 微软雅黑, sans-serif;">=</span><em><span style="font-family: 微软雅黑, sans-serif; color: rgb(42, 0, 255);">"http://zb.weixin.qq.com/nearbycgi/addcontact/BeaconAddContactJsBridge.js"</span></em><span style="font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
 <p><span style="font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&lt;/</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(63, 127, 127); background: silver;">script</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: teal;">&gt;</span></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>API详细说明</strong></span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>API详细说明</strong></span></p>
 <p><strong><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">(一)判断是否关注checkAddContactStatus</span></strong></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">a)</span><span style="font-size: 14px; font-stretch: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">参数：传入{type:0}表示关注设备归属的公众账号，传入{ type:1}表示关注门店归属的公众账号。传入{ }默认为传入{type:0}。</span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">b)<span style="font-stretch: normal; font-size: 9px; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp;</span>回调函数：</span><strong style="font-size: 14px;"><span style="font-family: 微软雅黑, sans-serif; color: rgb(127, 0, 85);">function</span></strong><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">(apiResult){}</span></p>
@@ -72,7 +82,8 @@
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;"><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;</span>apiResult.err_msg : 错误详情，“ok”代表正常返回，其他代表具体的错误信息。</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px; text-indent: 31px;"><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;</span>apiResult.data : 是否关注，1代表已经关注，0代表未关注<span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">。</span></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>例子：</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
 <p><span style="font-size: 14px;"><span style="font-family: 微软雅黑, sans-serif;">BeaconAddContactJsBridge.invoke(</span><span style="font-family: 微软雅黑, sans-serif; color: rgb(42, 0, 255);">'checkAddContactStatus'</span><span style="font-family: 微软雅黑, sans-serif;">,{type:0} ,</span></span></p>
 <p><span style="font-size: 14px;"><strong><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(127, 0, 85);">function</span></strong><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">(apiResult){</span></span></p>
 <p><span style="font-size: 14px;"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><strong><span style="font-size: 14px; font-family: 微软雅黑, sans-serif; color: rgb(127, 0, 85);">if</span></strong><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">(apiResult.err_code == 0){</span></span></p>
@@ -85,15 +96,21 @@
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; alert(apiResult.err_msg)</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; });</span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>(二)跳转到关注页jumpAddContact</strong></span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>(二)跳转到关注页jumpAddContact</strong></span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">a)</span><span style="font-size: 14px; font-stretch: normal; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">参数：传入{type:0}表示关注设备归属的公众账号，传入{ type:1}表示关注门店归属的公众账号。不传默认为传入{type:0}。</span></p>
 <p><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">b)</span><span style="font-stretch: normal; font-size: 9px; font-family: 'Times New Roman';">&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">回调函数：无<span style="font-family: 微软雅黑, sans-serif; font-size: 14px;">。</span></span></p>
-<p><strong style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">例子：</strong><br></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">BeaconAddContactJsBridge.invoke('jumpAddContact');<br></span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><br></span></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p><strong style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">例子：</strong>
+<br></p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">BeaconAddContactJsBridge.invoke('jumpAddContact');
+<br></span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">
+<br></span></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

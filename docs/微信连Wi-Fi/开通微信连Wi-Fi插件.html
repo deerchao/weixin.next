@@ -1,17 +1,17 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>开通微信连Wi-Fi插件</h2>
+<div class="main_hd"><h2>开通微信连Wi-Fi插件</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"></h1>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"></h1>
 <p>目录</p>
 <p><a href="#开通微信连Wi-Fi插件" target="_self">1 开通微信连Wi-Fi插件</a></p>
 <p><a href="#开通插件流程" target="_self">2 开通插件流程</a></p>
@@ -21,7 +21,8 @@
 <p><a href="#引导用户进入开通插件页面" target="_self">3.3 3. 引导用户进入开通插件页面</a></p>
 <p><a href="#用户填写信息，开通插件" target="_self">3.4 4. 用户填写信息，开通插件</a></p>
 <p><a href="#跳转callback_url" target="_self">3.5 5. 跳转callback_url</a></p>
-<p><br></p>
+<p>
+<br></p>
 <h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E5.BC.80.E9.80.9A.E5.BE.AE.E4.BF.A1.E8.BF.9EWi-Fi.E6.8F.92.E4.BB.B6"><a name="开通微信连Wi-Fi插件"></a>开通微信连Wi-Fi插件</span></h1>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">调用微信连Wi-Fi其他所有接口的前提是已开通“微信连Wi-Fi”功能插件，目前开通插件共有两种方法：1）在<a href="http://mp.weixin.qq.com/" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">微信公众平台</a>通过页面操作添加“微信连Wi-Fi“功能插件；2）调用此接口开通插件。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">注：开通插件接口只支持公众号第三方平台调用，公众账号开发者请在<a href="http://mp.weixin.qq.com/" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">微信公众平台</a>自行开通。第三方平台接入，请参考<a href="https://open.weixin.qq.com/" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">微信开放平台</a>。</p>
@@ -36,19 +37,25 @@ http请求方式:&nbsp;GET
 请求URL：https://api.weixin.qq.com/bizwifi/openplugin/token?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
 &nbsp;&nbsp;&nbsp;"callback_url":&nbsp;"http://weixin.qq.com/"
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">callback_url</td><td class="table_cell">是</td><td class="table_cell">回调URL，开通插件成功后的跳转页面。注：该参数域名必须与跳转进开通插件页面的页面域名保持一致，建议均采用第三方平台域名。</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;正确返回JSON数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
 &nbsp;&nbsp;"errcode":&nbsp;0,
@@ -58,10 +65,13 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;}
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">is_open</td><td class="table_cell">该公众号是否已开通微信连Wi-Fi插件，true-已开通，false-未开通</td></tr>
 <tr><td class="table_cell">wifi_token</td><td class="table_cell">开通插件的凭证，当is_open为false时才返回值</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="3._.E5.BC.95.E5.AF.BC.E7.94.A8.E6.88.B7.E8.BF.9B.E5.85.A5.E5.BC.80.E9.80.9A.E6.8F.92.E4.BB.B6.E9.A1.B5.E9.9D.A2"><strong><a name="引导用户进入开通插件页面"></a>3. 引导用户进入开通插件页面</strong></span></h3>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">第三方平台可以在自己的网页中放置“开通微信连Wi-Fi插件”的入口，引导用户进入开通插件页面。建议第三方平台采用“在当前页面打开“的形式打开开通插件页面。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">网址为：<a href="https://wifi.weixin.qq.com/biz/mp/thirdProviderPlugin.xhtml?token=xxxx" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://wifi.weixin.qq.com/biz/mp/thirdProviderPlugin.xhtml?token=xxxx</a>&nbsp;，该网址中第三方平台需提供已获取的wifi_token。</p>
@@ -69,10 +79,11 @@ POST数据格式：JSON</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">用户在开通插件页面填写相关信息，完成开通插件操作。</p>
 <h3 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id="5._.E8.B7.B3.E8.BD.ACcallback_url"><strong><a name="跳转callback_url"></a>5. 跳转callback_url</strong></span></h3>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">用户开通插件成功后，网页将自动跳转到第三方平台调用“获取开通插件wifi_token”接口时提供的callback_url中，完成开通插件流程。之后第三方平台可以调用其他接口为用户提供微信连Wi-Fi服务。</p>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

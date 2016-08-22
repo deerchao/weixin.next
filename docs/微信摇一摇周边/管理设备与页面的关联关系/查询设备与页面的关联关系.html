@@ -1,23 +1,25 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>查询设备与页面的关联关系</h2>
+<div class="main_hd"><h2>查询设备与页面的关联关系</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">查询设备与页面的关联关系。提供两种查询方式，可指定页面ID分页查询该页面所关联的所有的设备信息；</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">也可根据设备ID或完整的UUID、Major、Minor查询该设备所关联的所有页面信息。</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口调用说明</strong></span></p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">http请求方式: POST（请使用https协议）https://api.weixin.qq.com/shakearound/relation/search?access_token=ACCESS_TOKENPOST数据格式：json<br>POST数据例子：<br>当查询指定设备所关联的页面时：<br>{ &nbsp; &nbsp;<br> &nbsp; "type": 1,<br> &nbsp; "device_identifier": {<br> &nbsp; &nbsp; &nbsp; "device_id": 10011,<br> &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825",<br> &nbsp; &nbsp; &nbsp; "major": 1002,<br> &nbsp; &nbsp; &nbsp; "minor": 1223<br> &nbsp; }<br>}<br>当查询页面所关联的设备时：<br>{<br> &nbsp; "type": 2,<br> &nbsp; "page_id": 11101,<br> &nbsp; "begin": 0,<br> &nbsp; "count": 3<br>}</span></div>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
-<table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="234" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="203" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是否必须</span></td><td class="table_cell" width="213" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
+<table class="table" width="951">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="234" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="203" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是否必须</span></td><td class="table_cell" width="213" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
 <tr><td class="table_cell" width="234"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">access_token</span></td><td class="table_cell" width="203"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">调用接口凭证</span></td></tr>
 <tr><td class="table_cell" width="234"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">type</span></td><td class="table_cell" width="203"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">查询方式。1： 查询设备的关联关系；2：查询页面的关联关系</span></td></tr>
 <tr><td class="table_cell" width="234"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">device_identifier</span></td><td class="table_cell" width="203"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">指定的设备；当type为1时，此项为必填</span></td></tr>
@@ -26,22 +28,27 @@
 <tr><td class="table_cell" width="234"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">page_id</span></td><td class="table_cell" width="203"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">指定的页面id；当type为2时，此项为必填</span></td></tr>
 <tr><td class="table_cell" width="234"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">begin</span></td><td class="table_cell" width="203"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">关联关系列表的起始索引值；当type为2时，此项为必填</span></td></tr>
 <tr><td class="table_cell" width="234"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">count</span></td><td class="table_cell" width="203"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" style="word-break: break-all;" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">待查询的关联关系数量，不能超过50个；当type为2时，此项为必填 &nbsp;&nbsp;</span></td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">正常时的返回JSON数据包示例：</span></p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">{<br> &nbsp; "data": {<br> &nbsp; &nbsp; &nbsp; "relations": [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "device_id": 797994,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "major": 10001,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "minor": 10023,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "page_id": 50054,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "device_id": 797994,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "major": 10001,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "minor": 10023,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "page_id": 50055,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br> &nbsp; &nbsp; &nbsp; ],<br> &nbsp; &nbsp; &nbsp; "total_count": 2<br> &nbsp; },<br> &nbsp; "errcode": 0,<br> &nbsp; "errmsg": "success."<br>}</span></div>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
-<table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="329" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="322" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
+<table class="table" width="951">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="329" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="322" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
 <tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">relations</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">关联关系列表</span></td></tr>
 <tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">device_id</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">设备编号</span></td></tr>
 <tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">UUID、major、minor</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">UUID、major、minor</span></td></tr>
 <tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">page_id</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">摇周边页面唯一ID</span></td></tr>
 <tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">total_count</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">设备或页面的关联关系总数</span></td></tr>
-</tbody></table>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+</tbody>
+</table>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

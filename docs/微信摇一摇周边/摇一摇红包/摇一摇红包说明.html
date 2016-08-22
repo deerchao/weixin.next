@@ -1,17 +1,18 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>摇一摇红包说明</h2>
+<div class="main_hd"><h2>摇一摇红包说明</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>功能说明</strong><br></span></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>功能说明</strong>
+<br></span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">摇一摇周边红包接口是为线下商户提供的发红包功能。用户可以在商家门店等线下场所通过摇一摇周边领取商家发放的红包，在线上转发分享无效。</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">开发者可通过接口开发摇一摇红包功能，特点包括：</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">可选择使用模板加载页或自定义Html5页面调起微信原生红包页面(详见创建红包活动中use_template字段，1为使用模板，2为使用自定义Html5页面)</span></p>
@@ -19,11 +20,14 @@
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">提供关注公众号能力，用户可自行选择是否关注(裂变红包分享时无效)</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">完成页面可配置跳转链接，可跳转商户的其他自定义Html5页面</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">同一个用户在单个红包活动中只能领取1次红包</span></p>
-<p style="white-space: normal;"><br><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>用户侧交互流程</strong></span></p>
+<p style="white-space: normal;">
+<br><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>用户侧交互流程</strong></span></p>
 <p style="white-space: normal;"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK5dGLRkbVI0kVGaQBBtfO8XiborMq0PtRQPd80Rhow5cPyZMVEsPKSHXhLkCtpmjMiaQ/0?wx_fmt=jpeg" title="" alt="" width="853" height="757" style="width: 853px; height: 757px;"></p>
-<p style="white-space: normal;"><br></p>
+<p style="white-space: normal;">
+<br></p>
 <p style="white-space: normal;"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK5dGLRkbVI0kQKlhsRLC4n9dHTqia5kGb2Lus2czz8yRdeud5tia2ad7FM8VcOJsjPwg/0?wx_fmt=jpeg" title="" alt="" width="780" height="343" style="width: 780px; height: 343px;"></p>
-<p style="white-space: normal;"><br></p>
+<p style="white-space: normal;">
+<br></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>红包组件接口调用流程</strong></span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">申请红包接口权限：登录摇一摇周边商户后台https://zb.weixin.qq.com&nbsp;,进入开发者支持，申请开通摇一摇红包组件接口;</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">红包预下单：调用微信支付的api进行红包预下单，告知需要发放的红包金额，人数，生成红包ticket；</span></p>
@@ -31,9 +35,9 @@
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">调用jsapi抽红包：在摇出的页面中通过调用jsapi抽红包，抽中红包的用户可以拆红包；</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">调用以上接口时，红包提供商户和红包发放商户公众号要求一致。</span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明：<br>&nbsp;红包提供商户：红包预下单接口传入的参数wxappid所代表的商户<br>&nbsp;红包发放商户：调用红包接口创建红包活动、录入红包信息、发放红包的商户公众号</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -1,19 +1,20 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>自定义菜单创建接口</h2>
+<div class="main_hd"><h2>自定义菜单创建接口</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p style="text-align: left;"><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51); line-height: 21px; font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; background-color: rgb(255, 255, 255);"></span>自定义菜单能够帮助公众号丰富界面，让用户更好更快地理解公众号的功能。开启自定义菜单后，公众号界面如图所示：</span></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p style="text-align: left;"><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51); line-height: 21px; font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; background-color: rgb(255, 255, 255);"></span>自定义菜单能够帮助公众号丰富界面，让用户更好更快地理解公众号的功能。开启自定义菜单后，公众号界面如图所示：</span></p>
 <p style="text-align:center"><a href="http://mp.weixin.qq.com/wiki/13/43de8269be54a0a6f64413e4dfa94f39.html#"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIVJ6bW5EhIpH4kiagbwE6INiclCPicLoIj42zqTUE2UWoWTn47WekOgAzb9DlRaZSSySbmaG4ibHBNtA/0?wx_fmt=jpeg" title="" alt=""></a></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5; widows: auto;">请注意：</span><br style="text-align: left;"></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5; widows: auto;">请注意：</span>
+<br style="text-align: left;"></p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">1、自定义菜单最多包括3个一级菜单，每个一级菜单最多包含5个二级菜单。
 2、一级菜单最多4个汉字，二级菜单最多7个汉字，多出来的部分将会以“...”代替。
 3、创建自定义菜单后，菜单的刷新策略是，在用户进入公众号会话页或公众号profile页时，如果发现上一次拉取菜单的请求在5分钟以前，就会拉取一下菜单，如果菜单有更新，就会刷新客户端的菜单。测试时可以尝试取消关注公众账号后再次关注，则可以看到创建后的效果。</pre>
@@ -120,7 +121,9 @@
 &nbsp;&nbsp;&nbsp;&nbsp;]
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">button</td><td class="table_cell">是</td><td class="table_cell">一级菜单数组，个数应为1~3个</td></tr>
 <tr><td class="table_cell">sub_button</td><td class="table_cell">否</td><td class="table_cell">二级菜单数组，个数应为1~5个</td></tr>
 <tr><td class="table_cell">type</td><td class="table_cell">是</td><td class="table_cell">菜单的响应动作类型</td></tr>
@@ -128,17 +131,20 @@
 <tr><td class="table_cell">key</td><td class="table_cell">click等点击类型必须</td><td class="table_cell">菜单KEY值，用于消息接口推送，不超过128字节</td></tr>
 <tr><td class="table_cell">url</td><td class="table_cell">view类型必须</td><td class="table_cell">网页链接，用户点击菜单可打开链接，不超过1024字节</td></tr>
 <tr><td class="table_cell">media_id</td><td class="table_cell">media_id类型和view_limited类型必须</td><td class="table_cell">调用新增永久素材接口返回的合法media_id</td></tr>
-</tbody></table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><br style="text-align: left;"><strong>返回结果</strong></p>
+</tbody>
+</table>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">
+<br style="text-align: left;"><strong>返回结果</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">正确时的返回JSON数据包如下：</p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{"errcode":0,"errmsg":"ok"}</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">错误时的返回JSON数据包如下（示例为无效菜单名长度）：</p>
 <pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{"errcode":40018,"errmsg":"invalid&nbsp;button&nbsp;name&nbsp;size"}</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95&amp;form=%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3%20/menu/create" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">使用网页调试工具调试该接口</a></p>
-<p style="text-align: left;"><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95&amp;form=%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3%20/menu/create" rel="nofollow" target="_blank"></a><br style="text-align: left;"></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p style="text-align: left;"><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95&amp;form=%E8%87%AA%E5%AE%9A%E4%B9%89%E8%8F%9C%E5%8D%95%E5%88%9B%E5%BB%BA%E6%8E%A5%E5%8F%A3%20/menu/create" rel="nofollow" target="_blank"></a>
+<br style="text-align: left;"></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

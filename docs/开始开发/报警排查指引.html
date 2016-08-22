@@ -1,17 +1,16 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>报警排查指引</h2>
+<div class="main_hd"><h2>报警排查指引</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p style="margin: 0px; padding: 0px; font-size: 14px; font-weight: normal; text-shadow: rgb(255, 255, 255) 1px 1px 0px; color: rgb(51, 51, 51); border: 0px; height: 28px; line-height: 28px; text-indent: 10px;">目录</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content"><p style="margin: 0px; padding: 0px; font-size: 14px; font-weight: normal; text-shadow: rgb(255, 255, 255) 1px 1px 0px; color: rgb(51, 51, 51); border: 0px; height: 28px; line-height: 28px; text-indent: 10px;">目录</p>
 <p><a href="#1" target="_self">1&nbsp;概要说明</a></p>
 <p><a href="#2" target="_self">2&nbsp;报警内容说明</a></p>
 <p><a href="#3" target="_self">3&nbsp;各类报警的排查方法</a></p>
@@ -25,21 +24,27 @@
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>为了更好地根据报警信息尾部的实例（提供了openid及时间戳stamp）进行问题排查，开发者需要在接入层、逻辑层等每一个层级都加上包含关键信息的详细日志，以利于快速定位问题。</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">报警目前有2类：</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">1.通用报警，所有开发者都需要关注。</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 200px;" class="table_cell">类型</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 200px;" class="table_cell">类型</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">DNS失败</td><td class="table_cell">微信服务器向公众号推送消息或事件时，解析DNS失败</td></tr>
 <tr><td class="table_cell">DNS超时</td><td class="table_cell">微信服务器向公众号推送消息或事件时，解析DNS超时，超时时间为5秒</td></tr>
 <tr><td class="table_cell">连接超时</td><td class="table_cell">微信服务器连接公众号开发者服务器时发生超时，超时时间为3秒</td></tr>
 <tr><td class="table_cell">请求超时</td><td class="table_cell">微信服务器向公众号推送消息或事件后，开发者5秒内没有返回</td></tr>
 <tr><td class="table_cell">回应失败</td><td class="table_cell">微信服务器向公众号推送消息或事件后，得到的回应不合法</td></tr>
 <tr><td class="table_cell">MarkFail（自动屏蔽）</td><td class="table_cell">微信服务器向公众号推送消息或事件发生多次失败后，暂时不推送消息，一分钟后解除屏蔽</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">2.公众号第三方平台报警，只有在微信开放平台（open.weixin.qq.com）上申请成为公众号第三方平台的开发者，才需要关注此报警。</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 200px;" class="table_cell">类型</th><th class="table_cell">描述</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 200px;" class="table_cell">类型</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">推送component_verify_ticket超时</td><td class="table_cell">推送component_verify_ticket时，开发者5S内没有返回</td></tr>
 <tr><td class="table_cell">推送component_verify_ticket失败</td><td class="table_cell">推送component_verify_ticket时，开发者没有返回success</td></tr>
 <tr><td class="table_cell">推送第三方平台消息超时</td><td class="table_cell">推送第三方平台消息（如取消授权消息）等，第三方平台5秒内没有返回</td></tr>
 <tr><td class="table_cell">推送第三方平台消息失败</td><td class="table_cell">推送第三方平台消息（如取消授权消息）等，第三方平台没有返回success</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">下面对具体的报警做示例以及排查指引说明。</p>
 <h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E6.8A.A5.E8.AD.A6.E5.86.85.E5.AE.B9.E8.AF.B4.E6.98.8E"><strong><a name="2"></a>报警内容说明</strong></span></h2>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">报警内容描述：</p>
@@ -184,10 +189,11 @@ log_format&nbsp;&nbsp;main&nbsp;&nbsp;&#39;$remote_addr&nbsp;&nbsp;-&nbsp;$remot
 	&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;（2）查看系统的句柄配置情况，ulimit&nbsp;-n&nbsp;，确认是否过小（小于请求数）
 &nbsp;&nbsp;&nbsp;（3）worker_rlimit_nofile、worker_connections配置项，是否过小（小于请求数）</pre>
-<p><br style="text-align: left;"/></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p>
+<br style="text-align: left;"/></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

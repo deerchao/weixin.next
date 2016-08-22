@@ -1,54 +1,73 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>一物一码专区</h2>
+<div class="main_hd"><h2>一物一码专区</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>能力概述</strong></span></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>能力概述</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;微信一物一码是整合微信原生能力，赋予每一件商品独一无二的二维码。通过微信一物一码，品牌可将每一件商品与消费者连接起来，传递商品信息、引导关注公众号、提供查询防伪服务、发放红包等精准化营销，进行用户管理和数据管理。</span></p>
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><br></span></p>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">
+<br></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);">实现原理</strong></span></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;微信提供的二维码内容由“固定前缀”、“转译压缩后的商品id”、“自定义参数”三部分组成。其中，固定前缀占用16个字符，用于微信客户端识别；商品id占用12个字符，用于唯一标识一款商品；自定义参数由商户传入，将作为主键在【生成二维码-&gt;用户扫描-&gt;打开商品主页-&gt;访问商户设置的网页】这整个流程中作透传，商户可以通过接收微信推送的事件和检查ticket来定位一个二维码和一个用户的对应关系。</span></p>
-<p style="white-space: normal;"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 1.5;"><br></strong></p>
+<p style="white-space: normal;"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 1.5;">
+<br></strong></p>
 <p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 1.5;">后台交互模式</strong></span></p>
 <p style="text-align:center"><strong><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK90RwHWR3nBlKWicHtZQ0k5Eou9veMN1TtvHBGdDUreC6UdurA9ds5CzEwmlgMAkJOg/0?wx_fmt=png" title="" alt=""></strong></p>
-<p><strong><br></strong></p>
+<p><strong>
+<br></strong></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">二维码内容说明</strong></strong></span></p>
-<p><br></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 120px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">字段部分</span></th><th class="table_cell" style="width: 520px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span><br></th></tr>
+<p>
+<br></p>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell" style="width: 120px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">字段部分</span></th><th class="table_cell" style="width: 520px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span>
+<br></th></tr>
 <tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 12px;">前缀部分</span></td><td class="table_cell"><span style="font-size: 12px; font-family: 微软雅黑, 'Microsoft YaHei';">使用网页HTTP前缀，所有商品二维码前缀固定都一样。</span></td></tr>
-<tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 12px;">商品编码</span><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><br></span></td><td class="table_cell"><span style="font-size: 12px; font-family: 微软雅黑, 'Microsoft YaHei';">被转译的商品id，用于标识一款商品。</span></td></tr>
+<tr><td class="table_cell"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 12px;">商品编码</span><span style="font-family: 微软雅黑, 'Microsoft YaHei';">
+<br></span></td><td class="table_cell"><span style="font-size: 12px; font-family: 微软雅黑, 'Microsoft YaHei';">被转译的商品id，用于标识一款商品。</span></td></tr>
 <tr><td class="table_cell"><span style="font-size: 12px; font-family: 微软雅黑, 'Microsoft YaHei';">商户定义extinfo参数</span></td><td class="table_cell"><span style="font-size: 12px; font-family: 微软雅黑, 'Microsoft YaHei';">由商户自定义传入，建议仅使用大小写字母、数字及-_().*这6个常用字符。</span></td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-align:center"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK90RwHWR3nBlWVApSrLf0OBSYgUcKGsr4KGiaiaEFtOQZRwmOK5uwthe4VpEjfVlK5OA/0?wx_fmt=png" title="" alt="" width="385" height="245" style="width: 385px; height: 245px;"></p>
-<p><br></p>
+<p>
+<br></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);">实现步骤</strong><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"></strong></span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; &nbsp;第一步：获取商户信息</span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; &nbsp;第二步：创建商品</span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; &nbsp;第三部：发布商品</span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; &nbsp;第四步：获取商品二维码</span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; &nbsp;第五步：二维码印刷</span></p>
-<p><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><br></strong><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);">二维码版本选择</strong></span></p>
+<p><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);">
+<br></strong><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);">二维码版本选择</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">二维码规范</strong></strong></span></p>
 <p><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;"></strong></strong></p>
 <p style="background:white"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; &nbsp;为了更好地印刷二维码，请先阅读规范http://www.qrcode.com/zh/about/version.html</span></p>
 <p style="text-indent:28px;background:white"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">extinfo参数长度、二维码版本、纠错级别、二维码尺寸等因素影响到二维码的印刷效果。二维码存储相同内容的情况下，纠错级别越高，对应的二维码版本越高。对应的，相同版本的二维码，纠错级别越高，能够存储的内容越少。</span></p>
 <p style="text-indent:28px;background:white"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>微信平台建议使用的二维码版本为纠错级别为L的版本2和版本3，极端情况下使用版本4。</strong></span></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 110px;">二维码版本</th><th class="table_cell" style="width: 150px;">总可容纳字符数<br></th><th class="table_cell" style="width: 130px;">已占用字符数<br></th><th class="table_cell" style="width: 130px;">可用字符数</th><th class="table_cell" style="width: 120px;">矩阵</th></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">2</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">32</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">28<br></td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle"><strong>4</strong></td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">25*25<br></td></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell" style="width: 110px;">二维码版本</th><th class="table_cell" style="width: 150px;">总可容纳字符数
+<br></th><th class="table_cell" style="width: 130px;">已占用字符数
+<br></th><th class="table_cell" style="width: 130px;">可用字符数</th><th class="table_cell" style="width: 120px;">矩阵</th></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">2</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">32</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">28
+<br></td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle"><strong>4</strong></td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">25*25
+<br></td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">3</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">53</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">28</td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle"><strong>25</strong></td><td class="table_cell" colspan="1" rowspan="1" align="center" valign="middle">29*29</td></tr>
 <tr><td class="table_cell" align="center" valign="middle">4</td><td class="table_cell" align="center" valign="middle">78</td><td class="table_cell" width="32" align="center" valign="middle">28</td><td class="table_cell" align="center" valign="middle"><strong>50</strong></td><td class="table_cell" align="center" valign="middle">33*33</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="text-indent:28px;background:white"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">注：使用25*25的矩阵，是指二维码每横每列都由25个数据点组成。</span></p>
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="font-size: 14px; line-height: 21px;"><br></strong></strong></strong></strong></span></p>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="font-size: 14px; line-height: 21px;">
+<br></strong></strong></strong></strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;"><strong style="white-space: normal; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><strong style="font-size: 14px; line-height: 21px;">版本图片示例</strong></strong></strong></strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>示例1：extinfo参数≤4个字符，使用版本2的二维码类型，25*25的矩阵，不同尺寸的印刷效果。</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">二维码内容为<span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 11px;">http://p.url.cn/yA4AcHqlXqY/1234</span></span></p>
@@ -59,9 +78,9 @@
 <p style="background:white"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"><strong>示例3：extinfo参数≤50个字符，使用版本4的二维码类型，33*33的矩阵，不同尺寸的印刷效果。</strong></span></p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">二维码内容为<span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 11px;">http://p.url.cn/yA4AcHqlXqY/01234567890123456789012345678901234567890123456789</span></span></p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK90RwHWR3nBlhD81bScZAC1FSxianjJMISFQx4T5GG8eDmlXC3iczSmsEPcSmCxRYR9g/0?wx_fmt=png" title="" alt=""></p>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -1,34 +1,43 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>添加密码型设备</h2>
+<div class="main_hd"><h2>添加密码型设备</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>调用此接口向指定门店添加密码型设备的Wi-Fi信息。为保证门店下多台设备无缝漫游。</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>调用此接口向指定门店添加密码型设备的Wi-Fi信息。为保证门店下多台设备无缝漫游。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">1.<span style="font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp;<span style="color: rgb(0, 0, 0); font-size: 14px;">同一个门店可以添加多个ssid，最大添加100个ssid；</span></span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">2.&nbsp;<span style="color: rgb(0, 0, 0);"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">已添加过的</span><span style="font-size: 14px; font-family: Calibri, sans-serif;">ssid</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">不能再重复添加；</span></span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">3. <span style="color: rgb(0, 0, 0);"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">一个门店只能拥有一种设备类型，只要调用此接口添加一个</span><span style="font-size: 14px; font-family: Calibri, sans-serif;">ssid</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">后，该门店即为<strong>密码型设备</strong>，不能再</span><span style="font-size: 14px; font-family: Calibri, sans-serif;"><span style="font-family: 微软雅黑, sans-serif;">添加</span>portal<span style="font-family: 微软雅黑, sans-serif;">型设备</span></span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">。调用</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1457435430&amp;token=&amp;lang=zh_CN" target="_blank"><span style="font-size: 14px; font-family: Calibri, sans-serif;"><span style="font-family: 微软雅黑, sans-serif;">清空门店</span>Wi-Fi<span style="font-family: 微软雅黑, sans-serif;">信息接口</span></span></a><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">清空网络信息后，可再设置为其它类型设备</span>。</span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(0, 0, 0);"><br></span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0); line-height: 1.5;">注意： <span style="color: rgb(0, 0, 0); line-height: 1.5;">调用此接口后需要进行以下两步操作，才能正式启用设备</span></span><br></p>
-<span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; 1. 进入无线路由器的管理后台，修改待添加设备的ssid和密码，保证设备的ssid和密码与调用接口时填写的一致<br></span><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(0, 0, 0); line-height: 1.5;"></span>2.&nbsp;<span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">请务必调用“</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894125&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取物料二维码" style="font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;white-space: normal">获取物料二维码</a><span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">”接口，下载该门店二维码，张贴于店内。并确保有人（顾客或店员）用6.1以上安卓版微信或6.2.2以上IOS版微信扫码连接Wi-Fi，连网成功即表示设备添加成功。</span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="line-height: 1.5;"><br></strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="line-height: 1.5;">接口调用说明</strong><br></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(0, 0, 0);">
+<br></span></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(255, 0, 0); line-height: 1.5;">注意： <span style="color: rgb(0, 0, 0); line-height: 1.5;">调用此接口后需要进行以下两步操作，才能正式启用设备</span></span>
+<br></p>
+<span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; 1. 进入无线路由器的管理后台，修改待添加设备的ssid和密码，保证设备的ssid和密码与调用接口时填写的一致
+<br></span>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><span style="color: rgb(0, 0, 0); line-height: 1.5;"></span>2.&nbsp;<span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">请务必调用“</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894125&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取物料二维码" style="font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;white-space: normal">获取物料二维码</a><span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">”接口，下载该门店二维码，张贴于店内。并确保有人（顾客或店员）用6.1以上安卓版微信或6.2.2以上IOS版微信扫码连接Wi-Fi，连网成功即表示设备添加成功。</span></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="line-height: 1.5;">
+<br></strong></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong style="line-height: 1.5;">接口调用说明</strong>
+<br></p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">协议：https
 http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/device/add?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
@@ -37,20 +46,24 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;"password":&nbsp;"12345689",
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">是</td><td class="table_cell">门店ID</td></tr>
 <tr><td class="table_cell">ssid</td><td class="table_cell">是</td><td class="table_cell">无线网络设备的ssid。<span style="color: rgb(255, 0, 0);">ssid和密码必须有一个以大写字母“WX”开头；32个字符以内；ssid支持中文，但可能因设备兼容性问题导致显示乱码，或无法连接等问题，相关风险自行承担</span>！</td></tr>
 <tr><td class="table_cell">password</td><td class="table_cell">是</td><td class="table_cell">无线网络设备的密码。<span style="color: rgb(255, 0, 0);">8-24个字符；不能包含中文字符；ssid和密码必须有一个以大写字母“WX”开头</span></td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确返回JSON数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
 &nbsp;&nbsp;"errcode":&nbsp;0
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br><strong>注意</strong>：添加设备完成后，请务必调用“<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894125&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取物料二维码">获取物料二维码</a>”接口，下载该门店二维码，张贴于店内。并确保有人（顾客或店员）用6.1以上安卓版微信或6.2.2以上IOS版微信扫码连接Wi-Fi，连网成功即表示设备添加成功。</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+<br><strong>注意</strong>：添加设备完成后，请务必调用“<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894125&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取物料二维码">获取物料二维码</a>”接口，下载该门店二维码，张贴于店内。并确保有人（顾客或店员）用6.1以上安卓版微信或6.2.2以上IOS版微信扫码连接Wi-Fi，连网成功即表示设备添加成功。</p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

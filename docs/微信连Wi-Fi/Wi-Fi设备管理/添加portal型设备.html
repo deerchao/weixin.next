@@ -1,17 +1,17 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>添加portal型设备</h2>
+<div class="main_hd"><h2>添加portal型设备</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">调用下述接口可以添加portal型设备的网络信息，并获得secretkey。<span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; background-color: rgb(255, 255, 255);">secretkey为加密字符串参数，是portal设备改造流程中的重要参数。</span>为防止secretkey泄露，可通过此接口重置刷新，重置后之前生成的secretkey将会失效。需注意<span style="line-height: 1.5;">：</span></p>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">1. <span style="line-height: 1.5; color: rgb(0, 0, 0);"><span style="line-height: 1.5; font-size: 14px; font-family: 微软雅黑, sans-serif;">同一个门店可以添加多个</span><span style="line-height: 1.5; font-size: 14px; font-family: Calibri, sans-serif;">ssid</span><span style="line-height: 1.5; font-size: 14px; font-family: 微软雅黑, sans-serif;">，最大添加</span><span style="line-height: 1.5; font-size: 14px; font-family: Calibri, sans-serif;">100</span><span style="line-height: 1.5; font-size: 14px; font-family: 微软雅黑, sans-serif;">个</span><span style="line-height: 1.5; font-size: 14px; font-family: Calibri, sans-serif;">ssid；</span></span></span></p>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><span style="line-height: 1.5;">2. <span style="line-height: 1.5; color: rgb(0, 0, 0);"><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">一个门店只能拥有一种设备类型，只要调用此接口添加一个</span><span style="font-size: 14px; font-family: Calibri, sans-serif;">ssid</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">后，该门店即为</span><span style="font-size: 14px; font-family: Calibri, sans-serif;">portal</span><span style="font-size: 14px; font-family: 微软雅黑, sans-serif;">型改造设备。</span></span>如果门店下已有非portal型设备时，无法调用此接口。</span></p>
@@ -21,10 +21,13 @@ http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/apportal/register?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 160px;">参数</th><th class="table_cell" style="width: 80px;">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">参数</th><th class="table_cell" style="width: 80px;">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">数据示例：</p>
 <pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
@@ -33,11 +36,14 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;&nbsp;"reset":&nbsp;false
 }</pre>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell" style="width: 80px;">是否必填</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell" style="width: 80px;">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">是</td><td class="table_cell">门店ID</td></tr>
 <tr><td class="table_cell">ssid</td><td class="table_cell">是</td><td class="table_cell">无线网络设备的ssid，限30个字符以内。<span style="color: rgb(255, 0, 0);">ssid支持中文，但可能因设备兼容性问题导致显示乱码，或无法连接等问题，相关风险自行承担</span>！</td></tr>
 <tr><td class="table_cell">reset</td><td class="table_cell">否</td><td class="table_cell">重置secretkey，false-不重置，true-重置，默认为false</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;</p>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">正确返回JSON数据示例：</p>
 <pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
@@ -48,17 +54,24 @@ POST数据格式：JSON</pre>
 }</pre>
 <p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p>
 <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
-<p><br></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell">说明</th></tr>
-<tr><td class="table_cell">secretkey</td><td class="table_cell">改造portal页面所需参数，该参数用于触发呼起微信的JSAPI接口的sign参数值的计算<br></td></tr>
-</tbody></table>
-<p><br></p>
-<p><br></p>
+<p>
+<br></p>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell">说明</th></tr>
+<tr><td class="table_cell">secretkey</td><td class="table_cell">改造portal页面所需参数，该参数用于触发呼起微信的JSAPI接口的sign参数值的计算
+<br></td></tr>
+</tbody>
+</table>
+<p>
+<br></p>
+<p>
+<br></p>
 <p><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">&nbsp; <span style="color: rgb(255, 0, 0);">&nbsp;注意：</span></strong></p>
-<p><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">&nbsp;</strong> <span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">添加设备完成后，务必按照<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894086&amp;token=&amp;lang=zh_CN" target="_blank">鉴权协议接口</a></span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">进行设备改造，否则无法实现微信连Wi-Fi。</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">&nbsp;</strong><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';">添加设备完成后，务必按照<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894086&amp;token=&amp;lang=zh_CN" target="_blank">鉴权协议接口</a></span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">进行设备改造，否则无法实现微信连Wi-Fi。</span></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

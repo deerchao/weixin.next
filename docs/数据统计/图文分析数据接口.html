@@ -1,17 +1,18 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>图文分析数据接口</h2>
+<div class="main_hd"><h2>图文分析数据接口</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<br></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">微信公众平台于2015年1月6日启动了数据接口的邀请内测。通过数据接口，开发者可以获取与公众平台官网统计模块类似但更灵活的数据，还可根据需要进行高级处理。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">在公众号登录授权机制的权限集划分中，图文分析数据接口属于群发与通知权限。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">向所有公众号开发者开放数据接口的时间将另行通知。</p>
@@ -20,27 +21,34 @@
 2、请开发者在调用接口获取数据后，将数据保存在自身数据库中，即加快下次用户的访问速度，也降低了微信侧接口调用的不必要损耗。
 3、额外注意，获取图文群发每日数据接口的结果中，只有中间页阅读人数+原文页阅读人数+分享转发人数+分享转发次数+收藏次数&nbsp;&gt;=3的结果才会得到统计，过小的阅读量的图文消息无法统计。</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">图文分析数据接口指的是用于获得公众平台官网数据统计模块中图文分析数据的接口，具体接口列表如下：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 150px;" class="table_cell">接口名称</th><th class="table_cell">最大时间跨度</th><th class="table_cell">接口调用地址（必须使用https）</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 150px;" class="table_cell">接口名称</th><th class="table_cell">最大时间跨度</th><th class="table_cell">接口调用地址（必须使用https）</th></tr>
 <tr><td class="table_cell">获取图文群发每日数据（getarticlesummary）</td><td class="table_cell">1</td><td class="table_cell"><a href="https://api.weixin.qq.com/datacube/getarticlesummary?access_token=ACCESS_TOKEN" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://api.weixin.qq.com/datacube/getarticlesummary?access_token=ACCESS_TOKEN</a></td></tr>
 <tr><td class="table_cell">获取图文群发总数据（getarticletotal）</td><td class="table_cell">1</td><td class="table_cell"><a href="https://api.weixin.qq.com/datacube/getarticletotal?access_token=ACCESS_TOKEN" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://api.weixin.qq.com/datacube/getarticletotal?access_token=ACCESS_TOKEN</a></td></tr>
 <tr><td class="table_cell">获取图文统计数据（getuserread）</td><td class="table_cell">3</td><td class="table_cell"><a href="https://api.weixin.qq.com/datacube/getuserread?access_token=ACCESS_TOKEN" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://api.weixin.qq.com/datacube/getuserread?access_token=ACCESS_TOKEN</a></td></tr>
 <tr><td class="table_cell">获取图文统计分时数据（getuserreadhour）</td><td class="table_cell">1</td><td class="table_cell"><a href="https://api.weixin.qq.com/datacube/getuserreadhour?access_token=ACCESS_TOKEN" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://api.weixin.qq.com/datacube/getuserreadhour?access_token=ACCESS_TOKEN</a></td></tr>
 <tr><td class="table_cell">获取图文分享转发数据（getusershare）</td><td class="table_cell">7</td><td class="table_cell"><a href="https://api.weixin.qq.com/datacube/getusershare?access_token=ACCESS_TOKEN" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://api.weixin.qq.com/datacube/getusershare?access_token=ACCESS_TOKEN</a></td></tr>
 <tr><td class="table_cell">获取图文分享转发分时数据（getusersharehour）</td><td class="table_cell">1</td><td class="table_cell"><a href="https://api.weixin.qq.com/datacube/getusersharehour?access_token=ACCESS_TOKEN" class="external free" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">https://api.weixin.qq.com/datacube/getusersharehour?access_token=ACCESS_TOKEN</a></td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">最大时间跨度是指一次接口调用时最大可获取数据的时间范围，如最大时间跨度为7是指最多一次性获取7天的数据。access_token的实际值请通过“获取access_token”来获取。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br><strong>接口调用请求说明</strong></p>
+<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+<br><strong>接口调用请求说明</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">图文分析数据接口（包括接口列表中的所有接口）需要向相应接口调用地址POST以下示例数据包：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;"begin_date":&nbsp;"2014-12-08",&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;"end_date":&nbsp;"2014-12-08"
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>调用参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 150px;" class="table_cell">参数</th><th style="width: 150px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 150px;" class="table_cell">参数</th><th style="width: 150px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">begin_date</td><td class="table_cell">是</td><td class="table_cell">获取数据的起始日期，begin_date和end_date的差值需小于“最大时间跨度”（比如最大时间跨度为1时，begin_date和end_date的差值只能为0，才能小于1），否则会报错</td></tr>
 <tr><td class="table_cell">end_date</td><td class="table_cell">是</td><td class="table_cell">获取数据的结束日期，end_date允许设置的最大值为昨日</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回说明</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正常情况下，获取图文群发每日数据接口的返回JSON数据包如下：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{&nbsp;
@@ -213,7 +221,9 @@
 &nbsp;&nbsp;&nbsp;]
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 240px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 240px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ref_date</td><td class="table_cell">数据的日期，需在begin_date和end_date之间</td></tr>
 <tr><td class="table_cell">ref_hour</td><td class="table_cell">数据的小时，包括从000到2300，分别代表的是[000,100)到[2300,2400)，即每日的第1小时和最后1小时</td></tr>
 <tr><td class="table_cell">stat_date</td><td class="table_cell">统计的日期，在getarticletotal接口中，ref_date指的是文章群发出日期， 而stat_date是数据统计日期</td></tr>
@@ -229,16 +239,20 @@
 <tr><td class="table_cell">share_count</td><td class="table_cell">分享的次数</td></tr>
 <tr><td class="table_cell">add_to_fav_user</td><td class="table_cell">收藏的人数</td></tr>
 <tr><td class="table_cell">add_to_fav_count</td><td class="table_cell">收藏的次数</td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1">获取图文群发总数据接口中的详细字段解释</td><td class="table_cell" colspan="1" rowspan="1"><p>intpagefromsessionreaduser 公众号会话阅读人数<br>intpagefromsessionreadcount 公众号会话阅读次数<br>intpagefromhistmsgreaduser 历史消息页阅读人数<br>intpagefromhistmsgreadcount 历史消息页阅读次数<br>intpagefromfeedreaduser 朋友圈阅读人数<br>intpagefromfeedreadcount 朋友圈阅读次数<br>intpagefromfriendsreaduser 好友转发阅读人数<br>intpagefromfriendsreadcount 好友转发阅读次数<br>intpagefromotherreaduser 其他场景阅读人数<br>intpagefromotherreadcount 其他场景阅读次数<br>	<br>feedsharefromsessionuser 公众号会话转发朋友圈人数<br>feedsharefromsessioncnt &nbsp;公众号会话转发朋友圈次数<br>feedsharefromfeeduser 朋友圈转发朋友圈人数<br>feedsharefromfeedcnt 朋友圈转发朋友圈次数<br>feedsharefromotheruser 其他场景转发朋友圈人数<br>feedsharefromothercnt其他场景转发朋友圈次数<br></p>
+<tr><td class="table_cell" colspan="1" rowspan="1">获取图文群发总数据接口中的详细字段解释</td><td class="table_cell" colspan="1" rowspan="1"><p>intpagefromsessionreaduser 公众号会话阅读人数<br>intpagefromsessionreadcount 公众号会话阅读次数<br>intpagefromhistmsgreaduser 历史消息页阅读人数<br>intpagefromhistmsgreadcount 历史消息页阅读次数<br>intpagefromfeedreaduser 朋友圈阅读人数<br>intpagefromfeedreadcount 朋友圈阅读次数<br>intpagefromfriendsreaduser 好友转发阅读人数<br>intpagefromfriendsreadcount 好友转发阅读次数<br>intpagefromotherreaduser 其他场景阅读人数<br>intpagefromotherreadcount 其他场景阅读次数
+<br><br>feedsharefromsessionuser 公众号会话转发朋友圈人数<br>feedsharefromsessioncnt &nbsp;公众号会话转发朋友圈次数<br>feedsharefromfeeduser 朋友圈转发朋友圈人数<br>feedsharefromfeedcnt 朋友圈转发朋友圈次数<br>feedsharefromotheruser 其他场景转发朋友圈人数<br>feedsharefromothercnt其他场景转发朋友圈次数
+<br></p>
 </td></tr>
 <tr><td class="table_cell">target_user</td><td class="table_cell">送达人数，一般约等于总粉丝数（需排除黑名单或其他异常情况下无法收到消息的粉丝）</td></tr>
 <tr><td class="table_cell">user_source</td><td class="table_cell">在获取图文阅读分时数据时才有该字段，代表用户从哪里进入来阅读该图文。0:会话;1.好友;2.朋友圈;3.腾讯微博;4.历史消息页;5.其他</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">错误时微信会返回错误码等信息，具体错误码查询，请见：<a href="http://mp.weixin.qq.com/wiki/10/6380dc743053a91c544ffd2b7c959166.html" class="external text" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: none;">全局返回码说明</a></p>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

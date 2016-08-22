@@ -1,45 +1,58 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>长链接转短链接接口</h2>
+<div class="main_hd"><h2>长链接转短链接接口</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-size: 14px; font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;"></span>将一条长链接转成短链接。</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-size: 14px; font-family: 微软雅黑, &#39;Microsoft YaHei&#39;;"></span>将一条长链接转成短链接。</p>
 <p>主要使用场景： 开发者用于生成二维码的原链接（商品、支付二维码等）太长导致扫码速度和成功率下降，将原长链接通过此接口转成短链接再生成二维码将大大提升扫码速度和成功率。</p>
 <p><strong>接口调用请求说明</strong></p>
 <p>开发者可通过OpenID来获取用户基本信息。请使用https协议。</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">http请求方式: POST<br/><p>https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN</p>
-</div><p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">http请求方式: POST
+<br/><p>https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN</p>
+</div>
+<p><strong>参数说明</strong></p>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">action</td><td class="table_cell">是</td><td class="table_cell">此处填long2short，代表长链接转短链接</td></tr>
 <tr><td class="table_cell">long_url</td><td class="table_cell">是</td><td class="table_cell">需要转换的长链接，支持http://、https://、weixin://wxpay 格式的url</td></tr>
-</tbody></table>
-<p><strong>调用举例</strong><br/></p>
+</tbody>
+</table>
+<p><strong>调用举例</strong>
+<br/></p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">curl -d &quot;{\&quot;action\&quot;:\&quot;long2short\&quot;,\&quot;long_url\&quot;:\&quot;http://wap.koudaitong.com/v2/showcase/goods?alias=128wi9shh&amp;spm=h56083&amp;redirect_count=1\&quot;}&quot; &quot;https://api.weixin.qq.com/cgi-bin/shorturl?access_token=ACCESS_TOKEN&quot;</div>
 <p><strong>返回说明</strong></p>
 <p>正常情况下，微信会返回下述JSON数据包给公众号：</p>
 <div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">{&quot;errcode&quot;:0,&quot;errmsg&quot;:&quot;ok&quot;,&quot;short_url&quot;:&quot;http:\/\/w.url.cn\/s\/AvCo6Ih&quot;}</div>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 240px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 240px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">错误信息。</td></tr>
-<tr><td class="table_cell">short_url</td><td class="table_cell">短链接。<br/>&nbsp; &nbsp;&nbsp;<br/></td></tr>
-</tbody></table>
+<tr><td class="table_cell">short_url</td><td class="table_cell">短链接。<br/>&nbsp; &nbsp;&nbsp;
+<br/></td></tr>
+</tbody>
+</table>
 <p>错误时微信会返回错误码等信息，JSON数据包示例如下（该示例为AppID无效错误）:</p>
-<p>{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid appid&quot;}<br/></p>
-<p><br/></p>
-<p><br/></p>
-                </div>
-            </div>
-        </div>
-    </div>
+<p>{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid appid&quot;}
+<br/></p>
+<p>
+<br/></p>
+<p>
+<br/></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

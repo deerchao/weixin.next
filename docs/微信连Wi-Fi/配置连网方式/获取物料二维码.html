@@ -1,17 +1,16 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>获取物料二维码</h2>
+<div class="main_hd"><h2>获取物料二维码</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">添加设备后，通过此接口可以获取物料，包括二维码和桌贴两种样式。将物料铺设在线下门店里，可供用户扫码上网。</p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content"><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">添加设备后，通过此接口可以获取物料，包括二维码和桌贴两种样式。将物料铺设在线下门店里，可供用户扫码上网。</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">注：只有门店下已添加Wi-Fi网络信息，才能调用此接口获取二维码，添加方式<span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">请参考</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894120&amp;token=&amp;lang=zh_CN" target="_blank" style="font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;white-space: normal;background-color: rgb(255, 255, 255)">“添加密码型设备”</a><span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">和</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1457443857&amp;token=&amp;lang=zh_CN" target="_blank" style="font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;white-space: normal;background-color: rgb(255, 255, 255)">“添加portal型设备”</a><span style="color: rgb(51, 51, 51);font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial;font-size: 14px;line-height: 21px;background-color: rgb(255, 255, 255)">接口文档。</span></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">协议：https
@@ -19,10 +18,13 @@ http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/qrcode/get?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">数据示例：</p>
 <pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
@@ -31,13 +33,16 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;"img_id":&nbsp;1
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">是</td><td class="table_cell">门店ID</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">ssid</td><td class="table_cell" colspan="1" rowspan="1">是</td><td class="table_cell" colspan="1" rowspan="1">已添加到门店下的无线网络名称</td></tr>
 <tr><td class="table_cell">img_id</td><td class="table_cell">是</td><td class="table_cell">物料样式编号：<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px;">0-纯二维码，可用于自由设计宣传材料；</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px;">1-二维码物料，155mm×215mm(宽×高)，可直接张贴</p>
 </td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">物料样式：</p>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">(1) 示意图-纯二维码(img_id = 0)</p>
 <p><a href="http://mp.weixin.qq.com/wiki/17/22648869929525f829a3de1bfc73eb4d.html#" class="image" title="图-二维码(img_id = 0)" style="color: rgb(54, 103, 153); text-decoration: none;"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcUCwYHrHRvDA2kia3AFTjP1ZXhJg53DJibUdS0owj5dSaPMSEnVCdFHAg/0?wx_fmt=png" title="" alt=""></a></p>
@@ -52,12 +57,15 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;}
 }</pre>
 <p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px"><tbody><tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">qrcode_url</td><td class="table_cell">二维码图片url</td></tr>
-</tbody></table>
-                </div>
-            </div>
-        </div>
-    </div>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>

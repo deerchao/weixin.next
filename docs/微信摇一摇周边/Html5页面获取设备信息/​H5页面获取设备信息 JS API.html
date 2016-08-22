@@ -1,33 +1,43 @@
+﻿
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/> 
-</head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
 <body class="page_doc">
-    <div class="main_hd"><h2>​H5页面获取设备信息 JS API</h2>
+<div class="main_hd"><h2>​H5页面获取设备信息 JS API</h2>
 </div>
-    <div class="main_bd"> 
-        <div class="article_box">
-            <div class="inner">
-                <div class="news_content">
-                    <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">目录<br></span></p>
-<p><a href="#开启查找周边ibeacon设备接口" target="_self"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">1</span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp;</span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">开启查找周边ibeacon设备接口</span><br></a></p>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">目录
+<br></span></p>
+<p><a href="#开启查找周边ibeacon设备接口" target="_self"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">1</span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp;</span><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">开启查找周边ibeacon设备接口</span>
+<br></a></p>
 <p><a href="#关闭查找周边ibeacon设备接口" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">2&nbsp;关闭查找周边ibeacon设备接口</span></a></p>
 <p><a href="#监听周边ibeacon设备接口" target="_self" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">3&nbsp;监听周边ibeacon设备接口</span></a></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">&nbsp;</span></p>
-<p><strong style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">接口说明</strong><br></p>
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">H5页面获取设备信息 JS API是为了扩展摇周边应用的场景，让开发者能够在自己的H5应用上通过接入微信JS-SDK，实现搜索周边Beacon信号的一套api。在调用此接口之前，需要先把设备分组，微信客户端只会返回已在分组中的设备信息，如何把设备分组，请查看上述分组相关的接口描述。<br></span></p>
+<p><strong style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">接口说明</strong>
+<br></p>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">H5页面获取设备信息 JS API是为了扩展摇周边应用的场景，让开发者能够在自己的H5应用上通过接入微信JS-SDK，实现搜索周边Beacon信号的一套api。在调用此接口之前，需要先把设备分组，微信客户端只会返回已在分组中的设备信息，如何把设备分组，请查看上述分组相关的接口描述。
+<br></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">H5页面获取设备信息JSAPI包括startSearchBeacons、stopSearchBeacons、onSearchBeacons三个接口，只支持6.2.5以上的微信版本调用，需使用微信JS-SDK调用，且调用的公众账号需与创建分组的公众账号一致。在需要调用JS接口的页面引入如下JS文件，（支持https）：http://res.wx.qq.com/open/js/jweixin-1.1.0.js，</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115&amp;token=&amp;lang=zh_CN" target="_blank" style="text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">查看具体JS-SDK调用方法</span></a><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">。</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong><a name="开启查找周边ibeacon设备接口"></a>开启查找周边ibeacon设备接口</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">查找周边设备，目的是为有一定开发能力的商户提供查找自己周边设备的接口，在微信内置浏览器中被访问的网页，可使用该JS代码调起查找商家自己周边的设备，方便商家利用此接口来检查周边是否存在自己的设备。 微信客户端只要检测到有信号的设备即返回设备信息，时间间隔为1S，android与iOS皆批量返回检测到有信息的设备。</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口调用说明</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">示例：<br>wx.startSearchBeacons({<br> &nbsp; ticket:"",<br> &nbsp; complete:function(argv){<br> &nbsp; //回调函数<br> &nbsp; }<br>});<br></span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
-<table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是否必须</span></td><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">示例：<br>wx.startSearchBeacons({<br> &nbsp; ticket:"",<br> &nbsp; complete:function(argv){<br> &nbsp; //回调函数<br> &nbsp; }<br>});
+<br></span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
+<table class="table" width="951">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是否必须</span></td><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
 <tr><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">ticket</span></td><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">否</span></td><td class="table_cell" width="217" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">摇周边的业务ticket，系统自动添加在摇出来的页面链接后面 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
-</tbody></table>
+</tbody>
+</table>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">打开成功返回：“startSearchBeacons:ok”；</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">打开后未stop再次打开 ：“startSearchBeacons:already started”；</span></p>
@@ -38,29 +48,41 @@
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">关闭查找周边设备。</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口调用说明</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">示例：<br>wx.stopSearchBeacons({<br> &nbsp; complete:function(res){<br> &nbsp; //回调函数<br> &nbsp; }<br>});</span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">示例：<br>wx.stopSearchBeacons({<br> &nbsp; complete:function(res){<br> &nbsp; //回调函数<br> &nbsp; }<br>});</span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">关闭成功返回“stopSearchBeacons:ok”；</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong><a name="监听周边ibeacon设备接口"></a>监听周边ibeacon设备接口</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">监听周边设备onSearchBeacons接口是在startSearchBeacons接口开启后回调的，该接口返回该商家注册的在周边的相关设备。</span></p>
 <p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口调用说明</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">示例：<br>wx.onSearchBeacons({<br> &nbsp; complete:function(argv){<br> &nbsp; //回调函数<br> &nbsp; }<br>});<br></span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">onSearchBeacons:<br>{<br> &nbsp; "beacons":[<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"major":10008,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"minor":57686,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"uuid":"FDA50693-A4E2-4FB1-AFCF-C6EB07647825",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"accuracy":"0.235344",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"rssi":"-66",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"proximity":"1",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"heading":"288.1355"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"major":10008,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"minor":57687,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"uuid":"FDA50693-A4E2-4FB1-AFCF-C6EB07647825",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"accuracy":"0.349124",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"rssi":"-49",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"proximity":"2",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"heading":"288.1355"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	]<br>}</span></p>
-</div><p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
-<table class="table" width="951"><tbody class="tbody"><tr class="firstRow thead"><td class="table_cell" width="312" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="339" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">示例：<br>wx.onSearchBeacons({<br> &nbsp; complete:function(argv){<br> &nbsp; //回调函数<br> &nbsp; }<br>});
+<br></span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
+<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">onSearchBeacons:<br>{<br> &nbsp; "beacons":[<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"major":10008,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"minor":57686,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"uuid":"FDA50693-A4E2-4FB1-AFCF-C6EB07647825",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"accuracy":"0.235344",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"rssi":"-66",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"proximity":"1",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"heading":"288.1355"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"major":10008,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"minor":57687,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"uuid":"FDA50693-A4E2-4FB1-AFCF-C6EB07647825",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"accuracy":"0.349124",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"rssi":"-49",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"proximity":"2",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	"heading":"288.1355"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	}<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 	]<br>}</span></p>
+</div>
+<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
+<table class="table" width="951">
+<tbody class="tbody">
+<tr class="firstRow thead"><td class="table_cell" width="312" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="339" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
 <tr><td class="table_cell" width="312"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">UUID、major、minor</span></td><td class="table_cell" width="339"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">UUID、major、minor</span></td></tr>
 <tr><td class="table_cell" width="312"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">accuracy</span></td><td class="table_cell" width="339"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">距离，单位为米</span></td></tr>
 <tr><td class="table_cell" width="312"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">proximity</span></td><td class="table_cell" width="339"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">精度，0：CLProximityUnknown, 1：CLProximityImmediate, 2：CLProximityNear, 3：CLProximityFar</span></td></tr>
 <tr><td class="table_cell" width="312"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">rssi</span></td><td class="table_cell" width="339"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">接收信号的强度指示</span></td></tr>
 <tr><td class="table_cell" width="312"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">heading</span></td><td class="table_cell" width="339"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">接收信号时设备的方向（安卓设备返回有此字段，iOS无）；iOS设备若需要获取方向，可以利用HTML5标准API获取，</span><a href="http://o2o.gtimg.com/ibeacon/download/html5_compass_direction.html" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: underline; font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">查看示例</span></a></td></tr>
-</tbody></table>
-<p><br></p>
-<p><br></p>
-                </div>
-            </div>
-        </div>
-    </div>
+</tbody>
+</table>
+<p>
+<br></p>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
