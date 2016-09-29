@@ -8,8 +8,8 @@ namespace Weixin.Next.Messaging
     public abstract class MessageHandler : IMessageHandler
     {
         private static readonly Task<bool> _done = Task.FromResult(true);
-        private static readonly Task<IResponseMessage> _empty = Task.FromResult((IResponseMessage)new RawResponseMessage(""));
-        private static readonly Task<IResponseMessage> _success = Task.FromResult((IResponseMessage)new RawResponseMessage("success"));
+        private static readonly Task<IResponseMessage> _empty = Task.FromResult((IResponseMessage)RawResponseMessage.Empty);
+        private static readonly Task<IResponseMessage> _success = Task.FromResult((IResponseMessage)RawResponseMessage.Success);
 
         protected RequestMessage Request { get; private set; }
 

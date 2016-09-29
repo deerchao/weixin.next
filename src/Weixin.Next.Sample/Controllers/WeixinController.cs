@@ -52,7 +52,7 @@ namespace Weixin.Next.Sample.Controllers
         /// </summary>
         public ActionResult AuthBase()
         {
-            return Auth(Url.Action("AuthBase"), OAuth2.ScopeBase, "base");
+            return Auth(OAuth2.ScopeBase, "base");
         }
 
         /// <summary>
@@ -60,17 +60,15 @@ namespace Weixin.Next.Sample.Controllers
         /// </summary>
         public ActionResult AuthUserInfo()
         {
-            return Auth(Url.Action("AuthUserInfo"), OAuth2.ScopeUserInfo, "userinfo");
+            return Auth(OAuth2.ScopeUserInfo, "userinfo");
         }
 
-        private ActionResult Auth(string localUrl, string scope, string state)
+        private ActionResult Auth(string scope, string state)
         {
             var appId = ConfigurationManager.AppSettings["weixin.appId"];
 
-            var fullUrl = Request.Url.ToString();
-            var localIndex = fullUrl.IndexOf(localUrl, StringComparison.OrdinalIgnoreCase);
-            var prefix = fullUrl.Substring(0, localIndex);
-            var callbackUrl = prefix + Url.Action("AuthCallback");
+            //相对网址变为绝对网址
+            var callbackUrl = new Uri(Request.Url, Url.Action("AuthCallback")).ToString();
 
             var redirectUrl = OAuth2.GetAuthorizeUrl(appId, callbackUrl, scope, state);
             return Redirect(redirectUrl);
@@ -90,7 +88,7 @@ namespace Weixin.Next.Sample.Controllers
             }
 
             var appId = ConfigurationManager.AppSettings["weixin.appId"];
-            var appSecret = ConfigurationManager.AppSettings["appSecret"];
+            var appSecret = ConfigurationManager.AppSettings["weixin.appSecret"];
 
             OAuth2.AccessTokenResult tokenResult;
             try

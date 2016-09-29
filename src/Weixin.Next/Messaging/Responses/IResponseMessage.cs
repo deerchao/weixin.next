@@ -42,5 +42,8 @@ namespace Weixin.Next.Messaging.Responses
         {
             return Message;
         }
+
+        public static readonly RawResponseMessage Empty = new RawResponseMessage("");
+        public static readonly RawResponseMessage Success = new RawResponseMessage("success");
     }
 }

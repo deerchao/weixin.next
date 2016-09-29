@@ -1,4 +1,4 @@
-using System;
+ï»¿using System;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -9,27 +9,27 @@ namespace Weixin.Next.Api
     // ReSharper disable InconsistentNaming
     public class JsConfig
     {
-        // ¿ªÆôµ÷ÊÔÄ£Ê½,µ÷ÓÃµÄËùÓĞapiµÄ·µ»ØÖµ»áÔÚ¿Í»§¶Ëalert³öÀ´£¬ÈôÒª²é¿´´«ÈëµÄ²ÎÊı£¬¿ÉÒÔÔÚpc¶Ë´ò¿ª£¬²ÎÊıĞÅÏ¢»áÍ¨¹ılog´ò³ö£¬½öÔÚpc¶ËÊ±²Å»á´òÓ¡
+        // å¼€å¯è°ƒè¯•æ¨¡å¼,è°ƒç”¨çš„æ‰€æœ‰apiçš„è¿”å›å€¼ä¼šåœ¨å®¢æˆ·ç«¯alertå‡ºæ¥ï¼Œè‹¥è¦æŸ¥çœ‹ä¼ å…¥çš„å‚æ•°ï¼Œå¯ä»¥åœ¨pcç«¯æ‰“å¼€ï¼Œå‚æ•°ä¿¡æ¯ä¼šé€šè¿‡logæ‰“å‡ºï¼Œä»…åœ¨pcç«¯æ—¶æ‰ä¼šæ‰“å°
         public bool debug { get; set; }
-        // ±ØÌî£¬¹«ÖÚºÅµÄÎ¨Ò»±êÊ¶
+        // å¿…å¡«ï¼Œå…¬ä¼—å·çš„å”¯ä¸€æ ‡è¯†
         public string appId { get; set; }
-        // ±ØÌî£¬Éú³ÉÇ©ÃûµÄÊ±¼ä´Á
+        // å¿…å¡«ï¼Œç”Ÿæˆç­¾åçš„æ—¶é—´æˆ³
         public long timestamp { get; set; }
-        // ±ØÌî£¬Éú³ÉÇ©ÃûµÄËæ»ú´®
+        // å¿…å¡«ï¼Œç”Ÿæˆç­¾åçš„éšæœºä¸²
         public string nonceStr { get; set; }
-        // ±ØÌî£¬Ç©Ãû
+        // å¿…å¡«ï¼Œç­¾å
         public string signature { get; set; }
-        // ±ØÌî£¬ĞèÒªÊ¹ÓÃµÄJS½Ó¿ÚÁĞ±í
+        // å¿…å¡«ï¼Œéœ€è¦ä½¿ç”¨çš„JSæ¥å£åˆ—è¡¨
         public string[] jsApiList { get; set; }
 
         /// <summary>
-        /// Éú³É jsapi ÖĞµÄ wx.config ·½·¨ĞèÒªµÄ²ÎÊı
+        /// ç”Ÿæˆ jsapi ä¸­çš„ wx.config æ–¹æ³•éœ€è¦çš„å‚æ•°
         /// </summary>
-        /// <param name="ticketManager">jsapi-ticket µÄ¹ÜÀíÕß</param>
-        /// <param name="appId">Î¢ĞÅÓ¦ÓÃÎ¨Ò»±êÊ¶</param>
-        /// <param name="url">ĞèÒªµ÷ÓÃ wx.config Ò³ÃæµÄÍêÕûÍøÖ·</param>
-        /// <param name="jsApiList">ĞèÒªµÄ½Ó¿ÚÃû³ÆÁĞ±í</param>
-        /// <param name="debug">Ö»·ñ¿ªÆôµ÷¶ÈÄ£Ê½</param>
+        /// <param name="ticketManager">jsapi-ticket çš„ç®¡ç†è€…</param>
+        /// <param name="appId">å¾®ä¿¡åº”ç”¨å”¯ä¸€æ ‡è¯†</param>
+        /// <param name="url">éœ€è¦è°ƒç”¨ wx.config é¡µé¢çš„å®Œæ•´ç½‘å€</param>
+        /// <param name="jsApiList">éœ€è¦çš„æ¥å£åç§°åˆ—è¡¨</param>
+        /// <param name="debug">æ˜¯å¦å¼€å¯è°ƒåº¦æ¨¡å¼</param>
         /// <returns></returns>
         public static async Task<JsConfig> Generate(IJsapiTicketManager ticketManager, string appId, string url, string[] jsApiList, bool debug = false)
         {
