@@ -11,7 +11,7 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><span></span>
+<p>
 <br></p>
 <p><span></span></p>
 <p><span><strong><span>更新通知</span></strong></span></p>
@@ -195,9 +195,7 @@
 <table cellspacing="0" cellpadding="2" width="700px">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell"><span>参数名</span></th><th class="table_cell"><span>描述</span></th></tr>
-<tr><td class="table_cell"><span>merchant_id</span></td><td class="table_cell"><span>子商户id，对于一个母商户公众号下唯一。创建卡券时需填入该id号，字段结构如下：</span>
-<p><span>base_info：｛sub_merchant_info:｛merchant_id：｝｝，详情见</span><a href="http://mp.weixin.qq.com/wiki/13/0bdfcbc15653762842de7e51aac317e9.html" class="external text" rel="nofollow"><span>创建卡券接口</span></a></p>
-</td></tr>
+<tr><td class="table_cell"><span>merchant_id</span></td><td class="table_cell"><span>子商户id，对于一个母商户公众号下唯一</span></td></tr>
 <tr><td class="table_cell"><span>create_time</span></td><td class="table_cell"><span>子商户信息创建时间</span></td></tr>
 <tr><td class="table_cell"><span>update_time</span></td><td class="table_cell"><span>子商户信息更新时间</span></td></tr>
 <tr><td class="table_cell"><span>brand_name</span></td><td class="table_cell"><span>子商户名称（12个汉字内），该名称将在制券时填入并显示在卡券页面上。</span></td></tr>
@@ -427,18 +425,9 @@
 <h3><span><strong>
 <br></strong></span></h3>
 <h3><span><strong><a name="1.7"></a>1.7 创建子商户卡券接口</strong></span></h3>
-<p><span>若母商户需创建自己的卡券，参考原有卡券创建接口即可；</span></p>
-<p><em><span><span label="明显强调">若母商户需为子商户创建会员卡&amp;优惠券，需在原有卡券创建接口的基础上，增加该模式的特有字段（子商户ID），字段结构如下：</span></span></em></p>
-<p><span label="明显强调"><em><span>base_info：｛sub_merchant_info:｛merchant_id：｝｝。</span></em></span><em><span></span></em></p>
-<p><span>若子商户资料通过微信公众平台提交，可在微信公众平台卡券功能-子商户管理-子商户详情里查看子商户ID；</span></p>
-<p><span>若通过创建子商户接口上传子商户资料，该接口返回字段内会带上子商户ID，或通过子商户信息拉取接口批量获取子商户ID。</span></p>
-<p><span><strong>备注：</strong></span></p>
-<p><span><strong>1、支持创建子商户会员卡、朋友券、普通券</strong></span></p>
-<p><span><strong>2、代制模式有制券配额限制，具体规则详情查询<a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1459357007&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank">《微信卡券第三方代制指引文档》</a></strong></span>的“三、制券数量限制”说明：</p>
-<p>&nbsp; &nbsp; &nbsp;第三方公众号每月可为每个子商户代制10个cardid，每个cardid累计库存量不超过10000份。</p>
-<p>&nbsp; &nbsp; &nbsp; 具体的数量限制会随运营规则逐步调整，请留意平台更新。</p>
-<p>
-<br></p>
+<p><span>若母商户需创建自己的卡券，参考原有卡券创建接口</span></p>
+<p><span>
+<br></span></p>
 <p><span><strong>接口调用请求说明</strong></span></p>
 <pre><span>HTTP请求方式:&nbsp;POST&nbsp;<br>URL:https://api.weixin.qq.com/card/create?access_token=ACCESS_TOKEN
 <br></span></pre>
@@ -452,10 +441,10 @@
 </tbody>
 </table>
 <p><span><strong>POST数据示例</strong></span></p>
-<pre><span>{ <br> "card": {<br> &nbsp;"card_type": "GROUPON",<br> &nbsp;"groupon": {<br> &nbsp; &nbsp; &nbsp;"base_info": {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"logo_url": <br> &nbsp;"http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZJkmG8xXhiaHqkKSVMMWeN3hLut7X7hicFNjakmxibMLGWpXrEXB33367o7zHN0CwngnQY7zb7g/0",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"brand_name":"海底捞",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"code_type":"CODE_TYPE_TEXT",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"title": "132元双人火锅套餐",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"sub_title": "周末狂欢必备",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"color": "Color010",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"notice": "使用时向服务员出示此券",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"service_phone": "020-88888888",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"description": "不可与其他优惠同享\n如需团购券发票，请在消费时向商户提出\n店内均可使用，仅限堂食",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"date_info": {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"type": "DATE_TYPE_FIX_TIME_RANGE",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"begin_timestamp": 1397577600 ,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"end_timestamp": 1422724261<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"sku": {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"quantity": 500000<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"get_limit": 3,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"use_custom_code": false,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"bind_openid": false,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"can_share": true,<br> &nbsp; &nbsp; &nbsp; &nbsp;"can_give_friend": true,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"location_id_list" : [123, 12321, 345345],<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"custom_url_name": "立即使用",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"custom_url": "http://www.qq.com",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"custom_url_sub_title": "6个汉字tips",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"promotion_url_name": "更多优惠",<br> &nbsp; &nbsp; &nbsp; &nbsp;"promotion_url": "http://www.qq.com",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"source": "大众点评" &nbsp; <br> &nbsp; &nbsp; &nbsp;<br> &nbsp; &nbsp; &nbsp; {<br> &nbsp;<span label="明显强调"> &nbsp; &nbsp; "sub_merchant_info":{<br> &nbsp; &nbsp; &nbsp; "merchant_id":11<br> &nbsp; &nbsp; &nbsp; }</span><br> &nbsp; },<br> &nbsp; &nbsp; &nbsp;"deal_detail": "以下锅底2选1（有菌王锅、麻辣锅、大骨锅、番茄锅、清补凉锅、酸菜鱼锅可选）：\n大锅1份 12元\n小锅2份 16元 "}<br> }<br>}
+<pre><span>{ <br> "card": {<br> &nbsp;"card_type": "GROUPON",<br> &nbsp;"groupon": {<br> &nbsp; &nbsp; &nbsp;"base_info": {<br> &nbsp; &nbsp;<span label="明显强调"> &nbsp; &nbsp; &nbsp; &nbsp; {<br> &nbsp; &nbsp; &nbsp; "sub_merchant_info":{<br> &nbsp; &nbsp; &nbsp; "merchant_id":xxx<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },</span><br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"logo_url": <br> &nbsp;"http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZJkmG8xXhiaHqkKSVMMWeN3hLut7X7hicFNjakmxibMLGWpXrEXB33367o7zHN0CwngnQY7zb7g/0",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"brand_name":"海底捞",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"code_type":"CODE_TYPE_TEXT",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"title": "132元双人火锅套餐",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"sub_title": "周末狂欢必备",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"color": "Color010",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"notice": "使用时向服务员出示此券",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"service_phone": "020-88888888",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"description": "不可与其他优惠同享\n如需团购券发票，请在消费时向商户提出\n店内均可使用，仅限堂食",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"date_info": {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"type": "DATE_TYPE_FIX_TIME_RANGE",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"begin_timestamp": 1397577600 ,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"end_timestamp": 1422724261<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"sku": {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"quantity": 500000<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"get_limit": 3,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"use_custom_code": false,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"bind_openid": false,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"can_share": true,<br> &nbsp; &nbsp; &nbsp; &nbsp;"can_give_friend": true,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"location_id_list" : [123, 12321, 345345],<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"custom_url_name": "立即使用",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"custom_url": "http://www.qq.com",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"custom_url_sub_title": "6个汉字tips",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"promotion_url_name": "更多优惠",<br> &nbsp; &nbsp; &nbsp; &nbsp;"promotion_url": "http://www.qq.com",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"source": "大众点评"<br> &nbsp; },<br> &nbsp; &nbsp; &nbsp;"deal_detail": "以下锅底2选1（有菌王锅、麻辣锅、大骨锅、番茄锅、清补凉锅、酸菜鱼锅可选）：\n大锅1份 12元\n小锅2份 16元 "}<br> }<br>}
 <br></span></pre>
-<p><span>优惠券字段详情详见&nbsp;</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025056&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="创建卡券接口">创建卡券接口</a></p>
-<p>会员卡字段详情见 <a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025283&amp;token=&amp;lang=zh_CN" target="_blank">创建会员卡接口</a></p>
+<p><span>优惠券字段详情详见&nbsp;</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025056&amp;token=&amp;lang=zh_CN&amp;anchor=2" target="_blank" textvalue="创建卡券接口">创建卡券接口</a></p>
+<p>会员卡字段详情见 <a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025283&amp;token=&amp;lang=zh_CN&amp;anchor=4.1" target="_blank" textvalue="创建会员卡接口">创建会员卡接口</a></p>
 <p>
 <br></p>
 <h3><strong><a name="1.8"></a>1.8 错误码说明</strong>

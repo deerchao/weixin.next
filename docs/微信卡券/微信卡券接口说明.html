@@ -11,7 +11,7 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<h1></h1>
+<h1><span></span></h1>
 <ul class=" list-paddingleft-2">
 <li>
 <p><a href="#1" target="_self"><span>1&nbsp;须知</span></a></p>
@@ -57,10 +57,10 @@
 <p>
 <br></p>
 <h2><span><strong>2 </strong><strong><a name="2"></a>申请沙箱测试账号</strong></span></h2>
-<p><span>如果你没有可用的卡券测试账号，可以通过微信接口测试号申请工具申请一个临时测试号用于卡券测试。你可以登录</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421137522&amp;token=&amp;lang=zh_CN" target="_blank"><span>接口测试号申请&nbsp;</span></a><span>通过微信扫一扫获得一个全新的appid<strong>(已拥有卡券创建权限，包括朋友的券)</strong>和appsecret用于卡券接口调用。</span></p>
+<p><span>如果你没有可用的卡券测试账号，可以通过微信接口测试号申请工具申请一个临时测试号用于卡券测试。你可以登录</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421137522&amp;token=&amp;lang=zh_CN" target="_blank"><span>接口测试号申请&nbsp;</span></a><span>通过微信扫一扫获得一个全新的appid<strong>(已拥有卡券创建权限，包括朋友的券和会员卡)</strong>和appsecret用于卡券接口调用。</span></p>
 <p>
 <br></p>
-<p><span>注意：该appid创建的卡券不会被审核通过，仅限于小范围测试，开发者不可用于其他用途。</span></p>
+<p><span>注意：该appid创建的卡券不会被审核通过，仅白名单内用户可以领取，用于小范围测试，开发者不可用于其他用途。</span></p>
 <p>
 <br></p>
 <h2><span><strong><a name="3"></a>3&nbsp;卡券HelloWorld</strong></span></h2>
@@ -200,12 +200,12 @@
 <p><span>调用接口的凭证，有效时间为7200s，每次请求刷新，</span></p>
 <p><span>通过<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183&amp;token=&amp;lang=zh_CN" target="_blank"><span>获取access_token接口</span></a>获取,开发者需妥善保存并建立缓存机制。</span></p>
 </td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1"><span>jsapi_ticket</span></td><td class="table_cell" colspan="1" rowspan="1"><span>调用微信内网页调用微信原生功能的JS-SDK接口须使用的签名票据，详情见:<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115&amp;token=&amp;lang=zh_CN" target="_blank">JS-SDK部分</a></span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>jsapi_ticket</span></td><td class="table_cell" colspan="1" rowspan="1"><span>调用微信内网页调用微信原生功能的JS-SDK接口须使用的签名票据，详情见:</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115&amp;token=&amp;lang=zh_CN" target="_blank">JS-SDK部分</a></td></tr>
 <tr><td class="table_cell">
 <p><span>api_ticket</span></p>
 </td><td class="table_cell">
 <p><span>调用微信卡券接口时签名的临时票据，有效时间为7200s，</span></p>
-<p><span>7200s内重复请求保持不变，<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141115&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取api_ticket接口"><span>获取api_ticket接口</span></a>获取。</span></p>
+<p><span>7200s内重复请求保持不变，<span>获取api_ticket接口</span>获取。</span></p>
 </td></tr>
 <tr><td class="table_cell">
 <p><span>card_ext</span></p>
@@ -215,13 +215,13 @@
 <tr><td class="table_cell">
 <p><span>outer_id</span></p>
 </td><td class="table_cell">
-<p><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025062&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="领券渠道的场景值"><span>领券渠道的场景值</span></a><span>。支持商户自定义场景值填入card_ext进行卡券投放，</span></p>
+<p><span>领券渠道的场景值</span><span>。支持商户自定义场景值填入card_ext进行卡券投放，</span></p>
 <p><span>当用户领取时会将相应场景值通过事件通知商户。</span></p>
 </td></tr>
 <tr><td class="table_cell">
 <p><span>事件推送</span></p>
 </td><td class="table_cell">
-<p><span>在<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025274&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="卡券通过审核、卡券被领取、卡券被删除、卡券被核销"><span>卡券通过审核、卡券被领取、卡券被删除、卡券被核销</span></a>时，</span></p>
+<p><span>在<span>卡券通过审核、卡券被领取、卡券被删除、卡券被核销</span>时，</span></p>
 <p><span>均会推送事件通知开发者，接收地址为公众平台开发者中心填写的服务器URL。</span></p>
 </td></tr>
 <tr><td class="table_cell">

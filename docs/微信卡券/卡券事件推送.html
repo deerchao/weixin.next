@@ -15,19 +15,20 @@
 <p><a href="#1" target="_self"><span>1 更新日志</span></a></p>
 <p><a href="#2" target="_self"><span>2 卡券事件推送</span></a></p>
 <p><a href="#2.1" target="_self"><span>2.1 审核事件推送</span></a></p>
-<p><a href="#2.2" target="_self"><span>2.2 领取事件推送</span></a></p>
-<p><a href="#2.3" target="_self"><span>2.3 删除事件推送</span></a></p>
-<p><a href="#2.4" target="_self"><span>2.4 核销事件推送</span></a></p>
-<p><a href="#2.5" target="_self"><span>2.5 买单事件推送</span></a></p>
-<p><a href="#2.6" target="_self"><span>2.6 进入会员卡事件推送</span></a></p>
-<p><a href="#2.7" target="_self"><span>2.7 从卡券进入公众号会话事件推送</span></a></p>
-<p><a href="#2.8" target="_self"><span>2.8 会员卡内容更新事件</span></a></p>
-<p><a href="#2.9" target="_self"><span>2.9 库存报警事件</span></a></p>
-<p><a href="#2.10" target="_self"><span>2.10 券点流水详情事件</span></a></p>
-<p><a href="#2.11" target="_self" textvalue="2.11 会员卡激活事件推送">2.11 会员卡激活事件推送</a></p>
+<p><span><a href="#2.2" target="_self">2.2 领取事件推送</a></span></p>
+<p><a href="#2.3" target="_self"><span>2.3转赠事件推送</span></a></p>
+<p><a href="#2.4" target="_self" textvalue="2.4 删除事件推送"><span>2.4 删除事件推送</span></a></p>
+<p><a href="#2.5" target="_self" textvalue="2.5 核销事件推送"><span>2.5 核销事件推送</span></a></p>
+<p><a href="#2.6" target="_self" textvalue="2.6 买单事件推送"><span>2.6 买单事件推送</span></a></p>
+<p><a href="#2.7" target="_self" textvalue="2.7 进入会员卡事件推送"><span>2.7 进入会员卡事件推送</span></a></p>
+<p><a href="#2.8" target="_self" textvalue="2.8 从卡券进入公众号会话事件推送"><span>2.8 从卡券进入公众号会话事件推送</span></a></p>
+<p><a href="#2.9" target="_self" textvalue="2.9 会员卡内容更新事件"><span>2.9 会员卡内容更新事件</span></a></p>
+<p><a href="#2.10" target="_self" textvalue="2.10 库存报警事件"><span>2.10 库存报警事件</span></a></p>
+<p><a href="#2.11" target="_self" textvalue="2.11 券点流水详情事件"><span>2.11 券点流水详情事件</span></a></p>
+<p><a href="#2.12" target="_self" textvalue="2.12 会员卡激活事件推送"><span>2.12 会员卡激活事件推送</span></a></p>
 <h2><span></span></h2>
 <p><a name="1"></a></p>
-<h2><span>更新日志
+<h2><span>1.更新日志
 <br></span></h2>
 <table cellspacing="0" cellpadding="2" align="center" width="700px">
 <tbody>
@@ -36,22 +37,25 @@
 <tr><td class="table_cell"><span>V1.1</span></td><td class="table_cell"><span>核销事件新增买单相关字段，商户订单号和微信支付交易订单号。</span></td><td class="table_cell"><span>2015-9-8</span></td></tr>
 <tr><td class="table_cell"><span>V1.2</span></td><td class="table_cell"><span>新增库存报警事件，当用户领取到最好一张卡券的时候推送库存报警事件</span></td><td class="table_cell"><span>2015-9-8</span></td></tr>
 <tr><td class="table_cell"><span>V1.3</span></td><td class="table_cell"><span>新增库会员卡内容更新事件，通过事件告知开发者积分和余额变动情况</span></td><td class="table_cell"><span>2015-10-28</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>V1.4</span></td><td class="table_cell" colspan="1" rowspan="1"><span>新增转赠会员卡接口</span></td><td class="table_cell" colspan="1" rowspan="1"><span>2016-9-19</span></td></tr>
 </tbody>
 </table>
 <h2><span></span></h2>
 <p><a name="2"></a></p>
-<h2><span>卡券事件推送
+<h2><span>2.卡券事件推送
 <br></span></h2>
-<p><span>卡券通过审核、卡券被用户领取、卡券被用户删除、卡券被商户核销、从卡券进入公众号等情况均会触发事件推送，该事件将发送至开发者填写的URL<strong>（登录公众平台进入开发者中心设置）</strong>。 开发者可通过事件推送完成数据统计、用户身份识别等操作。</span></p>
+<p><span>卡券通过审核、卡券被用户领取、卡券被用户删除、卡券被商户核销、从卡券进入公众号等情况均会触发事件推送，该事件将发送至开发者填写的URL<strong>（<a href="http://mp.weixin.qq.com" target="_blank">登录公众平台</a>进入【<strong>开发者中心设置</strong>】）</strong>。 开发者可通过事件推送完成数据统计、用户身份识别等操作。</span></p>
+<p><span>
+<br></span></p>
 <p><span>微信服务器在五秒内收不到响应会断掉连接，并且重新发起请求，总共重试三次。关于重试的消息排重，推荐使用FromUserName + CreateTime 排重。假如服务器无法保证在五秒内处理并回复，可以直接回复空串，微信服务器不会对此作任何处理，并且不会发起重试。</span></p>
 <p>
 <br></p>
 <h3><span></span></h3>
 <p><a name="2.1"></a></p>
-<h3><span><strong>审核事件推送</strong>
+<h3><span><strong>2.1 审核事件推送</strong>
 <br></span></h3>
 <p><span>生成的卡券通过审核时，微信会把这个事件推送到开发者填写的URL。</span></p>
-<pre><span>&lt;xml&gt;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;&nbsp;<br>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;&nbsp;<br>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;&nbsp;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;&nbsp;<br>&lt;Event&gt;&lt;![CDATA[card_pass_check]]&gt;&lt;/Event&gt;&nbsp;&nbsp;//不通过为card_not_pass_check<br>&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt;&nbsp;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;123456789&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt;&lt;![CDATA[card_pass_check]]&gt;&lt;/Event&gt; //不通过为card_not_pass_check <br> &nbsp;&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;RefuseReason&gt;&lt;![CDATA[非法代制]]&gt;&lt;/RefuseReason&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p><span>参数说明：</span></p>
 <table cellspacing="0" cellpadding="4" align="center" width="700px">
@@ -63,15 +67,18 @@
 <tr><td class="table_cell"><span>MsgType</span></td><td class="table_cell"><span>消息类型，event</span></td></tr>
 <tr><td class="table_cell"><span>Event</span></td><td class="table_cell"><span>事件类型，card_pass_check(卡券通过审核)、card_not_pass_check（卡券未通过审核）</span></td></tr>
 <tr><td class="table_cell"><span>CardId</span></td><td class="table_cell"><span>卡券ID</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">
+<p><span>RefuseReason</span></p>
+</td><td class="table_cell" colspan="1" rowspan="1"><span>审核不通过原因</span></td></tr>
 </tbody>
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <h3><span></span></h3>
 <p><a name="2.2"></a></p>
-<h3><span><strong>领取事件推送</strong>
+<h3><span><strong>2.2 领取事件推送</strong>
 <br></span></h3>
 <p><span>用户在领取卡券时，微信会把这个事件推送到开发者填写的URL。 推送XML数据包示例：</span></p>
-<pre><span>&lt;xml&gt;&nbsp;<br>&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;&nbsp;<br>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;&nbsp;<br>&lt;FriendUserName&gt;&lt;![CDATA[FriendUser]]&gt;&lt;/FriendUserName&gt;&nbsp;<br>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;&nbsp;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;&nbsp;<br>&lt;Event&gt;&lt;![CDATA[user_get_card]]&gt;&lt;/Event&gt;&nbsp;<br>&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt;&nbsp;<br>&lt;IsGiveByFriend&gt;1&lt;/IsGiveByFriend&gt;<br>&lt;UserCardCode&gt;&lt;![CDATA[12312312]]&gt;&lt;/UserCardCode&gt;<br>&lt;OuterId&gt;0&lt;/OuterId&gt;<br> &lt;OuterStr&gt;&lt;![CDATA[12b]]&gt;&lt;/OuterStr&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt; &lt;![CDATA[gh_fc0a06a20993]]&gt; &lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt; &lt;![CDATA[oZI8Fj040-be6rlDohc6gkoPOQTQ]]&gt; &lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1472551036&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt; &lt;![CDATA[event]]&gt; &lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt; &lt;![CDATA[user_get_card]]&gt; &lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt; &lt;![CDATA[pZI8Fjwsy5fVPRBeD78J4RmqVvBc]]&gt; &lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;IsGiveByFriend&gt;0&lt;/IsGiveByFriend&gt; &nbsp;<br> &nbsp;&lt;UserCardCode&gt; &lt;![CDATA[226009850808]]&gt; &lt;/UserCardCode&gt; &nbsp;<br> &nbsp;&lt;FriendUserName&gt; &lt;![CDATA[]]&gt; &lt;/FriendUserName&gt; &nbsp;<br> &nbsp;&lt;OuterId&gt;0&lt;/OuterId&gt; &nbsp;<br> &nbsp;&lt;OldUserCardCode&gt; &lt;![CDATA[]]&gt; &lt;/OldUserCardCode&gt; &nbsp;<br> &nbsp;&lt;OuterStr&gt; &lt;![CDATA[12b]]&gt; &lt;/OuterStr&gt; &nbsp;<br> &nbsp;&lt;IsRestoreMemberCard&gt;0&lt;/IsRestoreMemberCard&gt; &nbsp;<br> &nbsp;&lt;IsRecommendByFriend&gt;0&lt;/IsRecommendByFriend&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p>
 <br><span>参数说明：</span></p>
@@ -80,23 +87,67 @@
 <tr class="firstRow thead"><th class="table_cell"><span>参数</span></th><th class="table_cell"><span>说明</span></th></tr>
 <tr><td class="table_cell"><span>ToUserName</span></td><td class="table_cell"><span>开发者微信号。</span></td></tr>
 <tr><td class="table_cell"><span>FromUserName</span></td><td class="table_cell"><span>领券方帐号（一个OpenID）。</span></td></tr>
-<tr><td class="table_cell"><span>FriendUserName</span></td><td class="table_cell"><span>赠送方账号（一个OpenID），"IsGiveByFriend”为1时填写该参数。</span></td></tr>
 <tr><td class="table_cell"><span>CreateTime</span></td><td class="table_cell"><span>消息创建时间 （整型）。</span></td></tr>
 <tr><td class="table_cell"><span>MsgType</span></td><td class="table_cell"><span>消息类型，event</span></td></tr>
 <tr><td class="table_cell"><span>Event</span></td><td class="table_cell"><span>事件类型，user_get_card(用户领取卡券)。</span></td></tr>
 <tr><td class="table_cell"><span>CardId</span></td><td class="table_cell"><span>卡券ID。</span></td></tr>
-<tr><td class="table_cell"><span>IsGiveByFriend</span></td><td class="table_cell"><span>是否为转赠，1代表是，0代表否。</span></td></tr>
-<tr><td class="table_cell"><span>UserCardCode</span></td><td class="table_cell"><span>code序列号。自定义code及非自定义code的卡券被领取后都支持事件推送。</span></td></tr>
-<tr><td class="table_cell"><span>OldUserCardCode</span></td><td class="table_cell"><span>转赠前的code序列号。</span></td></tr>
-<tr><td class="table_cell"><span>OuterId</span></td><td class="table_cell"><span>领取场景值，用于领取渠道数据统计。可在生成二维码接口及添加JS API接口中自定义该字段的整型值。</span></td></tr>
+<tr><td class="table_cell"><span>IsGiveByFriend</span></td><td class="table_cell"><span>是否为转赠领取，1代表是，0代表否。</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>FriendUserName</span></td><td class="table_cell" colspan="1" rowspan="1"><span>当IsGiveByFriend为1时填入的字段，表示发起转赠用户的openid</span></td></tr>
+<tr><td class="table_cell"><span>UserCardCode</span></td><td class="table_cell"><span>code序列号。</span></td></tr>
+<tr><td class="table_cell"><span>OldUserCardCode</span></td><td class="table_cell"><span>为保证安全，微信会在转赠发生后变更该卡券的code号，该字段表示转赠前的code。</span></td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1"><span>OuterStr
-<br></span></td><td class="table_cell" colspan="1" rowspan="1"><span>领取场景值，OuterId的升级版本，用于领取渠道数据统计。可在生成二维码接口及添加JS API接口中自定义该字段的字符串值</span></td></tr>
+<br></span></td><td class="table_cell" colspan="1" rowspan="1"><span>领取场景值，用于领取渠道数据统计。可在生成二维码接口及添加Addcard接口中自定义该字段的字符串值。</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>IsRestoreMemberCard</span></td><td class="table_cell" colspan="1" rowspan="1"><span>用户删除会员卡后可重新找回，当用户本次操作为找回时，该值为1，否则为0</span></td></tr>
 </tbody>
 </table>
-<p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
+<p><span><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank">使用网页调试工具调试该接口</a></span></p>
+<p>
+<br></p>
+<p><a name="2.3"></a>
+<br></p>
+<h3><span><strong>2.3转赠事件推送</strong>
+<br></span></h3>
+<p><span>用户在转赠卡券时，微信会把这个事件推送到开发者填写的URL。 推送XML数据包示例：</span></p>
+<p><span>
+<br></span></p>
+<pre>&lt;xml&gt;
+&nbsp;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_3fcea188bf78]]&gt;&lt;/ToUserName&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;FromUserName&gt;&lt;![CDATA[obLatjjwDolFjRRd3doGIdwNqRXw]]&gt;&lt;/FromUserName&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;CreateTime&gt;1474181868&lt;/CreateTime&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;Event&gt;&lt;![CDATA[user_gifting_card]]&gt;&lt;/Event&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;CardId&gt;&lt;![CDATA[pbLatjhU-3pik3d4PsbVzvBxZvJc]]&gt;&lt;/CardId&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;UserCardCode&gt;&lt;![CDATA[297466945104]]&gt;&lt;/UserCardCode&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;IsReturnBack&gt;0&lt;/IsReturnBack&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;FriendUserName&gt;&lt;![CDATA[obLatjlNerkb62HtSdQUx66C4NTU]]&gt;&lt;/FriendUserName&gt;&nbsp;&nbsp;
+&nbsp;&nbsp;&lt;IsChatRoom&gt;0&lt;/IsChatRoom&gt;&nbsp;
+&lt;/xml&gt;</pre>
+<p>
+<br></p>
+<p><span>参数说明：</span></p>
+<table cellspacing="0" cellpadding="4" align="center" width="700px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell"><span>参数</span></th><th class="table_cell"><span>说明</span></th></tr>
+<tr><td class="table_cell"><span>ToUserName</span></td><td class="table_cell"><span>开发者微信号。</span></td></tr>
+<tr><td class="table_cell"><span>FromUserName</span></td><td class="table_cell"><span>领券方帐号（一个OpenID）。</span></td></tr>
+<tr><td class="table_cell"><span>CreateTime</span></td><td class="table_cell"><span>消息创建时间 （整型）。</span></td></tr>
+<tr><td class="table_cell"><span>MsgType</span></td><td class="table_cell"><span>消息类型，event</span></td></tr>
+<tr><td class="table_cell"><span>Event</span></td><td class="table_cell"><span>事件类型，user_gifting_card(用户转赠卡券)。</span></td></tr>
+<tr><td class="table_cell"><span>CardId</span></td><td class="table_cell"><span>卡券ID。</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>FriendUserName</span></td><td class="table_cell" colspan="1" rowspan="1"><span>接收卡券用户的openid</span></td></tr>
+<tr><td class="table_cell"><span>UserCardCode</span></td><td class="table_cell"><span>code序列号。</span></td></tr>
+<tr><td class="table_cell">
+<p><span>IsReturnBack</span></p>
+<span></span></td><td class="table_cell"><span>是否转赠退回，0代表不是，1代表是。</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">
+<p><span>IsChatRoom</span></p>
+<span></span></td><td class="table_cell" colspan="1" rowspan="1"><span>是否是群转赠</span></td></tr>
+</tbody>
+</table>
+<p><span><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank">使用网页调试工具调试该接口</a></span></p>
 <h3><span></span></h3>
-<p><a name="2.3"></a></p>
-<h3><span><strong>删除事件推送</strong>
+<p><a name="2.4"></a></p>
+<h3><span><strong>2.4 删除事件推送</strong>
 <br></span></h3>
 <p><span>用户在删除卡券时，微信会把这个事件推送到开发者填写的URL。 推送XML数据包示例：</span></p>
 <pre><span>&lt;xml&gt;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;&nbsp;<br>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;&nbsp;<br>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;&nbsp;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;&nbsp;<br>&lt;Event&gt;&lt;![CDATA[user_del_card]]&gt;&lt;/Event&gt;&nbsp;<br>&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt;&nbsp;<br>&lt;UserCardCode&gt;&lt;![CDATA[12312312]]&gt;&lt;/UserCardCode&gt;<br>&lt;/xml&gt;
@@ -116,11 +167,11 @@
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <h3><span></span></h3>
-<p><a name="2.4"></a></p>
-<h3><span><strong>核销事件推送</strong>
+<p><a name="2.5"></a></p>
+<h3><span><strong>2.5 核销事件推送</strong>
 <br></span></h3>
 <p><span>卡券被核销时，微信会把这个事件推送到开发者填写的URL。 推送XML数据包示例：</span></p>
-<pre><span>&lt;xml&gt;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;&nbsp;<br>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;&nbsp;<br>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;&nbsp;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;&nbsp;<br>&lt;Event&gt;&lt;![CDATA[user_consume_card]]&gt;&lt;/Event&gt;&nbsp;<br>&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt;&nbsp;<br>&lt;UserCardCode&gt;&lt;![CDATA[12312312]]&gt;&lt;/UserCardCode&gt;<br>&lt;ConsumeSource&gt;&lt;![CDATA[(FROM_API)]]&gt;&lt;/ConsumeSource&gt;<br>&lt;OutTradeNo&gt;&lt;![CDATA[aaaaaaaaaaaa]]&gt;&lt;/OutTradeNo&gt;<br>&lt;TransId&gt;&lt;![CDATA[bbbbbbbbbb]]&gt;&lt;/TransId&gt;<br>&lt;LocationId&gt;&lt;![CDATA[222222]]&gt;&lt;/LocationId&gt;<br>&lt;StaffOpenId&gt;&lt;![CDATA[obLatjjwDolFjRRd3doGIdwNqRXw]&gt;&lt;/StaffOpenId&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt; &lt;![CDATA[gh_fc0a06a20993]]&gt; &lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt; &lt;![CDATA[oZI8Fj040-be6rlDohc6gkoPOQTQ]]&gt; &lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1472549042&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt; &lt;![CDATA[event]]&gt; &lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt; &lt;![CDATA[user_consume_card]]&gt; &lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt; &lt;![CDATA[pZI8Fj8y-E8hpvho2d1ZvpGwQBvA]]&gt; &lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;UserCardCode&gt; &lt;![CDATA[452998530302]]&gt; &lt;/UserCardCode&gt; &nbsp;<br> &nbsp;&lt;ConsumeSource&gt; &lt;![CDATA[FROM_API]]&gt; &lt;/ConsumeSource&gt; &nbsp;<br> &nbsp;&lt;LocationName&gt; &lt;![CDATA[]]&gt; &lt;/LocationName&gt; &nbsp;<br> &nbsp;&lt;StaffOpenId&gt; &lt;![CDATA[oZ********nJ3bPJu_Rtjkw4c]]&gt; &lt;/StaffOpenId&gt; &nbsp;<br> &nbsp;&lt;VerifyCode&gt; &lt;![CDATA[]]&gt; &lt;/VerifyCode&gt; &nbsp;<br> &nbsp;&lt;RemarkAmount&gt; &lt;![CDATA[]]&gt; &lt;/RemarkAmount&gt; &nbsp;<br> &nbsp;&lt;OuterStr&gt; &lt;![CDATA[xxxxx]]&gt; &lt;/OuterStr&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <table cellspacing="0" cellpadding="4" align="center" width="700px">
 <tbody>
@@ -133,17 +184,24 @@
 <tr><td class="table_cell"><span>CardId</span></td><td class="table_cell"><span>卡券ID。</span></td></tr>
 <tr><td class="table_cell"><span>UserCardCode</span></td><td class="table_cell"><span>卡券Code码。</span></td></tr>
 <tr><td class="table_cell"><span>ConsumeSource</span></td><td class="table_cell"><span>核销来源。支持开发者统计API核销（FROM_API）、公众平台核销（FROM_MP）、卡券商户助手核销（FROM_MOBILE_HELPER）（核销员微信号）</span></td></tr>
-<tr><td class="table_cell"><span>LocationId</span></td><td class="table_cell"><span>门店名称，当前卡券核销的门店名称（只有通过自助核销和买单核销时才会出现）</span></td></tr>
+<tr><td class="table_cell"><span>LocationName</span></td><td class="table_cell"><span>门店名称，当前卡券核销的门店名称（只有通过自助核销和买单核销时才会出现该字段）</span></td></tr>
 <tr><td class="table_cell"><span>StaffOpenId</span></td><td class="table_cell"><span>核销该卡券核销员的openid（只有通过卡券商户助手核销时才会出现）</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">
+<p><span>VerifyCode</span></p>
+</td><td class="table_cell" colspan="1" rowspan="1">
+<p><span>自助核销时，用户输入的验证码</span></p>
+</td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>RemarkAmount</span></td><td class="table_cell" colspan="1" rowspan="1"><span>自助核销<span>时</span>，用户输入的备注金额</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>OuterStr</span></td><td class="table_cell" colspan="1" rowspan="1"><span>开发者发起核销时传入的自定义参数，用于进行核销渠道统计</span></td></tr>
 </tbody>
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <h3><span></span></h3>
-<p><a name="2.5"></a></p>
-<h3><span><strong>买单事件推送</strong>
+<p><a name="2.6"></a></p>
+<h3><span><strong>2.6 买单事件推送</strong>
 <br></span></h3>
 <p><span>微信买单完成时，微信会把这个事件推送到开发者填写的URL。 推送XML数据包示例：</span></p>
-<pre><span>&lt;xml&gt;<br>&lt;ToUserName&gt;&lt;![CDATA[gh_e2243xxxxxxx]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[oo2VNuOUuZGMxxxxxxxx]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442390947&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[user_pay_from_pay_cell]]&gt;&lt;/Event&gt;<br>&lt;CardId&gt;&lt;![CDATA[po2VNuCuRo-8sxxxxxxxxxxx]]&gt;&lt;/CardId&gt;<br>&lt;UserCardCode&gt;&lt;![CDATA[38050000000]]&gt;&lt;/UserCardCode&gt;<br>&lt;TransId&gt;&lt;![CDATA[10022403432015000000000]]&gt;&lt;/TransId&gt;<br>&lt;LocationId&gt;291710000&lt;/LocationId&gt;<br>&lt;Fee&gt;&lt;![CDATA[10000]]&gt;&lt;/Fee&gt;<br>&lt;OriginalFee&gt;&lt;![CDATA[10000]]&gt;&nbsp;&lt;/OriginalFee&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_e2243xxxxxxx]]&gt;&lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt;&lt;![CDATA[oo2VNuOUuZGMxxxxxxxx]]&gt;&lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1442390947&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt;&lt;![CDATA[user_pay_from_pay_cell]]&gt;&lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt;&lt;![CDATA[po2VNuCuRo-8sxxxxxxxxxxx]]&gt;&lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;UserCardCode&gt;&lt;![CDATA[38050000000]]&gt;&lt;/UserCardCode&gt; &nbsp;<br> &nbsp;&lt;TransId&gt;&lt;![CDATA[10022403432015000000000]]&gt;&lt;/TransId&gt; &nbsp;<br> &nbsp;&lt;LocationId&gt;291710000&lt;/LocationId&gt; &nbsp;<br> &nbsp;&lt;Fee&gt;&lt;![CDATA[10000]]&gt;&lt;/Fee&gt; &nbsp;<br> &nbsp;&lt;OriginalFee&gt;&lt;![CDATA[10000]]&gt; &lt;/OriginalFee&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <table cellspacing="0" cellpadding="4" align="center" width="700px">
 <tbody>
@@ -163,13 +221,13 @@
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <h3><span></span></h3>
-<p><a name="2.6"></a></p>
-<h3><span><strong>进入会员卡事件推送</strong>
+<p><a name="2.7"></a></p>
+<h3><span><strong>2.7 进入会员卡事件推送</strong>
 <br></span></h3>
 <p><span>用户在进入会员卡时，微信会把这个事件推送到开发者填写的URL。</span></p>
 <p><span>需要开发者在</span><a href="http://mp.weixin.qq.com/wiki/15/de148cc4b5190c80002eaf4f6f26c717.html#.E6.AD.A5.E9.AA.A4.E4.B8.80.EF.BC.9A.E5.88.9B.E5.BB.BA.E4.BC.9A.E5.91.98.E5.8D.A1" rel="nofollow"><span>创建会员卡</span></a><span>时填入need_push_on_view	字段并设置为true。开发者须综合考虑领卡人数和服务器压力，决定是否接收该事件。</span></p>
 <p><span>推送XML数据包示例：</span></p>
-<pre><span>&lt;xml&gt;<br> &nbsp; &nbsp;&lt;ToUserName&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[gh_fcxxxx6a20993]]&gt;<br> &nbsp; &nbsp;&lt;/ToUserName&gt;<br> &nbsp; &nbsp;&lt;FromUserName&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[oZI8Fj040-xxxxx6gkoPOQTQ]]&gt;<br> &nbsp; &nbsp;&lt;/FromUserName&gt;<br> &nbsp; &nbsp;&lt;CreateTime&gt;1467811138&lt;/CreateTime&gt;<br> &nbsp; &nbsp;&lt;MsgType&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[event]]&gt;<br> &nbsp; &nbsp;&lt;/MsgType&gt;<br> &nbsp; &nbsp;&lt;Event&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[user_view_card]]&gt;<br> &nbsp; &nbsp;&lt;/Event&gt;<br> &nbsp; &nbsp;&lt;CardId&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[pZI8Fj2ezBbxxxxxT2UbiiWLb7Bg]]&gt;<br> &nbsp; &nbsp;&lt;/CardId&gt;<br> &nbsp; &nbsp;&lt;UserCardCode&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[4xxxxxxxx8558]]&gt;<br> &nbsp; &nbsp;&lt;/UserCardCode&gt;<br> &nbsp; &nbsp;&lt;OuterStr&gt;<br> &nbsp; &nbsp; &nbsp; &nbsp;&lt;![CDATA[12b]]&gt;<br> &nbsp; &nbsp;&lt;/OuterStr&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt; &lt;![CDATA[gh_fcxxxx6a20993]]&gt; &lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt; &lt;![CDATA[oZI8Fj040-xxxxx6gkoPOQTQ]]&gt; &lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1467811138&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt; &lt;![CDATA[event]]&gt; &lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt; &lt;![CDATA[user_view_card]]&gt; &lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt; &lt;![CDATA[pZI8Fj2ezBbxxxxxT2UbiiWLb7Bg]]&gt; &lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;UserCardCode&gt; &lt;![CDATA[4xxxxxxxx8558]]&gt; &lt;/UserCardCode&gt; &nbsp;<br> &nbsp;&lt;OuterStr&gt; &lt;![CDATA[12b]]&gt; &lt;/OuterStr&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p><span>参数说明：</span></p>
 <table cellspacing="0" cellpadding="4" align="center" width="700px">
@@ -182,18 +240,18 @@
 <tr><td class="table_cell"><span>Event</span></td><td class="table_cell"><span>事件类型，user_view_card(用户点击会员卡)</span></td></tr>
 <tr><td class="table_cell"><span>CardId</span></td><td class="table_cell"><span>卡券ID。</span></td></tr>
 <tr><td class="table_cell"><span>UserCardCode</span></td><td class="table_cell"><span>商户自定义code值。非自定code推送为空串。</span></td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1"><span>OuterStr</span></td><td class="table_cell" colspan="1" rowspan="1"><span>商户自定义二维码渠道参数，用于标识扫码来源来自于某个渠道值的二维码</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>OuterStr</span></td><td class="table_cell" colspan="1" rowspan="1"><span>商户自定义二维码渠道参数，用于标识本次扫码打开会员卡来源来自于某个渠道值的二维码</span></td></tr>
 </tbody>
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <p>
 <br></p>
 <h3><span></span></h3>
-<p><a name="2.7"></a></p>
-<h3><span><strong>从卡券进入公众号会话事件推送</strong>
+<p><a name="2.8"></a></p>
+<h3><span><strong>2.8 从卡券进入公众号会话事件推送</strong>
 <br></span></h3>
 <p><span>用户在卡券里点击查看公众号进入会话时（需要用户已经关注公众号），微信会把这个事件推送到开发者填写的URL。开发者可识别从卡券进入公众号的用户身份。 推送XML数据包示例：</span></p>
-<pre><span>&lt;xml&gt;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;&nbsp;<br>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;&nbsp;<br>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;&nbsp;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;&nbsp;<br>&lt;Event&gt;&lt;![CDATA[user_enter_session_from_card]]&gt;&lt;/Event&gt;&nbsp;<br>&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt;&nbsp;<br>&lt;UserCardCode&gt;&lt;![CDATA[12312312]]&gt;&lt;/UserCardCode&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;123456789&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt;&lt;![CDATA[user_enter_session_from_card]]&gt;&lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt;&lt;![CDATA[cardid]]&gt;&lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;UserCardCode&gt;&lt;![CDATA[12312312]]&gt;&lt;/UserCardCode&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p><span>参数说明：</span></p>
 <table cellspacing="0" cellpadding="4" align="center" width="700px">
@@ -212,11 +270,11 @@
 <p>
 <br></p>
 <h3><span></span></h3>
-<p><a name="2.8"></a></p>
-<h3><span><strong>会员卡内容更新事件</strong>
+<p><a name="2.9"></a></p>
+<h3><span><strong>2.9 会员卡内容更新事件</strong>
 <br></span></h3>
 <p><span>当用户的会员卡积分余额发生变动时，微信会推送事件告知开发者。 推送XML数据包示例：</span></p>
-<pre><span>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[gh_9e1765b5568e]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[ojZ8YtyVyr30HheH3CM73y7h4jJE]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1445507140&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[update_member_card]]&gt;&lt;/Event&gt;<br>&lt;CardId&gt;&lt;![CDATA[pjZ8Ytx-nwvpCRyQneH3Ncmh6N94]]&gt;&lt;/CardId&gt;<br>&lt;UserCardCode&gt;&lt;![CDATA[485027611252]]&gt;&lt;/UserCardCode&gt;<br>&lt;ModifyBonus&gt;3&lt;/ModifyBonus&gt;<br>&lt;ModifyBalance&gt;0&lt;/ModifyBalance&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt;<br> &nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_9e1765b5568e]]&gt;&lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt;&lt;![CDATA[ojZ8YtyVyr30HheH3CM73y7h4jJE]]&gt;&lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1445507140&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt;&lt;![CDATA[update_member_card]]&gt;&lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt;&lt;![CDATA[pjZ8Ytx-nwvpCRyQneH3Ncmh6N94]]&gt;&lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;UserCardCode&gt;&lt;![CDATA[485027611252]]&gt;&lt;/UserCardCode&gt; &nbsp;<br> &nbsp;&lt;ModifyBonus&gt;3&lt;/ModifyBonus&gt; &nbsp;<br> &nbsp;&lt;ModifyBalance&gt;0&lt;/ModifyBalance&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p>
 <br><span>参数说明：</span></p>
@@ -236,11 +294,11 @@
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <h3><span></span></h3>
-<p><a name="2.9"></a></p>
-<h3><span><strong>库存报警事件</strong>
+<p><a name="2.10"></a></p>
+<h3><span><strong>2.10 库存报警事件</strong>
 <br></span></h3>
 <p><span>当某个card_id的初始库存数大于200且当前库存小于等于100时，用户尝试领券会触发发送事件给商户，事件每隔12h发送一次。</span></p>
-<pre><span>&lt;xml&gt;<br>&lt;ToUserName&gt;&lt;![CDATA[gh_2d62d*****0]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[oa3LFuBvWb7*********]]&gt;&lt;/FromUserName&gt;&nbsp;<br>&lt;CreateTime&gt;1443838506&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[card_sku_remind]]&gt;&lt;/Event&gt;<br>&lt;CardId&gt;&lt;![CDATA[pa3LFuAh2P65**********]]&gt;&lt;/CardId&gt;<br>&lt;Detail&gt;&lt;![CDATA[the&nbsp;card's&nbsp;quantity&nbsp;is&nbsp;equal&nbsp;to&nbsp;0]]&gt;&lt;/Detail&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_2d62d*****0]]&gt;&lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt;&lt;![CDATA[oa3LFuBvWb7*********]]&gt;&lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1443838506&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt;&lt;![CDATA[card_sku_remind]]&gt;&lt;/Event&gt; &nbsp;<br> &nbsp;&lt;CardId&gt;&lt;![CDATA[pa3LFuAh2P65**********]]&gt;&lt;/CardId&gt; &nbsp;<br> &nbsp;&lt;Detail&gt;&lt;![CDATA[the card's quantity is equal to 0]]&gt;&lt;/Detail&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p><span>参数说明：</span></p>
 <table cellspacing="0" cellpadding="4" align="center" width="700px">
@@ -257,11 +315,11 @@
 </table>
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
 <h3><span></span></h3>
-<p><a name="2.10"></a></p>
-<h3><span><strong>券点流水详情事件</strong>
+<p><a name="2.11"></a></p>
+<h3><span><strong>2.11 券点流水详情事件</strong>
 <br></span></h3>
 <p><span>当商户朋友的券券点发生变动时，微信服务器会推送消息给商户服务器。</span></p>
-<pre><span>&lt;xml&gt;<br>&nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_7223c83d4be5]]&gt;&lt;/ToUserName&gt;<br>&nbsp;&lt;FromUserName&gt;&lt;![CDATA[ob5E7s-HoN9tslQY3-0I4qmgluHk]]&gt;&lt;/FromUserName&gt;<br>&nbsp;&lt;CreateTime&gt;1453295737&lt;/CreateTime&gt;<br>&nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&nbsp;&lt;Event&gt;&lt;![CDATA[card_pay_order]]&gt;&lt;/Event&gt;<br>&nbsp;&lt;OrderId&gt;&lt;![CDATA[404091456]]&gt;&lt;/OrderId&gt;<br>&nbsp;&lt;Status&gt;&lt;![CDATA[ORDER_STATUS_FINANCE_SUCC]]&gt;&lt;/Status&gt;<br>&nbsp;&lt;CreateOrderTime&gt;1453295737&lt;/CreateOrderTime&gt;<br>&nbsp;&lt;PayFinishTime&gt;0&lt;/PayFinishTime&gt;<br>&nbsp;&lt;Desc&gt;&lt;![CDATA[]]&gt;&lt;/Desc&gt;<br>&nbsp;&lt;FreeCoinCount&gt;&lt;![CDATA[200]]&gt;&lt;/FreeCoinCount&gt;<br>&nbsp;&lt;PayCoinCount&gt;&lt;![CDATA[0]]&gt;&lt;/PayCoinCount&gt;<br>&nbsp;&lt;RefundFreeCoinCount&gt;&lt;![CDATA[0]]&gt;&lt;/RefundFreeCoinCount&gt;<br>&nbsp;&lt;RefundPayCoinCount&gt;&lt;![CDATA[0]]&gt;&lt;/RefundPayCoinCount&gt;<br>&nbsp;&lt;OrderType&gt;&lt;![CDATA[ORDER_TYPE_SYS_ADD]]&gt;&lt;/OrderType&gt;<br>&nbsp;&lt;Memo&gt;&lt;![CDATA[开通账户奖励]]&gt;&lt;/Memo&gt;<br>&nbsp;&lt;ReceiptInfo&gt;&lt;![CDATA[]]&gt;&lt;/ReceiptInfo&gt;<br>&lt;/xml&gt;
+<pre><span>&lt;xml&gt; <br> &nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_7223c83d4be5]]&gt;&lt;/ToUserName&gt; &nbsp;<br> &nbsp;&lt;FromUserName&gt;&lt;![CDATA[ob5E7s-HoN9tslQY3-0I4qmgluHk]]&gt;&lt;/FromUserName&gt; &nbsp;<br> &nbsp;&lt;CreateTime&gt;1453295737&lt;/CreateTime&gt; &nbsp;<br> &nbsp;&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt; &nbsp;<br> &nbsp;&lt;Event&gt;&lt;![CDATA[card_pay_order]]&gt;&lt;/Event&gt; &nbsp;<br> &nbsp;&lt;OrderId&gt;&lt;![CDATA[404091456]]&gt;&lt;/OrderId&gt; &nbsp;<br> &nbsp;&lt;Status&gt;&lt;![CDATA[ORDER_STATUS_FINANCE_SUCC]]&gt;&lt;/Status&gt; &nbsp;<br> &nbsp;&lt;CreateOrderTime&gt;1453295737&lt;/CreateOrderTime&gt; &nbsp;<br> &nbsp;&lt;PayFinishTime&gt;0&lt;/PayFinishTime&gt; &nbsp;<br> &nbsp;&lt;Desc&gt;&lt;![CDATA[]]&gt;&lt;/Desc&gt; &nbsp;<br> &nbsp;&lt;FreeCoinCount&gt;&lt;![CDATA[200]]&gt;&lt;/FreeCoinCount&gt; &nbsp;<br> &nbsp;&lt;PayCoinCount&gt;&lt;![CDATA[0]]&gt;&lt;/PayCoinCount&gt; &nbsp;<br> &nbsp;&lt;RefundFreeCoinCount&gt;&lt;![CDATA[0]]&gt;&lt;/RefundFreeCoinCount&gt; &nbsp;<br> &nbsp;&lt;RefundPayCoinCount&gt;&lt;![CDATA[0]]&gt;&lt;/RefundPayCoinCount&gt; &nbsp;<br> &nbsp;&lt;OrderType&gt;&lt;![CDATA[ORDER_TYPE_SYS_ADD]]&gt;&lt;/OrderType&gt; &nbsp;<br> &nbsp;&lt;Memo&gt;&lt;![CDATA[开通账户奖励]]&gt;&lt;/Memo&gt; &nbsp;<br> &nbsp;&lt;ReceiptInfo&gt;&lt;![CDATA[]]&gt;&lt;/ReceiptInfo&gt; <br>&lt;/xml&gt;
 <br></span></pre>
 <p>
 <br><span>参数说明：</span></p>
@@ -289,8 +347,10 @@
 <tr><td class="table_cell"><span>ReceiptInfo</span></td><td class="table_cell"><span>所开发票的详情</span></td></tr>
 </tbody>
 </table>
-<p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank"><span>使用网页调试工具调试该接口</span></a></p>
-<h3><span><strong><a name="2.11"></a>会员卡激活事件推送</strong>
+<p><span><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&amp;type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&amp;form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank">使用网页调试工具调试该接口</a></span></p>
+<p><a name="2.12"></a>
+<br></p>
+<h3><span><strong>&nbsp;2.12 会员卡激活事件推送</strong>
 <br></span></h3>
 <p><span>当用户通过一键激活的方式提交信息并点击激活时，商户会收到用户激活的事件推送</span></p>
 <p><span>

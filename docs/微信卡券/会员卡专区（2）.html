@@ -133,7 +133,7 @@
 <p><a href="http://mmbiz.qpic.cn/" class="external free" rel="nofollow" target="_blank">http://mmbiz</a><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 <p><a href="http://mmbiz.qpic.cn/" class="external free" rel="nofollow" target="_blank">.qpic.cn/</a><span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td><td class="table_cell" width="242"><span>卡券的商户logo，建议像素为300*300。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>notice &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string（48） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell">
+<tr><td class="table_cell"><span>notice &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td><td class="table_cell"><span>string（48） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell">
 <p><span>请出示二维 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 <p><span>码核销卡券。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td><td class="table_cell" width="242"><span>使用提醒，字数上限为16个汉字。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
@@ -142,7 +142,7 @@
 <p><span>他优惠同享 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td><td class="table_cell" width="242"><span>使用说明。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>service_phone &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string（24） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>40012234 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="242"><span>客服电话。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>color &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string（3072） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>Color010 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="242"><span>卡券颜色。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>color &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string（3072） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>Color010 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="242"><span>卡券颜色。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>location_id_list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string（3072） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>1234,2314 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="242"><span>支持更新适用门店列表。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td colspan="1" rowspan="1" class="table_cell"><span>use_all_locations</span></td><td colspan="1" rowspan="1" class="table_cell"><span>否&nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>bool</span></td><td colspan="1" rowspan="1" class="table_cell"><span>true</span></td><td colspan="1" rowspan="1" class="table_cell"><span>支持全部门店，填入后卡券门店跟随商户门店更新而更新</span></td></tr>
 <tr><td colspan="1" rowspan="1" class="table_cell"><span>center_title &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>string(18) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>立即使用 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell" width="242">
@@ -188,10 +188,13 @@
 <tbody>
 <tr class="firstRow thead"><th class="table_cell"><span>参数名 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></th><th class="table_cell"><span>是否提审 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></th><th class="table_cell"><span>类型 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></th><th class="table_cell"><span>描述 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></th></tr>
 <tr><td colspan="1" rowspan="1" class="table_cell"><span>background_pic_url &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span><span>string(128)</span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>会员卡自定义卡面背景图 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>bonus_cleared &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>积分清零规则。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>bonus_rules &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>积分规则。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>balance_rules &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>储值说明。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>prerogative &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>特权说明。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>supply_bonus</span></td><td class="table_cell" colspan="1" rowspan="1"><span>是</span></td><td class="table_cell" colspan="1" rowspan="1"><span>bool &nbsp;&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1"><span>是否支持积分，仅支持从false变为true，默认为false</span></td></tr>
+<tr><td class="table_cell"><span>bonus_cleared &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span><span>否</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>积分清零规则。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>bonus_rules &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span><span>否</span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>积分规则。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>supply_balance</span></td><td class="table_cell" colspan="1" rowspan="1"><span>是
+<br></span></td><td class="table_cell" colspan="1" rowspan="1"><span>bool &nbsp;&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1"><span>是否支持储值，仅支持从false变为true，默认为false</span></td></tr>
+<tr><td class="table_cell"><span>balance_rules &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>储值说明。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>prerogative &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span><span>否</span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>string(3072) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>特权说明。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>wx_activate &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>bool &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell">
 <p><span>是否开通一键开卡</span></p>
 <p><span>设置为true时，该卡将支持一键开卡详情见</span><a href="http://mp.weixin.qq.com/wiki/15/de148cc4b5190c80002eaf4f6f26c717.html#.E4.B8.80.E9.94.AE.E5.BC.80.E5.8D.A1" class="external text" rel="nofollow">一键开卡</a><span>。 &nbsp;</span></p>
@@ -202,6 +205,8 @@
 <p><span>，设置为true时用户领取会员卡自动设置为激活，</span></p>
 <p><span>详情见</span><a href="http://mp.weixin.qq.com/wiki/15/de148cc4b5190c80002eaf4f6f26c717.html#.E8.87.AA.E5.8A.A8.E6.BF.80.E6.B4.BB" class="external text" rel="nofollow">自动激活</a><span>。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>activate_url</span></td><td class="table_cell" colspan="1" rowspan="1"><span>否&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1"><span>string(128)
+<br></span></td><td class="table_cell" colspan="1" rowspan="1"><span>激活链接</span></td></tr>
 <tr><td class="table_cell"><span>custom_field1 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>Json结构 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>自定义会员信息类目，会员卡激活后显示。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>custom_field2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>Json结构 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>自定义会员信息类目，会员卡激活后显示。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>custom_field3 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>Json结构 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>自定义会员信息类目，会员卡激活后显示。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
@@ -226,7 +231,7 @@
 <p><span>least_money_to_use_bonus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>int &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>抵扣条件，满xx元（这里以分为单位）可用 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>max_reduce_bonus &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>int &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>抵扣条件，单笔最多使用xx积分 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>discount &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>int &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>折扣，该会员卡享受的折扣优惠 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>discount &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>int &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>折扣，该会员卡享受的折扣优惠 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
 </tbody>
 </table>
 <p><span><strong>
@@ -259,19 +264,8 @@
 <br></p>
 <h2><span><strong><a name="8.3"></a>8.3 设置跟随推荐</strong></span></h2>
 <p><span><strong>功能介绍</strong></span></p>
-<p><span>&nbsp; &nbsp; 支持开发者在积分变动消息底部，配置卡券或设置跳转外链URL，具体形式如下图，可以是URL也可以是一张卡券。</span></p>
+<p><span>&nbsp; &nbsp; 支持开发者在积分、余额变动、会员卡激活等消息底部，配置优惠券或设置跳转外链URL，具体形式如下图，可以是URL也可以是一张卡券。</span></p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKZl4ZoQiaruxAIDR3QYcUxfvOoj70O918h4I17htUorFmrV9QChVDtBA/0?wx_fmt=png" title="" alt=""></p>
-<p>
-<br></p>
-<p><span><strong>开发者注意事项</strong></span></p>
-<p><span><em>
-<br></em></span></p>
-<p><span><em>一、支持两种类型的跟随推荐配置</em></span></p>
-<p><span><em>1. 广告语+URL，支持商户配置16个汉字长度的文案，及点击跳转的链接。</em></span></p>
-<p><span><em>2. 推荐卡券，支持商户配置一个本公众号下的卡券。</em></span></p>
-<p><span><em>二、推荐位有效期控制</em></span></p>
-<p><span><em>1. 广告语+URL类型，支持商户根据活动期限自定义展示时间。</em></span></p>
-<p><span><em>2. 推荐卡券类型，由微信后台判断卡券的有效性，当卡券已过期、已被领完、已被置为失效会自动下架展示。</em></span></p>
 <p>
 <br></p>
 <h3><span><strong><a name="8.3.1"></a>8.3.1 设置跟随推荐接口</strong></span></h3>
@@ -280,7 +274,7 @@
 <p>
 <br><span><strong>接口详情</strong></span></p>
 <p><span><strong>接口调用请求说明</strong></span></p>
-<pre><span>http请求方式:&nbsp;POSThttps://api.weixin.qq.com/card/update?access_token=TOKEN
+<pre><span>http请求方式:&nbsp;POST<br>URL:https://api.weixin.qq.com/card/update?access_token=TOKEN
 <br></span></pre>
 <p><span><strong>参数说明</strong></span></p>
 <table cellspacing="0" cellpadding="2" width="700px">
@@ -291,35 +285,27 @@
 </tbody>
 </table>
 <p><span><strong>使用消息配置卡券</strong></span></p>
-<pre><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"ph_gmt7cUVrlRk8swPwx7aDyF-pg",<br>&nbsp;&nbsp;&nbsp;&nbsp;"member_card":&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"modify_msg_operation":&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"card_cell":&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"end_time":&nbsp;1452724561,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"p1Pj9jr90_SQRaVqYI239Ka1erkI"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}
-<br></span></pre>
-<p>
-<br><span><strong>使用消息配置URL</strong></span></p>
-<pre><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"card_id":&nbsp;"ph_gmt7cUVrlRk8swPwx7aDyF-pg",<br>&nbsp;&nbsp;&nbsp;&nbsp;"member_card":&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"modify_msg_operation":&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url_cell":&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"end_time":&nbsp;1452724561,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"text":&nbsp;"更多优惠",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url":&nbsp;"www.qq.com"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}
-<br></span></pre>
+<pre><span>{<br> &nbsp; &nbsp;"card_id": "pbLatjkoa7luhR3zIBjtQiaYtnz4",<br> &nbsp; &nbsp;"member_card": {<br> &nbsp; &nbsp; &nbsp; &nbsp;"activate_msg_operation": { &nbsp; //若指定的是积分、余额等变动消息赠券，则为modify_msg_operation<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"url_cell": {<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"card_id_list": [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"pbLatjhcI6XUxJWA0Au3Gaq5eFPs"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;],<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"end_time": 1492724561,<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"text": "恭喜你获得一张50元代金券",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"url": "www.qq.com"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp;}<br>}</span></pre>
 <p><span><strong>字段说明</strong></span></p>
 <table cellspacing="0" cellpadding="2" width="700px">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell"><span>字段名 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></th><th class="table_cell"><span>说明 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></th></tr>
 <tr><td class="table_cell"><span>card_id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>卡券ID。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>modify_msg_operation &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>积分余额变动消息类型 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>card_cell &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>卡券类型的推荐位。Json结构参考示例。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>url_cell &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>链接类型的推荐位。Json结构参考示例。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>card_id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>需要在运营位投放的卡券id &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>end_time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>推荐位展示的截止时间。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>text &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>文本内容。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>url &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>跳转链接。 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>member_card</span></td><td class="table_cell" colspan="1" rowspan="1"><span>会员卡结构体，如示例</span></td></tr>
+<tr><td class="table_cell"><span>modify_msg_operation &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>推荐类型，代表积分余额等变动消息赠券 &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>activate_msg_operation</span></td><td class="table_cell" colspan="1" rowspan="1"><span>推荐类型，代表会员卡激活消息赠券</span></td></tr>
+<tr><td class="table_cell"><span>url_cell &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>推荐内容结构体，如示例 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>card_id_list &nbsp; &nbsp;</span></td><td class="table_cell"><span>送券的card_id列表，与url字段互斥，不支持普通券和朋友的券混合使用，最多填写10个card_id&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>end_time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>推荐位展示的截止时间 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>text &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>文本内容 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>url &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>跳转链接，与card_id_list互斥，若设置了跳转url，用户点击模板消息详情后将跳转至该链接领券 &nbsp; &nbsp;&nbsp;</span></td></tr>
 </tbody>
 </table>
-<p>
-<br></p>
-<p>
-<br><span><strong>返回数据</strong></span></p>
-<pre><span>{&nbsp;&nbsp;&nbsp;"errcode":0,&nbsp;&nbsp;&nbsp;"errmsg":"ok"&nbsp;}
-<br></span></pre>
-<p>
-<br></p>
+<p><span><strong>返回数据</strong></span></p>
+<pre><span>{&nbsp;&nbsp;&nbsp;<br>"errcode":0,&nbsp;&nbsp;&nbsp;<br>"errmsg":"ok"&nbsp;<br>}</span></pre>
 <p><span><strong>字段说明</strong></span></p>
+<p>
+<br></p>
 <p>
 <br></p>
 <table cellspacing="0" cellpadding="2" width="700px">
@@ -329,6 +315,15 @@
 <tr><td class="table_cell"><span>errmsg &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>错误信息 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 </tbody>
 </table>
+<p><span><strong>
+<br></strong></span></p>
+<p><span><strong>开发者注意事项</strong></span></p>
+<p><span><em>
+<br></em></span></p>
+<p><span>1.支持一张会员卡同时设置积分/余额变动消息赠券和激活赠券，开发者须分开设置；
+<br></span></p>
+<p><span>2.开发者若填写了card_id_list后，若再填写url字段则card_id_list内容失效；</span></p>
+<p><span>3.若开发者设置了url，则须支持在url上领券，否则会被视为恶意营销处罚。</span></p>
 <h2><span><strong><a name="8.4"></a>8.4 设置支付即会员</strong></span></h2>
 <p><span>&nbsp;</span></p>
 <h2><span><strong><a name="8.4.1"></a>8.4.1 增加支付即会员规则接口</strong></span></h2>
@@ -369,14 +364,14 @@
 <tr><td class="table_cell"><span>mchid_list &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>支持赠券规则的商户号列表 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>begin_time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>规则生效时间<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>end_time &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>规则结束时间 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>min_cost &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>本次规则生效支付金额下限，与分为单位 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell"><span>max_cost &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>本次规则生效支付金额上限，与分为单位 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>min_cost &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>本次规则生效支付金额下限，以分为单位 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+<tr><td class="table_cell"><span>max_cost &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>本次规则生效支付金额上限，<span>以</span>分为单位 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td colspan="1" rowspan="1" class="table_cell"><span>is_locked &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td colspan="1" rowspan="1" class="table_cell"><span>是否允许其他appid设置本规则内已经设置过的商户号，默认为true &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 </tbody>
 </table>
 <p><span><strong>返回数据说明</strong></span></p>
 <p><span>数据示例：</span></p>
-<pre><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;"succ_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;"fail_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>}
+<pre><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;"succ_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;"134xxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;"fail_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>}
 <br></span></pre>
 <p>
 <br></p>
@@ -403,7 +398,7 @@
 <p><span><em><span>&nbsp; 3.仅支持会员卡类型的卡券，否则报错：72003；</span></em></span></p>
 <p><span><em><span>&nbsp; 4.设置支付即会员时，须确认调用接口的appid和当前card_id主体一致，以及appid与mchid有绑定关系，否则报错：72002；</span></em></span></p>
 <p><span><em><span>&nbsp; 5.须保证mchid之前没有被其他appid设置过，否则报错72004；</span></em></span></p>
-<p><span><em><span>&nbsp; 6.单次仅限设置100个mchid，若超过100个请多次调用本接口。</span></em></span></p>
+<p><span><em><span>&nbsp; 6.单次仅限设置10个mchid，若超过10个请多次调用本接口。</span></em></span></p>
 <p>
 <br></p>
 <h2><span><strong><a name="8.4.2"></a>8.4.2 删除支付即会员规则接口</strong></span></h2>
@@ -436,7 +431,7 @@
 </table>
 <p><span><strong>返回数据说明</strong></span></p>
 <p><span>数据示例：</span></p>
-<pre><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;"succ_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;"fail_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>}
+<pre><span>{<br>&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;"succ_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;],<br>&nbsp;&nbsp;&nbsp;&nbsp;"fail_list"：[<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"mchid":&nbsp;"xxxxx",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"ok",<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"occupy_appid":&nbsp;"wxxxxxxxxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>&nbsp;&nbsp;&nbsp;&nbsp;]<br>}
 <br></span></pre>
 <p>
 <br></p>

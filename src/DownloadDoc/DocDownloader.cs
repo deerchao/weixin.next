@@ -111,6 +111,8 @@ namespace DownloadDoc
 
         private string TidyHtml(string html)
         {
+            //删除 style 属性
+            html = Regex.Replace(html, @"\s+style=""[^""]*""", "", RegexOptions.Singleline);
             //开始标签前加换行
             html = Regex.Replace(html, @"<(?!/|a|span|strong|th|td|img|em)([^>]+)>\s*(?=<)", "\r\n<$1>");
             //结束标签后加换行

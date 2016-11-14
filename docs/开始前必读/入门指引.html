@@ -1,0 +1,744 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link onerror="wx_loaderror(this)" onerror="wx_loaderror(this)" rel="stylesheet" type="text/css" href="https://res.wx.qq.com/mpres/htmledition/style/page/resource/res_iframe2f613f.css"/></head>
+<body class="page_doc">
+<div class="main_hd"><h2>入门指引</h2>
+</div>
+<div class="main_bd">
+<div class="article_box">
+<div class="inner">
+<div class="news_content">
+<p><span>目录</span></p>
+<p><a href="#1" target="_self" textvalue="1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 开启公众号开发者模式... 1"><span>1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>开启公众号开发者模式</span></span><span><span></span><span>... 1</span></span></a></p>
+<p><a href="#1.1" target="_self" textvalue="1.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 申请服务器... 1"><span>1.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>申请服务器</span><span>... 1</span></span></a></p>
+<p><a href="#1.2" target="_self"><span>1.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>搭建服务</span><span>... 1</span></span></a></p>
+<p><a href="#1.3" target="_self"><span>1.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>申请公众号</span><span>... 1</span></span></a></p>
+<p><a href="#1.4" target="_self"><span>1.4<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>开发者基本配置</span><span>... 1</span></span></a></p>
+<p><a href="#1.5" target="_self"><span>1.5<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>重要事情提前交代</span><span>... 1</span></span></a></p>
+<p><a href="#2" target="_self"><span>2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>实现</span>“<span>你问我答</span>”<span>. 1</span></span></a></p>
+<p><a href="#2.1" target="_self"><span>2.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>接受文本消息</span><span>... 1</span></span></a></p>
+<p><a href="#2.2" target="_self"><span>2.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>被动回复文本消息</span><span>... 1</span></span></a></p>
+<p><a href="#2.3" target="_self"><span>2.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>回复</span>success<span>问题</span><span>... 1</span></span></a></p>
+<p><a href="#2.4" target="_self"><span>2.4<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>流程图</span><span>... 1</span></span></a></p>
+<p><a href="#2.5" target="_self"><span>2.5<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>码代码</span><span>... 1</span></span></a></p>
+<p><a href="#2.6" target="_self"><span>2.6<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>在线测试</span><span>... 1</span></span></a></p>
+<p><a href="#2.7" target="_self"><span>2.7<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>真实体验</span><span>... 1</span></span></a></p>
+<p><a href="#3" target="_self"><span>3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>实现</span>“<span>图</span>”<span>尚往来</span><span>... 1</span></span></a></p>
+<p><a href="#3.1" target="_self"><span>3.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>接收图片消息</span><span>... 1</span></span></a></p>
+<p><a href="#3,2" target="_self"><span>3.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>被动回复图片消息</span><span>... 1</span></span></a></p>
+<p><a href="#3.3" target="_self"><span>3.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>流程图</span><span>... 1</span></span></a></p>
+<p><a href="#3.4" target="_self"><span>3.4<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>码代码</span><span>... 1</span></span></a></p>
+<p><a href="#4" target="_self"><span>4<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>AccessToken<span>. 1</span></span></a></p>
+<p><a href="#4.1" target="_self"><span>4.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>查看</span>appid &nbsp;<span>及</span>appsecret <span>1</span></span></a></p>
+<p><a href="#4.2" target="_self"><span>4.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>获取</span>accessToken<span>. 1</span></span></a></p>
+<p><a href="#4.2.1" target="_self"><span>4.2.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>临时方法获取</span><span>... 1</span></span></a></p>
+<p><a href="#4.2.2" target="_self"><span>4.2.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>接口获取</span><span>... 1</span></span></a></p>
+<p><a href="#4.3" target="_self"><span>4.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>码代码</span><span>... 1</span></span></a></p>
+<p><a href="#5" target="_self"><span>5<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>临时素材</span><span>... 1</span></span></a></p>
+<p><a href="#5.1" target="_self"><span>5.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>新建临时素材</span><span>... 1</span></span></a></p>
+<p><a href="#5.2" target="_parent"><span>5.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>获取临时素材</span>MediaID<span>.. 1</span></span></a></p>
+<p><a href="#5.3" target="_self"><span>5.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>下载临时素材</span><span>... 1</span></span></a></p>
+<p><a href="#5.3.1" target="_self"><span>5.3.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>手工体验</span><span>... 1</span></span></a></p>
+<p><a href="#5.3.2" target="_self"><span>5.3.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>接口实现</span><span>... 1</span></span></a></p>
+<p><a href="#6" target="_self"><span>6<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>永久素材</span><span>... 1</span></span></a></p>
+<p><a href="#6.1" target="_self" textvalue="6.1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 新建永久素材的方式... 1"><span>6.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>新建永久素材的方式</span><span>... 1</span></span></a></p>
+<p><a href="#6.1.1" target="_self"><span>6.1.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>手工体验</span><span>... 1</span></span></a></p>
+<p><a href="#6.1.2" target="_self"><span>6.1.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>接口实现</span><span>... 1</span></span></a></p>
+<p><a href="#6.2" target="_parent"><span>6.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>获取永久素材</span>MediaID<span>.. 1</span></span></a></p>
+<p><a href="#6.3" target="_self" textvalue="6.3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取素材列表... 1"><span>6.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>获取素材列表</span><span>... 1</span></span></a></p>
+<p><a href="#6.4" target="_self" textvalue="6.4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 删除永久素材... 1"><span>6.4<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>删除永久素材</span><span>... 1</span></span></a></p>
+<p><a href="#7" target="_self"><span>7<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>自定义菜单</span><span>... 1</span></span></a></p>
+<p><a href="#7.1" target="_self"><span>7.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>创建菜单界面</span><span>... 1</span></span></a></p>
+<p><a href="#7.2" target="_self"><span>7.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>完善菜单功能</span><span>... 1</span></span></a></p>
+<p><a href="#7.2.1" target="_parent"><span>7.2.1<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>流程图</span><span>... 1</span></span></a></p>
+<p><a href="#7.2.2" target="_self"><span>7.2.2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>码代码</span><span>... 1</span></span></a></p>
+<p><a href="#7.3" target="_self"><span>7.3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>体验</span><span>... 1</span></span></a></p>
+<p><a href="#8" target="_self"><span>8<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>关于反馈问题</span></span></a></p>
+<h1><a name="1"></a>1开启公众号开发者模式</h1>
+<p><span>公众平台的技术文档目的为了简明扼要的交代接口的使用，语句难免苦涩难懂，甚至对于不同的读者，有语意歧义。万事皆是入门难，对于刚入门的开发者讲，更是难上加难，往往看了半天wiki，就是不懂说的什么鬼。</span></p>
+<p><span>为了降低门槛，弥补不足，特地编写了《开发者指引》，讲解了一下微信开放平台的基础常见功能，目的重在帮助大家入门微信开放平台的开发者模式。</span></p>
+<p><span>对于已熟知或者有一定公众平台开发经验的开发小哥，请直接跳过本文。这篇文章不会给你带来厉害的编码技巧亦或接口的深层次讲解。对于现有接口存在的疑问，请直接呼叫客服或者微信投诉，不要在本文浪费时间。</span></p>
+<p><span>为了防止小编语意上歧义，在给大家带来困扰，直接用最暴力的方法带你入门公众号开发——附录简明代码</span></p>
+<h2><a name="1.1"></a>1.1<span>&nbsp;&nbsp; </span><span>申请服务器</span></h2>
+<p><span>以腾讯云服务器为示例：<a href="https://buy.qcloud.com/cvm?cpu=1&amp;mem=1" target="_blank">腾讯云服务器购买入口</a>，购买指导请参考<a href="http://www.qcloud.com/doc/product/213/%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E6%B3%A8%E5%86%8C%E8%85%BE%E8%AE%AF%E4%BA%91%E5%B8%90%E5%8F%B7" target="_blank">快速入门linux云服务器</a>。</span></p>
+<p><span>学生党注意：腾讯公司为在读高校生提供了<a href="http://bbs.qcloud.com/forum.php?mod=viewthread&amp;tid=21113&amp;highlight=%E6%A0%A1%E5%9B%AD" target="_blank" textvalue="云+校园计划">云+校园计划</a>，1元/月即可使用腾讯云。</span></p>
+<h2><a name="1.2"></a>1.2<span>&nbsp;&nbsp; </span><span>搭建服务</span></h2>
+<p><span>以web.py网络框，python，腾讯云服务器为例介绍。</span></p>
+<p><span>1）安装/更新需要用到的软件</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;安装python2.7版本以上</span></p>
+<p><span>&nbsp; &nbsp; 安装web.py</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;安装libxml2, libxslt, lxml python</span></p>
+<p><span>2）编辑代码，如果不懂python 语法，请到<a href="https://docs.python.org/2/" target="_blank">python官方文档</a>查询说明。vim main.py</span></p>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;main.py
+import&nbsp;web
+
+urls&nbsp;=&nbsp;(
+&nbsp;&nbsp;&nbsp;&nbsp;'/wx',&nbsp;'Handle',
+)
+
+class&nbsp;Handle(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;GET(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"hello,&nbsp;this&nbsp;is&nbsp;a&nbsp;test"
+
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;app&nbsp;=&nbsp;web.application(urls,&nbsp;globals())
+&nbsp;&nbsp;&nbsp;&nbsp;app.run()</pre>
+<p><span></span></p>
+<p><span>3）如果出现“socket.error: No socket could be created“错误信息，可能为80端口号被占用，可能是没有权限，请自行查询解决办法。如果遇见其他错误信息，请<span>到&nbsp;</span></span><a href="http://www.webpy.org/" target="_blank" textvalue="web.py官方文档"><span>web.py官方文档</span></a><span>&nbsp;学习</span><span>webpy 框架3）执行命令：sudo python main.py 80 。</span>
+<br></p>
+<p><span>4）浏览器输入http://外网IP:80/wx （外网IP请到腾讯云购买成功处查询）。如下图，一个简单的web应用已搭建。</span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xQWgpexLmpmnQn3uYCzkbMdvE4Lxr8XaYZiaEwMBHx18eDUz0qLH45kw/0?wx_fmt=png" title="" alt="" width="483" height="103"></span></p>
+<h2><a name="1.3"></a>1.3<span>&nbsp;&nbsp; </span><span>申请公众号</span></h2>
+<p><a href="https://mp.weixin.qq.com/cgi-bin/loginpage?t=wxm2-login&amp;lang=zh_CN" target="_blank"><span>申请公众号网页</span></a></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xCibichnY64yP42icTglF8biaYoOqnekBicapYzaIgORBgto1ic7LhfibqIEPg/0?wx_fmt=png" title="" alt="" width="500" height="161"></p>
+<p><span>邮箱激活后，选择公众号类型。不同的公众号拥有不同的能力，详情请见wiki：<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1433401084&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="公众号接口权限说明">公众号接口权限说明</a> 。当然，服务号、企业号需要一定的证件和相关资料填写，如果证件一时不能准备好，没关系，公众号其实已注册，下次可以根据此邮箱&amp;密码登录再选择。</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xlHZCCTLyX4YB606gibO6iciaD64icJOUUUQxbnXHpVR8lKdIMRjDRnA6ow/0?wx_fmt=png" title="" alt="" width="504" height="312"></p>
+<h2><a name="1.4"></a>1.4<span>&nbsp;&nbsp; </span><span>开发者基本配置</span></h2>
+<p class="MsoListParagraph"><span>1） 公众平台官网登录之后，找到“基本配置”菜单栏</span><span> </span></p>
+<p class="MsoListParagraph"><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xagr4UkAdb9oTk6JCzFH4kOIliaI5XZ66ogiaVTAJaX3q6BE3brBOmfOg/0?wx_fmt=png" title="" alt="" width="493" height="516"></p>
+<p class="MsoListParagraph"><span>2） 填写配置</span></p>
+<p><span>url填写：http://<span>外网IP</span>：端口号/wx 。外网IP请到腾讯云购买成功处查询， http的端口号固定使用80，不可填写其他。</span></p>
+<p><span>Token：自主设置，这个token与公众平台wiki中常提的access_token不是一回事。这个token只用于验证开发者服务器。</span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0x6KibZaFbMR6XUo1GIM5Zgu97WyrTibaUrzoHd9AhtkYiaalLfy2bbcsxw/0?wx_fmt=png" title="" alt="" width="520" height="501"></span></p>
+<p><span><span>3）&nbsp;</span>现在选择提交肯定是验证token失败，因为还需要完成代码逻辑。改动原先main.py文件，新增handle.py</span></p>
+<h4><span>a）vim main.py</span></h4>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;main.py
+import&nbsp;web
+from&nbsp;handle&nbsp;import&nbsp;Handle
+
+urls&nbsp;=&nbsp;(
+&nbsp;&nbsp;&nbsp;&nbsp;'/wx',&nbsp;'Handle',
+)
+
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;app&nbsp;=&nbsp;web.application(urls,&nbsp;globals())
+&nbsp;&nbsp;&nbsp;&nbsp;app.run()</pre>
+<h4><span></span><span>b）vim handle.py</span>
+<br></h4>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;先附加逻辑流程图
+<br></span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9B2CRwJYwMRFbDwdwNicNwcwhWaTuibPIqUwocStP6VicjxyGc2S96XlaNiciagkc26eKg/0?wx_fmt=png" title="" alt=""></span></p>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;handle.py
+
+import&nbsp;hashlib
+import&nbsp;web
+
+class&nbsp;Handle(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;GET(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data&nbsp;=&nbsp;web.input()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(data)&nbsp;==&nbsp;0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"hello,&nbsp;this&nbsp;is&nbsp;handle&nbsp;view"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;signature&nbsp;=&nbsp;data.signature
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;timestamp&nbsp;=&nbsp;data.timestamp
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nonce&nbsp;=&nbsp;data.nonce
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echostr&nbsp;=&nbsp;data.echostr
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;token&nbsp;=&nbsp;"xxxx"&nbsp;#请按照公众平台官网\基本配置中信息填写
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list&nbsp;=&nbsp;[token,&nbsp;timestamp,&nbsp;nonce]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;list.sort()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sha1&nbsp;=&nbsp;hashlib.sha1()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map(sha1.update,&nbsp;list)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;hashcode&nbsp;=&nbsp;sha1.hexdigest()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"handle/GET&nbsp;func:&nbsp;hashcode,&nbsp;signature:&nbsp;",&nbsp;hashcode,&nbsp;signature
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;hashcode&nbsp;==&nbsp;signature:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;echostr
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;""
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception,&nbsp;Argument:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Argument</pre>
+<p>
+<br></p>
+<p><span>4<span>）&nbsp;</span>重新启动成功后（python main.py 80），点击提交按钮。若提示”token验证失败”, 请认真检查代码或网络链接等。若token验证成功，会自动返回基本配置的主页面，点击启动按钮</span></p>
+<h2><a name="1.5"></a>1.5<span>&nbsp;&nbsp; </span><span>重要事情提前交代</span></h2>
+<p><span>接下来，文章准备从两个简单的示例入手。</span></p>
+<p><span>示例一：实现“你说我学”</span></p>
+<p><span>示例一：实现“图尚往来”</span></p>
+<p><span>两个简单的示例后，是一些基础功能的介绍：素材管理、自定义菜单、群发。所有的示例代码是为了简明的说明问题，避免代码复杂化。</span></p>
+<p><span>在实际中搭建一个安全稳定高效的公众号，建议参考框架如下图：</span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xnC7SUbrIRwI8NhEGFeax6HoPcTMDqKGYxaSoNqBwocrj70Pt1EcKnQ/0?wx_fmt=png" title="" alt="" width="693" height="346"></span></p>
+<p><span>主要有三个部分：负责业务逻辑部分的服务器，负责对接微信API的API-Proxy服务器，以及唯一的AccessToken中控服务器</span></p>
+<p><span>1）AccessToken中控服务器：</span></p>
+<p><span>负责： 提供主动刷新和被动刷新机制来刷新accessToken并存储（为了防止并发刷新，注意加并发锁），提供给业务逻辑有效的accessToken。</span></p>
+<p><span>优点： 避免业务逻辑方并发获取access_token，避免AccessToken互相覆盖，提高业务功能的稳定性。</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2）API-Proxy服务器：</span></p>
+<p><span>负责：专一与微信API对接，不同的服务器可以负责对接不同的业务逻辑，更可进行调用频率、权限限制。</span></p>
+<p><span>优点：某台API-proxy异常，还有其余服务器支持继续提供服务，提高稳定性，</span></p>
+<p><span>避免直接暴漏内部接口，有效防止恶意攻击，提高安全性。</span></p>
+<h1><a name="2"></a>2<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>实现</span>“<span>你问我答</span>”</h1>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;目的：</span></p>
+<p><span>1）理解被动消息的含义</span></p>
+<p><span>2）理解收\发消息机制</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;预实现功能：</span></p>
+<p><span>粉丝给公众号一条文本消息，公众号立马回复一条文本消息给粉丝，不需要通过公众平台网页操作。</span></p>
+<h2><a name="2.1"></a>2.1<span>&nbsp;&nbsp; </span><span>接受文本消息</span></h2>
+<p><span>即粉丝给公众号发送的文本消息。官方wiki链接：<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140453&amp;token=&amp;lang=zh_CN" target="_blank">消息管理/接收消息-接受普通消息</a></span></p>
+<p><span>粉丝给公众号发送文本消息：“欢迎开启公众号开发者模式”，在开发者后台，收到公众平台发送的xml 如下：（下文均隐藏了ToUserName 及 FromUserName 信息）</span></p>
+<p><span>&lt;xml&gt;</span></p>
+<p><span>&lt;ToUserName&gt;&lt;![CDATA[公众号]]&gt;&lt;/ToUserName&gt;<br> &lt;FromUserName&gt;&lt;![CDATA[粉丝号]]&gt;&lt;/FromUserName&gt;<br> &lt;CreateTime&gt;1460537339&lt;/CreateTime&gt;<br> &lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;<br> &lt;Content&gt;&lt;![CDATA[欢迎开启公众号开发者模式]]&gt;&lt;/Content&gt;<br> &lt;MsgId&gt;6272960105994287618&lt;/MsgId&gt;<br> &lt;/xml&gt;&nbsp;</span></p>
+<p><span>解释：</span></p>
+<p><span>c</span><span>reateTime 是微信公众平台记录粉丝发送该消息的具体时间</span></p>
+<p><span>text: 用于标记该xml 是文本消息，一般用于区别判断</span></p>
+<p><span>欢迎开启公众号开发者模式</span><span>: 说明该粉丝发给公众号的具体内容是</span><span>欢迎开启公众号开发者模式</span></p>
+<p><span>MsgId: 是公众平台为记录识别该消息的一个标记数值, 微信后台系统自动产生</span></p>
+<h2><a name="2.2"></a>2.2<span>&nbsp;&nbsp; </span><span>被动回复文本消息</span></h2>
+<p><span>即公众号给粉丝发送的文本消息，官方wiki链接: <a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140543&amp;token=&amp;lang=zh_CN" target="_blank">消息管理/接收消息-被动回复消息</a></span></p>
+<p><span>特别强调：</span></p>
+<p><span>1） 被动回复消息，即发送被动响应消息，不同于客服消息接口</span></p>
+<p><span>2） 它其实并不是一种接口，而是对微信服务器发过来消息的一次回复</span></p>
+<p><span>3） 收到粉丝消息后不想或者不能5秒内回复时，需回复“success”字符串（下文详细介绍）</span></p>
+<p><span>4） 客服接口在满足一定条件下随时调用</span></p>
+<p><span>公众号想回复给粉丝一条文本消息，内容为“test”, 那么开发者发送给公众平台后台的xml 内容如下：</span></p>
+<p><span>&nbsp;&lt;xml&gt;<br> &lt;ToUserName&gt;&lt;![CDATA[粉丝号]]&gt;&lt;/ToUserName&gt;<br> &lt;FromUserName&gt;&lt;![CDATA[公众号]]&gt;&lt;/FromUserName&gt;<br> &lt;CreateTime&gt;1460541339&lt;/CreateTime&gt;<br> &lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;<br> &lt;Content&gt;&lt;![CDATA[test]]&gt;&lt;/Content&gt;<br> &lt;/xml&gt;</span></p>
+<p><span>特别备注：</span></p>
+<p><span>1）ToUserName（接受者）、FromUserName(发送者) 字段请实际填写。</span></p>
+<p><span>2）createtime 只用于标记开发者回复消息的时间，微信后台发送此消息都是不受这个字段约束。</span></p>
+<p><span>3）text : 用于标记 此次行为是发送文本消息 （当然可以是image/voice等类型）。</span></p>
+<p><span>4）文本换行 ‘\n’。</span></p>
+<h2><a name="2.3"></a>2.3<span>&nbsp;&nbsp; </span><span>回复</span>success<span>问题</span></h2>
+<p><span>查询官方wiki 开头强调： 假如服务器无法保证在五秒内处理回复，则必须回复“success”或者“”（空串），否则微信后台会发起三次重试。</span></p>
+<p><span>解释一下为何有这么奇怪的规定。发起重试是微信后台为了尽可以保证粉丝发送的内容开发者均可以收到。如果开发者不进行回复，微信后台没办法确认开发者已收到消息，只好重试。</span></p>
+<p><span>真的是这样子吗？尝试一下收到消息后，不做任何回复。在日志中查看到微信后台发起了三次重试操作，日志截图如下：</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xauONdVFJvic1Wfzxa0HnSEZ5libLcYibWWkb7gNDjt56DFs8kiaY3OtFtw/0?wx_fmt=png" title="" alt="" width="518" height="228"></p>
+<p><span>三次重试后，依旧没有及时回复任何内容，系统自动在粉丝会话界面出现错误提示“该公众号暂时无法提供服务，请稍后再试”。</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xBp7Iiam8ydK0W4MOZa9bfHKgTesMkj3HXOnsYxttsodweib7mH9y5eQg/0?wx_fmt=png" title="" alt=""></p>
+<p><span>如果回复success，微信后台可以确定开发者收到了粉丝消息，没有任何异常提示。因此请大家注意回复success的问题。</span></p>
+<h2><a name="2.4"></a>2.4<span>&nbsp;&nbsp; </span><span>流程图</span></h2>
+<p>&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xEVXiblIZm80UCBlia6vYiaXD7Od9Ev3nujHoNkNCubr9WPo8L7opJGhIA/0?wx_fmt=png" title="" alt="" width="405" height="500"></p>
+<h2><a name="2.5"></a>2.5<span>&nbsp;&nbsp; </span><span>码代码</span></h2>
+<p><span>&nbsp;&nbsp;<span>main.py文件不改变，handle.py 需要增加一下代码，增加新的文件<span>receive.py, reply.py</span></span></span></p>
+<h4><span>&nbsp; &nbsp; &nbsp; &nbsp;1）vim handle.py</span></h4>
+<h4><span></span></h4>
+<pre><p>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>#&nbsp;filename:&nbsp;handle.py<br>import&nbsp;hashlib<br>import&nbsp;reply<br>import&nbsp;receive<br>import&nbsp;web
+<br><br>class&nbsp;Handle(object):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;POST(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webData&nbsp;=&nbsp;web.data()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"Handle&nbsp;Post&nbsp;webdata&nbsp;is&nbsp;",&nbsp;webData&nbsp;&nbsp;&nbsp;#后台打日志<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recMsg&nbsp;=&nbsp;receive.parse_xml(webData)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(recMsg,&nbsp;receive.Msg)&nbsp;and&nbsp;recMsg.MsgType&nbsp;==&nbsp;'text':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toUser&nbsp;=&nbsp;recMsg.FromUserName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fromUser&nbsp;=&nbsp;recMsg.ToUserName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;"test"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replyMsg&nbsp;=&nbsp;reply.TextMsg(toUser,&nbsp;fromUser,&nbsp;content)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;replyMsg.send()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"暂且不处理"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"success"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception,&nbsp;Argment:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Argment
+<br></p>
+</pre>
+<h4><span>&nbsp; &nbsp; &nbsp; &nbsp;2）vim receive.py</span></h4>
+<h4><span></span></h4>
+<pre><p>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>#&nbsp;filename:&nbsp;receive.py<br>import&nbsp;xml.etree.ElementTree&nbsp;as&nbsp;ET
+<br><br>def&nbsp;parse_xml(web_data):<br>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(web_data)&nbsp;==&nbsp;0:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None<br>&nbsp;&nbsp;&nbsp;&nbsp;xmlData&nbsp;=&nbsp;ET.fromstring(web_data)<br>&nbsp;&nbsp;&nbsp;&nbsp;msg_type&nbsp;=&nbsp;xmlData.find('MsgType').text<br>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg_type&nbsp;==&nbsp;'text':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;TextMsg(xmlData)<br>&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg_type&nbsp;==&nbsp;'image':<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ImageMsg(xmlData)
+<br><br>class&nbsp;Msg(object):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;xmlData):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.ToUserName&nbsp;=&nbsp;xmlData.find('ToUserName').text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.FromUserName&nbsp;=&nbsp;xmlData.find('FromUserName').text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.CreateTime&nbsp;=&nbsp;xmlData.find('CreateTime').text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.MsgType&nbsp;=&nbsp;xmlData.find('MsgType').text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.MsgId&nbsp;=&nbsp;xmlData.find('MsgId').text
+<br><br>class&nbsp;TextMsg(Msg):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;xmlData):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Msg.__init__(self,&nbsp;xmlData)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.Content&nbsp;=&nbsp;xmlData.find('Content').text.encode("utf-8")
+<br><br>class&nbsp;ImageMsg(Msg):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;xmlData):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Msg.__init__(self,&nbsp;xmlData)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.PicUrl&nbsp;=&nbsp;xmlData.find('PicUrl').text<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.MediaId&nbsp;=&nbsp;xmlData.find('MediaId').text
+<br></p>
+</pre>
+<h4><span>&nbsp; &nbsp; &nbsp; &nbsp; 3）vim reply.py</span>
+<br></h4>
+<h4><span></span></h4>
+<pre><p>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>#&nbsp;filename:&nbsp;reply.py<br>import&nbsp;time
+<br><br>class&nbsp;Msg(object):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;send(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;"success"
+<br><br>class&nbsp;TextMsg(Msg):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;toUserName,&nbsp;fromUserName,&nbsp;content):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict&nbsp;=&nbsp;dict()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['ToUserName']&nbsp;=&nbsp;toUserName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['FromUserName']&nbsp;=&nbsp;fromUserName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['CreateTime']&nbsp;=&nbsp;int(time.time())<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['Content']&nbsp;=&nbsp;content
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;send(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XmlForm&nbsp;=&nbsp;"""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[{ToUserName}]]&gt;&lt;/ToUserName&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FromUserName&gt;&lt;![CDATA[{FromUserName}]]&gt;&lt;/FromUserName&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CreateTime&gt;{CreateTime}&lt;/CreateTime&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgType&gt;&lt;![CDATA[text]]&gt;&lt;/MsgType&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Content&gt;&lt;![CDATA[{Content}]]&gt;&lt;/Content&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xml&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;XmlForm.format(**self.__dict)<br>&nbsp;&nbsp;&nbsp;&nbsp;<br>class&nbsp;ImageMsg(Msg):<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;toUserName,&nbsp;fromUserName,&nbsp;mediaId):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict&nbsp;=&nbsp;dict()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['ToUserName']&nbsp;=&nbsp;toUserName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['FromUserName']&nbsp;=&nbsp;fromUserName<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['CreateTime']&nbsp;=&nbsp;int(time.time())<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__dict['MediaId']&nbsp;=&nbsp;mediaId<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;send(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XmlForm&nbsp;=&nbsp;"""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[{ToUserName}]]&gt;&lt;/ToUserName&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FromUserName&gt;&lt;![CDATA[{FromUserName}]]&gt;&lt;/FromUserName&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CreateTime&gt;{CreateTime}&lt;/CreateTime&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgType&gt;&lt;![CDATA[image]]&gt;&lt;/MsgType&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Image&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MediaId&gt;&lt;![CDATA[{MediaId}]]&gt;&lt;/MediaId&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/Image&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xml&gt;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"""<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;XmlForm.format(**self.__dict)
+<br></p>
+</pre>
+<p><span></span>&nbsp;&nbsp;<span>码好代码之后，重新启动程序，sudo python main.py 80。</span></p>
+<h2><a name="2.6"></a>2.6<span>&nbsp;&nbsp; </span><span>在线测试</span></h2>
+<p><span>微信公众平台有提供一个<a href="http://mp.weixin.qq.com/debug/" target="_blank" textvalue="在线测试的平台">在线测试的平台</a>，方便开发者模拟场景测试代码逻辑。正如 2.2被动回复文本消息 交代此被动回复接口不同于客服接口，测试时也要注意区别。</span></p>
+<p><span>在线测试目的在于测试开发者代码逻辑是否有误、是否符合预期。即便测试成功也不会发送内容给粉丝。所以可以随意测试。</span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xPPxG8zHEtduGIXWia939hsoK0TBIwiaYGUrfZaUEicddVZic5j1akCqBXA/0?wx_fmt=png" title="" alt="" width="520" height="182"></span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xGibrbWx0biaAk9kTfNRNE6onyaI6VfiacSnHpx5QRqnohvcXBHbC5U8ibw/0?wx_fmt=png" title="" alt="" width="525" height="135"></span></p>
+<p>
+<br></p>
+<p><span>测试结果：</span></p>
+<p><span>1）”请求失败”，说明代码有问题，请检查代码逻辑。</span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0x2pybiaQffibHEz74LicsqtYgz3waRBpBKFhYDrEDAovx0l2051x6zqOdw/0?wx_fmt=png" title="" alt="" width="536" height="186"></span></p>
+<p><span>2）“请求成功”，然后根据返回结果查看是否符合预期。</span></p>
+<p>&nbsp;&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xLkuKZibqnHBMbIXMiaNz7R1BZrLXMeJXst9vcL3ZW8GLEc7kD5XMxoMQ/0?wx_fmt=png" title="" alt="" width="540" height="584"></p>
+<h2><a name="2.7"></a>2.7<span>&nbsp;&nbsp; </span><span>真实体验</span></h2>
+<p><span>拿出手机，微信扫描公众号二维码，成为自己公众号的第一个粉丝。公众号二维码位置如下图：</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xmHEoP4NLNoA2athsFaI4HPcW0nHEicF6CFttmQOgHF5iawIlaHSnWibfQ/0?wx_fmt=png" title="" alt="" width="544" height="403"></p>
+<p><span>测试如下图：</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xM30OBOouswxiaW5nEiaOBBGniaFRAWTRLwReKSEI9OdJWLVGxI9eEfyHg/0?wx_fmt=png" title="" alt=""></p>
+<h1><a name="3"></a>3<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>实现</span>“<span>图</span>”<span>尚往来</span></h1>
+<p><span>目的：</span></p>
+<p><span>1）引入素材管理</span></p>
+<p><span>2）以文本消息，图片消息为基础，可自行理解剩余的语音消息、视频消息、地理消息等</span></p>
+<p><span>预实现功能：</span></p>
+<p><span>接受粉丝发送的图片消息，并立马回复相同的图片给粉丝。</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0x6zWAJ79NkGrlg34cGBjvqxtSxSVw5gPMsmlygTyhdDblrsNiaCX8GhQ/0?wx_fmt=png" title="" alt=""></p>
+<h2><a name="3.1"></a>3.1<span>&nbsp;&nbsp; </span><span>接收图片消息</span></h2>
+<p><span>即粉丝给公众号发送的图片消息。官方wiki链接：<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140453&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="消息管理/接收消息-接受普通消息/ 图片消息">消息管理/接收消息-接受普通消息/ 图片消息</a>。从实例讲解，粉丝给公众号发送一张图片消息，在公众号开发者后台接收到的xml如下:</span></p>
+<p><span>&nbsp;&lt;xml&gt;</span></p>
+<p><span>&lt;ToUserName&gt;&lt;![CDATA[公众号]]&gt;&lt;/ToUserName&gt;<br> &lt;FromUserName&gt;&lt;![CDATA[粉丝号]]&gt;&lt;/FromUserName&gt;<br> &lt;CreateTime&gt;1460536575&lt;/CreateTime&gt;<br> &lt;MsgType&gt;&lt;![CDATA[image]]&gt;&lt;/MsgType&gt;<br> &lt;PicUrl&gt;&lt;![CDATA[http://mmbiz.qpic.cn/xxxxxx /0]]&gt;&lt;/PicUrl&gt;<br> &lt;MsgId&gt;6272956824639273066&lt;/MsgId&gt;<br> &lt;MediaId&gt;&lt;![CDATA[gyci5a-xxxxx-OL]]&gt;&lt;/MediaId&gt;<br> &lt;/xml&gt;&nbsp;</span></p>
+<p><span>特别说明：</span></p>
+<p><span>PicUrl: 这个参数是微信系统把“粉丝“发送的图片消息自动转化成url。 这个url可用浏览器打开查看到图片。 </span></p>
+<p><span>MediaId: 是微信系统产生的id 用于标记该图片，详情可参考wiki <a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444738727&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="素材管理/获取临时素材">素材管理/获取临时素材</a></span></p>
+<h2><a name="3.2"></a>3.2<span>&nbsp;&nbsp; </span><span>被动回复图片消息</span></h2>
+<p><span>即公众号给粉丝发送的图片消息。官方wiki链接：<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140543&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="消息管理/发送消息-被动回复用户消息/ 图片消息">消息管理/发送消息-被动回复用户消息/ 图片消息</a>。</span></p>
+<p><span>特别说明：</span></p>
+<p><span>1） 被动回复消息，即发送被动响应消息，不同于客服消息接口</span></p>
+<p><span>2） 它其实并不是一种接口，而是对微信服务器发过来消息的一次回复</span></p>
+<p><span>3） 收到粉丝消息后不想或者不能5秒内回复时，需回复“success”字符串（下文详细介绍）</span></p>
+<p><span>4） 客服接口在满足一定条件下随时调用</span></p>
+<p><span>开发者发送给微信后台的xml 如下：</span></p>
+<p><span>&nbsp;&lt;xml&gt;<br> &lt;ToUserName&gt;&lt;![CDATA[粉丝号]]&gt;&lt;/ToUserName&gt;<br> &lt;FromUserName&gt;&lt;![CDATA[公众号]]&gt;&lt;/FromUserName&gt;<br> &lt;CreateTime&gt;1460536576&lt;/CreateTime&gt;<br> &lt;MsgType&gt;&lt;![CDATA[image]]&gt;&lt;/MsgType&gt;<br> &lt;Image&gt;<br> &lt;MediaId&gt;&lt;![CDATA[gyci5oxxxxxxv3cOL]]&gt;&lt;/MediaId&gt;<br> &lt;/Image&gt;<br> &lt;/xml&gt;</span></p>
+<p><span>这里填写的MediaId的内容，其实就是粉丝的发送图片的原MediaId，所以粉丝收到了一张一模一样的原图。</span></p>
+<p><span>如果想回复粉丝其它图片怎么呢？</span></p>
+<p><span>1） 新增素材，请参考 新增临时素材</span> <span>或者 新增永久素材</span></p>
+<p><span>2） 获取其MediaId，请参考 获取临时素材MediaID</span> <span>或者 获取永久素材MediaID</span></p>
+<h2><a name="3.3"></a>3.3<span>&nbsp;&nbsp; </span><span>流程图</span></h2>
+<p>&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xDdfzVUuLvr3iaR3BvJnkkL9kATK0TgmFXsF2tPHTlpulfJ6eU930a1Q/0?wx_fmt=png" title="" alt="" width="562" height="548"></p>
+<h2><a name="3.4"></a>3.4<span>&nbsp;&nbsp; </span><span>码代码</span></h2>
+<p><span>只显示更改的代码部分，其余部分参考上小节，在线测试，真是体验，回复空串，请参考 实现"你问我答"。vim handle.py</span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;handle.py
+import&nbsp;hashlib
+import&nbsp;reply
+import&nbsp;receive
+import&nbsp;web
+
+class&nbsp;Handle(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;POST(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webData&nbsp;=&nbsp;web.data()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"Handle&nbsp;Post&nbsp;webdata&nbsp;is&nbsp;",&nbsp;webData&nbsp;&nbsp;&nbsp;#后台打日志
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recMsg&nbsp;=&nbsp;receive.parse_xml(webData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(recMsg,&nbsp;receive.Msg):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toUser&nbsp;=&nbsp;recMsg.FromUserName
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fromUser&nbsp;=&nbsp;recMsg.ToUserName
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;recMsg.MsgType&nbsp;==&nbsp;'text':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;"test"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replyMsg&nbsp;=&nbsp;reply.TextMsg(toUser,&nbsp;fromUser,&nbsp;content)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;replyMsg.send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;recMsg.MsgType&nbsp;==&nbsp;'image':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaId&nbsp;=&nbsp;recMsg.MediaId
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replyMsg&nbsp;=&nbsp;reply.ImageMsg(toUser,&nbsp;fromUser,&nbsp;mediaId)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;replyMsg.send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;reply.Msg().send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"暂且不处理"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;reply.Msg().send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception,&nbsp;Argment:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Argment</pre>
+<h1><span><a name="4"></a>4<span>&nbsp;</span>AccessToken</span></h1>
+<p><span>AccessToken 的意义请参考<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="公众平台wiki">公众平台wiki</a>介绍。</span></p>
+<h2><span><a name="4.1"></a>4.1<span>&nbsp;</span>查看appid及appsecret</span></h2>
+<p><span>公众平台官网查看， 其中AppSecret 不点击重置时候，则一直保持不变。</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xMhn3MkAdHOElTxkaGlIBDeQyg8SjB9ibIcNE46ChsCXj9XNgoL1gnjw/0?wx_fmt=png" title="" alt="" width="574" height="296"></p>
+<h2>
+<br></h2>
+<h2><span><a name="4.2"></a>4.2<span>&nbsp;&nbsp; </span>获取accessToken</span></h2>
+<h4><span><a name="4.2.1"></a>&nbsp;4.2.1临时方法获取</span></h4>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;为了方便先体验其他接口，可以临时通过 </span><a href="http://mp.weixin.qq.com/debug/" target="_blank" textvalue="在线测试 ">在线测试 </a><span>或者 浏览器获取accessToken。</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xBHeQU4pOZnne3ZE7xA9sYvUkxWJOOxibxQudayWeWQ604jgKhI1vK1g/0?wx_fmt=png" title="" alt="" width="1" height="1"><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xBHeQU4pOZnne3ZE7xA9sYvUkxWJOOxibxQudayWeWQ604jgKhI1vK1g/0?wx_fmt=png" title="" alt="" width="594" height="590"></span></p>
+<h4><span><a name="4.2.2"></a>4.2.2 接口获取</span></h4>
+<p><span>详情请见</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421140183&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="公众平台wiki"><span>公众平台wiki</span></a>
+<br></p>
+<p><span>特别强调：</span></p>
+<p><span>1） </span><span>第三方需要一个access_token获取和刷新的中控服务器。</span></p>
+<p><span>2） </span><span>并发获取access_token会导致AccessToken互相覆盖，影响具体的业务功能</span></p>
+<h2><a name="4.3"></a>4.3<span>&nbsp;&nbsp; </span><span>码代码</span></h2>
+<p><span>再次重复说明，下面代码只是为了简单说明接口获取方式。实际中并不推荐，尤其是业务繁重的公众号，更需要中控服务器，统一的获取accessToken。vim basic.py</span></p>
+<pre><p>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-<br>#&nbsp;filename:&nbsp;basic.py<br>import&nbsp;urllib<br>import&nbsp;time<br>import&nbsp;json
+<br><br>class&nbsp;Basic:<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__accessToken&nbsp;=&nbsp;''<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__leftTime&nbsp;=&nbsp;0<br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__real_get_access_token(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appId&nbsp;=&nbsp;"xxxxx"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appSecret&nbsp;=&nbsp;"xxxxx"
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;("https://api.weixin.qq.com/cgi-bin/token?grant_type="<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"client_credential&amp;appid=%s&amp;secret=%s"&nbsp;%&nbsp;(appId,&nbsp;appSecret))<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib.urlopen(postUrl)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;json.loads(urlResp.read())<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__accessToken&nbsp;=&nbsp;urlResp['access_token']<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__leftTime&nbsp;=&nbsp;urlResp['expires_in']
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_access_token(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.__leftTime&nbsp;&lt;&nbsp;10:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__real_get_access_token()<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;self.__accessToken
+<br><br>&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;run(self):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(True):<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;self.__leftTime&nbsp;&gt;&nbsp;10:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(2)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__leftTime&nbsp;-=&nbsp;2<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.__real_get_access_token()
+<br></p>
+</pre>
+<p>&nbsp;
+<br></p>
+<h1><a name="5"></a>5<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>临时素材</span></h1>
+<p><span>公众号经常有需要用到一些临时性的多媒体素材的场景，例如在使用接口特别是发送消息时，对多媒体文件、多媒体消息的获取和调用等操作，是通过MediaID来进行的。譬如</span><span>实现“图”尚往来</span><span>中，粉丝给公众号发送图片消息，便产生一临时素材。</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 因为永久素材有数量的限制，但是公众号又需要临时性使用一些素材，因而产生了临时素材。这类素材不在微信公众平台后台长期存储，所以在公众平台官网的素材管理中查询不到，但是可以通过接口对其操作。</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 其他详情请以公众平台官网wiki介绍为依据。</span></p>
+<h2><a name="5.1"></a>5.1<span>&nbsp;&nbsp; </span><span>新建临时素材</span></h2>
+<p><span>接口详情请依据wiki介绍。</span><span>提供参考代码如何上传素材作为临时素材，供其它接口使用。</span></p>
+<p><span>vim media.py &nbsp;编写完成之后，直接运行media.py 即可上传临时素材。</span>
+<br></p>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;media.py
+from&nbsp;basic&nbsp;import&nbsp;Basic
+import&nbsp;urllib2
+import&nbsp;poster.encode
+from&nbsp;poster.streaminghttp&nbsp;import&nbsp;register_openers
+
+class&nbsp;Media(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register_openers()
+&nbsp;&nbsp;&nbsp;&nbsp;#上传图片
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;uplaod(self,&nbsp;accessToken,&nbsp;filePath,&nbsp;mediaType):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;openFile&nbsp;=&nbsp;open(filePath,&nbsp;"rb")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param&nbsp;=&nbsp;{'media':&nbsp;openFile}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postData,&nbsp;postHeaders&nbsp;=&nbsp;poster.encode.multipart_encode(param)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/media/upload?access_token=%s&amp;type=%s"&nbsp;%&nbsp;(accessToken,&nbsp;mediaType)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request&nbsp;=&nbsp;urllib2.Request(postUrl,&nbsp;postData,&nbsp;postHeaders)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(request)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;myMedia&nbsp;=&nbsp;Media()
+&nbsp;&nbsp;&nbsp;&nbsp;accessToken&nbsp;=&nbsp;Basic().get_access_token()
+&nbsp;&nbsp;&nbsp;&nbsp;filePath&nbsp;=&nbsp;"D:/code/mpGuide/media/test.jpg"&nbsp;&nbsp;&nbsp;#请安实际填写
+&nbsp;&nbsp;&nbsp;&nbsp;mediaType&nbsp;=&nbsp;"image"
+&nbsp;&nbsp;&nbsp;&nbsp;myMedia.uplaod(accessToken,&nbsp;filePath,&nbsp;mediaType)</pre>
+<p><span></span></p>
+<h2><a name="5.2"></a>5.2<span>&nbsp;&nbsp; </span><span>获取临时素材</span>MediaID</h2>
+<p><span>临时素材的MediaID 没有提供特定的接口进行统一查询，因此有俩种方式</span></p>
+<p><span>1） 通过接口上次的临时素材，在调用成功的情况下，从返回JSON数据中提取MediaID，可临时使用</span></p>
+<p><span>2） 粉丝互动中的临时素材，可从xml 数据提取MediaID，可临时使用</span></p>
+<h2><a name="5.3"></a>5.3<span>&nbsp;&nbsp; </span><span>下载临时素材</span></h2>
+<h4><span><a name="5.3.1"></a>5.3.1 手工体验
+<br></span></h4>
+<p><span>开发者如何保存粉丝发送的图片呢？接口文档：<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444738727&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取临时素材">获取临时素材</a>接口，为方便理解，从最简单浏览器获取素材的方法入手，根据实际情况，浏览器输入网址：</span></p>
+<p><span><a href="https://api.weixin.qq.com/cgi-bin/media/get?access_token=ACCESS_TOKEN&amp;media_id=MEDIA_ID">https://api.weixin.qq.com/cgi-bin/media/get?access_token=<span>ACCESS_TOKEN</span>&amp;media_id=<span>MEDIA_ID</span></a> </span><span>（</span><span>自行替换数据）</span></p>
+<p><span>ACCESS_TOKEN 如 "AccessToken"章节讲解</span></p>
+<p><span>MEDIA_ID 如&nbsp;图尚往来/接受图片消息xml中的MediaId 讲解</span></p>
+<p><span>只要数据正确，则会下载图片到本地，如下图：</span></p>
+<p>&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xVxY1vYzrKU34gRpV6kZ8UCLKYt5VOMuibZDKf4SqASLe95B8WQUyt4g/0?wx_fmt=png" title="" alt="" width="549" height="362"></p>
+<p>&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xKGQIibdvBPFlqOgBibBkIVZQQn6nCWaKwrucrh30Ftz3ayBicvCUu0DEw/0?wx_fmt=png" title="" alt=""></p>
+<p>
+<br></p>
+<h4><a name="5.3.2"></a>5.3.2接口获取</h4>
+<p><span>现在已经理解这个接口的功能了，只剩码代码了。vim media.py</span></p>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;media.py
+import&nbsp;urllib2
+import&nbsp;json
+from&nbsp;basic&nbsp;import&nbsp;Basic
+
+class&nbsp;Media(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get(self,&nbsp;accessToken,&nbsp;mediaId):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/media/get?access_token=%s&amp;media_id=%s"&nbsp;%&nbsp;(accessToken,&nbsp;mediaId)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(postUrl)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers&nbsp;=&nbsp;urlResp.info().__dict__['headers']
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;('Content-Type:&nbsp;application/json\r\n'&nbsp;in&nbsp;headers)&nbsp;or&nbsp;('Content-Type:&nbsp;text/plain\r\n'&nbsp;in&nbsp;headers):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonDict&nbsp;=&nbsp;json.loads(urlResp.read())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;jsonDict
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer&nbsp;=&nbsp;urlResp.read()&nbsp;&nbsp;&nbsp;#素材的二进制
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaFile&nbsp;=&nbsp;file("test_media.jpg",&nbsp;"wb")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaFile.write(buffer)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"get&nbsp;successful"
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;myMedia&nbsp;=&nbsp;Media()
+&nbsp;&nbsp;&nbsp;&nbsp;accessToken&nbsp;=&nbsp;Basic().get_access_token()
+&nbsp;&nbsp;&nbsp;&nbsp;mediaId&nbsp;=&nbsp;"2ZsPnDj9XIQlGfws31MUfR5Iuz-rcn7F6LkX3NRCsw7nDpg2268e-dbGB67WWM-N"
+&nbsp;&nbsp;&nbsp;&nbsp;myMedia.get(accessToken,&nbsp;mediaId)</pre>
+<p><span></span><span>直接运行 media.py 即可把想要的素材下载下来，其中图文消息类型的，会直接在屏幕输出json数据段。</span>
+<br></p>
+<h1><a name="6"></a>6<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>永久素材</span></h1>
+<h2><a name="6.1"></a>6.1<span>&nbsp;&nbsp; </span><span>新建永久素材的方式</span></h2>
+<h4><span><a name="6.1.1"></a>6.1.1 手工体验
+<br></span></h4>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span>公众号官网的素材管理新增素材。补充一点，公众平台只以MediaID区分素材，MediaID不等于素材的文件名。MediaID只能通过接口查询，公众平台官网看到的是素材的文件名，如下图：</span></p>
+<p>&nbsp;&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xyjZ0kcgoSNL56ZGPSkuwPPu1U0LIHYOEpTpvF6YroGCa5z5PzmfXKQ/0?wx_fmt=png" title="" alt="" width="657" height="309"></p>
+<h4><a name="6.1.2"></a>6.1.2接口删除</h4>
+<p class="MsoListParagraph"><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444738729&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="新增永久素材接口（详情见wiki）"><span>新增永久素材接口（详情见wiki）</span></a><span>跟新增临时素材的操作差不多，使用url不一样而已，这里避免重复，以新增永久图文素材接口为例，新增其他类型的素材请参考新增临时素材代码。vim material.py</span></p>
+<p class="MsoListParagraph"><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;material.py
+import&nbsp;urllib2
+import&nbsp;json
+
+from&nbsp;basic&nbsp;import&nbsp;Basic
+
+class&nbsp;Material(object):
+&nbsp;&nbsp;&nbsp;&nbsp;#上传图文
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;add_news(self,&nbsp;accessToken,&nbsp;news):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/material/add_news?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(postUrl,&nbsp;news)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;myMaterial&nbsp;=&nbsp;Material()
+&nbsp;&nbsp;&nbsp;&nbsp;accessToken&nbsp;=&nbsp;Basic().get_access_token()
+&nbsp;&nbsp;&nbsp;&nbsp;news&nbsp;=(
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"articles":
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title":&nbsp;"test",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"thumb_media_id":&nbsp;"X2UMe5WdDJSS2AS6BQkhTw9raS0pBdpv8wMZ9NnEzns",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"author":&nbsp;"vickey",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"digest":&nbsp;"",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"show_cover_pic":&nbsp;1,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content":&nbsp;"&lt;p&gt;&lt;img&nbsp;data-s=\"300,640\"&nbsp;data-type=\"jpeg\"&nbsp;data-src=\"http://mmbiz.qpic.cn/mmbiz/iaK7BytM0QFPLhxfSMhOHlZd2Q5cw3YibKVf4dgNpLHXdUkvl65NBSMU71rFfOEKF3ucmXuwAQbNdiaaS3441d5rg/0?wx_fmt=jpeg\"&nbsp;data-ratio=\"0.748653500897666\"&nbsp;data-w=\"\"&nbsp;&nbsp;/&gt;&lt;br&nbsp;&nbsp;/&gt;&lt;img&nbsp;data-s=\"300,640\"&nbsp;data-type=\"jpeg\"&nbsp;data-src=\"http://mmbiz.qpic.cn/mmbiz/iaK7BytM0QFPLhxfSMhOHlZd2Q5cw3YibKiaibdNgh0ibgOXAuz9phrGjYFBUKlyTBcrv5WE5zic08FUcz5ODXCHEykQ/0?wx_fmt=jpeg\"&nbsp;data-ratio=\"0.748653500897666\"&nbsp;data-w=\"\"&nbsp;&nbsp;/&gt;&lt;br&nbsp;&nbsp;/&gt;&lt;/p&gt;",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"content_source_url":&nbsp;"",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;})
+&nbsp;&nbsp;&nbsp;&nbsp;#news&nbsp;是个dict类型，可通过下面方式修改内容
+&nbsp;&nbsp;&nbsp;&nbsp;#news['articles'][0]['title']&nbsp;=&nbsp;u"测试".encode('utf-8')
+&nbsp;&nbsp;&nbsp;&nbsp;#print&nbsp;news['articles'][0]['title']
+&nbsp;&nbsp;&nbsp;&nbsp;news&nbsp;=&nbsp;json.dumps(news,&nbsp;ensure_ascii=False)
+&nbsp;&nbsp;&nbsp;&nbsp;myMaterial.add_news(accessToken,&nbsp;news)</pre>
+<h2><a name="6.2"></a>6.2<span>&nbsp;&nbsp; </span><span>获取永久素材</span>MediaID</h2>
+<p><span>1） <span>通过</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444738729&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="新增永久素材接口（详情见wiki）"><span>新增永久素材接口（详情见wiki）</span></a><span>新增素材时，保存MediaID</span></span></p>
+<p><span>2） 通过获取永久素材列表(下文介绍<span>)&nbsp;</span>的方式获取素材信息，从而得到MediaID</span></p>
+<h2><a name="6.3"></a>6.3<span>&nbsp;&nbsp; </span><span>获取素材列表</span></h2>
+<p><span>官方</span>wiki<span>链接：</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444738734&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="获取素材列表"><span>获取素材列表</span></a><span>。特别说明：此接口只是批量拉取素材信息，不是一次性拉去所有素材的信息，所以可以理解</span>offset<span>字段的含义了吧。vim &nbsp;material.py</span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;material.py
+import&nbsp;urllib2
+import&nbsp;json
+import&nbsp;poster.encode
+from&nbsp;poster.streaminghttp&nbsp;import&nbsp;register_openers
+from&nbsp;basic&nbsp;import&nbsp;Basic
+
+class&nbsp;Material(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;register_openers()
+&nbsp;&nbsp;&nbsp;&nbsp;#上传
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;uplaod(self,&nbsp;accessToken,&nbsp;filePath,&nbsp;mediaType):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;openFile&nbsp;=&nbsp;open(filePath,&nbsp;"rb")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fileName&nbsp;=&nbsp;"hello"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;param&nbsp;=&nbsp;{'media':&nbsp;openFile,&nbsp;'filename':&nbsp;fileName}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#param&nbsp;=&nbsp;{'media':&nbsp;openFile}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postData,&nbsp;postHeaders&nbsp;=&nbsp;poster.encode.multipart_encode(param)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/material/add_material?access_token=%s&amp;type=%s"&nbsp;%&nbsp;(accessToken,&nbsp;mediaType)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;request&nbsp;=&nbsp;urllib2.Request(postUrl,&nbsp;postData,&nbsp;postHeaders)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(request)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+&nbsp;&nbsp;&nbsp;&nbsp;#下载
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get(self,&nbsp;accessToken,&nbsp;mediaId):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/material/get_material?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postData&nbsp;=&nbsp;"{&nbsp;\"media_id\":&nbsp;\"%s\"&nbsp;}"&nbsp;%&nbsp;mediaId
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(postUrl,&nbsp;postData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;headers&nbsp;=&nbsp;urlResp.info().__dict__['headers']
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;('Content-Type:&nbsp;application/json\r\n'&nbsp;in&nbsp;headers)&nbsp;or&nbsp;('Content-Type:&nbsp;text/plain\r\n'&nbsp;in&nbsp;headers):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;jsonDict&nbsp;=&nbsp;json.loads(urlResp.read())
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;jsonDict
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;buffer&nbsp;=&nbsp;urlResp.read()&nbsp;&nbsp;#&nbsp;素材的二进制
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaFile&nbsp;=&nbsp;file("test_media.jpg",&nbsp;"wb")
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaFile.write(buffer)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"get&nbsp;successful"
+&nbsp;&nbsp;&nbsp;&nbsp;#删除
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;delete(self,&nbsp;accessToken,&nbsp;mediaId):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/material/del_material?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postData&nbsp;=&nbsp;"{&nbsp;\"media_id\":&nbsp;\"%s\"&nbsp;}"&nbsp;%&nbsp;mediaId
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(postUrl,&nbsp;postData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;#获取素材列表
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;batch_get(self,&nbsp;accessToken,&nbsp;mediaType,&nbsp;offset=0,&nbsp;count=20):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;("https://api.weixin.qq.com/cgi-bin/material"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"/batchget_material?access_token=%s"&nbsp;%&nbsp;accessToken)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postData&nbsp;=&nbsp;("{&nbsp;\"type\":&nbsp;\"%s\",&nbsp;\"offset\":&nbsp;%d,&nbsp;\"count\":&nbsp;%d&nbsp;}"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;%&nbsp;(mediaType,&nbsp;offset,&nbsp;count))
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib2.urlopen(postUrl,&nbsp;postData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;myMaterial&nbsp;=&nbsp;Material()
+&nbsp;&nbsp;&nbsp;&nbsp;accessToken&nbsp;=&nbsp;Basic().get_access_token()
+&nbsp;&nbsp;&nbsp;&nbsp;mediaType&nbsp;=&nbsp;"news"
+&nbsp;&nbsp;&nbsp;&nbsp;myMaterial.batch_get(accessToken,&nbsp;mediaType)</pre>
+<p>&nbsp; &nbsp;
+<br></p>
+<h2><a name="6.4"></a>6.4<span>&nbsp;&nbsp; </span><span>删除永久素材</span></h2>
+<p><span>如果我想删除掉 20160102.jpg 这张图片，除了官网直接操作，也可以使用接口： <a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444738731&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="删除永久素材">删除永久素材</a>接口文档。</span></p>
+<p><span>首先需要知道该图片的mediaID，方法上小节已讲述。代码可参考上小节：Material().delete() 接口</span></p>
+<p><span>调用接口成功后，在公众平台官网素材管理的图片中，查询不到已删除的图片。</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xIrOeh1ZmvfHSOGIQiaEpDHFEDOyvR5icTfUJLR2OYcec8AZQzytEPyicg/0?wx_fmt=png" title="" alt="" width="586" height="365"></p>
+<h1><a name="7"></a>7<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>自定义菜单</span></h1>
+<p><span>自定义菜单意义作用请参考 </span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141013&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="官方wiki"><span>官方wiki</span></a><span>介绍。</span></p>
+<p><span><span>目标：三个菜单栏，体验</span>click<span>、</span>view<span>、</span>media_id <span>三种类型的菜单按钮，其他类型在本小节学习之后，自行请查询公众平台</span>wiki<span>说明领悟。</span></span></p>
+<h2><a name="7.1"></a>7.1<span>&nbsp;&nbsp; </span><span>创建菜单界面</span></h2>
+<p><span>1）根据公众平台wiki 给的json 数据编写代码，其中涉及media_id部分请阅读</span><span>"永久素材"章节</span><span>。</span><span>vim menu.py</span></p>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;menu.py
+import&nbsp;urllib
+from&nbsp;basic&nbsp;import&nbsp;Basic
+
+class&nbsp;Menu(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pass
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;create(self,&nbsp;postData,&nbsp;accessToken):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(postData,&nbsp;unicode):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postData&nbsp;=&nbsp;postData.encode('utf-8')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib.urlopen(url=postUrl,&nbsp;data=postData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;query(self,&nbsp;accessToken):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/menu/get?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib.urlopen(url=postUrl)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;delete(self,&nbsp;accessToken):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/menu/delete?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib.urlopen(url=postUrl)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;#获取自定义菜单配置接口
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;get_current_selfmenu_info(self,&nbsp;accessToken):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;postUrl&nbsp;=&nbsp;"https://api.weixin.qq.com/cgi-bin/get_current_selfmenu_info?access_token=%s"&nbsp;%&nbsp;accessToken
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;urlResp&nbsp;=&nbsp;urllib.urlopen(url=postUrl)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;urlResp.read()
+
+if&nbsp;__name__&nbsp;==&nbsp;'__main__':
+&nbsp;&nbsp;&nbsp;&nbsp;myMenu&nbsp;=&nbsp;Menu()
+&nbsp;&nbsp;&nbsp;&nbsp;postJson&nbsp;=&nbsp;"""
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"button":
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type":&nbsp;"click",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":&nbsp;"开发指引",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"key":&nbsp;&nbsp;"mpGuide"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":&nbsp;"公众平台",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"sub_button":
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type":&nbsp;"view",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":&nbsp;"更新公告",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url":&nbsp;"http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1418702138&amp;token=&amp;lang=zh_CN"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type":&nbsp;"view",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":&nbsp;"接口权限说明",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url":&nbsp;"http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1418702138&amp;token=&amp;lang=zh_CN"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type":&nbsp;"view",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":&nbsp;"返回码说明",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url":&nbsp;"http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1433747234&amp;token=&amp;lang=zh_CN"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"type":&nbsp;"media_id",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name":&nbsp;"旅行",
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"media_id":&nbsp;"z2zOokJvlzCXXNhSjF46gdx6rSghwX2xOD5GUV9nbX4"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+&nbsp;&nbsp;&nbsp;&nbsp;}
+&nbsp;&nbsp;&nbsp;&nbsp;"""
+&nbsp;&nbsp;&nbsp;&nbsp;accessToken&nbsp;=&nbsp;Basic().get_access_token()
+&nbsp;&nbsp;&nbsp;&nbsp;#myMenu.delete(accessToken)
+&nbsp;&nbsp;&nbsp;&nbsp;myMenu.create(postJson,&nbsp;accessToken)</pre>
+<p><span></span>
+<br></p>
+<p><span>2）在腾讯云服务器上执行命令：python menu.py。</span></p>
+<p><span>3）查看：</span></p>
+<p><span>重新关注公众号后即可看到新创建菜单界面，题外话，如果不重新关注，公众号界面也会自动更改，但又时间延迟。</span></p>
+<p><span>如下图所示，点击子菜单“更新公告“（view类型），弹出网页（pc版本）</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xBu2ibswInKvsCHfXsgHfbjwr5jd2RBXIqAA7FXVUoItvbpc1Q1njpew/0?wx_fmt=png" title="" alt=""></p>
+<p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;点击旅行（media_id类型），公众号显示了一篇图文消息，如下图所示：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+<p>&nbsp; &nbsp; &nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xuhrZHhM8JvfObqwHrUjrHkic3l1icAibqPtXqJ73oLJUvlL0wKic13o2ew/0?wx_fmt=png" title="" alt=""></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 点击开发指引（click类型），发现公众号系统提示：“该公众号暂时无法提供服务“。</span></p>
+<p>&nbsp; &nbsp; &nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xicxbVichuC3Kl2pyo5dEVfEJR1kSuIb2UBXRCVKntMr2viaOoicctK3BSA/0?wx_fmt=png" title="" alt=""></p>
+<h2><a name="7.2"></a>7.2<span>&nbsp;&nbsp; </span><span>完善菜单功能</span></h2>
+<p><span>查看<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141013&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="公众平台自定义菜单wiki">公众平台自定义菜单wiki</a> 与<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141016&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="公众平台wiki/自定义菜单事件推送">公众平台wiki/自定义菜单事件推送</a>后，可知：点击click类型button，微信后台会推送一个event类型的xml 给开发者。</span></p>
+<p><span>显然，click类型的还需要开发者进一步完善后台代码逻辑，增加对自定义菜单事件推送的相应。</span></p>
+<h4><span><a name="7.2.1"></a>7.2.1 流程图</span>
+<br></h4>
+<p>&nbsp; &nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xe8RJIt2Ohqga9SsmxBlg7W3eMD3rOibyE7urV7XRMQtdW8V1Ia4YiaJg/0?wx_fmt=png" title="" alt="" width="481" height="764"></p>
+<h4><a name="7.2.2"></a>7.2.2码代码</h4>
+<p>&nbsp;<span>1) vim handle.py （修改）</span></p>
+<p><span>&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;handle.py
+import&nbsp;reply
+import&nbsp;receive
+import&nbsp;web
+
+class&nbsp;Handle(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;POST(self):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;webData&nbsp;=&nbsp;web.data()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"Handle&nbsp;Post&nbsp;webdata&nbsp;is&nbsp;",&nbsp;webData&nbsp;&nbsp;&nbsp;#后台打日志
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recMsg&nbsp;=&nbsp;receive.parse_xml(webData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(recMsg,&nbsp;receive.Msg):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;toUser&nbsp;=&nbsp;recMsg.FromUserName
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fromUser&nbsp;=&nbsp;recMsg.ToUserName
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;recMsg.MsgType&nbsp;==&nbsp;'text':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;"test"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replyMsg&nbsp;=&nbsp;reply.TextMsg(toUser,&nbsp;fromUser,&nbsp;content)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;replyMsg.send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;recMsg.MsgType&nbsp;==&nbsp;'image':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;mediaId&nbsp;=&nbsp;recMsg.MediaId
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replyMsg&nbsp;=&nbsp;reply.ImageMsg(toUser,&nbsp;fromUser,&nbsp;mediaId)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;replyMsg.send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;isinstance(recMsg,&nbsp;receive.EventMsg):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;recMsg.Event&nbsp;==&nbsp;'CLICK':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;recMsg.Eventkey&nbsp;==&nbsp;'mpGuide':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;content&nbsp;=&nbsp;u"编写中，尚未完成".encode('utf-8')
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;replyMsg&nbsp;=&nbsp;reply.TextMsg(toUser,&nbsp;fromUser,&nbsp;content)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;replyMsg.send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;"暂且不处理"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;reply.Msg().send()
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;except&nbsp;Exception,&nbsp;Argment:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Argment</pre>
+<p><span></span>&nbsp;&nbsp;<span>2）vim receive.py (修改)</span></p>
+<p><span></span></p>
+<pre>#&nbsp;-*-&nbsp;coding:&nbsp;utf-8&nbsp;-*-
+#&nbsp;filename:&nbsp;receive.py
+import&nbsp;xml.etree.ElementTree&nbsp;as&nbsp;ET
+
+def&nbsp;parse_xml(web_data):
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;len(web_data)&nbsp;==&nbsp;0:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;None
+&nbsp;&nbsp;&nbsp;&nbsp;xmlData&nbsp;=&nbsp;ET.fromstring(web_data)
+&nbsp;&nbsp;&nbsp;&nbsp;msg_type&nbsp;=&nbsp;xmlData.find('MsgType').text
+&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;msg_type&nbsp;==&nbsp;'event':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event_type&nbsp;=&nbsp;xmlData.find('Event').text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;event_type&nbsp;==&nbsp;'CLICK':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;Click(xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;event_type&nbsp;in&nbsp;('subscribe',&nbsp;'unsubscribe'):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#return&nbsp;Subscribe(xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;event_type&nbsp;==&nbsp;'VIEW':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#return&nbsp;View(xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;event_type&nbsp;==&nbsp;'LOCATION':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#return&nbsp;LocationEvent(xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#elif&nbsp;event_type&nbsp;==&nbsp;'SCAN':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#return&nbsp;Scan(xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg_type&nbsp;==&nbsp;'text':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;TextMsg(xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;elif&nbsp;msg_type&nbsp;==&nbsp;'image':
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;ImageMsg(xmlData)
+
+class&nbsp;EventMsg(object):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;xmlData):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.ToUserName&nbsp;=&nbsp;xmlData.find('ToUserName').text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.FromUserName&nbsp;=&nbsp;xmlData.find('FromUserName').text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.CreateTime&nbsp;=&nbsp;xmlData.find('CreateTime').text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.MsgType&nbsp;=&nbsp;xmlData.find('MsgType').text
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.Event&nbsp;=&nbsp;xmlData.find('Event').text
+class&nbsp;Click(EventMsg):
+&nbsp;&nbsp;&nbsp;&nbsp;def&nbsp;__init__(self,&nbsp;xmlData):
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EventMsg.__init__(self,&nbsp;xmlData)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.Eventkey&nbsp;=&nbsp;xmlData.find('EventKey').text</pre>
+<p><span></span>
+<br></p>
+<h2><a name="7.3"></a>7.3<span>&nbsp;&nbsp; </span><span>体验</span></h2>
+<p><span>&nbsp; 编译好代码后，重新启动服务，（sudo python main.py 80）,view类型、medie_id类型的本身就很容易实现，现在重点看一下click类型的菜单按钮。</span></p>
+<p><span>&nbsp; 微信扫码成为公众号的粉丝，点击菜单按钮“开发指引”。</span></p>
+<p><span>&nbsp; 查看后台日志，发现接收到一条xml，如截图：</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xdyBkE96xLoDCXPsrmwfMs7FUqOBmpF9C5qeykCwZJibEniacCFhwicZtA/0?wx_fmt=png" title="" alt=""></p>
+<p><span>&nbsp; 公众号的后台代码设置对该事件的处理是回复一条内容为“编写之中”的文本消息，因此公众号发送了一条文本消息给我，如图：</span></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSK9XkjDgZoL0xVsK1OnhLZbmtJiadVvrxn43MXXCZGiabBJLGvtia7WooHTBBZ1Zzn2T2Q/0?wx_fmt=png" title="" alt=""></p>
+<p><span>好啦，到此，目标已实现。对于自定义菜单其他类型，均同理可操作。</span></p>
+<h1><a name="8"></a>8<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span>关于反馈问题</span></h1>
+<p><span>是程序肯定有bug，所以在使用开放平台过程中，肯定会遇见各种各样的问题，可能是自己的坑，也可能是微信团队的锅。当自己查自己代码千千遍，依旧没有发现问题时候，可以通过腾讯客服等等渠道，请求微信团队的帮助。如何高效快速的得到帮助呢？下面强调三个要点： </span></p>
+<p>1<span>）精明扼要的描述清楚场景以及遇见问题，描述过程中尽可能使用</span>wiki<span>上的名称，譬如自定义菜单，素材管理等专有名词，不然开发根本不知道你在说什么。</span></p>
+<p>2<span>）提供账号信息：</span>AppID<span>（登陆公众平台官网</span>-&gt;<span>基本配置），若牵扯粉丝提供粉丝的</span>OpenID<span>。</span></p>
+<p>3<span>）提供</span>bug<span>的发生时间，至少要以小时为单位（年</span>-<span>月</span>-<span>日</span>-<span>小时），当然越具体越容易查明问题。</span></p>
+<p>
+<br></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

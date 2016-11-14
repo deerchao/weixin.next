@@ -270,6 +270,10 @@
         /// </summary>
         public const int E43005 = 43005;
         /// <summary>
+        /// 需要将接收者从黑名单中移除
+        /// </summary>
+        public const int E43019 = 43019;
+        /// <summary>
         /// 多媒体文件为空
         /// </summary>
         public const int E44001 = 44001;

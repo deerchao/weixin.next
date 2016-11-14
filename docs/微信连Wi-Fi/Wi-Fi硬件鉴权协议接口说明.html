@@ -16,7 +16,6 @@
 <p><a href="#概述" target="_self">1 概述</a></p>
 <p><a href="#业务逻辑" target="_self">2 业务逻辑</a></p>
 <p><a href="#移动端连Wi-Fi" target="_self">2.1 移动端连Wi-Fi</a></p>
-<p><a href="#PC连Wi-Fi" target="_self">2.2 PC连Wi-Fi</a></p>
 <p><a href="#移动端实现流程" target="_self">3 移动端实现流程</a></p>
 <p><a href="#第一步：获取门店Wi-Fi信息" target="_self">3.1 第一步：获取门店Wi-Fi信息</a></p>
 <p><a href="#第二步：改造移动端portal页面" target="_self">3.2 第二步：改造移动端portal页面</a></p>
@@ -25,39 +24,26 @@
 <p><a href="#第五步：实现扫二维码连网" target="_self">3.5 第五步：实现扫二维码连网</a></p>
 <p><a href="#移动端portal页示例Demo" target="_self">3.6 移动端portal页示例Demo</a></p>
 <p><a href="#常见问题" target="_self">3.7 常见问题</a></p>
-<p><a href="#PC端实现流程" target="_self">4 PC端实现流程</a></p>
-<p><a href="#第一步：获取门店Wi-Fi信息" target="_self">4.1 第一步：获取门店Wi-Fi信息</a></p>
-<p><a href="#第二步：改造PC端portal页" target="_self">4.2 第二步：改造PC端portal页</a></p>
-<p><a href="#第三步：支持PC端白名单放行" target="_self">4.3 第三步：支持PC端白名单放行</a></p>
-<p><a href="#第四步：支持移动端临时放行上网请求" target="_self">4.4 第四步：支持移动端临时放行上网请求</a></p>
-<p><a href="#第五步：接受微信身份认证放行" target="_self">4.5 第五步：接受微信身份认证放行</a></p>
-<p><a href="#PC端portal页示例Demo" target="_self">4.6 PC端portal页示例Demo</a></p>
 <h1><span class="mw-headline"></span></h1>
-<p><a href="#离线认证方式" target="_self" textvalue="5&nbsp;离线认证方式">5&nbsp;离线认证方式</a></p>
-<p><a href="#第1步：获取门店Wi-Fi信息" target="_self" textvalue="5.1 第一步：获取门店Wi-Fi信息">5.1 第一步：获取门店Wi-Fi信息</a></p>
-<p><a href="#第2步：改造移动端portal页" target="_self" textvalue="5.2 第二步：改造移动端portal页">5.2 第二步：改造移动端portal页</a></p>
-<p><a href="#第3步：接受微信身份认证放行" target="_self" textvalue="5.3 第三步：接受微信身份认证放行">5.3 第三步：接受微信身份认证放行</a></p>
+<p><a href="#离线认证方式" target="_self" textvalue="4&nbsp;离线认证方式">4&nbsp;离线认证方式</a></p>
+<p><a href="#第1步：获取门店Wi-Fi信息" target="_self" textvalue="4.1 第一步：获取门店Wi-Fi信息">4.1 第一步：获取门店Wi-Fi信息</a></p>
+<p><a href="#第2步：改造移动端portal页" target="_self" textvalue="4.2 第二步：改造移动端portal页">4.2 第二步：改造移动端portal页</a></p>
+<p><a href="#第3步：接受微信身份认证放行" target="_self" textvalue="4.3 第三步：接受微信身份认证放行">4.3 第三步：接受微信身份认证放行</a></p>
 <h1><span class="mw-headline">
 <br></span>
 <br></h1>
 <h1><span class="mw-headline" id=".E6.A6.82.E8.BF.B0"><a name="概述"></a>概述</span></h1>
-<p>硬件鉴权协议主要用于Portal型设备的鉴权方式改造，使设备可以通过识别微信身份给顾客放行，让顾客的手机和PC快速便捷连上Wi-Fi。</p>
+<p>硬件鉴权协议主要用于Portal型设备的鉴权方式改造，使设备可以通过识别微信身份给顾客放行，让顾客的手机快速便捷连上Wi-Fi。</p>
 <h1><span class="mw-headline" id=".E4.B8.9A.E5.8A.A1.E9.80.BB.E8.BE.91"><a name="业务逻辑"></a>业务逻辑</span></h1>
 <h3><span class="mw-headline" id=".E7.A7.BB.E5.8A.A8.E7.AB.AF.E8.BF.9EWi-Fi"><strong><a name="移动端连Wi-Fi"></a>移动端连Wi-Fi</strong></span></h3>
 <p><strong>用户连网流程</strong></p>
-<p>顾客在手机上点选ssid后唤起portal页，点击页面上“微信连Wi-Fi”按钮进入连接前页，展示公众号logo和名称，点击“立即连网”按钮后开始连WiFi，连接成功后跳转到成功连接页，关注商家公众号。<img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKxyOXTLUQNicUxTaliaWK073HCII0COwRtDKsfZSm5KicdFOJbQ7daXRpiaHn2icSONVrVQ/0?wx_fmt=jpeg" title="" alt=""></p>
+<p>顾客在手机上点选ssid后唤起portal页，点击页面上“微信连Wi-Fi”按钮进入连接前页，展示公众号logo和名称，点击“立即连网”按钮后开始连WiFi，连接成功后跳转到成功连接页，关注商家公众号。<img title="" alt="" src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKxyOXTLUQNicUxTaliaWK073HCII0COwRtDKsfZSm5KicdFOJbQ7daXRpiaHn2icSONVrVQ/0?wx_fmt=jpeg"></p>
 <p>
 <br><strong>模块时序图</strong></p>
 <p>若无法看清图中文字，可先通过“图片另存为”将图片保存到本地，再放大查看。</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKwa97Sd5dg0KKibKWvj0aNmdDZsjw8egQwa7RPRSBcHdIJm00PdvWXcpl3Q5okuTGBA/0?wx_fmt=png" title="" alt="" width="844" height="647"></p>
-<h3><span class="mw-headline" id="PC.E8.BF.9EWi-Fi"><strong><a name="PC连Wi-Fi"></a>PC连Wi-Fi</strong></span></h3>
-<p><strong>用户连网流程</strong></p>
-<p>顾客在PC上选择ssid后，在浏览器打开portal页，页面上展示连Wi-Fi二维码。用手机微信扫描该二维码，点击手机页面上的“确认”按钮，PC连上Wi-Fi，同时浏览器的portal页自动跳转到商家配置的网页。</p>
-<p><a href="http://mp.weixin.qq.com/wiki/10/0ef643c7147fdf689e0a780d8c08ab96.html#" class="image"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcniaicicudU7ksHJ9693hbvw4vZfsL6ia5TBOg6TkPxeJFZKOaewibU9J7aA/0?wx_fmt=gif" title="" alt=""></a></p>
+<p><img width="844" height="647" title="" alt="" src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKwa97Sd5dg0KKibKWvj0aNmdDZsjw8egQwa7RPRSBcHdIJm00PdvWXcpl3Q5okuTGBA/0?wx_fmt=png"></p>
 <p>
-<br><strong>模块时序图</strong></p>
-<p>若无法看清图中文字，可先通过“图片另存为”将图片保存到本地，再放大查看。</p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKwa97Sd5dg0KiaROKCFc6XesvgOTfZg2og5xUuZf0KnbOr8XVGLQj22asedvn1MEfrQ/0?wx_fmt=png" title="" alt="" width="839" height="517"></p>
+<br></p>
 <h1><span class="mw-headline" id=".E7.A7.BB.E5.8A.A8.E7.AB.AF.E5.AE.9E.E7.8E.B0.E6.B5.81.E7.A8.8B"><a name="移动端实现流程"></a>移动端实现流程</span></h1>
 <p>请按照以下步骤操作，即可完成设备改造，让移动端设备使用微信连Wi-Fi。</p>
 <h3><span class="mw-headline" id=".E7.AC.AC.E4.B8.80.E6.AD.A5.EF.BC.9A.E8.8E.B7.E5.8F.96.E9.97.A8.E5.BA.97Wi-Fi.E4.BF.A1.E6.81.AF"><strong><a name="第一步：获取门店Wi-Fi信息"></a>第一步：获取门店Wi-Fi信息</strong></span></h3>
@@ -92,7 +78,7 @@ ssid&nbsp;);</pre>
 'aa:aa:aa:aa:aa:aa',&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 '2099');</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<table width="640" align="center" cellspacing="0" cellpadding="4">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">appId</td><td class="table_cell">是</td><td class="table_cell">商家微信公众平台账号</td></tr>
@@ -117,7 +103,7 @@ ssid&nbsp;);</pre>
 <p>微信客户端向authUrl发送请求示例：</p>
 <pre>http://www.foo.com/portal/auth.html?extend=xxx&amp;openId=xxx&amp;tid=xxx</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<table width="640" align="center" cellspacing="0" cellpadding="4">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">extend</td><td class="table_cell">为上文中调用呼起微信JSAPI时传递的extend参数，这里原样回传给商家主页</td></tr>
@@ -133,7 +119,7 @@ ssid&nbsp;);</pre>
 <p><strong>1. 改造portal server跳转内容</strong></p>
 <p>当一个未认证的手机用户试图联网时，AC会将用户的http请求转跳到Portal Server上的Portal页面，这里AC需要进一步识别，如果这个http请求是来自于微信客户端，则在转跳URL上带上authUrl和extend两个约定参数即可。</p>
 <pre>http://www.foo.com/portal/portal.html?authUrl=http%3A%2F%2Fwww.foo.com%2Fportal%2Fauth.html&amp;extend=xxx</pre>
-<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<table width="640" align="center" cellspacing="0" cellpadding="4">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">authUrl</td><td class="table_cell">即第二步portal页中填写的authUrl，是认证服务端URL，微信客户端将把用户微信身份信息向此URL提交并获得认证放行</td></tr>
@@ -158,8 +144,8 @@ if(userAgent.matches(".*micromessenger.*")){
 <h3><span class="mw-headline" id=".E7.A7.BB.E5.8A.A8.E7.AB.AFportal.E9.A1.B5.E7.A4.BA.E4.BE.8BDemo"><strong><a name="移动端portal页示例Demo"></a>移动端portal页示例Demo</strong></span></h3>
 <p>请参考示例Demo，进行移动端Portal页面改造（JS代码直接在页面中）</p>
 <p>请用<strong>手机浏览器</strong>打开以下链接（可手动输入，也可扫码获得链接地址）：</p>
-<p><a href="https://wifi.weixin.qq.com/operator/demoNew.xhtml" class="external free" rel="nofollow" target="_blank">https://wifi.weixin.qq.com/operator/demoNew.xhtml</a></p>
-<p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcVeWLgr3MwyIqMNa5UdBnhzuUZhiaLfgtjT3FjrfTy4J5WoMyj3cGMrQ/0?wx_fmt=png" title="" alt=""></p>
+<p><a class="external free" href="https://wifi.weixin.qq.com/operator/demoNew.xhtml" target="_blank" rel="nofollow">https://wifi.weixin.qq.com/operator/demoNew.xhtml</a></p>
+<p><img title="" alt="" src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK8jCzLMb60WcVeWLgr3MwyIqMNa5UdBnhzuUZhiaLfgtjT3FjrfTy4J5WoMyj3cGMrQ/0?wx_fmt=png"></p>
 <p>如果用微信扫码，请点击有右上角按钮，选择“在浏览器中打开”页面，不要直接在微信浏览器中体验。</p>
 <p>
 <br></p>
@@ -177,71 +163,13 @@ if(userAgent.matches(".*micromessenger.*")){
 2.临时放行手机的所有流量后，局部或整体刷新portal页面触发IOS再次进行嗅探；
 3.IOS嗅探可以正常触达公网上的预设服务后“取消”变为“完成”；
 4.以上动作完成后，再调用跳转微信的JSAPI，继而跳转微信完成认证连接流程。</pre>
-<h1><span class="mw-headline">
-<br></span></h1>
-<h1><span class="mw-headline" id="PC.E7.AB.AF.E5.AE.9E.E7.8E.B0.E6.B5.81.E7.A8.8B"><a name="PC端实现流程"></a>PC端实现流程</span></h1>
-<p>请按照以下步骤操作，即可在PC端使用微信连Wi-Fi。</p>
-<h3><span class="mw-headline" id=".E7.AC.AC.E4.B8.80.E6.AD.A5.EF.BC.9A.E8.8E.B7.E5.8F.96.E9.97.A8.E5.BA.97Wi-Fi.E4.BF.A1.E6.81.AF_2"><strong><a name="第一步：获取门店Wi-Fi信息"></a>第一步：获取门店Wi-Fi信息</strong></span></h3>
-<p>实现PC连Wi-Fi的第一步，是获得门店Wi-Fi信息，包括：appId，shop_id。有两种获取门店Wi-Fi信息的方法：</p>
-<p><strong>1. 页面操作获得</strong></p>
-<p>在<a href="https://mp.weixin.qq.com/" class="external text" rel="nofollow" target="_blank">微信公众平台</a>开通微信连Wi-Fi插件，在【设备管理】-&gt;【添加设备】里，添加“新增微信方式连网+连网后近场服务”-&gt;”Portal型设备”；添加成功后即可获得门店Wi-Fi参数信息。</p>
-<p>已添加设备也可在【设备详情】-&gt;【查看设备改造信息】中，获得门店Wi-Fi参数信息。</p>
-<p><strong>2. 通过接口获得</strong></p>
-<p>调用<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1444894115&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="“获取WiFi门店列表”">“获取WiFi门店列表”</a>接口获得shop_id，即设备要添加到的门店的ID。</p>
-<h3><span class="mw-headline" id=".E7.AC.AC.E4.BA.8C.E6.AD.A5.EF.BC.9A.E6.94.B9.E9.80.A0PC.E7.AB.AFportal.E9.A1.B5"><strong><a name="第二步：改造PC端portal页"></a>第二步：改造PC端portal页</strong></span></h3>
-<p>若连网设备为PC，在portal页中引用下述微信JSAPI，让原有的Wi-Fi portal页具备呼起微信的能力：</p>
-<pre>&lt;script&nbsp;type="text/javascript"&nbsp;&nbsp;&nbsp;&nbsp;
-src="https://wifi.weixin.qq.com/resources/js/wechatticket/pcauth.js"&nbsp;&gt;&lt;/script&gt;</pre>
-<p>调用JSAPI生成二维码，具体示例代码如下：</p>
-<pre>&nbsp;&lt;script&nbsp;type="text/javascript"&gt;
-	&nbsp;&nbsp;&nbsp;&nbsp;JSAPI.auth({
-	&nbsp;&nbsp;&nbsp;&nbsp;	target&nbsp;:&nbsp;document.getElementById('qrcode_zone'),
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;appId&nbsp;:&nbsp;'wx23fb4aaf04b8491e',
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;shopId&nbsp;:&nbsp;6747662,
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;extend&nbsp;:&nbsp;'wechatpc',
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;authUrl&nbsp;:&nbsp;'http://wximg.qq.com/tmt/wifi-landing-pc/dist/html/index-success.html'
-	&nbsp;&nbsp;&nbsp;&nbsp;});
-&lt;/script&gt;</pre>
-<p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px">
-<tbody>
-<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
-<tr><td class="table_cell">target</td><td class="table_cell">是</td><td class="table_cell">二维码图片放置位置</td></tr>
-<tr><td class="table_cell">appId</td><td class="table_cell">是</td><td class="table_cell">商家微信公众平台账号</td></tr>
-<tr><td class="table_cell">shopId</td><td class="table_cell">是</td><td class="table_cell">即shop_id，设备所在门店的ID（微信公众平台门店）</td></tr>
-<tr><td class="table_cell">extend</td><td class="table_cell">是</td><td class="table_cell"><strong>extend里面可以放开发者需要的相关参数集合</strong>，最终将透传给运营商认证URL。extend参数只支持英文和数字，且长度不得超过300个字符。</td></tr>
-<tr><td class="table_cell">authUrl</td><td class="table_cell">是</td><td class="table_cell">认证服务端URL，微信客户端将把用户微信身份信息向此URL提交并获得认证放行</td></tr>
-</tbody>
-</table>
-<p>
-<br></p>
-<h3><span class="mw-headline" id=".E7.AC.AC.E4.B8.89.E6.AD.A5.EF.BC.9A.E6.94.AF.E6.8C.81PC.E7.AB.AF.E7.99.BD.E5.90.8D.E5.8D.95.E6.94.BE.E8.A1.8C"><strong><a name="第三步：支持PC端白名单放行"></a>第三步：支持PC端白名单放行</strong></span></h3>
-<p>AP/AC须对PC做白名单放行，以支持portal页面引用jsapi，以及轮询微信后台并获取openid和tid。</p>
-<p><span>请对微信连Wi-Fi的URL做白名单支持，URL为：</span></p>
-<pre>https://wifi.weixin.qq.com/</pre>
-<p>以支持：</p>
-<p>1.引用jsapi：</p>
-<pre>https://wifi.weixin.qq.com/resources/js/wechatticket/pcauth.js</pre>
-<p>2.轮询微信后台获取openid和tid：</p>
-<pre>https://wifi.weixin.qq.com/cgi-bin/pollpcresult</pre>
-<h3><span class="mw-headline" id=".E7.AC.AC.E5.9B.9B.E6.AD.A5.EF.BC.9A.E6.94.AF.E6.8C.81.E7.A7.BB.E5.8A.A8.E7.AB.AF.E4.B8.B4.E6.97.B6.E6.94.BE.E8.A1.8C.E4.B8.8A.E7.BD.91.E8.AF.B7.E6.B1.82"><strong><a name="第四步：支持移动端临时放行上网请求"></a>第四步：支持移动端临时放行上网请求</strong></span></h3>
-<p>请参考移动端实现流程的第三步，支持移动端临时放行上网请求。</p>
-<h3><span class="mw-headline" id=".E7.AC.AC.E4.BA.94.E6.AD.A5.EF.BC.9A.E6.8E.A5.E5.8F.97.E5.BE.AE.E4.BF.A1.E8.BA.AB.E4.BB.BD.E8.AE.A4.E8.AF.81.E6.94.BE.E8.A1.8C"><strong><a name="第五步：接受微信身份认证放行"></a>第五步：接受微信身份认证放行</strong></span></h3>
-<p>请参考移动端实现流程的第四步，接受微信身份认证并放行。</p>
-<h3><span class="mw-headline" id="PC.E7.AB.AFportal.E9.A1.B5.E7.A4.BA.E4.BE.8BDemo"><strong><a name="PC端portal页示例Demo"></a>PC端portal页示例Demo</strong></span></h3>
-<p>请参考示例Demo，进行PC端Portal页面改造（JS代码直接在页面中）：</p>
-<p><a href="https://wifi.weixin.qq.com/operator/demoForPc.xhtml" class="external free" rel="nofollow" target="_blank">https://wifi.weixin.qq.com/operator/demoForPc.xhtml</a></p>
-<p>
-<br></p>
-<p>
-<br></p>
 <h1><span class="mw-headline" id="PC.E7.AB.AF.E5.AE.9E.E7.8E.B0.E6.B5.81.E7.A8.8B"><a name="离线认证方式"></a>离线认证方式</span></h1>
 <p><span>Wi-Fi环境无法做到临时放行用户流量用于与微信后台通信，可采用离线认证方式实现。请按照以下步骤操作，即可在移动端使用微信连Wi-Fi。</span></p>
 <p><span>
 <br></span></p>
 <p><span><strong>模块时序图</strong></span></p>
 <p><span>&nbsp; <span>若无法看清图中文字，可先通过“图片另存为”将图片保存到本地，再放大查看</span></span></p>
-<p><span><strong><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKzgLhSzcyU0p7hddAZtIYJGuzhyQPfcic1T6YLicy2Y3H08vjtvqNIDVGiak6AdD6suTw/0?wx_fmt=png" title="" alt="" width="844" height="585"></strong></span></p>
+<p><span><strong><img width="844" height="585" title="" alt="" src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKzgLhSzcyU0p7hddAZtIYJGuzhyQPfcic1T6YLicy2Y3H08vjtvqNIDVGiak6AdD6suTw/0?wx_fmt=png"></strong></span></p>
 <p>
 <br></p>
 <h3><span class="mw-headline" id=".E7.AC.AC.E4.B8.80.E6.AD.A5.EF.BC.9A.E8.8E.B7.E5.8F.96.E9.97.A8.E5.BA.97Wi-Fi.E4.BF.A1.E6.81.AF_2"><strong><a name="第1步：获取门店Wi-Fi信息"></a>第一步：获取门店Wi-Fi信息</strong></span></h3>
@@ -264,14 +192,14 @@ src="https://wifi.weixin.qq.com/resources/js/wechatticket/pcauth.js"&nbsp;&gt;&l
 <p><strong>参数说明</strong></p>
 <p>
 <br></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<table width="640" align="center" cellspacing="0" cellpadding="4">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">appId</td><td class="table_cell">是</td><td class="table_cell">商家微信公众平台账号</td></tr>
 <tr><td class="table_cell">shopId</td><td class="table_cell">是</td><td class="table_cell">即shop_id，设备所在门店的ID（微信公众平台门店）</td></tr>
 <tr><td class="table_cell">authUrl</td><td class="table_cell">是</td><td class="table_cell">认证服务端URL，微信客户端将把用户微信身份信息向此URL提交并获得认证放行。<span>authUrl的值是经过Url编码的，如：http%3A%2F%2F192.168.1.1%2Fauth.html%3Ft%3Dabc%26s%3D123</span></td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1">extend</td><td class="table_cell" colspan="1" rowspan="1">是</td><td class="table_cell" colspan="1" rowspan="1"><strong>extend里面可以放开发者需要的相关参数集合</strong>，最终将透传给运营商认证URL。extend参数只支持英文和数字，且长度不得超过300个字符。</td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1">timestamp</td><td class="table_cell" colspan="1" rowspan="1">是</td><td class="table_cell" colspan="1" rowspan="1">时间戳使用毫秒</td></tr>
+<tr><td class="table_cell" rowspan="1" colspan="1">extend</td><td class="table_cell" rowspan="1" colspan="1">是</td><td class="table_cell" rowspan="1" colspan="1"><strong>extend里面可以放开发者需要的相关参数集合</strong>，最终将透传给运营商认证URL。extend参数只支持英文和数字，且长度不得超过300个字符。</td></tr>
+<tr><td class="table_cell" rowspan="1" colspan="1">timestamp</td><td class="table_cell" rowspan="1" colspan="1">是</td><td class="table_cell" rowspan="1" colspan="1">时间戳使用毫秒</td></tr>
 <tr><td class="table_cell">sign</td><td class="table_cell">是</td><td class="table_cell">请求参数签名，具体计算方法见下方说明</td></tr>
 </tbody>
 </table>
@@ -287,7 +215,7 @@ src="https://wifi.weixin.qq.com/resources/js/wechatticket/pcauth.js"&nbsp;&gt;&l
 <p><span>微信客户端被呼起后，将自动向authUrl发起认证请求，提交extend参数。用户微信身份（tid参数）将通过商户主页传递，请开发者注意在商家主页的后台获取。 微信客户端向authUrl发送请求示例：</span></p>
 <pre>http://www.foo.com/portal/auth.html?extend=xxx</pre>
 <p><strong>参数说明</strong></p>
-<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<table width="640" align="center" cellspacing="0" cellpadding="4">
 <tbody>
 <tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">extend</td><td class="table_cell">为上文中调用呼起微信JSAPI时传递的extend参数，这里原样回传给商家主页</td></tr>

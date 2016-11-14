@@ -10,7 +10,8 @@
 <div class="main_bd">
 <div class="article_box">
 <div class="inner">
-<div class="news_content"><p>目录</p>
+<div class="news_content">
+<p><span></span>目录</p>
 <p><a href="#1" target="_self">1&nbsp;概要说明</a></p>
 <p><a href="#2" target="_self">2&nbsp;报警内容说明</a></p>
 <p><a href="#3" target="_self">3&nbsp;各类报警的排查方法</a></p>
@@ -20,7 +21,7 @@
 <p><a href="#5.2" target="_self">5.2&nbsp;附录2：查看服务器性能负载的常用工具</a></p>
 <p><a href="#5.3" target="_self">5.3&nbsp;附录3：nginx配置和排查指引</a></p>
 <h2><span id=".E6.A6.82.E8.A6.81.E8.AF.B4.E6.98.8E"><strong><a name="1"></a>概要说明</strong></span></h2>
-<p>微信公众平台已对外开放接口报警，当微信服务器向开发者推送消息失败次数达到预定阈值时，会将报警消息发送到指定微信报警群中（设置方式：公众平台-&gt;开发者中心-&gt;接口报警），请开发者积极主动关注报警，即时解决故障，提高微信公众号的服务质量。</p>
+<p>微信公众平台已对外开放接口报警，当微信服务器向开发者推送消息失败次数达到预定阈值时，会将报警消息发送到指定微信报警群中（设置方式：公众平台-&gt;开发-运维中心-&gt;接口报警），请开发者积极主动关注报警，即时解决故障，提高微信公众号的服务质量。</p>
 <p><strong>为了更好地根据报警信息尾部的实例（提供了openid及时间戳stamp）进行问题排查，开发者需要在接入层、逻辑层等每一个层级都加上包含关键信息的详细日志，以利于快速定位问题。</strong></p>
 <p>报警目前有2类：</p>
 <p>1.通用报警，所有开发者都需要关注。</p>
@@ -29,7 +30,7 @@
 <tr class="firstRow thead"><th class="table_cell">类型</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">DNS失败</td><td class="table_cell">微信服务器向公众号推送消息或事件时，解析DNS失败</td></tr>
 <tr><td class="table_cell">DNS超时</td><td class="table_cell">微信服务器向公众号推送消息或事件时，解析DNS超时，超时时间为5秒</td></tr>
-<tr><td class="table_cell">连接超时</td><td class="table_cell">微信服务器连接公众号开发者服务器时发生超时，超时时间为3秒</td></tr>
+<tr><td class="table_cell">连接超时</td><td class="table_cell">微信服务器连接公众号开发者服务器时发生超时，超时时间为5秒</td></tr>
 <tr><td class="table_cell">请求超时</td><td class="table_cell">微信服务器向公众号推送消息或事件后，开发者5秒内没有返回</td></tr>
 <tr><td class="table_cell">回应失败</td><td class="table_cell">微信服务器向公众号推送消息或事件后，得到的回应不合法</td></tr>
 <tr><td class="table_cell">MarkFail（自动屏蔽）</td><td class="table_cell">微信服务器向公众号推送消息或事件发生多次失败后，暂时不推送消息，一分钟后解除屏蔽</td></tr>
@@ -125,11 +126,11 @@ events&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;worker_connections&nbsp;&nbsp;102400;&nbsp;&nbsp;&nbsp;//允许最大连接数
 }
 //请求日志记录，关键字段：request_time-请求总时间，upstream_response_time后端处理时&nbsp;间
-log_format&nbsp;&nbsp;main&nbsp;&nbsp;&#39;$remote_addr&nbsp;&nbsp;-&nbsp;$remote_user&nbsp;[$time_local]&nbsp;&quot;$request&quot;&nbsp;&#39;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;$status&nbsp;$body_bytes_sent&nbsp;&quot;$http_referer&quot;&nbsp;&#39;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;&quot;$http_user_agent&quot;&nbsp;&quot;$http_x_forwarded_for&quot;&nbsp;&quot;$host&quot;&nbsp;&nbsp;&quot;$cookie_ssl_edition&quot;&nbsp;&#39;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;&quot;$upstream_addr&quot;&nbsp;&nbsp;&nbsp;&quot;$upstream_status&quot;&nbsp;&nbsp;&quot;$request_time&quot;&nbsp;&nbsp;&#39;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#39;&quot;$upstream_response_time&quot;&nbsp;&#39;;
+log_format&nbsp;&nbsp;main&nbsp;&nbsp;'$remote_addr&nbsp;&nbsp;-&nbsp;$remote_user&nbsp;[$time_local]&nbsp;"$request"&nbsp;'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'$status&nbsp;$body_bytes_sent&nbsp;"$http_referer"&nbsp;'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'"$http_user_agent"&nbsp;"$http_x_forwarded_for"&nbsp;"$host"&nbsp;&nbsp;"$cookie_ssl_edition"&nbsp;'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'"$upstream_addr"&nbsp;&nbsp;&nbsp;"$upstream_status"&nbsp;&nbsp;"$request_time"&nbsp;&nbsp;'
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'"$upstream_response_time"&nbsp;';
 &nbsp;&nbsp;&nbsp;access_log&nbsp;&nbsp;logs/access.log&nbsp;&nbsp;main;</pre>
 <p><strong>3.如何解决请求超时问题？</strong></p>
 <p>每个模块都需要有完整的日志，能够查出每个请求在每个模块的耗时信息，配合微信报警提供信息，能够很容易的定位到是哪个服务器出问题。常见的原因是：</p>
@@ -173,7 +174,7 @@ log_format&nbsp;&nbsp;main&nbsp;&nbsp;&#39;$remote_addr&nbsp;&nbsp;-&nbsp;$remot
 &nbsp;&nbsp;&nbsp;499:&nbsp;则是客户端的问题，请联系微信团队。&nbsp;&nbsp;此错误少见。</pre>
 <p>2、检查错误日志情况，tail -f logs/error_log ，查看是否有connect() failed、Connection refused、 Connection reset by peer等error错误日志，有则说明有可能nginx出现的连接数超负载等情况。</p>
 <pre>&nbsp;&nbsp;&nbsp;（1）查看系统的网络连接数情况确认是否有较大的链接数
-&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;netstat&nbsp;-n&nbsp;|&nbsp;awk&nbsp;&#39;/^tcp/&nbsp;{++S[$NF]}&nbsp;END&nbsp;{for(a&nbsp;in&nbsp;S)&nbsp;print&nbsp;a,&nbsp;S[a]}&#39;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;netstat&nbsp;-n&nbsp;|&nbsp;awk&nbsp;'/^tcp/&nbsp;{++S[$NF]}&nbsp;END&nbsp;{for(a&nbsp;in&nbsp;S)&nbsp;print&nbsp;a,&nbsp;S[a]}'&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;解析：&nbsp;
 	&nbsp;&nbsp;&nbsp;CLOSED&nbsp;//无连接是活动的或正在进行&nbsp;
 	&nbsp;&nbsp;&nbsp;LISTEN&nbsp;//服务器在等待进入呼叫&nbsp;
@@ -190,7 +191,7 @@ log_format&nbsp;&nbsp;main&nbsp;&nbsp;&#39;$remote_addr&nbsp;&nbsp;-&nbsp;$remot
 &nbsp;&nbsp;&nbsp;（2）查看系统的句柄配置情况，ulimit&nbsp;-n&nbsp;，确认是否过小（小于请求数）
 &nbsp;&nbsp;&nbsp;（3）worker_rlimit_nofile、worker_connections配置项，是否过小（小于请求数）</pre>
 <p>
-<br/></p>
+<br></p>
 </div>
 </div>
 </div>

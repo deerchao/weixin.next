@@ -34,9 +34,15 @@
 </td><td class="table_cell"><span>2016-6-20</span></td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1"><span>V1.1</span></td><td class="table_cell" colspan="1" rowspan="1">
 <p><span>1.开发者在变动积分/余额消息时，支持开发者控制发/不发系统模板消息</span></p>
-<p><span>2.支持商户设置某一张卡支持用户修改信息</span></p>
+<p><span>2.支持商户设置某一张卡支持用户修改激活信息</span></p>
 </td><td class="table_cell" colspan="1" rowspan="1">
 <p><span>2016-8-16</span>
+<br></p>
+</td></tr>
+<tr><td class="table_cell"><span>V1.2</span></td><td class="table_cell">
+<p><span>1.跟随推荐功能升级，支持用户激活会员卡后赠券，详情请见：<a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1466494654_K9rNz&amp;token=&amp;lang=zh_CN&amp;anchor=8.3" target="_blank">跟随推荐</a></span></p>
+</td><td class="table_cell">
+<p><span>2016-10-11</span>
 <br></p>
 </td></tr>
 </tbody>
@@ -50,7 +56,7 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></h2>
 <ul class=" list-paddingleft-2">
 <li>
-<p><span><a href="#1" target="_self">1.新版会员卡介绍</a></span></p>
+<p><a href="#1" target="_self" textvalue="1.新版会员卡介绍"><span>1.新版会员卡介绍</span></a></p>
 </li>
 <li>
 <p><span><a href="#2" target="_self">2.须知</a></span></p>
@@ -109,7 +115,7 @@
 </td></tr>
 </tbody>
 </table>
-<h1><a name="#1"></a><span>1.新版会员卡介绍</span></h1>
+<h1><a name="1"></a><span>1.新版会员卡介绍</span></h1>
 <p><span>&nbsp; 在原有能力的基础上，微信卡券团队将对会员卡新增自定义卡面、门店扫码方案、支付后模板消息、按会员标签分组群发消息等能力，卡券消息能力也进行了升级，旨在帮助商家更好地进行会员管理。</span></p>
 <p>
 <br></p>
@@ -123,7 +129,7 @@
 <p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;（a）</span></p>
 <p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKZl4ZoQiaruxAIDR3QYcUxfvOoj70O918h4I17htUorFmrV9QChVDtBA/0?wx_fmt=png" title="" alt="" width="579" height="476">
 <br><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (b)</span></p>
-<h1><a name="#2"></a><span>2.须知</span></h1>
+<h1><a name="2"></a><span>2.须知</span></h1>
 <p>
 <br></p>
 <p><span>阅读该部分之前请先阅读《</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1445241432&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="微信公众平台开发必读"><span>微信公众平台开发必读</span></a><span>》、《</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421135319&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="开始开发"><span>开始开发</span></a><span>》以及《</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1421141229&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="微信卡券接口说明"><span>微信卡券接口说明</span></a><span>》，确保你能了解公众平台和卡券接口的基本术语和调用方法。</span></p>
@@ -133,7 +139,7 @@
 <br></p>
 <p>
 <br></p>
-<h1><a name="#3"></a><span>3.会员卡玩法介绍</span></h1>
+<h1><a name="3"></a><span>3.会员卡玩法介绍</span></h1>
 <p>
 <br></p>
 <p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463312799&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKAYykMMX9ATorkjcOAicngmriaheLofCVQeRxBz8p9KHPU9BfRiblsITZg/0?wx_fmt=png" title="" alt="" width="111" height="116"></a><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463318001&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKKWMaA4DzjRapPlGzibB4micczOB8UPmWWJtFe3ZjSUxic3Kqy1iaafpPicw/0?wx_fmt=png" title="" alt="" width="111" height="119"></a><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463324905&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKdRX50QibfPD3fnxrZ3aBnNbbPk7ic0mftd66Q3cCQxGyXzEUjDWiaYjMA/0?wx_fmt=png" title="" alt="" width="103" height="114"></a></p>
@@ -146,8 +152,8 @@
 <br></p>
 <p>
 <br></p>
-<p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463393613&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKIEQ4C6fXaO9icwUiaLKKsbrJRQZ53ohEqjcGOm4MKp035s38ia54xiadsg/0?wx_fmt=png" title="" alt="" width="115" height="115"></a><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463414395&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlK6AnYc8DA4I7ClukK06GPVMaVpnN2Zm5pRfibAvluk5ecsTllIkG2ppQ/0?wx_fmt=png" title="" alt="" width="119" height="125"></a><span> &nbsp; &nbsp;&nbsp;</span></p>
-<p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463393613&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><span>会员卡与支付系统打通 </span></a><span>&nbsp;</span><span> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463414395&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank" textvalue="老会员绑定"><span>老会员绑定</span></a></p>
+<p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463393613&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlKIEQ4C6fXaO9icwUiaLKKsbrJRQZ53ohEqjcGOm4MKp035s38ia54xiadsg/0?wx_fmt=png" title="" alt="" width="115" height="115"></a><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463414395&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK2agzmEoRJlK6AnYc8DA4I7ClukK06GPVMaVpnN2Zm5pRfibAvluk5ecsTllIkG2ppQ/0?wx_fmt=png" title="" alt="" width="119" height="125"></a><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1478005752&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSKic8q3lrjLQSq9Rrv9wxvgGQPzxonibm6mvwjhh5oERPa4ERX1RAUc4FEgcrNicLOzazA/0?wx_fmt=png" title="" alt=""></a></span></p>
+<p><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463393613&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank"><span>会员卡与支付系统打通 </span></a><span>&nbsp;</span><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1463414395&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank" textvalue="老会员绑定">老会员绑定</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1478005752&amp;version=1&amp;lang=zh_CN&amp;platform=2" target="_blank">会员卡打通储值</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
 <p>
 <br></p>
 <p>
@@ -246,12 +252,12 @@
 <tr><td class="table_cell" width="223"><span>auto_activate
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="61.33333333333333"><span>bool
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>设置为true时用户领取会员卡后系统自动将其激活，无需调用激活接口，详情见</span><a href="#3.3" target="_self" textvalue="自动激活"><span>自动激活</span></a><span>。
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>设置为true时用户领取会员卡后系统自动将其激活，无需调用激活接口，详情见</span><a href="#6.3" target="_self" textvalue="自动激活"><span>自动激活</span></a><span>。
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell" width="223"><span>wx_activate
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="61.33333333333333"><span>bool
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>设置为true时会员卡支持一键开卡，不允许同时传入activate_url字段，否则设置wx_activate失效。填入该字段后仍需调用接口设置开卡项方可生效，详情见</span><a href="#3.2" target="_self"><span>一键开卡</span></a><span>。
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>设置为true时会员卡支持一键开卡，不允许同时传入activate_url字段，否则设置wx_activate失效。填入该字段后仍需调用接口设置开卡项方可生效，详情见</span><a href="#6.2" target="_self" textvalue="一键开卡"><span>一键开卡</span></a><span>。
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell" width="223"><span>supply_bonus
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>是
@@ -276,29 +282,34 @@
 <tr><td class="table_cell" width="223"><span>custom_field1
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="61.33333333333333"><span>JSON结构
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>自定义会员信息类目，会员卡激活后显示,包含name_type和url字段
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>自定义会员信息类目，会员卡激活后显示,包含name_type<span>(name)</span>和url字段
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell" width="223"><span>custom_field2
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="61.33333333333333"><span>JSON结构
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>自定义会员信息类目，会员卡激活后显示，包含name_type和url字段
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>自定义会员信息类目，会员卡激活后显示，包含name_type(name)和url字段
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell" width="223"><span>custom_field3
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="61.33333333333333"><span>JSON结构
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>自定义会员信息类目，会员卡激活后显示，包含name_type和url字段
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334"><span>自定义会员信息类目，会员卡激活后显示，包含name_type<span>(name)</span>和url字段
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell" width="223"><span>name_type
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="61.33333333333333"><span>string(24)
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="539.3333333333334">
-<p><span>会员信息类目名称。</span></p>
-<p><span>FIELD_NAME_TYPE_LEVEL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span>等级</span></p>
-<p><span>FIELD_NAME_TYPE_COUPON &nbsp; &nbsp; &nbsp; &nbsp;</span><span>优惠券 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
-<p><span>FIELD_NAME_TYPE_STAMP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span>印花</span></p>
-<p><span>FIELD_NAME_TYPE_DISCOUNT &nbsp; &nbsp; &nbsp;</span><span>折扣</span></p>
+<p><span>会员信息类目半自定义名称，当开发者变更这类类目信息的value值时</span></p>
+<p><span>可以选择触发系统模板消息通知用户。</span></p>
+<p><span>FIELD_NAME_TYPE_LEVEL &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;等级</span></p>
+<p><span>FIELD_NAME_TYPE_COUPON &nbsp; &nbsp; &nbsp; &nbsp;优惠券 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span>FIELD_NAME_TYPE_STAMP &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;印花</span></p>
+<p><span>FIELD_NAME_TYPE_DISCOUNT &nbsp; &nbsp; &nbsp;折扣</span></p>
 <p><span>FIELD_NAME_TYPE_ACHIEVEMEN &nbsp;成就</span></p>
-<p><span>FIELD_NAME_TYPE_MILEAGE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span>里程 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+<p><span>FIELD_NAME_TYPE_MILEAGE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;里程 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+</td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>name</span></td><td class="table_cell" colspan="1" rowspan="1"><span>否</span></td><td class="table_cell" colspan="1" rowspan="1"><span>string(24)&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1">
+<p><span>会员信息类目自定义名称，当开发者变更这类类目信息的value值时</span></p>
+<p><span>不会触发系统模板消息通知用户</span></p>
 </td></tr>
 <tr><td class="table_cell" width="223"><span>url
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="22.33333333333333"><span>否
@@ -642,7 +653,7 @@
 </td><td class="table_cell" width="519.3333333333334">
 <p><span>type为DATE_TYPE_FIX_TIME_RANGE时专用，</span></p>
 <p><span>表示起用时间。从1970年1月1日00:00:00至起用时间的秒数</span></p>
-<p><span>（东八区时间，单位为秒）
+<p><span>（<span>东八区时间,UTC+8，单位为秒</span>）
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td></tr>
 <tr><td class="table_cell" width="220.0000000000001">
@@ -650,8 +661,8 @@
 </td><td class="table_cell" width="38.33333333333333"><span>否
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="95.33333333333334"><span>unsigned int
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="519.3333333333334">
-<p><span>type为DATE_TYPE_FIX_TERM_RANGE时专用，表示结束时</span><span>间</span></p>
-<p><span>（东八区时间，单位为秒） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
+<p><span>type为DATE_TYPE_FIX_TERM_RANGE时专用，表示结束时间</span></p>
+<p><span>（<span>东八区时间,UTC+8，单位为秒</span>） &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></p>
 </td></tr>
 <tr><td class="table_cell" width="220.0000000000001"><span>fixed_term
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="38.33333333333333"><span>否
@@ -979,7 +990,7 @@
 <p><span><strong>特别注意</strong></span></p>
 <p><span><strong>
 <br></strong></span></p>
-<p><span>1. 开发者调用接口投放的会员卡为无会员信息的“卡套”，会员卡编号、积分、余额等信息需在用户领取会员卡后调用<a href="http://mp.weixin.qq.com/wiki/15/de148cc4b5190c80002eaf4f6f26c717.html#.E6.AD.A5.E9.AA.A4.E4.BA.8C.EF.BC.9A.E6.BF.80.E6.B4.BB.2F.E7.BB.91.E5.AE.9A.E4.BC.9A.E5.91.98.E5.8D.A1" class="external text" rel="nofollow">激活/绑定会员卡接口</a>更新上。</span></p>
+<p><span>1. 开发者调用接口投放的会员卡为无会员信息的“卡套”，会员卡编号、积分、余额等信息需在用户领取会员卡后调用<a href="#6.1" target="_self" textvalue="激活/绑定会员卡接口">激活/绑定会员卡接口</a>更新上。</span></p>
 <p><span>2. 调用激活/绑定会员卡接口的凭证为Code码及card_id，开发者需在调用投放会员卡时通过接口或领取卡券事件记录code码与会员OpenID的关系。<span></span></span></p>
 <p>
 <br></p>
@@ -1075,8 +1086,7 @@
 <tr><td class="table_cell"><span>code
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="44.33333333333333"><span>是
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="127.33333333333331"><span>string(20)
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="511.3333333333333"><span>创建会员卡时获取的初始code。
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="511.3333333333333"><span>领取会员卡用户获得的code &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1"><span>card_id
 <br></span></td><td class="table_cell" colspan="1" rowspan="1" width="44.33333333333333"><span>否
  &nbsp; &nbsp;&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1" width="127.33333333333331"><span>string（32）&nbsp; &nbsp;&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1" width="511.3333333333333"><span>卡券ID,自定义code卡券必填</span></td></tr>
@@ -1085,7 +1095,7 @@
 </td><td class="table_cell" colspan="1" rowspan="1" width="44.33333333333333" height="46"><span><span>否</span>&nbsp; &nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1" width="127.33333333333331" height="46"><span>&nbsp;string（128）&nbsp;</span></td><td class="table_cell" colspan="1" rowspan="1" width="511.3333333333333" height="46">
 <p><span>商家自定义会员卡背景图，须 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 <p><span>先调用</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025056&amp;token=&amp;lang=zh_CN&amp;anchor=2.3.1" target="_blank">上传图片接口</a><span>将背景图上传至CDN，否则报错，</span></p>
-<p><span>卡面设计请遵循<a href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=cardticket/card_cover_tmpl&amp;type=info&amp;lang=zh_CN" target="_blank">微信会员卡自定义背景设计规范&nbsp;</a>&nbsp; &nbsp; &nbsp;&nbsp;</span><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
+<p><span>卡面设计请遵循<a href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=cardticket/card_cover_tmpl&amp;type=info&amp;lang=zh_CN" target="_blank">微信会员卡自定义背景设计规范&nbsp;</a>&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></p>
 </td></tr>
 <tr><td class="table_cell"><span>activate_begin_time
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell" width="44.33333333333333"><span>否
@@ -1205,7 +1215,7 @@
 <br></p>
 <p><span><strong>步骤一：在创建接口填入wx_activate字段</strong></span></p>
 <p><span><strong>接口说明</strong></span></p>
-<p><span>&nbsp; &nbsp; 设置微信一键开卡功能，现支持在创建会员卡时填入指定字段指定要一键激活，member_card中增加"wx_activate": true。 详情请见</span><span><a href="#1.1" target="_self" textvalue="创建会员卡接口">创建会员卡接口</a></span></p>
+<p><span>&nbsp; &nbsp; 设置微信一键开卡功能，现支持在创建会员卡时填入指定字段指定要一键激活，member_card中增加"wx_activate": true。 详情请见</span><a href="#4.1" target="_self" textvalue="创建会员卡接口"><span>创建会员卡接口</span></a></p>
 <p>&nbsp;<span>若商户使用了自定义卡号，开发者可以设置用户填写信息后跳转至商户的网页，并由开发者进行激活。</span>
 <br></p>
 <p><span><strong>参数说明</strong></span></p>
@@ -1375,7 +1385,7 @@
 <tr><td class="table_cell"><span>USER_FORM_INFO_FLAG_MOBILE
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>手机号
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1"><span>USER_FORM_INF</span><span>O_FLAG_SEX</span></td><td class="table_cell" colspan="1" rowspan="1"><span>性别</span></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1"><span>USER_FORM_INFO_FLAG_SEX</span></td><td class="table_cell" colspan="1" rowspan="1"><span>性别</span></td></tr>
 <tr><td class="table_cell"><span>USER_FORM_INFO_FLAG_NAME
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>姓名
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
@@ -1446,7 +1456,7 @@
 <br></strong></span></p>
 <p><span><strong>步骤四：同步会员数据</strong>
 <br></span></p>
-<p><span>&nbsp; &nbsp; 开发者可以在接收到事件通知后调用激活接口，传入会员卡号、初始积分等信息或者调用拉取会员信息接口获取会员信息，详情请见：</span><a href="#3.1" target="_self" textvalue="激活会员卡接口"><span>激活会员卡接口</span></a></p>
+<p><span>&nbsp; &nbsp; 开发者可以在接收到事件通知后调用激活接口，传入会员卡号、初始积分等信息或者调用拉取会员信息接口获取会员信息，详情请见：</span><a href="#6.1" target="_self" textvalue="激活会员卡接口"><span>激活会员卡接口</span></a></p>
 <p>
 <br><span><strong>步骤五：拉取会员信息接口</strong></span></p>
 <p><span><strong>接口说明</strong></span></p>
@@ -1528,7 +1538,7 @@
 <h3><span><strong><a name="6.2.2"></a>6.2.2 跳转型一键激活</strong></span></h3>
 <p><span> &nbsp; &nbsp; 跳转型一键激活支持用户在提交会员开卡资料后跳转至商户自定义的网页。不同于普通一键激活，跳转型一键激活的激活会员卡动作由商户完成，商户可以在跳转到的网页内做激活、激活奖励、开卡条件判断等逻辑，同时也保证了开卡的实时性，适合使用自定义卡号的商户使用。</span>
 <br></p>
-<p><span>&nbsp; &nbsp;&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSKzHEiaC2LSFZ5UJKicDc7FIckpgUQFAvHv6HWBySXZwGtrXwMCyWE5tw7ufDK3S4uEAQ/0?wx_fmt=png" title="" alt=""></span></p>
+<p><span>&nbsp; &nbsp;&nbsp;<img src="http://mmbiz.qpic.cn/mmbiz_png/PiajxSqBRaEIQxibpLbyuSKic4j0OM4Yw9Eto6bYfqIg7pZLQia91ib56KzF9aGoeSQ07RzuTp8aChB8uPoYBDejvZA/0?wx_fmt=png" title="" alt="" width="913" height="474"></span></p>
 <p><span>&nbsp; &nbsp;</span></p>
 <p><span>&nbsp; &nbsp;&nbsp;<span>步骤一：在创建/更新接口填入跳转型一键激活相关字段</span></span></p>
 <p><span>
@@ -1574,17 +1584,23 @@
 <p><span><strong>返回数据</strong></span></p>
 <p><span></span></p>
 <pre><span> &nbsp;{<br> &nbsp; &nbsp;"errcode": 0,<br> &nbsp; &nbsp;"errmsg": "ok",<br> &nbsp; &nbsp;"info": {<br> &nbsp; &nbsp; &nbsp; &nbsp;"common_field_list": [<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"name": "USER_FORM_INFO_FLAG_MOBILE",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"value": "15*****518"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"name": "USER_FORM_INFO_FLAG_NAME",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"value": "HK"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;},<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"name": "USER_FORM_INFO_FLAG_EDUCATION_BACKGROUND",<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;"value": "研究生"<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}<br> &nbsp; &nbsp; &nbsp; &nbsp;],<br> &nbsp; &nbsp; &nbsp; &nbsp;"custom_field_list": []<br> &nbsp; &nbsp;}<br>} &nbsp;</span></pre>
-<p><span><strong><strong>&nbsp; &nbsp; 步骤四：调用接口激活会员卡</strong></strong></span>
+<p><strong><strong>注意事项：</strong></strong></p>
+<p><span><em>1.开发者须使用制卡appid调用该接口，否则报错；</em></span></p>
+<p><span><em>2.开发者在URL上截取ticket后须先进行urldecode。</em></span>
 <br></p>
-<p><span><span>
-<br></span></span></p>
-<p><span><span>&nbsp; &nbsp; 开发者可以在接收到事件通知后调用激活接口，传入会员卡号、初始积分等信息或者调用拉取会员信息接口获取会员信息，详情请见：</span><a href="http://mmbiz.oa.com/documentmanager?action=doc&amp;id=mp1451025283&amp;name=%E4%BC%9A%E5%91%98%E5%8D%A1%E4%B8%93%E5%8C%BA%EF%BC%881%EF%BC%89&amp;platform=1#3.1" target="_self" textvalue="激活会员卡接口">激活会员卡接口</a></span></p>
+<p>
+<br></p>
+<p><span><strong><strong>步骤四：调用接口激活会员卡</strong></strong></span>
+<br></p>
+<p><span>
+<br></span></p>
+<p><span><span>&nbsp; &nbsp; 开发者可以在接收到事件通知后调用激活接口，传入会员卡号、初始积分等信息或者调用拉取会员信息接口获取会员信息，详情请见：</span><a href="#6.1" target="_self" textvalue="激活会员卡接口">激活会员卡接口</a></span></p>
 <p>
 <br></p>
 <h3><span><strong><a name="6.3"></a>6.3 自动激活</strong></span></h3>
 <p><span><strong>接口说明</strong></span></p>
-<p><span>&nbsp; &nbsp; 设置会员卡自动激活功能，需在创建会员卡时填入指定字段，base_info中增加"auto_activate": true，获取card_id。 详情请见</span><a href="http://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1451025283&amp;token=&amp;lang=zh_CN" target="_blank" textvalue="创建会员卡接口"><span>创建会员卡接口</span></a></p>
-<p><span>&nbsp; &nbsp; 值得注意的是，传入自动激活字段auto_activate之后，一键开卡设置和接口激活设置的激活url均不再显示，用户领取卡片之后，系统自动帮用户激活，积分、储值等自定义显示信息均为0，开发者可以通过</span><a href="#5.6" target="_self" textvalue="更新卡券信息接口"><span>更新卡券信息接口</span></a><span>更新用户会员数据。</span></p>
+<p><span>&nbsp; &nbsp; 设置会员卡自动激活功能，需在创建会员卡时填入指定字段，base_info中增加"auto_activate": true，获取card_id。 详情请见</span><a href="#4.1" target="_self" textvalue="创建会员卡接口"><span>创建会员卡接口</span></a></p>
+<p><span>&nbsp; &nbsp; 值得注意的是，传入自动激活字段auto_activate之后，一键开卡设置和接口激活设置的激活url均不再显示，用户领取卡片之后，系统自动帮用户激活，积分、储值等自定义显示信息均为0，开发者可以通过</span><a href="#7" target="_self" textvalue="更新会员信息接口"><span>更新会员信息接口</span></a><span>更新用户会员数据。</span></p>
 <p><span><strong>
 <br></strong></span></p>
 <p><span><strong>参数说明</strong></span></p>
@@ -1676,7 +1692,7 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>支持商家激活时针对单个会员卡分配自定义的会员卡背景。
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>bonus
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span><span>否</span>
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>int
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>100
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>需要设置的积分全量值，传入的数值会直接显示
@@ -1688,8 +1704,7 @@
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>商家自定义积分消耗记录，不超过14个汉字。
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>
 <tr><td class="table_cell"><span>balance
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>是
- &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>int
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>否 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span></td><td class="table_cell"><span>int
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>100
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td><td class="table_cell"><span>需要设置的余额全量值，传入的数值会直接显示
  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span></td></tr>

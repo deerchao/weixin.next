@@ -10,23 +10,25 @@
 <div class="main_bd">
 <div class="article_box">
 <div class="inner">
-<div class="news_content">
-<p><span></span>目录</p>
+<div class="news_content"><p>目录</p>
 <p><a href="#商品管理" target="_self">1 商品管理</a></p>
 <p><a href="#查询商品信息" target="_self">1.1 查询商品信息</a></p>
 <p><a href="#批量查询商品信息" target="_self">1.2 批量查询商品信息</a></p>
 <p><a href="#更新商品信息" target="_self">1.3 更新商品信息</a></p>
 <p><a href="#清除商品信息" target="_self" textvalue="1.4 清除商品信息">1.4 清除商品信息</a></p>
 <p><a href="#跳转URL参数说明" target="_self">1.5 跳转URL参数说明</a></p>
-<p><a href="#检查wxticket参数" target="_self">1.6 检查wxticket参数</a></p>
-<p><a href="#组件消息" target="_self">1.7 组件消息</a></p>
+<p><a href="#检查wxticket参数" target="_self" textvalue="1.6 检查wxticket参数">1.6 检查wxticket参数</a></p>
+<p><a href="#组件消息" target="_self" textvalue="1.7 组件消息">1.7 组件消息</a></p>
+<p><a href="#清除扫码记录" target="_self" textvalue="1.8 清除扫码记录">1.8 清除扫码记录</a></p>
 <p><span></span>
 <br></p>
 <h1><span class="mw-headline" id=".E5.95.86.E5.93.81.E7.AE.A1.E7.90.86"><a name="商品管理"></a>商品管理</span></h1>
 <h2><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="查询商品信息"></a>查询商品信息</strong></span></h2>
 <p>调用该接口，商户可以查询创建成功的商品信息，用以检查商品状态或信息设置情况。</p>
 <p><strong>请求示例</strong></p>
-<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/get?access_token=tT8VqJWVX4C-WvIG41tyelMclMZsAPFbLxbECsJvIghceqQCMB83hI5bxcInUR-amUrVsKq4bcBmF9PgooNrFAPOST数据格式：JSON
+<pre>HTTP请求方式：POST
+https://api.weixin.qq.com/scan/product/get?access_token=access_token
+POST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"keystandard":&nbsp;"ean13",
@@ -136,7 +138,9 @@ POST数据例子：
 <h2><span class="mw-headline" id=".E6.89.B9.E9.87.8F.E6.9F.A5.E8.AF.A2.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="批量查询商品信息"></a>批量查询商品信息</strong></span></h2>
 <p>调用该接口，商户可以批量查询创建成功的商品信息，查询维度有商品状态和编码内容。</p>
 <p><strong>请求示例</strong></p>
-<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/getlist?access_token=PE8Pe2gEpsHPb5TVoIzu_3f-166mw2pb0UEey0ni-kAf1uvE0bh0BnFSY2TTi8NsgXMF3EafzwHBNQs-PaLmCgPOST数据格式：JSON
+<pre>HTTP请求方式：POST
+https://api.weixin.qq.com/scan/product/getlist?access_token=access_toke
+POST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"offset":&nbsp;"1",
@@ -199,7 +203,9 @@ POST数据例子：
 <p>调用该接口，可对商品的基本信息（base_info）、详情信息（detail_info）、推广服务区 （action_info）和组件区（modul_info）四部分进行独立或整体的更新。</p>
 <p><strong><span>注意：对处于“发布状态（on）”的商品进行更新，调用接口成功后，新的商品信息会自动进入扫一扫审核系统。对“审核中（check）”的商品，不可再更新或取消发布，否则会报错。</span></strong></p>
 <p><strong>请求示例</strong></p>
-<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/update?access_token=mz6PygziU_H1iV6Ugf-Y6K60CUCcNNO5xbaVY9jXPLHgpuuaEZdxth8tYTLYer6XTA9CzqrJ1kHZElNndHDMQQPOST数据格式：JSON
+<pre>HTTP请求方式：POST
+https://api.weixin.qq.com/scan/product/update?access_token=access_token&nbsp;
+POST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"keystandard":&nbsp;"ean13",
@@ -266,7 +272,9 @@ POST数据例子：
 <h2><span class="mw-headline" id=".E6.B8.85.E9.99.A4.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="清除商品信息"></a>清除商品信息</strong></span></h2>
 <p>调用该接口，商户可以清除创建成功的商品信息。</p>
 <p><strong>请求示例</strong></p>
-<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/clear?access_token=1QRIlaXUgZMCfBUuNNtaD0jyUZ1SBJDhGpFYRXPZQu30aC-TRMMp5vA9HJ55NBUmCATBWg7BletRsOxiUf4NKgPOST数据格式：JSON
+<pre>HTTP请求方式：POST
+https://api.weixin.qq.com/scan/product/clear?access_token=access_token&nbsp;
+POST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"keystandard":&nbsp;"ean13",
@@ -312,7 +320,9 @@ POST数据例子：
 <h2><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="检查wxticket参数"></a>检查wxticket参数</strong></span></h2>
 <p>调用该接口，可检查当前访问用户来源的商品主页，以及在网页前端获取该用户的身份信息。为保证场景的正确性，wxticket参数作为临时签名仅在20分钟内有效，超过有效时长会检查失败。</p>
 <p><strong>请求示例</strong></p>
-<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/scanticket/check?access_token=hjoyP20tr7isfSVtN74zz6MHqXCB432kJcgn6IzYZjFg9Pw21l9MQzpbn26fUuS4WXG9SoN9Z4RoRsmMikHfzgPOST数据格式：JSON
+<pre>HTTP请求方式：POST
+https://api.weixin.qq.com/scan/scanticket/check?access_token=access_token
+POST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"ticket":&nbsp;"&nbsp;Ym1haDlvNXJqY3Ru1",
@@ -352,7 +362,7 @@ POST数据例子：
 </tbody>
 </table>
 <p><span></span></p>
-<h2><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="#组件消息"></a>组件消息</strong></span></h2>
+<h2><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="组件消息"></a>组件消息</strong></span></h2>
 <p><span>&nbsp; &nbsp; &nbsp; 调用该接口，需先在“创建商品”时设置组件内容，之后可通过该接口对组件区的展示结果进行控制。</span></p>
 <p><span>&nbsp; &nbsp; &nbsp; 目前，商户通过微信推送的“事件”，可获得被扫码查询的商品信息以及商户之</span><span></span><span>前设置的“extinfo”内容。通过和本地信息进行校验，可判断用户所查询的商品真伪，并将结果通过该接口返回微信，最终由微信在客户端定制页面上展示真伪的查询结果。</span></p>
 <p><span>&nbsp; &nbsp; &nbsp; 商户设置组件内容后，【用户—微信—商户】的信息交互模式如下：</span></p>
@@ -411,7 +421,43 @@ POST数据例子：
 <tr><td class="table_cell">KeyStr</td><td class="table_cell">商品编码内容。</td></tr>
 <tr><td class="table_cell">ExtInfo</td><td class="table_cell">调用“获取商品二维码接口”时传入的extinfo，为标识参数。</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">AntiFake</td><td class="table_cell" colspan="1" rowspan="1">防伪信息的内容。</td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1">CodeResult</td><td class="table_cell" colspan="1" rowspan="1">商品防伪查询的结果，real表示码为真，fake表示码为假。</td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">CodeResult</td><td class="table_cell" colspan="1" rowspan="1">商品防伪查询的结果，real表示码为真，fake表示码为假，not_active表示该防伪码未激活。</td></tr>
+</tbody>
+</table>
+<h2><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="清除扫码记录"></a>清除扫码记录</strong></span></h2>
+<p><span>当商品主页设置了“原生防伪组件”时（详情请查看<a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1455871888&amp;token=&amp;lang=zh_CN" target="_blank">【创建商品】</a>），用户每一次扫码查看主页，均会被计数，进而展示在“防伪查询详情”中。如果商户希望某个码的扫码记录“归零”，可调用该接口，清除该码的被扫码记录。</span></p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POST
+https://api.weixin.qq.com/scan/scanticket/check?access_token=access_token
+POST数据格式：JSON
+POST数据例子：
+{
+&nbsp;"keystandard":&nbsp;"ean13",
+&nbsp;"keystr":&nbsp;"6900000000000"，
+&nbsp;"extinfo":"extinfo"
+}</pre>
+<p><strong>请求参数说明</strong></p>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">keystandard</td><td class="table_cell" colspan="1" rowspan="1">是</td><td class="table_cell" colspan="1" rowspan="1">商品编码标准。</td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">keystr</td><td class="table_cell" colspan="1" rowspan="1">是</td><td class="table_cell" colspan="1" rowspan="1">商品编码内容。</td></tr>
+<tr><td class="table_cell">extinfo</td><td class="table_cell">是</td><td class="table_cell">调用“获取商品二维码接口”时传入的extinfo，为标识参数。</td></tr>
+</tbody>
+</table>
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{	
+&nbsp;"errcode":0,
+&nbsp;"errmsg":"ok"
+}</pre>
+<p><strong>返回参数说明</strong></p>
+<table cellspacing="0" cellpadding="4" align="center" width="640px">
+<tbody>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
+<tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 </tbody>
 </table>
 <p>
