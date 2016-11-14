@@ -134,5 +134,22 @@ namespace Weixin.Next.Sample.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// <para>展示 access_token 中控服务器的实现方式. 其他网站/程序需要使用到微信 access_token 的地方可以请求此 action 获取.</para>
+        /// <para>如果是旧 access_token 过期, 最好提供已过期的值, 以避免短时间内多次刷新造成的问题</para>
+        /// <para>警告: 请在实际使用时先验证客户端是否经过授权, 否则将会造成严重的安全问题.</para>
+        /// </summary>
+        /// <param name="refresh">是否旧的 access_token 已经过期, 需要刷新</param>
+        /// <param name="oldToken">已过期的旧 access_token, 如果未知是否过期不必提供</param>
+        /// <returns></returns>
+        public async Task<JsonResult> AccessToken(bool refresh = false, string oldToken = null)
+        {
+            var task = refresh
+                ? WeixinConfig.AccessTokenManager.RefreshTokenInfo(oldToken)
+                : WeixinConfig.AccessTokenManager.GetTokenInfo();
+
+            return Json(await task.ConfigureAwait(false));
+        }
     }
 }

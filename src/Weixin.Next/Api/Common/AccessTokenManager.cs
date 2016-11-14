@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -58,6 +60,9 @@ namespace Weixin.Next.Api
         }
     }
 
+    /// <summary>
+    /// 为以不同方式(从微信获取或全局服务器获取)获取 access_token 的类提供基类
+    /// </summary>
     public abstract class AccessTokenManagerBase : IAccessTokenManager
     {
         private readonly SemaphoreSlim _semaphore = new SemaphoreSlim(1);
@@ -196,5 +201,53 @@ namespace Weixin.Next.Api
         {
             return Get();
         }
+    }
+
+    /// <summary>
+    /// 从中控服务器(全局缓存)中获取 access_token
+    /// </summary>
+    public abstract class CentralAccessTokenManager : AccessTokenManagerBase
+    {
+        protected override Task<AccessTokenInfo> Get()
+        {
+            return Request(false, null);
+        }
+
+        public IJsonParser JsonParser { get; set; }
+
+        public HttpClient HttpClient { get; set; }
+
+        protected override Task<AccessTokenInfo> Refresh(string oldToken)
+        {
+            return Request(true, oldToken);
+        }
+
+        private async Task<AccessTokenInfo> Request(bool refresh, string oldToken)
+        {
+            var http = HttpClient ?? new HttpClient();
+            var response = await http.SendAsync(GetRequest(refresh, oldToken)).ConfigureAwait(false);
+            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+
+            var jsonValue = JsonParser.Parse(body);
+            return JsonParser.Build<AccessTokenInfo>(jsonValue);
+        }
+
+        /// <summary>
+        /// 示例实现:
+        /// <code>return new HttpRequestMessage(HttpMethod.Post, "http://xxx.com/weixin/accesstoken")
+        ///{
+        ///	Content = new FormUrlEncodedContent(new[]
+        ///	{
+        ///		new KeyValuePair&lt;string, string&gt;("refresh", refresh.ToString()),
+        ///		new KeyValuePair&lt;string, string&gt;("oldToken", oldToken),
+        ///	})
+        ///};
+        ///</code>
+        ///注意要配合服务器端的要求, 添加签名或其他身份认证代码, 避免 access_token 被公开.
+        /// </summary>
+        /// <param name="refresh">是否旧的 access_token 已经过期, 需要刷新</param>
+        /// <param name="oldToken">已过期的旧 access_token, 如果未知是否过期则为 null</param>
+        /// <returns></returns>
+        protected abstract HttpRequestMessage GetRequest(bool refresh, string oldToken);
     }
 }
