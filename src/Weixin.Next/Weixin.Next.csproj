@@ -54,6 +54,7 @@
     <Compile Include="Api\Common\IJsonParser.cs" />
     <Compile Include="Api\Common\JsApi.cs" />
     <Compile Include="Api\Common\JsapiTicketManager.cs" />
+    <Compile Include="Api\DataCube.cs" />
     <Compile Include="Api\Material.cs" />
     <Compile Include="Api\Media.cs" />
     <Compile Include="Api\Menu.cs" />
