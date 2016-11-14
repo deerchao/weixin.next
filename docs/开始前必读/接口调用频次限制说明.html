@@ -11,66 +11,66 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content"><p>公众号调用接口并不是无限制的。为了防止公众号的程序错误而引发微信服务器负载异常，默认情况下，每个公众号调用接口都不能超过一定限制，当超过一定限制时，调用对应接口会收到如下错误返回码：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>{"errcode":45009,"errmsg":"api freq out of limit"}</p>
+<div data-tag="backcolor"><p>{"errcode":45009,"errmsg":"api freq out of limit"}</p>
 </div>
 <p>开发者可以登录微信公众平台，在帐号后台开发者中心接口权限模板查看帐号各接口当前的日调用上限和实时调用量，对于认证帐号可以对实时调用量清零，说明如下：</p>
 <p>1、由于指标计算方法或统计时间差异，实时调用量数据可能会出现误差，一般在1%以内。</p>
-<p>2、<span style="color: rgb(255, 0, 0);">每个帐号每月共10次清零操作机会，清零生效一次即用掉一次机会（10次包括了平台上的清零和调用接口API的清零）。</span></p>
+<p>2、<span>每个帐号每月共10次清零操作机会，清零生效一次即用掉一次机会（10次包括了平台上的清零和调用接口API的清零）。</span></p>
 <p>3、第三方帮助公众号调用时，实际上是在消耗公众号自身的quota。</p>
 <p>4、每个有接口调用限额的接口都可以进行清零操作。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>新注册帐号各接口调用频率限制如下：</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+<p><strong>新注册帐号各接口调用频率限制如下：</strong></p>
+<p>
 <br></p>
 <table class="table" width="968">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="337" valign="top" style="word-break: break-all;">接口</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">每日限额
+<tr class="firstRow thead"><td class="table_cell" width="337" valign="top">接口</td><td class="table_cell" width="337" valign="top">每日限额
 <br></td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">获取access_token</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">2000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">自定义菜单创建</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">自定义菜单查询</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">10000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">自定义菜单删除</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">创建分组</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">获取分组</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">修改分组名</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">移动用户分组</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">100000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">上传多媒体文件</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">5000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">下载多媒体文件</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">10000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">发送客服消息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">500000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">高级群发接口</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">100</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">上传图文消息接口</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">10</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">删除图文消息接口</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">10</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">获取带参数的二维码</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">100000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">获取关注者列表</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">500</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">获取用户基本信息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">5000000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">获取网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">无</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">刷新网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">无</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">网页授权获取用户信息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;" width="337">无</td></tr>
-<tr><td class="table_cell" width="337" valign="top" style="word-break: break-all;">设置用户备注名</td><td class="table_cell" width="337" valign="top" style="word-break: break-all;">10000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">获取access_token</td><td class="table_cell" width="337" valign="top">2000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">自定义菜单创建</td><td class="table_cell" width="337" valign="top">1000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">自定义菜单查询</td><td class="table_cell" width="337" valign="top">10000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">自定义菜单删除</td><td class="table_cell" width="337" valign="top">1000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">创建分组</td><td class="table_cell" width="337" valign="top">1000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">获取分组</td><td class="table_cell" width="337" valign="top">1000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">修改分组名</td><td class="table_cell" width="337" valign="top">1000</td></tr>
+<tr><td class="table_cell" width="337" valign="top">移动用户分组</td><td class="table_cell" width="337" valign="top">100000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">上传多媒体文件</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">5000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">下载多媒体文件</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">10000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">发送客服消息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">500000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">高级群发接口</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">100</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">上传图文消息接口</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">10</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">删除图文消息接口</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">10</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">获取带参数的二维码</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">100000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">获取关注者列表</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">500</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">获取用户基本信息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">5000000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">获取网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">无</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">刷新网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">无</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">网页授权获取用户信息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" width="337">无</td></tr>
+<tr><td class="table_cell" width="337" valign="top">设置用户备注名</td><td class="table_cell" width="337" valign="top">10000</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+<p>
 <br></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请注意，在测试号申请页中申请的测试号，接口调用频率限制如下：</strong></p>
+<p><strong>请注意，在测试号申请页中申请的测试号，接口调用频率限制如下：</strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="687" valign="top" style="word-break: break-all;">接口</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">每日限额</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">获取access_token</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">200</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">自定义菜单创建</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">100</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">自定义菜单查询</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">自定义菜单删除</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">100</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">创建分组</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">100</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">获取分组</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">100</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">修改分组名</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">100</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">移动用户分组</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">素材管理-临时素材上传</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">500</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">素材管理-临时素材下载</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">1000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">发送客服消息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">50000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">获取带参数的二维码</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">10000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">获取关注者列表</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">100</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">获取用户基本信息</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">500000</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">获取网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">刷新网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无</td></tr>
-<tr><td class="table_cell" width="687" valign="top" style="word-break: break-all;">网页授权获取用户信息</td><td class="table_cell" width="687" valign="top" style="word-break: break-all;">无</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="687" valign="top">接口</td><td class="table_cell" width="687" valign="top">每日限额</td></tr>
+<tr><td class="table_cell" width="687" valign="top">获取access_token</td><td class="table_cell" width="687" valign="top">200</td></tr>
+<tr><td class="table_cell" width="687" valign="top">自定义菜单创建</td><td class="table_cell" width="687" valign="top">100</td></tr>
+<tr><td class="table_cell" width="687" valign="top">自定义菜单查询</td><td class="table_cell" width="687" valign="top">1000</td></tr>
+<tr><td class="table_cell" width="687" valign="top">自定义菜单删除</td><td class="table_cell" width="687" valign="top">100</td></tr>
+<tr><td class="table_cell" width="687" valign="top">创建分组</td><td class="table_cell" width="687" valign="top">100</td></tr>
+<tr><td class="table_cell" width="687" valign="top">获取分组</td><td class="table_cell" width="687" valign="top">100</td></tr>
+<tr><td class="table_cell" width="687" valign="top">修改分组名</td><td class="table_cell" width="687" valign="top">100</td></tr>
+<tr><td class="table_cell" width="687" valign="top">移动用户分组</td><td class="table_cell" width="687" valign="top">1000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">素材管理-临时素材上传</td><td class="table_cell" valign="top" colspan="1" rowspan="1">500</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">素材管理-临时素材下载</td><td class="table_cell" valign="top" colspan="1" rowspan="1">1000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">发送客服消息</td><td class="table_cell" valign="top" colspan="1" rowspan="1">50000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">获取带参数的二维码</td><td class="table_cell" valign="top" colspan="1" rowspan="1">10000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">获取关注者列表</td><td class="table_cell" valign="top" colspan="1" rowspan="1">100</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">获取用户基本信息</td><td class="table_cell" valign="top" colspan="1" rowspan="1">500000</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">获取网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1">无</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">刷新网页授权access_token</td><td class="table_cell" valign="top" colspan="1" rowspan="1">无</td></tr>
+<tr><td class="table_cell" width="687" valign="top">网页授权获取用户信息</td><td class="table_cell" width="687" valign="top">无</td></tr>
 </tbody>
 </table>
 <p>
@@ -112,12 +112,12 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="307" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是否必须</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">说明
+<tr class="firstRow thead"><td class="table_cell" width="307" valign="top">参数</td><td class="table_cell" width="307" valign="top">是否必须</td><td class="table_cell" width="307" valign="top">说明
 <br></td></tr>
-<tr><td class="table_cell" width="307" valign="top" style="word-break: break-all;">access_token
-<br></td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">调用接口凭据</td></tr>
-<tr><td class="table_cell" width="307" valign="top" style="word-break: break-all;">appid
-<br></td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="307" valign="top" style="word-break: break-all;">公众号的APPID</td></tr>
+<tr><td class="table_cell" width="307" valign="top">access_token
+<br></td><td class="table_cell" width="307" valign="top">是</td><td class="table_cell" width="307" valign="top">调用接口凭据</td></tr>
+<tr><td class="table_cell" width="307" valign="top">appid
+<br></td><td class="table_cell" width="307" valign="top">是</td><td class="table_cell" width="307" valign="top">公众号的APPID</td></tr>
 </tbody>
 </table>
 <p>正常情况下，会返回：</p>

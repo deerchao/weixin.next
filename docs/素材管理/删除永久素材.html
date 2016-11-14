@@ -11,30 +11,30 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>在新增了永久素材后，开发者可以根据本接口来删除不再需要的永久素材，节省空间。</p>
+<p><span></span>在新增了永久素材后，开发者可以根据本接口来删除不再需要的永久素材，节省空间。</p>
 <p>请注意：</p>
 <p>1、请谨慎操作本接口，因为它可以删除公众号在公众平台官网素材管理模块中新建的图文消息、语音、视频等素材（但需要先通过获取素材列表来获知素材的media_id）<br>2、临时素材无法通过本接口删除<br>3、调用该接口需https协议
 <br></p>
 <p>接口调用请求说明</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>http请求方式: POST</p>
+<div data-tag="backcolor"><p>http请求方式: POST</p>
 <p>https://api.weixin.qq.com/cgi-bin/material/del_material?access_token=ACCESS_TOKEN
 <br></p>
 </div>
 <p>调用示例</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>{<br>"media_id":MEDIA_ID<br>}
+<div data-tag="backcolor"><p>{<br>"media_id":MEDIA_ID<br>}
 <br></p>
 </div>
 <p>参数说明</p>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
+<p><span></span></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="301" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="301" valign="top" style="word-break: break-all;">是否必须</td><td class="table_cell" width="301" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="301" valign="top" style="word-break: break-all;">access_token</td><td class="table_cell" width="301" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="301" valign="top" style="word-break: break-all;">调用接口凭证</td></tr>
-<tr><td class="table_cell" width="301" valign="top" style="word-break: break-all;">media_id</td><td class="table_cell" width="301" valign="top" style="word-break: break-all;">是</td><td class="table_cell" width="301" valign="top" style="word-break: break-all;">要获取的素材的media_id</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="301" valign="top">参数</td><td class="table_cell" width="301" valign="top">是否必须</td><td class="table_cell" width="301" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="301" valign="top">access_token</td><td class="table_cell" width="301" valign="top">是</td><td class="table_cell" width="301" valign="top">调用接口凭证</td></tr>
+<tr><td class="table_cell" width="301" valign="top">media_id</td><td class="table_cell" width="301" valign="top">是</td><td class="table_cell" width="301" valign="top">要获取的素材的media_id</td></tr>
 </tbody>
 </table>
 <p>返回说明</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">{<br> &nbsp; &nbsp;"errcode":ERRCODE,<br> &nbsp; &nbsp;"errmsg":ERRMSG<br>}</div>
+<div data-tag="backcolor">{<br> &nbsp; &nbsp;"errcode":ERRCODE,<br> &nbsp; &nbsp;"errmsg":ERRMSG<br>}</div>
 <p>正常情况下调用成功时，errcode将为0。</p>
 <p>
 <br></p>

@@ -11,23 +11,23 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content"><p>开发者可以通过该接口对指定用户设置备注名，该接口暂时开放给微信认证的服务号。&nbsp;接口调用请求说明</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>http请求方式: POST（请使用https协议）</p>
+<div data-tag="backcolor"><p>http请求方式: POST（请使用https协议）</p>
 <p>https://api.weixin.qq.com/cgi-bin/user/info/updateremark?access_token=ACCESS_TOKEN</p>
 <p>POST数据格式：JSON</p>POST数据例子：<br/>{<br/>	&quot;openid&quot;:&quot;oDF3iY9ffA-hqb2vVvbr7qxf6A0Q&quot;,<br/>	&quot;remark&quot;:&quot;pangzi&quot;<br/>}</div>
 <p>参数说明</p>
 <table class="table" width="951">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="325" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="325" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="325" valign="top">参数</td><td class="table_cell" width="325" valign="top">说明</td></tr>
 <tr><td class="table_cell" width="325">access_token</td><td class="table_cell" width="325">调用接口凭证</td></tr>
 <tr><td class="table_cell" width="325">openid</td><td class="table_cell" width="325">用户标识</td></tr>
-<tr><td class="table_cell" width="325">remark</td><td class="table_cell" style="word-break: break-all;" width="325">新的备注名，长度必须小于30字符&nbsp;</td></tr>
+<tr><td class="table_cell" width="325">remark</td><td class="table_cell" width="325">新的备注名，长度必须小于30字符&nbsp;</td></tr>
 </tbody>
 </table>
 <p>返回说明&nbsp;正常时的返回JSON数据包示例：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>{</p>
+<div data-tag="backcolor"><p>{</p>
 <p>&quot;errcode&quot;:0,</p>	&quot;errmsg&quot;:&quot;ok&quot; <br/>}</div>
 <p>错误时的JSON数据包示例（该示例为AppID无效错误）：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid appid&quot;}</div>
+<div data-tag="backcolor">{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid appid&quot;}</div>
 <p>
 <br/></p>
 <p>

@@ -11,27 +11,27 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<h3><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></h3>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">设置商户主页后，点击微信聊首页欢迎语，即可进入设置的商户主页。可以设置默认模板和自定义url模板。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">注：第三方平台和认证公众号才能调用该接口设置商家主页。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">
+<h3><span></span></h3>
+<p>设置商户主页后，点击微信聊首页欢迎语，即可进入设置的商户主页。可以设置默认模板和自定义url模板。</p>
+<p>注：第三方平台和认证公众号才能调用该接口设置商家主页。</p>
+<p>
 <br></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">协议：https
+<p><strong>接口调用说明</strong></p>
+<pre>协议：https
 http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/homepage/set?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">数据示例：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">设置默认模板时：
+<p><strong>POST数据</strong></p>
+<p>数据示例：</p>
+<pre>设置默认模板时：
 {
 &nbsp;&nbsp;"shop_id":&nbsp;429620,
 &nbsp;&nbsp;"template_id":&nbsp;0
@@ -44,10 +44,10 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;&nbsp;&nbsp;"url":&nbsp;"http://wifi.weixin.qq.com/"
 &nbsp;&nbsp;}
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
+<p>字段说明：</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">字段</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">是</td><td class="table_cell">门店ID</td></tr>
 <tr><td class="table_cell">template_id</td><td class="table_cell">是</td><td class="table_cell">模板ID，0-默认模板，1-自定义url</td></tr>
 <tr><td class="table_cell">struct</td><td class="table_cell">否</td><td class="table_cell">模板结构，当template_id为0时可以不填</td></tr>

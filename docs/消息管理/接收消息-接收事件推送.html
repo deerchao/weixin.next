@@ -30,7 +30,7 @@
 <p>推送XML数据包示例：</p>
 <table class="table" width="951">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="651" valign="top" style="word-break: break-all;"><pre>&lt;xml&gt;
+<tr class="firstRow thead"><td class="table_cell" width="651" valign="top"><pre>&lt;xml&gt;
 &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
 &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
@@ -43,7 +43,7 @@
 <p>参数说明：</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">开发者微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>
@@ -54,7 +54,7 @@
 <p><a href="https://mp.weixin.qq.com/debug/cgi-bin/apiinfo?t=index&type=%E6%B6%88%E6%81%AF%E6%8E%A5%E5%8F%A3%E8%B0%83%E8%AF%95&form=%E4%BA%8B%E4%BB%B6%E6%B6%88%E6%81%AF" rel="nofollow" target="_blank">使用网页调试工具调试该接口</a></p>
 <h2><a name="2"></a>扫描带参数二维码事件</h2>
 <p>用户扫描带场景值二维码时，可能推送以下两种事件：</p>
-<ol style="color: rgb(51, 51, 51); font-family: &#39;Microsoft Yahei&#39;, 宋体, Tahoma, Arial; font-size: 14px; line-height: 24.5px; white-space: normal; background-color: rgb(255, 255, 255);" class=" list-paddingleft-2">
+<ol class=" list-paddingleft-2">
 <li><p>如果用户还未关注公众号，则用户可以关注公众号，关注后微信会将带场景值关注事件推送给开发者。</p>
 </li>
 <li><p>如果用户已经关注公众号，则微信会将带场景值扫描事件推送给开发者。</p>
@@ -64,7 +64,7 @@
 <p>推送XML数据包示例：</p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;"><pre>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
+<tr class="firstRow thead"><td class="table_cell" width="946" valign="top"><pre>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
 &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
 &lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;
@@ -78,7 +78,7 @@
 <p>参数说明：</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">开发者微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>
@@ -92,13 +92,13 @@
 <p>推送XML数据包示例：</p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;">&lt;xml&gt;<br style="white-space: normal;"/>&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br style="white-space: normal;"/>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;<br style="white-space: normal;"/>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;<br style="white-space: normal;"/>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br style="white-space: normal;"/>&lt;Event&gt;&lt;![CDATA[SCAN]]&gt;&lt;/Event&gt;<br style="white-space: normal;"/>&lt;EventKey&gt;&lt;![CDATA[SCENE_VALUE]]&gt;&lt;/EventKey&gt;<br style="white-space: normal;"/>&lt;Ticket&gt;&lt;![CDATA[TICKET]]&gt;&lt;/Ticket&gt;<br style="white-space: normal;"/>&lt;/xml&gt;</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="946" valign="top">&lt;xml&gt;<br/>&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br/>&lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;<br/>&lt;CreateTime&gt;123456789&lt;/CreateTime&gt;<br/>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br/>&lt;Event&gt;&lt;![CDATA[SCAN]]&gt;&lt;/Event&gt;<br/>&lt;EventKey&gt;&lt;![CDATA[SCENE_VALUE]]&gt;&lt;/EventKey&gt;<br/>&lt;Ticket&gt;&lt;![CDATA[TICKET]]&gt;&lt;/Ticket&gt;<br/>&lt;/xml&gt;</td></tr>
 </tbody>
 </table>
 <p>参数说明：</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">开发者微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>
@@ -114,7 +114,7 @@
 <p>推送XML数据包示例：</p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;"><pre>&lt;xml&gt;
+<tr class="firstRow thead"><td class="table_cell" width="946" valign="top"><pre>&lt;xml&gt;
 &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
 &lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
@@ -130,7 +130,7 @@
 <p>参数说明：</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">开发者微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>
@@ -148,7 +148,7 @@
 <p>推送XML数据包示例：</p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;"><pre>&lt;xml&gt;
+<tr class="firstRow thead"><td class="table_cell" width="946" valign="top"><pre>&lt;xml&gt;
 &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
 &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
@@ -162,7 +162,7 @@
 <p>参数说明：</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">开发者微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>
@@ -177,7 +177,7 @@
 <p>推送XML数据包示例：</p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="946" valign="top" style="word-break: break-all;"><pre>&lt;xml&gt;
+<tr class="firstRow thead"><td class="table_cell" width="946" valign="top"><pre>&lt;xml&gt;
 &lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;
 &lt;FromUserName&gt;&lt;![CDATA[FromUser]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;123456789&lt;/CreateTime&gt;
@@ -191,7 +191,7 @@
 <p>参数说明：</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">开发者微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型）</td></tr>

@@ -11,10 +11,10 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>接口说明</strong>&nbsp;</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">申请开通摇一摇周边功能。成功提交申请请求后，工作人员会在三个工作日内完成审核。若审核不通过，可以重新提交申请请求。若是审核中，请耐心等待工作人员审核，在审核中状态不能再提交申请请求。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">http请求方式:&nbsp;POST（请使用https协议）https://api.weixin.qq.com/shakearound/account/register?access_token=ACCESS_TOKENPOST数据格式：json
+<p><strong><span></span>接口说明</strong>&nbsp;</p>
+<p>申请开通摇一摇周边功能。成功提交申请请求后，工作人员会在三个工作日内完成审核。若审核不通过，可以重新提交申请请求。若是审核中，请耐心等待工作人员审核，在审核中状态不能再提交申请请求。</p>
+<p><strong>接口调用说明</strong></p>
+<pre>http请求方式:&nbsp;POST（请使用https协议）https://api.weixin.qq.com/shakearound/account/register?access_token=ACCESS_TOKENPOST数据格式：json
 POST数据例子：
 {
 &nbsp;&nbsp;"name":&nbsp;"zhang_san",
@@ -27,35 +27,35 @@ POST数据例子：
 &nbsp;&nbsp;],
 &nbsp;&nbsp;"apply_reason":&nbsp;"test"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
+<p><strong>参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">name</td><td class="table_cell">是</td><td class="table_cell">联系人姓名，不超过20汉字或40个英文字母</td></tr>
 <tr><td class="table_cell">phone_number</td><td class="table_cell">是</td><td class="table_cell">联系人电话</td></tr>
 <tr><td class="table_cell">email</td><td class="table_cell">是</td><td class="table_cell">联系人邮箱</td></tr>
-<tr><td class="table_cell">industry_id</td><td class="table_cell">是</td><td class="table_cell">平台定义的行业代号，具体请查看链接<a href="http://3gimg.qq.com/shake_nearby/Qualificationdocuments.html" class="external text" rel="nofollow" target="_blank" style="color: rgb(54, 103, 153); text-decoration: none;">行业代号</a></td></tr>
-<tr><td class="table_cell">qualification_cert_urls</td><td class="table_cell">是</td><td class="table_cell">相关资质文件的图片url，图片需先上传至微信侧服务器，用“素材管理-上传图片素材”接口上传图片，返回的图片URL再配置在此处；<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px;">当不需要资质文件时，数组内可以不填写url</p>
+<tr><td class="table_cell">industry_id</td><td class="table_cell">是</td><td class="table_cell">平台定义的行业代号，具体请查看链接<a href="http://3gimg.qq.com/shake_nearby/Qualificationdocuments.html" class="external text" rel="nofollow" target="_blank">行业代号</a></td></tr>
+<tr><td class="table_cell">qualification_cert_urls</td><td class="table_cell">是</td><td class="table_cell">相关资质文件的图片url，图片需先上传至微信侧服务器，用“素材管理-上传图片素材”接口上传图片，返回的图片URL再配置在此处；<p>当不需要资质文件时，数组内可以不填写url</p>
 </td></tr>
 <tr><td class="table_cell">apply_reason</td><td class="table_cell">否</td><td class="table_cell">申请理由，不超过250汉字或500个英文字母</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">&nbsp;正常时的返回JSON数据包示例：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>返回说明</strong></p>
+<p>&nbsp;正常时的返回JSON数据包示例：</p>
+<pre>{
 &nbsp;&nbsp;&nbsp;"data":&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;},
 &nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"success."
 }</pre>
-<h3><strong><span style="font-size: 14px;">查询审核状态</span></strong></h3>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口说明</strong>&nbsp;查询已经提交的开通摇一摇周边功能申请的审核状态。在申请提交后，工作人员会在三个工作日内完成审核。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">http请求方式:（请使用https协议）https://api.weixin.qq.com/shakearound/account/auditstatus?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回说明</strong>&nbsp;正常时的返回JSON数据包示例：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<h3><strong><span>查询审核状态</span></strong></h3>
+<p><strong>接口说明</strong>&nbsp;查询已经提交的开通摇一摇周边功能申请的审核状态。在申请提交后，工作人员会在三个工作日内完成审核。</p>
+<p><strong>接口调用说明</strong></p>
+<pre>http请求方式:（请使用https协议）https://api.weixin.qq.com/shakearound/account/auditstatus?access_token=ACCESS_TOKEN</pre>
+<p><strong>返回说明</strong>&nbsp;正常时的返回JSON数据包示例：</p>
+<pre>{
 &nbsp;&nbsp;&nbsp;&nbsp;"data":&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"apply_time":&nbsp;1432026025,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"audit_comment":&nbsp;"test",
@@ -65,10 +65,10 @@ POST数据例子：
 &nbsp;&nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;&nbsp;"errmsg":&nbsp;"success."
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
+<p><strong>参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 240px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">apply_time</td><td class="table_cell">提交申请的时间戳</td></tr>
 <tr><td class="table_cell">audit_status</td><td class="table_cell">审核状态。0：审核未通过、1：审核中、2：审核已通过；审核会在三个工作日内完成</td></tr>
 <tr><td class="table_cell">audit_comment</td><td class="table_cell">审核备注，包括审核不通过的原因</td></tr>

@@ -12,37 +12,37 @@
 <div class="inner">
 <div class="news_content">
 <p></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">设置微信首页欢迎语，可选择“欢迎光临XXX”或“已连接XXXWiFi”，XXX为公众号名称或门店名称。</p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><span style="text-indent: 28px; font-family: 微软雅黑, 'Microsoft YaHei';">注：设置微信首页欢迎语的接口，未审核的门店不能设置包含门店名称（bar_type为1、3）的欢迎语内容。</span></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">协议：https
+<p>设置微信首页欢迎语，可选择“欢迎光临XXX”或“已连接XXXWiFi”，XXX为公众号名称或门店名称。</p>
+<p><span>注：设置微信首页欢迎语的接口，未审核的门店不能设置包含门店名称（bar_type为1、3）的欢迎语内容。</span></p>
+<p><strong>接口调用说明</strong></p>
+<pre>协议：https
 http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/bar/set?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">参数</th><th class="table_cell" style="width: 80px;">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 </tbody>
 </table>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">数据示例：</p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+<p><strong>POST数据</strong></p>
+<p>数据示例：</p>
+<pre>{
 &nbsp;&nbsp;"shop_id":&nbsp;429620,
 &nbsp;&nbsp;"bar_type":&nbsp;1
 }</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p>
+<p>字段说明：</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell" style="width: 80px;">是否必填</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">字段</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">是</td><td class="table_cell">门店ID</td></tr>
 <tr><td class="table_cell">bar_type</td><td class="table_cell">是</td><td class="table_cell">微信首页欢迎语的文本内容：0--欢迎光临+公众号名称；1--欢迎光临+门店名称；2--已连接+公众号名称+WiFi；3--已连接+门店名称+Wi-Fi。
 <br></td></tr>
 </tbody>
 </table>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<p><span></span>
 <br></p>
 </div>
 </div>

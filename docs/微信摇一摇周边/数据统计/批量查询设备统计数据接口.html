@@ -11,50 +11,50 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"></span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口说明</strong></span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">查询指定时间商家帐号下的每个设备进行摇周边操作的人数、次数，点击摇周边消息的人数、次数。</span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">只能查询最近90天内的数据，且一次只能查询一天。</span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">此接口无法获取当天的数据，最早只能获取前一天的数据。</span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">由于系统在凌晨处理前一天的数据，太早调用此接口可能获取不到数据，建议在早上8：00之后调用此接口。</span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">注意：对于摇周边人数、摇周边次数、点击摇周边消息的人数、点击摇周边消息的次数都为0的设备，不在结果列表中返回。</span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>接口调用说明</strong></span></p>
-<div data-tag="backcolor" style="white-space: normal; margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">http请求方式: POST（请使用https协议）https://api.weixin.qq.com/shakearound/statistics/devicelist?access_token=ACCESS_TOKENPOST数据格式：json<br>POST数据例子：<br>{<br>&nbsp; &nbsp; &nbsp;"date": 1438704000,	<br>&nbsp; &nbsp; “page_index”:1<br>}
+<p><span></span></p>
+<p><span><strong>接口说明</strong></span></p>
+<p><span>查询指定时间商家帐号下的每个设备进行摇周边操作的人数、次数，点击摇周边消息的人数、次数。</span></p>
+<p><span>只能查询最近90天内的数据，且一次只能查询一天。</span></p>
+<p><span>此接口无法获取当天的数据，最早只能获取前一天的数据。</span></p>
+<p><span>由于系统在凌晨处理前一天的数据，太早调用此接口可能获取不到数据，建议在早上8：00之后调用此接口。</span></p>
+<p><span>注意：对于摇周边人数、摇周边次数、点击摇周边消息的人数、点击摇周边消息的次数都为0的设备，不在结果列表中返回。</span></p>
+<p><span><strong>接口调用说明</strong></span></p>
+<div data-tag="backcolor">
+<p><span>http请求方式: POST（请使用https协议）https://api.weixin.qq.com/shakearound/statistics/devicelist?access_token=ACCESS_TOKENPOST数据格式：json<br>POST数据例子：<br>{<br>&nbsp; &nbsp; &nbsp;"date": 1438704000,	<br>&nbsp; &nbsp; “page_index”:1<br>}
 <br></span></p>
 </div>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
+<p><span><strong>参数说明</strong></span></p>
 <table class="table" width="951">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="228" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="209" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是否必须</span></td><td class="table_cell" width="213" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
-<tr><td class="table_cell" width="228"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">access_token</span></td><td class="table_cell" width="209"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">调用接口凭证</span></td></tr>
-<tr><td class="table_cell" width="228"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">date</span></td><td class="table_cell" width="209"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">指定查询日期时间戳，单位为秒</span></td></tr>
-<tr><td class="table_cell" width="228"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">page_index</span></td><td class="table_cell" width="209"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">是</span></td><td class="table_cell" width="213" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">指定查询的结果页序号；返回结果按摇周边人数降序排序，每50条记录为一页 &nbsp;&nbsp;</span></td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="228" valign="top"><span>参数</span></td><td class="table_cell" width="209" valign="top"><span>是否必须</span></td><td class="table_cell" width="213" valign="top"><span>说明</span></td></tr>
+<tr><td class="table_cell" width="228"><span>access_token</span></td><td class="table_cell" width="209"><span>是</span></td><td class="table_cell" width="213"><span>调用接口凭证</span></td></tr>
+<tr><td class="table_cell" width="228"><span>date</span></td><td class="table_cell" width="209"><span>是</span></td><td class="table_cell" width="213"><span>指定查询日期时间戳，单位为秒</span></td></tr>
+<tr><td class="table_cell" width="228"><span>page_index</span></td><td class="table_cell" width="209"><span>是</span></td><td class="table_cell" width="213"><span>指定查询的结果页序号；返回结果按摇周边人数降序排序，每50条记录为一页 &nbsp;&nbsp;</span></td></tr>
 </tbody>
 </table>
-<p style="white-space: normal;">
+<p>
 <br></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>返回说明</strong></span></p>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">正常时的返回JSON数据包示例：</span></p>
-<div data-tag="backcolor" style="white-space: normal; margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">
-<p><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">{<br>&nbsp; "data": {<br>&nbsp; &nbsp; &nbsp; "devices": [<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "device_id": 10097,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "major": 10001,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "minor": 12102,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_pv": 1<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_uv": 2<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_pv": 3<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_uv":4<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "device_id": 10097,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "major": 10001,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "minor": 12102,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_pv":1<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_uv":2<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_pv":3<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_uv":4<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}&nbsp;<br>&nbsp; &nbsp; &nbsp; ],&nbsp;<br>&nbsp; &nbsp;},<br>&nbsp; "date":1435075200<br>&nbsp; "total_count": 151<br>&nbsp; "page_index":1<br>&nbsp; &nbsp;"errcode": 0,<br>&nbsp; &nbsp;"errmsg": "success."<br>}</span></p>
+<p><span><strong>返回说明</strong></span></p>
+<p><span>正常时的返回JSON数据包示例：</span></p>
+<div data-tag="backcolor">
+<p><span>{<br>&nbsp; "data": {<br>&nbsp; &nbsp; &nbsp; "devices": [<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "device_id": 10097,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "major": 10001,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "minor": 12102,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_pv": 1<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_uv": 2<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_pv": 3<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_uv":4<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; },<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "device_id": 10097,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "major": 10001,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "minor": 12102,<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "uuid": "FDA50693-A4E2-4FB1-AFCF-C6EB07647825"<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_pv":1<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "shake_uv":2<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_pv":3<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "click_uv":4<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;}&nbsp;<br>&nbsp; &nbsp; &nbsp; ],&nbsp;<br>&nbsp; &nbsp;},<br>&nbsp; "date":1435075200<br>&nbsp; "total_count": 151<br>&nbsp; "page_index":1<br>&nbsp; &nbsp;"errcode": 0,<br>&nbsp; &nbsp;"errmsg": "success."<br>}</span></p>
 </div>
-<p style="white-space: normal;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;"><strong>参数说明</strong></span></p>
+<p><span><strong>参数说明</strong></span></p>
 <table class="table" width="951">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="329" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">参数</span></td><td class="table_cell" width="322" valign="top" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">说明</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">device_id</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">设备编号</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">major、minor、uuid</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">major、minor、uuid</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">click_pv</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">点击摇周边消息的次数</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">click_uv</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">点击摇周边消息的人数</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">shake_pv</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">摇周边的次数</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">shake_uv</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">摇周边的人数</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">date</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">所查询的日期时间戳</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">total_count</span></td><td class="table_cell" width="322"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">设备总数</span></td></tr>
-<tr><td class="table_cell" width="329"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">page_index</span></td><td class="table_cell" width="322" style="word-break: break-all;"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; font-size: 14px;">所查询的结果页序号；返回结果按摇周边人数降序排序，每50条记录为一页 &nbsp;&nbsp;</span></td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="329" valign="top"><span>参数</span></td><td class="table_cell" width="322" valign="top"><span>说明</span></td></tr>
+<tr><td class="table_cell" width="329"><span>device_id</span></td><td class="table_cell" width="322"><span>设备编号</span></td></tr>
+<tr><td class="table_cell" width="329"><span>major、minor、uuid</span></td><td class="table_cell" width="322"><span>major、minor、uuid</span></td></tr>
+<tr><td class="table_cell" width="329"><span>click_pv</span></td><td class="table_cell" width="322"><span>点击摇周边消息的次数</span></td></tr>
+<tr><td class="table_cell" width="329"><span>click_uv</span></td><td class="table_cell" width="322"><span>点击摇周边消息的人数</span></td></tr>
+<tr><td class="table_cell" width="329"><span>shake_pv</span></td><td class="table_cell" width="322"><span>摇周边的次数</span></td></tr>
+<tr><td class="table_cell" width="329"><span>shake_uv</span></td><td class="table_cell" width="322"><span>摇周边的人数</span></td></tr>
+<tr><td class="table_cell" width="329"><span>date</span></td><td class="table_cell" width="322"><span>所查询的日期时间戳</span></td></tr>
+<tr><td class="table_cell" width="329"><span>total_count</span></td><td class="table_cell" width="322"><span>设备总数</span></td></tr>
+<tr><td class="table_cell" width="329"><span>page_index</span></td><td class="table_cell" width="322"><span>所查询的结果页序号；返回结果按摇周边人数降序排序，每50条记录为一页 &nbsp;&nbsp;</span></td></tr>
 </tbody>
 </table>
-<p style="white-space: normal;">
+<p>
 <br></p>
 </div>
 </div>

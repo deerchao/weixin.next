@@ -20,9 +20,9 @@
 <p><a href="#上传客服头像" target="_self">1.6 上传客服头像</a></p>
 <p><a href="#删除客服帐号" target="_self">1.7 删除客服帐号</a></p>
 <p><a href="#客服管理接口返回码说明" target="_self">1.8 客服管理接口返回码说明</a></p>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<p><span></span>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="获取客服基本信息"></a>获取客服基本信息</strong></span></p>
+<p><span><strong><a name="获取客服基本信息"></a>获取客服基本信息</strong></span></p>
 <p><strong>调用说明</strong>
 <br></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
@@ -40,7 +40,7 @@
 <p><strong>返回说明</strong>
 <br></p>
 <p>返回数据示例（正确时的JSON返回结果）：</p>
-<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html" style="width: 968px;">
+<table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
 <tbody>
 <tr class="firstRow thead"><td class="gutter table_cell"><div class="line number1 index0 alt2">1</div>
 <div class="line number2 index1 alt1">2</div>
@@ -159,30 +159,30 @@
 <br></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_nick</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_id</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>客服编号</p>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_nick</td><td class="table_cell" width="471" valign="top">客服昵称</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_id</td><td class="table_cell" width="471" valign="top"><p>客服编号</p>
 </td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_headimgurl</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服头像</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_wx
-<br></td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>如果客服帐号已绑定了客服人员微信号，</p>
+<tr><td class="table_cell" width="471" valign="top">kf_headimgurl</td><td class="table_cell" width="471" valign="top">客服头像</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_wx
+<br></td><td class="table_cell" width="471" valign="top"><p>如果客服帐号已绑定了客服人员微信号，</p>
 <p>则此处显示微信号</p>
 </td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">invite_wx</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>如果客服帐号尚未绑定微信号，但是已经发起了一个绑定邀请，</p>
+<tr><td class="table_cell" width="471" valign="top">invite_wx</td><td class="table_cell" width="471" valign="top"><p>如果客服帐号尚未绑定微信号，但是已经发起了一个绑定邀请，</p>
 <p>则此处显示绑定邀请的微信号</p>
 </td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">invite_expire_time</td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;"><p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;">如果客服帐号尚未绑定微信号，但是已经发起过一个绑定邀请，</p>
-<p style="margin-top: 0px; margin-bottom: 0px; padding: 0px; white-space: normal;">邀请的过期时间，为unix 时间戳</p>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">invite_expire_time</td><td class="table_cell" valign="top" colspan="1" rowspan="1"><p>如果客服帐号尚未绑定微信号，但是已经发起过一个绑定邀请，</p>
+<p>邀请的过期时间，为unix 时间戳</p>
 </td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">invite_status</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>邀请的状态，有等待确认“waiting”，被拒绝“rejected”，</p>
+<tr><td class="table_cell" width="471" valign="top">invite_status</td><td class="table_cell" width="471" valign="top"><p>邀请的状态，有等待确认“waiting”，被拒绝“rejected”，</p>
 <p>过期“expired”</p>
 </td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p style="white-space: normal;"><span style="font-size: 18px;"><strong><a name="获取客服基本信息"></a>获取客服基本信息</strong></span></p>
+<p><span><strong><a name="获取客服基本信息"></a>获取客服基本信息</strong></span></p>
 <p><strong>调用说明</strong></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
 <tbody>
@@ -289,16 +289,16 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">status</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服在线状态，目前为：1、web 在线</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_id</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服编号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">accepted_case</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服当前正在接待的会话数</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">status</td><td class="table_cell" width="471" valign="top">客服在线状态，目前为：1、web 在线</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_id</td><td class="table_cell" width="471" valign="top">客服编号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">accepted_case</td><td class="table_cell" width="471" valign="top">客服当前正在接待的会话数</td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="添加客服帐号"></a>添加客服帐号
+<p><span><strong><a name="添加客服帐号"></a>添加客服帐号
 <br></strong></span></p>
 <p><strong>调用说明</strong></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
@@ -336,9 +336,9 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号，帐号前缀最多10个字符，必须是英文、数字字符或者下划线，后缀为公众号微信号，长度不超过30个字符</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">nickname</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称，最长16个字</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号，帐号前缀最多10个字符，必须是英文、数字字符或者下划线，后缀为公众号微信号，长度不超过30个字符</td></tr>
+<tr><td class="table_cell" width="471" valign="top">nickname</td><td class="table_cell" width="471" valign="top">客服昵称，最长16个字</td></tr>
 </tbody>
 </table>
 <p>
@@ -374,18 +374,18 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新客服功能</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65403</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称不合法</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65404</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服帐号不合法</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65405</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">帐号数目已达到上限，不能继续添加</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65406</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">已经存在的客服帐号</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">返回码</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">0</td><td class="table_cell" width="471" valign="top">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65400</td><td class="table_cell" width="471" valign="top">API不可用，即没有开通/升级到新客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65403</td><td class="table_cell" width="471" valign="top">客服昵称不合法</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65404</td><td class="table_cell" width="471" valign="top">客服帐号不合法</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65405</td><td class="table_cell" width="471" valign="top">帐号数目已达到上限，不能继续添加</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65406</td><td class="table_cell" width="471" valign="top">已经存在的客服帐号</td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="邀请绑定客服帐号"></a>邀请绑定客服帐号</strong></span></p>
+<p><span><strong><a name="邀请绑定客服帐号"></a>邀请绑定客服帐号</strong></span></p>
 <p>新添加的客服帐号是不能直接使用的，只有客服人员用微信号绑定了客服账号后，方可登录Web客服进行操作。此接口发起一个绑定邀请到客服人员微信号，客服人员需要在微信客户端上用该微信号确认后帐号才可用。尚未绑定微信号的帐号可以进行绑定邀请操作，邀请未失效时不能对该帐号进行再次绑定微信号邀请。</p>
 <p><strong>调用说明</strong></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
@@ -423,9 +423,9 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">invite_wx</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">接收绑定邀请的客服微信号</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">invite_wx</td><td class="table_cell" width="471" valign="top">接收绑定邀请的客服微信号</td></tr>
 </tbody>
 </table>
 <p><strong>返回说明</strong></p>
@@ -459,21 +459,21 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65407</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">邀请对象已经是本公众号客服</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65408</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">本公众号已发送邀请给该微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65409</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效的微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65410</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">邀请对象绑定公众号客服数量达到上限（目前每个微信号最多可以绑定5个公众号客服帐号）</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65411</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">该帐号已经有一个等待确认的邀请，不能重复邀请</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65412</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">该帐号已经绑定微信号，不能进行邀请</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">返回码</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">0</td><td class="table_cell" width="471" valign="top">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65400</td><td class="table_cell" width="471" valign="top">API不可用，即没有开通/升级到新版客服</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65401</td><td class="table_cell" width="471" valign="top">无效客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65407</td><td class="table_cell" width="471" valign="top">邀请对象已经是本公众号客服</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65408</td><td class="table_cell" width="471" valign="top">本公众号已发送邀请给该微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65409</td><td class="table_cell" width="471" valign="top">无效的微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65410</td><td class="table_cell" width="471" valign="top">邀请对象绑定公众号客服数量达到上限（目前每个微信号最多可以绑定5个公众号客服帐号）</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65411</td><td class="table_cell" width="471" valign="top">该帐号已经有一个等待确认的邀请，不能重复邀请</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65412</td><td class="table_cell" width="471" valign="top">该帐号已经绑定微信号，不能进行邀请</td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="设置客服信息"></a>设置客服信息</strong></span></p>
+<p><span><strong><a name="设置客服信息"></a>设置客服信息</strong></span></p>
 <p><strong>调用说明</strong></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
 <tbody>
@@ -510,9 +510,9 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">nickname</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称，最长16个字</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">nickname</td><td class="table_cell" width="471" valign="top">客服昵称，最长16个字</td></tr>
 </tbody>
 </table>
 <p><strong>返回说明
@@ -547,16 +547,16 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65403</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称不合法</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">返回码</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">0</td><td class="table_cell" width="471" valign="top">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65400</td><td class="table_cell" width="471" valign="top">API不可用，即没有开通/升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65401</td><td class="table_cell" width="471" valign="top">无效客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65403</td><td class="table_cell" width="471" valign="top">客服昵称不合法</td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="上传客服头像"></a>上传客服头像</strong></span></p>
+<p><span><strong><a name="上传客服头像"></a>上传客服头像</strong></span></p>
 <p><strong>调用说明</strong></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
 <tbody>
@@ -581,9 +581,9 @@
 <p><strong>参数说明</strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">media</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">form-data 中媒体文件标识，有filename、filelength、content-type 等信息，文件大小为5M 以内</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">media</td><td class="table_cell" width="471" valign="top">form-data 中媒体文件标识，有filename、filelength、content-type 等信息，文件大小为5M 以内</td></tr>
 </tbody>
 </table>
 <p>
@@ -619,18 +619,18 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65403</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称不合法</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40005</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">不支持的媒体类型</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">40009</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">媒体文件长度不合法</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">返回码</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">0</td><td class="table_cell" width="471" valign="top">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65400</td><td class="table_cell" width="471" valign="top">API不可用，即没有开通/升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65401</td><td class="table_cell" width="471" valign="top">无效客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65403</td><td class="table_cell" width="471" valign="top">客服昵称不合法</td></tr>
+<tr><td class="table_cell" width="471" valign="top">40005</td><td class="table_cell" width="471" valign="top">不支持的媒体类型</td></tr>
+<tr><td class="table_cell" width="471" valign="top">40009</td><td class="table_cell" width="471" valign="top">媒体文件长度不合法</td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="删除客服帐号"></a>删除客服帐号</strong></span></p>
+<p><span><strong><a name="删除客服帐号"></a>删除客服帐号</strong></span></p>
 <p><strong>调用说明</strong></p>
 <table border="0" cellpadding="0" cellspacing="0" class="syntaxhighlighter html">
 <tbody>
@@ -648,8 +648,8 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">kf_account</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">参数</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">kf_account</td><td class="table_cell" width="471" valign="top">完整客服帐号，格式为：帐号前缀@公众号微信号</td></tr>
 </tbody>
 </table>
 <p><strong>返回说明
@@ -684,42 +684,42 @@
 <br></strong></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>说明</p>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">返回码</td><td class="table_cell" width="471" valign="top"><p>说明</p>
 </td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">0</td><td class="table_cell" width="471" valign="top">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65400</td><td class="table_cell" width="471" valign="top">API不可用，即没有开通/升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65401</td><td class="table_cell" width="471" valign="top">无效客服帐号</td></tr>
 </tbody>
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 18px;"><strong><a name="客服管理接口返回码说明"></a>客服管理接口返回码说明</strong></span></p>
+<p><span><strong><a name="客服管理接口返回码说明"></a>客服管理接口返回码说明</strong></span></p>
 <table class="table">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="471" valign="top" style="word-break: break-all;">返回码</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">说明</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">0</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">成功</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65400</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">API不可用，即没有开通/升级到新版客服功能</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65401</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">无效客服帐号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65403</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服昵称不合法</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65404</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">客服帐号不合法</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65405</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">帐号数目已达到上限，不能继续添加</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65406</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;">已经存在的客服帐号</td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65407</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>邀请对象已经是该公众号客服</p>
+<tr class="firstRow thead"><td class="table_cell" width="471" valign="top">返回码</td><td class="table_cell" width="471" valign="top">说明</td></tr>
+<tr><td class="table_cell" width="471" valign="top">0</td><td class="table_cell" width="471" valign="top">成功</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65400</td><td class="table_cell" width="471" valign="top">API不可用，即没有开通/升级到新版客服功能</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65401</td><td class="table_cell" width="471" valign="top">无效客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65403</td><td class="table_cell" width="471" valign="top">客服昵称不合法</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65404</td><td class="table_cell" width="471" valign="top">客服帐号不合法</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65405</td><td class="table_cell" width="471" valign="top">帐号数目已达到上限，不能继续添加</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65406</td><td class="table_cell" width="471" valign="top">已经存在的客服帐号</td></tr>
+<tr><td class="table_cell" width="471" valign="top">65407</td><td class="table_cell" width="471" valign="top"><p>邀请对象已经是该公众号客服</p>
 </td></tr>
-<tr><td class="table_cell" width="471" valign="top" style="word-break: break-all;">65408</td><td class="table_cell" width="471" valign="top" style="word-break: break-all;"><p>本公众号已经有一个邀请给该微信</p>
+<tr><td class="table_cell" width="471" valign="top">65408</td><td class="table_cell" width="471" valign="top"><p>本公众号已经有一个邀请给该微信</p>
 </td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">65409
-<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">无效的微信号</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">65410
-<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">邀请对象绑定公众号客服数达到上限（目前每个微信号可以绑定5个公众号客服帐号）</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">65411
-<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">该帐号已经有一个等待确认的邀请，不能重复邀请</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">65412
-<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">该帐号已经绑定微信号，不能进行邀请</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">40005
-<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">不支持的媒体类型</td></tr>
-<tr><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">40009
-<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1" style="word-break: break-all;">媒体文件长度不合法</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">65409
+<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1">无效的微信号</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">65410
+<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1">邀请对象绑定公众号客服数达到上限（目前每个微信号可以绑定5个公众号客服帐号）</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">65411
+<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1">该帐号已经有一个等待确认的邀请，不能重复邀请</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">65412
+<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1">该帐号已经绑定微信号，不能进行邀请</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">40005
+<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1">不支持的媒体类型</td></tr>
+<tr><td class="table_cell" valign="top" colspan="1" rowspan="1">40009
+<br></td><td class="table_cell" valign="top" colspan="1" rowspan="1">媒体文件长度不合法</td></tr>
 </tbody>
 </table>
 <p>

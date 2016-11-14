@@ -11,25 +11,25 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<p><span></span>
 <br></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">可通过指定分页或具体门店ID的方式，查询当前MP账号下指定门店连网成功的设备信息。一次最多能查询20个门店的设备信息。</p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">协议：https
+<p>可通过指定分页或具体门店ID的方式，查询当前MP账号下指定门店连网成功的设备信息。一次最多能查询20个门店的设备信息。</p>
+<p><strong>接口调用说明</strong></p>
+<pre>协议：https
 http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/device/list?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">参数</th><th class="table_cell" style="width: 80px;">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 </tbody>
 </table>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">数据示例：</p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">分页查询时：
+<p><strong>POST数据</strong></p>
+<p>数据示例：</p>
+<pre>分页查询时：
 {
 &nbsp;&nbsp;&nbsp;"pageindex":&nbsp;1,		
 &nbsp;&nbsp;&nbsp;"pagesize":10
@@ -40,18 +40,18 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;&nbsp;"pagesize":10,
 &nbsp;&nbsp;&nbsp;"shop_id":429620
 }</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p>
+<p>字段说明：</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell" style="width: 80px;">是否必填</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">字段</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">pageindex</td><td class="table_cell">否</td><td class="table_cell">分页下标，默认从1开始</td></tr>
 <tr><td class="table_cell">pagesize</td><td class="table_cell">否</td><td class="table_cell">每页的个数，默认10个，最大20个</td></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">否</td><td class="table_cell">根据门店id查询</td></tr>
 </tbody>
 </table>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;</p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">正确返回JSON数据示例：</p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+<p><strong>返回数据说明</strong>&nbsp;</p>
+<p>正确返回JSON数据示例：</p>
+<pre>{
 &nbsp;&nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;&nbsp;"data":&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"totalcount":&nbsp;2,
@@ -73,10 +73,10 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
 &nbsp;&nbsp;&nbsp;}
 }</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">字段说明：</p>
+<p>字段说明：</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 160px;">字段</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">totalcount</td><td class="table_cell">总数</td></tr>
 <tr><td class="table_cell">pageindex</td><td class="table_cell">分页下标</td></tr>
 <tr><td class="table_cell">pagecount</td><td class="table_cell">分页页数</td></tr>
@@ -88,7 +88,7 @@ POST数据格式：JSON</pre>
 <br></td></tr>
 </tbody>
 </table>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">
+<p>
 <br></p>
 </div>
 </div>

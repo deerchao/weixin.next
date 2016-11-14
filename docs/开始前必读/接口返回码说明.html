@@ -11,770 +11,770 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p style="margin: 5px 0"><span style="font-family: 'MS Gothic'"></span><span style="font-size: 16px;font-family: 宋体">公众号每次调用接口时，可能获得正确或错误的返回码，开发者可以根据返回码信息调试接口，排查错误。</span></p>
-<p style="margin: 5px 0"><span style="font-size: 16px;font-family: Arial, sans-serif">&nbsp;</span></p>
-<p style="margin: 5px 10px;background: white"><strong><span style="font-size:16px;font-family:宋体;color:#333333">全局返回码说明如下：</span></strong></p>
+<p><span></span><span>公众号每次调用接口时，可能获得正确或错误的返回码，开发者可以根据返回码信息调试接口，排查错误。</span></p>
+<p><span>&nbsp;</span></p>
+<p><strong><span>全局返回码说明如下：</span></strong></p>
 <table cellspacing="0" cellpadding="0" width="640">
 <tbody>
-<tr class="firstRow thead"><td width="120" style="border-width: 2px 1px 1px; border-top-color: rgb(187, 187, 187); padding: 5px 10px; background: rgb(247, 247, 247);" class="table_cell">
-<p style="text-align:center"><strong><span style="font-size: 16px;font-family: 宋体">返回码</span></strong></p>
-</td><td style="border-top-width: 2px;border-top-color: rgb(187, 187, 187);border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px;background: rgb(247, 247, 247)" class="table_cell">
-<p style="text-align:center"><strong><span style="font-size: 16px;font-family: 宋体">说明</span></strong></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">-1</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">系统繁忙，此时请开发者稍候再试</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">0</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">请求成功</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">获取</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">时</span><span style="font-size: 16px;font-family: Arial, sans-serif">AppSecret</span><span style="font-size: 16px;font-family: 宋体">错误，或者</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">无效。请开发者认真比对</span><span style="font-size: 16px;font-family: Arial, sans-serif">AppSecret</span><span style="font-size: 16px;font-family: 宋体">的正确性，或查看是否正在为恰当的公众号调用接口</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的凭证类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">OpenID</span><span style="font-size: 16px;font-family: 宋体">，请开发者确认</span><span style="font-size: 16px;font-family: Arial, sans-serif">OpenID</span><span style="font-size: 16px;font-family: 宋体">（该用户）是否已关注公众号，或是否是其他公众号的</span><span style="font-size: 16px;font-family: Arial, sans-serif">OpenID</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的媒体文件类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40005</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的文件类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40006</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的文件大小</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40007</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的媒体文件</span><span style="font-size: 16px;font-family: Arial, sans-serif">id</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40008</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的消息类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40009</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的图片文件大小</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40010</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的语音文件大小</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40011</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的视频文件大小</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40012</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的缩略图文件大小</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40013</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">AppID</span><span style="font-size: 16px;font-family: 宋体">，请开发者检查</span><span style="font-size: 16px;font-family: Arial, sans-serif">AppID</span><span style="font-size: 16px;font-family: 宋体">的正确性，避免异常字符，注意大小写</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40014</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">，请开发者认真比对</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">的有效性（如是否过期），或查看是否正在为恰当的公众号调用接口</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40015</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的菜单类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40016</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的按钮个数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40017</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的按钮个数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40018</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的按钮名字长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40019</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的按钮</span><span style="font-size: 16px;font-family: Arial, sans-serif">KEY</span><span style="font-size: 16px;font-family: 宋体">长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40020</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的按钮</span><span style="font-size: 16px;font-family: Arial, sans-serif">URL</span><span style="font-size: 16px;font-family: 宋体">长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40021</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的菜单版本号</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40022</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的子菜单级数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40023</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的子菜单按钮个数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40024</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的子菜单按钮类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40025</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的子菜单按钮名字长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40026</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的子菜单按钮</span><span style="font-size: 16px;font-family: Arial, sans-serif">KEY</span><span style="font-size: 16px;font-family: 宋体">长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40027</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的子菜单按钮</span><span style="font-size: 16px;font-family: Arial, sans-serif">URL</span><span style="font-size: 16px;font-family: 宋体">长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40028</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的自定义菜单使用用户</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40029</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">oauth_code</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40030</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">refresh_token</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40031</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">openid</span><span style="font-size: 16px;font-family: 宋体">列表</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40032</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">openid</span><span style="font-size: 16px;font-family: 宋体">列表长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40033</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的请求字符，不能包含</span><span style="font-size: 16px;font-family: Arial, sans-serif">\uxxxx</span><span style="font-size: 16px;font-family: 宋体">格式的字符</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40035</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的参数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40038</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的请求格式</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40039</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">URL</span><span style="font-size: 16px;font-family: 宋体">长度</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40050</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的分组</span><span style="font-size: 16px;font-family: Arial, sans-serif">id</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40051</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">分组名字不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40117</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">分组名字不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40118</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">media_id</span><span style="font-size: 16px;font-family: 宋体">大小不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40119</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">button</span><span style="font-size: 16px;font-family: 宋体">类型错误</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40120</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">button</span><span style="font-size: 16px;font-family: 宋体">类型错误</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40121</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">media_id</span><span style="font-size: 16px;font-family: 宋体">类型</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40132</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">微信号不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40137</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不支持的图片格式</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">40155</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">请勿添加其他公众号的主页链接</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">参数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">appid</span><span style="font-size: 16px;font-family: 宋体">参数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">refresh_token</span><span style="font-size: 16px;font-family: 宋体">参数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">secret</span><span style="font-size: 16px;font-family: 宋体">参数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41005</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少多媒体文件数据</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41006</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">media_id</span><span style="font-size: 16px;font-family: 宋体">参数</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41007</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少子菜单数据</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41008</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">oauth code</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">41009</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">缺少</span><span style="font-size: 16px;font-family: Arial, sans-serif">openid</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">42001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">超时，请检查</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">的有效期，请参考基础支持</span><span style="font-size: 16px;font-family: Arial, sans-serif">-</span><span style="font-size: 16px;font-family: 宋体">获取</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">中，对</span><span style="font-size: 16px;font-family: Arial, sans-serif">access_token</span><span style="font-size: 16px;font-family: 宋体">的详细机制说明</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">42002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">refresh_token</span><span style="font-size: 16px;font-family: 宋体">超时</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">42003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">oauth_code</span><span style="font-size: 16px;font-family: 宋体">超时</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">42007</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">用户修改微信密码，</span><span style="font-size: 16px;font-family: Arial, sans-serif">accesstoken</span><span style="font-size: 16px;font-family: 宋体">和</span><span style="font-size: 16px;font-family: Arial, sans-serif">refreshtoken</span><span style="font-size: 16px;font-family: 宋体">失效，需要重新授权</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">43001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">需要</span><span style="font-size: 16px;font-family: Arial, sans-serif">GET</span><span style="font-size: 16px;font-family: 宋体">请求</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">43002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">需要</span><span style="font-size: 16px;font-family: Arial, sans-serif">POST</span><span style="font-size: 16px;font-family: 宋体">请求</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">43003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">需要</span><span style="font-size: 16px;font-family: Arial, sans-serif">HTTPS</span><span style="font-size: 16px;font-family: 宋体">请求</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">43004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">需要接收者关注</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">43005</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">需要好友关系</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">44001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">多媒体文件为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">44002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">POST</span><span style="font-size: 16px;font-family: 宋体">的数据包为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">44003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">图文消息内容为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">44004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">文本消息内容为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">多媒体文件大小超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">消息内容超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">标题字段超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">描述字段超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45005</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">链接字段超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45006</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">图片链接字段超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45007</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">语音播放时间超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45008</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">图文消息超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45009</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">接口调用超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45010</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">创建菜单个数超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45011</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">API</span><span style="font-size: 16px;font-family: 宋体">调用太频繁，请稍候再试</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45015</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">回复时间超过限制</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45016</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">系统分组，不允许修改</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45017</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">分组名字过长</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45018</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">分组数量超过上限</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">45047</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">客服接口下行条数超过上限</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">46001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不存在媒体数据</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">46002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不存在的菜单版本</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">46003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不存在的菜单数据</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">46004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不存在的用户</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">47001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">解析</span><span style="font-size: 16px;font-family: Arial, sans-serif">JSON/XML</span><span style="font-size: 16px;font-family: 宋体">内容错误</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">48001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">api</span><span style="font-size: 16px;font-family: 宋体">功能未授权，请确认公众号已获得该接口，可以在公众平台官网</span><span style="font-size: 16px;font-family: Arial, sans-serif">-</span><span style="font-size: 16px;font-family: 宋体">开发者中心页中查看接口权限</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">48002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">粉丝拒收消息（粉丝在公众号选项中，关闭了</span><span style="font-size: 16px;font-family: Arial, sans-serif">“</span><span style="font-size: 16px;font-family: 宋体">接收消息</span><span style="font-size: 16px;font-family: Arial, sans-serif">”</span><span style="font-size: 16px;font-family: 宋体">）</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">48004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">api</span><span style="font-size: 16px;font-family: 宋体">接口被封禁，请登录</span><span style="font-size: 16px;font-family: Arial, sans-serif">mp.weixin.qq.com</span><span style="font-size: 16px;font-family: 宋体">查看详情</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">48005</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">api</span><span style="font-size: 16px;font-family: 宋体">禁止删除被自动回复和自定义菜单引用的素材</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">48006</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">api</span><span style="font-size: 16px;font-family: 宋体">禁止清零调用次数，因为清零次数达到上限</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">50001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">用户未授权该</span><span style="font-size: 16px;font-family: Arial, sans-serif">api</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">50002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">用户受限，可能是违规后接口被封禁</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61451</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">参数错误</span><span style="font-size: 16px;font-family: Arial, sans-serif">(invalid parameter)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61452</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">无效客服账号</span><span style="font-size: 16px;font-family: Arial, sans-serif">(invalid kf_account)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61453</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">客服帐号已存在</span><span style="font-size: 16px;font-family: Arial, sans-serif">(kf_account exsited)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61454</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">客服帐号名长度超过限制</span><span style="font-size: 16px;font-family: Arial, sans-serif">(</span><span style="font-size: 16px;font-family: 宋体">仅允许</span><span style="font-size: 16px;font-family: Arial, sans-serif">10</span><span style="font-size: 16px;font-family: 宋体">个英文字符，不包括</span><span style="font-size: 16px;font-family: Arial, sans-serif">@</span><span style="font-size: 16px;font-family: 宋体">及</span><span style="font-size: 16px;font-family: Arial, sans-serif">@</span><span style="font-size: 16px;font-family: 宋体">后的公众号的微信号</span><span style="font-size: 16px;font-family: Arial, sans-serif">)(invalid &nbsp; kf_acount length)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61455</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">客服帐号名包含非法字符</span><span style="font-size: 16px;font-family: Arial, sans-serif">(</span><span style="font-size: 16px;font-family: 宋体">仅允许英文</span><span style="font-size: 16px;font-family: Arial, sans-serif">+</span><span style="font-size: 16px;font-family: 宋体">数字</span><span style="font-size: 16px;font-family: Arial, sans-serif">)(illegal character in &nbsp; &nbsp; kf_account)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61456</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">客服帐号个数超过限制</span><span style="font-size: 16px;font-family: Arial, sans-serif">(10</span><span style="font-size: 16px;font-family: 宋体">个客服账号</span><span style="font-size: 16px;font-family: Arial, sans-serif">)(kf_account count exceeded)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61457</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">无效头像文件类型</span><span style="font-size: 16px;font-family: Arial, sans-serif">(invalid &nbsp; file type)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61450</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">系统错误</span><span style="font-size: 16px;font-family: Arial, sans-serif">(system error)</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">61500</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">日期格式错误</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65301</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不存在此</span><span style="font-size: 16px;font-family: Arial, sans-serif">menuid</span><span style="font-size: 16px;font-family: 宋体">对应的个性化菜单</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65302</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">没有相应的用户</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65303</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">没有默认菜单，不能创建个性化菜单</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65304</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">MatchRule</span><span style="font-size: 16px;font-family: 宋体">信息为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65305</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">个性化菜单数量受限</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65306</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不支持个性化菜单的帐号</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65307</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">个性化菜单信息为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65308</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">包含没有响应类型的</span><span style="font-size: 16px;font-family: Arial, sans-serif">button</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65309</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">个性化菜单开关处于关闭状态</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65310</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">填写了省份或城市信息，国家信息不能为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65311</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">填写了城市信息，省份信息不能为空</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65312</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的国家信息</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65313</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的省份信息</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65314</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的城市信息</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65316</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">该公众号的菜单设置了过多的域名外跳（最多跳转到</span><span style="font-size: 16px;font-family: Arial, sans-serif">3</span><span style="font-size: 16px;font-family: 宋体">个域名的链接）</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">65317</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">不合法的</span><span style="font-size: 16px;font-family: Arial, sans-serif">URL</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001001</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">POST</span><span style="font-size: 16px;font-family: 宋体">数据参数不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001002</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">远端服务不可用</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001003</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">Ticket</span><span style="font-size: 16px;font-family: 宋体">不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001004</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">获取摇周边用户信息失败</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001005</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">获取商户信息失败</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001006</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">获取</span><span style="font-size: 16px;font-family: Arial, sans-serif">OpenID</span><span style="font-size: 16px;font-family: 宋体">失败</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001007</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">上传文件缺失</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001008</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">上传素材的文件类型不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001009</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">上传素材的文件尺寸不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001010</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">上传失败</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001020</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">帐号不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001021</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">已有设备激活率低于</span><span style="font-size: 16px;font-family: Arial, sans-serif">50%</span><span style="font-size: 16px;font-family: 宋体">，不能新增设备</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001022</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">设备申请数不合法，必须为大于</span><span style="font-size: 16px;font-family: Arial, sans-serif">0</span><span style="font-size: 16px;font-family: 宋体">的数字</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001023</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">已存在审核中的设备</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">申请</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001024</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">一次查询设备</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">数量不能超过</span><span style="font-size: 16px;font-family: Arial, sans-serif">50</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001025</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">设备</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001026</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">页面</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001027</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">页面参数不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001028</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">一次删除页面</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">数量不能超过</span><span style="font-size: 16px;font-family: Arial, sans-serif">10</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001029</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">页面已应用在设备中，请先解除应用关系再删除</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001030</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">一次查询页面</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">数量不能超过</span><span style="font-size: 16px;font-family: Arial, sans-serif">50</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001031</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">时间区间不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001032</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">保存设备与页面的绑定关系参数错误</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001033</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">门店</span><span style="font-size: 16px;font-family: Arial, sans-serif">ID</span><span style="font-size: 16px;font-family: 宋体">不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001034</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">设备备注信息过长</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001035</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">设备申请参数不合法</span></p>
-</td></tr>
-<tr><td style="border-right-width: 1px;border-bottom-width: 1px;border-left-width: 1px;border-top-style: none;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: Arial, sans-serif">9001036</span></p>
-</td><td style="border-top-style: none;border-left-style: none;border-bottom-width: 1px;border-right-width: 1px;padding: 5px 10px" class="table_cell">
-<p><span style="font-size: 16px;font-family: 宋体">查询起始值</span><span style="font-size: 16px;font-family: Arial, sans-serif">begin</span><span style="font-size: 16px;font-family: 宋体">不合法</span></p>
+<tr class="firstRow thead"><td width="120" class="table_cell">
+<p><strong><span>返回码</span></strong></p>
+</td><td class="table_cell">
+<p><strong><span>说明</span></strong></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>-1</span></p>
+</td><td class="table_cell">
+<p><span>系统繁忙，此时请开发者稍候再试</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>0</span></p>
+</td><td class="table_cell">
+<p><span>请求成功</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40001</span></p>
+</td><td class="table_cell">
+<p><span>获取</span><span>access_token</span><span>时</span><span>AppSecret</span><span>错误，或者</span><span>access_token</span><span>无效。请开发者认真比对</span><span>AppSecret</span><span>的正确性，或查看是否正在为恰当的公众号调用接口</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40002</span></p>
+</td><td class="table_cell">
+<p><span>不合法的凭证类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40003</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>OpenID</span><span>，请开发者确认</span><span>OpenID</span><span>（该用户）是否已关注公众号，或是否是其他公众号的</span><span>OpenID</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40004</span></p>
+</td><td class="table_cell">
+<p><span>不合法的媒体文件类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40005</span></p>
+</td><td class="table_cell">
+<p><span>不合法的文件类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40006</span></p>
+</td><td class="table_cell">
+<p><span>不合法的文件大小</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40007</span></p>
+</td><td class="table_cell">
+<p><span>不合法的媒体文件</span><span>id</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40008</span></p>
+</td><td class="table_cell">
+<p><span>不合法的消息类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40009</span></p>
+</td><td class="table_cell">
+<p><span>不合法的图片文件大小</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40010</span></p>
+</td><td class="table_cell">
+<p><span>不合法的语音文件大小</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40011</span></p>
+</td><td class="table_cell">
+<p><span>不合法的视频文件大小</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40012</span></p>
+</td><td class="table_cell">
+<p><span>不合法的缩略图文件大小</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40013</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>AppID</span><span>，请开发者检查</span><span>AppID</span><span>的正确性，避免异常字符，注意大小写</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40014</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>access_token</span><span>，请开发者认真比对</span><span>access_token</span><span>的有效性（如是否过期），或查看是否正在为恰当的公众号调用接口</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40015</span></p>
+</td><td class="table_cell">
+<p><span>不合法的菜单类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40016</span></p>
+</td><td class="table_cell">
+<p><span>不合法的按钮个数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40017</span></p>
+</td><td class="table_cell">
+<p><span>不合法的按钮个数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40018</span></p>
+</td><td class="table_cell">
+<p><span>不合法的按钮名字长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40019</span></p>
+</td><td class="table_cell">
+<p><span>不合法的按钮</span><span>KEY</span><span>长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40020</span></p>
+</td><td class="table_cell">
+<p><span>不合法的按钮</span><span>URL</span><span>长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40021</span></p>
+</td><td class="table_cell">
+<p><span>不合法的菜单版本号</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40022</span></p>
+</td><td class="table_cell">
+<p><span>不合法的子菜单级数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40023</span></p>
+</td><td class="table_cell">
+<p><span>不合法的子菜单按钮个数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40024</span></p>
+</td><td class="table_cell">
+<p><span>不合法的子菜单按钮类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40025</span></p>
+</td><td class="table_cell">
+<p><span>不合法的子菜单按钮名字长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40026</span></p>
+</td><td class="table_cell">
+<p><span>不合法的子菜单按钮</span><span>KEY</span><span>长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40027</span></p>
+</td><td class="table_cell">
+<p><span>不合法的子菜单按钮</span><span>URL</span><span>长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40028</span></p>
+</td><td class="table_cell">
+<p><span>不合法的自定义菜单使用用户</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40029</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>oauth_code</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40030</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>refresh_token</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40031</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>openid</span><span>列表</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40032</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>openid</span><span>列表长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40033</span></p>
+</td><td class="table_cell">
+<p><span>不合法的请求字符，不能包含</span><span>\uxxxx</span><span>格式的字符</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40035</span></p>
+</td><td class="table_cell">
+<p><span>不合法的参数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40038</span></p>
+</td><td class="table_cell">
+<p><span>不合法的请求格式</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40039</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>URL</span><span>长度</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40050</span></p>
+</td><td class="table_cell">
+<p><span>不合法的分组</span><span>id</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40051</span></p>
+</td><td class="table_cell">
+<p><span>分组名字不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40117</span></p>
+</td><td class="table_cell">
+<p><span>分组名字不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40118</span></p>
+</td><td class="table_cell">
+<p><span>media_id</span><span>大小不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40119</span></p>
+</td><td class="table_cell">
+<p><span>button</span><span>类型错误</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40120</span></p>
+</td><td class="table_cell">
+<p><span>button</span><span>类型错误</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40121</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>media_id</span><span>类型</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40132</span></p>
+</td><td class="table_cell">
+<p><span>微信号不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40137</span></p>
+</td><td class="table_cell">
+<p><span>不支持的图片格式</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>40155</span></p>
+</td><td class="table_cell">
+<p><span>请勿添加其他公众号的主页链接</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41001</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>access_token</span><span>参数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41002</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>appid</span><span>参数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41003</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>refresh_token</span><span>参数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41004</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>secret</span><span>参数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41005</span></p>
+</td><td class="table_cell">
+<p><span>缺少多媒体文件数据</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41006</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>media_id</span><span>参数</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41007</span></p>
+</td><td class="table_cell">
+<p><span>缺少子菜单数据</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41008</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>oauth code</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>41009</span></p>
+</td><td class="table_cell">
+<p><span>缺少</span><span>openid</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>42001</span></p>
+</td><td class="table_cell">
+<p><span>access_token</span><span>超时，请检查</span><span>access_token</span><span>的有效期，请参考基础支持</span><span>-</span><span>获取</span><span>access_token</span><span>中，对</span><span>access_token</span><span>的详细机制说明</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>42002</span></p>
+</td><td class="table_cell">
+<p><span>refresh_token</span><span>超时</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>42003</span></p>
+</td><td class="table_cell">
+<p><span>oauth_code</span><span>超时</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>42007</span></p>
+</td><td class="table_cell">
+<p><span>用户修改微信密码，</span><span>accesstoken</span><span>和</span><span>refreshtoken</span><span>失效，需要重新授权</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>43001</span></p>
+</td><td class="table_cell">
+<p><span>需要</span><span>GET</span><span>请求</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>43002</span></p>
+</td><td class="table_cell">
+<p><span>需要</span><span>POST</span><span>请求</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>43003</span></p>
+</td><td class="table_cell">
+<p><span>需要</span><span>HTTPS</span><span>请求</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>43004</span></p>
+</td><td class="table_cell">
+<p><span>需要接收者关注</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>43005</span></p>
+</td><td class="table_cell">
+<p><span>需要好友关系</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>44001</span></p>
+</td><td class="table_cell">
+<p><span>多媒体文件为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>44002</span></p>
+</td><td class="table_cell">
+<p><span>POST</span><span>的数据包为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>44003</span></p>
+</td><td class="table_cell">
+<p><span>图文消息内容为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>44004</span></p>
+</td><td class="table_cell">
+<p><span>文本消息内容为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45001</span></p>
+</td><td class="table_cell">
+<p><span>多媒体文件大小超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45002</span></p>
+</td><td class="table_cell">
+<p><span>消息内容超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45003</span></p>
+</td><td class="table_cell">
+<p><span>标题字段超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45004</span></p>
+</td><td class="table_cell">
+<p><span>描述字段超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45005</span></p>
+</td><td class="table_cell">
+<p><span>链接字段超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45006</span></p>
+</td><td class="table_cell">
+<p><span>图片链接字段超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45007</span></p>
+</td><td class="table_cell">
+<p><span>语音播放时间超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45008</span></p>
+</td><td class="table_cell">
+<p><span>图文消息超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45009</span></p>
+</td><td class="table_cell">
+<p><span>接口调用超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45010</span></p>
+</td><td class="table_cell">
+<p><span>创建菜单个数超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45011</span></p>
+</td><td class="table_cell">
+<p><span>API</span><span>调用太频繁，请稍候再试</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45015</span></p>
+</td><td class="table_cell">
+<p><span>回复时间超过限制</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45016</span></p>
+</td><td class="table_cell">
+<p><span>系统分组，不允许修改</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45017</span></p>
+</td><td class="table_cell">
+<p><span>分组名字过长</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45018</span></p>
+</td><td class="table_cell">
+<p><span>分组数量超过上限</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>45047</span></p>
+</td><td class="table_cell">
+<p><span>客服接口下行条数超过上限</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>46001</span></p>
+</td><td class="table_cell">
+<p><span>不存在媒体数据</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>46002</span></p>
+</td><td class="table_cell">
+<p><span>不存在的菜单版本</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>46003</span></p>
+</td><td class="table_cell">
+<p><span>不存在的菜单数据</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>46004</span></p>
+</td><td class="table_cell">
+<p><span>不存在的用户</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>47001</span></p>
+</td><td class="table_cell">
+<p><span>解析</span><span>JSON/XML</span><span>内容错误</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>48001</span></p>
+</td><td class="table_cell">
+<p><span>api</span><span>功能未授权，请确认公众号已获得该接口，可以在公众平台官网</span><span>-</span><span>开发者中心页中查看接口权限</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>48002</span></p>
+</td><td class="table_cell">
+<p><span>粉丝拒收消息（粉丝在公众号选项中，关闭了</span><span>“</span><span>接收消息</span><span>”</span><span>）</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>48004</span></p>
+</td><td class="table_cell">
+<p><span>api</span><span>接口被封禁，请登录</span><span>mp.weixin.qq.com</span><span>查看详情</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>48005</span></p>
+</td><td class="table_cell">
+<p><span>api</span><span>禁止删除被自动回复和自定义菜单引用的素材</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>48006</span></p>
+</td><td class="table_cell">
+<p><span>api</span><span>禁止清零调用次数，因为清零次数达到上限</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>50001</span></p>
+</td><td class="table_cell">
+<p><span>用户未授权该</span><span>api</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>50002</span></p>
+</td><td class="table_cell">
+<p><span>用户受限，可能是违规后接口被封禁</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61451</span></p>
+</td><td class="table_cell">
+<p><span>参数错误</span><span>(invalid parameter)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61452</span></p>
+</td><td class="table_cell">
+<p><span>无效客服账号</span><span>(invalid kf_account)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61453</span></p>
+</td><td class="table_cell">
+<p><span>客服帐号已存在</span><span>(kf_account exsited)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61454</span></p>
+</td><td class="table_cell">
+<p><span>客服帐号名长度超过限制</span><span>(</span><span>仅允许</span><span>10</span><span>个英文字符，不包括</span><span>@</span><span>及</span><span>@</span><span>后的公众号的微信号</span><span>)(invalid &nbsp; kf_acount length)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61455</span></p>
+</td><td class="table_cell">
+<p><span>客服帐号名包含非法字符</span><span>(</span><span>仅允许英文</span><span>+</span><span>数字</span><span>)(illegal character in &nbsp; &nbsp; kf_account)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61456</span></p>
+</td><td class="table_cell">
+<p><span>客服帐号个数超过限制</span><span>(10</span><span>个客服账号</span><span>)(kf_account count exceeded)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61457</span></p>
+</td><td class="table_cell">
+<p><span>无效头像文件类型</span><span>(invalid &nbsp; file type)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61450</span></p>
+</td><td class="table_cell">
+<p><span>系统错误</span><span>(system error)</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>61500</span></p>
+</td><td class="table_cell">
+<p><span>日期格式错误</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65301</span></p>
+</td><td class="table_cell">
+<p><span>不存在此</span><span>menuid</span><span>对应的个性化菜单</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65302</span></p>
+</td><td class="table_cell">
+<p><span>没有相应的用户</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65303</span></p>
+</td><td class="table_cell">
+<p><span>没有默认菜单，不能创建个性化菜单</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65304</span></p>
+</td><td class="table_cell">
+<p><span>MatchRule</span><span>信息为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65305</span></p>
+</td><td class="table_cell">
+<p><span>个性化菜单数量受限</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65306</span></p>
+</td><td class="table_cell">
+<p><span>不支持个性化菜单的帐号</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65307</span></p>
+</td><td class="table_cell">
+<p><span>个性化菜单信息为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65308</span></p>
+</td><td class="table_cell">
+<p><span>包含没有响应类型的</span><span>button</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65309</span></p>
+</td><td class="table_cell">
+<p><span>个性化菜单开关处于关闭状态</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65310</span></p>
+</td><td class="table_cell">
+<p><span>填写了省份或城市信息，国家信息不能为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65311</span></p>
+</td><td class="table_cell">
+<p><span>填写了城市信息，省份信息不能为空</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65312</span></p>
+</td><td class="table_cell">
+<p><span>不合法的国家信息</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65313</span></p>
+</td><td class="table_cell">
+<p><span>不合法的省份信息</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65314</span></p>
+</td><td class="table_cell">
+<p><span>不合法的城市信息</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65316</span></p>
+</td><td class="table_cell">
+<p><span>该公众号的菜单设置了过多的域名外跳（最多跳转到</span><span>3</span><span>个域名的链接）</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>65317</span></p>
+</td><td class="table_cell">
+<p><span>不合法的</span><span>URL</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001001</span></p>
+</td><td class="table_cell">
+<p><span>POST</span><span>数据参数不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001002</span></p>
+</td><td class="table_cell">
+<p><span>远端服务不可用</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001003</span></p>
+</td><td class="table_cell">
+<p><span>Ticket</span><span>不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001004</span></p>
+</td><td class="table_cell">
+<p><span>获取摇周边用户信息失败</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001005</span></p>
+</td><td class="table_cell">
+<p><span>获取商户信息失败</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001006</span></p>
+</td><td class="table_cell">
+<p><span>获取</span><span>OpenID</span><span>失败</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001007</span></p>
+</td><td class="table_cell">
+<p><span>上传文件缺失</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001008</span></p>
+</td><td class="table_cell">
+<p><span>上传素材的文件类型不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001009</span></p>
+</td><td class="table_cell">
+<p><span>上传素材的文件尺寸不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001010</span></p>
+</td><td class="table_cell">
+<p><span>上传失败</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001020</span></p>
+</td><td class="table_cell">
+<p><span>帐号不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001021</span></p>
+</td><td class="table_cell">
+<p><span>已有设备激活率低于</span><span>50%</span><span>，不能新增设备</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001022</span></p>
+</td><td class="table_cell">
+<p><span>设备申请数不合法，必须为大于</span><span>0</span><span>的数字</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001023</span></p>
+</td><td class="table_cell">
+<p><span>已存在审核中的设备</span><span>ID</span><span>申请</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001024</span></p>
+</td><td class="table_cell">
+<p><span>一次查询设备</span><span>ID</span><span>数量不能超过</span><span>50</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001025</span></p>
+</td><td class="table_cell">
+<p><span>设备</span><span>ID</span><span>不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001026</span></p>
+</td><td class="table_cell">
+<p><span>页面</span><span>ID</span><span>不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001027</span></p>
+</td><td class="table_cell">
+<p><span>页面参数不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001028</span></p>
+</td><td class="table_cell">
+<p><span>一次删除页面</span><span>ID</span><span>数量不能超过</span><span>10</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001029</span></p>
+</td><td class="table_cell">
+<p><span>页面已应用在设备中，请先解除应用关系再删除</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001030</span></p>
+</td><td class="table_cell">
+<p><span>一次查询页面</span><span>ID</span><span>数量不能超过</span><span>50</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001031</span></p>
+</td><td class="table_cell">
+<p><span>时间区间不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001032</span></p>
+</td><td class="table_cell">
+<p><span>保存设备与页面的绑定关系参数错误</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001033</span></p>
+</td><td class="table_cell">
+<p><span>门店</span><span>ID</span><span>不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001034</span></p>
+</td><td class="table_cell">
+<p><span>设备备注信息过长</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001035</span></p>
+</td><td class="table_cell">
+<p><span>设备申请参数不合法</span></p>
+</td></tr>
+<tr><td class="table_cell">
+<p><span>9001036</span></p>
+</td><td class="table_cell">
+<p><span>查询起始值</span><span>begin</span><span>不合法</span></p>
 </td></tr>
 </tbody>
 </table>
-<p style="margin: 5px 0"><span style="font-size: 16px;font-family: Arial, sans-serif">&nbsp;</span></p>
-<p style="margin: 5px 0"><span style="font-size: 16px;font-family: Arial, sans-serif">&nbsp;</span></p>
+<p><span>&nbsp;</span></p>
+<p><span>&nbsp;</span></p>
 <p>&nbsp;</p>
 <p>
 <br></p>

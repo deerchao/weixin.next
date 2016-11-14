@@ -11,45 +11,45 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p style="text-align: left;"><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 1.5; widows: auto; background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51); line-height: 1.5; font-size: 14px; font-family: 微软雅黑, &quot;Microsoft YaHei&quot;; background-color: rgb(255, 255, 255);"></span>模板消息仅用于公众号向用户发送重要的服务通知，只能用于符合其要求的服务场景中，如信用卡刷卡通知，商品购买成功通知等。不支持广告等营销类消息以及其它所有可能对用户造成骚扰的消息。</span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">关于使用规则，请注意：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">1、所有服务号都可以在功能-&gt;添加功能插件处看到申请模板消息功能的入口，但只有认证后的服务号才可以申请模板消息的使用权限并获得该权限；
+<p><span><span></span>模板消息仅用于公众号向用户发送重要的服务通知，只能用于符合其要求的服务场景中，如信用卡刷卡通知，商品购买成功通知等。不支持广告等营销类消息以及其它所有可能对用户造成骚扰的消息。</span></p>
+<p>关于使用规则，请注意：</p>
+<pre>1、所有服务号都可以在功能-&gt;添加功能插件处看到申请模板消息功能的入口，但只有认证后的服务号才可以申请模板消息的使用权限并获得该权限；
 2、需要选择公众账号服务所处的2个行业，每月可更改1次所选行业；
 3、在所选择行业的模板库中选用已有的模板进行调用；
 4、每个账号可以同时使用25个模板。
 5、当前每个账号的模板消息的日调用上限为10万次，单个模板没有特殊限制。【2014年11月18日将接口调用频率从默认的日1万次提升为日10万次，可在MP登录后的开发者中心查看】。当账号粉丝数超过10W/100W/1000W时，模板消息的日调用上限会相应提升，以公众号MP后台开发者中心页面中标明的数字为准。</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">关于接口文档，请注意：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">1、模板消息调用时主要需要模板ID和模板中各参数的赋值内容；
+<p>关于接口文档，请注意：</p>
+<pre>1、模板消息调用时主要需要模板ID和模板中各参数的赋值内容；
 2、模板中参数内容必须以".DATA"结尾，否则视为保留字；
 3、模板保留符号"{{&nbsp;}}"。</pre>
-<p style="margin: 0px; padding: 0px; font-size: 14px; font-weight: normal; text-shadow: rgb(255, 255, 255) 1px 1px 0px; color: rgb(51, 51, 51); border: 0px; height: 28px; line-height: 28px; text-indent: 10px; text-align: left;">目录</p>
-<p style="text-align: left;"><a href="#1" target="_self">1&nbsp;设置所属行业</a></p>
-<p style="text-align: left;"><a href="#2" target="_self">2&nbsp;获取设置的行业信息</a></p>
-<p style="text-align: left;"><a href="#3" target="_self">3&nbsp;获得模板ID</a></p>
-<p style="text-align: left;"><a href="#4" target="_self">4&nbsp;获取模板列表</a></p>
-<p style="text-align: left;"><a href="#5" target="_self">5&nbsp;删除模板</a></p>
-<p style="text-align: left;"><a href="#6" target="_self">6&nbsp;发送模板消息</a></p>
-<p style="text-align: left;"><a href="#7" target="_self">7&nbsp;事件推送</a></p>
+<p>目录</p>
+<p><a href="#1" target="_self">1&nbsp;设置所属行业</a></p>
+<p><a href="#2" target="_self">2&nbsp;获取设置的行业信息</a></p>
+<p><a href="#3" target="_self">3&nbsp;获得模板ID</a></p>
+<p><a href="#4" target="_self">4&nbsp;获取模板列表</a></p>
+<p><a href="#5" target="_self">5&nbsp;删除模板</a></p>
+<p><a href="#6" target="_self">6&nbsp;发送模板消息</a></p>
+<p><a href="#7" target="_self">7&nbsp;事件推送</a></p>
 <p>
-<br style="text-align: left;"></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.AE.BE.E7.BD.AE.E6.89.80.E5.B1.9E.E8.A1.8C.E4.B8.9A"></span></h2>
-<p style="text-align:center"><a name="1"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.AE.BE.E7.BD.AE.E6.89.80.E5.B1.9E.E8.A1.8C.E4.B8.9A">设置所属行业</span>
-<br style="text-align: left;"></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; widows: auto; background-color: rgb(255, 255, 255);">设置行业可在MP中完成，每月可修改行业1次，账号仅可使用所属行业中相关的模板，为方便第三方开发者，提供通过接口调用的方式来修改账号所属行业，具体如下：</span></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>接口调用请求说明</strong></p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">http请求方式:&nbsp;POST
+<br></p>
+<h2><span id=".E8.AE.BE.E7.BD.AE.E6.89.80.E5.B1.9E.E8.A1.8C.E4.B8.9A"></span></h2>
+<p><a name="1"></a></p>
+<h2><span id=".E8.AE.BE.E7.BD.AE.E6.89.80.E5.B1.9E.E8.A1.8C.E4.B8.9A">设置所属行业</span>
+<br></h2>
+<p><span>设置行业可在MP中完成，每月可修改行业1次，账号仅可使用所属行业中相关的模板，为方便第三方开发者，提供通过接口调用的方式来修改账号所属行业，具体如下：</span></p>
+<p><strong>接口调用请求说明</strong></p>
+<pre>http请求方式:&nbsp;POST
 https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>POST数据说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">POST数据示例如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<p><strong>POST数据说明</strong></p>
+<p>POST数据示例如下：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"industry_id1":"1",
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"industry_id2":"4"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">参数说明</p>
+<p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 <tr><td class="table_cell"><p>industry_id1
 <br></p>
@@ -57,10 +57,10 @@ https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_
 <tr><td class="table_cell">industry_id2</td><td class="table_cell">是</td><td class="table_cell">公众号模板消息所属行业编号</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>行业代码查询</strong></p>
+<p><strong>行业代码查询</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="380px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">主行业</th><th style="width: 140px;" class="table_cell">副行业</th><th class="table_cell">代码</th></tr>
+<tr class="firstRow thead"><th class="table_cell">主行业</th><th class="table_cell">副行业</th><th class="table_cell">代码</th></tr>
 <tr><td class="table_cell">IT科技</td><td class="table_cell">互联网/电子商务</td><td class="table_cell">1</td></tr>
 <tr><td class="table_cell">IT科技</td><td class="table_cell">IT软件与服务</td><td class="table_cell">2</td></tr>
 <tr><td class="table_cell">IT科技</td><td class="table_cell">IT硬件与设备</td><td class="table_cell">3</td></tr>
@@ -104,82 +104,82 @@ https://api.weixin.qq.com/cgi-bin/template/api_set_industry?access_token=ACCESS_
 <tr><td class="table_cell">其它</td><td class="table_cell">其它</td><td class="table_cell">41</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.8E.B7.E5.8F.96.E8.AE.BE.E7.BD.AE.E7.9A.84.E8.A1.8C.E4.B8.9A.E4.BF.A1.E6.81.AF"></span></h2>
-<p style="text-align:center"><a name="2"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.8E.B7.E5.8F.96.E8.AE.BE.E7.BD.AE.E7.9A.84.E8.A1.8C.E4.B8.9A.E4.BF.A1.E6.81.AF">获取设置的行业信息</span>
+<h2><span id=".E8.8E.B7.E5.8F.96.E8.AE.BE.E7.BD.AE.E7.9A.84.E8.A1.8C.E4.B8.9A.E4.BF.A1.E6.81.AF"></span></h2>
+<p><a name="2"></a></p>
+<h2><span id=".E8.8E.B7.E5.8F.96.E8.AE.BE.E7.BD.AE.E7.9A.84.E8.A1.8C.E4.B8.9A.E4.BF.A1.E6.81.AF">获取设置的行业信息</span>
 <br></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">获取帐号设置的行业信息。可在MP官网中查看行业信息，为方便第三方开发者，提供通过接口调用的方式来获取帐号所设置的行业信息，具体如下:</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>接口调用请求说明</strong></p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">http请求方式：GET
+<p>获取帐号设置的行业信息。可在MP官网中查看行业信息，为方便第三方开发者，提供通过接口调用的方式来获取帐号所设置的行业信息，具体如下:</p>
+<p><strong>接口调用请求说明</strong></p>
+<pre>http请求方式：GET
 https://api.weixin.qq.com/cgi-bin/template/get_industry?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
+<p><strong>参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>返回说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">正确调用后的返回示例：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{
+<p><strong>返回说明</strong></p>
+<p>正确调用后的返回示例：</p>
+<pre>{
 "primary_industry":{"first_class":"运输与仓储","second_class":"快递"},
 "secondary_industry":{"first_class":"IT科技","second_class":"互联网|电子商务"}
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">返回参数说明</p>
+<p>返回参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 <tr><td class="table_cell">primary_industry</td><td class="table_cell">是</td><td class="table_cell">帐号设置的主营行业</td></tr>
 <tr><td class="table_cell">secondary_industry</td><td class="table_cell">是</td><td class="table_cell">帐号设置的副营行业</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.8E.B7.E5.BE.97.E6.A8.A1.E6.9D.BFID"></span></h2>
-<p style="text-align:center"><a name="3"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.8E.B7.E5.BE.97.E6.A8.A1.E6.9D.BFID">获得模板ID</span>
+<h2><span id=".E8.8E.B7.E5.BE.97.E6.A8.A1.E6.9D.BFID"></span></h2>
+<p><a name="3"></a></p>
+<h2><span id=".E8.8E.B7.E5.BE.97.E6.A8.A1.E6.9D.BFID">获得模板ID</span>
 <br></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">从行业模板库选择模板到帐号后台，获得模板ID的过程可在MP中完成。为方便第三方开发者，提供通过接口调用的方式来获取模板ID，具体如下：</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>接口调用请求说明</strong></p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">http请求方式:&nbsp;POST
+<p>从行业模板库选择模板到帐号后台，获得模板ID的过程可在MP中完成。为方便第三方开发者，提供通过接口调用的方式来获取模板ID，具体如下：</p>
+<p><strong>接口调用请求说明</strong></p>
+<pre>http请求方式:&nbsp;POST
 https://api.weixin.qq.com/cgi-bin/template/api_add_template?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>POST数据说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">POST数据示例如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<p><strong>POST数据说明</strong></p>
+<p>POST数据示例如下：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"template_id_short":"TM00015"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">参数说明</p>
+<p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 <tr><td class="table_cell">template_id_short</td><td class="table_cell">是</td><td class="table_cell">模板库中模板的编号，有“TM**”和“OPENTMTM**”等形式</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>返回码说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">在调用模板消息接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;{
+<p><strong>返回码说明</strong></p>
+<p>在调用模板消息接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":0,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":"ok",
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"template_id":"Doclyl5uP7Aciu-qZ7mJNPtWkbkYnWBWVja26EGbNyk"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.8E.B7.E5.8F.96.E6.A8.A1.E6.9D.BF.E5.88.97.E8.A1.A8"></span></h2>
-<p style="text-align:center"><a name="4"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E8.8E.B7.E5.8F.96.E6.A8.A1.E6.9D.BF.E5.88.97.E8.A1.A8">获取模板列表</span>
+<h2><span id=".E8.8E.B7.E5.8F.96.E6.A8.A1.E6.9D.BF.E5.88.97.E8.A1.A8"></span></h2>
+<p><a name="4"></a></p>
+<h2><span id=".E8.8E.B7.E5.8F.96.E6.A8.A1.E6.9D.BF.E5.88.97.E8.A1.A8">获取模板列表</span>
 <br></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">获取已添加至帐号下所有模板列表，可在MP中查看模板列表信息，为方便第三方开发者，提供通过接口调用的方式来获取帐号下所有模板信息，具体如下:</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>接口调用请求说明</strong></p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">http请求方式：GET
+<p>获取已添加至帐号下所有模板列表，可在MP中查看模板列表信息，为方便第三方开发者，提供通过接口调用的方式来获取帐号下所有模板信息，具体如下:</p>
+<p><strong>接口调用请求说明</strong></p>
+<pre>http请求方式：GET
 https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
+<p><strong>参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>返回说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">正确调用后的返回示例：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{	
+<p><strong>返回说明</strong></p>
+<p>正确调用后的返回示例：</p>
+<pre>{	
 &nbsp;"template_list":&nbsp;[{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"template_id":&nbsp;"iPk5sOIt5X_flOVKn5GrTFpncEYTojx6ddbt8WYoV5s",
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"title":&nbsp;"领取奖金提醒",
@@ -189,10 +189,10 @@ https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"example":&nbsp;"您已提交领奖申请\n\n领奖金额：xxxx元\n领奖时间：2013-10-10&nbsp;12:22:22\n银行信息：xx银行(尾号xxxx)\n到账时间：预计xxxxxxx\n\n预计将于xxxx到达您的银行卡"
 &nbsp;&nbsp;&nbsp;}]
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">返回参数说明</p>
+<p>返回参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th class="table_cell">是否必填</th><th class="table_cell"><span style="font-weight: bold; text-align: center; background-color: rgb(247, 247, 247);">说明</span></th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必填</th><th class="table_cell"><span>说明</span></th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 <tr><td class="table_cell">template_id</td><td class="table_cell">是</td><td class="table_cell">模板ID</td></tr>
 <tr><td class="table_cell">title</td><td class="table_cell">是</td><td class="table_cell">模板标题</td></tr>
@@ -202,41 +202,41 @@ https://api.weixin.qq.com/cgi-bin/template/get_all_private_template?access_token
 <tr><td class="table_cell">example</td><td class="table_cell">是</td><td class="table_cell">模板示例</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E5.88.A0.E9.99.A4.E6.A8.A1.E6.9D.BF"></span></h2>
-<p style="text-align:center"><a name="5"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E5.88.A0.E9.99.A4.E6.A8.A1.E6.9D.BF">删除模板</span>
+<h2><span id=".E5.88.A0.E9.99.A4.E6.A8.A1.E6.9D.BF"></span></h2>
+<p><a name="5"></a></p>
+<h2><span id=".E5.88.A0.E9.99.A4.E6.A8.A1.E6.9D.BF">删除模板</span>
 <br></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">删除模板可在MP中完成，为方便第三方开发者，提供通过接口调用的方式来删除某帐号下的模板，具体如下：</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>接口调用请求说明</strong></p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">http请求方式：POST
+<p>删除模板可在MP中完成，为方便第三方开发者，提供通过接口调用的方式来删除某帐号下的模板，具体如下：</p>
+<p><strong>接口调用请求说明</strong></p>
+<pre>http请求方式：POST
 https://api.weixin.qq.com/cgi-bin/template/del_private_template?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">POST数据说明如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;{
+<p>POST数据说明如下：</p>
+<pre>&nbsp;{
 &nbsp;“template_id”=”Dyvp3-Ff0cnail_CDSzk1fIc6-9lOkxsQE7exTJbwUE”
 &nbsp;}</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
+<p><strong>参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">接口调用凭证</td></tr>
 <tr><td class="table_cell">template_id</td><td class="table_cell">是</td><td class="table_cell">公众帐号下模板消息ID</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>返回说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">在调用接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">{
+<p><strong>返回说明</strong></p>
+<p>在调用接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
+<pre>{
 &nbsp;"errcode":0,"errmsg":"ok"
 }</pre>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E5.8F.91.E9.80.81.E6.A8.A1.E6.9D.BF.E6.B6.88.E6.81.AF"></span></h2>
-<p style="text-align:center"><a name="6"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E5.8F.91.E9.80.81.E6.A8.A1.E6.9D.BF.E6.B6.88.E6.81.AF">发送模板消息</span>
+<h2><span id=".E5.8F.91.E9.80.81.E6.A8.A1.E6.9D.BF.E6.B6.88.E6.81.AF"></span></h2>
+<p><a name="6"></a></p>
+<h2><span id=".E5.8F.91.E9.80.81.E6.A8.A1.E6.9D.BF.E6.B6.88.E6.81.AF">发送模板消息</span>
 <br></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>接口调用请求说明</strong></p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">http请求方式:&nbsp;POST
+<p><strong>接口调用请求说明</strong></p>
+<pre>http请求方式:&nbsp;POST
 https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKEN</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>POST数据说明</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">POST数据示例如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
+<p><strong>POST数据说明</strong></p>
+<p>POST数据示例如下：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"touser":"OPENID",
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"template_id":"ngqIpbwh8bUfcSsECmogfXcV14J0tQlEpBO27izEYtY",
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"url":"http://weixin.qq.com/download",&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -263,34 +263,34 @@ https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKE
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: &quot;Microsoft Yahei&quot;, 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">参数说明</p>
+<p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 120px;">参数</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">touser</td><td class="table_cell">是</td><td class="table_cell">接收者openid</td></tr>
 <tr><td class="table_cell">template_id</td><td class="table_cell">是</td><td class="table_cell">模板ID</td></tr>
 <tr><td class="table_cell">url</td><td class="table_cell">否</td><td class="table_cell">模板跳转链接</td></tr>
 <tr><td class="table_cell">data</td><td class="table_cell">是</td><td class="table_cell">模板数据</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">
-<br style="text-align: left;"><strong>返回码说明</strong>
+<p>
+<br><strong>返回码说明</strong>
 <br></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">在调用模板消息接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;{
+<p>在调用模板消息接口后，会返回JSON数据包。正常时的返回JSON数据包示例：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;{
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errcode":0,
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"errmsg":"ok",
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"msgid":200228332
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><strong>使用效果</strong></p>
-<p style="text-align:center"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK39dMUJfWKTTHvrUJ6ooVxxf1qCWnNFyhLcMFyKcOXHf2zeRFrIwHXqzB1o0m8RAlQ/0?wx_fmt=jpeg" title="" alt="" width="373" height="709" style="width: 373px; height: 709px;"></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81"></span></h2>
-<p style="text-align:center"><a name="7"></a></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);"><span id=".E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81">事件推送</span>
+<p><strong>使用效果</strong></p>
+<p><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK39dMUJfWKTTHvrUJ6ooVxxf1qCWnNFyhLcMFyKcOXHf2zeRFrIwHXqzB1o0m8RAlQ/0?wx_fmt=jpeg" title="" alt="" width="373" height="709"></p>
+<h2><span id=".E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81"></span></h2>
+<p><a name="7"></a></p>
+<h2><span id=".E4.BA.8B.E4.BB.B6.E6.8E.A8.E9.80.81">事件推送</span>
 <br></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">在模版消息发送任务完成后，微信服务器会将是否送达成功作为通知，发送到开发者中心中填写的服务器配置地址中。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">1、送达成功时，推送的XML如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;
+<p>在模版消息发送任务完成后，微信服务器会将是否送达成功作为通知，发送到开发者中心中填写的服务器配置地址中。</p>
+<p>1、送达成功时，推送的XML如下：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_7f083739789a]]&gt;&lt;/ToUserName&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FromUserName&gt;&lt;![CDATA[oia2TjuEGTNoeX76QEjQNrcURxG8]]&gt;&lt;/FromUserName&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CreateTime&gt;1395658920&lt;/CreateTime&gt;
@@ -299,10 +299,10 @@ https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKE
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgID&gt;200163836&lt;/MsgID&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Status&gt;&lt;![CDATA[success]]&gt;&lt;/Status&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xml&gt;</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">参数说明</p>
+<p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">公众号微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">接收模板消息的用户的openid</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">创建时间</td></tr>
@@ -312,8 +312,8 @@ https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKE
 <tr><td class="table_cell">Status</td><td class="table_cell">发送状态为成功</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">2、送达由于用户拒收（用户设置拒绝接收公众号消息）而失败时，推送的XML如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;
+<p>2、送达由于用户拒收（用户设置拒绝接收公众号消息）而失败时，推送的XML如下：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_7f083739789a]]&gt;&lt;/ToUserName&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FromUserName&gt;&lt;![CDATA[oia2TjuEGTNoeX76QEjQNrcURxG8]]&gt;&lt;/FromUserName&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CreateTime&gt;1395658984&lt;/CreateTime&gt;
@@ -322,10 +322,10 @@ https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKE
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgID&gt;200163840&lt;/MsgID&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Status&gt;&lt;![CDATA[failed:user&nbsp;block]]&gt;&lt;/Status&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xml&gt;</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">参数说明</p>
+<p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">公众号微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">接收模板消息的用户的openid</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">创建时间</td></tr>
@@ -335,8 +335,8 @@ https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKE
 <tr><td class="table_cell">Status</td><td class="table_cell">发送状态为用户拒绝接收</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">3、送达由于其他原因失败时，推送的XML如下：</p>
-<pre style="font-stretch: normal; font-size: 12px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px; widows: auto;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;
+<p>3、送达由于其他原因失败时，推送的XML如下：</p>
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;xml&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;ToUserName&gt;&lt;![CDATA[gh_7f083739789a]]&gt;&lt;/ToUserName&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;FromUserName&gt;&lt;![CDATA[oia2TjuEGTNoeX76QEjQNrcURxG8]]&gt;&lt;/FromUserName&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;CreateTime&gt;1395658984&lt;/CreateTime&gt;
@@ -345,10 +345,10 @@ https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=ACCESS_TOKE
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;MsgID&gt;200163840&lt;/MsgID&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;Status&gt;&lt;![CDATA[failed:&nbsp;system&nbsp;failed]]&gt;&lt;/Status&gt;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/xml&gt;</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; widows: auto; text-align: left; background-color: rgb(255, 255, 255);">参数说明</p>
+<p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">公众号微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">接收模板消息的用户的openid</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">创建时间</td></tr>

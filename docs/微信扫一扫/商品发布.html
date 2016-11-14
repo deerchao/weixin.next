@@ -11,10 +11,10 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);">提交审核/取消发布商品</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">商品成功创建以后，可以调用该接口申请发布商品。提交审核，商品信息会立即进入扫一扫审核系统。审核通过，商品即发布成功。<strong>只有通过审核，处于发布状态的商品，才能被普通用户扫码查看。未发布或审核通过之前的商品，只有白名单内的用户可以查看。</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POST
+<p><strong>提交审核/取消发布商品</strong></p>
+<p>商品成功创建以后，可以调用该接口申请发布商品。提交审核，商品信息会立即进入扫一扫审核系统。审核通过，商品即发布成功。<strong>只有通过审核，处于发布状态的商品，才能被普通用户扫码查看。未发布或审核通过之前的商品，只有白名单内的用户可以查看。</strong></p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POST
 https://api.weixin.qq.com/scan/product/modstatus?access_token=ACCESS_TOKEN
 POST数据格式：JSON
 POST数据例子：
@@ -23,34 +23,34 @@ POST数据例子：
 &nbsp;"keystr":&nbsp;"6900873042720",
 &nbsp;"status":"on"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">keystandard</td><td class="table_cell">是</td><td class="table_cell">商品编码标准。</td></tr>
 <tr><td class="table_cell">keystr</td><td class="table_cell">是</td><td class="table_cell">商品编码内容。</td></tr>
 <tr><td class="table_cell">status</td><td class="table_cell">是</td><td class="table_cell">设置发布状态。on为提交审核，off为取消发布。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{
 &nbsp;"errcode":&nbsp;0,
 &nbsp;"errmsg":&nbsp;"ok"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E8.AE.BE.E7.BD.AE.E6.B5.8B.E8.AF.95.E4.BA.BA.E5.91.98.E7.99.BD.E5.90.8D.E5.8D.95"><strong>设置测试人员白名单</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">白名单内的测试人员可以查看未发布或审核通过之前的商品信息。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POST
+<h2><span class="mw-headline" id=".E8.AE.BE.E7.BD.AE.E6.B5.8B.E8.AF.95.E4.BA.BA.E5.91.98.E7.99.BD.E5.90.8D.E5.8D.95"><strong>设置测试人员白名单</strong></span></h2>
+<p>白名单内的测试人员可以查看未发布或审核通过之前的商品信息。</p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POST
 https://api.weixin.qq.com/scan/testwhitelist/set?access_token=ACCESS_TOKEN
 POST数据格式：JSON
 POST数据例子：
@@ -58,35 +58,35 @@ POST数据例子：
 &nbsp;"openid":["o1Pj9jmZvwSyyyyyyBa4aULW2mA","o1Pj9jmZvxxxxxxxxxULW2mA"],
 &nbsp;"username":["afdvvf","abcd"]
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">openid</td><td class="table_cell">否</td><td class="table_cell">测试人员的openid列表。</td></tr>
 <tr><td class="table_cell">username</td><td class="table_cell">否</td><td class="table_cell">测试人员的微信号列表。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>注意：每次设置均被视为一次重置，而非增量设置。openid、微信号合计最多设置10个。</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>注意：每次设置均被视为一次重置，而非增量设置。openid、微信号合计最多设置10个。</strong></p>
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{
 &nbsp;"errcode":0,
 &nbsp;"errmsg":"ok"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 </tbody>
 </table>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
-<h2 style="white-space: normal; margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.8F.90.E4.BA.A4.E5.AE.A1.E6.A0.B8.2F.E5.8F.96.E6.B6.88.E5.8F.91.E5.B8.83.E5.95.86.E5.93.81"><strong>获取商品二维码</strong></span></h2>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">调用该接口，商户可获得由微信格式生成的商品二维码，用于印刷在包装上标识商品。</p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">HTTP请求方式：POST
+<p><span></span></p>
+<h2><span class="mw-headline" id=".E6.8F.90.E4.BA.A4.E5.AE.A1.E6.A0.B8.2F.E5.8F.96.E6.B6.88.E5.8F.91.E5.B8.83.E5.95.86.E5.93.81"><strong>获取商品二维码</strong></span></h2>
+<p>调用该接口，商户可获得由微信格式生成的商品二维码，用于印刷在包装上标识商品。</p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POST
 https://api.weixin.qq.com/scan/product/getqrcode?access_token=ACCESS_TOKEN
 POST数据格式：JSON
 POST数据例子：
@@ -96,10 +96,10 @@ POST数据例子：
 &nbsp;"extinfo":&nbsp;"test",
 &nbsp;"qrcode_size":&nbsp;64
 }</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 120px;">参数</th><th class="table_cell" style="width: 120px;">是否必须</th><th class="table_cell" style="width: 400px;">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">keystandard</td><td class="table_cell">是</td><td class="table_cell">商品编码标准。</td></tr>
 <tr><td class="table_cell">keystr</td><td class="table_cell">是</td><td class="table_cell">商品编码内容。</td></tr>
@@ -108,19 +108,19 @@ POST数据例子：
 <tr><td class="table_cell">qrcode_size</td><td class="table_cell">是</td><td class="table_cell">二维码的尺寸（整型），数值代表边长像素数，不填写默认值为100。</td></tr>
 </tbody>
 </table>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong><span style="line-height: 1.5;">注意：</span></strong></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);">商户可通过extinfo为同一款产品生成多个二维码，用于区分或作来源判断。例如一款产品虽然只有一个对应的商品ID，但可以为该款产品下每一个单独的商品分配一个extinfo参数用以标识。当用户打开商品主页，或者点击主页内的推广链接时，微信会将extinfo参数透传给商户，商户就能跟踪每一个商品和用户接触的情况。更多商品二维码能力请见“一物一码专区”。</p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">返回示例</strong></p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">{
+<p><strong><span>注意：</span></strong></p>
+<p>商户可通过extinfo为同一款产品生成多个二维码，用于区分或作来源判断。例如一款产品虽然只有一个对应的商品ID，但可以为该款产品下每一个单独的商品分配一个extinfo参数用以标识。当用户打开商品主页，或者点击主页内的推广链接时，微信会将extinfo参数透传给商户，商户就能跟踪每一个商品和用户接触的情况。更多商品二维码能力请见“一物一码专区”。</p>
+<p><strong>返回示例</strong></p>
+<pre>{
 &nbsp;"errcode":0,
 &nbsp;"errmsg":"ok",
 &nbsp;"pic_url":"http:\/\/mmmbiz.qpic.cn\/mmbiz\/sijaiAdjiT3GasjiSdjsiaXsdS6a2SdDe\/0",
 &nbsp;"qrcode_url":"http://p.url.cn/hA0P71b9MKc/123"
 }</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong><strong style="color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; line-height: 21px; white-space: normal;">返回参数说明</strong></strong></p>
+<p><strong><strong>返回参数说明</strong></strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 120px;">参数</th><th class="table_cell" style="width: 520px;">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">errmsg</td><td class="table_cell" colspan="1" rowspan="1">ok为调用成功，否则返回错误提示。</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">pic_url</td><td class="table_cell" colspan="1" rowspan="1">商品二维码的图片链接，可直接下载到本地。</td></tr>

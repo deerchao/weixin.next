@@ -12,23 +12,23 @@
 <div class="inner">
 <div class="news_content"><p>公众号可通过本接口来获取帐号的关注者列表，关注者列表由一串OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的）组成。一次拉取调用最多拉取10000个关注者的OpenID，可以通过多次拉取的方式来满足需求。</p>
 <p>接口调用请求说明</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>http请求方式: GET（请使用https协议）</p>
+<div data-tag="backcolor"><p>http请求方式: GET（请使用https协议）</p>
 <p>https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID
 <br/></p>
 </div>
 <table class="table" width="951">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="217" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="216" valign="top" style="word-break: break-all;">是否必须</td><td class="table_cell" width="217" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="217" valign="top">参数</td><td class="table_cell" width="216" valign="top">是否必须</td><td class="table_cell" width="217" valign="top">说明</td></tr>
 <tr><td class="table_cell" width="217">access_token</td><td class="table_cell" width="216">是</td><td class="table_cell" width="217">调用接口凭证</td></tr>
 <tr><td class="table_cell" width="217">next_openid</td><td class="table_cell" width="216">是</td><td class="table_cell" width="217">第一个拉取的OPENID，不填默认从头开始拉取</td></tr>
 </tbody>
 </table>
 <p>返回说明</p>
 <p>正确时返回JSON数据包：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">{&quot;total&quot;:2,&quot;count&quot;:2,&quot;data&quot;:{&quot;openid&quot;:[&quot;&quot;,&quot;OPENID1&quot;,&quot;OPENID2&quot;]},&quot;next_openid&quot;:&quot;NEXT_OPENID&quot;}</div>
+<div data-tag="backcolor">{&quot;total&quot;:2,&quot;count&quot;:2,&quot;data&quot;:{&quot;openid&quot;:[&quot;&quot;,&quot;OPENID1&quot;,&quot;OPENID2&quot;]},&quot;next_openid&quot;:&quot;NEXT_OPENID&quot;}</div>
 <table class="table" width="951">
 <tbody class="tbody">
-<tr class="firstRow thead"><td class="table_cell" width="325" valign="top" style="word-break: break-all;">参数</td><td class="table_cell" width="325" valign="top" style="word-break: break-all;">说明</td></tr>
+<tr class="firstRow thead"><td class="table_cell" width="325" valign="top">参数</td><td class="table_cell" width="325" valign="top">说明</td></tr>
 <tr><td class="table_cell" width="325">total</td><td class="table_cell" width="325">关注该公众账号的总用户数</td></tr>
 <tr><td class="table_cell" width="325">count</td><td class="table_cell" width="325">拉取的OPENID个数，最大值为10000</td></tr>
 <tr><td class="table_cell" width="325">data</td><td class="table_cell" width="325">列表数据，OPENID的列表</td></tr>
@@ -38,12 +38,12 @@
 <p>
 <br/></p>
 <p>错误时返回JSON数据包（示例为无效AppID错误）：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid appid&quot;}</div>
+<div data-tag="backcolor">{&quot;errcode&quot;:40013,&quot;errmsg&quot;:&quot;invalid appid&quot;}</div>
 <p>附：关注者数量超过10000时</p>
 <p>当公众号关注者数量超过10000时，可通过填写next_openid的值，从而多次拉取列表的方式来满足需求。</p>
 <p>具体而言，就是在调用接口时，将上一次调用得到的返回中的next_openid值，作为下一次调用中的next_openid值。</p>
 <p>示例如下：</p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);">公众账号A拥有23000个关注的人，想通过拉取关注接口获取所有关注的人，那么分别请求url如下：https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN 返回结果:<br/>{<br/> &nbsp;&quot;total&quot;:23000,<br/> &nbsp;&quot;count&quot;:10000,<br/> &nbsp;&quot;data&quot;:{&quot;<br/> &nbsp; &nbsp; openid&quot;:[<br/> &nbsp; &nbsp; &nbsp; &nbsp;&quot;OPENID1&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp;&quot;OPENID2&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp;...,<br/> &nbsp; &nbsp; &nbsp; &nbsp;&quot;OPENID10000&quot;<br/> &nbsp; &nbsp; ]<br/> &nbsp; },<br/> &nbsp; &quot;next_openid&quot;:&quot;OPENID10000&quot;<br/>}https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID1返回结果:<br/>{<br/> &nbsp; &quot;total&quot;:23000,<br/> &nbsp; &quot;count&quot;:10000,<br/> &nbsp; &quot;data&quot;:{<br/> &nbsp; &nbsp; &quot;openid&quot;:[<br/> &nbsp; &nbsp; &nbsp; &quot;OPENID10001&quot;,<br/> &nbsp; &nbsp; &nbsp; &quot;OPENID10002&quot;,<br/> &nbsp; &nbsp; &nbsp; ...,<br/> &nbsp; &nbsp; &nbsp; &quot;OPENID20000&quot;<br/> &nbsp; &nbsp; ]<br/> &nbsp; },<br/> &nbsp; &quot;next_openid&quot;:&quot;OPENID20000&quot;<br/>}https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID2返回结果（关注者列表已返回完时，返回next_openid为空）:<br/>{<br/> &nbsp; &quot;total&quot;:23000,<br/> &nbsp; &quot;count&quot;:3000,<br/> &nbsp; &quot;data&quot;:{&quot;<br/> &nbsp; &nbsp; &nbsp; &quot;openid&quot;:[<br/> &nbsp; &nbsp; &nbsp; &nbsp; &quot;OPENID20001&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp; &quot;OPENID20002&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp; ...,<br/> &nbsp; &nbsp; &nbsp; &nbsp; &quot;OPENID23000&quot;<br/> &nbsp; &nbsp; &nbsp; ]<br/> &nbsp; },<br/> &nbsp; &quot;next_openid&quot;:&quot;OPENID23000&quot;<br/>}</div>
+<div data-tag="backcolor">公众账号A拥有23000个关注的人，想通过拉取关注接口获取所有关注的人，那么分别请求url如下：https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN 返回结果:<br/>{<br/> &nbsp;&quot;total&quot;:23000,<br/> &nbsp;&quot;count&quot;:10000,<br/> &nbsp;&quot;data&quot;:{&quot;<br/> &nbsp; &nbsp; openid&quot;:[<br/> &nbsp; &nbsp; &nbsp; &nbsp;&quot;OPENID1&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp;&quot;OPENID2&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp;...,<br/> &nbsp; &nbsp; &nbsp; &nbsp;&quot;OPENID10000&quot;<br/> &nbsp; &nbsp; ]<br/> &nbsp; },<br/> &nbsp; &quot;next_openid&quot;:&quot;OPENID10000&quot;<br/>}https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID1返回结果:<br/>{<br/> &nbsp; &quot;total&quot;:23000,<br/> &nbsp; &quot;count&quot;:10000,<br/> &nbsp; &quot;data&quot;:{<br/> &nbsp; &nbsp; &quot;openid&quot;:[<br/> &nbsp; &nbsp; &nbsp; &quot;OPENID10001&quot;,<br/> &nbsp; &nbsp; &nbsp; &quot;OPENID10002&quot;,<br/> &nbsp; &nbsp; &nbsp; ...,<br/> &nbsp; &nbsp; &nbsp; &quot;OPENID20000&quot;<br/> &nbsp; &nbsp; ]<br/> &nbsp; },<br/> &nbsp; &quot;next_openid&quot;:&quot;OPENID20000&quot;<br/>}https://api.weixin.qq.com/cgi-bin/user/get?access_token=ACCESS_TOKEN&amp;next_openid=NEXT_OPENID2返回结果（关注者列表已返回完时，返回next_openid为空）:<br/>{<br/> &nbsp; &quot;total&quot;:23000,<br/> &nbsp; &quot;count&quot;:3000,<br/> &nbsp; &quot;data&quot;:{&quot;<br/> &nbsp; &nbsp; &nbsp; &quot;openid&quot;:[<br/> &nbsp; &nbsp; &nbsp; &nbsp; &quot;OPENID20001&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp; &quot;OPENID20002&quot;,<br/> &nbsp; &nbsp; &nbsp; &nbsp; ...,<br/> &nbsp; &nbsp; &nbsp; &nbsp; &quot;OPENID23000&quot;<br/> &nbsp; &nbsp; &nbsp; ]<br/> &nbsp; },<br/> &nbsp; &quot;next_openid&quot;:&quot;OPENID23000&quot;<br/>}</div>
 <p>
 <br/></p>
 <p>

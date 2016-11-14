@@ -11,7 +11,7 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>为了帮助公众号开发者获取公众号的认证状态，也为了第三方平台开发者获知旗下公众号的认证状态，微信公众平台提供了公众号认证过程中各个阶段的事件推送。</p>
+<p><span></span>为了帮助公众号开发者获取公众号的认证状态，也为了第三方平台开发者获知旗下公众号的认证状态，微信公众平台提供了公众号认证过程中各个阶段的事件推送。</p>
 <p>事件推送到哪里？</p>
 <p>1、事件推送将会推送给公众号在公众平台官网开发者中心设置的服务地址中<br>2、如果公众号已将帐号管理权限集（因为该接口权限从属于帐号管理权限集）授权给第三方平台，那么将由第三方平台代公众号接收事件推送，具体是推送到第三方平台的公众号消息与事件接收URL
 <br></p>
@@ -27,14 +27,14 @@
 <p>
 <br></p>
 <p><strong><a name="1"></a>资质认证成功（此时立即获得接口权限）</strong></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>推送XML数据包示例：</p>
+<div data-tag="backcolor"><p>推送XML数据包示例：</p>
 <p>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442401156&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[qualification_verify_success]]&gt;&lt;/Event&gt;<br>&lt;ExpiredTime&gt;1442401156&lt;/ExpiredTime&gt;<br>&lt;/xml&gt; 
 <br></p>
 </div>
 <p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID，此时发送方是系统帐号）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型），时间戳</td></tr>
@@ -47,13 +47,13 @@
 <br></p>
 <p>&nbsp; &nbsp;</p>
 <p><strong><a name="2"></a>资质认证失败</strong></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>推送XML数据包示例：</p>
+<div data-tag="backcolor"><p>推送XML数据包示例：</p>
 <p>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442401156&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[qualification_verify_fail]]&gt;&lt;/Event&gt;<br>&lt;FailTime&gt;1442401122&lt;/FailTime&gt;<br>&lt;FailReason&gt;&lt;![CDATA[by time]]&gt;&lt;/FailReason&gt;<br>&lt;/xml&gt;</p>
 </div>
 <p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID，此时发送方是系统帐号）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型），时间戳</td></tr>
@@ -67,14 +67,14 @@
 <br></p>
 <p>&nbsp; &nbsp;&nbsp;</p>
 <p><strong><a name="3"></a>名称认证成功（即命名成功）</strong></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>推送XML数据包示例：</p>
+<div data-tag="backcolor"><p>推送XML数据包示例：</p>
 <p>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442401093&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[naming_verify_success]]&gt;&lt;/Event&gt;<br>&lt;ExpiredTime&gt;1442401093&lt;/ExpiredTime&gt;<br>&lt;/xml&gt; 
 <br></p>
 </div>
 <p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID，此时发送方是系统帐号）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型），时间戳</td></tr>
@@ -85,14 +85,14 @@
 </table>
 <p><strong><a name="4"></a>名称认证失败（这时虽然客户端不打勾，但仍有接口权限）</strong>
 <br></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>推送XML数据包示例：</p>
+<div data-tag="backcolor"><p>推送XML数据包示例：</p>
 <p>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442401061&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[naming_verify_fail]]&gt;&lt;/Event&gt;<br>&lt;FailTime&gt;1442401061&lt;/FailTime&gt;<br>&lt;FailReason&gt;&lt;![CDATA[by time]]&gt;&lt;/FailReason&gt;<br>&lt;/xml&gt;
 <br></p>
 </div>
 <p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID，此时发送方是系统帐号）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型），时间戳</td></tr>
@@ -104,14 +104,14 @@
 </table>
 <p><strong><a name="5"></a>年审通知</strong>
 <br></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>推送XML数据包示例：</p>
+<div data-tag="backcolor"><p>推送XML数据包示例：</p>
 <p>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442401004&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[annual_renew]]&gt;&lt;/Event&gt;<br>&lt;ExpiredTime&gt;1442401004&lt;/ExpiredTime&gt;<br>&lt;/xml&gt;
 <br></p>
 </div>
 <p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID，此时发送方是系统帐号）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型），时间戳</td></tr>
@@ -122,14 +122,14 @@
 </table>
 <p><strong><a name="6"></a>认证过期失效通知</strong>
 <br></p>
-<div data-tag="backcolor" style="margin-bottom: 14px; padding: 10px 16px; background-color: rgb(253, 234, 218);"><p>推送XML数据包示例：</p>
+<div data-tag="backcolor"><p>推送XML数据包示例：</p>
 <p>&lt;xml&gt;&lt;ToUserName&gt;&lt;![CDATA[toUser]]&gt;&lt;/ToUserName&gt;<br>&lt;FromUserName&gt;&lt;![CDATA[fromUser]]&gt;&lt;/FromUserName&gt;<br>&lt;CreateTime&gt;1442400900&lt;/CreateTime&gt;<br>&lt;MsgType&gt;&lt;![CDATA[event]]&gt;&lt;/MsgType&gt;<br>&lt;Event&gt;&lt;![CDATA[verify_expired]]&gt;&lt;/Event&gt;<br>&lt;ExpiredTime&gt;1442400900&lt;/ExpiredTime&gt;<br>&lt;/xml&gt;
 <br></p>
 </div>
 <p>参数说明</p>
 <table cellspacing="0" cellpadding="4" align="center">
 <tbody>
-<tr class="firstRow thead"><th style="width: 180px;" class="table_cell">参数</th><th style="width: 470px;" class="table_cell">描述</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">描述</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell"><strong>开发者</strong>微信号</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">发送方帐号（一个OpenID，此时发送方是系统帐号）</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间 （整型），时间戳</td></tr>
@@ -140,7 +140,7 @@
 </table>
 <p>
 <br></p>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<p><span></span>
 <br></p>
 </div>
 </div>

@@ -10,39 +10,39 @@
 <div class="main_bd">
 <div class="article_box">
 <div class="inner">
-<div class="news_content"><p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">查询一定时间范围内的WiFi连接总人数、微信方式连Wi-Fi人数、商家主页访问人数、连网后消息发送人数、新增公众号关注人数和累计公众号关注人数。查询的最长时间跨度为30天。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>接口调用说明</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">协议：https
+<div class="news_content"><p>查询一定时间范围内的WiFi连接总人数、微信方式连Wi-Fi人数、商家主页访问人数、连网后消息发送人数、新增公众号关注人数和累计公众号关注人数。查询的最长时间跨度为30天。</p>
+<p><strong>接口调用说明</strong></p>
+<pre>协议：https
 http请求方式:&nbsp;POST
 请求URL：https://api.weixin.qq.com/bizwifi/statistics/list?access_token=ACCESS_TOKEN
 POST数据格式：JSON</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">参数</th><th style="width: 80px;" class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">调用接口凭证</td></tr>
 <tr><td class="table_cell">POST数据</td><td class="table_cell">是</td><td class="table_cell">JSON数据</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>POST数据</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">数据示例：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>POST数据</strong></p>
+<p>数据示例：</p>
+<pre>{
 &nbsp;&nbsp;"begin_date":&nbsp;"2015-05-01",
 &nbsp;&nbsp;"end_date":&nbsp;"2015-05-02",
 &nbsp;&nbsp;"shop_id":&nbsp;-1
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><br>字段说明：</p>
+<p><br>字段说明：</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th style="width: 80px;" class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">字段</th><th class="table_cell">是否必填</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">begin_date</td><td class="table_cell">是</td><td class="table_cell">起始日期时间，格式yyyy-mm-dd，最长时间跨度为30天</td></tr>
 <tr><td class="table_cell">end_date</td><td class="table_cell">是</td><td class="table_cell">结束日期时间戳，格式yyyy-mm-dd，最长时间跨度为30天</td></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">否</td><td class="table_cell">按门店ID搜索，-1为总统计</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回数据说明</strong>&nbsp;</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确返回JSON数据示例：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>返回数据说明</strong>&nbsp;</p>
+<p>正确返回JSON数据示例：</p>
+<pre>{
 &nbsp;&nbsp;"errcode":&nbsp;0,
 &nbsp;&nbsp;"data":&nbsp;[
 &nbsp;&nbsp;&nbsp;&nbsp;{
@@ -67,10 +67,10 @@ POST数据格式：JSON</pre>
 &nbsp;&nbsp;&nbsp;&nbsp;}
 &nbsp;&nbsp;]
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">字段说明：</p>
+<p>字段说明：</p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 160px;" class="table_cell">字段</th><th class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">字段</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">shop_id</td><td class="table_cell">门店ID，-1为总统计</td></tr>
 <tr><td class="table_cell">statis_time</td><td class="table_cell">统计时间，单位为毫秒</td></tr>
 <tr><td class="table_cell">total_user</td><td class="table_cell">Wi-Fi连接总人数</td></tr>
@@ -81,7 +81,7 @@ POST数据格式：JSON</pre>
 <tr><td class="table_cell">connect_msg_user</td><td class="table_cell">连网后消息发送人数</td></tr>
 </tbody>
 </table>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<p><span></span>
 <br></p>
 </div>
 </div>

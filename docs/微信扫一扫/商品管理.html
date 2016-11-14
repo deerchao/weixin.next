@@ -11,7 +11,7 @@
 <div class="article_box">
 <div class="inner">
 <div class="news_content">
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>目录</p>
+<p><span></span>目录</p>
 <p><a href="#商品管理" target="_self">1 商品管理</a></p>
 <p><a href="#查询商品信息" target="_self">1.1 查询商品信息</a></p>
 <p><a href="#批量查询商品信息" target="_self">1.2 批量查询商品信息</a></p>
@@ -20,30 +20,30 @@
 <p><a href="#跳转URL参数说明" target="_self">1.5 跳转URL参数说明</a></p>
 <p><a href="#检查wxticket参数" target="_self">1.6 检查wxticket参数</a></p>
 <p><a href="#组件消息" target="_self">1.7 组件消息</a></p>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span>
+<p><span></span>
 <br></p>
-<h1 style="font-size: 16px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E5.95.86.E5.93.81.E7.AE.A1.E7.90.86"><a name="商品管理"></a>商品管理</span></h1>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="查询商品信息"></a>查询商品信息</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">调用该接口，商户可以查询创建成功的商品信息，用以检查商品状态或信息设置情况。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/get?access_token=tT8VqJWVX4C-WvIG41tyelMclMZsAPFbLxbECsJvIghceqQCMB83hI5bxcInUR-amUrVsKq4bcBmF9PgooNrFAPOST数据格式：JSON
+<h1><span class="mw-headline" id=".E5.95.86.E5.93.81.E7.AE.A1.E7.90.86"><a name="商品管理"></a>商品管理</span></h1>
+<h2><span class="mw-headline" id=".E6.9F.A5.E8.AF.A2.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="查询商品信息"></a>查询商品信息</strong></span></h2>
+<p>调用该接口，商户可以查询创建成功的商品信息，用以检查商品状态或信息设置情况。</p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/get?access_token=tT8VqJWVX4C-WvIG41tyelMclMZsAPFbLxbECsJvIghceqQCMB83hI5bxcInUR-amUrVsKq4bcBmF9PgooNrFAPOST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"keystandard":&nbsp;"ean13",
 &nbsp;"keystr":&nbsp;"6900873042720"
 }	</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">keystandard</td><td class="table_cell">是</td><td class="table_cell">商品编码标准。</td></tr>
 <tr><td class="table_cell">keystr</td><td class="table_cell">是</td><td class="table_cell">商品编码内容。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{
 &nbsp;"errcode":&nbsp;0,
 &nbsp;"errmsg":&nbsp;"ok",
 &nbsp;"brand_info":{
@@ -122,31 +122,31 @@ POST数据例子：
 &nbsp;&nbsp;}
 &nbsp;}
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 <tr><td class="table_cell">status</td><td class="table_cell">商品主页的状态，on为发布状态，off为未发布状态，check为审核中状态，reject为审核未通过状态。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>其他参数说明，请参考<a href="http://mp.weixin.qq.com/wiki/13/0d4db407baa13184103b13f1a4cd89c5.html" class="external text" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: none;">“创建商品”接口</a>。</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="color:#FF0000">注意：商品状态（status）处于“审核中（check）”的商品，不可调用接口进行更新或取消发布，否则会报错。</span></strong></p>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.89.B9.E9.87.8F.E6.9F.A5.E8.AF.A2.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="批量查询商品信息"></a>批量查询商品信息</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">调用该接口，商户可以批量查询创建成功的商品信息，查询维度有商品状态和编码内容。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/getlist?access_token=PE8Pe2gEpsHPb5TVoIzu_3f-166mw2pb0UEey0ni-kAf1uvE0bh0BnFSY2TTi8NsgXMF3EafzwHBNQs-PaLmCgPOST数据格式：JSON
+<p><strong>其他参数说明，请参考<a href="http://mp.weixin.qq.com/wiki/13/0d4db407baa13184103b13f1a4cd89c5.html" class="external text" rel="nofollow">“创建商品”接口</a>。</strong></p>
+<p><strong><span>注意：商品状态（status）处于“审核中（check）”的商品，不可调用接口进行更新或取消发布，否则会报错。</span></strong></p>
+<h2><span class="mw-headline" id=".E6.89.B9.E9.87.8F.E6.9F.A5.E8.AF.A2.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="批量查询商品信息"></a>批量查询商品信息</strong></span></h2>
+<p>调用该接口，商户可以批量查询创建成功的商品信息，查询维度有商品状态和编码内容。</p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/getlist?access_token=PE8Pe2gEpsHPb5TVoIzu_3f-166mw2pb0UEey0ni-kAf1uvE0bh0BnFSY2TTi8NsgXMF3EafzwHBNQs-PaLmCgPOST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"offset":&nbsp;"1",
 &nbsp;"limit":&nbsp;"10",
 &nbsp;"status":"on",
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">offset</td><td class="table_cell">是</td><td class="table_cell">批量查询的起始位置，从0开始，包含该起始位置。</td></tr>
 <tr><td class="table_cell">limit</td><td class="table_cell">是</td><td class="table_cell">批量查询的数量。</td></tr>
@@ -154,9 +154,9 @@ POST数据例子：
 <tr><td class="table_cell">keystr</td><td class="table_cell">否</td><td class="table_cell">支持按部分编码内容拉取。填写该参数后，可将编码内容中包含所传参数的商品信息拉出。类似关键词搜索。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{
 &nbsp;"errcode":&nbsp;0,
 &nbsp;"errmsg":&nbsp;"ok",
 &nbsp;"total":&nbsp;2,
@@ -179,10 +179,10 @@ POST数据例子：
 &nbsp;&nbsp;}
 &nbsp;]
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 <tr><td class="table_cell">total</td><td class="table_cell">命中筛选条件的商品总数。</td></tr>
@@ -195,11 +195,11 @@ POST数据例子：
 <tr><td class="table_cell">status</td><td class="table_cell">商品主页的状态，on为发布状态，off为未发布状态，check为审核中状态，reject为审核未通过状态。</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.9B.B4.E6.96.B0.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="更新商品信息"></a>更新商品信息</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">调用该接口，可对商品的基本信息（base_info）、详情信息（detail_info）、推广服务区 （action_info）和组件区（modul_info）四部分进行独立或整体的更新。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong><span style="color:#FF0000">注意：对处于“发布状态（on）”的商品进行更新，调用接口成功后，新的商品信息会自动进入扫一扫审核系统。对“审核中（check）”的商品，不可再更新或取消发布，否则会报错。</span></strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/update?access_token=mz6PygziU_H1iV6Ugf-Y6K60CUCcNNO5xbaVY9jXPLHgpuuaEZdxth8tYTLYer6XTA9CzqrJ1kHZElNndHDMQQPOST数据格式：JSON
+<h2><span class="mw-headline" id=".E6.9B.B4.E6.96.B0.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="更新商品信息"></a>更新商品信息</strong></span></h2>
+<p>调用该接口，可对商品的基本信息（base_info）、详情信息（detail_info）、推广服务区 （action_info）和组件区（modul_info）四部分进行独立或整体的更新。</p>
+<p><strong><span>注意：对处于“发布状态（on）”的商品进行更新，调用接口成功后，新的商品信息会自动进入扫一扫审核系统。对“审核中（check）”的商品，不可再更新或取消发布，否则会报错。</span></strong></p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/update?access_token=mz6PygziU_H1iV6Ugf-Y6K60CUCcNNO5xbaVY9jXPLHgpuuaEZdxth8tYTLYer6XTA9CzqrJ1kHZElNndHDMQQPOST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"keystandard":&nbsp;"ean13",
@@ -236,98 +236,98 @@ POST数据例子：
 &nbsp;&nbsp;}
 &nbsp;}
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">keystandard</td><td class="table_cell">是</td><td class="table_cell">商品编码标准。</td></tr>
 <tr><td class="table_cell">keystr</td><td class="table_cell">是</td><td class="table_cell">商品编码内容。</td></tr>
 <tr><td class="table_cell">action_info</td><td class="table_cell">否</td><td class="table_cell">商品的推广服务区信息。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>详细参数说明，请参考<a href="http://mp.weixin.qq.com/wiki/13/0d4db407baa13184103b13f1a4cd89c5.html" class="external text" rel="nofollow" style="color: rgb(54, 103, 153); text-decoration: none;">“创建商品”接口</a>。</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>详细参数说明，请参考<a href="http://mp.weixin.qq.com/wiki/13/0d4db407baa13184103b13f1a4cd89c5.html" class="external text" rel="nofollow">“创建商品”接口</a>。</strong></p>
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{
 &nbsp;"errcode":&nbsp;0,
 &nbsp;"errmsg":&nbsp;"ok",
 &nbsp;"pid":&nbsp;"5g0B4A90aqc"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 <tr><td class="table_cell">pid</td><td class="table_cell">转译后的商品id，将直接编入“获取商品二维码接口”返回的二维码内容。</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.B8.85.E9.99.A4.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="清除商品信息"></a>清除商品信息</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">调用该接口，商户可以清除创建成功的商品信息。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/clear?access_token=1QRIlaXUgZMCfBUuNNtaD0jyUZ1SBJDhGpFYRXPZQu30aC-TRMMp5vA9HJ55NBUmCATBWg7BletRsOxiUf4NKgPOST数据格式：JSON
+<h2><span class="mw-headline" id=".E6.B8.85.E9.99.A4.E5.95.86.E5.93.81.E4.BF.A1.E6.81.AF"><strong><a name="清除商品信息"></a>清除商品信息</strong></span></h2>
+<p>调用该接口，商户可以清除创建成功的商品信息。</p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/product/clear?access_token=1QRIlaXUgZMCfBUuNNtaD0jyUZ1SBJDhGpFYRXPZQu30aC-TRMMp5vA9HJ55NBUmCATBWg7BletRsOxiUf4NKgPOST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"keystandard":&nbsp;"ean13",
 &nbsp;"keystr":&nbsp;"6900873042720"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例说明</strong></p>
+<p><strong>请求示例说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">keystandard</td><td class="table_cell">是</td><td class="table_cell">商品编码标准。</td></tr>
 <tr><td class="table_cell">keystr</td><td class="table_cell">是</td><td class="table_cell">商品编码内容。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{
 &nbsp;"errcode":&nbsp;0,
 &nbsp;"errmsg":&nbsp;"ok"
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E8.B7.B3.E8.BD.ACURL.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E"><strong><a name="跳转URL参数说明"></a>跳转URL参数说明</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>场景说明：</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">用户点击商品推广服务区Link类型的链接后，外跳的URL会带上wxkeystand、wxkeystr、wxticket、wxextinfo这四个参数。通过检查wxticket可以确认访问用户的来源和身份信息，已实现精准运营。</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">URL示例：http://p.url.cn/wxscandemo/yangbanjian/fangweilanding?91eddae46161ae26a3e6e928f3c07147=scan&amp;wxkeystandard=qrcode&amp;wxkeystr=cosmetics1&amp;wxticket=azlsdGljdXo4Ymow&amp;wxextinfo=123</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>参数说明</strong></p>
+<h2><span class="mw-headline" id=".E8.B7.B3.E8.BD.ACURL.E5.8F.82.E6.95.B0.E8.AF.B4.E6.98.8E"><strong><a name="跳转URL参数说明"></a>跳转URL参数说明</strong></span></h2>
+<p><strong>场景说明：</strong></p>
+<p>用户点击商品推广服务区Link类型的链接后，外跳的URL会带上wxkeystand、wxkeystr、wxticket、wxextinfo这四个参数。通过检查wxticket可以确认访问用户的来源和身份信息，已实现精准运营。</p>
+<pre>URL示例：http://p.url.cn/wxscandemo/yangbanjian/fangweilanding?91eddae46161ae26a3e6e928f3c07147=scan&amp;wxkeystandard=qrcode&amp;wxkeystr=cosmetics1&amp;wxticket=azlsdGljdXo4Ymow&amp;wxextinfo=123</pre>
+<p><strong>参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">wxkeystand</td><td class="table_cell">商品编码标准。</td></tr>
 <tr><td class="table_cell">wxkeystr</td><td class="table_cell">商品编码内容。</td></tr>
-<tr><td class="table_cell" colspan="1" rowspan="1">wxticket</td><td class="table_cell" colspan="1" rowspan="1">标识来源的凭证参数。可通过“检查wxticket参数接口”换取对应的商品信息和访问用户信息。<strong style="white-space: normal;">特别地，当用户分享链接时，为确保安全，微信会将wxticket参数清空。</strong></td></tr>
+<tr><td class="table_cell" colspan="1" rowspan="1">wxticket</td><td class="table_cell" colspan="1" rowspan="1">标识来源的凭证参数。可通过“检查wxticket参数接口”换取对应的商品信息和访问用户信息。<strong>特别地，当用户分享链接时，为确保安全，微信会将wxticket参数清空。</strong></td></tr>
 <tr><td class="table_cell">wxextinfo</td><td class="table_cell">调用“获取商品二维码接口”时传入的extinfo，为标识参数。</td></tr>
 </tbody>
 </table>
-<h2 style="margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; white-space: normal; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="检查wxticket参数"></a>检查wxticket参数</strong></span></h2>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">调用该接口，可检查当前访问用户来源的商品主页，以及在网页前端获取该用户的身份信息。为保证场景的正确性，wxticket参数作为临时签名仅在20分钟内有效，超过有效时长会检查失败。</p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求示例</strong></p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">HTTP请求方式：POSThttps://api.weixin.qq.com/scan/scanticket/check?access_token=hjoyP20tr7isfSVtN74zz6MHqXCB432kJcgn6IzYZjFg9Pw21l9MQzpbn26fUuS4WXG9SoN9Z4RoRsmMikHfzgPOST数据格式：JSON
+<h2><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="检查wxticket参数"></a>检查wxticket参数</strong></span></h2>
+<p>调用该接口，可检查当前访问用户来源的商品主页，以及在网页前端获取该用户的身份信息。为保证场景的正确性，wxticket参数作为临时签名仅在20分钟内有效，超过有效时长会检查失败。</p>
+<p><strong>请求示例</strong></p>
+<pre>HTTP请求方式：POSThttps://api.weixin.qq.com/scan/scanticket/check?access_token=hjoyP20tr7isfSVtN74zz6MHqXCB432kJcgn6IzYZjFg9Pw21l9MQzpbn26fUuS4WXG9SoN9Z4RoRsmMikHfzgPOST数据格式：JSON
 POST数据例子：
 {
 &nbsp;"ticket":&nbsp;"&nbsp;Ym1haDlvNXJqY3Ru1",
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>请求参数说明</strong></p>
+<p><strong>请求参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 120px;" class="table_cell">是否必须</th><th style="width: 400px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">是否必须</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">access_token</td><td class="table_cell">是</td><td class="table_cell">公众号的全局凭据，用于接口调用。</td></tr>
 <tr><td class="table_cell">ticket</td><td class="table_cell">是</td><td class="table_cell">请求URL中带上的wxticket参数。</td></tr>
 </tbody>
 </table>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回示例</strong></p>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);">正确的JSON返回结果如下：</p>
-<pre style="font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; padding: 5px 10px; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word; border-radius: 3px; margin-left: 10px;">{	
+<p><strong>返回示例</strong></p>
+<p>正确的JSON返回结果如下：</p>
+<pre>{	
 &nbsp;"errcode":0,
 &nbsp;"errmsg":"ok",
 &nbsp;"keystandard":"ean13",
@@ -337,10 +337,10 @@ POST数据例子：
 &nbsp;"is_check":&nbsp;false，
 &nbsp;"is_contact":&nbsp;false
 }</pre>
-<p style="line-height: 1.5; word-wrap: break-word; margin-left: 10px; margin-right: 10px; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; white-space: normal; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th style="width: 120px;" class="table_cell">参数</th><th style="width: 520px;" class="table_cell">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">errcode</td><td class="table_cell">0为调用成功，否则返回相关错误码。</td></tr>
 <tr><td class="table_cell">errmsg</td><td class="table_cell">ok为调用成功，否则返回错误提示。</td></tr>
 <tr><td class="table_cell">keystandard</td><td class="table_cell">商品编码标准。</td></tr>
@@ -351,14 +351,14 @@ POST数据例子：
 <tr><td class="table_cell">is_contact</td><td class="table_cell">是否关注公众号，true为已关注，false为未关注。</td></tr>
 </tbody>
 </table>
-<p><span style="font-size: 14px; font-family: 微软雅黑, 'Microsoft YaHei';"></span></p>
-<h2 style="white-space: normal; margin-top: 0px; padding: 5px 10px; font-size: 16px; font-weight: normal; text-shadow: rgb(153, 153, 153) 0px 0px 1px; color: rgb(51, 51, 51); border-bottom-width: 1px; border-bottom-style: solid; border-bottom-color: rgb(217, 217, 217); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; background-color: rgb(255, 255, 255);"><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="#组件消息"></a>组件消息</strong></span></h2>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei'; line-height: 1.5;">&nbsp; &nbsp; &nbsp; 调用该接口，需先在“创建商品”时设置组件内容，之后可通过该接口对组件区的展示结果进行控制。</span></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; 目前，商户通过微信推送的“事件”，可获得被扫码查询的商品信息以及商户之</span><span style="font-family: 微软雅黑, 'Microsoft YaHei';"></span><span style="font-family: 微软雅黑, 'Microsoft YaHei';">前设置的“extinfo”内容。通过和本地信息进行校验，可判断用户所查询的商品真伪，并将结果通过该接口返回微信，最终由微信在客户端定制页面上展示真伪的查询结果。</span></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><span style="font-family: 微软雅黑, 'Microsoft YaHei';">&nbsp; &nbsp; &nbsp; 商户设置组件内容后，【用户—微信—商户】的信息交互模式如下：</span></p>
-<p style="text-align:center"><span style="font-family: 微软雅黑, 'Microsoft YaHei';"><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK90RwHWR3nBlkoTNp6DxRYQM30pXm05BMsuwE6ud7BWXCVciarGO4uPCD6H8RicaXjxw/0?wx_fmt=jpeg" title="" alt="" width="521" height="270" style="width: 521px; height: 270px;"></span></p>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>推送XML示例</strong></p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">&nbsp;&lt;xml&gt;&nbsp;
+<p><span></span></p>
+<h2><span class="mw-headline" id=".E6.A3.80.E6.9F.A5wxticket.E5.8F.82.E6.95.B0"><strong><a name="#组件消息"></a>组件消息</strong></span></h2>
+<p><span>&nbsp; &nbsp; &nbsp; 调用该接口，需先在“创建商品”时设置组件内容，之后可通过该接口对组件区的展示结果进行控制。</span></p>
+<p><span>&nbsp; &nbsp; &nbsp; 目前，商户通过微信推送的“事件”，可获得被扫码查询的商品信息以及商户之</span><span></span><span>前设置的“extinfo”内容。通过和本地信息进行校验，可判断用户所查询的商品真伪，并将结果通过该接口返回微信，最终由微信在客户端定制页面上展示真伪的查询结果。</span></p>
+<p><span>&nbsp; &nbsp; &nbsp; 商户设置组件内容后，【用户—微信—商户】的信息交互模式如下：</span></p>
+<p><span><img src="http://mmbiz.qpic.cn/mmbiz/PiajxSqBRaEIQxibpLbyuSK90RwHWR3nBlkoTNp6DxRYQM30pXm05BMsuwE6ud7BWXCVciarGO4uPCD6H8RicaXjxw/0?wx_fmt=jpeg" title="" alt="" width="521" height="270"></span></p>
+<p><strong>推送XML示例</strong></p>
+<pre>&nbsp;&lt;xml&gt;&nbsp;
 &lt;ToUserName&gt;&lt;![CDATA[gh_fbe8a958756e]]&gt;&lt;/ToUserName&gt;&nbsp;
 &lt;FromUserName&gt;&lt;![CDATA[otAzGjrJVN21mpDF4ZWQiYZwdK0Y]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;1447848568&lt;/CreateTime&gt;&nbsp;
@@ -369,10 +369,10 @@ POST数据例子：
 &lt;ExtInfo&gt;&lt;![CDATA[hyhy]]&gt;&lt;/ExtInfo&gt;&nbsp;
 &lt;NeedAntiFake&gt;true&lt;/NeedAntiFake&gt;&nbsp;
 &lt;/xml&gt;</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>推送参数说明</strong></p>
+<p><strong>推送参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="NaN">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 120px;">参数</th><th class="table_cell" style="width: 400px;">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">商户的公众号原始id。</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">FromUserName</td><td class="table_cell" colspan="1" rowspan="1">用户的openid。</td></tr>
 <tr><td class="table_cell" colspan="1" rowspan="1">CreateTime</td><td class="table_cell" colspan="1" rowspan="1">消息创建时间（整型）。</td></tr>
@@ -384,8 +384,8 @@ POST数据例子：
 <tr><td class="table_cell">NeedAntiFake</td><td class="table_cell">请是否使用微信提供的弹窗页面展示防伪结果，true为使用，false为未使用。</td></tr>
 </tbody>
 </table>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>返回XML示例</strong></p>
-<pre style="margin-left: 10px; padding: 5px 10px; border-radius: 3px; font-stretch: normal; font-size: 14px; font-family: 'MicroSoft YaHei', 'Courier New', 'Andale Mono', monospace; border: 1px solid rgb(204, 204, 204); color: rgb(51, 51, 51); line-height: 20px; white-space: pre-wrap; word-wrap: break-word;">&nbsp;&lt;xml&gt;&nbsp;
+<p><strong>返回XML示例</strong></p>
+<pre>&nbsp;&lt;xml&gt;&nbsp;
 &lt;ToUserName&gt;&lt;![CDATA[otAzGjrJVN21mpDF4ZWQiYZwdK0Y]]&gt;&lt;/ToUserName&gt;&nbsp;
 &lt;FromUserName&gt;&lt;![CDATA[gh_fbe8a958756e]]&gt;&lt;/FromUserName&gt;
 &lt;CreateTime&gt;1447848568&lt;/CreateTime&gt;&nbsp;
@@ -399,10 +399,10 @@ POST数据例子：
 &lt;/AntiFake&gt;&nbsp;
 &lt;/ScanProduct&gt;
 &lt;/xml&gt;</pre>
-<p style="margin-right: 10px; margin-left: 10px; white-space: normal; line-height: 1.5; word-wrap: break-word; color: rgb(51, 51, 51); font-family: 'Microsoft Yahei', 宋体, Tahoma, Arial; font-size: 14px; background-color: rgb(255, 255, 255);"><strong>返回参数说明</strong></p>
+<p><strong>返回参数说明</strong></p>
 <table cellspacing="0" cellpadding="4" align="center" width="640px">
 <tbody>
-<tr class="firstRow thead"><th class="table_cell" style="width: 120px;">参数</th><th class="table_cell" style="width: 520px;">说明</th></tr>
+<tr class="firstRow thead"><th class="table_cell">参数</th><th class="table_cell">说明</th></tr>
 <tr><td class="table_cell">ToUserName</td><td class="table_cell">用户的openid。</td></tr>
 <tr><td class="table_cell">FromUserName</td><td class="table_cell">商户的公众号原始id。</td></tr>
 <tr><td class="table_cell">CreateTime</td><td class="table_cell">消息创建时间（整型）。</td></tr>
