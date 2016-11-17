@@ -1,0 +1,143 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">安全规范</h2>
+</div>       
+      
+<div class="content-bd">
+    <div class="marks-msg with-title mb20">
+    <h4>1、</h4>
+    <b>签名算法------<a href="?chapter=20_1">（签名校验工具）</a></b>
+    <p >签名生成的通用步骤如下： </p>
+    <p >第一步，设所有发送或者接收到的数据为集合M，将集合M内非空参数值的参数按照参数名ASCII码从小到大排序（字典序），使用URL键值对的格式（即key1=value1&key2=value2&#8230;）拼接成字符串stringA。 </p>
+    <p >特别注意以下重要规则： </p>
+    <ol class="mb10">
+      <li>◆ 参数名ASCII码从小到大排序（字典序）； </li>
+      <li>◆ 如果参数的值为空不参与签名； </li>
+      <li>◆ 参数名区分大小写； </li>
+      <li>◆ 验证调用返回或微信主动通知签名时，传送的sign参数不参与签名，将生成的签名与该sign值作校验。 </li>
+      <li>◆ 微信接口可能增加字段，验证签名时必须支持增加的扩展字段 </li>
+    </ol>
+    <p >第二步，在stringA最后拼接上key得到stringSignTemp字符串，并对stringSignTemp进行MD5运算，再将得到的字符串所有字符转换为大写，得到sign值signValue。</p> 
+	<p>key设置路径：微信商户平台(pay.weixin.qq.com)-->账户设置-->API安全-->密钥设置</p>
+    <p >举例： </p>
+    <p  class="mb10">假设传送的参数如下： </p>
+    <div class="guide-msg mb20">
+    <p>appid：&#9;&#9;wxd930ea5d5a258f4f </p>
+    <p>mch_id：&#9;&#9;10000100 </p>
+    <p>device_info：&#9;1000 </p>
+    <p>body：&#9;&#9;test </p>
+    <p>nonce_str：&#9;ibuaiVcKdpRxkhJA </p>
+	</div>
+
+    <p >第一步：对参数按照key=value的格式，并按照参数名ASCII字典序排序如下： </p>
+    <div class="guide-msg mb20">
+    <p>stringA="appid=wxd930ea5d5a258f4f&body=test&device_info=1000&mch_id=10000100&nonce_str=ibuaiVcKdpRxkhJA"; </p>
+	</div>
+    <p class="mb10">第二步：拼接API密钥： </p>
+    <div class="guide-msg mb10">
+    <p >stringSignTemp="stringA&key=192006250b4c09247ec02edce69f6a2d" </p>
+    <p >sign=MD5(stringSignTemp).toUpperCase()="9A0A8659F005D6984697E2CA0A9CF3B7" </p>
+	</div>
+    <p class="mb10">最终得到最终发送的数据： </p>
+    <div class="guide-msg mb10">
+    <p >&#60;xml&#62; </p>
+    <p >&#60;appid&#62;wxd930ea5d5a258f4f&#60;/appid&#62; </p>
+    <p >&#60;mch_id&#62;10000100&#60;/mch_id&#62; </p>
+    <p >&#60;device_info&#62;1000&#60;device_info&#62; </p>
+    <p >&#60;body&#62;test&#60;/body&#62; </p>
+    <p >&#60;nonce_str&#62;ibuaiVcKdpRxkhJA&#60;/nonce_str&#62; </p>
+    <p >&#60;sign&#62;9A0A8659F005D6984697E2CA0A9CF3B7&#60;/sign&#62; </p>
+    <p >&#60;xml&#62; </p>
+    </div>
+    </div>
+    <div class="marks-msg with-title mb20">
+    <h4>2、</h4>
+    <b>生成随机数算法</b>
+    <p >微信支付API接口协议中包含字段nonce_str，主要保证签名不可预测。我们推荐生成随机数算法如下：调用随机数函数生成，将得到的值转换为字符串。 </p>
+    </div>
+    <div class="marks-msg with-title mb20">
+    <h4>3、</h4>
+    <b>商户证书</b>
+    <p>（1）获取商户证书</p>
+    <p>微信支付接口中，涉及资金回滚的接口会使用到商户证书，包括退款、撤销接口。商家在申请微信支付成功后，收到的相应邮件后，可以按照指引下载API证书，也可以按照以下路径下载：微信商户平台(pay.weixin.qq.com)-->账户设置-->API安全-->证书下载 。证书文件有四个，分别说明如下：</p>
+    <p class="mb10">表4.2：证书文件说明 </p>
+    <div class="table-wrp with-border">
+        <table class="table">
+      <tr>
+        <th width="22%">证书附件</td>
+        <th width="25%">描述</td>
+        <th width="23%">使用场景</td>
+        <th width="30%">备注</td>
+      </tr>
+      <tr>
+        <td>pkcs12格式<br>(apiclient_cert.p12、</td>
+        <td>包含了私钥信息的证书文件，为p12(pfx)格式，由微信支付签发给您用来标识和界定您的身份</td>
+        <td>撤销、退款申请API中调用</td>
+        <td>windows上可以直接双击导入系统，导入过程中会提示输入证书密码，证书密码默认为您的商户ID（如：10010000）</td>
+      </tr>
+      <tr>
+        <td>证书pem格式<br>（apiclient_cert.pem）</td>
+        <td>从apiclient_cert.p12中导出证书部分的文件，为pem格式，请妥善保管不要泄漏和被他人复制</td>
+        <td>PHP等不能直接使用p12文件，而需要使用pem，为了方便您使用，已为您直接提供</td>
+        <td>您也可以使用openssl命令来自己导出：openssl&nbsp;pkcs12&nbsp;-clcerts&nbsp;-nokeys&nbsp;-in&nbsp;apiclient_cert.p12&nbsp;-out&nbsp;apiclient_cert.pem</td>
+      </tr>
+      <tr>
+        <td>证书密钥pem格式<br>（apiclient_key.pem）</td>
+        <td>从apiclient_key.pem中导出密钥部分的文件，为pem格式</td>
+        <td>PHP等不能直接使用p12文件，而需要使用pem，为了方便您使用，已为您直接提供</td>
+        <td>您也可以使用openssl命令来自己导出：openssl&nbsp;pkcs12&nbsp;-nocerts&nbsp;-in&nbsp;apiclient_cert.p12&nbsp;-out&nbsp;apiclient_key.pem</td>
+      </tr>
+      <tr>
+        <td>CA证书<br>（rootca.pem）</td>
+        <td>微信支付api服务器上也部署了证明微信支付身份的服务器证书，您在使用api进行调用时也需要验证所调用服务器及域名的真实性</td>
+        <td>该文件为签署微信支付证书的权威机构的根证书，可以用来验证微信支付服务器证书的真实性</td>
+        <td>部分工具已经内置了若干权威机构的根证书，无需引用该证书也可以正常进行验证，这里提供给您在未内置所必须根证书的环境中载入使用</td>
+      </tr>
+    </table>
+    </div>
+    <h3>（2）使用商户证书</h3>
+    <ul>
+      <li>◆ apiclient_cert.p12是商户证书文件，除PHP外的开发均使用此证书文件。 </li>
+      <li>◆ 商户如果使用.NET环境开发，请确认Framework版本大于2.0，必须在操作系统上双击安装证书apiclient_cert.p12后才能被正常调用。 </li>
+      <li>◆ 商户证书调用或安装都需要使用到密码，该密码的值为微信商户号（mch_id） </li>
+      <li>◆ PHP开发环境请使用商户证书文件apiclient_cert.pem和apiclient_key.pem&nbsp;，rootca.pem是CA证书。 </li>
+    </ul>
+    <p >各版本的调用实例<a  target="_blank"  href="./download/cert.zip" >请参考微信支付提供的Demo外链</a>。 </p>
+    <br>
+    <h3>（3）商户证书安全</h3>
+    <p >证书文件不能放在web服务器虚拟目录，应放在有访问权限控制的目录中，防止被他人下载。商户服务器要做好病毒和木马防护工作，不被非法侵入者窃取证书文件。 </p>
+    </div>
+    <div class="marks-msg with-title mb20">
+    <h4>4、</h4>
+    <b>商户回调API安全</b>
+    <p >在普通的网络环境下，HTTP请求存在DNS劫持、运营商插入广告、数据被窃取，正常数据被修改等安全风险。商户回调接口使用HTTPS协议可以保证数据传输的安全性。所以微信支付建议商户提供给微信支付的各种回调采用HTTPS协议。请参考：<a  target="_blank"  href="?chapter=10_4" target="_blank">HTTPS搭建指南</a>。</p>
+    </div>
+</div>
+<!--[if !IE]>|xGv00|aa85b9e16f35436b2e6a300028b57161<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

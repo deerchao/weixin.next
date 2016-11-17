@@ -1,0 +1,407 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">支付结果通用通知</h2>
+</div>   
+<div class="content-bd">
+<div class="data-box with-padding">
+  <div class="data-hd">
+    <h3>应用场景</h3>
+  </div>
+  <div class="data-bd">
+    <p >支付完成后，微信会把相关支付结果和用户信息发送给商户，商户需要接收处理，并返回应答。 </p>
+    <p >对后台通知交互时，如果微信收到商户的应答不是成功或超时，微信认为通知失败，微信会通过一定的策略定期重新发起通知，尽可能提高通知的成功率，但微信不保证通知最终能成功。 （通知频率为15/15/30/180/1800/1800/1800/1800/3600，单位：秒）</p>
+    <b >注意：同样的通知可能会多次发送给商户系统。商户系统必须能够正确处理重复的通知。 </b>
+    <p >推荐的做法是，当收到通知进行处理时，首先检查对应业务数据的状态，判断该通知是否已经处理过，如果没有处理过再进行处理，如果处理过直接返回结果成功。在对业务数据进行状态检查和处理之前，要采用数据锁进行并发控制，以避免函数重入造成的数据混乱。 </p>
+	<b>特别提醒：商户系统对于支付结果通知的内容一定要做签名验证，防止数据泄漏导致出现“假通知”，造成资金损失。</b>
+    <p class="mb20">技术人员可登进微信商户后台扫描加入接口报警群。 </p>
+    <p  class="tc mb10"><img src="./img/chapter9_7_1.png" alt="开发者中心" /></p>
+    </div>
+</div>
+<div class="data-box with-padding">
+  <div class="data-hd">
+    <h3>接口链接 </h3>
+  </div>
+  <div class="data-bd">
+    <p class="mb10">该链接是通过【<a  target="_blank"  href="?chapter=9_1" >统一下单API</a>】中提交的参数notify_url设置，如果链接无法访问，商户将无法接收到微信通知。 </p>
+	<p>通知url必须为直接可访问的url，不能携带参数。示例：notify_url：“https://pay.weixin.qq.com/wxpay/pay.action”</p>
+  </div>
+</div>
+<div class="data-box with-padding">
+  <div class="data-hd">
+    <h3>是否需要证书 </h3>
+  </div>
+  <div class="data-bd">
+      <p class="mb10">不需要。 </p>
+  </div>
+</div>
+<div class="data-box with-padding">
+  <div class="data-hd">
+    <h3>通知参数 </h3>
+  </div>
+  <div class="data-bd">
+    <div class="table-wrp with-border">
+      <table  class="table">
+      <tr>
+        <th class="name">字段名</th>
+        <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+        <th class="description">描述</th>
+      </tr>
+      <tr>
+        <td>返回状态码</td>
+        <td>return_code</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>SUCCESS</td>
+        <td><p>SUCCESS/FAIL </p>
+        <p>此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断</td>
+      </tr>
+      <tr>
+        <td>返回信息</td>
+        <td>return_msg</td>
+        <td>否</td>
+        <td>String(128)</td>
+        <td>签名失败</td>
+        <td><p>返回信息，如非空，为错误原因 </p>
+            <p>签名失败 </p>
+        <p >参数格式校验错误</p></td>
+      </tr>
+    </table>
+    </div>
+    <p class="mb10">以下字段在return_code为SUCCESS的时候有返回 </p>
+    <div class="table-wrp with-border">
+      <table  class="table">
+      <tr>
+        <th class="name">字段名</th>
+        <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+        <th class="description">描述</th>
+      </tr>
+      <tr>
+        <td>公众账号ID</td>
+        <td>appid</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>wx8888888888888888</td>
+        <td>微信分配的公众账号ID（企业号corpid即为此appId）</td>
+      </tr>
+      <tr>
+        <td>商户号</td>
+        <td>mch_id</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>1900000109</td>
+        <td>微信支付分配的商户号</td>
+      </tr>
+      <tr>
+        <td>设备号</td>
+        <td>device_info</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>013467007045764</td>
+        <td>微信支付分配的终端设备号，</td>
+      </tr>
+      <tr>
+        <td>随机字符串</td>
+        <td>nonce_str</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+        <td>随机字符串，不长于32位</td>
+      </tr>
+      <tr>
+        <td>签名</td>
+        <td>sign</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+        <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名算法</a></td>
+      </tr>
+	  <tr>
+                 <td>签名类型</td>
+                 <td>sign_type</td>
+                 <td>否</td>
+                 <td>String(32)</td>
+                 <td>HMAC-SHA256</td>
+                 <td>签名类型，目前支持HMAC-SHA256和MD5，默认为MD5</td>
+              </tr>
+      <tr>
+        <td>业务结果</td>
+        <td>result_code</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>SUCCESS</td>
+        <td>SUCCESS/FAIL</td>
+      </tr>
+      <tr>
+        <td>错误代码</td>
+        <td>err_code</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>SYSTEMERROR</td>
+        <td>错误返回的信息描述</td>
+      </tr>
+      <tr>
+        <td>错误代码描述</td>
+        <td>err_code_des</td>
+        <td>否</td>
+        <td>String(128)</td>
+        <td>系统错误</td>
+        <td>错误返回的信息描述</td>
+      </tr>
+      <tr>
+        <td>用户标识</td>
+        <td>openid</td>
+        <td>是</td>
+        <td>String(128)</td>
+        <td>wxd930ea5d5a258f4f</td>
+        <td>用户在商户appid下的唯一标识</td>
+      </tr>
+      <tr>
+        <td>是否关注公众账号</td>
+        <td>is_subscribe</td>
+        <td>否</td>
+        <td>String(1)</td>
+        <td>Y</td>
+        <td>用户是否关注公众账号，Y-关注，N-未关注，仅在公众账号类型支付有效</td>
+      </tr>
+      <tr>
+        <td>交易类型</td>
+        <td>trade_type</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>JSAPI</td>
+        <td>JSAPI、NATIVE、APP</td>
+      </tr>
+      <tr >
+        <td>付款银行</td>
+        <td>bank_type</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>CMC</td>
+        <td>银行类型，采用字符串类型的银行标识，银行类型见<a  target="_blank"  href="?chapter=4_2" >银行列表</a></td>
+      </tr>
+      <tr>
+        <td>订单金额</td>
+        <td>total_fee</td>
+        <td>是</td>
+        <td>Int</td>
+        <td>100</td>
+        <td>订单总金额，单位为分</td>
+      </tr>
+
+	  <tr>
+         <td>应结订单金额</td>
+         <td>settlement_total_fee </td>
+         <td>否</td>
+         <td>Int</td>
+         <td>100 </td>
+       <td>应结订单金额=订单金额-非充值代金券金额，应结订单金额<=订单金额。 </td>
+      </tr>
+
+      <tr>
+        <td>货币种类</td>
+        <td>fee_type</td>
+        <td>否</td>
+        <td>String(8)</td>
+        <td>CNY</td>
+        <td>货币类型，符合ISO4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+      </tr>
+      <tr>
+        <td>现金支付金额</td>
+        <td>cash_fee</td>
+        <td>是</td>
+        <td>Int</td>
+        <td>100</td>
+        <td>现金支付金额订单现金支付金额，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+      </tr>
+      <tr>
+        <td>现金支付货币类型</td>
+        <td>cash_fee_type</td>
+        <td>否</td>
+        <td>String(16)</td>
+        <td>CNY</td>
+        <td>货币类型，符合ISO4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+      </tr>
+      <tr>
+        <td>代金券金额</td>
+        <td>coupon_fee</td>
+        <td>否</td>
+        <td>Int</td>
+        <td>10</td>
+        <td>代金券金额&lt;=订单金额，订单金额-代金券金额=现金支付金额，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+      </tr>
+      <tr>
+        <td>代金券使用数量</td>
+        <td>coupon_count</td>
+        <td>否</td>
+        <td>Int</td>
+        <td>1</td>
+        <td>代金券使用数量</td>
+      </tr>
+
+	  <tr>
+       <td>代金券类型 </td>
+       <td>coupon_type_$n </td>
+       <td>否 </td>
+       <td>Int </td>
+       <td>CASH</td>
+       <td><p>CASH--充值代金券 <br />
+       <p>NO_CASH---非充值代金券 </p>
+	   <p>订单使用代金券时有返回（取值：CASH、NO_CASH）。$n为下标,从0开始编号，举例：coupon_type_0</p></td>
+       </tr>
+
+      <tr>
+        <td>代金券ID</td>
+        <td>coupon_id_$n</td>
+        <td>否</td>
+        <td>String(20)&#9;</td>
+        <td>10000</td>
+        <td>代金券ID,$n为下标，从0开始编号</td>
+      </tr>
+      <tr>
+        <td>单个代金券支付金额</td>
+        <td>coupon_fee_$n</td>
+        <td>否</td>
+        <td>Int</td>
+        <td>100</td>
+        <td>单个代金券支付金额,$n为下标，从0开始编号</td>
+      </tr>
+      <tr>
+        <td>微信支付订单号</td>
+        <td>transaction_id</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>1217752501201407033233368018</td>
+        <td>微信支付订单号</td>
+      </tr>
+      <tr>
+        <td>商户订单号</td>
+        <td>out_trade_no</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>1212321211201407033568112322</td>
+        <td>商户系统的订单号，与请求一致。</td>
+      </tr>
+      <tr>
+        <td>商家数据包</td>
+        <td>attach</td>
+        <td>否</td>
+        <td>String(128)</td>
+        <td>123456</td>
+        <td>商家数据包，原样返回</td>
+      </tr>
+      <tr>
+        <td>支付完成时间</td>
+        <td>time_end</td>
+        <td>是</td>
+        <td>String(14)</td>
+        <td>20141030133525</td>
+        <td>支付完成时间，格式为yyyyMMddHHmmss，如2009年12月25日9点10分10秒表示为20091225091010。其他详见<a  target="_blank"  href="?chapter=4_2" >时间规则</a></td>
+      </tr>
+    </table>
+    </div>
+      <p class="mb10">举例如下： </p>
+        <div class="guide-msg mb10">
+      <p >&lt;xml&gt;<br />
+        &#160;&#160;&lt;appid&gt;&lt;![CDATA[wx2421b1c4370ec43b]]&gt;&lt;/appid&gt;<br />
+        &#160;&#160;&lt;attach&gt;&lt;![CDATA[支付测试]]&gt;&lt;/attach&gt;<br />
+        &#160;&#160;&lt;bank_type&gt;&lt;![CDATA[CFT]]&gt;&lt;/bank_type&gt;<br />
+        &#160;&#160;&lt;fee_type&gt;&lt;![CDATA[CNY]]&gt;&lt;/fee_type&gt;<br />
+        &#160;&#160;&lt;is_subscribe&gt;&lt;![CDATA[Y]]&gt;&lt;/is_subscribe&gt;<br />
+        &#160;&#160;&lt;mch_id&gt;&lt;![CDATA[10000100]]&gt;&lt;/mch_id&gt;<br />
+        &#160;&#160;&lt;nonce_str&gt;&lt;![CDATA[5d2b6c2a8db53831f7eda20af46e531c]]&gt;&lt;/nonce_str&gt;<br />
+        &#160;&#160;&lt;openid&gt;&lt;![CDATA[oUpF8uMEb4qRXf22hE3X68TekukE]]&gt;&lt;/openid&gt;<br />
+        &#160;&#160;&lt;out_trade_no&gt;&lt;![CDATA[1409811653]]&gt;&lt;/out_trade_no&gt;<br />
+        &#160;&#160;&lt;result_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/result_code&gt;<br />
+        &#160;&#160;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;<br />
+        &#160;&#160;&lt;sign&gt;&lt;![CDATA[B552ED6B279343CB493C5DD0D78AB241]]&gt;&lt;/sign&gt;<br />
+        &#160;&#160;&lt;sub_mch_id&gt;&lt;![CDATA[10000100]]&gt;&lt;/sub_mch_id&gt;<br />
+        &#160;&#160;&lt;time_end&gt;&lt;![CDATA[20140903131540]]&gt;&lt;/time_end&gt;<br />
+        &#160;&#160;&lt;total_fee&gt;1&lt;/total_fee&gt;<br />
+        &#160;&#160;&lt;trade_type&gt;&lt;![CDATA[JSAPI]]&gt;&lt;/trade_type&gt;<br />
+        &#160;&#160;&lt;transaction_id&gt;&lt;![CDATA[1004400740201409030005092168]]&gt;&lt;/transaction_id&gt;<br />
+        &lt;/xml&gt; </p>
+        </div>
+  </div>
+</div>
+<div class="data-box with-padding">
+  <div class="data-hd">
+    <h3>返回参数 </h3>
+  </div>
+  <div class="data-bd">
+      <p class="mb10">商户处理后同步返回给微信参数： </p>
+      <div class="table-wrp with-border">
+      <table  class="table">
+      <tr>
+        <th class="name">字段名</th>
+        <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+        <th class="description">描述</th>
+      </tr>
+        <tr>
+          <td>返回状态码</td>
+          <td>return_code</td>
+          <td>是</td>
+          <td>String(16)</td>
+          <td>SUCCESS</td>
+          <td><p>SUCCESS/FAIL </p>
+          <p>SUCCESS表示商户接收通知成功并校验成功</p></td>
+        </tr>
+        <tr>
+          <td>返回信息</td>
+          <td>return_msg</td>
+          <td>否</td>
+          <td>String(128)</td>
+          <td>OK</td>
+          <td><p>返回信息，如非空，为错误原因：</p>
+              <p>签名失败</p>
+          <p >参数格式校验错误</p></td>
+        </tr>
+      </table>
+      </div>
+      <p >举例如下： </p>
+	  <div class="guide-msg mb10">
+      <p >&lt;xml&gt; </p>
+      <p >&#160;&#160;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;<br />
+        &#160;&#160;&lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;<br />
+        &lt;/xml&gt; </p>
+		</div>
+	</div>
+    </div>
+  </div>
+</div>
+</div><!--[if !IE]>|xGv00|e536973646d1945d9df3de403a136167<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

@@ -1,0 +1,280 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">交易保障</h2>
+</div>        
+     
+      <div class="content-bd">
+        <div class="data-box with-padding">
+          <div class="data-hd">
+            <h3>应用场景</h3>
+          </div>
+          <div class="data-bd">
+            <p>商户在调用微信支付提供的相关接口时，会得到微信支付返回的相关信息以及获得整个接口的响应时间。为提高整体的服务水平，协助商户一起提高服务质量，微信支付提供了相关接口调用耗时和返回信息的主动上报接口，微信支付可以根据商户侧上报的数据进一步优化网络部署，完善服务监控，和商户更好的协作为用户提供更好的业务体验。 </p>
+          </div>
+        </div>
+        <div class="data-box with-padding">
+          <div class="data-hd">
+            <h3>接口地址</h3>
+          </div>
+          <div class="data-bd">
+            <p>https://api.mch.weixin.qq.com/payitil/report</p>
+          </div>
+        </div>
+        <div class="data-box with-padding">
+          <div class="data-hd">
+            <h3>是否需要证书 </h3>
+          </div>
+          <div class="data-bd">            
+            <p>不需要 </p>
+          </div>
+        </div>
+        <div class="data-box with-padding">
+          <div class="data-hd">            
+            <h3>输入参数</h3>
+          </div>
+          <div class="data-bd">            
+           <div class="table-wrp with-border">
+              <table  class="table">
+              <tr>
+                <th class="name">字段名</th>
+                <th class="var">变量名</th>
+                <th class="require">必填</th>
+                <th class="type">类型</th>
+                <th class="example">示例值</th>
+                <th class="description">描述</th>
+              </tr>
+              <tr>
+                <td>公众账号ID</td>
+                <td>appid</td>
+                <td>是</td>
+                <td>String(32)</td>
+                <td>wx8888888888888888</td>
+                <td>微信分配的公众账号ID（企业号corpid即为此appId）</td>
+              </tr>
+              <tr>
+                <td>商户号</td>
+                <td>mch_id</td>
+                <td>是</td>
+                <td>String(32)</td>
+                <td>1900000109</td>
+                <td>微信支付分配的商户号</td>
+              </tr>
+              <tr>
+                <td>设备号</td>
+                <td>device_info</td>
+                <td>否</td>
+                <td>String(32)</td>
+                <td>013467007045764</td>
+                <td>微信支付分配的终端设备号，商户自定义</td>
+              </tr>
+              <tr>
+                <td>随机字符串</td>
+                <td>nonce_str</td>
+                <td>是</td>
+                <td>String(32)</td>
+                <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+                <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+              </tr>
+              <tr>
+                <td>签名</td>
+                <td>sign</td>
+                <td>是</td>
+                <td>String(32)</td>
+                <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+                <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名生成算法</a></td>
+              </tr>
+			  <tr>
+                 <td>签名类型</td>
+                 <td>sign_type</td>
+                 <td>否</td>
+                 <td>String(32)</td>
+                 <td>HMAC-SHA256</td>
+                 <td>签名类型，目前支持HMAC-SHA256和MD5，默认为MD5</td>
+              </tr>
+              <tr>
+                <td>接口URL</td>
+                <td>interface_url</td>
+                <td>是</td>
+                <td>String(127)</td>
+                <td>https://api.mch.weixin.qq.com/pay/unifiedorder</td>
+                <td><p>报对应的接口的完整URL，类似： </p>
+                    <p>https://api.mch.weixin.qq.com/pay/unifiedorder</p>
+                  <p>对于刷卡支付，为更好的和商户共同分析一次业务行为的整体耗时情况，对于两种接入模式，请都在门店侧对一次刷卡支付进行一次单独的整体上报，上报URL指定为： </p>
+                  <p>https://api.mch.weixin.qq.com/pay/micropay/total</p>
+                  <p>关于两种接入模式具体可参考本文档章节：<a  target="_blank"  href="micropay.php?chapter=9_14&index=7" >刷卡支付商户接入模式</a></p>
+                <p>其它接口调用仍然按照调用一次，上报一次来进行。</p></td>
+              </tr>
+              <tr>
+                <td>接口耗时</td>
+                <td>execute_time</td>
+                <td>是</td>
+                <td>Int</td>
+                <td>1000</td>
+                <td>接口耗时情况，单位为毫秒</td>
+              </tr>
+              <tr>
+                <td>返回状态码</td>
+                <td>return_code</td>
+                <td>是</td>
+                <td>String(16)</td>
+                <td>SUCCESS</td>
+                <td><p>SUCCESS/FAIL </p>
+                <p>此字段是通信标识，非交易标识，交易是否成功需要查看trade_state来判断</td>
+              </tr>
+              <tr>
+                <td>返回信息</td>
+                <td>return_msg</td>
+                <td>否</td>
+                <td>String(128)</td>
+                <td>签名失败</td>
+                <td><p>返回信息，如非空，为错误原因 </p>
+                    <p>签名失败 </p>
+                <p>参数格式校验错误</p></td>
+              </tr>
+              <tr>
+                <td>业务结果</td>
+                <td>result_code</td>
+                <td>是</td>
+                <td>String(16)</td>
+                <td>SUCCESS</td>
+                <td>SUCCESS/FAIL</td>
+              </tr>
+              <tr>
+                <td>错误代码</td>
+                <td>err_code</td>
+                <td>否</td>
+                <td>String(32)</td>
+                <td>SYSTEMERROR</td>
+                <td><p>ORDERNOTEXIST&#8212;订单不存在 </p>
+                <p>SYSTEMERROR&#8212;系统错误</p></td>
+              </tr>
+              <tr>
+                <td>错误代码描述</td>
+                <td>err_code_des</td>
+                <td>否</td>
+                <td>String(128)</td>
+                <td>系统错误</td>
+                <td>结果信息描述</td>
+              </tr>
+              <tr>
+                <td>商户订单号</td>
+                <td>out_trade_no</td>
+                <td>否</td>
+                <td>String(32)</td>
+                <td>1217752501201407033233368018</td>
+                <td>商户系统内部的订单号,商户可以在上报时提供相关商户订单号方便微信支付更好的提高服务质量。&nbsp;</td>
+              </tr>
+              <tr>
+                <td>访问接口IP</td>
+                <td>user_ip</td>
+                <td>是</td>
+                <td>String(16)</td>
+                <td>8.8.8.8</td>
+                <td>发起接口调用时的机器IP&nbsp;</td>
+              </tr>
+              <tr>
+                <td>商户上报时间</td>
+                <td>time</td>
+                <td>否</td>
+                <td>String(14)</td>
+                <td>20091227091010</td>
+                <td>系统时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。其他详见<a  target="_blank"  href="?chapter=4_2" >时间规则</a></td>
+              </tr>
+            </table></div>
+          </div>
+        </div>
+        <div class="data-box with-padding">
+          <div class="data-hd">            
+            <h3>返回结果 </h3>
+          </div>
+          <div class="data-bd">            
+			   <div class="table-wrp with-border">
+              <table  class="table">
+              <tr>
+                <th class="name">字段名</th>
+                <th class="var">变量名</th>
+                <th class="require">必填</th>
+                <th class="type">类型</th>
+                <th class="example">示例值</th>
+                <th class="description">描述</th>
+              </tr>
+			    <tr>
+			      <td>返回状态码</td>
+			      <td>return_code</td>
+			      <td>是</td>
+			      <td>String(16)</td>
+			      <td>SUCCESS</td>
+			      <td><p>SUCCESS/FAIL </p>
+		          <p>此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断</p></td>
+		        </tr>
+			    <tr>
+			      <td>返回信息</td>
+			      <td>return_msg</td>
+			      <td>否</td>
+			      <td>String(128)</td>
+			      <td>签名失败</td>
+			      <td><p>返回信息，如非空，为错误原因 </p>
+			          <p>签名失败 </p>
+		          <p>参数格式校验错误</p></td>
+		        </tr>
+		    </table>
+			</div>
+			  <p class="mb10">以下字段在return_code为SUCCESS的时候有返回 </p>
+			   <div class="table-wrp with-border">
+              <table  class="table">
+              <tr>
+                <th class="var">字段名</th>
+                <th class="var">变量名</th>
+                <th class="require">必填</th>
+                <th class="type">类型</th>
+                <th class="example">示例值</th>
+                <th class="description">描述</th>
+              </tr>
+			    <tr>
+			      <td>业务结果</td>
+			      <td>result_code</td>
+			      <td>是</td>
+			      <td>String(16)</td>
+			      <td>SUCCESS</td>
+			      <td>SUCCESS/FAIL</td>
+		        </tr>
+		    </table>
+           </div>
+          </div>
+        </div>
+        <div class="data-box with-padding">
+          <div class="data-hd">            
+            <h3>错误码 </h3>
+          </div>
+          <div class="data-bd">            
+              <p>无</p>
+          </div>
+      </div>
+</div><!--[if !IE]>|xGv00|f2af19e44ff1401b44643def824d51ff<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

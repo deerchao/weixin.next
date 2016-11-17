@@ -1,0 +1,68 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">支付账户</h2>
+</div>        
+<div class="content-bd">
+    <p class="mb10">商户在微信公众平台(申请扫码支付、公众号支付)或开放平台(申请APP支付)按照相应提示，申请相应微信支付模式。微信支付工作人员审核资料无误后开通相应的微信支付权限。微信支付申请审核通过后，商户在申请资料填写的邮箱中收取到由微信支付小助手发送的邮件，此邮件包含开发时需要使用的支付账户信息，见图3.1所示。 </p>
+    <p class="tc mb10"><img src="./img/chapter3_1.png" alt="微信审核通过邮件模板" /></p>
+    <p class="tc mb20">图3.1 微信审核通过邮件模板 </p>
+    <p>邮件中的账户参数与接口API参数对应关系见表格3.1： </p>
+    <p class="mb10">表3.1 账户参数说明 </p>
+    <div class="table-wrp with-border">
+      <table  class="table">
+        <tr>
+          <th>邮件中参数</th>
+          <th>API参数名</th>
+          <th width="65%">详细说明</th>
+        </tr>
+        <tr>
+          <td>APPID</td>
+          <td>appid</td>
+          <td>appid是微信公众账号或开放平台APP的唯一标识，在公众平台申请公众账号或者在开放平台申请APP账号后，微信会自动分配对应的appid，用于标识该应用。可在微信公众平台-->开发者中心查看，商户的微信支付审核通过邮件中也会包含该字段值。</td>
+        </tr>
+        <tr>
+          <td>微信支付商户号</td>
+          <td>mch_id</td>
+          <td>商户申请微信支付后，由微信支付分配的商户收款账号。</td>
+        </tr>
+        <tr>
+          <td>API密钥</td>
+          <td>key</td>
+          <td>交易过程生成签名的密钥，仅保留在商户系统和微信支付后台，不会在网络中传播。商户妥善保管该Key，切勿在网络中传输，不能在其他客户端中存储，保证key不会被泄漏。商户可根据邮件提示登录微信商户平台进行设置。也可按一下路径设置：微信商户平台(pay.weixin.qq.com)-->账户设置-->API安全-->密钥设置</td>
+        </tr>
+        <tr >
+          <td>Appsecret</td>
+          <td>secret</td>
+          <td>AppSecret是APPID对应的接口密码，用于<a  target="_blank"  href="http://mp.weixin.qq.com/wiki/11/0e4b294685f817b95cbed85ba5e82b8f.html" target="_blank">获取接口调用凭证</a>access_token时使用。在微信支付中，先通过<a  target="_blank"  href="http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html"  target="_blank">OAuth2.0接口</a>获取用户openid，此openid用于微信内网页支付模式下单接口使用。在开发模式中获取AppSecret（成为开发者且帐号没有异常状态）。</td>
+        </tr>
+      </table>
+	</div>
+</div>
+<!--[if !IE]>|xGv00|8369f49688100fafd8635f291b928858<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

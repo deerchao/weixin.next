@@ -1,0 +1,62 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">Demo下载</h2>
+</div>    
+<div class="content-bd">
+  <div class="table-wrp with-border with-divide">
+      <table  class="table" >
+        <tr>
+          <th class="name">平台和语言</th>
+          <th>说明</th>
+          <th>支付模式</th>
+          <th class="opr tc">操作</th>
+        </tr>
+        <tr>
+          <td>JAVA</td>
+          <td>【微信支付】API对应的SDK和调用示例</td>
+          <td>刷卡支付</td>
+          <td  class="tc"><a  target="_blank"  href="download/wxpay_scanpay_java_sdk_proj-master.zip" target="_blank">下载</a></td>
+        </tr>
+       <tr>
+          <td>.NET C#</td>
+          <td>【微信支付】API对应的SDK和调用示例</td>
+          <td>刷卡支付、微信内网页支付、扫码支付</td>
+         <td class="tc"><a  target="_blank"  href="download/WxPayAPI_CS_v3.zip">下载</a></td>
+        </tr>
+        
+        <tr>
+          <td>PHP</td>
+          <td>【微信支付】API对应的SDK和调用示例</td>
+          <td>刷卡支付、微信内网页支付、扫码支付</td>
+          <td class="tc"><a  target="_blank"  href="download/WxpayAPI_php_v3.zip">下载</a></td>
+        </tr>
+      </table>
+ </div>
+</div><!--[if !IE]>|xGv00|8ff020c4b57e342d221b974d056151bb<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

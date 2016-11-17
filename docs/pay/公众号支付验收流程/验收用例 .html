@@ -1,0 +1,429 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+	<h2 class="with-border">验收用例</h2>
+</div>
+<div class="content-bd">
+	<b></b>
+	<p>&nbsp;</p>
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.07元，零钱或银行卡支付，支付成功</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-1【公众号-支付】订单金额0.07元，零钱或银行卡支付，支付成功</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>验证正常的支付流程。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱或银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、用客户端扫码(选择商品下单)，调起微信支付交易确认页；</p>
+						<p>2、微信客户端，输入正确的支付密码，完成支付（如下图）；</p>
+						<p>
+							<img src="./img/chapter21_3_1.jpg" width="540" height="300">&nbsp;
+						</p>
+						<p>3、登陆微信商户系统（http://pay.weixin.qq.com），查询该笔订单详情；</p>
+						<p>4、登陆商户自有系统，查询该笔订单详情。对订单状态、金额等信息进行核对。</p>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、手机客户端提示支付成功；</p>
+						<p>2、登陆微信支付商户系统（http://pay.weixin.qq.com），确认</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众号支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.07元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“买家已支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;4）商户订单号正确（与商户自有系统中的订单号完全相同）</p>
+						<p><img src="./img/chapter21_3_2.jpg" width="540" height="360">&nbsp;</p>
+						<p>3、登陆商户自有系统，查看日志，确认商户收到微信支付的通用通知API：</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）return_code为“SUCCESS”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）result_code为“SUCCESS”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）total_fee为“7”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;4）trade_type为“NATVIE”或“JSAPI”</p>
+						<p>4、登陆商户自有系统，查看订单详情，应与结果2完全一致（名词可能略有不同）。</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.07元，支付成功，发起退款</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-2【公众-退款】订单金额0.07元，支付成功，发起退款</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>验证正常的退款流程。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>已执行用例3-3-1,有一笔金额0.07元支付成功的订单。</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、输入用例3-3-1的支付订单号，调商户api退款接口（https://api.mch.weixin.qq.com/secapi/pay/refund）发起退款；</p>
+						<p>2、登陆微信商户系统（http://pay.weixin.qq.com），查询该笔退款详情；</p>
+						<p>3、登陆商户自有系统，查询该笔退款详情。对订单状态、金额等信息进行核对。</p>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、微信支付退款api接口返回退款成功（如下图），重点关注字段：</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）result_code为“SUCCESS”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）refund_fee为“7”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）transaction_id与支付订单号相同</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;<img src="./img/chapter21_3_3.jpg" width="600" height="360">&nbsp;</p>
+						<p>2、登陆微信支付商户系统，查询该笔退款，确认退款单：</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）result_code为“SUCCESS”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）交易总金额为0.07元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;4）订单交易状态为“发起退款”</p>
+						<p>3、登陆商户自有系统，查看退款详情，应与结果2完全一致（名词可能略有不同）。</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.08元，支付成功，未收到微信回调通知</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-3【公众-通知】订单金额0.08元，支付成功，未收到微信回调通知</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>验证支付回调异常下的商户侧处理逻辑。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱或银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、参考用例3-3-1，发起一笔0.08元的支付请求，支付成功；</p>
+						<p>2、登陆商户系统，根据日志查看程序的后续处理逻辑</p>
+						<p>3、登陆微信支付商户系统，查询该笔订单</p>
+						<p>4、登陆商户自有系统，查询该笔订单状态</p>						
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、支付成功，未收到微信的支付成功通用通知，商户应主动调查询订单API；</p>
+						<p>2、微信支付查询订单API，返回订单状态为支付成功；</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;（trade_state=SUCCESS），金额等关键信息与商户自有系统完全一致；</p>
+						<p>3、更新商户系统自有订单状态为支付成功；</p>
+						<p>4、登陆微信支付商户系统，确认</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.08元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“支付成功”</p>
+						<p>5、登陆商户自有系统，查看订单详情，应与结果4完全一致（名词可能略有不同）。</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.09元，支付失败，未收到微信回调通知</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-4【公众-通知】订单金额0.09元，支付失败，未收到微信回调通知</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>验证支付回调异常下的商户侧处理逻辑。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱或银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、参考用例3-3-1，发起一笔0.09元的支付请求，支付不成功；</p>
+						<p>2、登陆商户系统，根据日志查看程序的后续处理逻辑</p>
+						<p>3、登陆微信支付商户系统，查询该笔订单</p>
+						<p>4、登陆商户自有系统，查询该笔订单状态</p>						
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、支付成功，未收到微信的支付成功通用通知，商户应主动调查询订单API；</p>
+						<p>2、微信支付查询订单API，返回订单状态为等待支付；</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;（trade_state=NOTPAY），金额等关键信息与商户自有系统完全一致</p>
+						<p>3、5秒后，商户调关闭订单API，关闭该笔订单</p>
+						<p>4、登陆微信支付商户系统，确认</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.09元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“已关闭”</p>
+						<p>5、登陆商户自有系统，查看订单详情，应与结果4完全一致（名词可能略有不同）。</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.10元，支付成功，微信支付重复通知商户</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-5【公众-通知】订单金额0.10元，支付成功，微信支付重复通知商户</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>防止由于微信系统错误，导致商户重复发货造成资金损失。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱账户或者绑定的银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、参考用例3-3-1，支付一笔0.10元的订单，支付成功；</p>
+						<p>2、登陆商户自有系统，根据日志查看商户的后台处理逻辑；</p>
+						<p>3、登陆微信支付商户系统，查看订单详情</p>
+						<p>4、登陆商户自有系统，查看订单详情。</p>						
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、登陆微信支付商户系统，确认：</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.10元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“支付成功，已通知商户”</p>
+						<p>2、登陆商户自有系统，查看订单详情，应与结果2完全一致（名词可能略有不同）</p>
+						<p>3、确认商户对重复通知做了重入处理，无论微信支付通知商户几次，对于一笔订单，只发一次货。</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.11元，支付成功，微信通知商户签名非法</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-6【公众-通知】订单金额0.11元，支付成功，微信通知商户签名非法</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>保证商户对统一通知的来源做了合法性校验。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱账户或者绑定的银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、参考用例3-3-1，支付一笔0.11元的订单，支付成功；</p>
+						<p>2、登陆商户自有系统，根据日志查看商户的后台处理逻辑</p>
+						<p>3、登陆微信支付商户系统，查看订单详情；</p>
+						<p>4、登陆商户自有系统，查看订单详情。</p>						
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、登陆微信支付商户系统，确认：</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.11元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“支付成功”</p>
+						<p>2、确认商户对签名做了验签操作，报：验签失败，商户自有订单仍为“等待支付”状态</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【必选】订单金额0.12元，对已超过支付有效期的订单，重新发起支付</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-7【公众-支付】订单金额0.12元，对已超出支付有效期的订单，重新发起支付</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>对于重复发起支付的场景，商户需要换一个out_trade_no重新走下单->支付流程；
+重复支付时，不允许拿第一次下单生成的prepayid直接调统一支付API，这会导致支付失败（微信支付订单时效2小时）。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱账户或者绑定的银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、在公众号的商品购买页面，对购买金额为0.12元的测试商品发起购买</p>
+						<p>2、用户在微信客户端，输入错误的支付密码，使得该笔支付失败</p>
+						<p>3、登陆微信支付商户系统（http://pay.weixin.qq.com），查看订单详情</p>
+						<p>4、2小时后，用户返回到公众号的购买页面，重新对该测试商品发起购买</p>
+						<p>5、用户输入正确的支付密码，完成购买</p>		
+						<p>6、登陆微信支付商户系统（http://pay.weixin.qq.com），查看订单详情</p>		
+						<p>7、登陆商户自有系统，查看订单详情</p>		
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、第一次购买失败后，登陆微信支付商户系统，确认：</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.12元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“等待买家支付”</p>
+						<p>2、用户第二次购买成功，登陆微信支付商户系统，确认</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）支付场景为“公众支付”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）交易总金额为0.12元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）订单交易状态为“支付成功”</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;3）商户订单号与第一笔不同</p>												
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+<div class="content-bd">
+	<div class="data-box with-padding">
+		<div class="data-hd">
+			<h3>【可选】订单金额0.13元，支付成功，通知失败，对账不平</h3>
+		</div>
+		<div class="table-wrp with-border">
+			<table class="table">
+				<tr>
+					<th width="107" valign="top"><p>用例编号</p></th>
+					<td width="542" valign="top"><p>3-3-8  【公众-对账】订单金额0.12元，支付成功，通知失败，对账不平</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>用例说明</p></th>
+					<td width="542" valign="top"><p>验证商户对于对账不平的情况做了正确处理。该用例可选。</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试准备</p></th>
+					<td width="542" valign="top"><ol>
+							<li>测试微信号零钱账户或者绑定的银行卡余额充足</li>
+						</ol>
+						<p>&nbsp;</p></td>
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>测试步骤</p></th>
+					<td width="542" valign="top">
+						<p>1、根据用例3-3-1的步骤，支付一笔金额为0.13元的订单，支付成功。微信支付未通知商户支付成功</p>
+						<p>2、登陆商户自有系统，查看该笔订单状态，确认订单状态为</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）交易总金额为0.13元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）订单交易状态为“等待支付”</p>
+						<p>3、T+1日下载对账单，查看该笔交易，确认订单状态为</p>		
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;1）交易总金额为0.13元</p>
+						<p>&nbsp;&nbsp;&nbsp;&nbsp;2）订单交易状态为“支付成功”</p>		
+				</tr>
+				<tr>
+					<th width="107" valign="top"><p>预期返回</p></th>
+					<td width="542" valign="top">
+						<p>1、需要测试人员保证，商户自有系统有程序或人工流程，对该笔订单进行退款</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+	<!--[if !IE]>|xGv00|c495f9719201c614a6b5c825b2a362ca<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

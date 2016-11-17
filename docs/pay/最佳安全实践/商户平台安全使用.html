@@ -1,0 +1,86 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">商户平台安全使用</h2>
+</div>        
+<div class="content-bd">
+    <p class="mb10">对于接入了微信支付的商户们来说，请仔细阅读和遵守该最佳安全实践，将极大的提升贵公司在使用微信支付时的安全性。我们也会持续关注商户安全性，将最新最好的实践更新于此。 </p>
+ <p>   对于商户平台的安全使用，我们从 申请入驻、收到开户邮件、登录商户平台、商户平台日常使用 四个方面来展开。</p>
+ <p>&nbsp;</p>
+    <div class="marks-msg with-title mb20">
+	 <h4>1、</h4>
+        <p>申请入驻</p>
+		<p>a、申请入驻微信支付不会收取任何费用，谨防上当受骗。</p>
+	    <p>b、提交申请资料后，需注意申请资料的保管，防止泄漏或丢失。</p>
+
+	</div>
+
+ <div class="marks-msg with-title mb20">
+	 <h4>2、</h4>
+        <p>收到开户邮件</p>
+		<p>a、开户邮件内容中包含了帐户、初始登录密码等敏感信息，需妥善保管，防止泄漏。</p>
+	</div>
+
+<div class="marks-msg with-title mb20">
+	 <h4>3、</h4>
+        <p>登录商户平台</p>
+		<p>a、首次登录请修改登录密码，密码复杂度建议大于8位字符，并且同时含有大、小写、数字、特殊符号。</p>
+		<p>b、仔细检查域名是否为 https://pay.weixin.qq.com ，防止误登录钓鱼网站导致密码等信息的泄漏。</p>
+	</div>
+<div class="marks-msg with-title mb20">
+	 <h4>4、</h4>
+        <p>商户平台日常使用</p>
+		<p>a、登录权限保护</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 定期（至多6个月）修改登录密码。</li>
+        <li>◆ 保护好注册管理员的手机设备，因为资金等敏感操作需要验证这个短信验证码。</li>
+        <li>◆ 合理的划分操作员及其权限，实施最小化权限原则。</li>
+		<li>◆ 离职或工作调动后员工操作权限的清理和定期回收。</li>
+        <li>◆ 为每一个员工建立员工帐号，而不是多个人混用同一个帐户。</li>
+    	</ol>
+		</div>
+		<p>b、浏览器选择</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 使用较新的主流浏览器并检查开启浏览器和系统的自动更新机制。</li>
+    	</ol>
+		</div>
+		<p>c、功能使用</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 企业营销功能需要设置防刷级别、限领次数等安全功能，如果是调用API，建议设置访问IP白名单等。</li>
+    	</ol>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<!--[if !IE]>|xGv00|e190833034bc33ac8437cefe16bd3f58<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

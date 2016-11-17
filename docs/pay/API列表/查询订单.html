@@ -1,0 +1,534 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">查询订单</h2>
+</div>   
+<div class="content-bd">
+    <div class="data-box with-padding">
+        <div class="data-hd">
+            <h3>应用场景</h3>
+        </div>
+        <div class="data-bd">
+            <p>该接口提供所有微信支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。 </p>
+            <p>需要调用查询接口的情况：</p>
+            <ol class="mb20">
+            <li>◆ 当商户后台、网络、服务器等出现异常，商户系统最终未接收到支付通知； </li>
+            <li>◆ 调用支付接口后，返回系统错误或未知交易状态情况； </li>
+            <li>◆ 调用被扫支付API，返回USERPAYING的状态； </li>
+            <li>◆ 调用关单或撤销接口API之前，需确认支付状态； </li>
+            </ol>
+        </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">
+            <h3>接口链接 </h3>
+        </div>
+        <div class="data-bd">
+            <p class="mb20">https://api.mch.weixin.qq.com/pay/orderquery</p>
+        </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">
+            <h3>是否需要证书 </h3>
+        </div>
+        <div class="data-bd">
+            <p class="mb20">不需要 </p>
+            <h4 class="mb10">请求参数 </h4>
+            <div class="table-wrp with-border">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th class="name">字段名</th>
+                        <th class="var">变量名</th>
+                        <th class="require">必填</th>
+                        <th class="type">类型</th>
+                        <th class="example">示例值</th>
+                        <th class="description">描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>公众账号ID </td>
+                            <td>appid </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>wxd678efh567hg6787</td>
+                            <td>微信分配的公众账号ID（企业号corpid即为此appId） </td>
+                        </tr>
+                        <tr>
+                            <td>商户号 </td>
+                            <td>mch_id </td>
+                            <td>是 </td>
+                            <td>String(32)</td>
+                            <td>1230000109 </td>
+                            <td>微信支付分配的商户号 </td>
+                        </tr>
+                        <tr>
+                            <td>微信订单号 </td>
+                            <td>transaction_id </td>
+                            <td rowspan="2">二选一</td>
+                            <td>String(32) </td>
+                            <td>1009660380201506130728806387</td>
+                            <td>微信的订单号，优先使用 </td>
+                        </tr>
+                        <tr>
+                            <td>商户订单号 </td>
+                            <td>out_trade_no </td>
+                            <td>String(32)</td>
+                            <td>20150806125346 </td>
+                            <td>商户系统内部的订单号，当没提供transaction_id时需要传这个。 </td>
+                        </tr>
+                        <tr>
+                            <td>随机字符串 </td>
+                            <td>nonce_str </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>C380BEC2BFD727A4B6845133519F3AD6 </td>
+                            <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+                        </tr>
+                        <tr>
+                            <td>签名 </td>
+                            <td>sign </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS </td>
+                            <td>签名，<a  target="_blank"  href="?chapter=4_3" >详见签名生成算法</a></td>
+                        </tr>
+						<tr>
+                 <td>签名类型</td>
+                 <td>sign_type</td>
+                 <td>否</td>
+                 <td>String(32)</td>
+                 <td>HMAC-SHA256</td>
+                 <td>签名类型，目前支持HMAC-SHA256和MD5，默认为MD5</td>
+              </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb10">举例如下： </p>
+            <div class="guide-msg mb10">
+                <p>&lt;xml&gt;<br />
+                &#160;&nbsp;&#160;&lt;appid&gt;wx2421b1c4370ec43b&lt;/appid&gt;<br />
+                &#160;&nbsp;&#160;&lt;mch_id&gt;10000100&lt;/mch_id&gt;<br />
+                &#160;&nbsp;&#160;&lt;nonce_str&gt;ec2316275641faa3aacf3cc599e8730f&lt;/nonce_str&gt;<br />
+                &#160;&nbsp;&#160;&lt;transaction_id&gt;1008450740201411110005820873&lt;/transaction_id&gt;<br />
+                &#160;&nbsp;&#160;&lt;sign&gt;FDD167FAA73459FD921B144BAF4F4CA2&lt;/sign&gt;<br />
+                &lt;/xml&gt; </p>
+            </div>
+        </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">
+            <h3>返回结果 </h3>
+        </div>
+        <div class="data-bd">
+            <div class="table-wrp with-border">
+                <table class="table">
+                <thead>
+                    <tr>
+                        <th class="name">字段名</th>
+                        <th class="var">变量名</th>
+                        <th class="require">必填</th>
+                        <th class="type">类型</th>
+                        <th class="example">示例值</th>
+                        <th class="description">描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>返回状态码 </td>
+                        <td>return_code </td>
+                        <td>是 </td>
+                        <td>String(16) </td>
+                        <td>SUCCESS </td>
+                        <td>
+                            <p>SUCCESS/FAIL </p>
+                            <p>此字段是通信标识，非交易标识，交易是否成功需要查看trade_state来判断 </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>返回信息 </td>
+                        <td>return_msg </td>
+                        <td>否 </td>
+                        <td>String(128) </td>
+                        <td>签名失败 </td>
+                        <td>
+                            <p>返回信息，如非空，为错误原因 </p>
+                            <p>签名失败 </p>
+                            <p>参数格式校验错误</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb10">以下字段在return_code为SUCCESS的时候有返回 </p>
+            <div class="table-wrp with-border">
+                <table  class="table">
+                    <thead>
+                        <tr>
+                            <th class="name">字段名</th>
+                            <th class="var">变量名</th>
+                            <th class="require">必填</th>
+                            <th class="type">类型</th>
+                            <th class="example">示例值</th>
+                            <th class="description">描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>公众账号ID </td>
+                            <td>appid </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>wxd678efh567hg6787 </td>
+                            <td>微信分配的公众账号ID </td>
+                        </tr>
+                        <tr>
+                            <td>商户号 </td>
+                            <td>mch_id </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>1230000109 </td>
+                            <td>微信支付分配的商户号 </td>
+                        </tr>
+                        <tr>
+                            <td>随机字符串 </td>
+                            <td>nonce_str </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS </td>
+                            <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+                        </tr>
+                        <tr>
+                            <td>签名 </td>
+                            <td>sign </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>C380BEC2BFD727A4B6845133519F3AD6 </td>
+                            <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名生成算法</a></td>
+                        </tr>
+                        <tr>
+                            <td>业务结果 </td>
+                            <td>result_code </td>
+                            <td>是 </td>
+                            <td>String(16) </td>
+                            <td>SUCCESS </td>
+                            <td>SUCCESS/FAIL </td>
+                        </tr>
+                        <tr>
+                            <td>错误代码 </td>
+                            <td>err_code </td>
+                            <td>否 </td>
+                            <td>String(32) </td>
+                            <td>SYSTEMERROR </td>
+                            <td>错误码</td><!-- 详细参见第6节错误列表 -->
+                        </tr>
+                        <tr>
+                            <td>错误代码描述 </td>
+                            <td>err_code_des </td>
+                            <td>否 </td>
+                            <td>String(128) </td>
+                            <td>系统错误 </td>
+                            <td>结果信息描述 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="mb10">以下字段在return_code&nbsp;和result_code都为SUCCESS的时候有返回 </p>
+            <div  class="table-wrp with-border">
+                <table  class="table">
+                    <thead>
+                        <tr>
+                        <th class="name">字段名</th>
+                        <th class="var">变量名</th>
+                        <th class="require">必填</th>
+                        <th class="type">类型</th>
+                        <th class="example">示例值</th>
+                        <th class="description">描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>设备号 </td>
+                            <td>device_info </td>
+                            <td>否 </td>
+                            <td>String(32) </td>
+                            <td>013467007045764 </td>
+                            <td>微信支付分配的终端设备号， </td>
+                        </tr>
+                        <tr>
+                            <td>用户标识 </td>
+                            <td>openid </td>
+                            <td>是 </td>
+                            <td>String(128) </td>
+                            <td>oUpF8uMuAJO_M2pxb1Q9zNjWeS6o </td>
+                            <td>用户在商户appid下的唯一标识 </td>
+                        </tr>
+                        <tr>
+                            <td>是否关注公众账号 </td>
+                            <td>is_subscribe </td>
+                            <td>否 </td>
+                            <td>String(1) </td>
+                            <td>Y </td>
+                            <td>用户是否关注公众账号，Y-关注，N-未关注，仅在公众账号类型支付有效 </td>
+                        </tr>
+                        <tr>
+                            <td>交易类型 </td>
+                            <td>trade_type </td>
+                            <td>是 </td>
+                            <td>String(16) </td>
+                            <td>JSAPI </td>
+                            <td>调用接口提交的交易类型，取值如下：JSAPI，NATIVE，APP，MICROPAY，详细说明见<a  target="_blank"  href="?chapter=4_2" >参数规定</a></td>
+                        </tr>
+                        <tr>
+                            <td>交易状态 </td>
+                            <td>trade_state </td>
+                            <td>是 </td>
+                            <td>String(32)</td>
+                            <td>SUCCESS </td>
+                            <td>
+                            <p>SUCCESS&#8212;支付成功 </p>
+                            <p>REFUND&#8212;转入退款 </p>
+                            <p>NOTPAY&#8212;未支付 </p>
+                            <p>CLOSED&#8212;已关闭 </p>
+                            <p>REVOKED&#8212;已撤销（刷卡支付） </p>
+                            <p>USERPAYING--用户支付中 </p>
+                            <p>PAYERROR--支付失败(其他原因，如银行返回失败)</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>付款银行 </td>
+                            <td>bank_type </td>
+                            <td>是 </td>
+                            <td>String(16) </td>
+                            <td>CMC </td>
+                            <td>银行类型，采用字符串类型的银行标识 </td>
+                        </tr>
+                       <tr>
+                            <td>订单金额</td>
+                            <td>total_fee </td>
+                            <td>是 </td>
+                            <td>Int </td>
+                            <td>100 </td>
+                            <td>订单总金额，单位为分 </td>
+                        </tr>
+						
+
+						<tr>
+                            <td>应结订单金额</td>
+                            <td>settlement_total_fee </td>
+                            <td>否 </td>
+                            <td>Int </td>
+                            <td>100 </td>
+                            <td>应结订单金额=订单金额-非充值代金券金额，应结订单金额<=订单金额。 </td>
+                        </tr>
+
+                        <tr>
+                            <td>货币种类 </td>
+                            <td>fee_type </td>
+                            <td>否 </td>
+                            <td>String(8) </td>
+                            <td>CNY </td>
+                            <td>货币类型，符合ISO&nbsp;4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+                        </tr>
+                        <tr>
+                            <td>现金支付金额 </td>
+                            <td>cash_fee </td>
+                            <td>是 </td>
+                            <td>Int </td>
+                            <td>100 </td>
+                            <td>现金支付金额订单现金支付金额，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+                        </tr>
+                        <tr>
+                            <td>现金支付货币类型 </td>
+                            <td>cash_fee_type </td>
+                            <td>否 </td>
+                            <td>String(16) </td>
+                            <td>CNY </td>
+                            <td>货币类型，符合ISO&nbsp;4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+                        </tr>
+                        <tr>
+                            <td>代金券金额 </td>
+                            <td>coupon_fee </td>
+                            <td>否 </td>
+                            <td>Int </td>
+                            <td>100</td>
+                            <td>“代金券”金额<=订单金额，订单金额-“代金券”金额=现金支付金额，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+                        </tr>
+                        <tr>
+                            <td>代金券使用数量 </td>
+                            <td>coupon_count </td>
+                            <td>否 </td>
+                            <td>Int </td>
+                            <td>1 </td>
+                            <td>代金券使用数量 </td>
+                        </tr>
+                       <!-- 
+						<tr>
+                            <td>代金券批次ID </td>
+                            <td>coupon_batch_id_$n </td>
+                            <td>否 </td>
+                            <td>String(20)&#9; </td>
+                            <td>100 </td>
+                            <td>代金券批次ID&nbsp;,$n为下标，从0开始编号 </td>
+                        </tr>
+						-->
+						<tr>
+                            <td>代金券类型 </td>
+                            <td>coupon_type_$n </td>
+                            <td>否 </td>
+                            <td>String</td>
+                            <td>CASH</td>
+                            <td><p>CASH--充值代金券 <br />
+                            <p>NO_CASH---非充值代金券 </p>
+							<p>订单使用代金券时有返回（取值：CASH、NO_CASH）。$n为下标,从0开始编号，举例：coupon_type_$0</p></td>
+                        </tr>
+                        <tr>
+                            <td>代金券ID </td>
+                            <td>coupon_id_$n </td>
+                            <td>否 </td>
+                            <td>String(20)&#9; </td>
+                            <td>10000&nbsp; </td>
+                            <td>代金券ID,&nbsp;$n为下标，从0开始编号 </td>
+                        </tr>
+                        <tr>
+                            <td>单个代金券支付金额 </td>
+                            <td>coupon_fee_$n </td>
+                            <td>否 </td>
+                            <td>Int </td>
+                            <td>100 </td>
+                            <td>单个代金券支付金额,&nbsp;$n为下标，从0开始编号 </td>
+                        </tr>
+                        <tr>
+                            <td>微信支付订单号 </td>
+                            <td>transaction_id </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>1009660380201506130728806387 </td>
+                            <td>微信支付订单号 </td>
+                        </tr>
+                        <tr>
+                            <td>商户订单号 </td>
+                            <td>out_trade_no </td>
+                            <td>是 </td>
+                            <td>String(32) </td>
+                            <td>20150806125346 </td>
+                            <td>商户系统的订单号，与请求一致。 </td>
+                        </tr>
+                        <tr>
+                            <td>附加数据 </td>
+                            <td>attach </td>
+                            <td>否 </td>
+                            <td>String(128) </td>
+                            <td>深圳分店</td>
+                            <td>附加数据，原样返回 </td>
+                        </tr>
+                        <tr>
+                            <td>支付完成时间 </td>
+                            <td>time_end </td>
+                            <td>是 </td>
+                            <td>String(14) </td>
+                            <td>20141030133525 </td>
+                            <td>订单支付时间，格式为yyyyMMddHHmmss，如2009年12月25日9点10分10秒表示为20091225091010。其他详见<a  target="_blank"  href="?chapter=4_2" >时间规则</a> </td>
+                        </tr>
+                        <tr>
+                            <td>交易状态描述 </td>
+                            <td>trade_state_desc</td>
+                            <td>是 </td>
+                            <td>String(256) </td>
+                            <td>支付失败，请重新下单支付</td>
+                            <td>对当前查询订单状态的描述和下一步操作的指引</td>
+                        </tr>
+                    </tbody>	
+                </table>
+            </div>
+            <p class="mb10">举例如下： </p>
+            <div class="guide-msg mb10">
+                <p>&lt;xml&gt;<br />
+                &#160;&nbsp;&#160;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;<br />
+                &#160;&nbsp;&#160;&lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;<br />
+                &#160;&nbsp;&#160;&lt;appid&gt;&lt;![CDATA[wx2421b1c4370ec43b]]&gt;&lt;/appid&gt;<br />
+                &#160;&nbsp;&#160;&lt;mch_id&gt;&lt;![CDATA[10000100]]&gt;&lt;/mch_id&gt;<br />
+                &#160;&nbsp;&#160;&lt;device_info&gt;&lt;![CDATA[1000]]&gt;&lt;/device_info&gt;<br />
+                &#160;&nbsp;&#160;&lt;nonce_str&gt;&lt;![CDATA[TN55wO9Pba5yENl8]]&gt;&lt;/nonce_str&gt;<br />
+                &#160;&nbsp;&#160;&lt;sign&gt;&lt;![CDATA[BDF0099C15FF7BC6B1585FBB110AB635]]&gt;&lt;/sign&gt;<br />
+                &#160;&nbsp;&#160;&lt;result_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/result_code&gt;<br />
+                &#160;&nbsp;&#160;&lt;openid&gt;&lt;![CDATA[oUpF8uN95-Ptaags6E_roPHg7AG0]]&gt;&lt;/openid&gt;<br />
+                &#160;&nbsp;&#160;&lt;is_subscribe&gt;&lt;![CDATA[Y]]&gt;&lt;/is_subscribe&gt;<br />
+                &#160;&nbsp;&#160;&lt;trade_type&gt;&lt;![CDATA[MICROPAY]]&gt;&lt;/trade_type&gt;<br />
+                &#160;&nbsp;&#160;&lt;bank_type&gt;&lt;![CDATA[CCB_DEBIT]]&gt;&lt;/bank_type&gt;<br />
+                &#160;&nbsp;&#160;&lt;total_fee&gt;1&lt;/total_fee&gt;<br />
+                &#160;&nbsp;&#160;&lt;fee_type&gt;&lt;![CDATA[CNY]]&gt;&lt;/fee_type&gt;<br />
+                &#160;&nbsp;&#160;&lt;transaction_id&gt;&lt;![CDATA[1008450740201411110005820873]]&gt;&lt;/transaction_id&gt;<br />
+                &#160;&nbsp;&#160;&lt;out_trade_no&gt;&lt;![CDATA[1415757673]]&gt;&lt;/out_trade_no&gt;<br />
+                &#160;&nbsp;&#160;&lt;attach&gt;&lt;![CDATA[订单额外描述]]&gt;&lt;/attach&gt;<br />
+                &#160;&nbsp;&#160;&lt;time_end&gt;&lt;![CDATA[20141111170043]]&gt;&lt;/time_end&gt;<br />
+                &#160;&nbsp;&#160;&lt;trade_state&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/trade_state&gt;<br />
+                &lt;/xml&gt; </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-box with-padding">
+        <div class="data-hd">
+            <h3>错误码</h3>
+        </div>
+        <div class="data-bd">
+            <div class="table-wrp with-border">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th width="13%">名称</th>
+                        <th width="14%">描述</th>
+                        <th width="16%">原因</th>
+                        <th>解决方案</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>ORDERNOTEXIST </td>
+                            <td>此交易订单号不存在 </td>
+                            <td>查询系统中不存在此交易订单号 </td>
+                            <td>该API只能查提交支付交易返回成功的订单，请商户检查需要查询的订单号是否正确 </td>
+                        </tr>
+                        <tr>
+                            <td>SYSTEMERROR </td>
+                            <td>系统错误 </td>
+                            <td>后台系统返回错误 </td>
+                            <td>系统异常，请再调用发起查询 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+	  
+<!--[if !IE]>|xGv00|cc16865b2428f8235ce6ec9e6ca0f740<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

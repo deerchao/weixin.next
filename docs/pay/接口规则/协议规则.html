@@ -1,0 +1,75 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">协议规则</h2>
+</div> 
+<div class="content-bd">
+
+    <p>商户接入微信支付，调用API必须遵循以下规则： </p>
+    <p class="mb10">表4.1 接口规则 </p>
+    <div class="table-wrp with-border">
+        <table class="table">
+        <tbody>
+          <tr>
+            <th width="15%">传输方式</th>
+            <td>为保证交易安全性，采用HTTPS传输</td>
+          </tr>
+          <tr >
+            <th>提交方式</th>
+            <td>采用POST方法提交</td>
+          </tr>
+          <tr >
+            <th>数据格式</th>
+            <td>提交和返回数据都为XML格式，根节点名为xml</td>
+          </tr>
+          <tr >
+            <th>字符编码</th>
+            <td>统一采用UTF-8字符编码</td>
+          </tr>
+          <tr >
+            <th>签名算法</th>
+            <td>MD5，后续会兼容SHA1、SHA256、HMAC等。</td>
+          </tr>
+          <tr >
+            <th>签名要求</th>
+            <td>请求和接收数据均需要校验签名，详细方法请参考<a  target="_blank"  href="?chapter=4_3" >安全规范-签名算法</a></td>
+          </tr>
+          <tr >
+            <th>证书要求</th>
+            <td>调用申请退款、撤销订单接口需要商户证书</td>
+          </tr>
+          <tr >
+            <th>判断逻辑</th>
+            <td>先判断协议字段返回，再判断业务返回，最后判断交易状态</td>
+          </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+<!--[if !IE]>|xGv00|4a587bbc374bcaaa36369d61b34e0a8a<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

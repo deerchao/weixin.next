@@ -1,0 +1,265 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">下载对账单</h2>
+</div>   
+<div class="content-bd">
+    <div class="data-box with-padding">
+      <div class="data-hd">
+        <h3>应用场景</h3>
+      </div>
+      <div class="data-bd">
+        <p>商户可以通过该接口下载历史交易清单。比如掉单、系统错误等导致商户侧和微信侧数据不一致，通过对账单核对后可校正支付状态。 </p>
+        <p>注意：</p>
+        <p>1、微信侧未成功下单的交易不会出现在对账单中。支付成功后撤销的交易会出现在对账单中，跟原支付单订单号一致，bill_type为REVOKED； </p>
+        <p>2、微信在次日9点启动生成前一天的对账单，建议商户10点后再获取； </p>
+        <p class="mb20">3、对账单中涉及金额的字段单位为&#8220;元&#8221;。 </p>
+		<p>4、对账单接口只能下载三个月以内的账单。</p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>接口链接 </h3>
+      </div>
+      <div class="data-bd">
+    	<p>https://api.mch.weixin.qq.com/pay/downloadbill</p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>是否需要证书 </h3>
+      </div>
+      <div class="data-bd">
+    	<p>不需要。 </p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>请求参数 </h3>
+      </div>
+      <div class="data-bd">
+        <div class="table-wrp with-border">
+          <table  class="table">
+          <tr>
+            <th class="name">字段名</th>
+            <th class="var">变量名</th>
+            <th class="require">必填</th>
+            <th class="type">类型</th>
+            <th class="example">示例值</th>
+            <th class="description">描述</th>
+          </tr>
+          <tr>
+            <td>公众账号ID</td>
+            <td>appid</td>
+            <td>是</td>
+            <td>String(32)</td>
+            <td>wx8888888888888888</td>
+            <td>微信分配的公众账号ID（企业号corpid即为此appId）</td>
+          </tr>
+          <tr>
+            <td>商户号</td>
+            <td>mch_id</td>
+            <td>是</td>
+            <td>String(32)</td>
+            <td>1900000109</td>
+            <td>微信支付分配的商户号</td>
+          </tr>
+          <tr>
+            <td>设备号</td>
+            <td>device_info</td>
+            <td>否</td>
+            <td>String(32)</td>
+            <td>013467007045764</td>
+            <td>微信支付分配的终端设备号</td>
+          </tr>
+          <tr>
+            <td>随机字符串</td>
+            <td>nonce_str</td>
+            <td>是</td>
+            <td>String(32)</td>
+            <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+            <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+          </tr>
+          <tr>
+            <td>签名</td>
+            <td>sign</td>
+            <td>是</td>
+            <td>String(32)</td>
+            <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+            <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名生成算法</a></td>
+          </tr>
+		  <tr>
+                 <td>签名类型</td>
+                 <td>sign_type</td>
+                 <td>否</td>
+                 <td>String(32)</td>
+                 <td>HMAC-SHA256</td>
+                 <td>签名类型，目前支持HMAC-SHA256和MD5，默认为MD5</td>
+              </tr>
+          <tr>
+            <td>对账单日期</td>
+            <td>bill_date</td>
+            <td>是</td>
+            <td>String(8)</td>
+            <td>20140603</td>
+            <td>下载对账单的日期，格式：20140603</td>
+          </tr>
+          <tr>
+            <td>账单类型</td>
+            <td>bill_type</td>
+            <td>是</td>
+            <td>String(8)</td>
+            <td>ALL</td>
+            <td><P>ALL，返回当日所有订单信息，默认值 </p>
+                <p>SUCCESS，返回当日成功支付的订单 </p>
+              <p>REFUND，返回当日退款订单 </p>
+            </td>
+          </tr>
+		  <tr>
+            <td>压缩账单</td>
+            <td>tar_type</td>
+            <td>否</td>
+            <td>String(8)</td>
+            <td>GZIP</td>
+            <td>非必传参数，固定值：GZIP，返回格式为.gzip的压缩包账单。不传则默认为数据流形式。</td>
+          </tr>
+        </table>
+        </div>
+        <div class="guide-msg mb10">
+        <p>&lt;xml&gt;<br />
+          &#160;&#160;&lt;appid&gt;wx2421b1c4370ec43b&lt;/appid&gt;<br />
+          &#160;&#160;&lt;bill_date&gt;20141110&lt;/bill_date&gt;<br />
+          &#160;&#160;&lt;bill_type&gt;ALL&lt;/bill_type&gt;<br />
+          &#160;&#160;&lt;mch_id&gt;10000100&lt;/mch_id&gt;<br />
+          &#160;&#160;&lt;nonce_str&gt;21df7dc9cd8616b56919f20d9f679233&lt;/nonce_str&gt;<br />
+          &#160;&#160;&lt;sign&gt;332F17B766FC787203EBE9D6E40457A1&lt;/sign&gt;<br />
+          &lt;/xml&gt; </p>
+          </div>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>返回结果 </h3>
+        </div>
+      	<div class="data-bd">            
+            <p class="mb10">失败时，返回以下字段 </p>
+            <div class="table-wrp with-border">
+              <table  class="table">
+              <tr>
+                <th class="name">字段名</th>
+                <th class="var">变量名</th>
+                <th class="require">必填</th>
+                <th class="type">类型</th>
+                <th class="example">示例值</th>
+                <th class="description">描述</th>
+              </tr>
+              <tr>
+                <td>返回状态码</td>
+                <td>return_code</td>
+                <td>是</td>
+                <td>String(16)</td>
+                <td>FAIL</td>
+                <td>FAIL</td>
+              </tr>
+              <tr>
+                <td>返回信息</td>
+                <td>return_msg</td>
+                <td>否</td>
+                <td>String(128)</td>
+                <td>签名失败</td>
+                <td><p>返回信息，如非空，为错误原因 </p>
+                    <p>签名失败 </p>
+                  <p>参数格式校验错误 </p>
+                <p>该日期订单未生成</p></td>
+              </tr>
+            </table>
+            </div>
+            <p>成功时，数据以文本表格的方式返回，第一行为表头，后面各行为对应的字段内容，字段内容跟查询订单或退款结果一致，具体字段说明可查阅相应接口。 </p>
+            <p class="mb10">第一行为表头，根据请求下载的对账单类型不同而不同(由bill_type决定),目前有： </p>
+            <b>当日所有订单 </b>
+            <p class="mb10">交易时间,公众账号ID,商户号,子商户号,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,总金额,代金券或立减优惠金额,微信退款单号,商户退款单号,退款金额,代金券或立减优惠退款金额，退款类型，退款状态,商品名称,商户数据包,手续费,费率 </p>
+			<!--<p class="mb10"><font color="red">(新)</font>交易时间,公众账号ID,商户号,<font color="red">特约商户号</font>,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,<font color="red">应结订单金额</font>,<font color="red">代金券金额</font>,微信退款单号,商户退款单号,退款金额,<font color="red">充值券退款金额</font>，退款类型，退款状态,商品名称,商户数据包,手续费,费率,<font color="red">订单金额</font>,<font color="red">申请退款金额</font>,<font color="red">费率备注</font> </p>-->
+            <b>当日成功支付的订单 </b>
+            <p class="mb10">交易时间,公众账号ID,商户号,子商户号,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,总金额,代金券或立减优惠金额,商品名称,商户数据包,手续费,费率 </p>
+			<!--<p class="mb10"><font color="red">(新)</font>交易时间,公众账号ID,商户号,<font color="red">特约商户号</font>,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,<font color="red">应结订单金额</font>,<font color="red">代金券金额</font>,商品名称,商户数据包,手续费,费率,<font color="red">订单金额</font>,<font color="red">费率备注</font> </p>-->
+            <b >当日退款的订单 </b>
+            <p class="mb10">交易时间,公众账号ID,商户号,子商户号,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,总金额,代金券或立减优惠金额,退款申请时间,退款成功时间,微信退款单号,商户退款单号,退款金额,代金券或立减优惠退款金额,退款类型,退款状态,商品名称,商户数据包,手续费,费率 </p>
+			<!--<p class="mb10"><font color="red">(新)</font>交易时间,公众账号ID,商户号,子商户号,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,<font color="red">应结订单金额</font>,<font color="red">代金券金额</font>,退款申请时间,退款成功时间,微信退款单号,商户退款单号,退款金额,<font color="red">充值券退款金额</font>,退款类型,退款状态,商品名称,商户数据包,手续费,费率,<font color="red">申请退款金额</font>,<font color="red">费率备注</font> </p>-->
+             <p>从第二行起，为数据记录，各参数以逗号分隔，参数前增加`符号，为标准键盘1左边键的字符，字段顺序与表头一致。</p>
+            <p>倒数第二行为订单统计标题，最后一行为统计数据 </p>
+            <p>总交易单数，总交易额，总退款金额，总代金券或立减优惠退款金额，手续费总金额 </p>
+            <p>举例如下：</p>
+            <p class="mb20">交易时间,公众账号ID,商户号,子商户号,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,总金额,代金券或立减优惠金额,微信退款单号,商户退款单号,退款金额,代金券或立减优惠退款金额,退款类型,退款状态,商品名称,商户数据包,手续费,费率<br />
+              `2014-11-1016：33：45,`wx2421b1c4370ec43b,`10000100,`0,`1000,`1001690740201411100005734289,`1415640626,`085e9858e3ba5186aafcbaed1,`MICROPAY,`SUCCESS,`CFT,`CNY,`0.01,`0.0,`0,`0,`0,`0,`,`,`被扫支付测试,`订单额外描述,`0,`0.60%<br />
+              `2014-11-1016：46：14,`wx2421b1c4370ec43b,`10000100,`0,`1000,`1002780740201411100005729794,`1415635270,`085e9858e90ca40c0b5aee463,`MICROPAY,`SUCCESS,`CFT,`CNY,`0.01,`0.0,`0,`0,`0,`0,`,`,`被扫支付测试,`订单额外描述,`0,`0.60%<br />
+              总交易单数,总交易额,总退款金额,总代金券或立减优惠退款金额,手续费总金额<br />
+              `2,`0.02,`0.0,`0.0,`0 </p>
+			 <!--  <p class="mb20"><font color="red">(新)</font>交易时间,公众账号ID,商户号,<font color="red">特约商户号</font>,设备号,微信订单号,商户订单号,用户标识,交易类型,交易状态,付款银行,货币种类,<font color="red">应结订单金额</font>,<font color="red">代金券金额</font>,微信退款单号,商户退款单号,退款金额,<font color="red">充值券退款金额</font>，退款类型，退款状态,商品名称,商户数据包,手续费,费率,<font color="red">订单金额</font>,<font color="red">申请退款金额</font>,<font color="red">费率备注</font> <br />
+              `2014-11-1016：33：45,`wx2421b1c4370ec43b,`10000100,`0,`1000,`1001690740201411100005734289,`1415640626,`085e9858e3ba5186aafcbaed1,`MICROPAY,`SUCCESS,`CFT,`CNY,`0.01,`0.0,`0,`0,`0,`0,`,`,`被扫支付测试,`订单额外描述,`0,`0.60%<br />
+              `2014-11-1016：46：14,`wx2421b1c4370ec43b,`10000100,`0,`1000,`1002780740201411100005729794,`1415635270,`085e9858e90ca40c0b5aee463,`MICROPAY,`SUCCESS,`CFT,`CNY,`0.01,`0.0,`0,`0,`0,`0,`,`,`被扫支付测试,`订单额外描述,`0,`0.60%<br />
+              总交易单数,<font color="red">应结订单总金额</font>,<font color="red">退款总金额</font>,<font color="red">充值券退款总金额</font>,手续费总金额,<font color="red">订单总金额</font><font color="red">申请退款总金额</font><br />
+              `2,`0.02,`0.0,`0.0,`0 </p>-->
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>错误码</h3>
+        </div>
+      	<div class="data-bd">            
+            <div class="table-wrp with-border">
+              <table  class="table">
+              <tr>
+                <th>名称</th>
+                <th>描述</th>
+                <th>原因</th>
+                <th>解决方案</th>
+              </tr>
+              <tr>
+                <td>SYSTEMERROR</td>
+                <td>接口返回错误</td>
+                <td>系统超时</td>
+                <td>请尝试再次查询。</td>
+              </tr>
+              <tr>
+                <td>INVALID_TRANSACTIONID</td>
+                <td>无效transaction_id</td>
+                <td>请求参数未按指引进行填写</td>
+                <td>参数错误，请重新检查</td>
+              </tr>
+              <tr>
+                <td>PARAM_ERROR</td>
+                <td>参数错误</td>
+                <td>请求参数未按指引进行填写</td>
+                <td>参数错误，请重新检查</td>
+              </tr>
+            </table>
+            </div>
+      </div>
+    </div>
+</div><!--[if !IE]>|xGv00|f9e142817632a59d9174ae2a6d299397<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

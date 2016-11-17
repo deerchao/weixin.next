@@ -1,0 +1,46 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">公众号支付开发步骤</h2>
+</div>   
+<div class="content-bd">
+	<h3> 1、设置测试目录</h3>
+	<p class="mb20"> 在微信公众平台设置，栏目见图7.7。支付测试状态下，设置测试目录，测试人的微信号添加到白名单，发起支付的页面目录必须与设置的精确匹配。并将支付链接发到对应的公众号会话窗口中才能正常发起支付测试。注意正式目录一定不能与测试目录设置成一样，否则支付会出错。</p>
+	<p  class="tc mb10">
+		<img src="./img/chapter7_3_1.png" alt="微信内网页支付设置栏目入口" />
+	</p>
+	<center class="mb20">图7.7 微信内网页支付设置栏目入口</center>
+	<h3 >2、设置正式支付目录</h3>
+	<p  class="mb20">根据图中栏目顺序进入修改栏目，勾选JSAPI网页支付开通该权限，并配置好支付授权目录，该目录必须是发起支付的页面的精确目录，子目录下无法正常调用支付。具体界面如图7.8所示：</p>
+	<p class="tc mb10">
+		<img src="./img/chapter7_3_2.png"  alt="微信网页内支付接口授权目录设置" />
+	</p>
+	<center>图7.8 微信网页内支付接口授权目录设置</center>
+
+</div><!--[if !IE]>|xGv00|e03e69e716b64a094fde7698c5062006<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

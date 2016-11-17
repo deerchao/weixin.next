@@ -1,0 +1,65 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">版本说明</h2>
+</div>  
+<div class="content-bd">
+    <div class="marks-msg with-title mb20">
+        <h4>●</h4>
+        <p>2014.12.12</p>
+        <p>更新刷卡支付java版Demo;</p>
+        <p>企业红包更名为“代金券\立减优惠”;</p>
+        <p>邮件中不附带证书，按指引去商户系统下载；</p>
+    </div>          
+    <div class="marks-msg with-title mb20">
+        <h4>●</h4>
+        <p>2014.12.11</p>
+        <p>发布新建版本，本文档适用于V3版商户号接入微信支付，旧版帐号没有MCHID，需要登录商户系统升级(详细请参考升级指引)。</p>
+    </div> 
+	<div class="marks-msg with-title mb20">
+        <h4>●</h4>
+        <p>2015.7.29</p>
+        <p>受理机构更名为：服务商，受理机构子商户更名为：特约商户</p>
+    </div> 
+	<div class="marks-msg with-title mb20">
+        <h4>●</h4>
+        <p>2016.8.24</p>
+        <p>文档左侧导航栏增加“错误码”栏</p>
+    </div>
+	<div class="marks-msg with-title mb20">
+        <h4>●</h4>
+        <p>2016.9.9</p>
+        <p>退款接口增加字段（可选）---支持可用余额退款；增加退款错误码：“余额不足”</p>
+    </div> 
+	<div class="marks-msg with-title mb20">
+        <h4>●</h4>
+        <p>2016.10.11</p>
+        <p>退款查询接口-退款状态-删除“NOTSURE”状态</p>
+    </div>
+</div><!--[if !IE]>|xGv00|605cf929c17c9d15e0f76fd16519f01e<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

@@ -1,0 +1,37 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">联系我们</h2>
+</div>   
+<div class="content-bd">
+    <ul>
+    <li>添加公众号&#8220;微信支付商户通&#8221;，发微信消息可以联系到我们； </li>
+    <li>发邮件到<a  target="_blank"  href="mailto：wepayTS@tencent.com">wepayTS@tencent.com</a>；</li>
+    </ul>
+</div><!--[if !IE]>|xGv00|4192c89bc541a1397bf8dda5cd98e308<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

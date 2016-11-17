@@ -1,0 +1,60 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">常见问题和注意事项</h2>
+</div>   
+<div class="content-bd">
+    <h4>1、服务器SSL版本说明 </h4>
+    <p >由于低版本的SSL存在高危漏洞，需要确认您系统所使用的SSL版本是否需要升级，详细说明请见公众平台SSL安全策略说明：https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1414562353&amp;version=11&amp;lang=zh_CN</p>
+    <p class="mb20">Java开发可以参考Oracle网站的说明：[Oracle&nbsp;Java&nbsp;disable&nbsp;SSL3](<a  target="_blank"  href="http://www.oracle.com/technetwork/java/javase/documentation/cve-2014-3566-2342133.html">http://www.oracle.com/technetwork/java/javase/documentation/cve-2014-3566-2342133.html</a>) </p>
+    <h4>2、IPV6相关 </h4>
+    <p>&#9;如果您的服务器开启了IPv6支持，由于当前互联网对IPv6支持不完整，导致在DNS解析时通常会碰到超时问题； </p>
+    <p>&#9;建议在调用支付API时，显示指定使用IPv4解析. </p>
+    <p class="mb10">&#9;PHP程序使用curl调用参考代码如下： </p>
+    <div class="guide-msg ">
+    <p>&nbsp;&nbsp;if(defined('CURLOPT_IPRESOLVE')&nbsp;&amp;&amp;&nbsp;defined('CURL_IPRESOLVE_V4'))<br />
+    {<br />
+    &#9;&#9;curl_setopt($ch,&nbsp;CURLOPT_IPRESOLVE,&nbsp;CURL_IPRESOLVE_V4);<br />
+    &#9;} </p>
+    </div>
+    <br>
+    <h4>3、无法连接微信服务器,访问api.mch.weixin.qq.com超时</h4>
+    <p>
+      a. 是否存在跨运营商访问的情况,详见<a href="native.php?chapter=11_4">网络超时的定位</a><br />
+      可以ping api.mch.weixin.qq.com查询对应的解析IP<br />
+      通过访问ip.qq.com获取取口IP，也可以根据商户侧服务器的外网IP确认<br />
+      b. 是否使用的阿里云主机<br />
+      由于阿里云使用的BGP，需要确认解析出来的IP是否为182.254.44.159，否则需要调整DNS设置，使用阿里本身的DNS服务器<br />
+      c. 是否使用curl库访问<br />
+      需要指定参数使用ipv4，具体可参考http://www.jb51.net/article/39788.htm<br />
+      d. 确认java程序使用的HttpClient的版本是否&lt;=4.3.4<br />
+      可升级HttpClient到4.3.6版本<br />
+    </p>
+  </div>
+</div><!--[if !IE]>|xGv00|2bce93d6a6064998ddc226f9a9c4e8df<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

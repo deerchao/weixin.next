@@ -1,0 +1,143 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">系统开发注意事项</h2>
+</div>        
+<div class="content-bd">
+    <p class="mb10">对于接入了微信支付的商户们来说，请仔细阅读和遵守该最佳安全实践，将极大的提升贵公司在使用微信支付时的安全性。我们也会持续关注商户安全性，将最新最好的实践更新于此。 </p>
+ <p>   对于需要自行或外包开发信息系统的商户来说，有一些安全的注意事项，我们从 需求、设计、编码、测试、部署&运维 五个方面来展开。</p>
+ <p>&nbsp;</p>
+    <div class="marks-msg with-title mb20">
+	 <h4>1、</h4>
+        <p>需求</p>
+		<p>a、商户自建营销活动需设计防刷机制。</p>
+	</div>
+
+ <div class="marks-msg with-title mb20">
+	 <h4>2、</h4>
+        <p>设计</p>
+		<p>a、数据采集</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 法律禁止企业记录和存储的数据（如磁道信息、信用卡CVV码等）不能收集。</li>
+		<li>◆ 客户端敏感数据必须先进行加密处理。</li>
+    	</ol>
+		</div>
+		<p>b、数据传输</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 使用HTTPS确保网络传输安全性。</li>
+		<li>◆ 禁用SSL等不安全协议和算法，建议使用TLS1.2。</li>
+		<li>◆ 不要轻易的尝试设计和实现自己的加密传输算法，几乎都会存在问题。</li>
+    	</ol>
+		</div>
+		<p>c、数据保存</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 敏感信息禁止出现在日志中，如确实需要，需进行脱敏处理。</li>
+		<li>◆ 缓存和DB中的敏感数据需进行加密或者虚化（Hash）。</li>
+		<li>◆ 密码等关键认证必须采用加盐Hash方式保存。</li>
+    	</ol>
+		</div>
+		<p>d、数据访问</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 外部请求数据访问必须进行鉴权操作。</li>
+		<li>◆ 对于内部的数据访问要严加控制，降低用户信息泄漏风险。</li>
+    	</ol>
+		</div>
+		<p>e、审计日志</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 记录的操作日志要包括5W信息（Who、When、Why、How、What）。</li>
+    	</ol>
+		</div>
+		<p>f、资金处理</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 建立对账机制，每天对系统收支数据与微信支付数据进行对账，避免资金出现问题。</li>
+		<li>◆ DB或者KV需要设计数据防篡改机制。</li>
+    	</ol>
+		</div>
+	</div>
+
+<div class="marks-msg with-title mb20">
+	 <h4>3、</h4>
+        <p>编码</p>
+		<p>a、防止参数处理不当导致的常见漏洞</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 参考 <a href="http://wiki.open.qq.com/wiki/Web%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B%E5%8F%8A%E4%BF%AE%E5%A4%8D" target="_blank">Web漏洞检测及修复</a>
+		</li>
+    	</ol>
+		</div>
+		<p>b、防止逻辑处理不当导致的漏洞</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ 支付成功回调通知必须验证微信支付签名，避免被恶意攻击。</li>
+		<li>◆ 在后台进行商户价格的判断逻辑，避免客户端篡改价格导致商户损失。</li>
+		<li>◆ 避免在App或者网站页面里面出现商户APIkey或API证书等信息，防止泄漏。</li>
+    	</ol>
+		</div>
+		<p>c、APP开发安全注意事项</p>
+		<div class="marks-msg with-title mb10">
+		<ol>
+        <li>◆ IOS应用安全开发参考 <a href="https://developer.apple.com/library/content/documentation/Security/Conceptual/SecureCodingGuide/SecurityDevelopmentChecklists/SecurityDevelopmentChecklists.html" target="_blank">Apple NextPrevious Security Development Checklists</a> </li>
+		<li>◆ andriod应用安全开发参考 <a href="https://developer.android.com/training/articles/security-tips.html" target="_blank">Andriod Security Tips</a> </li>
+    	</ol>
+		</div>
+	</div>
+<div class="marks-msg with-title mb20">
+	 <h4>4、</h4>
+        <p>测试</p>
+		<p>a、对输入输出参数进行专项安全测试。</p>
+		<p>b、通过众测或自建、第三方的安全扫描机制对系统进行安全扫描并对问题进行修复。</p>
+	</div>
+	<div class="marks-msg with-title mb20">
+	 <h4>5、</h4>
+        <p>部署&运维</p>
+		<p>a、确保系统所使用商业和开源组件的版本是最新稳定版。</p>
+		<p>b、参考此份checklist进行安全配置 <a href="http://wiki.open.qq.com/wiki/%E7%B3%BB%E7%BB%9F%E6%BC%8F%E6%B4%9E%E6%A3%80%E6%B5%8B%E5%8F%8A%E4%BF%AE%E5%A4%8D" target="_blank">系统漏洞检测及修复 </a> </p>
+		<p>c、考虑系统和数据服务容灾，至少有主备机制，建议多机房多地部署。</p>
+		<p>d、建议采用各大云系统，并且启用相关的云安全防控机制。</p>
+		<p>e、如有条件，建议自建或者购买一些安全监控服务或设备。</p>
+		<p>f、设定关键指标项，进行实时数据上报和监控</p>
+		<p>g、有专门的人员来跟进安全事件的处置。</p>
+		<p>h、关注信息系统所使用框架及组件的安全信息情况。</p>
+		<p>i、按时打补丁，定期检查系统升级。</p>
+		<p>j、服务端口开启最小化原则。</p>
+		<p>k、服务器登录操作可审计。</p>
+		<p>m、内部管理运营系统必须认证登录做操作日志记录以供审计。</p>
+		<p>n、建立业务下线机制，不再使用的业务做下线操作减少被攻击面。</p>
+	</div>
+</div>
+</div>
+</div>
+</div>
+<!--[if !IE]>|xGv00|2d0e02ee7e558601a2db4e54d02aa246<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

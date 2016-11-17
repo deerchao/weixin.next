@@ -1,0 +1,576 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">申请退款</h2>
+</div> 
+<div class="content-bd">
+    <div class="data-box with-padding">
+      <div class="data-hd">
+        <h3 >应用场景</h3>
+      </div>
+      <div class="data-bd">
+        <p>当交易发生之后一段时间内，由于买家或者卖家的原因需要退款时，卖家可以通过退款接口将支付款退还给买家，微信支付将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退到买家帐号上。 </p>
+        <p>注意： </p>
+        <p>1、交易时间超过一年的订单无法提交退款； </p>
+        <p class="mb20">2、微信支付退款支持单笔交易分多次退款，多次退款需要提交原支付订单的商户订单号和设置不同的退款单号。一笔退款失败后重新提交，要采用原来的退款单号。总退款金额不能超过用户实际支付金额。 </p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+      <div class="data-hd">
+       <h3>接口地址 </h3>
+      </div>
+      <div class="data-bd">
+       <p  class="mb20">接口链接：https://api.mch.weixin.qq.com/secapi/pay/refund</p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+      <div class="data-hd">           
+       <h3>是否需要证书 </h3>
+      </div>
+      <div class="data-bd">           
+	   <p>请求需要双向证书。 详见<a  target="_blank"  href="?chapter=4_3">证书使用</a></p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+      <div class="data-hd">  
+       <h3>请求参数 </h3>
+      </div>
+      <div class="data-bd">           
+       <div class="table-wrp with-border">
+          <table  class="table">
+          <thead>
+         <tr>
+            <th class="name">字段名</th>
+            <th class="var">变量名</th>
+            <th class="require">必填</th>
+            <th class="type">类型</th>
+            <th class="example">示例值</th>
+            <th class="description">描述</th>
+         </tr>
+         </thead>
+         <tbody>
+         <tr>
+           <td>公众账号ID</td>
+           <td>appid</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>wx8888888888888888</td>
+           <td>微信分配的公众账号ID（企业号corpid即为此appId）</td>
+         </tr>
+         <tr>
+           <td>商户号</td>
+           <td>mch_id</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>1900000109</td>
+           <td>微信支付分配的商户号</td>
+         </tr>
+         <tr>
+           <td>设备号</td>
+           <td>device_info</td>
+           <td>否</td>
+           <td>String(32)</td>
+           <td>013467007045764</td>
+           <td>终端设备号</td>
+         </tr>
+         <tr>
+           <td>随机字符串</td>
+           <td>nonce_str</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+           <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+         </tr>
+         <tr>
+           <td>签名</td>
+           <td>sign</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+           <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名生成算法</a></td>
+         </tr>
+		 <tr>
+                 <td>签名类型</td>
+                 <td>sign_type</td>
+                 <td>否</td>
+                 <td>String(32)</td>
+                 <td>HMAC-SHA256</td>
+                 <td>签名类型，目前支持HMAC-SHA256和MD5，默认为MD5</td>
+              </tr>
+         <tr>
+           <td>微信订单号</td>
+           <td>transaction_id</td>
+           <td rowspan="2">二选一</td>
+           <td>String(28)</td>
+           <td>1217752501201407033233368018</td>
+           <td>微信生成的订单号，在支付通知中有返回</td>
+         </tr>
+         <tr>
+           <td>商户订单号</td>
+           <td>out_trade_no</td>
+           <td>String(32)</td>
+           <td>1217752501201407033233368018</td>
+           <td>商户侧传给微信的订单号</td>
+         </tr>
+         <tr>
+           <td>商户退款单号</td>
+           <td>out_refund_no</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>1217752501201407033233368018</td>
+           <td>商户系统内部的退款单号，商户系统内部唯一，同一退款单号多次请求只退一笔</td>
+         </tr>
+         <tr>
+           <td>订单金额</td>
+           <td>total_fee</td>
+           <td>是</td>
+           <td>Int</td>
+           <td>100</td>
+           <td>订单总金额，单位为分，只能为整数，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+         </tr>
+         <tr>
+           <td>退款金额</td>
+           <td>refund_fee</td>
+           <td>是</td>
+           <td>Int</td>
+           <td>100</td>
+           <td>退款总金额，订单总金额，单位为分，只能为整数，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+         </tr>
+         <tr>
+           <td>货币种类</td>
+           <td>refund_fee_type</td>
+           <td>否</td>
+           <td>String(8)</td>
+           <td>CNY</td>
+           <td>货币类型，符合ISO&nbsp;4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+         </tr>
+         <tr>
+           <td>操作员</td>
+           <td>op_user_id</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>1900000109</td>
+           <td>操作员帐号,&nbsp;默认为商户号</td>
+         </tr>
+		 <tr>
+           <td>退款资金来源</td>
+           <td>refund_account</td>
+           <td>否</td>
+           <td>String(30)</td>
+           <td>REFUND_SOURCE_RECHARGE_FUNDS</td>
+           <td>
+		   <p>仅针对老资金流商户使用</p>
+		   <p>REFUND_SOURCE_UNSETTLED_FUNDS---未结算资金退款（默认使用未结算资金退款）</p>
+		   <p>REFUND_SOURCE_RECHARGE_FUNDS---可用余额退款</p>
+		   </td>
+         </tr>
+         </tbody>
+       </table>
+       </div>
+       <p class="mb10">举例如下： </p>
+        <div class="guide-msg mb20">
+           <p>&lt;xml&gt;<br />
+             &#160;&nbsp;&#160;&lt;appid&gt;wx2421b1c4370ec43b&lt;/appid&gt;<br />
+             &#160;&nbsp;&#160;&lt;mch_id&gt;10000100&lt;/mch_id&gt;<br />
+             &#160;&nbsp;&#160;&lt;nonce_str&gt;6cefdb308e1e2e8aabd48cf79e546a02&lt;/nonce_str&gt;<br />
+             &#160;&nbsp;&#160;&lt;op_user_id&gt;10000100&lt;/op_user_id&gt;<br />
+             &#160;&nbsp;&#160;&lt;out_refund_no&gt;1415701182&lt;/out_refund_no&gt;<br />
+             &#160;&nbsp;&#160;&lt;out_trade_no&gt;1415757673&lt;/out_trade_no&gt;<br />
+             &#160;&nbsp;&#160;&lt;refund_fee&gt;1&lt;/refund_fee&gt;<br />
+             &#160;&nbsp;&#160;&lt;total_fee&gt;1&lt;/total_fee&gt;<br />
+             &#160;&nbsp;&#160;&lt;transaction_id&gt;&lt;/transaction_id&gt;<br />
+             &#160;&nbsp;&#160;&lt;sign&gt;FE56DD4AA85C0EECA82C35595A69E153&lt;/sign&gt;<br />
+             &lt;/xml&gt; </p>
+         </div>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+      <div class="data-hd">               
+       <h3>返回结果</h3>
+      </div>
+      <div class="data-bd">            
+      <div class="table-wrp with-border">
+          <table  class="table">
+         <tr>
+            <th class="name">字段名</th>
+            <th class="var">变量名</th>
+            <th class="require">必填</th>
+            <th class="type">类型</th>
+            <th class="example">示例值</th>
+            <th class="description">描述</th>
+         </tr>
+         <tr>
+           <td>返回状态码</td>
+           <td>return_code</td>
+           <td>是</td>
+           <td>String(16)</td>
+           <td>SUCCESS</td>
+           <td>SUCCESS/FAIL</td>
+         </tr>
+         <tr>
+           <td>返回信息</td>
+           <td>return_msg</td>
+           <td>否</td>
+           <td>String(128)</td>
+           <td>签名失败</td>
+           <td><p>返回信息，如非空，为错误原因 </p>
+               <p>签名失败 </p>
+           <p>参数格式校验错误</p></td>
+         </tr>
+       </table>
+       </div>
+       <p class="mb10">以下字段在return_code为SUCCESS的时候有返回 </p>
+      <div class="table-wrp with-border">
+          <table  class="table">
+         <tr>
+            <th class="name">字段名</th>
+            <th class="var">变量名</th>
+            <th class="require">必填</th>
+            <th class="type">类型</th>
+            <th class="example">示例值</th>
+            <th class="description">描述</th>
+         </tr>
+         <tr>
+           <td>业务结果</td>
+           <td>result_code</td>
+           <td>是</td>
+           <td>String(16)</td>
+           <td>SUCCESS</td>
+           <td><p>SUCCESS/FAIL </p>
+             <p>SUCCESS退款申请接收成功，结果通过退款查询接口查询 </p>
+           <p>FAIL&nbsp;提交业务失败</p></td>
+         </tr>
+         <tr>
+           <td>错误代码</td>
+           <td>err_code</td>
+           <td>否</td>
+           <td>String(32)</td>
+           <td>SYSTEMERROR</td>
+           <td>列表详见错误码列表</td>
+         </tr>
+         <tr>
+           <td>错误代码描述</td>
+           <td>err_code_des</td>
+           <td>否</td>
+           <td>String(128)</td>
+           <td>系统超时</td>
+           <td>结果信息描述</td>
+         </tr>
+         <tr>
+           <td>公众账号ID</td>
+           <td>appid</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>wx8888888888888888</td>
+           <td>微信分配的公众账号ID</td>
+         </tr>
+         <tr>
+           <td>商户号</td>
+           <td>mch_id</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>1900000109</td>
+           <td>微信支付分配的商户号</td>
+         </tr>
+         <tr>
+           <td>设备号</td>
+           <td>device_info</td>
+           <td>否</td>
+           <td>String(32)</td>
+           <td>013467007045764</td>
+           <td>微信支付分配的终端设备号，与下单一致</td>
+         </tr>
+         <tr>
+           <td>随机字符串</td>
+           <td>nonce_str</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+           <td>随机字符串，不长于32位</td>
+         </tr>
+         <tr>
+           <td>签名</td>
+           <td>sign</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+           <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名算法</a></td>
+         </tr>
+         <tr>
+           <td>微信订单号</td>
+           <td>transaction_id</td>
+           <td>是</td>
+           <td>String(28)</td>
+           <td>4007752501201407033233368018</td>
+           <td>微信订单号</td>
+         </tr>
+         <tr>
+           <td>商户订单号</td>
+           <td>out_trade_no</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>33368018</td>
+           <td>商户系统内部的订单号</td>
+         </tr>
+         <tr>
+           <td>商户退款单号</td>
+           <td>out_refund_no</td>
+           <td>是</td>
+           <td>String(32)</td>
+           <td>121775250</td>
+           <td>商户退款单号</td>
+         </tr>
+         <tr>
+           <td>微信退款单号</td>
+           <td>refund_id</td>
+           <td>是</td>
+           <td>String(28)</td>
+           <td>2007752501201407033233368018</td>
+           <td>微信退款单号</td>
+         </tr>
+         <tr>
+           <td>退款渠道</td>
+           <td>refund_channel</td>
+           <td>否</td>
+           <td>String(16)</td>
+           <td>ORIGINAL </td>
+           <td><p>ORIGINAL—原路退款 </p><p>BALANCE—退回到余额</p></td>
+         </tr>
+         <tr>
+           <td>申请退款金额</td>
+           <td>refund_fee</td>
+           <td>是</td>
+           <td>Int</td>
+           <td>100</td>
+           <td>退款总金额,单位为分,可以做部分退款</td>
+         </tr>
+		  <tr>
+            <td>退款金额</td>
+            <td>settlement_refund_fee</td>
+            <td>否</td>
+            <td>Int</td>
+            <td>100</td>
+            <td>去掉非充值代金券退款金额后的退款金额，退款金额=申请退款金额-非充值代金券退款金额，退款金额<=申请退款金额</td>
+          </tr>
+         <tr>
+           <td>订单金额</td>
+           <td>total_fee</td>
+           <td>是</td>
+           <td>Int</td>
+           <td>100</td>
+           <td>订单总金额，单位为分，只能为整数，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+         </tr>
+		 <tr>
+				 <td>应结订单金额</td>
+				 <td>settlement_total_fee </td>
+				 <td>否</td>
+				 <td>Int</td>
+				 <td>100 </td>
+			   <td>去掉非充值代金券金额后的订单总金额，应结订单金额=订单金额-非充值代金券金额，应结订单金额<=订单金额。 </td>
+     		 </tr>
+         <tr>
+           <td>订单金额货币种类</td>
+           <td>fee_type</td>
+           <td>否</td>
+           <td>String(8)</td>
+           <td>CNY</td>
+           <td>订单金额货币类型，符合ISO&nbsp;4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+         </tr>
+         <tr>
+           <td>现金支付金额</td>
+           <td>cash_fee</td>
+           <td>是</td>
+           <td>Int</td>
+           <td>100</td>
+           <td>现金支付金额，单位为分，只能为整数，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+         </tr>
+         <tr>
+           <td>现金退款金额</td>
+           <td>cash_refund_fee</td>
+           <td>否</td>
+           <td>Int</td>
+           <td>100</td>
+           <td>现金退款金额，单位为分，只能为整数，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+         </tr>
+		 <tr>
+			   <td>代金券类型 </td>
+			   <td>coupon_type_$n </td>
+			   <td>否 </td>
+			   <td>String(8)</td>
+			   <td>CASH</td>
+			   <td><p>CASH--充值代金券 <br />
+			   <p>NO_CASH---非充值代金券 </p>
+			   <p>订单使用代金券时有返回（取值：CASH、NO_CASH）。$n为下标,从0开始编号，举例：coupon_type_0</p></td>
+		    </tr>
+              <tr>
+                <td>代金券退款金额</td>
+                <td>coupon_refund_fee_$n</td>
+                <td>否</td>
+                <td>Int</td>
+                <td>100</td>
+                <td>代金券退款金额&lt;=退款金额，退款金额-代金券或立减优惠退款金额为现金，说明详见<a  target="_blank"  href="?chapter=12_1" >代金券或立减优惠</a></td>
+              </tr>
+              <tr>
+                <td>退款代金券使用数量</td>
+                <td>coupon_refund_count_$n</td>
+                <td>否</td>
+                <td>Int</td>
+                <td>1</td>
+                <td>退款代金券使用数量&nbsp;,$n为下标,从0开始编号</td>
+              </tr>
+              <tr>
+                <td>退款代金券批次ID</td>
+                <td>coupon_refund_batch_id_$n_$m</td>
+                <td>否</td>
+                <td>String(20)&#9;</td>
+                <td>100</td>
+                <td>退款代金券批次ID&nbsp;,$n为下标，$m为下标，从0开始编号</td>
+              </tr>
+              <tr>
+                <td>退款代金券ID</td>
+                <td>coupon_refund_id_$n_$m</td>
+                <td>否</td>
+                <td>String(20)&#9;</td>
+                <td>10000&nbsp;</td>
+                <td>退款代金券ID,&nbsp;$n为下标，$m为下标，从0开始编号</td>
+              </tr>
+              <tr>
+                <td>单个退款代金券支付金额</td>
+                <td>coupon_refund_fee_$n_$m</td>
+                <td>否</td>
+                <td>Int</td>
+                <td>100</td>
+                <td>单个退款代金券支付金额,&nbsp;$n为下标，$m为下标，从0开始编号</td>
+              </tr>
+       </table>
+       </div>
+       <p class="mb10">举例如下： </p>
+        <div class="guide-msg mb10">
+       <p>&lt;xml&gt;<br />
+         &#160;&nbsp;&#160;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;<br />
+         &#160;&nbsp;&#160;&lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;<br />
+         &#160;&nbsp;&#160;&lt;appid&gt;&lt;![CDATA[wx2421b1c4370ec43b]]&gt;&lt;/appid&gt;<br />
+         &#160;&nbsp;&#160;&lt;mch_id&gt;&lt;![CDATA[10000100]]&gt;&lt;/mch_id&gt;<br />
+         &#160;&nbsp;&#160;&lt;nonce_str&gt;&lt;![CDATA[NfsMFbUFpdbEhPXP]]&gt;&lt;/nonce_str&gt;<br />
+         &#160;&nbsp;&#160;&lt;sign&gt;&lt;![CDATA[B7274EB9F8925EB93100DD2085FA56C0]]&gt;&lt;/sign&gt;<br />
+         &#160;&nbsp;&#160;&lt;result_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/result_code&gt;<br />
+         &#160;&nbsp;&#160;&lt;transaction_id&gt;&lt;![CDATA[1008450740201411110005820873]]&gt;&lt;/transaction_id&gt;<br />
+         &#160;&nbsp;&#160;&lt;out_trade_no&gt;&lt;![CDATA[1415757673]]&gt;&lt;/out_trade_no&gt;<br />
+         &#160;&nbsp;&#160;&lt;out_refund_no&gt;&lt;![CDATA[1415701182]]&gt;&lt;/out_refund_no&gt;<br />
+         &#160;&nbsp;&#160;&lt;refund_id&gt;&lt;![CDATA[2008450740201411110000174436]]&gt;&lt;/refund_id&gt;<br />
+         &#160;&nbsp;&#160;&lt;refund_channel&gt;&lt;![CDATA[]]&gt;&lt;/refund_channel&gt;<br />
+         &#160;&nbsp;&#160;&lt;refund_fee&gt;1&lt;/refund_fee&gt;         <br />
+         &lt;/xml&gt;</p>
+         </div>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+      <div class="data-hd">               
+       <h3>错误码 </h3>
+      </div>
+      <div class="data-bd">            
+       <div class="table-wrp with-border">
+          <table  class="table">
+         <tr>
+           <th width="22%">名称</th>
+           <th>描述</th>
+           <th>原因</th>
+           <th>解决方案</th>
+         </tr>
+         <tr>
+           <td>SYSTEMERROR</td>
+           <td>接口返回错误</td>
+           <td>系统超时</td>
+           <td>请用相同参数再次调用API</td>
+         </tr>
+		 <tr>
+           <td>USER_ACCOUNT_ABNORMAL</td>
+           <td>退款请求失败</td>
+           <td>用户帐号注销</td>
+           <td>此状态代表退款申请失败，商户可自行处理退款。</td>
+         </tr>
+		 <tr>
+           <td>NOTENOUGH</td>
+           <td>余额不足</td>
+           <td>商户可用退款余额不足</td>
+           <td>此状态代表退款申请失败，商户可根据具体的错误提示做相应的处理。</td>
+         </tr>
+         <tr>
+           <td>INVALID_TRANSACTIONID</td>
+           <td>无效transaction_id</td>
+           <td>请求参数未按指引进行填写</td>
+           <td>请求参数错误，检查原交易号是否存在或发起支付交易接口返回失败</td>
+         </tr>
+         <tr>
+           <td>PARAM_ERROR</td>
+           <td>参数错误</td>
+           <td>请求参数未按指引进行填写</td>
+           <td>请求参数错误，请重新检查再调用退款申请</td>
+         </tr>
+         <tr>
+           <td>APPID_NOT_EXIST</td>
+           <td>APPID不存在</td>
+           <td>参数中缺少APPID</td>
+           <td>请检查APPID是否正确</td>
+         </tr>
+         <tr>
+           <td>MCHID_NOT_EXIST</td>
+           <td>MCHID不存在</td>
+           <td>参数中缺少MCHID</td>
+           <td>请检查MCHID是否正确</td>
+         </tr>
+         <tr>
+           <td>APPID_MCHID_NOT_MATCH</td>
+           <td>appid和mch_id不匹配</td>
+           <td>appid和mch_id不匹配</td>
+           <td>请确认appid和mch_id是否匹配</td>
+         </tr>
+         <tr>
+           <td>REQUIRE_POST_METHOD</td>
+           <td>请使用post方法</td>
+           <td>未使用post传递参数&nbsp;</td>
+           <td>请检查请求参数是否通过post方法提交</td>
+         </tr>
+         <tr>
+           <td>SIGNERROR</td>
+           <td>签名错误</td>
+           <td>参数签名结果不正确</td>
+           <td>请检查签名参数和方法是否都符合签名算法要求</td>
+         </tr>
+         <tr>
+           <td>XML_FORMAT_ERROR</td>
+           <td>XML格式错误</td>
+           <td>XML格式错误</td>
+           <td>请检查XML参数格式是否正确</td>
+         </tr>
+       </table>
+       </div>
+      </div>
+    </div>
+</div><!--[if !IE]>|xGv00|f98ba8baafae4ef8ae5945a30d55306b<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

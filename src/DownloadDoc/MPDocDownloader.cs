@@ -11,12 +11,15 @@ using Newtonsoft.Json;
 
 namespace DownloadDoc
 {
-    class DocDownloader
+    class MPDocDownloader
     {
         private readonly string _folder;
 
-        public DocDownloader(string folder)
+        public MPDocDownloader(string folder)
         {
+            if (!Directory.Exists(folder))
+                Directory.CreateDirectory(folder);
+
             _folder = folder;
         }
 

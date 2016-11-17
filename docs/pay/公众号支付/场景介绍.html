@@ -1,0 +1,73 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">公众号支付</h2>
+</div>    
+<div class="content-bd">
+    <div class="data-box with-padding">
+      <div class="data-hd">
+        <h1 >场景介绍</h1>
+      </div>
+      <div class="data-bd">
+        
+        <p> 商户已有H5商城网站，用户通过消息或扫描二维码在微信内打开网页时，可以调用微信支付完成下单购买的流程。</p >
+        <p>步骤（1）：如图7.1，商户下发图文消息或者通过自定义菜单吸引用户点击进入商户网页。</p >
+        <p class="mb20">步骤（2）：如图7.2，进入商户网页，用户选择购买，完成选购流程。</p >
+        <table  align="center" class="table-auto">
+            <tr>
+            <td><img src="./img/chapter7_1_1.jpg" alt="商户自定义消息界面"  class="mb10"/><p class="tc mb20">图7.1 商户自定义消息界面</p></td>
+            <td class="table-padd"><img src="./img/chapter7_1_2.jpg" alt="商户网页下单"  class="mb10"/><p class="tc mb20">图7.2 商户网页下单</p></td>
+            </tr>
+        </table>               
+        <p>步骤（3）：如图7.3，调起微信支付控件，用户开始输入支付密码。</p>
+        <p class="mb20">步骤（4）：如图7.4，密码验证通过，支付成功。商户后台得到支付成功的通知。</p>
+        <table  align="center" class="table-auto">
+            <tr>
+            <td><img src="./img/chapter7_1_3.jpg" alt="用户确认支付，输入密码"  class="mb10"/><p class="tc mb20">图7.3 用户确认支付，输入密码</p></td>
+            <td class="table-padd"><img src="./img/chapter7_1_4.jpg" alt="用户支付成功提示"  class="mb10"/><p class="tc mb20">图7.4 用户支付成功提示</p></td>
+            </tr>
+        </table>             
+        <p>步骤（5）：如图7.5，返回商户页面，显示购买成功。该页面由商户自定义。</p>
+        <p class="mb20">步骤（6）：如图7.6，公众号下发消息，提示发货成功。该步骤可选。</p>
+        <table align="center" class="table-auto">
+            <tr>
+            <td><img src="./img/chapter7_1_5.jpg" alt="返回商户页面提示"   class="mb10"/><p class="tc mb20">图7.5 返回商户页面提示</p></td>
+            <td class="table-padd"><img src="./img/chapter7_1_6.jpg" alt="用户收到发货微信通知"  class="mb10"/><p class="tc mb20">图7.6 用户收到发货微信通知</p></td>
+            </tr>
+        </table>               
+        <p >注意：商户也可以把商品网页的链接生成二维码，用户扫一扫打开后即可完成购买支付。</p>
+        <p >交互细节：</p>
+        <p >以下是支付场景的交互细节，请认真阅读，设计商户页面的逻辑：</p>
+        <p >（1）用户打开商户网页选购商品，发起支付，在网页通过JavaScript调用getBrandWCPayRequest接口，发起微信支付请求，用户进入支付流程。</p>
+        <p >（2）用户成功支付点击完成按钮后，商户的前端会收到JavaScript的返回值。商户可直接跳转到支付成功的静态页面进行展示。</p>
+        <p >（3）商户后台收到来自微信开放平台的支付成功回调通知，标志该笔订单支付成功。</p>
+        <p >注：（2）和（3）的触发不保证遵循严格的时序。JS API返回值作为触发商户网页跳转的标志，但商户后台应该只在收到微信后台的支付成功回调通知后，才做真正的支付成功的处理。</p>
+    </div>
+    </div>
+</div><!--[if !IE]>|xGv00|e2a98b2f431761e7318caa23285ab1b0<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

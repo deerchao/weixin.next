@@ -1,4 +1,5 @@
 ﻿using System.IO;
+using System.Threading.Tasks;
 
 namespace DownloadDoc
 {
@@ -6,15 +7,22 @@ namespace DownloadDoc
     {
         static void Main(string[] args)
         {
-            var folder = args.Length == 1
+            var root = args.Length == 1
                 ? args[0]
                 : "../../../../docs";
 
-            var di = new DirectoryInfo(folder);
-            if(!di.Exists)
+            var di = new DirectoryInfo(root);
+            if (!di.Exists)
                 di.Create();
 
-            new DocDownloader(di.FullName).Download().Wait();
+            root = di.FullName;
+
+            var tasks = new[]
+            {
+             //   new MPDocDownloader(Path.Combine(root, "mp")).Download(),
+                new PayDocDownloader(Path.Combine(root, "pay")).Download(),
+            };
+            Task.WaitAll(tasks);
         }
     }
 }

@@ -1,0 +1,35 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">阅读对象</h2>
+</div>
+<div class="content-bd">
+<p >本文阅读对象：商户系统（在线购物平台、人工收银系统、自动化智能收银系统或其他）集成微信支付涉及的技术架构师，研发工程师，测试工程师，系统运维工程师。</p>
+</div>
+<!--[if !IE]>|xGv00|61264d3809a20169d4a7603da8f30945<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

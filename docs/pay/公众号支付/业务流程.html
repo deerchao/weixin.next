@@ -1,0 +1,48 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">业务流程</h2>
+</div>     
+<div class="content-bd">
+    <div class="data-box with-padding">
+      <div class="data-hd">
+        <h2>业务流程时序图</h2>
+      </div>
+      <div class="data-bd">
+        <p class="tc mb10">
+            <img src="./img/chapter7_4_1.png" alt="微信内网页支付时序图" />
+        </p> 
+        <center class="mb20">图7.9 微信内网页支付时序图</center>
+        <p >商户系统和微信支付系统主要交互：</p>
+        <p >1、商户server调用统一下单接口请求订单，api参见公共api【<a  target="_blank"  href="?chapter=9_1" >统一下单API</a>】</p>
+        <p >2、商户server接收支付通知，api参见公共api【<a  target="_blank"  href="?chapter=9_7" >支付结果通知API</a>】</p>
+        <p >3、商户server查询支付结果，api参见公共api【<a  target="_blank"  href="?chapter=9_2" >查询订单API</a>】</p>
+       </div>
+    </div>
+</div><!--[if !IE]>|xGv00|2a99fcd2df5ed8f57a44f4f3a1607056<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

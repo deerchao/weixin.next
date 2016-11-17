@@ -1,0 +1,117 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+  <h2 class="with-border">收货地址共享接口</h2>
+</div>
+<div class="content-bd">
+  <div class="data-box with-padding">
+    <div class="data-hd">
+      <h3>功能简介</h3>
+    </div>
+    <div class="data-bd">
+      <h4>1、简介</h4>
+      <p class="mb20">微信收货地址共享，是指用户在微信浏览器内打开网页，填写过地址后，后续可以免填写支持快速选择，也可增加和编辑。<br />
+      此地址为用户属性，可在各商户的网页中共享使用。支持原生控件填写地址，地址数据会传递到商户。</p>
+      <h4>2、功能支持</h4>
+      <p  class="mb20">地址共享是基于微信JavaScript API 实现，只能在微信内置浏览器中使用，其他浏览器调用无效。同时，需要微信5.0 版本才能支持，建议通过user  agent 来确定用户当前的版本号后再调用地址接口。<br />
+      以iPhone 版本为例，可以通过useragent可获取如下微信版本示例信息：&quot;Mozilla/5.0(iphone;CPU iphone OS 5_1_1 like Mac OS  X)AppleWebKit/534.46(KHTML,like Geocko) Mobile/9B206MicroMessenger/5.0&quot;其中5.0 为用户安装的微信版本号，商户可以判定版本号是否高于或者等于5.0。</p>
+      <h4>3、地址格式</h4>
+      <p>微信地址共享使用的数据字段包括：<br />
+        - 收货人姓名<br />
+        - 地区，省市区三级<br />
+        - 详细地址<br />
+        - 邮编<br />
+        - 联系电话<br />
+      其中，地区对应是国标三级地区码，如“广东省-广州市-天河区”，对应的邮编是是510630。详情参考链接：http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html</p>
+    </div>
+  </div>
+  <div class="data-box with-padding">
+    <div class="data-hd">
+      <h3>接口说明</h3>
+    </div>
+    <div class="data-bd">
+      <b>编辑并获取收货地址</b>
+      <p  class="mb10">编辑并获取用户收货地址需以JS-SDK方式调用，在网页前端调用。JS-SDK调用步骤见说明文档(<a  target="_blank"  href="http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html" >http://mp.weixin.qq.com/wiki/11/74ad127cc054f6b80759c40f77ec03db.html</a>)，需按文档要求完成调用。</p>
+	  <p>特别注意：JS-SDK版本需使用http://res.wx.qq.com/open/js/jweixin-1.1.0.js</p>
+	  <b>代码示例</b>
+	  <p>wx.openAddress({<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;success: function () { <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 用户成功拉出地址    },<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cancel: function () { <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 用户取消拉出地址<br />
+}});<br />
+	  <b>返回说明</b>
+	   </div>
+     <div class="table-wrp with-border">
+      <table  class="table">
+        <tr >
+          <th width="118" valign="top" ><p >返回值 </p></th>
+          <th width="392" valign="top" ><p >说明 </p></th>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >errMsg </p></td>
+          <td width="392" valign="top" ><p >获取编辑收货地址成功返回&#8220;openAddress:ok&#8221;。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >userName </p></td>
+          <td width="392" valign="top" ><p >收货人姓名。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >postalCode </p></td>
+          <td width="392" valign="top" ><p >邮编。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >provinceName </p></td>
+          <td width="392" valign="top" ><p >国标收货地址第一级地址（省）。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >cityName </p></td>
+          <td width="392" valign="top" ><p >国标收货地址第二级地址（市）。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >countryName </p></td>
+          <td width="392" valign="top" ><p >国标收货地址第三级地址（国家）。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >detailInfo </p></td>
+          <td width="392" valign="top" ><p >详细收货地址信息。 </p></td>
+        </tr>
+        <tr >
+          <td width="118" valign="top" ><p >nationalCode </p></td>
+          <td width="392" valign="top" ><p >收货地址国家码。 </p></td>
+        </tr>
+		<tr >
+          <td width="118" valign="top" ><p >telNumber </p></td>
+          <td width="392" valign="top" ><p >收货人手机号码。 </p></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div><!--[if !IE]>|xGv00|f96ff0f3806d0b7a3ac6a1c1beced844<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='7';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

@@ -1,0 +1,48 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">OpenID的获取指引：</h2>
+</div>        
+<div class="content-bd">
+  <b>微信公众平台： </b>
+  <p >在关注者与公众号产生消息交互后，公众号可获得关注者的OpenID（加密后的微信号，每个用户对每个公众号的OpenID是唯一的。对于不同公众号，同一用户的openid不同）。</p>
+  <p>公众号可根据以下接口来获取用户的openid，如需获取用户的昵称、头像、性别、所在城市、语言和关注时间，则需要用户授权。 </p>
+  <p >参考信息：<a target="_blank" href="http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html" >http://mp.weixin.qq.com/wiki/17/c0f37d5704f0b64713d5d2c37b468d75.html</a> </p>
+  <p>开发者如果需要将同一个用户在不同公众号下的openid统一为一个id来记录，可以参考以下接口：</p>
+  <p >参考信息：<a target="_blank" href="http://mp.weixin.qq.com/wiki/14/bb5031008f1494a59c6f71fa0f319c66.html" >http://mp.weixin.qq.com/wiki/14/bb5031008f1494a59c6f71fa0f319c66.html</a> </p>
+  <p >&#160; </p>
+  <b>微信开放平台： </b>
+  <p >移动应用获取用户openid可使用以下接口：</p>
+  <p ><a target="_blank" href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419317851&amp;token=&amp;lang=zh_CN" >https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419317851&amp;token=&amp;lang=zh_CN</a> </p>
+  <h3 >网站应用获取用户openid可使用以下接口： </p>
+  <p ><a target="_blank" href="https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419316505&amp;token=&amp;lang=zh_CN" >https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&amp;t=resource/res_list&amp;verify=1&amp;id=open1419316505&amp;token=&amp;lang=zh_CN</a> </p> 
+  
+  
+</div>
+<!--[if !IE]>|xGv00|a798649e08399d40587b4c0b71b82f40<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

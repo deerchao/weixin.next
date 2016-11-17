@@ -1,0 +1,102 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">验收指引</h2>
+</div>   
+      <div class="content-bd">
+  <div class="data-box with-padding">
+          <div class="data-hd">
+            <h3>验收目的 </h3>
+          </div>
+		  
+		  <p>使用非充值代金券将调整商户的账单格式及API字段，需要制券商户与可用商户逐一完成以下用例，充分了解并适配账单格式与接口的更新后，方可使用非充值代金券产品； 同时非充值代金券优惠将造成可用商户订单实收金额的减少。</p>
+		  <p>注意：</p>
+            <ul>
+              <li>◆ 测试非充值代金券在沙箱环境发起的支付，非真实支付，不会产生实际的银行或零钱余额扣款。验收通过后，无需登录商户平台发起退款。</li>
+              <li>◆ 验收通过后，务必将”sandbox”关键词的url全部更换为正式的api链接，否则会影响商户正式交易。 </li>
+              <li>◆ 刷卡支付，有单个用户当天支付5次或单笔金额500元以上需要输入支付密码的限制，因此，若客户端提示输入支付密码，请输入正确的密码完成支付流程。</li>
+            </ul>
+		  </p>
+  </div>
+		</div>
+		<div class="content-bd">
+		  <div class="data-box with-padding">
+          <div class="data-hd">
+            <h3>验收流程</h3>
+          </div>
+		  <p class="tc mb10"><img width="910" height="" src="./img/chapter15_1_1.png" alt="商户接入验收流程" /></p>
+		  <p>&nbsp;</p>
+		  <p>验收开始后，验收负责人可按照下表步骤操作：</p>
+		  <div class="data-bd">
+            <div class="table-wrp with-border">
+                <table class="table">
+		    <tr>
+		      <th width="45" valign="top" ><p >步骤 </p></th>
+		      <th width="207" valign="top" ><p >准备项 </p></th>
+		      <th width="315" valign="top" ><p >说明 </p></th>
+	        </tr>
+		    <tr>
+		      <td width="45" valign="top" ><p >1 </p></td>
+		      <td width="207" valign="top" ><p >修改代码或配置中所有微信支付api的链接，域名后增加sandbox，对接沙箱环境。 </p></td>
+		      <td width="315" valign="top" ><p >例如：被扫支付现网的api </p>
+		          <p >https://api.mch.weixin.qq.com/pay/micropay </p>
+		        <p >变更为： </p>
+		        <p >https://api.mch.weixin.qq.com/sandbox/pay/micropay </p></td>
+	        </tr>
+		    <tr>
+		      <td width="45" valign="top" ><p >2 </p></td>
+		      <td width="207" valign="top" ><p >严格按照用例的顺序、金额执行用例，执行后，确保用例的检查点完全符合预期。 </p></td>
+		      <td width="315" valign="top" ><p >注意： </p>
+		          <p >用例分为两类：必选和可选（如下图）。必选用例必须通过，否则会导致验收不通过；可选是建议商户要做的，但不验收不会影响验收结果。 </p></td>
+	        </tr>
+		    <tr>
+		      <td width="45" valign="top" ><p >3 </p></td>
+		      <td width="207" valign="top" ><p >全部必选用例测试通过后商户即可使用非充值代金券产品；否则，需要对失败的用例做回归测试，直到测试通过。 </p></td>
+		      <td width="315" valign="top" ><p > </p></td>
+	        </tr>
+		    </table>
+		  </div>
+		  </div>
+		  </div>
+		  </div>
+		  <div class="content-bd">
+		  <div class="data-box with-padding">
+          <div class="data-hd">
+            <h3>沙箱说明</h3>
+          </div>
+		  <p >微信支付沙箱环境，是提供给微信支付商户的开发者，用于模拟支付及回调通知。以验证商户是否理解回调通知、账单格式，以及是否对异常做了正确的处理。 </p>
+          <p >◆ 如何对接沙箱环境？ </p>
+          <ul>
+            <li>1、修改商户自有程序或配置中，微信支付api的链接，如：被扫支付官网的url为：<a href="https://api.mch.weixin.qq.com/pay/micropay" >https://api.mch.weixin.qq.com/pay/micropay</a>增加sandbox路径，变更为https://api.mch.weixin.qq.com/sandbox/pay/micropay，&nbsp;即可接入沙箱验收环境，其它接口类似； </li>
+          </ul>
+          <p >2、在微信支付开发调试站点（站点链接：<a href="http://mch.weixin.qq.com/wiki/doc/api/index.php" >http://mch.weixin.qq.com/wiki/doc/api/index.php</a>），按接口文档填入正确的支付参数，发起微信支付请求，完成支付； </p>
+          <p >3、验收完成后，修改程序或配置中的api链接（重要！），去掉sandbox路径。对接现网环境。</p>
+		  </div>
+		  </div>
+<!--[if !IE]>|xGv00|45b7028d0509b61ecf4855943882faff<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

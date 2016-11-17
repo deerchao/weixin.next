@@ -1,0 +1,610 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">统一下单</h2>
+</div>   
+<div class="content-bd">
+    <div class="data-box with-padding">
+      <div class="data-hd">
+        <h3>应用场景</h3>
+      </div>
+      <div class="data-bd">
+    	<p class="mb20">除被扫支付场景以外，商户系统先调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易回话标识后再按扫码、JSAPI、APP等不同场景生成交易串调起支付。 </p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>接口链接 </h3>
+      </div>
+      <div class="data-bd">
+    	<p  class="mb20">URL地址：https://api.mch.weixin.qq.com/pay/unifiedorder</p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>是否需要证书 </h3>
+      </div>
+      <div class="data-bd">
+    	<p  class="mb20">否 </p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>请求参数 </h3>
+      </div>
+      <div class="data-bd">
+    <div class="table-wrp with-border">
+      <table  class="table">
+      <thead>
+      <tr>
+        <th class="name">字段名</th>
+        <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+       <th class="description">描述</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>公众账号ID</td>
+        <td>appid</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>wxd678efh567hg6787</td>
+        <td>微信分配的公众账号ID（企业号corpid即为此appId） </td>
+      </tr>
+      <tr>
+        <td>商户号</td>
+        <td>mch_id</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>1230000109</td>
+        <td>微信支付分配的商户号</td>
+      </tr>
+      <tr>
+        <td>设备号</td>
+        <td>device_info</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>013467007045764</td>
+        <td>终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB"</td>
+      </tr>
+      <tr>
+        <td>随机字符串</td>
+        <td>nonce_str</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+        <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+      </tr>
+      <tr>
+        <td>签名</td>
+        <td>sign</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+        <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名生成算法</a></td>
+      </tr>
+	  <tr>
+                 <td>签名类型</td>
+                 <td>sign_type</td>
+                 <td>否</td>
+                 <td>String(32)</td>
+                 <td>HMAC-SHA256</td>
+                 <td>签名类型，目前支持HMAC-SHA256和MD5，默认为MD5</td>
+              </tr>
+      <tr>
+        <td>商品描述</td>
+        <td>body</td>
+        <td>是</td>
+        <td>String(128)</td>
+        <td>腾讯充值中心-QQ会员充值</td>
+        <td><p>商品简单描述，该字段须严格按照规范传递，具体请见<a  target="_blank"  href="?chapter=4_2" >参数规定</a></p>
+          </td>
+      </tr>
+      <tr>
+                <td>商品详情</td>
+                <td>detail</td>
+                <td>否</td>
+                <td>String(6000)</td>
+                <td>{<br />
+                  &quot;goods_detail&quot;:[<br />
+                  {<br />
+                  &quot;goods_id&quot;:&quot;iphone6s_16G&quot;,<br />
+                  &quot;wxpay_goods_id&quot;:&quot;1001&quot;,<br />
+                  &quot;goods_name&quot;:&quot;iPhone6s 16G&quot;,<br />
+                  &quot;quantity&quot;:1,<br />
+                  &quot;price&quot;:528800,<br />
+                  &quot;goods_category&quot;:&quot;123456&quot;,<br />
+                  &quot;body&quot;:&quot;苹果手机&quot;<br />
+                  },<br />
+                  {<br />
+                  &quot;goods_id&quot;:&quot;iphone6s_32G&quot;,<br />
+                  &quot;wxpay_goods_id&quot;:&quot;1002&quot;,<br />
+                  &quot;goods_name&quot;:&quot;iPhone6s 32G&quot;,<br />
+                  &quot;quantity&quot;:1,<br />
+                  &quot;price&quot;:608800,<br />
+                  &quot;goods_category&quot;:&quot;123789&quot;,<br />
+                  &quot;body&quot;:&quot;苹果手机&quot;<br />
+                  }<br />
+                  ]<br />
+                }</td>
+                <td><p>商品详细列表，使用Json格式，传输签名前请务必使用CDATA标签将JSON文本串保护起来。</p>
+                  <p>goods_detail []：<br />
+                    └ goods_id String 必填 32 商品的编号<br />
+                    └ wxpay_goods_id String 可选 32 微信支付定义的统一商品编号<br />
+                    └ goods_name String 必填 256 商品名称<br />
+                    └ quantity Int 必填 商品数量<br />
+                    └ price Int 必填 商品单价，单位为分<br />
+                    └ goods_category String 可选 32 商品类目ID<br />
+                └ body String 可选 1000 商品描述信息</p></td>
+              </tr>
+      <tr>
+        <td>附加数据</td>
+        <td>attach</td>
+        <td>否</td>
+        <td>String(127)</td>
+        <td>深圳分店</td>
+        <td>附加数据，在查询API和支付通知中原样返回，该字段主要用于商户携带订单的自定义数据</td>
+      </tr>
+      <tr>
+        <td>商户订单号</td>
+        <td>out_trade_no</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>20150806125346</td>
+        <td>商户系统内部的订单号,32个字符内、可包含字母,&nbsp;其他说明见<a  target="_blank"  href="?chapter=4_2" >商户订单号</a></td>
+      </tr>
+      <tr>
+        <td>货币类型</td>
+        <td>fee_type</td>
+        <td>否</td>
+        <td>String(16)</td>
+        <td>CNY</td>
+        <td>符合ISO&nbsp;4217标准的三位字母代码，默认人民币：CNY，其他值列表详见<a  target="_blank"  href="?chapter=4_2" >货币类型</a></td>
+      </tr>
+      <tr>
+        <td>总金额</td>
+        <td>total_fee</td>
+        <td>是</td>
+        <td>Int</td>
+        <td>888</td>
+        <td>订单总金额，单位为分，详见<a  target="_blank"  href="?chapter=4_2" >支付金额</a></td>
+      </tr>
+      <tr>
+        <td>终端IP</td>
+        <td>spbill_create_ip</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>123.12.12.123</td>
+        <td>APP和网页支付提交用户端ip，Native支付填调用微信支付API的机器IP。</td>
+      </tr>
+      <tr>
+        <td>交易起始时间</td>
+        <td>time_start</td>
+        <td>否</td>
+        <td>String(14)</td>
+        <td>20091225091010</td>
+        <td>订单生成时间，格式为yyyyMMddHHmmss，如2009年12月25日9点10分10秒表示为20091225091010。其他详见<a  target="_blank"  href="?chapter=4_2">时间规则</a></td>
+      </tr>
+      <tr>
+        <td>交易结束时间</td>
+        <td>time_expire</td>
+        <td>否</td>
+        <td>String(14)</td>
+        <td>20091227091010</td>
+        <td><p>订单失效时间，格式为yyyyMMddHHmmss，如2009年12月27日9点10分10秒表示为20091227091010。其他详见<a  target="_blank"  href="?chapter=4_2">时间规则</a></p><b>注意：最短失效时间间隔必须大于5分钟</b></td>
+      </tr>
+      <tr>
+        <td>商品标记</td>
+        <td>goods_tag</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>WXG</td>
+        <td>商品标记，代金券或立减优惠功能的参数，说明详见<a  target="_blank"  href="tools/sp_coupon.php?chapter=12_1" >代金券或立减优惠</a></td>
+      </tr>
+      <tr>
+        <td>通知地址</td>
+        <td>notify_url</td>
+        <td>是</td>
+        <td>String(256)</td>
+        <td>http://www.weixin.qq.com/wxpay/pay.php</td>
+        <td>接收微信支付异步通知回调地址，通知url必须为直接可访问的url，不能携带参数。</td>
+      </tr>
+      <tr>
+        <td>交易类型</td>
+        <td>trade_type</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>JSAPI</td>
+        <td>取值如下：JSAPI，NATIVE，APP，详细说明见<a  target="_blank"  href="?chapter=4_2">参数规定</a></td>
+      </tr>
+      <tr>
+        <td>商品ID</td>
+        <td>product_id</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>12235413214070356458058</td>
+        <td>trade_type=NATIVE，此参数必传。此id为二维码中包含的商品ID，商户自行定义。</td>
+      </tr>
+	  <tr>
+        <td>指定支付方式</td>
+        <td>limit_pay</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>no_credit</td>
+        <td>no_credit--指定不能使用信用卡支付</td>
+      </tr>
+      <tr>
+        <td>用户标识</td>
+        <td>openid</td>
+        <td>否</td>
+        <td>String(128)</td>
+        <td>oUpF8uMuAJO_M2pxb1Q9zNjWeS6o</td>
+		<td>trade_type=JSAPI，此参数必传，用户在商户appid下的唯一标识。openid如何获取，可参考【<a target="_blank"  href="?chapter=4_4">获取openid</a>】。企业号请使用【<a target="_blank"  href="http://qydev.weixin.qq.com/wiki/index.php?title=OAuth%E9%AA%8C%E8%AF%81%E6%8E%A5%E5%8F%A3">企业号OAuth2.0接口</a>】获取企业号内成员userid，再调用【<a target="_blank"  href="http://qydev.weixin.qq.com/wiki/index.php?title=Userid%E4%B8%8Eopenid%E4%BA%92%E6%8D%A2%E6%8E%A5%E5%8F%A3">企业号userid转openid接口</a>】进行转换</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="mb10">举例如下： </p>
+    <div class="guide-msg mb20">
+    <p>&lt;xml&gt;<br />
+      &#160;&nbsp;&#160;&lt;appid&gt;wx2421b1c4370ec43b&lt;/appid&gt;<br />
+      &#160;&nbsp;&#160;&lt;attach&gt;支付测试&lt;/attach&gt;<br />
+      &#160;&nbsp;&#160;&lt;body&gt;JSAPI支付测试&lt;/body&gt;<br />
+      &#160;&nbsp;&#160;&lt;mch_id&gt;10000100&lt;/mch_id&gt;<br />
+				  &#160;&nbsp;&#160;&lt;detail&gt;&lt;![CDATA[{
+"goods_detail":[
+{
+"goods_id":"iphone6s_16G",
+"wxpay_goods_id":"1001",
+"goods_name":"iPhone6s 16G",
+"quantity":1,
+"price":528800,
+"goods_category":"123456",
+"body":"苹果手机"
+},
+{
+"goods_id":"iphone6s_32G",
+"wxpay_goods_id":"1002",
+"goods_name":"iPhone6s 32G",
+"quantity":1,
+"price":608800,
+"goods_category":"123789",
+"body":"苹果手机"
+}
+]
+}]]&gt;&lt;/detail&gt;<br />
+      &#160;&nbsp;&#160;&lt;nonce_str&gt;1add1a30ac87aa2db72f57a2375d8fec&lt;/nonce_str&gt;<br />
+      &#160;&nbsp;&#160;&lt;notify_url&gt;http://wxpay.weixin.qq.com/pub_v2/pay/notify.v2.php&lt;/notify_url&gt;<br />
+      &#160;&nbsp;&#160;&lt;openid&gt;oUpF8uMuAJO_M2pxb1Q9zNjWeS6o&lt;/openid&gt;<br />
+      &#160;&nbsp;&#160;&lt;out_trade_no&gt;1415659990&lt;/out_trade_no&gt;<br />
+      &#160;&nbsp;&#160;&lt;spbill_create_ip&gt;14.23.150.211&lt;/spbill_create_ip&gt;<br />
+      &#160;&nbsp;&#160;&lt;total_fee&gt;1&lt;/total_fee&gt;<br />
+      &#160;&nbsp;&#160;&lt;trade_type&gt;JSAPI&lt;/trade_type&gt;<br />
+      &#160;&nbsp;&#160;&lt;sign&gt;0CB01533B8C1EF103065174F50BCA001&lt;/sign&gt;<br />
+      &lt;/xml&gt; </p>
+      </div>
+    <p>注：参数值用XML转义即可，CDATA标签用于说明数据不被XML解析器解析。 </p>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">    
+    		<h3>返回结果 </h3>
+        </div>
+      	<div class="data-bd">            
+    <div class="table-wrp with-border">
+      <table class="table">
+      <thead>
+      <tr>
+        <th class="name">字段名</th>
+       <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+        <th class="description">描述</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>返回状态码</td>
+        <td>return_code</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>SUCCESS</td>
+        <td><p>SUCCESS/FAIL </p>
+        <p>此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断</p></td>
+      </tr>
+      <tr>
+        <td>返回信息</td>
+        <td>return_msg</td>
+        <td>否</td>
+        <td>String(128)</td>
+        <td>签名失败</td>
+        <td><p>返回信息，如非空，为错误原因 </p>
+            <p>签名失败 </p>
+        <p>参数格式校验错误</p></td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="mb10">以下字段在return_code为SUCCESS的时候有返回 </p>
+    <div class="table-wrp with-border">
+      <table  class="table">
+      <thead>
+      <tr>
+        <th class="name">字段名</th>
+        <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+       <th class="description">描述</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>公众账号ID</td>
+        <td>appid</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>wx8888888888888888</td>
+        <td>调用接口提交的公众账号ID</td>
+      </tr>
+      <tr>
+        <td>商户号</td>
+        <td>mch_id</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>1900000109</td>
+        <td>调用接口提交的商户号</td>
+      </tr>
+      <tr>
+        <td>设备号</td>
+        <td>device_info</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>013467007045764</td>
+        <td>调用接口提交的终端设备号，</td>
+      </tr>
+      <tr>
+        <td>随机字符串</td>
+        <td>nonce_str</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+        <td>微信返回的随机字符串</td>
+      </tr>
+      <tr>
+        <td>签名</td>
+        <td>sign</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+        <td>微信返回的签名，详见<a  target="_blank"  href="?chapter=4_3">签名算法</a></td>
+      </tr>
+      <tr>
+        <td>业务结果</td>
+        <td>result_code</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>SUCCESS</td>
+        <td>SUCCESS/FAIL</td>
+      </tr>
+      <tr>
+        <td>错误代码</td>
+        <td>err_code</td>
+        <td>否</td>
+        <td>String(32)</td>
+        <td>SYSTEMERROR</td>
+        <td>详细参见第6节错误列表</td>
+      </tr>
+      <tr>
+        <td>错误代码描述</td>
+        <td>err_code_des</td>
+        <td>否</td>
+        <td>String(128)</td>
+        <td>系统错误</td>
+        <td>错误返回的信息描述</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="mb10">以下字段在return_code&nbsp;和result_code都为SUCCESS的时候有返回 </p>
+    <div class="table-wrp with-border">
+      <table class="table">
+      <thead>
+      <tr>
+        <th class="name">字段名</th>
+        <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+       <th class="description">描述</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>交易类型</td>
+        <td>trade_type</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>JSAPI</td>
+        <td>调用接口提交的交易类型，取值如下：JSAPI，NATIVE，APP，详细说明见<a  target="_blank"  href="?chapter=4_2">参数规定</a></td>
+      </tr>
+      <tr>
+        <td>预支付交易会话标识</td>
+        <td>prepay_id</td>
+        <td>是</td>
+        <td>String(64)</td>
+        <td>wx201410272009395522657a690389285100</td>
+        <td>微信生成的预支付回话标识，用于后续接口调用中使用，该值有效期为2小时</td>
+      </tr>
+      <tr>
+        <td>二维码链接</td>
+        <td>code_url</td>
+        <td>否</td>
+        <td>String(64)</td>
+        <td>URl：weixin：//wxpay/s/An4baqw</td>
+        <td>trade_type为NATIVE是有返回，可将该参数值生成二维码展示出来进行扫码支付</td>
+      </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="mb10">举例如下：</p>
+    <div class="guide-msg mb10">
+    <p>&lt;xml&gt;<br />
+      &#160;&nbsp;&#160;&lt;return_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/return_code&gt;<br />
+      &#160;&nbsp;&#160;&lt;return_msg&gt;&lt;![CDATA[OK]]&gt;&lt;/return_msg&gt;<br />
+      &#160;&nbsp;&#160;&lt;appid&gt;&lt;![CDATA[wx2421b1c4370ec43b]]&gt;&lt;/appid&gt;<br />
+      &#160;&nbsp;&#160;&lt;mch_id&gt;&lt;![CDATA[10000100]]&gt;&lt;/mch_id&gt;<br />
+      &#160;&nbsp;&#160;&lt;nonce_str&gt;&lt;![CDATA[IITRi8Iabbblz1Jc]]&gt;&lt;/nonce_str&gt;<br />
+      &#160;&nbsp;&#160;&lt;sign&gt;&lt;![CDATA[7921E432F65EB8ED0CE9755F0E86D72F]]&gt;&lt;/sign&gt;<br />
+      &#160;&nbsp;&#160;&lt;result_code&gt;&lt;![CDATA[SUCCESS]]&gt;&lt;/result_code&gt;<br />
+      &#160;&nbsp;&#160;&lt;prepay_id&gt;&lt;![CDATA[wx201411101639507cbf6ffd8b0779950874]]&gt;&lt;/prepay_id&gt;<br />
+      &#160;&nbsp;&#160;&lt;trade_type&gt;&lt;![CDATA[JSAPI]]&gt;&lt;/trade_type&gt;<br />
+      &lt;/xml&gt; </p>
+    </div>
+      </div>
+    </div>
+    <div class="data-box with-padding">
+        <div class="data-hd">      
+    		<h3>错误码 </h3>
+    	</div>
+        <div class="data-bd">      
+            <div class="table-wrp with-border">
+              <table class="table">
+              <thead>
+              <tr>
+                <th width="22%">名称</th>
+                <th width="16%">描述</th>
+                <th>原因</th>
+                <th>解决方案</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>NOAUTH</td>
+                <td>商户无此接口权限</td>
+                <td>商户未开通此接口权限</td>
+                <td>请商户前往申请此接口权限</td>
+              </tr>
+              <tr>
+                <td>NOTENOUGH</td>
+                <td>余额不足</td>
+                <td>用户帐号余额不足</td>
+                <td>用户帐号余额不足，请用户充值或更换支付卡后再支付</td>
+              </tr>
+              <tr >
+                <td>ORDERPAID</td>
+                <td>商户订单已支付</td>
+                <td>商户订单已支付，无需重复操作</td>
+                <td>商户订单已支付，无需更多操作</td>
+              </tr>
+              <tr>
+                <td>ORDERCLOSED</td>
+                <td>订单已关闭</td>
+                <td>当前订单已关闭，无法支付</td>
+                <td>当前订单已关闭，请重新下单</td>
+              </tr>
+              <tr>
+                <td>SYSTEMERROR</td>
+                <td>系统错误</td>
+                <td>系统超时</td>
+                <td>系统异常，请用相同参数重新调用</td>
+              </tr>
+              <tr>
+                <td>APPID_NOT_EXIST</td>
+                <td>APPID不存在</td>
+                <td>参数中缺少APPID</td>
+                <td>请检查APPID是否正确</td>
+              </tr>
+              <tr>
+                <td>MCHID_NOT_EXIST</td>
+                <td>MCHID不存在</td>
+                <td>参数中缺少MCHID</td>
+                <td>请检查MCHID是否正确</td>
+              </tr>
+              <tr>
+                <td>APPID_MCHID_NOT_MATCH</td>
+                <td>appid和mch_id不匹配</td>
+                <td>appid和mch_id不匹配</td>
+                <td>请确认appid和mch_id是否匹配</td>
+              </tr>
+              <tr>
+                <td>LACK_PARAMS</td>
+                <td>缺少参数</td>
+                <td>缺少必要的请求参数</td>
+                <td>请检查参数是否齐全</td>
+              </tr>
+              <tr>
+                <td>OUT_TRADE_NO_USED</td>
+                <td>商户订单号重复</td>
+                <td>同一笔交易不能多次提交</td>
+                <td>请核实商户订单号是否重复提交</td>
+              </tr>
+              <tr>
+                <td>SIGNERROR</td>
+                <td>签名错误</td>
+                <td>参数签名结果不正确</td>
+                <td>请检查签名参数和方法是否都符合签名算法要求</td>
+              </tr>
+              <tr>
+                <td>XML_FORMAT_ERROR</td>
+                <td>XML格式错误</td>
+                <td>XML格式错误</td>
+                <td>请检查XML参数格式是否正确</td>
+              </tr>
+              <tr>
+                <td>REQUIRE_POST_METHOD</td>
+                <td>请使用post方法</td>
+                <td>未使用post传递参数&nbsp;</td>
+                <td>请检查请求参数是否通过post方法提交</td>
+              </tr>
+              <tr>
+                <td>POST_DATA_EMPTY</td>
+                <td>post数据为空</td>
+                <td>post数据不能为空</td>
+                <td>请检查post数据是否为空</td>
+              </tr>
+              <tr>
+                <td>NOT_UTF8</td>
+                <td>编码格式错误</td>
+                <td>未使用指定编码格式</td>
+                <td>请使用UTF-8编码格式</td>
+              </tr>
+              </tbody>
+              </table>
+            </div>
+		</div>
+     </div>
+ </div>
+     
+	  
+<!--[if !IE]>|xGv00|0fa23fd4a1286d22d1b06ad6c9dba9cc<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            

@@ -1,0 +1,148 @@
+﻿<!-- 主区域 [[ -->
+            <div class="content">
+                <!-- 内容 [[ -->
+		            <div class="content-hd">
+    <h2 class="with-border">网页端调起支付API</h2>
+</div> 
+<div class="content-bd">
+    <p>在微信浏览器里面打开H5网页中执行JS调起支付。接口输入输出数据格式为JSON。</p>
+    <p>注意：WeixinJSBridge内置对象在其他浏览器中无效。</p><b>列表中参数名区分大小，大小写错误签名验证会失败。</b>
+    <p>getBrandWCPayRequest参数以及返回值定义见图7.1，返回列表值说明见图7.2。</p>
+    <p class="mb10">表7.1 网页端接口参数列表</p>
+       <div class="table-wrp with-border">
+      <table  class="table">
+        <tr>
+        <th class="name" >名称</th>
+       <th class="var">变量名</th>
+        <th class="require">必填</th>
+        <th class="type">类型</th>
+        <th class="example">示例值</th>
+        <th class="description">描述</th>
+        </tr>
+         <tr>
+      <td>公众号id</td>
+        <td>appId</td>
+        <td>是</td>
+        <td>String(16)</td>
+        <td>wx8888888888888888</td>
+        <td>商户注册具有支付权限的公众号成功后即可获得</td>
+      </tr>
+      <tr>
+        <td>时间戳</td>
+        <td>timeStamp</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>1414561699</td>
+        <td>当前的时间，其他详见<a  target="_blank"  href="?chapter=4_2" >时间戳规则</a></td>
+      </tr>
+      <tr>
+        <td>随机字符串</td>
+        <td>nonceStr</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>5K8264ILTKCH16CQ2502SI8ZNMTM67VS</td>
+        <td>随机字符串，不长于32位。推荐<a  target="_blank"  href="?chapter=4_3" >随机数生成算法</a></td>
+      </tr>
+      <tr>
+        <td>订单详情扩展字符串</td>
+        <td>package</td>
+        <td>是</td>
+        <td>String(128)</td>
+        <td>prepay_id=123456789</td>
+        <td>统一下单接口返回的prepay_id参数值，提交格式如：prepay_id=***</td>
+      </tr>
+      <tr>
+        <td>签名方式</td>
+        <td>signType</td>
+        <td>是</td>
+        <td>String(32)</td>
+        <td>MD5</td>
+        <td>签名算法，暂支持MD5</td>
+      </tr>
+      <tr>
+        <td>签名</td>
+        <td>paySign</td>
+        <td>是</td>
+        <td>String(64)</td>
+        <td>C380BEC2BFD727A4B6845133519F3AD6</td>
+        <td>签名，详见<a  target="_blank"  href="?chapter=4_3" >签名生成算法</a></td>
+      </tr>
+        </table>
+   </div>
+        
+        <p class="mb10">表7.2 网页内支付接口err_msg返回结果值说明</p>
+        <div class="table-wrp with-border">
+      <table  class="table">
+        <tr>
+        <th>返回值</th>
+        <th >描述</th>
+        </tr>
+        <tr>
+        <td>get_brand_wcpay_request：ok</td>
+        <td>支付成功</td>
+        </tr>
+        <tr>
+        <td>get_brand_wcpay_request：cancel</td>
+        <td>支付过程中用户取消</td>
+        </tr>
+        <tr>
+        <td>get_brand_wcpay_request：fail</td>
+        <td>支付失败</td>
+        </tr>
+        </table>
+   </div>
+   <p>注：JS API的返回结果get_brand_wcpay_request：ok仅在用户成功完成支付时返回。由于前端交互复杂，get_brand_wcpay_request：cancel或者get_brand_wcpay_request：fail可以统一处理为用户遇到错误或者主动放弃，不必细化区分。</p>
+    <p class="mb10">示例代码如下：</p>
+    <div class="guide-msg mb10">
+    <p>function&#160;onBridgeReady(){<br />
+      &#160;&nbsp;&#160;WeixinJSBridge.invoke(<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;'getBrandWCPayRequest',&#160;{<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&quot;appId&quot;&#160;：&#160;&quot;wx2421b1c4370ec43b&quot;,&#160;&#160;&nbsp;&#160;&#160;//公众号名称，由商户传入&nbsp;&#160;&nbsp;&#160;&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&quot;timeStamp&quot;：&quot;&nbsp;1395712654&quot;,&#160;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&#160;//时间戳，自1970年以来的秒数&nbsp;&#160;&nbsp;&#160;&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&quot;nonceStr&quot;&#160;：&#160;&quot;e61463f8efa94090b1f366cccfbbb444&quot;,&#160;//随机串&nbsp;&#160;&nbsp;&#160;&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&quot;package&quot;&#160;：&#160;&quot;prepay_id=u802345jgfjsdfgsdg888&quot;,&#160;&#160;&nbsp;&#160;&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&quot;signType&quot;&#160;：&#160;&quot;MD5&quot;,&#160;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&#160;//微信签名方式：&nbsp;&#160;&nbsp;&#160;&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&quot;paySign&quot;&#160;：&#160;&quot;70EA570631E4BB79628FBCA90534C63FF7FADD89&quot;&#160;//微信签名&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;},<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;function(res){&#160;&#160;&nbsp;&#160;&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;if(res.err_msg&#160;==&#160;&quot;get_brand_wcpay_request：ok&quot;&#160;)&#160;{}&#160;&#160;&nbsp;&#160;&#160;//&nbsp;使用以上方式判断前端返回,微信团队郑重提示：res.err_msg将在用户支付成功后返回&nbsp;&#160;&nbsp;&#160;ok，但并不保证它绝对可靠。&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;}<br />
+      &#160;&nbsp;&#160;);&#160;<br />
+      }<br />
+      if&#160;(typeof&#160;WeixinJSBridge&#160;==&#160;&quot;undefined&quot;){<br />
+      &#160;&nbsp;&#160;if(&#160;document.addEventListener&#160;){<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;document.addEventListener('WeixinJSBridgeReady',&#160;onBridgeReady,&#160;false);<br />
+      &#160;&nbsp;&#160;}else&#160;if&#160;(document.attachEvent){<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;document.attachEvent('WeixinJSBridgeReady',&#160;onBridgeReady);&#160;<br />
+      &#160;&nbsp;&#160;&nbsp;&#160;&nbsp;&#160;document.attachEvent('onWeixinJSBridgeReady',&#160;onBridgeReady);<br />
+      &#160;&nbsp;&#160;}<br />
+      }else{<br />
+      &#160;&nbsp;&#160;onBridgeReady();<br />
+    } </p>
+    </div>
+</div><!--[if !IE]>|xGv00|3f31f922319969e6a88a80f9d52fabb7<![endif]-->					<script>
+					$(document).ready(function(){
+						$("dl").bind("click", function(){
+							$("dl").removeClass("open");
+						  	$(this).addClass("open");
+						  	//$(this).children("dt").addClass("on");
+						});
+						var re = /\d{1,2}_\d{1,2}/g;
+						var x,y,z;
+						z ='6';
+						if((x = re.exec(location.search)) !=null){
+							y = (''+x).split("_");
+							dl =$("dl#"+y[0]);
+							dl.addClass("open");
+							if(z == ''){
+								z = y[1]-1;
+							}else{
+								z--;
+							}
+							$(dl.children("dd")[z]).addClass("on");
+						}
+					});
+					</script>
+            	<!-- 内容 ]] -->
+        	</div>
+            
