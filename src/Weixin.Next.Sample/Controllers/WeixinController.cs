@@ -4,8 +4,8 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using Newtonsoft.Json;
-using Weixin.Next.Api;
-using Weixin.Next.Messaging;
+using Weixin.Next.MP.Api;
+using Weixin.Next.MP.Messaging;
 
 namespace Weixin.Next.Sample.Controllers
 {

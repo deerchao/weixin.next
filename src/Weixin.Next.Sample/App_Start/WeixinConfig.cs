@@ -2,8 +2,8 @@
 using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
-using Weixin.Next.Api;
 using Weixin.Next.Json.Net;
+using Weixin.Next.MP.Api;
 using Weixin.Next.Sample.Models;
 
 namespace Weixin.Next.Sample

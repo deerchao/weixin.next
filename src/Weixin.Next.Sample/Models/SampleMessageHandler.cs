@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
-using Weixin.Next.Messaging;
-using Weixin.Next.Messaging.Requests;
-using Weixin.Next.Messaging.Responses;
+using Weixin.Next.MP.Messaging;
+using Weixin.Next.MP.Messaging.Requests;
+using Weixin.Next.MP.Messaging.Responses;
 
 namespace Weixin.Next.Sample.Models
 {

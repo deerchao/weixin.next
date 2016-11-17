@@ -1,5 +1,5 @@
-﻿using Weixin.Next.Messaging;
-using Weixin.Next.Messaging.Caches;
+﻿using Weixin.Next.MP.Messaging;
+using Weixin.Next.MP.Messaging.Caches;
 
 namespace Weixin.Next.Sample.Models
 {

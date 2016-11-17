@@ -1,0 +1,112 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
+using Weixin.Next.Utilities;
+
+namespace Weixin.Next.Pay
+{
+    // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 下载对账单
+    /// </summary>
+    public class DownloadBill
+    {
+        public static async Task<bool> Invoke(Parameters parameters, Requester requester, AsyncOutParameter<Stream> stream, AsyncOutParameter<Result> result)
+        {
+            var response = await requester.GetResponse("https://api.mch.weixin.qq.com/pay/downloadbill", false, parameters).ConfigureAwait(false);
+            var netStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
+            var peekStream = new PeekableStream(netStream, 1);
+            var buffer = new byte[1];
+            peekStream.Peek(buffer, 0, 1);
+            if (buffer[0] != '<')
+            {
+                stream.SetValue(peekStream);
+                return true;
+            }
+
+            using (var reader = new StreamReader(peekStream, Encoding.UTF8))
+            {
+                var responseBody = await reader.ReadToEndAsync().ConfigureAwait(false);
+                result.SetValue(requester.ParseResponse<Result>(responseBody, true));
+                return false;
+            }
+        }
+
+        public class Parameters : RequestData
+        {
+            /// <summary>
+            /// 可选, 终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB"
+            /// </summary>
+            public string device_info { get; set; }
+            /// <summary>
+            /// 下载对账单的日期，格式：20140603
+            /// </summary>
+            public DateTime bill_date { get; set; }
+            /// <summary>
+            /// 账单类型
+            /// </summary>
+            public BillType bill_type { get; set; }
+            /// <summary>
+            /// 压缩账单,非必传参数，固定值：GZIP，返回格式为.gzip的压缩包账单。不传则默认为数据流形式。
+            /// </summary>
+            public TarType? tar_type { get; set; }
+
+            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            {
+                yield return new KeyValuePair<string, string>("device_info", device_info);
+                yield return new KeyValuePair<string, string>("bill_date", bill_date.ToString("yyyyMMdd"));
+                yield return new KeyValuePair<string, string>("bill_type", bill_type.ToString("G"));
+                yield return new KeyValuePair<string, string>("tar_type", tar_type?.ToString("G"));
+            }
+        }
+
+        public class Result : ResponseData
+        {
+        }
+
+        public enum ErrorCode
+        {
+            /// <summary>
+            /// 接口返回错误
+            /// 系统超时
+            /// 请尝试再次查询。
+            /// </summary>
+            SYSTEMERROR,
+            /// <summary>
+            /// 无效transaction_id
+            /// 请求参数未按指引进行填写
+            /// 参数错误，请重新检查
+            /// </summary>
+            INVALID_TRANSACTIONID,
+            /// <summary>
+            /// 参数错误
+            /// 请求参数未按指引进行填写
+            /// 参数错误，请重新检查
+            /// </summary>
+            PARAM_ERROR,
+        }
+
+        public enum BillType
+        {
+            /// <summary>
+            /// 返回当日所有订单信息，默认值 
+            /// </summary>
+            ALL,
+            /// <summary>
+            /// 返回当日成功支付的订单 
+            /// </summary>
+            SUCCESS,
+            /// <summary>
+            /// 返回当日退款订单 
+            /// </summary>
+            REFUND,
+        }
+
+        public enum TarType
+        {
+            GZIP,
+        }
+    }
+}
