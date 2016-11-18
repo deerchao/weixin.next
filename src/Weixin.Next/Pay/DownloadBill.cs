@@ -13,13 +13,22 @@ namespace Weixin.Next.Pay
     /// </summary>
     public class DownloadBill
     {
-        public static async Task<bool> Invoke(Parameters parameters, Requester requester, AsyncOutParameter<Stream> stream, AsyncOutParameter<Result> result)
+        private readonly Requester _requester;
+        private readonly bool _checkSignature;
+
+        public DownloadBill(Requester requester, bool checkSignature)
         {
-            var response = await requester.GetResponse("https://api.mch.weixin.qq.com/pay/downloadbill", false, parameters).ConfigureAwait(false);
+            _requester = requester;
+            _checkSignature = checkSignature;
+        }
+
+        public async Task<bool> Invoke(Parameters parameters, AsyncOutParameter<Stream> stream, AsyncOutParameter<Result> result)
+        {
+            var response = await _requester.GetResponse("https://api.mch.weixin.qq.com/pay/downloadbill", false, parameters).ConfigureAwait(false);
             var netStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
             var peekStream = new PeekableStream(netStream, 1);
             var buffer = new byte[1];
-            peekStream.Peek(buffer, 0, 1);
+            await peekStream.PeekAsync(buffer, 0, 1).ConfigureAwait(false);
             if (buffer[0] != '<')
             {
                 stream.SetValue(peekStream);
@@ -29,7 +38,7 @@ namespace Weixin.Next.Pay
             using (var reader = new StreamReader(peekStream, Encoding.UTF8))
             {
                 var responseBody = await reader.ReadToEndAsync().ConfigureAwait(false);
-                result.SetValue(requester.ParseResponse<Result>(responseBody, true));
+                result.SetValue(_requester.ParseResponse<Result, ErrorCode>(responseBody, _checkSignature));
                 return false;
             }
         }
@@ -62,7 +71,7 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData
+        public class Result : ResponseData<ErrorCode>
         {
         }
 

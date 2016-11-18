@@ -53,16 +53,18 @@ namespace Weixin.Next.Pay
             return sign;
         }
 
-        public async Task<T> SendRequest<T>(string url, bool requiresClientCert, RequestData data, bool checkSignatue)
-            where T : ResponseData, new()
+        public async Task<TResult> SendRequest<TResult, TErrorCode>(string url, bool requiresClientCert, RequestData data, bool checkSignatue)
+            where TResult : ResponseData<TErrorCode>, new()
+            where TErrorCode : struct 
         {
             var response = await GetResponse(url, requiresClientCert, data);
             var responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            return ParseResponse<T>(responseBody, checkSignatue);
+            return ParseResponse<TResult, TErrorCode>(responseBody, checkSignatue);
         }
 
-        public T ParseResponse<T>(string responseBody, bool checkSignatue)
-            where T : ResponseData, new()
+        public TResult ParseResponse<TResult, TErrorCode>(string responseBody, bool checkSignatue)
+            where TResult : ResponseData<TErrorCode>, new()
+            where TErrorCode : struct
         {
             var xml = XElement.Parse(responseBody);
             var values = xml.Elements()
@@ -72,7 +74,7 @@ namespace Weixin.Next.Pay
             if (checkSignatue)
             {
                 var codeIndex = values.FindIndex(x => x.Key == "return_code");
-                if (codeIndex >= 0 && values[codeIndex].Value == ResponseData.return_success)
+                if (codeIndex >= 0 && values[codeIndex].Value == ResponseData<TErrorCode>.return_success)
                 {
                     var signIndex = values.FindIndex(x => x.Key == "sign");
                     if (signIndex < 0 || values[signIndex].Value != ComputeSign(values))
@@ -80,7 +82,7 @@ namespace Weixin.Next.Pay
                 }
             }
 
-            var result = new T();
+            var result = new TResult();
             result.Deserialize(values);
             return result;
         }
@@ -121,7 +123,8 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 返回数据
     /// </summary>
-    public abstract class ResponseData
+    public abstract class ResponseData<TErrorCode>
+        where TErrorCode : struct
     {
         /// <summary>
         /// 通信成功时 return_code 的值: SUCCESS
@@ -153,21 +156,55 @@ namespace Weixin.Next.Pay
         /// </summary>
         public string result_code { get; set; }
 
+        /// <summary>
+        /// 错误代码, 仅在result_code为FAIL的时候有意义
+        /// </summary>
+        public string err_code { get; set; }
+        /// <summary>
+        /// 错误代码描述, 仅在result_code为FAIL的时候有意义
+        /// </summary>
+        public string err_code_des { get; set; }
+
+        public TErrorCode? GetErrorCode()
+        {
+            if (err_code == null)
+                return null;
+
+            return (TErrorCode?)Enum.Parse(typeof(TErrorCode), err_code);
+        }
+
         public void Deserialize(List<KeyValuePair<string, string>> values)
         {
             return_code = GetValue(values, "return_code");
             return_msg = GetValue(values, "return_msg");
-            result_code = GetValue(values, "result_code");
+
 
             if (return_code == return_success)
             {
+                result_code = GetValue(values, "result_code");
+
                 DeserializeFields(values);
+
+                if (result_code == result_success)
+                {
+                    DeserializeSuccessFields(values);
+                }
+                else
+                {
+                    err_code = GetValue(values, "err_code");
+                    err_code_des = GetValue(values, "err_code_des");
+                }
             }
         }
 
         protected virtual void DeserializeFields(List<KeyValuePair<string, string>> values)
         {
         }
+
+        protected virtual void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+        {
+        }
+
 
         protected static string GetValue(List<KeyValuePair<string, string>> values, string key)
         {

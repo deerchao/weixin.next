@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace Weixin.Next.Pay
 {
@@ -8,11 +7,27 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 查询订单
     /// </summary>
-    public class OrderQuery
+    public class OrderQuery : PayApi<OrderQuery.Parameters, OrderQuery.Result, OrderQuery.ErrorCode>
     {
-        public static Task<Result> Invoke(Parameters parameters, Requester requester)
+        public OrderQuery(Requester requester, bool checkSignature, bool generateReport)
+            : base(requester, checkSignature, generateReport)
         {
-            return requester.SendRequest<Result>("https://api.mch.weixin.qq.com/pay/unifiedorder", false, parameters, true);
+        }
+
+        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        {
+            interface_url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
+            requiresCert = false;
+        }
+
+        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        {
+            return parameter.out_trade_no ?? result.out_trade_no;
+        }
+
+        protected override string GetReportDeviceNo(Parameters parameter)
+        {
+            return null;
         }
 
         public class Parameters : RequestData
@@ -33,17 +48,8 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData
+        public class Result : ResponseData<ErrorCode>
         {
-            /// <summary>
-            /// 错误代码, 仅在result_code为FAIL的时候有意义
-            /// </summary>
-            public ErrorCode? err_code { get; set; }
-            /// <summary>
-            /// 错误代码描述, 仅在result_code为FAIL的时候有意义
-            /// </summary>
-            public string err_code_des { get; set; }
-
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义
             /// </summary>
@@ -134,49 +140,44 @@ namespace Weixin.Next.Pay
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
+            }
 
-                if (result_code == result_success)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            {
+                device_info = GetValue(values, "device_info");
+                openid = GetValue(values, "openid");
+                is_subscribe = GetValue(values, "is_subscribe") == "Y";
+                trade_type = (TradeType)Enum.Parse(typeof(TradeType), GetValue(values, "trade_type"));
+                trade_state = (TradeState)Enum.Parse(typeof(TradeState), GetValue(values, "trade_state"));
+                bank_type = Bank.Find(GetValue(values, "bank_type"));
+                total_fee = GetIntValue(values, "total_fee") ?? 0;
+                settlement_total_fee = GetIntValue(values, "settlement_total_fee");
+                fee_type = Currency.Find(GetValue(values, "fee_type"));
+                cash_fee = GetIntValue(values, "cash_fee") ?? 0;
+                cash_fee_type = Currency.Find(GetValue(values, "cash_fee_type"));
+                coupon_fee = GetIntValue(values, "coupon_fee");
+                coupon_count = GetIntValue(values, "coupon_count");
+                transaction_id = GetValue(values, "transaction_id");
+                out_trade_no = GetValue(values, "out_trade_no");
+                attach = GetValue(values, "attach");
+                time_end = DateTime.ParseExact(GetValue(values, "time_end"), "yyyMMddHHmmss", null);
+                trade_state_desc = GetValue(values, "trade_state_desc");
+
+                if (coupon_count > 0)
                 {
-                    device_info = GetValue(values, "device_info");
-                    openid = GetValue(values, "openid");
-                    is_subscribe = GetValue(values, "is_subscribe") == "Y";
-                    trade_type = (TradeType)Enum.Parse(typeof(TradeType), GetValue(values, "trade_type"));
-                    trade_state = (TradeState)Enum.Parse(typeof(TradeState), GetValue(values, "trade_state"));
-                    bank_type = Bank.Find(GetValue(values, "bank_type"));
-                    total_fee = GetIntValue(values, "total_fee") ?? 0;
-                    settlement_total_fee = GetIntValue(values, "settlement_total_fee");
-                    fee_type = Currency.Find(GetValue(values, "fee_type"));
-                    cash_fee = GetIntValue(values, "cash_fee") ?? 0;
-                    cash_fee_type = Currency.Find(GetValue(values, "cash_fee_type"));
-                    coupon_fee = GetIntValue(values, "coupon_fee");
-                    coupon_count = GetIntValue(values, "coupon_count");
-                    transaction_id = GetValue(values, "transaction_id");
-                    out_trade_no = GetValue(values, "out_trade_no");
-                    attach = GetValue(values, "attach");
-                    time_end = DateTime.ParseExact(GetValue(values, "time_end"), "yyyMMddHHmmss", null);
-                    trade_state_desc = GetValue(values, "trade_state_desc");
+                    // ReSharper disable once PossibleInvalidOperationException
+                    coupons = new CouponPayment[coupon_count.Value];
 
-                    if (coupon_count > 0)
+                    for (var n = 0; n < coupon_count.Value; n++)
                     {
-                        // ReSharper disable once PossibleInvalidOperationException
-                        coupons = new CouponPayment[coupon_count.Value];
-
-                        for (var n = 0; n < coupon_count.Value; n++)
+                        var sn = "_$" + n.ToString("D");
+                        coupons[n] = new CouponPayment
                         {
-                            var sn = "_$" + n.ToString("D");
-                            coupons[n] = new CouponPayment
-                            {
-                                coupon_type = (CouponType)Enum.Parse(typeof(CouponType), GetValue(values, "coupon_type" + sn)),
-                                coupon_id = GetValue(values, "coupon_id" + sn),
-                                coupon_fee = GetIntValue(values, "coupon_fee" + sn) ?? 0,
-                            };
-                        }
+                            coupon_type = (CouponType)Enum.Parse(typeof(CouponType), GetValue(values, "coupon_type" + sn)),
+                            coupon_id = GetValue(values, "coupon_id" + sn),
+                            coupon_fee = GetIntValue(values, "coupon_fee" + sn) ?? 0,
+                        };
                     }
-                }
-                else
-                {
-                    err_code = (ErrorCode)Enum.Parse(typeof(ErrorCode), GetValue(values, "err_code"));
-                    err_code_des = GetValue(values, "err_code_des");
                 }
             }
         }

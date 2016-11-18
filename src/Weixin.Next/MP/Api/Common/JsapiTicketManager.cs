@@ -39,7 +39,6 @@ namespace Weixin.Next.MP.Api
         /// 获取 jsapi_ticket
         /// </summary>
         /// <param name="manager"></param>
-        /// <param name="forceRefresh">是否在未到过期时间时强制刷新</param>
         /// <returns></returns>
         public static async Task<string> GetTicket(this IJsapiTicketManager manager)
         {

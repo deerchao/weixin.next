@@ -8,11 +8,27 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 查询退款
     /// </summary>
-    public class RefundQuery
+    public class RefundQuery : PayApi<RefundQuery.Parameters, RefundQuery.Result, RefundQuery.ErrorCode>
     {
-        public static Task<Result> Invoke(Parameters parameters, Requester requester)
+        public RefundQuery(Requester requester, bool checkSignature, bool generateReport)
+            : base(requester, checkSignature, generateReport)
         {
-            return requester.SendRequest<Result>("https://api.mch.weixin.qq.com/pay/refundquery", false, parameters, true);
+        }
+
+        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        {
+            return parameter.out_trade_no;
+        }
+
+        protected override string GetReportDeviceNo(Parameters parameter)
+        {
+            return parameter.device_info;
+        }
+
+        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        {
+            interface_url = "https://api.mch.weixin.qq.com/pay/refundquery";
+            requiresCert = false;
         }
 
         public class Parameters : RequestData
@@ -47,17 +63,8 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData
+        public class Result : ResponseData<ErrorCode>
         {
-            /// <summary>
-            /// 错误代码, 仅在result_code为FAIL的时候有意义
-            /// </summary>
-            public ErrorCode? err_code { get; set; }
-            /// <summary>
-            /// 错误代码描述, 仅在result_code为FAIL的时候有意义
-            /// </summary>
-            public string err_code_des { get; set; }
-
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义
             /// </summary>
@@ -106,64 +113,59 @@ namespace Weixin.Next.Pay
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
+            }
 
-                if (result_code == result_success)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            {
+                device_info = GetValue(values, "device_info");
+                total_fee = GetIntValue(values, "total_fee") ?? 0;
+                settlement_total_fee = GetIntValue(values, "settlement_total_fee");
+                fee_type = Currency.Find(GetValue(values, "fee_type"));
+                cash_fee = GetIntValue(values, "cash_fee") ?? 0;
+                transaction_id = GetValue(values, "transaction_id");
+                out_trade_no = GetValue(values, "out_trade_no");
+                refund_count = GetIntValue(values, "refund_count");
+
+                if (refund_count > 0)
                 {
-                    device_info = GetValue(values, "device_info");
-                    total_fee = GetIntValue(values, "total_fee") ?? 0;
-                    settlement_total_fee = GetIntValue(values, "settlement_total_fee");
-                    fee_type = Currency.Find(GetValue(values, "fee_type"));
-                    cash_fee = GetIntValue(values, "cash_fee") ?? 0;
-                    transaction_id = GetValue(values, "transaction_id");
-                    out_trade_no = GetValue(values, "out_trade_no");
-                    refund_count = GetIntValue(values, "refund_count");
+                    // ReSharper disable once PossibleInvalidOperationException
+                    refunds = new Refund[refund_count.Value];
 
-                    if (refund_count > 0)
+                    for (var n = 0; n < refund_count.Value; n++)
                     {
-                        // ReSharper disable once PossibleInvalidOperationException
-                        refunds = new Refund[refund_count.Value];
-
-                        for (var n = 0; n < refund_count.Value; n++)
+                        var sn = "_$" + n.ToString("D");
+                        refunds[n] = new Refund
                         {
-                            var sn = "_$" + n.ToString("D");
-                            refunds[n] = new Refund
-                            {
-                                out_refund_no = GetValue(values, "out_refund_no" + sn),
-                                refund_id = GetValue(values, "refund_id" + sn),
-                                refund_channel = (RefundChannel)Enum.Parse(typeof(RefundChannel), GetValue(values, "refund_channel" + sn)),
-                                refund_fee = GetIntValue(values, "refund_fee" + sn) ?? 0,
-                                settlement_refund_fee = GetIntValue(values, "settlement_refund_fee" + sn) ?? 0,
-                                refund_account = (RefundSource)Enum.Parse(typeof(RefundSource), GetValue(values, "refund_account" + sn)),
-                                coupon_type = (CouponType)Enum.Parse(typeof(CouponType), GetValue(values, "coupon_type" + sn)),
-                                coupon_refund_fee = GetIntValue(values, "coupon_refund_fee" + sn) ?? 0,
-                                coupon_refund_count = GetIntValue(values, "coupon_refund_count" + sn) ?? 0,
-                                refund_status = (RefundStatus)Enum.Parse(typeof(RefundStatus), GetValue(values, "refund_status" + sn)),
-                                refund_recv_accout = GetValue(values, "refund_recv_accout" + sn),
-                            };
+                            out_refund_no = GetValue(values, "out_refund_no" + sn),
+                            refund_id = GetValue(values, "refund_id" + sn),
+                            refund_channel = (RefundChannel)Enum.Parse(typeof(RefundChannel), GetValue(values, "refund_channel" + sn)),
+                            refund_fee = GetIntValue(values, "refund_fee" + sn) ?? 0,
+                            settlement_refund_fee = GetIntValue(values, "settlement_refund_fee" + sn) ?? 0,
+                            refund_account = (RefundSource)Enum.Parse(typeof(RefundSource), GetValue(values, "refund_account" + sn)),
+                            coupon_type = (CouponType)Enum.Parse(typeof(CouponType), GetValue(values, "coupon_type" + sn)),
+                            coupon_refund_fee = GetIntValue(values, "coupon_refund_fee" + sn) ?? 0,
+                            coupon_refund_count = GetIntValue(values, "coupon_refund_count" + sn) ?? 0,
+                            refund_status = (RefundStatus)Enum.Parse(typeof(RefundStatus), GetValue(values, "refund_status" + sn)),
+                            refund_recv_accout = GetValue(values, "refund_recv_accout" + sn),
+                        };
 
-                            if (refunds[n].coupon_refund_count > 0)
-                            {
-                                refunds[n].coupons = new RefundCoupon[refunds[n].coupon_refund_count];
+                        if (refunds[n].coupon_refund_count > 0)
+                        {
+                            refunds[n].coupons = new RefundCoupon[refunds[n].coupon_refund_count];
 
-                                for (var m = 0; m < refunds[n].coupon_refund_count; m++)
+                            for (var m = 0; m < refunds[n].coupon_refund_count; m++)
+                            {
+                                var snm = sn + "_" + m.ToString("D");
+
+                                refunds[n].coupons[m] = new RefundCoupon
                                 {
-                                    var snm = sn + "_" + m.ToString("D");
-
-                                    refunds[n].coupons[m] = new RefundCoupon
-                                    {
-                                        coupon_refund_batch_id = GetValue(values, "coupon_refund_batch_id" + snm),
-                                        coupon_refund_id = GetValue(values, "coupon_refund_id" + snm),
-                                        coupon_refund_fee = GetIntValue(values, "coupon_refund_fee" + snm) ?? 0,
-                                    };
-                                }
+                                    coupon_refund_batch_id = GetValue(values, "coupon_refund_batch_id" + snm),
+                                    coupon_refund_id = GetValue(values, "coupon_refund_id" + snm),
+                                    coupon_refund_fee = GetIntValue(values, "coupon_refund_fee" + snm) ?? 0,
+                                };
                             }
                         }
                     }
-                }
-                else
-                {
-                    err_code = (ErrorCode)Enum.Parse(typeof(ErrorCode), GetValue(values, "err_code"));
-                    err_code_des = GetValue(values, "err_code_des");
                 }
             }
         }

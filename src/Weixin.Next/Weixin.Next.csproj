@@ -69,6 +69,8 @@
     <Compile Include="MP\Api\Ticket.cs" />
     <Compile Include="MP\Api\Token.cs" />
     <Compile Include="MP\Api\User.cs" />
+    <Compile Include="Pay\PayApi.cs" />
+    <Compile Include="Pay\Payment.cs" />
     <Compile Include="Utilities\AsyncOutParameter.cs" />
     <Compile Include="MP\Messaging\Crypt\Cryptography.cs" />
     <Compile Include="MP\Messaging\Caches\IExecutionDictionary.cs" />
@@ -96,12 +98,14 @@
     <Compile Include="Pay\Refund.cs" />
     <Compile Include="Pay\Report.cs" />
     <Compile Include="Pay\UnifiedOrder.cs" />
-    <Compile Include="Pay\PeekableStream.cs" />
+    <Compile Include="Utilities\PeekableStream.cs" />
     <Compile Include="Pay\Requester.cs" />
     <Compile Include="Pay\Currency.cs" />
     <Compile Include="Pay\TradeType.cs" />
     <Compile Include="Pay\ResponseSignatureException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\ServerHelper.cs" />
+    <Compile Include="Utilities\TaskExtensions.cs" />
     <Compile Include="Utilities\TimeHelper.cs" />
   </ItemGroup>
   <ItemGroup />

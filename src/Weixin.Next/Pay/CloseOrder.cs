@@ -1,17 +1,32 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Weixin.Next.Pay
 {
+    // ReSharper disable InconsistentNaming
     /// <summary>
     /// 关闭订单
     /// </summary>
-    public class CloseOrder
+    public class CloseOrder : PayApi<CloseOrder.Parameters, CloseOrder.Result, CloseOrder.ErrorCode>
     {
-        public static Task<Result> Invoke(Parameters parameters, Requester requester)
+        public CloseOrder(Requester requester, bool checkSignature, bool generateReport)
+            : base(requester, checkSignature, generateReport)
         {
-            return requester.SendRequest<Result>("https://api.mch.weixin.qq.com/pay/closeorder", false, parameters, true);
+        }
+
+        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        {
+            return parameter.out_trade_no;
+        }
+
+        protected override string GetReportDeviceNo(Parameters parameter)
+        {
+            return null;
+        }
+
+        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        {
+            interface_url = "https://api.mch.weixin.qq.com/pay/closeorder";
+            requiresCert = false;
         }
 
         public class Parameters : RequestData
@@ -27,17 +42,8 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData
+        public class Result : ResponseData<ErrorCode>
         {
-            /// <summary>
-            /// 错误代码, 仅在result_code为FAIL的时候有意义
-            /// </summary>
-            public ErrorCode? err_code { get; set; }
-            /// <summary>
-            /// 错误代码描述, 仅在result_code为FAIL的时候有意义
-            /// </summary>
-            public string err_code_des { get; set; }
-
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义
             /// </summary>
@@ -57,16 +63,11 @@ namespace Weixin.Next.Pay
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
+            }
 
-                if (result_code == result_success)
-                {
-                    result_msg = GetValue(values, "result_msg");
-                }
-                else
-                {
-                    err_code = (ErrorCode)Enum.Parse(typeof(ErrorCode), GetValue(values, "err_code"));
-                    err_code_des = GetValue(values, "err_code_des");
-                }
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            {
+                result_msg = GetValue(values, "result_msg");
             }
         }
 

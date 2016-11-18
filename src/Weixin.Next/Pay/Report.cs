@@ -4,14 +4,22 @@ using System.Threading.Tasks;
 
 namespace Weixin.Next.Pay
 {
+    // ReSharper disable InconsistentNaming
     /// <summary>
     /// 交易保障
     /// </summary>
     public class Report
     {
-        public static Task<Result> Invoke(Parameters parameters, Requester requester)
+        private readonly Requester _requester;
+
+        public Report(Requester requester)
         {
-            return requester.SendRequest<Result>("https://api.mch.weixin.qq.com/payitil/report", false, parameters, true);
+            _requester = requester;
+        }
+
+        public Task<Result> Invoke(Parameters parameters)
+        {
+            return _requester.SendRequest<Result, ErrorCode>("https://api.mch.weixin.qq.com/payitil/report", false, parameters, false);
         }
 
         public class Parameters : RequestData
@@ -77,8 +85,13 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData
+        public class Result : ResponseData<ErrorCode>
         {
+        }
+
+        public enum ErrorCode
+        {
+            
         }
     }
 }

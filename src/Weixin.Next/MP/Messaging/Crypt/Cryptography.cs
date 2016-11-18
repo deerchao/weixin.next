@@ -23,13 +23,14 @@ namespace Weixin.Next.MP.Messaging.Crypt
                 outval = (outval << 8) + ((inval >> (i * 8)) & 255);
             return outval;
         }
+
         /// <summary>
         /// 解密方法
         /// </summary>
         /// <param name="Input">密文</param>
         /// <param name="EncodingAESKey"></param>
+        /// <param name="appid"></param>
         /// <returns></returns>
-        /// 
         public static string AES_decrypt(String Input, string EncodingAESKey, ref string appid)
         {
             byte[] Key;
