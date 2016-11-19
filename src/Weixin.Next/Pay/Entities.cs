@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Weixin.Next.Pay
 {
     // ReSharper disable InconsistentNaming
+    #region Bank Card
     /// <summary>
     /// 银行卡类型
     /// </summary>
@@ -221,5 +225,157 @@ namespace Weixin.Next.Pay
 
             return new BankCard(Bank.Find(bankId), type);
         }
+    }
+    #endregion
+
+    #region Currency
+
+    /// <summary>
+    /// ISO 4217 货币 https://en.wikipedia.org/wiki/ISO_4217
+    /// </summary>
+    public class Currency
+    {
+        private static readonly Currency _cny = new Currency("CNY", 156, 2, "人民币");
+
+        private readonly string _code;
+        private readonly int _num;
+        private readonly int _e;
+        private readonly string _name;
+
+        /// <summary>
+        /// 创建一个 Currency 对象
+        /// </summary>
+        /// <param name="code">ISO 4217 货币代码</param>
+        /// <param name="num">ISO 4217 货币编号</param>
+        /// <param name="e">小数点后位数</param>
+        /// <param name="name">名称</param>
+        public Currency(string code, int num, int e, string name)
+        {
+            _code = code;
+            _num = num;
+            _e = e;
+            _name = name;
+        }
+
+        /// <summary>
+        /// 货币代码, 例: CNY
+        /// </summary>
+        public string Code
+        {
+            get { return _code; }
+        }
+
+        /// <summary>
+        /// 货币编号, 例: 156
+        /// </summary>
+        public int Num
+        {
+            get { return _num; }
+        }
+
+        /// <summary>
+        /// 小数点后位数, 例: 2
+        /// </summary>
+        public int E
+        {
+            get { return _e; }
+        }
+
+        /// <summary>
+        /// 货币名称, 例: 人民币
+        /// </summary>
+        public string Name
+        {
+            get { return _name; }
+        }
+
+        public override string ToString()
+        {
+            return _code;
+        }
+
+        // ReSharper disable once InconsistentNaming
+        /// <summary>
+        /// 人民币
+        /// </summary>
+        public static Currency CNY { get { return _cny; } }
+
+        public static Currency Find(string code)
+        {
+            //目前只支持人民币
+            return code == "CNY"
+                ? CNY
+                : null;
+        }
+    }
+
+    #endregion
+
+    // ReSharper disable InconsistentNaming
+    public enum TradeType
+    {
+        /// <summary>
+        /// 公众号支付: 用户在微信中打开商户的H5页面，商户在H5页面通过调用微信支付提供的JSAPI接口调起微信支付模块完成支付
+        /// </summary>
+        JSAPI,
+        /// <summary>
+        /// 原生扫码支付: 商户系统按微信支付协议生成支付二维码，用户再用微信“扫一扫”完成支付的模式。该模式适用于PC网站支付、实体店单品或订单支付、媒体广告支付等场景。 
+        /// </summary>
+        NATIVE,
+        /// <summary>
+        /// app支付: 又称移动端支付，是商户通过在移动端应用APP中集成开放SDK调起微信支付模块完成支付的模式。
+        /// </summary>
+        APP,
+        /// <summary>
+        /// 刷卡支付(刷卡支付有单独的支付接口，不调用统一下单接口): 用户展示微信钱包内的“刷卡条码/二维码”给商户系统扫描后直接完成支付的模式。主要应用线下面对面收银的场景。
+        /// </summary>
+        MICROPAY
+    }
+
+    public enum PayLimitation
+    {
+        /// <summary>
+        /// 指定不能使用信用卡支付
+        /// </summary>
+        no_credit,
+    }
+
+    /// <summary>
+    /// 代金券类型
+    /// </summary>
+    public enum CouponType
+    {
+        /// <summary>
+        /// 充值代金券 
+        /// </summary>
+        CASH,
+        /// <summary>
+        /// 非充值代金券 
+        /// </summary>
+        NO_CASH,
+    }
+    // ReSharper disable InconsistentNaming
+    public enum RefundChannel
+    {
+        /// <summary>
+        /// 原路退款 
+        /// </summary>
+        ORIGINAL,
+        /// <summary>
+        /// 退回到余额
+        /// </summary>
+        BALANCE,
+    }
+
+    public enum RefundSource
+    {
+        /// <summary>
+        /// 未结算资金退款（默认使用未结算资金退款）
+        /// </summary>
+        REFUND_SOURCE_UNSETTLED_FUNDS,
+        /// <summary>
+        /// 可用余额退款
+        /// </summary>
+        REFUND_SOURCE_RECHARGE_FUNDS
     }
 }

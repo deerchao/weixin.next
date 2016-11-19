@@ -22,9 +22,9 @@ namespace Weixin.Next.Pay
             _checkSignature = checkSignature;
         }
 
-        public async Task<bool> Invoke(Parameters parameters, AsyncOutParameter<Stream> stream, AsyncOutParameter<Result> result)
+        public async Task<bool> Invoke(Outcoming outcoming, AsyncOutParameter<Stream> stream, AsyncOutParameter<Incoming> incoming)
         {
-            var response = await _requester.GetResponse("https://api.mch.weixin.qq.com/pay/downloadbill", false, parameters).ConfigureAwait(false);
+            var response = await _requester.GetResponse("https://api.mch.weixin.qq.com/pay/downloadbill", false, outcoming).ConfigureAwait(false);
             var netStream = await response.Content.ReadAsStreamAsync().ConfigureAwait(false);
             var peekStream = new PeekableStream(netStream, 1);
             var buffer = new byte[1];
@@ -38,12 +38,12 @@ namespace Weixin.Next.Pay
             using (var reader = new StreamReader(peekStream, Encoding.UTF8))
             {
                 var responseBody = await reader.ReadToEndAsync().ConfigureAwait(false);
-                result.SetValue(_requester.ParseResponse<Result, ErrorCode>(responseBody, _checkSignature));
+                incoming.SetValue(_requester.ParseResponse<Incoming, ErrorCode>(responseBody, _checkSignature));
                 return false;
             }
         }
 
-        public class Parameters : RequestData
+        public class Outcoming : OutcomingData
         {
             /// <summary>
             /// 可选, 终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB"
@@ -62,7 +62,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public TarType? tar_type { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields()
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("bill_date", bill_date.ToString("yyyyMMdd"));
@@ -71,7 +71,7 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData<ErrorCode>
+        public class Incoming : IncomingData<ErrorCode>
         {
         }
 

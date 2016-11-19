@@ -8,30 +8,30 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 查询退款
     /// </summary>
-    public class RefundQuery : PayApi<RefundQuery.Parameters, RefundQuery.Result, RefundQuery.ErrorCode>
+    public class RefundQuery : PayApi<RefundQuery.Outcoming, RefundQuery.Incoming, RefundQuery.ErrorCode>
     {
         public RefundQuery(Requester requester, bool checkSignature, bool generateReport)
             : base(requester, checkSignature, generateReport)
         {
         }
 
-        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        protected override string GetReportOutTradeNo(Outcoming outcoming, Incoming incoming)
         {
-            return parameter.out_trade_no;
+            return outcoming.out_trade_no;
         }
 
-        protected override string GetReportDeviceNo(Parameters parameter)
+        protected override string GetReportDeviceNo(Outcoming outcoming)
         {
-            return parameter.device_info;
+            return outcoming.device_info;
         }
 
-        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        protected override void GetApiUrl(Outcoming outcoming, out string interface_url, out bool requiresCert)
         {
             interface_url = "https://api.mch.weixin.qq.com/pay/refundquery";
             requiresCert = false;
         }
 
-        public class Parameters : RequestData
+        public class Outcoming : OutcomingData
         {
             /// <summary>
             /// 可选, 商户自定义的终端设备号，如门店编号、设备的ID等
@@ -54,7 +54,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string refund_id { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields()
             {
                 yield return new KeyValuePair<string, string>("transaction_id", transaction_id);
                 yield return new KeyValuePair<string, string>("out_trade_no", out_trade_no);
@@ -63,7 +63,7 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData<ErrorCode>
+        public class Incoming : IncomingData<ErrorCode>
         {
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义

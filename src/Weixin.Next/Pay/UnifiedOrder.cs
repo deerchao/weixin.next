@@ -9,30 +9,30 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 统一下单
     /// </summary>
-    public class UnifiedOrder : PayApi<UnifiedOrder.Parameters, UnifiedOrder.Result, UnifiedOrder.ErrorCode>
+    public class UnifiedOrder : PayApi<UnifiedOrder.Outcoming, UnifiedOrder.Incoming, UnifiedOrder.ErrorCode>
     {
         public UnifiedOrder(Requester requester, bool checkSignature, bool generateReport)
             : base(requester, checkSignature, generateReport)
         {
         }
 
-        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        protected override string GetReportOutTradeNo(Outcoming outcoming, Incoming incoming)
         {
-            return parameter.out_trade_no;
+            return outcoming.out_trade_no;
         }
 
-        protected override string GetReportDeviceNo(Parameters parameter)
+        protected override string GetReportDeviceNo(Outcoming outcoming)
         {
-            return parameter.device_info;
+            return outcoming.device_info;
         }
 
-        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        protected override void GetApiUrl(Outcoming outcoming, out string interface_url, out bool requiresCert)
         {
             interface_url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
             requiresCert = false;
         }
 
-        public class Parameters : RequestData
+        public class Outcoming : OutcomingData
         {
             /// <summary>
             /// 可选, 终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB"
@@ -104,7 +104,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public IJsonParser JsonParser { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields()
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("body", body);
@@ -125,7 +125,7 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData<ErrorCode>
+        public class Incoming : IncomingData<ErrorCode>
         {
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义

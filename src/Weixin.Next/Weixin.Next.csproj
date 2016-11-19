@@ -69,6 +69,8 @@
     <Compile Include="MP\Api\Ticket.cs" />
     <Compile Include="MP\Api\Token.cs" />
     <Compile Include="MP\Api\User.cs" />
+    <Compile Include="Pay\Entities.cs" />
+    <Compile Include="Pay\Notify.cs" />
     <Compile Include="Pay\PayApi.cs" />
     <Compile Include="Pay\Payment.cs" />
     <Compile Include="Utilities\AsyncOutParameter.cs" />
@@ -90,7 +92,6 @@
     <Compile Include="MP\Messaging\Responses\ResponseMessage.cs" />
     <Compile Include="MP\Messaging\Crypt\WXBizMsgCrypt.cs" />
     <Compile Include="MP\Messaging\Signature.cs" />
-    <Compile Include="Pay\BankCard.cs" />
     <Compile Include="Pay\DownloadBill.cs" />
     <Compile Include="Pay\RefundQuery.cs" />
     <Compile Include="Pay\CloseOrder.cs" />
@@ -100,9 +101,7 @@
     <Compile Include="Pay\UnifiedOrder.cs" />
     <Compile Include="Utilities\PeekableStream.cs" />
     <Compile Include="Pay\Requester.cs" />
-    <Compile Include="Pay\Currency.cs" />
-    <Compile Include="Pay\TradeType.cs" />
-    <Compile Include="Pay\ResponseSignatureException.cs" />
+    <Compile Include="Pay\IncomingSignatureException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\ServerHelper.cs" />
     <Compile Include="Utilities\TaskExtensions.cs" />

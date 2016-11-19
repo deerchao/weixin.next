@@ -11,6 +11,9 @@ using System.Xml.Linq;
 namespace Weixin.Next.Pay
 {
     // ReSharper disable InconsistentNaming
+    /// <summary>
+    /// 负责序列化, 签名, 验证等通信底层工作
+    /// </summary>
     public class Requester
     {
         private static readonly Random _random = new Random();
@@ -27,10 +30,10 @@ namespace Weixin.Next.Pay
             _cert = cert;
         }
 
-        private string BuildRequestBody(RequestData data)
+        private string BuildRequestBody(OutcomingData data)
         {
             var nonce = _random.Next().ToString("D");
-            var items = data.GetParameters().Concat(new[]
+            var items = data.GetFields().Concat(new[]
                 {
                     new KeyValuePair<string, string>("appid", _appid),
                     new KeyValuePair<string, string>("mch_id", _mch_id),
@@ -53,17 +56,17 @@ namespace Weixin.Next.Pay
             return sign;
         }
 
-        public async Task<TResult> SendRequest<TResult, TErrorCode>(string url, bool requiresClientCert, RequestData data, bool checkSignatue)
-            where TResult : ResponseData<TErrorCode>, new()
-            where TErrorCode : struct 
+        public async Task<TIncoming> SendRequest<TIncoming, TErrorCode>(string url, bool requiresClientCert, OutcomingData data, bool checkSignatue)
+            where TIncoming : IncomingData<TErrorCode>, new()
+            where TErrorCode : struct
         {
             var response = await GetResponse(url, requiresClientCert, data);
             var responseBody = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-            return ParseResponse<TResult, TErrorCode>(responseBody, checkSignatue);
+            return ParseResponse<TIncoming, TErrorCode>(responseBody, checkSignatue);
         }
 
-        public TResult ParseResponse<TResult, TErrorCode>(string responseBody, bool checkSignatue)
-            where TResult : ResponseData<TErrorCode>, new()
+        public TIncoming ParseResponse<TIncoming, TErrorCode>(string responseBody, bool checkSignatue)
+            where TIncoming : IncomingData<TErrorCode>, new()
             where TErrorCode : struct
         {
             var xml = XElement.Parse(responseBody);
@@ -74,20 +77,20 @@ namespace Weixin.Next.Pay
             if (checkSignatue)
             {
                 var codeIndex = values.FindIndex(x => x.Key == "return_code");
-                if (codeIndex >= 0 && values[codeIndex].Value == ResponseData<TErrorCode>.return_success)
+                if (codeIndex >= 0 && values[codeIndex].Value == IncomingData<TErrorCode>.return_success)
                 {
                     var signIndex = values.FindIndex(x => x.Key == "sign");
                     if (signIndex < 0 || values[signIndex].Value != ComputeSign(values))
-                        throw new ResponseSignatureException();
+                        throw new IncomingSignatureException();
                 }
             }
 
-            var result = new TResult();
-            result.Deserialize(values);
-            return result;
+            var incoming = new TIncoming();
+            incoming.Deserialize(values);
+            return incoming;
         }
 
-        public async Task<HttpResponseMessage> GetResponse(string url, bool requiresClientCert, RequestData data)
+        public async Task<HttpResponseMessage> GetResponse(string url, bool requiresClientCert, OutcomingData data)
         {
             var requestBody = BuildRequestBody(data);
             var request = new HttpRequestMessage(HttpMethod.Post, url) { Content = new StringContent(requestBody, Encoding.UTF8) };
@@ -109,117 +112,6 @@ namespace Weixin.Next.Pay
         protected virtual HttpClient CreateHttpClient(HttpMessageHandler handler)
         {
             return new HttpClient(handler);
-        }
-    }
-
-    /// <summary>
-    /// 接口参数, 不包含通用的参数: appid, mch_id, nonce_str, sign
-    /// </summary>
-    public abstract class RequestData
-    {
-        public abstract IEnumerable<KeyValuePair<string, string>> GetParameters();
-    }
-
-    /// <summary>
-    /// 返回数据
-    /// </summary>
-    public abstract class ResponseData<TErrorCode>
-        where TErrorCode : struct
-    {
-        /// <summary>
-        /// 通信成功时 return_code 的值: SUCCESS
-        /// </summary>
-        public const string return_success = "SUCCESS";
-        /// <summary>
-        /// 通信失败时 return_code 的值: SUCCESS
-        /// </summary>
-        public const string return_fail = "FAIL";
-        /// <summary>
-        /// 调用成功时 return_code 的值: SUCCESS
-        /// </summary>
-        public const string result_success = "SUCCESS";
-        /// <summary>
-        /// 调用失败时 return_code 的值: SUCCESS
-        /// </summary>
-        public const string result_fail = "FAIL";
-
-        /// <summary>
-        /// 返回状态码, SUCCESS/FAIL 此字段是通信标识，非交易标识，交易是否成功需要查看result_code来判断
-        /// </summary>
-        public string return_code { get; set; }
-        /// <summary>
-        /// 返回信息 返回信息，如非空，为错误原因 
-        /// </summary>
-        public string return_msg { get; set; }
-        /// <summary>
-        /// 业务结果 SUCCESS/FAIL
-        /// </summary>
-        public string result_code { get; set; }
-
-        /// <summary>
-        /// 错误代码, 仅在result_code为FAIL的时候有意义
-        /// </summary>
-        public string err_code { get; set; }
-        /// <summary>
-        /// 错误代码描述, 仅在result_code为FAIL的时候有意义
-        /// </summary>
-        public string err_code_des { get; set; }
-
-        public TErrorCode? GetErrorCode()
-        {
-            if (err_code == null)
-                return null;
-
-            return (TErrorCode?)Enum.Parse(typeof(TErrorCode), err_code);
-        }
-
-        public void Deserialize(List<KeyValuePair<string, string>> values)
-        {
-            return_code = GetValue(values, "return_code");
-            return_msg = GetValue(values, "return_msg");
-
-
-            if (return_code == return_success)
-            {
-                result_code = GetValue(values, "result_code");
-
-                DeserializeFields(values);
-
-                if (result_code == result_success)
-                {
-                    DeserializeSuccessFields(values);
-                }
-                else
-                {
-                    err_code = GetValue(values, "err_code");
-                    err_code_des = GetValue(values, "err_code_des");
-                }
-            }
-        }
-
-        protected virtual void DeserializeFields(List<KeyValuePair<string, string>> values)
-        {
-        }
-
-        protected virtual void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
-        {
-        }
-
-
-        protected static string GetValue(List<KeyValuePair<string, string>> values, string key)
-        {
-            var index = values.FindIndex(x => x.Key == key);
-            return index < 0
-                ? null
-                : values[index].Value;
-        }
-
-        protected static int? GetIntValue(List<KeyValuePair<string, string>> values, string key)
-        {
-            var v = GetValue(values, key);
-            return v == null
-                ? (int?)null
-                : int.Parse(v);
         }
     }
 }

@@ -7,30 +7,30 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 查询订单
     /// </summary>
-    public class OrderQuery : PayApi<OrderQuery.Parameters, OrderQuery.Result, OrderQuery.ErrorCode>
+    public class OrderQuery : PayApi<OrderQuery.Outcoming, OrderQuery.Incoming, OrderQuery.ErrorCode>
     {
         public OrderQuery(Requester requester, bool checkSignature, bool generateReport)
             : base(requester, checkSignature, generateReport)
         {
         }
 
-        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        protected override void GetApiUrl(Outcoming outcoming, out string interface_url, out bool requiresCert)
         {
-            interface_url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
+            interface_url = "https://api.mch.weixin.qq.com/pay/orderquery";
             requiresCert = false;
         }
 
-        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        protected override string GetReportOutTradeNo(Outcoming outcoming, Incoming incoming)
         {
-            return parameter.out_trade_no ?? result.out_trade_no;
+            return outcoming.out_trade_no ?? incoming.out_trade_no;
         }
 
-        protected override string GetReportDeviceNo(Parameters parameter)
+        protected override string GetReportDeviceNo(Outcoming outcoming)
         {
             return null;
         }
 
-        public class Parameters : RequestData
+        public class Outcoming : OutcomingData
         {
             /// <summary>
             /// 微信的订单号，优先使用 
@@ -41,14 +41,14 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string out_trade_no { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields()
             {
                 yield return new KeyValuePair<string, string>("transaction_id", transaction_id);
                 yield return new KeyValuePair<string, string>("out_trade_no", out_trade_no);
             }
         }
 
-        public class Result : ResponseData<ErrorCode>
+        public class Incoming : IncomingData<ErrorCode>
         {
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义

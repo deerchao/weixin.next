@@ -17,12 +17,12 @@ namespace Weixin.Next.Pay
             _requester = requester;
         }
 
-        public Task<Result> Invoke(Parameters parameters)
+        public Task<Incoming> Invoke(Outcoming outcoming)
         {
-            return _requester.SendRequest<Result, ErrorCode>("https://api.mch.weixin.qq.com/payitil/report", false, parameters, false);
+            return _requester.SendRequest<Incoming, ErrorCode>("https://api.mch.weixin.qq.com/payitil/report", false, outcoming, false);
         }
 
-        public class Parameters : RequestData
+        public class Outcoming : OutcomingData
         {
             /// <summary>
             /// 可选, 终端设备号(门店号或收银设备ID)，注意：PC网页或公众号内支付请传"WEB"
@@ -69,7 +69,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public DateTime time { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields()
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("interface_url", interface_url);
@@ -85,7 +85,7 @@ namespace Weixin.Next.Pay
             }
         }
 
-        public class Result : ResponseData<ErrorCode>
+        public class Incoming : IncomingData<ErrorCode>
         {
         }
 

@@ -6,43 +6,43 @@ namespace Weixin.Next.Pay
     /// <summary>
     /// 关闭订单
     /// </summary>
-    public class CloseOrder : PayApi<CloseOrder.Parameters, CloseOrder.Result, CloseOrder.ErrorCode>
+    public class CloseOrder : PayApi<CloseOrder.Outcoming, CloseOrder.Incoming, CloseOrder.ErrorCode>
     {
         public CloseOrder(Requester requester, bool checkSignature, bool generateReport)
             : base(requester, checkSignature, generateReport)
         {
         }
 
-        protected override string GetReportOutTradeNo(Parameters parameter, Result result)
+        protected override string GetReportOutTradeNo(Outcoming outcoming, Incoming incoming)
         {
-            return parameter.out_trade_no;
+            return outcoming.out_trade_no;
         }
 
-        protected override string GetReportDeviceNo(Parameters parameter)
+        protected override string GetReportDeviceNo(Outcoming outcoming)
         {
             return null;
         }
 
-        protected override void GetApiUrl(Parameters parameter, out string interface_url, out bool requiresCert)
+        protected override void GetApiUrl(Outcoming outcoming, out string interface_url, out bool requiresCert)
         {
             interface_url = "https://api.mch.weixin.qq.com/pay/closeorder";
             requiresCert = false;
         }
 
-        public class Parameters : RequestData
+        public class Outcoming : OutcomingData
         {
             /// <summary>
             /// 商户系统内部的订单号，当没提供transaction_id时需要传这个。 
             /// </summary>
             public string out_trade_no { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetParameters()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields()
             {
                 yield return new KeyValuePair<string, string>("out_trade_no", out_trade_no);
             }
         }
 
-        public class Result : ResponseData<ErrorCode>
+        public class Incoming : IncomingData<ErrorCode>
         {
             /// <summary>
             /// 调用接口提交的公众账号ID, 仅在return_code为SUCCESS的时候有意义
