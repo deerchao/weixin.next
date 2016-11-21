@@ -99,16 +99,11 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string openid { get; set; }
 
-            /// <summary>
-            /// 用于序列化 detail
-            /// </summary>
-            public IJsonParser JsonParser { get; set; }
-
-            public override IEnumerable<KeyValuePair<string, string>> GetFields()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser)
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("body", body);
-                yield return new KeyValuePair<string, string>("detail", detail?.goods_detail?.Length > 0 ? JsonParser.ToString(detail) : null);
+                yield return new KeyValuePair<string, string>("detail", detail?.goods_detail?.Length > 0 ? jsonParser.ToString(detail) : null);
                 yield return new KeyValuePair<string, string>("attach", attach);
                 yield return new KeyValuePair<string, string>("out_trade_no", out_trade_no);
                 yield return new KeyValuePair<string, string>("fee_type", fee_type.Code);
@@ -153,14 +148,14 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string code_url { get; set; }
 
-            protected override void DeserializeFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
                 device_info = GetValue(values, "device_info");
             }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 trade_type = (TradeType)Enum.Parse(typeof(TradeType), GetValue(values, "trade_type"));
                 prepay_id = GetValue(values, "prepay_id");
@@ -260,43 +255,6 @@ namespace Weixin.Next.Pay
             /// 请使用UTF-8编码格式
             /// </summary>
             NOT_UTF8,
-        }
-
-        public class GoodDetails
-        {
-            public GoodDetail[] goods_detail { get; set; }
-        }
-
-        public class GoodDetail
-        {
-            /// <summary>
-            /// 必填 32 商品的编号
-            /// </summary>
-            public string goods_id { get; set; }
-            /// <summary>
-            /// 可选 32 微信支付定义的统一商品编号
-            /// </summary>
-            public string wxpay_goods_id { get; set; }
-            /// <summary>
-            /// 必填 256 商品名称
-            /// </summary>
-            public string goods_name { get; set; }
-            /// <summary>
-            /// 必填 商品数量
-            /// </summary>
-            public int quantity { get; set; }
-            /// <summary>
-            /// 必填 商品单价，单位为分
-            /// </summary>
-            public int price { get; set; }
-            /// <summary>
-            /// 可选 32 商品类目ID
-            /// </summary>
-            public string goods_category { get; set; }
-            /// <summary>
-            /// 可选 1000 商品描述信息
-            /// </summary>
-            public string body { get; set; }
         }
     }
 }

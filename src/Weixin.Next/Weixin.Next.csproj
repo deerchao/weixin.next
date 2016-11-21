@@ -69,10 +69,13 @@
     <Compile Include="MP\Api\Ticket.cs" />
     <Compile Include="MP\Api\Token.cs" />
     <Compile Include="MP\Api\User.cs" />
+    <Compile Include="Pay\AuthCodeToOpenId.cs" />
     <Compile Include="Pay\Entities.cs" />
+    <Compile Include="Pay\MicroPay.cs" />
     <Compile Include="Pay\Notify.cs" />
     <Compile Include="Pay\PayApi.cs" />
     <Compile Include="Pay\Payment.cs" />
+    <Compile Include="Pay\ShortUrl.cs" />
     <Compile Include="Utilities\AsyncOutParameter.cs" />
     <Compile Include="MP\Messaging\Crypt\Cryptography.cs" />
     <Compile Include="MP\Messaging\Caches\IExecutionDictionary.cs" />

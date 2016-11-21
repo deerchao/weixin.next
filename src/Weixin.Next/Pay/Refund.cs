@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
 {
@@ -68,7 +69,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public RefundSource refund_account { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetFields()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser)
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("transaction_id", transaction_id);
@@ -150,13 +151,13 @@ namespace Weixin.Next.Pay
             /// </summary>
             public CouponRefund[] coupons { get; set; }
 
-            protected override void DeserializeFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
             }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 device_info = GetValue(values, "device_info");
                 out_refund_no = GetValue(values, "out_refund_no");

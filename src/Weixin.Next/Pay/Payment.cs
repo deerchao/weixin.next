@@ -2,6 +2,7 @@
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
 {
@@ -24,8 +25,9 @@ namespace Weixin.Next.Pay
         /// <param name="cert">微信支付安全证书</param>
         /// <param name="checkSignature">发送请求时是否检查服务器返回数据的签名</param>
         /// <param name="generateReport">发送请求时是否生成报告, 准备发送</param>
-        public Payment(string appid, string mch_id, string key, X509Certificate2 cert, bool checkSignature, bool generateReport)
-            : this(new Requester(appid, mch_id, key, cert), checkSignature, generateReport)
+        /// <param name="jsonParser">用于序列化/反序列化下单接口中的 detail 字段</param>
+        public Payment(string appid, string mch_id, string key, X509Certificate2 cert, bool checkSignature, bool generateReport, IJsonParser jsonParser)
+            : this(new Requester(appid, mch_id, key, cert, jsonParser), checkSignature, generateReport)
         {
         }
 
@@ -127,6 +129,33 @@ namespace Weixin.Next.Pay
                 var incomingBody = await reader.ReadToEndAsync().ConfigureAwait(false);
                 return ParseNotify(incomingBody);
             }
+        }
+
+        /// <summary>
+        /// 生成短网址
+        /// </summary>
+        /// <returns></returns>
+        public ShortUrl ShortUrl()
+        {
+            return new ShortUrl(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// (刷卡支付)授权码查询 openid
+        /// </summary>
+        /// <returns></returns>
+        public AuthCodeToOpenId AuthCodeToOpenId()
+        {
+            return new AuthCodeToOpenId(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 刷卡支付
+        /// </summary>
+        /// <returns></returns>
+        public MicroPay MicroPay()
+        {
+            return new MicroPay(_requester, _checkSignature, _generateReport);
         }
     }
 }

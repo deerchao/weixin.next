@@ -378,4 +378,42 @@ namespace Weixin.Next.Pay
         /// </summary>
         REFUND_SOURCE_RECHARGE_FUNDS
     }
+
+    public class GoodDetails
+    {
+        public GoodDetail[] goods_detail { get; set; }
+    }
+
+    public class GoodDetail
+    {
+        /// <summary>
+        /// 必填 32 商品的编号
+        /// </summary>
+        public string goods_id { get; set; }
+        /// <summary>
+        /// 可选 32 微信支付定义的统一商品编号
+        /// </summary>
+        public string wxpay_goods_id { get; set; }
+        /// <summary>
+        /// 必填 256 商品名称
+        /// </summary>
+        public string goods_name { get; set; }
+        /// <summary>
+        /// 必填 商品数量
+        /// </summary>
+        public int quantity { get; set; }
+        /// <summary>
+        /// 必填 商品单价，单位为分
+        /// </summary>
+        public int price { get; set; }
+        /// <summary>
+        /// 可选 32 商品类目ID
+        /// </summary>
+        public string goods_category { get; set; }
+        /// <summary>
+        /// 可选 1000 商品描述信息
+        /// </summary>
+        public string body { get; set; }
+    }
+
 }

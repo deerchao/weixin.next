@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Weixin.Next.MP.Api;
 using Weixin.Next.Utilities;
 
 namespace Weixin.Next.Pay
@@ -22,6 +23,13 @@ namespace Weixin.Next.Pay
             _checkSignature = checkSignature;
         }
 
+        /// <summary>
+        /// 调用接口
+        /// </summary>
+        /// <param name="outcoming">请求参数</param>
+        /// <param name="stream">正常情况下返回的数据流, 内容是 CSV 格式的数据</param>
+        /// <param name="incoming">出错时的返回结果</param>
+        /// <returns>正常情况: true, 出错时: false</returns>
         public async Task<bool> Invoke(Outcoming outcoming, AsyncOutParameter<Stream> stream, AsyncOutParameter<Incoming> incoming)
         {
             var response = await _requester.GetResponse("https://api.mch.weixin.qq.com/pay/downloadbill", false, outcoming).ConfigureAwait(false);
@@ -62,7 +70,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public TarType? tar_type { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetFields()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser)
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("bill_date", bill_date.ToString("yyyyMMdd"));

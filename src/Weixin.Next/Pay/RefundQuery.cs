@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
 {
@@ -54,7 +55,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string refund_id { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetFields()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser)
             {
                 yield return new KeyValuePair<string, string>("transaction_id", transaction_id);
                 yield return new KeyValuePair<string, string>("out_trade_no", out_trade_no);
@@ -109,13 +110,13 @@ namespace Weixin.Next.Pay
 
             public Refund[] refunds { get; set; }
 
-            protected override void DeserializeFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
             }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 device_info = GetValue(values, "device_info");
                 total_fee = GetIntValue(values, "total_fee") ?? 0;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
 {
@@ -69,7 +70,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public DateTime time { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetFields()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser)
             {
                 yield return new KeyValuePair<string, string>("device_info", device_info);
                 yield return new KeyValuePair<string, string>("interface_url", interface_url);

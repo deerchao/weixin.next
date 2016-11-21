@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
 {
@@ -36,7 +37,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string out_trade_no { get; set; }
 
-            public override IEnumerable<KeyValuePair<string, string>> GetFields()
+            public override IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser)
             {
                 yield return new KeyValuePair<string, string>("out_trade_no", out_trade_no);
             }
@@ -59,13 +60,13 @@ namespace Weixin.Next.Pay
             public string result_msg { get; set; }
 
 
-            protected override void DeserializeFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
             }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
             {
                 result_msg = GetValue(values, "result_msg");
             }

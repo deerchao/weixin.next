@@ -7,6 +7,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
 {
@@ -21,19 +22,21 @@ namespace Weixin.Next.Pay
         private readonly string _mch_id;
         private readonly string _key;
         private readonly X509Certificate2 _cert;
+        private readonly IJsonParser _jsonParser;
 
-        public Requester(string appid, string mch_id, string key, X509Certificate2 cert)
+        public Requester(string appid, string mch_id, string key, X509Certificate2 cert, IJsonParser jsonParser)
         {
             _appid = appid;
             _mch_id = mch_id;
             _key = key;
             _cert = cert;
+            _jsonParser = jsonParser;
         }
 
         private string BuildRequestBody(OutcomingData data)
         {
             var nonce = _random.Next().ToString("D");
-            var items = data.GetFields().Concat(new[]
+            var items = data.GetFields(_jsonParser).Concat(new[]
                 {
                     new KeyValuePair<string, string>("appid", _appid),
                     new KeyValuePair<string, string>("mch_id", _mch_id),
@@ -86,7 +89,7 @@ namespace Weixin.Next.Pay
             }
 
             var incoming = new TIncoming();
-            incoming.Deserialize(values);
+            incoming.Deserialize(values, _jsonParser);
             return incoming;
         }
 
