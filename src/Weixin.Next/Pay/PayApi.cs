@@ -14,6 +14,9 @@ namespace Weixin.Next.Pay
     public abstract class OutcomingData
     {
         public abstract IEnumerable<KeyValuePair<string, string>> GetFields(IJsonParser jsonParser);
+
+        public virtual string AppIdFieldName { get { return "appid"; } }
+        public virtual string MerchantIdFieldName { get { return "mch_id"; } }
     }
 
     /// <summary>

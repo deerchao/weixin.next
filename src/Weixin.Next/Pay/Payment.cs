@@ -157,5 +157,23 @@ namespace Weixin.Next.Pay
         {
             return new MicroPay(_requester, _checkSignature, _generateReport);
         }
+
+        /// <summary>
+        /// 企业付款
+        /// </summary>
+        /// <returns></returns>
+        public Transfer Transfer()
+        {
+            return new Transfer(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 查询企业付款
+        /// </summary>
+        /// <returns></returns>
+        public GetTransferInfo GetTransferInfo()
+        {
+            return new GetTransferInfo(_requester, _checkSignature, _generateReport);
+        }
     }
 }
