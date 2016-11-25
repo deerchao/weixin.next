@@ -175,5 +175,54 @@ namespace Weixin.Next.Pay
         {
             return new GetTransferInfo(_requester, _checkSignature, _generateReport);
         }
+
+        /// <summary>
+        /// 发放代金券
+        /// </summary>
+        public SendCoupon SendCoupon()
+        {
+            return new SendCoupon(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 查询代金券批次信息
+        /// </summary>
+        public QueryCouponStock QueryCouponStock()
+        {
+            return new QueryCouponStock(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 查询代金券信息
+        /// </summary>
+        public QueryCouponsInfo QueryCouponsInfo()
+        {
+            return new QueryCouponsInfo(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 发放普通红包
+        /// </summary>
+        public SendRedPack SendRedPack()
+        {
+            return new SendRedPack(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 发放裂变红包
+        /// </summary>
+        /// <returns></returns>
+        public SendGroupRedPack SendGroupRedPack()
+        {
+            return new SendGroupRedPack(_requester, _checkSignature, _generateReport);
+        }
+
+        /// <summary>
+        /// 查询红包记录
+        /// </summary>
+        public GetHBInfo GetHBInfo()
+        {
+            return new GetHBInfo(_requester, _checkSignature, _generateReport);
+        }
     }
 }

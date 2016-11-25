@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Weixin.Next.Utilities;
 
 namespace Weixin.Next.Pay
 {
@@ -414,6 +412,67 @@ namespace Weixin.Next.Pay
         /// 可选 1000 商品描述信息
         /// </summary>
         public string body { get; set; }
+    }
+
+    public enum RedPackSceneId
+    {
+        /// <summary>
+        /// 商品促销
+        /// </summary>
+        PRODUCT_1,
+        /// <summary>
+        /// 抽奖
+        /// </summary>
+        PRODUCT_2,
+        /// <summary>
+        /// 虚拟物品兑奖
+        /// </summary>
+        PRODUCT_3,
+        /// <summary>
+        /// 企业内部福利
+        /// </summary>
+        PRODUCT_4,
+        /// <summary>
+        /// 渠道分润
+        /// </summary>
+        PRODUCT_5,
+        /// <summary>
+        /// 保险回馈
+        /// </summary>
+        PRODUCT_6,
+        /// <summary>
+        /// 彩票派奖
+        /// </summary>
+        PRODUCT_7,
+        /// <summary>
+        /// 税务刮奖
+        /// </summary>
+        PRODUCT_8
+    }
+
+    public class RedPackRiskInfo
+    {
+        /// <summary>
+        /// 用户操作的时间
+        /// </summary>
+        public DateTime posttime { get; set; }
+        /// <summary>
+        /// 业务系统账号的手机号，国家代码-手机号。不需要+号 
+        /// </summary>
+        public string mobile { get; set; }
+        /// <summary>
+        /// mac 地址或者设备唯一标识  
+        /// </summary>
+        public string deviceid { get; set; }
+        /// <summary>
+        /// 户操作的客户端版本
+        /// </summary>
+        public string clientversion { get; set; }
+
+        public override string ToString()
+        {
+            return Uri.EscapeDataString($"posttime={posttime.ToUnixTimestamp():D}&clientversion={clientversion}&mobile={mobile}&deviceid={deviceid}");
+        }
     }
 
 }

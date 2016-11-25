@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
+using System.Xml.Linq;
 using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
@@ -148,14 +148,14 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string code_url { get; set; }
 
-            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
             {
                 appid = GetValue(values, "appid");
                 mch_id = GetValue(values, "mch_id");
                 device_info = GetValue(values, "device_info");
             }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
             {
                 trade_type = (TradeType)Enum.Parse(typeof(TradeType), GetValue(values, "trade_type"));
                 prepay_id = GetValue(values, "prepay_id");

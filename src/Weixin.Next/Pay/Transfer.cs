@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
@@ -117,14 +118,14 @@ namespace Weixin.Next.Pay
             /// </summary>
             public DateTime payment_time { get; set; }
 
-            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+            protected override void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
             {
                 mch_appid = GetValue(values, "mch_appid");
                 mchid = GetValue(values, "mchid");
                 device_info = GetValue(values, "device_info");
             }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
             {
                 partner_trade_no = GetValue(values, "partner_trade_no");
                 payment_no = GetValue(values, "payment_no");

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Linq;
 using Weixin.Next.MP.Api;
 
 namespace Weixin.Next.Pay
@@ -50,7 +51,7 @@ namespace Weixin.Next.Pay
             /// </summary>
             public string short_url { get; set; }
 
-            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+            protected override void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
             {
                 short_url = GetValue(values, "short_url");
             }

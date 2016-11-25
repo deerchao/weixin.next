@@ -39,7 +39,7 @@ namespace Weixin.Next.Pay
             var items = data.GetFields(_jsonParser).Concat(new[]
                 {
                     new KeyValuePair<string, string>(data.AppIdFieldName, _appid),
-                    new KeyValuePair<string, string>(data.MechantIdFieldName, _mch_id),
+                    new KeyValuePair<string, string>(data.MerchantIdFieldName, _mch_id),
                     new KeyValuePair<string, string>("nonce_str", nonce),
                 }).Where(x => !string.IsNullOrEmpty(x.Value))
                 .ToList();
@@ -89,7 +89,7 @@ namespace Weixin.Next.Pay
             }
 
             var incoming = new TIncoming();
-            incoming.Deserialize(values, _jsonParser);
+            incoming.Deserialize(values, _jsonParser, xml);
             return incoming;
         }
 

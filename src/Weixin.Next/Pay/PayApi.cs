@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Weixin.Next.MP.Api;
 using Weixin.Next.Utilities;
 
@@ -72,7 +73,7 @@ namespace Weixin.Next.Pay
             return (TErrorCode?)Enum.Parse(typeof(TErrorCode), err_code);
         }
 
-        public void Deserialize(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+        public void Deserialize(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
         {
             return_code = GetValue(values, "return_code");
             return_msg = GetValue(values, "return_msg");
@@ -82,11 +83,11 @@ namespace Weixin.Next.Pay
             {
                 result_code = GetValue(values, "result_code");
 
-                DeserializeFields(values, jsonParser);
+                DeserializeFields(values, jsonParser, xml);
 
                 if (result_code == result_success)
                 {
-                    DeserializeSuccessFields(values, jsonParser);
+                    DeserializeSuccessFields(values, jsonParser, xml);
                 }
                 else
                 {
@@ -96,11 +97,11 @@ namespace Weixin.Next.Pay
             }
         }
 
-        protected virtual void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+        protected virtual void DeserializeFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
         {
         }
 
-        protected virtual void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser)
+        protected virtual void DeserializeSuccessFields(List<KeyValuePair<string, string>> values, IJsonParser jsonParser, XElement xml)
         {
         }
 
