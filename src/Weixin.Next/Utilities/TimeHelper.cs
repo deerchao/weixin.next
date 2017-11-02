@@ -9,11 +9,11 @@ namespace Weixin.Next.Utilities
         /// </summary>
         /// <param name="time">DateTime 值</param>
         /// <returns></returns>
-        public static long ToUnixTimestamp(this DateTime time)
+        public static long ToWeixinTimestamp(this DateTime time)
         {
             time = time.ToUniversalTime();
             var origin = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            return (time.Ticks - origin.Ticks) / TimeSpan.TicksPerMillisecond;
+            return (time.Ticks - origin.Ticks) / TimeSpan.TicksPerMillisecond / 1000;
         }
 
         /// <summary>
@@ -22,10 +22,10 @@ namespace Weixin.Next.Utilities
         /// <param name="timestamp">时间戳</param>
         /// <param name="kind">日期类别, Local 或 Utc</param>
         /// <returns></returns>
-        public static DateTime FromUnixTimestamp(this long timestamp, DateTimeKind kind = DateTimeKind.Local)
+        public static DateTime FromWeixinTimestamp(this long timestamp, DateTimeKind kind = DateTimeKind.Local)
         {
             var origin = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
-            var result = origin.AddMilliseconds(timestamp);
+            var result = origin.AddMilliseconds(timestamp * 1000);
 
             return kind == DateTimeKind.Utc
                        ? result

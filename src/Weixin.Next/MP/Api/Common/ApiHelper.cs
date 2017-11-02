@@ -12,6 +12,7 @@ namespace Weixin.Next.MP.Api
     {
         private static ApiConfig _defaultConfig;
         private const int ErrorAccessTokenExpired = ApiErrorCode.E42001;
+        private const int ErrorAccessTokenInvalid = ApiErrorCode.E40001;
         private const int ErrorSuccess = ApiErrorCode.E0;
 
         public static ApiConfig DefaultConfig { get { return _defaultConfig; } }
@@ -77,7 +78,7 @@ namespace Weixin.Next.MP.Api
             }
             catch (ApiException ex)
             {
-                if (ex.Code == ErrorAccessTokenExpired)
+                if (ex.Code == ErrorAccessTokenExpired || ex.Code == ErrorAccessTokenInvalid)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
@@ -106,7 +107,7 @@ namespace Weixin.Next.MP.Api
             }
             catch (ApiException ex)
             {
-                if (ex.Code == ErrorAccessTokenExpired)
+                if (ex.Code == ErrorAccessTokenExpired || ex.Code == ErrorAccessTokenInvalid)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
@@ -186,7 +187,7 @@ namespace Weixin.Next.MP.Api
             }
             catch (ApiException ex)
             {
-                if (ex.Code == ErrorAccessTokenExpired)
+                if (ex.Code == ErrorAccessTokenExpired || ex.Code == ErrorAccessTokenInvalid)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
@@ -216,7 +217,7 @@ namespace Weixin.Next.MP.Api
             }
             catch (ApiException ex)
             {
-                if (ex.Code == ErrorAccessTokenExpired)
+                if (ex.Code == ErrorAccessTokenExpired || ex.Code == ErrorAccessTokenInvalid)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
@@ -281,7 +282,7 @@ namespace Weixin.Next.MP.Api
             }
             catch (ApiException ex)
             {
-                if (ex.Code == ErrorAccessTokenExpired)
+                if (ex.Code == ErrorAccessTokenExpired || ex.Code == ErrorAccessTokenInvalid)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);
@@ -314,7 +315,7 @@ namespace Weixin.Next.MP.Api
             }
             catch (ApiException ex)
             {
-                if (ex.Code == ErrorAccessTokenExpired)
+                if (ex.Code == ErrorAccessTokenExpired || ex.Code == ErrorAccessTokenInvalid)
                 {
                     var m = config?.AccessTokenManager ?? _defaultConfig.AccessTokenManager;
                     await m.RefreshTokenInfo(token.Value).ConfigureAwait(false);

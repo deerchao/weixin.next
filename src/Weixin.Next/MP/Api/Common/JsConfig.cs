@@ -42,7 +42,7 @@ namespace Weixin.Next.MP.Api
             {
                 debug = debug,
                 appId = appId,
-                timestamp = DateTime.UtcNow.ToUnixTimestamp(),
+                timestamp = DateTime.UtcNow.ToWeixinTimestamp(),
                 jsApiList = jsApiList,
                 nonceStr = Guid.NewGuid().ToString("n"),
             };

@@ -471,7 +471,7 @@ namespace Weixin.Next.Pay
 
         public override string ToString()
         {
-            return Uri.EscapeDataString($"posttime={posttime.ToUnixTimestamp():D}&clientversion={clientversion}&mobile={mobile}&deviceid={deviceid}");
+            return Uri.EscapeDataString($"posttime={posttime.ToWeixinTimestamp():D}&clientversion={clientversion}&mobile={mobile}&deviceid={deviceid}");
         }
     }
 

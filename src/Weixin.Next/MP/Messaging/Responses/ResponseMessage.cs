@@ -43,7 +43,7 @@ namespace Weixin.Next.MP.Messaging.Responses
     {
         protected ResponseMessage()
         {
-            CreateTime = DateTime.UtcNow.ToUnixTimestamp();
+            CreateTime = DateTime.UtcNow.ToWeixinTimestamp();
         }
 
         /// <summary>
